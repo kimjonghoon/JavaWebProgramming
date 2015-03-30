@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>title</title>
+<meta name="Keywords" content="keywords" />
+<meta name="Description" content="description" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+</head>
+<body>
+
+<div id="wrap">
+
+    <div id="header">
+	<h1><a href="#"><img src="images/ci.gif" alt="java-school logo" /></a></h1>
+    </div>
+    
+    <div id="main-menu">
+        <ul id="nav">
+            <li><a href="#">Java</a></li>
+            <li><a href="#">JDBC</a></li>
+            <li><a href="#">JSP</a></li>
+            <li><a href="#">Eclipse</a></li>
+            <li><a href="#">Struts2</a></li>
+            <li><a href="#">Ajax</a></li>
+            <li><a href="#">Android</a></li>
+        </ul>
+    </div>
+    
+	<div id="container">
+		<div id="content" style="min-height: 800px;">
+
+<!--  게시판 코드 시작 -->
+<!-- 게시판 코드 시작 -->
+<div id="url-navi">Eclipse &gt; Eclipse Tutorial</div>
+<h1>Eclipse 설치</h1>
+
+<div id="bbs">
+<h2>글쓰기</h2>
+<form id="writeForm" action="write_proc.jsp" method="post" enctype="multipart/form-data">
+<p style="margin: 0;padding: 0;">
+<input type="hidden" name="boardCd" value="free" />
+<input type="hidden" name="curPage" value="1" />
+<input type="hidden" name="searchWord" value="무궁화꽃" />
+</p>
+<table id="write-form">
+<tr>
+    <td>제목</td>
+    <td><input type="text" name="title" style="width: 90%"/></td>
+</tr>
+<tr>
+    <td colspan="2">
+        <textarea name="content" rows="17" cols="50"></textarea>
+    </td>
+</tr>
+<tr>
+    <td>파일첨부</td>
+    <td><input type="file" name="attach" /></td>
+</tr>
+</table>
+<div style="text-align: center;padding-bottom: 15px;">
+    <input type="button" value="전송" />
+    <input type="button" value="취소" />
+    <input type="button" value="목록" />
+</div>
+</form>
+</div>
+<!-- 게시판 코드 끝 -->
+<!--  게시판 코드 끝 -->
+		
+		</div>
+    </div>
+    
+    <div id="sidebar">
+	    <h1>Eclipse</h1>
+	    <ul>
+		<li><a href="#">Eclipse Tutorial</a>
+		    <ul>
+		        <li><a href="#">Eclipse 설치</a></li>
+		        <li><a href="#">WTP 설치</a></li>
+		    </ul>
+		</li>
+	    </ul>
+    </div>
+    
+    <div id="extra">
+<a href="http://www.youtube.com"><img src="images/youtube.png" alt="youtube.com" /></a>
+	<a href="http://www.twitter.com"><img src="images/twitter.png" alt="twitter.com" /></a>
+	<a href="http://www.facebook.com"><img src="images/facebook.png" alt="facebook.com" /></a>
+	<a href="http://www.gmail.com"><img src="images/gmail.png" alt="gmail.com" /></a>
+	<a href="http://www.java-school.net"><img src="images/java-school.png" alt="java-school.net" /></a>    
+    </div>
+    
+    <div id="footer">
+		<ul>
+			<li><a href="#">이용약관</a></li>
+			<li><a href="#">개인정보보호정책</a></li>
+			<li><a href="#">이메일무단수집거부</a></li>
+			<li id="company-info">전화 : 02-123-5678, FAX : 02-123-5678<br />
+			people@ggmail.org<br />
+			Copyright java-school.net All Rights Reserved.</li>
+			<li><a href="#">찾아오시는 길</a></li>
+    	</ul>    
+    </div>
+        
+</div>
+
+</body>
+</html>
