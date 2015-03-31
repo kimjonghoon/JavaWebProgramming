@@ -1,0 +1,16 @@
+<Context
+	reloadabe="true">
+	
+	<Resource
+		name="jdbc/jsppjt"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="java"
+		password="school"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@192.168.0.2:1521:XE"
+		maxActive="8"
+		maxIdle="4" />
+			
+</Context>
+	
