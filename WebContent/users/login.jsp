@@ -19,7 +19,7 @@ if (url == null) url = "";
 
 function check() {
 	//var form = document.getElementById("loginForm");
-	//TODO 유효성 검사
+	//TODO 유효성 검사 
 	return true;
 }
 

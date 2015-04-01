@@ -28,7 +28,7 @@ String boardNm = service.getBoardNm(boardCd);
            
 function check() {
     //var form = document.getElementById("writeForm");
-    //유효성 검사로직 추가
+    //유효성 검사로직 추가 
     return true;
 }
 
@@ -62,10 +62,9 @@ function goView() {
 <!--  본문 시작 -->
 <div id="url-navi">BBS</div>
 <h1><%=boardNm %></h1>
-
 <div id="bbs">
 <h2>글쓰기</h2>
-<form id="writeForm" action="write_proc.jsp" method="post" enctype="multipart/form-data" onsubmit="return check()">
+<form id="writeForm" action="write_proc.jsp" method="post" enctype="multipart/form-data" onsubmit="return check();">
 <p style="margin: 0;padding: 0;">
 <input type="hidden" name="boardCd" value="<%=boardCd %>" />
 </p>

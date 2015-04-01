@@ -769,6 +769,7 @@ public class BoardDao {
                 comment.setCommentNo(rs.getInt("commentno"));
                 comment.setArticleNo(rs.getInt("articleno"));
                 comment.setEmail(rs.getString("email"));
+                 comment.setName(rs.getString("name"));
                 comment.setMemo(rs.getString("memo"));
                 comment.setRegdate(rs.getTimestamp("regdate"));
                 

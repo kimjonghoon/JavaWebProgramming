@@ -12,6 +12,7 @@ String passwd = request.getParameter("passwd");
 
 UserService service = new UserService();
 User user = service.login(email, passwd);
+
 if (user == null) {
 	//로그인에 실패하면 다시 로그인 화면으로 되돌아간다.
 	response.sendRedirect("login.jsp?url=" + url + "&msg=Login-Failed");
