@@ -40,13 +40,13 @@ if (requestUri == null) {
 User loginUser = (User) session.getAttribute("user");
 if (loginUser == null) {
 %>
-			<input type="button" value="로그인" onclick="location.href='<%=contextPath %>/users/login.jsp'" />
-			<input type="button" value="회원가입" onclick="location.href='<%=contextPath %>/users/signUp.jsp'" />
+			<input type="button" value="로그인" onclick="location.href='<%=contextPath %>/users/login.do'" />
+			<input type="button" value="회원가입" onclick="location.href='<%=contextPath %>/users/signUp.do'" />
 <%
 } else {
 %>
-			<input type="button" value="로그아웃" onclick="location.href='<%=contextPath %>/users/logout_proc.jsp'" />
-			<input type="button" value="내정보수정" onclick="location.href='<%=contextPath %>/users/editAccount.jsp'" />
+			<input type="button" value="로그아웃" onclick="location.href='<%=contextPath %>/users/logout_proc.do'" />
+			<input type="button" value="내정보수정" onclick="location.href='<%=contextPath %>/users/editAccount.do'" />
 <%
 }
 %>
@@ -68,9 +68,8 @@ if (loginUser == null) {
     
 	<div id="container">
 		<div id="content" style="min-height: 800px;">
-			<div id="url-navi">Error</div>
-
 <!-- 본문 시작 -->
+<div id="url-navi">Error</div>
 <h1>Error Page</h1>
 <%
 if(statusCode != 500){
@@ -93,7 +92,7 @@ if (throwable != null) {
     </div>
     
 	<div id="sidebar">
-		<h1>Main</h1>
+		<h1>Error</h1>
 	</div>
     
 	<div id="extra">
@@ -105,15 +104,7 @@ if (throwable != null) {
 	</div>
     
     <div id="footer">
-		<ul>
-			<li><a href="#">이용약관</a></li>
-			<li><a href="#">개인정보보호정책</a></li>
-			<li><a href="#">이메일무단수집거부</a></li>
-			<li id="company-info">전화 : 02-123-5678, FAX : 02-123-5678<br />
-			people@ggmail.org<br />
-			Copyright java-school.net All Rights Reserved.</li>
-			<li><a href="#">찾아오시는 길</a></li>
-    	</ul>    
+		<%@ include file="../inc/footer.jsp" %>
     </div>
         
 </div>

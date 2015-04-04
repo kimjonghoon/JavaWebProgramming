@@ -21,7 +21,7 @@ if (user == null) {
 	if (url != null && !url.equals("")) {
 	    response.sendRedirect(url);
 	} else {
-	    response.sendRedirect("../bbs/list.jsp?boarCd=free&curPage=1");
+	    response.sendRedirect("../bbs/list.jsp?boardCd=free&curPage=1");
 	}
 }
 %>

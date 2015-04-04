@@ -26,3 +26,9 @@ Message : ORA-01400: cannot insert NULL into ("JAVA"."ARTICLE"."CONTENT")
 Oracle Error Code : 1400
 sql : INSERT INTO article (articleno, boardcd, title, content, email, hit, regdate) VALUES (SEQ_ARTICLE.nextval, ?, ?, ?, ?, 0, sysdate)
 
+[2015-04-03 15:04:02,805]DEBUG [http-bio-8080-exec-11] (UserDao.java:161) - SQLState : 72000
+Message : ORA-12899: value too large for column "JAVA"."MEMBER"."NAME" (actual: 180, maximum: 20)
+
+Oracle Error Code : 12899
+sql : UPDATE member SET name = ?, mobile = ? WHERE email = ? AND passwd = ?
+

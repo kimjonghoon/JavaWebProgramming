@@ -23,7 +23,11 @@ String newPasswd = request.getParameter("newPasswd");
 String email = user.getEmail();
 
 UserService service = new UserService();
-service.changePasswd(currentPasswd, newPasswd, email);
-
+int check = service.changePasswd(currentPasswd, newPasswd, email);
+if (check < 1) {
+    response.sendError(HttpServletResponse.SC_FORBIDDEN, WebContants.AUTHENTICATION_FAILED);
+    session.removeAttribute(WebContants.USER_KEY);//세션에서 유저 객체 제거
+    return;
+} 
 response.sendRedirect("changePasswd_confirm.jsp");
 %>

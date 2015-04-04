@@ -15,7 +15,7 @@
 
 function check() {
     //var form = document.getElementById("byeForm");
-    //TODO 유효성 검사
+    //TODO 유효성 검사 
     return true;
 }
 

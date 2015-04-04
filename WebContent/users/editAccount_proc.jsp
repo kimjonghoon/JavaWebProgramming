@@ -27,11 +27,20 @@ String passwd = request.getParameter("passwd");
 
 String email = user.getEmail();
 
-User editUser = new User(email, passwd, name, mobile);
-
 UserService service = new UserService();
-service.editAccount(editUser);
-session.setAttribute(WebContants.USER_KEY, editUser);
+
+user = service.login(email, passwd);
+
+if (user == null) {
+    response.sendError(HttpServletResponse.SC_FORBIDDEN, WebContants.AUTHENTICATION_FAILED);
+    session.removeAttribute(WebContants.USER_KEY);//패스워드가 틀리면 세션을 끊는다.
+    return;
+}
+
+user = new User(email, passwd, name, mobile);
+
+service.editAccount(user);
+session.setAttribute(WebContants.USER_KEY, user);
 
 response.sendRedirect("changePasswd.jsp");
 %>

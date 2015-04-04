@@ -160,6 +160,7 @@ public class UserDao {
                 msg.append("sql : " + sql + NEW_LINE);
                 log.debug(msg);
             }
+            throw new RuntimeException(e);
         } finally {
             close(null, pstmt, con);
         }
