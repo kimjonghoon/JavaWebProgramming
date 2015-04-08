@@ -625,7 +625,7 @@ public class BoardDao {
     }
     
     //게시판 코드로 게시판 이름 조회
-    public String selectOneOfBoardName(String boardCd) {
+    public String selectOneBoardName(String boardCd) {
         String boardNm = null;
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -741,7 +741,7 @@ public class BoardDao {
     }
     
     //댓글리스트 조회
-    public ArrayList<Comment> selectListOfComment(int articleNo) {
+    public ArrayList<Comment> selectListOfComments(int articleNo) {
         ArrayList<Comment> commentList = new ArrayList<Comment>();
 
         String sql = "SELECT "
@@ -792,7 +792,7 @@ public class BoardDao {
     }
 
     //P.K로 첨부파일 찾기
-    public AttachFile selectOneOfAttachFiles(int attachFileNo) {
+    public AttachFile selectOneAttachFile(int attachFileNo) {
         AttachFile attachFile = null;
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -832,7 +832,7 @@ public class BoardDao {
     }
 
     //P.K로 댓글 찾기
-    public Comment selectOneOfComments(int commentNo) {
+    public Comment selectOneOfComment(int commentNo) {
         Comment comment = null;
         
         Connection con = null;

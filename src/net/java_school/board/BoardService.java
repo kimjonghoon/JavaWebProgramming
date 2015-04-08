@@ -69,7 +69,7 @@ public class BoardService {
     
     //게시판 이름 조회(목록list.jsp,상세보기view.jsp,글쓰기write_form.jsp,글수정modify_form.jsp)
     public String getBoardNm(String boardCd) {
-        return dao.selectOneOfBoardName(boardCd);
+        return dao.selectOneBoardName(boardCd);
     }
 
     //댓글 추가
@@ -89,17 +89,17 @@ public class BoardService {
 
     //댓글 리스트 조회
     public ArrayList<Comment> getCommentList(int articleNo) {
-        return dao.selectListOfComment(articleNo);
+        return dao.selectListOfComments(articleNo);
     }
 
     //첨부파일 찾기
     public AttachFile getAttachFile(int attachFileNo) {
-        return dao.selectOneOfAttachFiles(attachFileNo);
+        return dao.selectOneAttachFile(attachFileNo);
     }
 
     //P.K로 댓글 찾기
     public Comment getComment(int commentNo) {
-        return dao.selectOneOfComments(commentNo);
+        return dao.selectOneOfComment(commentNo);
     }
     
     public int getListItemNo() {

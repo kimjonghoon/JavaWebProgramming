@@ -215,7 +215,7 @@ for (int i = 0; i < size; i++) {
 %>    
     <p id="comment<%=commentNo %>"><%=memo %></p>
     <div class="modify-comment">
-        <form id="modifyCommentForm<%=commentNo %>" action="updateComments_proc.jsp" method="post" style="display: none;">
+        <form id="modifyCommentForm<%=commentNo %>" action="updateComment_proc.jsp" method="post" style="display: none;">
         <p>
             <input type="hidden" name="commentNo" value="<%=commentNo %>" />
             <input type="hidden" name="boardCd" value="<%=boardCd %>" />
@@ -238,7 +238,7 @@ for (int i = 0; i < size; i++) {
 %>
 <!--  덧글 반복 끝 -->
 
-<form id="addCommentForm" action="addComments_proc.jsp" method="post">
+<form id="addCommentForm" action="addComment_proc.jsp" method="post">
 	<p style="margin: 0;padding: 0">
 		<input type="hidden" name="articleNo" value="<%=articleNo %>" />
 		<input type="hidden" name="boardCd" value="<%=boardCd %>" />
@@ -462,7 +462,7 @@ if (service.getNextPage() != 0) {
         <input type="hidden" name="searchWord" value="<%=searchWord %>" />
     </p>
     </form>
-    <form id="deleteCommentForm" action="deleteComments_proc.jsp" method="post">
+    <form id="deleteCommentForm" action="deleteComment_proc.jsp" method="post">
     <p>
         <input type="hidden" name="commentNo" />
         <input type="hidden" name="articleNo" value="<%=articleNo %>" />
