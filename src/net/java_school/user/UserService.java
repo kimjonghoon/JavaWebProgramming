@@ -7,7 +7,7 @@ public class UserService {
     public void addUser(User user) {
         dao.insert(user);
     }
-    
+
     //로그인
     public User login(String email, String passwd) {
         return dao.login(email, passwd);

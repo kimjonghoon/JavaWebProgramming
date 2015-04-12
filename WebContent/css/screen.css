@@ -283,7 +283,6 @@ ul#nav li a:hover {
 }
 
 #gul-content {
-	border-bottom: 1px solid #ebebeb;
 }
 
 #gul-content p {
@@ -293,9 +292,9 @@ ul#nav li a:hover {
 }
 
 .comments {
+	border-top: 1px solid #ebebeb;
 	border-right: 1px solid #ebebeb;
 	border-left: 1px solid #ebebeb;
-	border-bottom: 1px solid #ebebeb;
 }
 
 /* 덧글 작성자 ID */
@@ -361,7 +360,6 @@ font-size: 11px;
 }
 
 #addComment {
-    margin-top: 10px;
     margin-bottom: 5px;
     padding: 0.22em;
     border: 1px solid #eee;

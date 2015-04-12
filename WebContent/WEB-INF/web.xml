@@ -28,7 +28,7 @@
 		<session-timeout>-1</session-timeout>
 	</session-config>
 		
-	<error-page>
+<!-- 	<error-page>
 	    <error-code>403</error-code>
 	    <location>/error.jsp</location>
 	</error-page>
@@ -43,6 +43,6 @@
 	<error-page>
 	    <exception-type>java.lang.Throwable</exception-type>
 	    <location>/error.jsp</location>
-	</error-page>
+	</error-page> -->
 	
 </web-app>

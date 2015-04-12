@@ -40,13 +40,13 @@ if (requestUri == null) {
 User loginUser = (User) session.getAttribute("user");
 if (loginUser == null) {
 %>
-			<input type="button" value="로그인" onclick="location.href='<%=contextPath %>/users/login.do'" />
-			<input type="button" value="회원가입" onclick="location.href='<%=contextPath %>/users/signUp.do'" />
+			<input type="button" value="로그인" onclick="location.href='<%=contextPath %>/users/login.jsp'" />
+			<input type="button" value="회원가입" onclick="location.href='<%=contextPath %>/users/signUp.jsp'" />
 <%
 } else {
 %>
-			<input type="button" value="로그아웃" onclick="location.href='<%=contextPath %>/users/logout_proc.do'" />
-			<input type="button" value="내정보수정" onclick="location.href='<%=contextPath %>/users/editAccount.do'" />
+			<input type="button" value="로그아웃" onclick="location.href='<%=contextPath %>/users/logout_proc.jsp'" />
+			<input type="button" value="내정보수정" onclick="location.href='<%=contextPath %>/users/editAccount.jsp'" />
 <%
 }
 %>

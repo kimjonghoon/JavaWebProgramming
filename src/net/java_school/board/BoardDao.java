@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -66,7 +67,7 @@ public class BoardDao {
     }
     
     //특정 페이지에 해당하는  게시글 리스트
-    public ArrayList<Article> selectListOfArticles(
+    public List<Article> selectListOfArticles(
             String boardCd, 
             String searchWord, 
             int startRownum, 
@@ -551,7 +552,7 @@ public class BoardDao {
     }
     
     //첨부파일 리스트 조회
-    public ArrayList<AttachFile> selectListOfAttachFiles(int articleNo) {
+    public List<AttachFile> selectListOfAttachFiles(int articleNo) {
         ArrayList<AttachFile> attachFileList = new ArrayList<AttachFile>();
         String sql = "SELECT attachfileno, filename, filetype, filesize, articleno, email " +
             "FROM attachfile WHERE articleno=? ORDER BY attachfileno ASC";

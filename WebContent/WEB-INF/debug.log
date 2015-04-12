@@ -32,3 +32,15 @@ Message : ORA-12899: value too large for column "JAVA"."MEMBER"."NAME" (actual: 
 Oracle Error Code : 12899
 sql : UPDATE member SET name = ?, mobile = ? WHERE email = ? AND passwd = ?
 
+[2015-04-08 10:03:24,126]DEBUG [http-bio-8080-exec-20] (UserDao.java:91) - SQLState : 23000
+Message : ORA-00001: unique constraint (JAVA.SYS_C007007) violated
+
+Oracle Error Code : 1
+sql : insert into member values (?, ?, ?, ?)
+
+[2015-04-08 10:05:12,382]DEBUG [http-bio-8080-exec-16] (UserDao.java:91) - SQLState : 23000
+Message : ORA-00001: unique constraint (JAVA.SYS_C007007) violated
+
+Oracle Error Code : 1
+sql : insert into member values (?, ?, ?, ?)
+

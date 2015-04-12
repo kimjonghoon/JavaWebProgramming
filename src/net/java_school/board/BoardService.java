@@ -1,6 +1,6 @@
 package net.java_school.board;
 
-import java.util.*;
+import java.util.List;
 
 import net.java_school.commons.PagingHelper;
 
@@ -11,7 +11,7 @@ public class BoardService {
     public BoardService() {}
     
     //게시판 목록 조회
-    public ArrayList<Article> getArticleList(String boardCd, String searchWord) {
+    public List<Article> getArticleList(String boardCd, String searchWord) {
         int startRownum = pagingHelper.getStartRecord();
         int endRownum = pagingHelper.getEndRecord();
         return dao.selectListOfArticles(boardCd, searchWord, startRownum, endRownum);
@@ -58,7 +58,7 @@ public class BoardService {
     }
 
     //첨부파일 리스트 조회(상세보기view.jsp)
-    public ArrayList<AttachFile> getAttachFileList(int articleNo) {
+    public List<AttachFile> getAttachFileList(int articleNo) {
         return dao.selectListOfAttachFiles(articleNo);
     }
     
@@ -88,7 +88,7 @@ public class BoardService {
     }
 
     //댓글 리스트 조회
-    public ArrayList<Comment> getCommentList(int articleNo) {
+    public List<Comment> getCommentList(int articleNo) {
         return dao.selectListOfComments(articleNo);
     }
 

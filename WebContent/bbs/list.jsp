@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="net.java_school.board.*" %>
 <%@ page import="net.java_school.commons.PagingHelper" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ include file="../inc/loginCheck.jsp" %>
 <%
 request.setCharacterEncoding("UTF-8");
@@ -24,7 +24,7 @@ PagingHelper pagingHelper = new PagingHelper(totalRecord, curPage, numPerPage, p
 //BoardService에 PagingHelper 주입
 service.setPagingHelper(pagingHelper);
 
-ArrayList<Article> articleList = service.getArticleList(boardCd, searchWord);
+List<Article> articleList = service.getArticleList(boardCd, searchWord);
 String boardNm = service.getBoardNm(boardCd);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -73,9 +73,9 @@ function goWrite() {
     
     <div id="container">
 		<div id="content" style="min-height: 800px;">
-			<div id="url-navi">BBS</div>
 
 <!-- 본문 시작 -->
+<div id="url-navi">BBS</div>
 <h1><%=boardNm %></h1>
 <div id="bbs">
 	<table>

@@ -60,11 +60,11 @@ if (msg != null) {
 <table>
 <tr>
     <td style="width: 200px;">Email</td>
-    <td style="width: 390px"><input type="text" name="email" style="width: 99%;" value="goodgirl@heist.com" /></td>
+    <td style="width: 390px"><input type="text" name="email" style="width: 99%;" /></td>
 </tr>
 <tr>
     <td>비밀번호(Password)</td>
-    <td><input type="password" name="passwd" style="width: 99%;" value="1111" /></td>
+    <td><input type="password" name="passwd" style="width: 99%;" /></td>
 </tr>
 </table>
 <div style="text-align: center;padding: 15px 0;">

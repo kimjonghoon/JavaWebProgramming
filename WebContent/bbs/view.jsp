@@ -28,11 +28,11 @@ service.setPagingHelper(pagingHelper);
 service.increaseHit(articleNo);//조회수 1증가
 
 Article detailedArticle = service.getArticle(articleNo);//상세보기에서 볼 게시글
-ArrayList<AttachFile> attachFileList = service.getAttachFileList(articleNo);//첨부파일 목록
+List<AttachFile> attachFileList = service.getAttachFileList(articleNo);//첨부파일 목록
 Article nextArticle = service.getNextArticle(articleNo, boardCd, searchWord);//다음 글
 Article prevArticle = service.getPrevArticle(articleNo, boardCd, searchWord);//이전 글
-ArrayList<Article> articleList = service.getArticleList(boardCd, searchWord);//게시글 목록
-ArrayList<Comment> commentList = service.getCommentList(articleNo);//댓글 목록
+List<Article> articleList = service.getArticleList(boardCd, searchWord);//게시글 목록
+List<Comment> commentList = service.getCommentList(articleNo);//댓글 목록
 
 String boardNm = service.getBoardNm(boardCd);//게시판 이름
 
