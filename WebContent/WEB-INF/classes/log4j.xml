@@ -8,7 +8,7 @@
     <appender name="file" 
         class="org.apache.log4j.DailyRollingFileAppender">
         <param name="File" 
-            value="/home/kim/Lab/book/JSPProject/WebContent/WEB-INF/debug.log" />
+            value="/home/kim/Lab/book/JSPProject.log" />
         <param name="datePattern" value="'.'yyyy-MM-dd" />
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern"
