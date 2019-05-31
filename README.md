@@ -9,5 +9,5 @@ How to install
 
 Have to edit
  
-JSPProject/src/log4j.xml 
+/src/log4j.xml 
 &lt;param name="File"  value="{Full path of log file}"/&gt;
