@@ -12,7 +12,7 @@
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-		<spring.version>5.1.7.RELEASE</spring.version>
+		<spring.version>5.1.8.RELEASE</spring.version>
 		<spring.security.version>5.1.5.RELEASE</spring.security.version>
 		<jdk.version>11</jdk.version>
 	</properties>
@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>6.0.16.Final</version>
+			<version>6.0.17.Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
@@ -75,13 +75,13 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>2.0.1</version>
+			<version>2.0.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.5.1</version>
+			<version>3.5.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
 		<dependency>
@@ -92,21 +92,21 @@
 		<!-- Logging -->
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>2.11.2</version>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>2.12.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.2</version>
+			<version>2.12.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-jcl -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
-			<version>2.11.2</version>
+			<version>2.12.0</version>
 		</dependency>
 		<!-- File Upload -->
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -123,15 +123,15 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.9.9</version>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.10.0.pr1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.9</version>
+			<version>2.10.0.pr1</version>
 		</dependency>
 		<!-- Servlet JSP JSTL -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -167,15 +167,15 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.0</version>
 					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.eclipse.jetty</groupId>
 					<artifactId>jetty-maven-plugin</artifactId>
-					<version>9.4.10.v20180503</version>
+					<version>9.4.19.v20190610</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
