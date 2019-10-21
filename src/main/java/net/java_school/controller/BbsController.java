@@ -27,16 +27,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Controller
-@RequestMapping("/bbs")
+@RequestMapping("bbs")
 public class BbsController extends Paginator {
-	
+
 	@Autowired
 	private BoardService boardService;
 
@@ -54,7 +56,7 @@ public class BbsController extends Paginator {
 	}
 
 	//목록
-	@RequestMapping(value = "/{boardCd}", method = RequestMethod.GET)
+	@GetMapping("{boardCd}")
 	public String list(@CookieValue(value="numPerPage", defaultValue="10") String num, @PathVariable String boardCd, Integer page, String searchWord, Locale locale, Model model) {
 
 		if (page == null) {
@@ -81,15 +83,15 @@ public class BbsController extends Paginator {
 		map.put("end", endRecord.toString());
 		//Oracle end
 
-/*		        
+		/*		        
         //MySQL and MariaDB start
         Integer offset = (page - 1) * numPerPage;
         Integer rowCount = numPerPage;
         map.put("offset", offset.toString());
         map.put("rowCount", rowCount.toString());
         //MySQL and MariaDB end
-*/
-                
+		 */
+
 		List<Article> list = boardService.getArticleList(map);
 
 		Integer listItemNo = numbers.getListItemNo();
@@ -121,7 +123,7 @@ public class BbsController extends Paginator {
 	}
 
 	//상세보기
-	@RequestMapping(value = "/{boardCd}/{articleNo}", method = RequestMethod.GET)
+	@GetMapping("{boardCd}/{articleNo}")
 	public String view(@CookieValue(value="numPerPage", defaultValue="10") String num, @PathVariable String boardCd, @PathVariable Integer articleNo,
 			Integer page, String searchWord, Locale locale, HttpServletRequest req, Model model) {
 
@@ -196,15 +198,15 @@ public class BbsController extends Paginator {
 		map.put("end", endRecord.toString());
 		//Oracle end
 
-/*		       
+		/*		       
         //MySQL and MariaDB start
         Integer offset = (page - 1) * numPerPage;
         Integer rowCount = numPerPage;
         map.put("offset", offset.toString());
         map.put("rowCount", rowCount.toString());
         //MySQL and MariaDB end
-*/
-		
+		 */
+
 		List<Article> list = boardService.getArticleList(map);
 
 		int listItemNo = numbers.getListItemNo();
@@ -234,7 +236,7 @@ public class BbsController extends Paginator {
 	}
 
 	//글쓰기 양식
-	@RequestMapping(value = "/{boardCd}/new", method = RequestMethod.GET)
+	@GetMapping("{boardCd}/new")
 	public String writeForm(@PathVariable String boardCd, Locale locale, Model model) {
 		String lang = locale.getLanguage();
 		String boardName = this.getBoardName(boardCd, lang);
@@ -251,7 +253,7 @@ public class BbsController extends Paginator {
 	}
 
 	//글쓰기
-	@RequestMapping(value = "/{boardCd}", method = RequestMethod.POST)
+	@PostMapping("{boardCd}")
 	public String write(@Valid Article article,
 			BindingResult bindingResult,
 			@PathVariable String boardCd,
@@ -275,7 +277,7 @@ public class BbsController extends Paginator {
 		article.setEmail(principal.getName());
 
 		boardService.addArticle(article);
-		
+
 		//파일 업로드
 		Iterator<String> it = mpRequest.getFileNames();
 		List<MultipartFile> fileList = new ArrayList<>();
@@ -307,7 +309,7 @@ public class BbsController extends Paginator {
 	}
 
 	//수정 양식
-	@RequestMapping(value = "/{boardCd}/{articleNo}/edit", method = RequestMethod.GET)
+	@GetMapping("{boardCd}/{articleNo}/edit")
 	public String modifyForm(@PathVariable String boardCd, @PathVariable Integer articleNo, Locale locale, Model model) {
 
 		String lang = locale.getLanguage();
@@ -328,7 +330,7 @@ public class BbsController extends Paginator {
 	}
 
 	//수정
-	@RequestMapping(value = "/{boardCd}/{articleNo}", method = RequestMethod.POST)
+	@PostMapping("{boardCd}/{articleNo}")
 	public String modify(@Valid Article article,
 			BindingResult bindingResult,
 			@PathVariable String boardCd,
@@ -398,8 +400,7 @@ public class BbsController extends Paginator {
 
 	}
 
-	//게시글 삭제
-	@RequestMapping(value = "/{boardCd}/{articleNo}", method = RequestMethod.DELETE)
+	@DeleteMapping("/{boardCd}/{articleNo}")
 	public String deleteArticle(@PathVariable String boardCd, @PathVariable Integer articleNo, Integer page, String searchWord) {
 		Article article = boardService.getArticle(articleNo);
 		boardService.removeArticle(article);
@@ -413,7 +414,7 @@ public class BbsController extends Paginator {
 
 	}
 
-	@RequestMapping(value = "/deleteAttachFile", method = RequestMethod.POST)
+	@DeleteMapping("deleteAttachFile")
 	public String deleteAttachFile(Integer attachFileNo,
 			Integer articleNo,
 			String boardCd,

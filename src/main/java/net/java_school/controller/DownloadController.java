@@ -23,8 +23,8 @@ import net.java_school.commons.WebContants;
 
 @Controller
 public class DownloadController {
-	
-	@GetMapping("/data/{filename:.+}")
+
+	@GetMapping("data/{filename:.+}")
 	public ResponseEntity<InputStreamResource> download(@PathVariable String filename, HttpServletRequest req) throws IOException {
 
 		File file = new File(WebContants.UPLOAD_PATH + filename);
@@ -43,9 +43,9 @@ public class DownloadController {
 				.contentType(MediaType.APPLICATION_OCTET_STREAM).contentLength(file.length())
 				.body(resource);
 	}
-	
+
 	// I use this
-	@PostMapping("/data")
+	@PostMapping("data")
 	public void boardDataDownload(String filename, HttpServletRequest req, HttpServletResponse resp) {
 		OutputStream outputStream = null;
 

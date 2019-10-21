@@ -7,35 +7,35 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class LecturesController {
 
-	@GetMapping(value = "java/{article}")
+	@GetMapping("java/{article}")
 	public String getJavaPosts(@PathVariable String article) {
 		return "java/" + article;
 	}
-	@GetMapping(value = "jdbc/{article}")
+	@GetMapping("jdbc/{article}")
 	public String getJdbcPosts(@PathVariable String article) {
 		return "jdbc/" + article;
 	}
-	@GetMapping(value = "jsp/{article}")
+	@GetMapping("jsp/{article}")
 	public String getJspPosts(@PathVariable String article) {
 		return "jsp/" + article;
 	}
-	@GetMapping(value = "css-layout/{article}")
+	@GetMapping("css-layout/{article}")
 	public String getCssLayoutPosts(@PathVariable String article) {
 		return "css-layout/" + article;
 	}
-	@GetMapping(value = "jsp-pjt/{article}")
+	@GetMapping("jsp-pjt/{article}")
 	public String getJspProjectPosts(@PathVariable String article) {
 		return "jsp-pjt/" + article;
 	}
-	@GetMapping(value = "spring/{article}")
+	@GetMapping("spring/{article}")
 	public String getSpringPosts(@PathVariable String article) {
 		return "spring/" + article;
 	}
-	@GetMapping(value = "javascript/{article}")
+	@GetMapping("javascript/{article}")
 	public String getJavascriptPosts(@PathVariable String article) {
 		return "javascript/" + article;
 	}
-	@GetMapping(value = "google-app-engine/{article}")
+	@GetMapping("google-app-engine/{article}")
 	public String getGoogleAppEnginePosts(@PathVariable String article) {
 		return "google-app-engine/" + article;
 	}

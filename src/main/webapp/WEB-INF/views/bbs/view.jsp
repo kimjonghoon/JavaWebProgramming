@@ -205,7 +205,7 @@ $(document).on('click', '#all-comments', function (e) {
         var url = $form.attr("action");
         $.ajax({
             url: url,
-            type: 'POST',
+            type: 'PUT',
             data: dataToBeSent,
             success: function () {
                 displayComments();
@@ -231,9 +231,9 @@ $(document).on('click', '#all-comments', function (e) {
             success: function () {
                 displayComments();
             },
-            error: function () {
-                alert('error!');
-            }
+            error:function(request,status,error){
+                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+               }
         });
     }
 });
@@ -241,7 +241,6 @@ $(document).on('click', '#all-comments', function (e) {
 </head>
 <body>
 <div id="wrap">
-
 	<div id="header">
 		<%@ include file="../inc/header.jsp" %>
 	</div>
@@ -430,24 +429,21 @@ $(document).on('click', '#all-comments', function (e) {
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="delete">
-        <input type="hidden" name="_method" value="DELETE" />
-    </sf:form>
-    <form id="deleteAttachFileForm" action="/bbs/deleteAttachFile" method="post">
+    <sf:form id="deleteAttachFileForm" action="/bbs/deleteAttachFile" method="delete">
         <input type="hidden" name="attachFileNo" />
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="boardCd" value="${boardCd }" />
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    </form>
-    <form id="downForm" action="/data" method="post">
+    </sf:form>
+    <sf:form id="downForm" action="/data" method="post">
         <input type="hidden" name="filename" />
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    </form>
+    </sf:form>
     <sf:form id="modifyCommentForm" method="put">
-        <input type="hidden" name="_method" value="PUT" />
         <input type="hidden" name="memo" />
+    </sf:form>
+    <sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="post">
+    	<input type="hidden" name="_method" value="delete" />
     </sf:form>
 </div>
 <!-- content end -->

@@ -17,144 +17,145 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.context.MessageSource;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UsersController {
 
-    @Autowired
-    private UserService userService;
+	@Autowired
+	private UserService userService;
 
-    @Autowired
-    private MessageSource messageSource;
-    
-    @RequestMapping(value = "/signUp", method = RequestMethod.GET)
-    public String signUp(Model model) {
-        model.addAttribute(WebContants.USER_KEY, new User());
+	@Autowired
+	private MessageSource messageSource;
 
-        return "users/signUp";
-    }
+	@GetMapping("signUp")
+	public String signUp(Model model) {
+		model.addAttribute(WebContants.USER_KEY, new User());
 
-    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public String signUp(@Valid User user, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "users/signUp";
-        }
+		return "users/signUp";
+	}
 
-        String authority = "ROLE_USER";
-        userService.addUser(user);
-        userService.addAuthority(user.getEmail(), authority);
+	@PostMapping("signUp")
+	public String signUp(@Valid User user, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			return "users/signUp";
+		}
 
-        return "redirect:/users/welcome";
-    }
+		String authority = "ROLE_USER";
+		userService.addUser(user);
+		userService.addAuthority(user.getEmail(), authority);
 
-    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
-    public String welcome() {
-        return "users/welcome";
-    }
+		return "redirect:/users/welcome";
+	}
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "users/login";
-    }
+	@GetMapping("welcome")
+	public String welcome() {
+		return "users/welcome";
+	}
 
-    @RequestMapping(value = "/editAccount", method = RequestMethod.GET)
-    public String editAccount(Principal principal, Model model) {
-        User user = userService.getUser(principal.getName());
-        model.addAttribute(WebContants.USER_KEY, user);
+	@GetMapping("login")
+	public String login() {
+		return "users/login";
+	}
 
-        return "users/editAccount";
-    }
+	@GetMapping("editAccount")
+	public String editAccount(Principal principal, Model model) {
+		User user = userService.getUser(principal.getName());
+		model.addAttribute(WebContants.USER_KEY, user);
 
-    @RequestMapping(value = "/editAccount", method = RequestMethod.POST)
-    public String editAccount(@Valid User user, BindingResult bindingResult, Principal principal, Locale locale) {
+		return "users/editAccount";
+	}
 
-        if (bindingResult.hasErrors()) {
-            return "users/editAccount";
-        }
+	@PostMapping("editAccount")
+	public String editAccount(@Valid User user, BindingResult bindingResult, Principal principal, Locale locale) {
 
-        user.setEmail(principal.getName());
-        try {
-            userService.editAccount(user);
-        } catch (AccessDeniedException e) {
-            String message =  messageSource.getMessage("passwd.incorrect", null, locale);
-            throw new AccessDeniedException(message);
-        }    
+		if (bindingResult.hasErrors()) {
+			return "users/editAccount";
+		}
 
-        return "redirect:/users/changePasswd";
+		user.setEmail(principal.getName());
+		try {
+			userService.editAccount(user);
+		} catch (AccessDeniedException e) {
+			String message =  messageSource.getMessage("passwd.incorrect", null, locale);
+			throw new AccessDeniedException(message);
+		}    
 
-    }
+		return "redirect:/users/changePasswd";
 
-    @RequestMapping(value = "/changePasswd", method = RequestMethod.GET)
-    public String changePasswd(Principal principal, Model model) {
-        
-        User user = userService.getUser(principal.getName());
+	}
 
-        model.addAttribute(WebContants.USER_KEY, user);
-        model.addAttribute("password", new Password());
+	@GetMapping("changePasswd")
+	public String changePasswd(Principal principal, Model model) {
 
-        return "users/changePasswd";
-    }
+		User user = userService.getUser(principal.getName());
 
-    @RequestMapping(value = "/changePasswd", method = RequestMethod.POST)
-    public String changePasswd(@Valid Password password,
-            BindingResult bindingResult,
-            Model model,
-            Principal principal,
-            Locale locale) {
+		model.addAttribute(WebContants.USER_KEY, user);
+		model.addAttribute("password", new Password());
 
-        if (bindingResult.hasErrors()) {
-            User user = userService.getUser(principal.getName());
-            model.addAttribute(WebContants.USER_KEY, user);
+		return "users/changePasswd";
+	}
 
-            return "users/changePasswd";
-        }
-        
-        try {
-            userService.changePasswd(password.getCurrentPasswd(), password.getNewPasswd(), principal.getName());
-        } catch (AccessDeniedException e) {
-            String message =  messageSource.getMessage("passwd.incorrect", null, locale);
-            throw new AccessDeniedException(message);
-        }    
+	@PostMapping("changePasswd")
+	public String changePasswd(@Valid Password password,
+			BindingResult bindingResult,
+			Model model,
+			Principal principal,
+			Locale locale) {
 
-        return "redirect:/users/changePasswd_confirm";
+		if (bindingResult.hasErrors()) {
+			User user = userService.getUser(principal.getName());
+			model.addAttribute(WebContants.USER_KEY, user);
 
-    }
+			return "users/changePasswd";
+		}
 
-    @RequestMapping(value = "/changePasswd_confirm", method = RequestMethod.GET)
-    public String changePasswd_confirm() {
-        return "users/changePasswd_confirm";
-    }
+		try {
+			userService.changePasswd(password.getCurrentPasswd(), password.getNewPasswd(), principal.getName());
+		} catch (AccessDeniedException e) {
+			String message =  messageSource.getMessage("passwd.incorrect", null, locale);
+			throw new AccessDeniedException(message);
+		}    
 
-    @RequestMapping(value = "/bye", method = RequestMethod.GET)
-    public String bye() {
-        return "users/bye";
-    }
+		return "redirect:/users/changePasswd_confirm";
 
-    @RequestMapping(value = "/bye", method = RequestMethod.POST)
-    public String bye(String email, String passwd, HttpServletRequest req, Locale locale) throws ServletException {
+	}
 
-        User user = new User();
-        user.setEmail(email);
-        user.setPasswd(passwd);
-        try {
-            userService.bye(user);
-        } catch (AccessDeniedException e) {
-            String message =  messageSource.getMessage("passwd.incorrect", null, locale);
-            throw new AccessDeniedException(message);
-        }
+	@GetMapping("changePasswd_confirm")
+	public String changePasswd_confirm() {
+		return "users/changePasswd_confirm";
+	}
 
-        req.logout();
+	@GetMapping("bye")
+	public String bye() {
+		return "users/bye";
+	}
 
-        return "redirect:/users/bye_confirm";
-    }
+	@PostMapping("bye")
+	public String bye(String email, String passwd, HttpServletRequest req, Locale locale) throws ServletException {
 
-    @RequestMapping(value = "/bye_confirm", method = RequestMethod.GET)
-    public String byeConfirm() {
-        return "users/bye_confirm";
-    }
+		User user = new User();
+		user.setEmail(email);
+		user.setPasswd(passwd);
+		try {
+			userService.bye(user);
+		} catch (AccessDeniedException e) {
+			String message =  messageSource.getMessage("passwd.incorrect", null, locale);
+			throw new AccessDeniedException(message);
+		}
+
+		req.logout();
+
+		return "redirect:/users/bye_confirm";
+	}
+
+	@GetMapping("bye_confirm")
+	public String byeConfirm() {
+		return "users/bye_confirm";
+	}
 
 }
