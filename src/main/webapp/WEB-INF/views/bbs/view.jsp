@@ -232,8 +232,10 @@ $(document).on('click', '#all-comments', function (e) {
                 displayComments();
             },
             error:function(request,status,error){
-                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-               }
+                console.log("code:" + request.status 
+                		+ "\n" + "message:" + request.responseText 
+                		+ "\n" + "error:" + error);
+            }
         });
     }
 });
@@ -439,12 +441,12 @@ $(document).on('click', '#all-comments', function (e) {
     <sf:form id="downForm" action="/data" method="post">
         <input type="hidden" name="filename" />
     </sf:form>
-    <sf:form id="modifyCommentForm" method="put">
+    <form id="modifyCommentForm">
         <input type="hidden" name="memo" />
-    </sf:form>
-    <sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="post">
-    	<input type="hidden" name="_method" value="delete" />
-    </sf:form>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    </form>
+	<sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="delete">
+	</sf:form>
 </div>
 <!-- content end -->
 		</div>

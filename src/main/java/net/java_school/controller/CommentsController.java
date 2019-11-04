@@ -26,7 +26,8 @@ public class CommentsController {
 	private BoardService boardService;
 
 	@GetMapping("{articleNo}")
-	public List<Comment> getAllComments(@PathVariable Integer articleNo, Principal principal, Authentication authentication) {
+	public List<Comment> getAllComments(@PathVariable Integer articleNo, 
+			Principal principal, Authentication authentication) {
 
 		List<Comment> comments = boardService.getCommentList(articleNo);
 
@@ -50,7 +51,8 @@ public class CommentsController {
 	}
 
 	@PostMapping("{articleNo}")
-	public void addComment(String memo, @PathVariable Integer articleNo, Principal principal) {
+	public void addComment(@PathVariable Integer articleNo, 
+			String memo, Principal principal) {
 		Comment comment = new Comment();
 		comment.setMemo(memo);
 		comment.setArticleNo(articleNo);
@@ -60,7 +62,8 @@ public class CommentsController {
 	}
 
 	@PutMapping("{articleNo}/{commentNo}")
-	public void updateComment(String memo, @PathVariable Integer articleNo, @PathVariable Integer commentNo, Principal principal) {
+	public void updateComment(@PathVariable Integer articleNo, 
+			@PathVariable Integer commentNo, String memo, Principal principal) {
 		Comment comment = boardService.getComment(commentNo);
 		comment.setMemo(memo);
 		boardService.modifyComment(comment);
@@ -68,7 +71,6 @@ public class CommentsController {
 
 	@DeleteMapping("{articleNo}/{commentNo}")
 	public void deleteComment(@PathVariable Integer articleNo, @PathVariable Integer commentNo) {
-		System.out.println("테스트1127");
 		Comment comment = boardService.getComment(commentNo);
 		boardService.removeComment(comment);
 	}
