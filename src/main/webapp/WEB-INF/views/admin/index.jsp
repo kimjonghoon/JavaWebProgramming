@@ -48,9 +48,9 @@ $(document).ready(function() {
 <table class="bbs-table">
     <tr>
         <th style="text-align: left;">No</th>
-        <th style="text-align: left;"><spring:message code="user.full.name" /></th>
-        <th style="text-align: left;"><spring:message code="user.email" /></th>
-        <th style="text-align: left;"><spring:message code="user.mobile" /></th>
+        <th style="text-align: left;"><spring:message code="full.name" /></th>
+        <th style="text-align: left;"><spring:message code="email" /></th>
+        <th style="text-align: left;"><spring:message code="mobile" /></th>
         <th style="text-align: left;"><spring:message code="user.authorities" /></th>
         <th>&nbsp;</th>
     </tr>
@@ -62,8 +62,8 @@ $(document).ready(function() {
             <td>${user.mobile }</td>
             <td>${user.authorities }</td>
             <td>
-                <a href="/admin/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="global.modify" /></a> |
-                <a href="#" title="${user.email }" class="del-user-link"><spring:message code="global.delete" /></a>
+                <a href="/admin/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
+                <a href="#" title="${user.email }" class="del-user-link"><spring:message code="delete" /></a>
             </td>
         </tr>
     </c:forEach>
@@ -71,7 +71,7 @@ $(document).ready(function() {
 <div id="paging">
     <c:if test="${prev > 0 }">
         <a href="/admin?page=1">1</a>
-        <a href="/admin?page=${prev }&search=${search }">[ <spring:message code="global.prev" /> ]</a>
+        <a href="/admin?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
     </c:if>
     <c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="stat">
         <c:choose>
@@ -84,14 +84,14 @@ $(document).ready(function() {
         </c:choose>
     </c:forEach>
     <c:if test="${next > 0 }">
-        <a href="/admin?page=${next }&search=${search }">[ <spring:message code="global.next" /> ]</a>
-        <a href="/admin?page=${totalPage }">[ <spring:message code="global.last" /> ]</a>
+        <a href="/admin?page=${next }&search=${search }">[ <spring:message code="next" /> ]</a>
+        <a href="/admin?page=${totalPage }">[ <spring:message code="last" /> ]</a>
     </c:if>
 </div>
 
 <form>
     <input type="hidden" name="page" value="1" />
-    <input type="text" name="search" /><input type="submit" value="<spring:message code="global.search" />" />
+    <input type="text" name="search" /><input type="submit" value="<spring:message code="search" />" />
 </form>
 
 <form id="delUserForm" action="/admin/delUser" method="post">

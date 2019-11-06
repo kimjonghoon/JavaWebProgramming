@@ -93,7 +93,7 @@ $(document).ready(function() {
         </tr>
     </table>
     <div>
-        <input type="submit" value="<spring:message code="global.submit" />" />
+        <input type="submit" value="<spring:message code="submit" />" />
     </div>
 </form>
 
@@ -116,7 +116,7 @@ $(document).ready(function() {
         </tr>
     </table>
     <div>
-        <input type="submit" value="<spring:message code="global.submit" />" />
+        <input type="submit" value="<spring:message code="submit" />" />
     </div>
 </form>
 <!-- content end -->

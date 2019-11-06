@@ -41,7 +41,7 @@ $(document).ready(function () {
             return false;
         }
         if (newPasswd !== confirmPasswd) {
-            alert('<spring:message code="user.changePasswd.passwd.validation" />');
+            alert('<spring:message code="changePasswd.passwd.validation" />');
             return false;
         }
         
@@ -67,8 +67,8 @@ $(document).ready(function () {
 	<div id="container">
 		<div id="content">	
 <!-- content begin -->
-<div id="content-categories"><spring:message code="user.membership" /></div>
-<h2><spring:message code="user.changePasswd.heading" /></h2>
+<div id="content-categories"><spring:message code="membership" /></div>
+<h2><spring:message code="changePasswd.heading" /></h2>
 <div>
     ${user.name }<br />
     ${user.mobile }<br />
@@ -76,25 +76,25 @@ $(document).ready(function () {
 <sf:form id="changePasswordForm" action="changePasswd" method="post" modelAttribute="password">
     <table>
         <tr>
-            <td><spring:message code="user.changePasswd.current.passwd" /></td>
+            <td><spring:message code="changePasswd.current.passwd" /></td>
             <td>
                 <sf:password path="currentPasswd" /><br />
                 <sf:errors path="currentPasswd" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="user.changePasswd.new.passwd" /></td>
+            <td><spring:message code="changePasswd.new.passwd" /></td>
             <td>
                 <sf:password path="newPasswd" /><br />
                 <sf:errors path="newPasswd" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="user.changePasswd.new.passwd.confirm" /></td>
+            <td><spring:message code="changePasswd.new.passwd.confirm" /></td>
             <td><input type="password" name="confirm" /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="<spring:message code="global.submit" />" /></td>
+            <td colspan="2"><input type="submit" value="<spring:message code="submit" />" /></td>
         </tr>
     </table>
 </sf:form>

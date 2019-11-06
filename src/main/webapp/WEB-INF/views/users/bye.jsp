@@ -51,21 +51,21 @@ $(document).ready(function() {
 	<div id="container">
 		<div id="content">	
 <!-- content begin -->
-<div id="content-categories"><spring:message code="user.membership" /></div>
-<h2><spring:message code="user.bye.heading" /></h2>
+<div id="content-categories"><spring:message code="membership" /></div>
+<h2><spring:message code="bye.heading" /></h2>
 <form id="byeForm" action="bye" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <table>
         <tr>
-            <td><spring:message code="user.email" /></td>
+            <td><spring:message code="email" /></td>
             <td><input type="text" name="email" /></td>
         </tr>
         <tr>
-            <td><spring:message code="user.password" /></td>
+            <td><spring:message code="password" /></td>
             <td><input type="password" name="passwd" /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="<spring:message code="global.submit" />" /></td>
+            <td colspan="2"><input type="submit" value="<spring:message code="submit" />" /></td>
         </tr>
     </table>
 </form>

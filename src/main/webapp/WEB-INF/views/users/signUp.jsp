@@ -80,22 +80,22 @@ $(document).ready(function() {
 	<div id="container">
 		<div id="content">	
 <!-- content begin -->
-<div id="content-categories"><spring:message code="user.membership" /></div>
+<div id="content-categories"><spring:message code="membership" /></div>
 
-<h2><spring:message code="user.signup.heading" /></h2>
+<h2><spring:message code="signup.heading" /></h2>
 
 <sf:form id="signUpForm" action="signUp" method="post" modelAttribute="user">
     <sf:errors path="*" cssClass="error" />
     <table style="width: 98%;">
         <tr>
-            <td style="width: 18%;"><spring:message code="user.full.name" /></td>
+            <td style="width: 18%;"><spring:message code="full.name" /></td>
             <td>
                 <sf:input path="name" style="width: 80%;" /><br />
                 <sf:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="user.password" /></td>
+            <td><spring:message code="password" /></td>
             <td>
                 <sf:password path="passwd" style="width: 80%;" /><br />
                 <sf:errors path="passwd" cssClass="error" />
@@ -103,22 +103,22 @@ $(document).ready(function() {
         </tr>
         <tr>
             <td colspan="2" style="text-align: center;font-weight: bold;">
-                <spring:message code="user.signup.warning" />
+                <spring:message code="signup.warning" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="global.confirm" /></td>
+            <td><spring:message code="confirm" /></td>
             <td><input type="password" name="confirm" style="width: 80%;" /></td>
         </tr>
         <tr>
-            <td><spring:message code="user.email" /></td>
+            <td><spring:message code="email" /></td>
             <td>
                 <sf:input path="email" style="width: 80%;" /><br />
                 <sf:errors path="email" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="user.mobile" /></td>
+            <td><spring:message code="mobile" /></td>
             <td>
                 <sf:input path="mobile" style="width: 80%;" /><br />
                 <sf:errors path="mobile" cssClass="error" />
@@ -126,7 +126,7 @@ $(document).ready(function() {
         </tr>
     </table>
     <div style="text-align: center;padding-bottom: 15px;">
-        <input type="submit" value="<spring:message code="global.submit" />" />
+        <input type="submit" value="<spring:message code="submit" />" />
     </div>
 </sf:form>
 <!-- content end -->

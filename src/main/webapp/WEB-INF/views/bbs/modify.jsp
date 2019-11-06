@@ -63,7 +63,7 @@ $(document).ready(function() {
 <!-- content begin -->
 <div id="content-categories">${boardName }</div>
 
-<h3><spring:message code="global.modify" /></h3>
+<h3><spring:message code="modify" /></h3>
 
 <sf:form id="modifyForm" action="/bbs/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <input type="hidden" name="page" value="${param.page }" />
@@ -71,7 +71,7 @@ $(document).ready(function() {
 <sf:errors path="*" cssClass="error"/>
 <table id="write-form" class="bbs-table">
 <tr>
-    <td><spring:message code="global.title" /></td>
+    <td><spring:message code="title" /></td>
     <td>
     	<sf:input path="title" style="width: 90%" value="${article.title }" /><br />
     	<sf:errors path="title" cssClass="error" />
@@ -84,13 +84,13 @@ $(document).ready(function() {
     </td>
 </tr>
 <tr>
-    <td><spring:message code="global.attach.file" /></td>
+    <td><spring:message code="attach.file" /></td>
     <td><input type="file" name="attachFile" /></td>
 </tr>
 </table>
 <div style="text-align: center;padding-bottom: 15px;">
-    <input type="submit" value="<spring:message code="global.submit" />" />
-    <input type="button" value="<spring:message code="bbs.back.to.article" />" id="goView" />
+    <input type="submit" value="<spring:message code="submit" />" />
+    <input type="button" value="<spring:message code="back.to.article" />" id="goView" />
 </div>
 </sf:form>
 		

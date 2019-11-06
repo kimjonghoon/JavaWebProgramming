@@ -100,15 +100,13 @@ function createCookie(name, value, days) {
             <td>
                 <a href="#" title="${article.articleNo }" class="view-link">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">
-                    <img src="/resources/images/attach.png" alt="<spring:message code="global.attach.file" />" style="vertical-align: middle;" />
+                    <img src="/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">
                     <span class="bbs-strong">[${article.commentNum }]</span>
                 </c:if>
             </td>
-            <td style="text-align: center;">
-                <fmt:formatDate pattern="yy.MM.dd" value="${article.regdate }" />
-            </td>
+            <td style="text-align: center;">${article.regdate }</td>
             <td style="text-align: center;">${article.hit }</td>
         </tr>
     </c:forEach>
@@ -118,8 +116,8 @@ function createCookie(name, value, days) {
 <div id="paging">
 
     <c:if test="${prevPage > 0 }">
-        <a href="#" title="1">[<spring:message code="global.first" />]</a>
-        <a href="#" title="${prevPage }">[<spring:message code="global.prev" />]</a>
+        <a href="#" title="1">[<spring:message code="first" />]</a>
+        <a href="#" title="${prevPage }">[<spring:message code="prev" />]</a>
     </c:if>
 
     <c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="stat">
@@ -134,21 +132,21 @@ function createCookie(name, value, days) {
     </c:forEach>
 
     <c:if test="${nextPage > 0 }">
-        <a href="#" title="${nextPage }">[<spring:message code="global.next" />]</a>
-        <a href="#" title="${totalPage }">[<spring:message code="global.last" />]</a>
+        <a href="#" title="${nextPage }">[<spring:message code="next" />]</a>
+        <a href="#" title="${totalPage }">[<spring:message code="last" />]</a>
     </c:if>
 
 </div>
 
 <div id="list-menu">
-    <input type="button" value="<spring:message code="bbs.new.article" />" id="write-btn" />
+    <input type="button" value="<spring:message code="new.article" />" id="write-btn" />
 </div>
 
 <form id="searchForm" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">
         <input type="text" name="searchWord" size="15" maxlength="30" />
-        <input type="submit" value="<spring:message code="global.search" />" />
+        <input type="submit" value="<spring:message code="search" />" />
     </div>
 </form>
 

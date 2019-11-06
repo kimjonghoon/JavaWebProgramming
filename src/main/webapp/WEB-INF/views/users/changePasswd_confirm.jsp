@@ -29,10 +29,10 @@
 	<div id="container">
 		<div id="content">	
 <!-- content begin -->
-<div id="content-categories"><spring:message code="user.membership" /></div>
-<h2><spring:message code="user.changePasswd.confirm.heading" /></h2>
-<spring:message code="user.changePasswd.confirm.login.again" />
-<input type="button" value="<spring:message code="user.login" />" onclick="javascript:location.href='login'" />
+<div id="content-categories"><spring:message code="membership" /></div>
+<h2><spring:message code="changePasswd.confirm.heading" /></h2>
+<spring:message code="changePasswd.confirm.login.again" />
+<input type="button" value="<spring:message code="login" />" onclick="javascript:location.href='login'" />
 <!-- content end -->
 		</div>
 	</div>

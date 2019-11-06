@@ -29,9 +29,9 @@
 	<div id="container">
 		<div id="content">	
 <!-- content begin -->
-<div id="content-categories"><spring:message code="user.membership" /></div>
-<h2><spring:message code="user.bye.heading" /></h2>
-<spring:message code="user.bye.content" />
+<div id="content-categories"><spring:message code="membership" /></div>
+<h2><spring:message code="bye.heading" /></h2>
+<spring:message code="bye.content" />
 <!-- content end -->
 		</div>
 	</div>

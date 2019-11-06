@@ -5,7 +5,6 @@ import java.net.URLEncoder;
 import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -161,7 +160,7 @@ public class BbsController extends Paginator {
 		//int hit = article.getHit();//조회수
 		String name = article.getName();//작성자 이름
 		String email = article.getEmail();//작성자 ID
-		Date regdate = article.getRegdate();//작성일
+		String dateTime = article.getDateTime();//작성일
 
 		//조회수 구하기 추가 2017.8.14
 		int hit = boardService.getTotalViews(articleNo);
@@ -171,7 +170,7 @@ public class BbsController extends Paginator {
 		model.addAttribute("hit", hit);
 		model.addAttribute("name", name);
 		model.addAttribute("email", email);
-		model.addAttribute("regdate", regdate);
+		model.addAttribute("dateTime", dateTime);
 		model.addAttribute("attachFileList", attachFileList);
 		model.addAttribute("nextArticle", nextArticle);
 		model.addAttribute("prevArticle", prevArticle);

@@ -51,21 +51,21 @@ $(document).ready(function () {
     <sf:errors path="*" cssClass="error" />
     <table>
         <tr>
-            <td><spring:message code="user.full.name" /></td>
+            <td><spring:message code="full.name" /></td>
             <td>
                 <sf:input path="name" value="${user.name }" /><br />
                 <sf:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td><spring:message code="user.mobile" /></td>
+            <td><spring:message code="mobile" /></td>
             <td>
                 <sf:input path="mobile" value="${users.mobile }" /><br />
                 <sf:errors path="mobile" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="<spring:message code="global.submit" />" /></td>
+            <td colspan="2"><input type="submit" value="<spring:message code="submit" />" /></td>
         </tr>
     </table>
 </sf:form>
@@ -79,14 +79,14 @@ $(document).ready(function () {
     <sf:errors path="*" cssClass="error" />
     <table>
         <tr>
-            <td><spring:message code="user.password" /></td>
+            <td><spring:message code="password" /></td>
             <td>
                 <sf:password path="passwd" /><br />
                 <sf:errors path="passwd" cssClass="error" />
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" value="<spring:message code="global.submit" />" /></td>
+            <td colspan="2"><input type="submit" value="<spring:message code="submit" />" /></td>
         </tr>
     </table>
 </sf:form>
@@ -114,7 +114,7 @@ $(document).ready(function () {
                     <option value="ROLE_USER" selected="selected">ROLE_USER</option>
                     <option value="ROLE_ADMIN">ROLE_ADMIN</option>
                 </select>
-                <input type="submit" value="<spring:message code="global.submit" />" />
+                <input type="submit" value="<spring:message code="submit" />" />
             </td>
         </tr>
     </table>

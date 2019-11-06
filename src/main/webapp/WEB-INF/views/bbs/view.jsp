@@ -30,15 +30,15 @@ function displayComments() {
             if (item.editable === true) {
                 comments = comments
                         + '<span class="modify-del">'
-                        + '<a href="#" class="comment-modify-link">' + '<spring:message code="global.modify" />' + '</a> | '
-                        + '<a href="#" class="comment-delete-link" title="' + item.commentNo + '">' + '<spring:message code="global.delete" />' + '</a>'
+                        + '<a href="#" class="comment-modify-link">' + '<spring:message code="modify" />' + '</a> | '
+                        + '<a href="#" class="comment-delete-link" title="' + item.commentNo + '">' + '<spring:message code="delete" />' + '</a>'
                         + '</span>';
             }
             comments = comments
                     + '<div class="comment-memo">' + item.memo + '</div>'
                     + '<form class="comment-form" action="/comments/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
                     + '<div style="text-align: right;">'
-                    + '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="global.submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="global.cancel" />' + '</a>'
+                    + '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
                     + '</div>'
                     + '<div>'
                     + '<textarea class="comment-textarea" name="memo" rows="7" cols="50">' + item.memo + '</textarea>'
@@ -259,19 +259,19 @@ $(document).on('click', '#all-comments', function (e) {
 <div class="view-menu" style="margin-top: 15px;margin-bottom: 5px;">
     <security:authorize access="#email == principal.username or hasAuthority('ROLE_ADMIN')">
         <div class="fl">
-            <input type="button" value="<spring:message code="global.modify" />" class="goModify" />
-            <input type="button" value="<spring:message code="global.delete" />" class="goDelete" />
+            <input type="button" value="<spring:message code="modify" />" class="goModify" />
+            <input type="button" value="<spring:message code="delete" />" class="goDelete" />
         </div>
     </security:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
-            <input type="button" value="<spring:message code="bbs.next.article" />" title="${nextArticle.articleNo }" class="next-article" />
+            <input type="button" value="<spring:message code="next.article" />" title="${nextArticle.articleNo }" class="next-article" />
         </c:if>
         <c:if test="${prevArticle != null }">        
-            <input type="button" value="<spring:message code="bbs.prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
+            <input type="button" value="<spring:message code="prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
         </c:if>        
-        <input type="button" value="<spring:message code="global.list" />" class="goList" />
-        <input type="button" value="<spring:message code="bbs.new.article" />" class="goWrite" />
+        <input type="button" value="<spring:message code="list" />" class="goList" />
+        <input type="button" value="<spring:message code="new.article" />" class="goWrite" />
     </div>
 </div>
 
@@ -282,14 +282,14 @@ $(document).on('click', '#all-comments', function (e) {
     </tr>
 </table>
 <div id="detail">
-    <div id="date-writer-hit">edited <fmt:formatDate pattern="yyyy.MM.dd HH:mm:ss" value="${regdate }" /> by ${name } hit ${hit }</div>
+    <div id="date-writer-hit">edited ${dateTime } by ${name } hit ${hit }</div>
     <div id="article-content">${content }</div>
     <div id="file-list" style="text-align: right">
         <c:forEach var="file" items="${attachFileList }" varStatus="status">
             <div id="attachfile${file.attachFileNo }" class="attach-file">
                 <a href="#" title="${file.filename }" class="download">${file.filename }</a>
                 <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
-                    <a href="#" title="${file.attachFileNo }"><spring:message code="global.delete" /></a>
+                    <a href="#" title="${file.attachFileNo }"><spring:message code="delete" /></a>
                 </security:authorize>
             </div>
         </c:forEach>
@@ -301,7 +301,7 @@ $(document).on('click', '#all-comments', function (e) {
         <textarea id="addComment-ta" name="memo" rows="7" cols="50"></textarea>
     </div>
     <div style="text-align: right;">
-        <input type="submit" value="<spring:message code="bbs.new.comments" />" />
+        <input type="submit" value="<spring:message code="new.comments" />" />
     </div>
 </sf:form>
 
@@ -312,29 +312,29 @@ $(document).on('click', '#all-comments', function (e) {
 
 <div class="next-prev">
     <c:if test="${nextArticle != null }">
-        <p><spring:message code="bbs.next.article" /> : <a href="#" title="${nextArticle.articleNo }">${nextArticle.title }</a></p>
+        <p><spring:message code="next.article" /> : <a href="#" title="${nextArticle.articleNo }">${nextArticle.title }</a></p>
     </c:if>
     <c:if test="${prevArticle != null }">
-        <p><spring:message code="bbs.prev.article" /> : <a href="#" title="${prevArticle.articleNo }">${prevArticle.title }</a></p>
+        <p><spring:message code="prev.article" /> : <a href="#" title="${prevArticle.articleNo }">${prevArticle.title }</a></p>
     </c:if>
 </div>
 
 <div class="view-menu" style="margin-bottom: 47px;">
     <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
         <div class="fl">
-            <input type="button" value="<spring:message code="global.modify" />" class="goModify" />
-            <input type="button" value="<spring:message code="global.delete" />" class="goDelete" />
+            <input type="button" value="<spring:message code="modify" />" class="goModify" />
+            <input type="button" value="<spring:message code="delete" />" class="goDelete" />
         </div>
     </security:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
-            <input type="button" value="<spring:message code="bbs.next.article" />" title="${nextArticle.articleNo }" class="next-article" />
+            <input type="button" value="<spring:message code="next.article" />" title="${nextArticle.articleNo }" class="next-article" />
         </c:if>
         <c:if test="${prevArticle != null }">        
-            <input type="button" value="<spring:message code="bbs.prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
+            <input type="button" value="<spring:message code="prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
         </c:if>        
-        <input type="button" value="<spring:message code="global.list" />" class="goList" />
-        <input type="button" value="<spring:message code="bbs.new.article" />" class="goWrite" />
+        <input type="button" value="<spring:message code="list" />" class="goList" />
+        <input type="button" value="<spring:message code="new.article" />" class="goWrite" />
     </div>
 </div>
 
@@ -352,7 +352,7 @@ $(document).on('click', '#all-comments', function (e) {
             <td style="text-align: center;">
                 <c:choose>
                     <c:when test="${articleNo == article.articleNo }">	
-                        <img src="/resources/images/arrow.gif" alt="<spring:message code="global.here" />" />
+                        <img src="/resources/images/arrow.gif" alt="<spring:message code="here" />" />
                     </c:when>
                     <c:otherwise>
                         ${listItemNo - status.index }
@@ -362,13 +362,13 @@ $(document).on('click', '#all-comments', function (e) {
             <td>
                 <a href="#" title="${article.articleNo }">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">		
-                    <img src="/resources/images/attach.png" alt="<spring:message code="global.attach.file" />" style="vertical-align: middle;" />
+                    <img src="/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">		
                     <span class="bbs-strong">[${article.commentNum }]</span>
                 </c:if>		
             </td>
-            <td style="text-align: center;"><fmt:formatDate pattern="yy.MM.dd" value="${article.regdate }" /></td>
+            <td style="text-align: center;">${article.regdate }</td>
             <td style="text-align: center;">${article.hit }</td>
         </tr>
     </c:forEach>
@@ -376,8 +376,8 @@ $(document).on('click', '#all-comments', function (e) {
 
 <div id="paging">
     <c:if test="${prevPage > 0 }">
-        <a href="#" title="1">[<spring:message code="global.first" />]</a>
-        <a href="#" title="${prevPage }">[<spring:message code="global.prev" />]</a>
+        <a href="#" title="1">[<spring:message code="first" />]</a>
+        <a href="#" title="${prevPage }">[<spring:message code="prev" />]</a>
     </c:if>
 
     <c:forEach var="i" begin="${firstPage }" end="${lastPage }">
@@ -392,20 +392,20 @@ $(document).on('click', '#all-comments', function (e) {
     </c:forEach>
 
     <c:if test="${nextPage > 0 }">	
-        <a href="#" title="${nextPage }">[<spring:message code="global.next" />]</a>
-        <a href="#" title="${totalPage }">[<spring:message code="global.last" />]</a>
+        <a href="#" title="${nextPage }">[<spring:message code="next" />]</a>
+        <a href="#" title="${totalPage }">[<spring:message code="last" />]</a>
     </c:if>
 </div>
 
 <div id="list-menu">
-    <input type="button" value="<spring:message code="bbs.new.article" />" />
+    <input type="button" value="<spring:message code="new.article" />" />
 </div>
 
 <form id="searchForm" action="/bbs/${boardCd }/" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">
         <input type="text" name="searchWord" size="15" maxlength="30" />
-    <input type="submit" value="<spring:message code="global.search" />" />
+    <input type="submit" value="<spring:message code="search" />" />
     </div>
 </form>
 

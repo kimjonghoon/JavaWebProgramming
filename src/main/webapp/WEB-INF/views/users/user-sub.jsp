@@ -8,19 +8,19 @@
     <security:authentication property="principal.username" var="check" />
 </security:authorize>
 
-<h1><spring:message code="user.membership" /></h1>
+<h1><spring:message code="membership" /></h1>
 <ul>
     <c:choose>
         <c:when test="${empty check}">
-            <li><a href="/users/login"><spring:message code="user.login" /></a></li>
-            <li><a href="/users/signUp"><spring:message code="user.signup" /></a></li>
-            <li><a href="#"><spring:message code="user.forgot.id" /></a></li>
-            <li><a href="#"><spring:message code="user.forgot.pw" /></a></li>
+            <li><a href="/users/login"><spring:message code="login" /></a></li>
+            <li><a href="/users/signUp"><spring:message code="signup" /></a></li>
+            <li><a href="#"><spring:message code="forgot.id" /></a></li>
+            <li><a href="#"><spring:message code="forgot.pw" /></a></li>
         </c:when>
         <c:otherwise>
-            <li><a href="/users/editAccount"><spring:message code="user.modify.account" /></a></li>
-            <li><a href="/users/changePasswd"><spring:message code="user.change.password" /></a></li>
-            <li><a href="/users/bye"><spring:message code="user.bye" /></a></li>
+            <li><a href="/users/editAccount"><spring:message code="modify.account" /></a></li>
+            <li><a href="/users/changePasswd"><spring:message code="change.password" /></a></li>
+            <li><a href="/users/bye"><spring:message code="bye" /></a></li>
         </c:otherwise>
 	</c:choose>
 </ul>
