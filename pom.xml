@@ -151,8 +151,8 @@
 	</dependencies>
 
     <!-- $ mvn jetty:run -->
-<!--     
-	<build>
+    
+<!-- 	<build>
 		<finalName>JavaWebProgrammingFinalSource</finalName>
 		<pluginManagement>
 			<plugins>
@@ -173,10 +173,9 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build>
--->	
+	</build> -->
     <!-- $ mvn compile war:inplace and run tomcat -->
- 
+
 	<build>
 		<pluginManagement>
 			<plugins>
