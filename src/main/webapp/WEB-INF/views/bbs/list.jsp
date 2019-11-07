@@ -94,6 +94,7 @@ function createCookie(name, value, days) {
         <th style="width: 60px;">HIT</th>
     </tr>
     <!--  bbs list begin-->
+    <c:set var="locale" value="${pageContext.response.locale }" />
     <c:forEach var="article" items="${list }" varStatus="status">
         <tr>
             <td style="text-align: center;">${listItemNo - status.index}</td>
@@ -106,7 +107,15 @@ function createCookie(name, value, days) {
                     <span class="bbs-strong">[${article.commentNum }]</span>
                 </c:if>
             </td>
-            <td style="text-align: center;">${article.regdate }</td>
+            <c:set var="writeDate" value="${article.regdate }"/>
+<%
+Object locale = pageContext.getAttribute("locale");
+java.text.DateFormat df = 
+	java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
+Object writeDate = pageContext.getAttribute("writeDate");
+pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
+%>
+            <td style="text-align: center;">${writeDate }</td>
             <td style="text-align: center;">${article.hit }</td>
         </tr>
     </c:forEach>

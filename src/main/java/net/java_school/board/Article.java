@@ -1,8 +1,5 @@
 package net.java_school.board;
 
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -84,12 +81,8 @@ public class Article {
 		this.hit = hit;
 	}
 
-	public String getDateTime() {
-		return regdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
-	}
-
-	public String getRegdate() {
-		return regdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
+	public Date getRegdate() {
+		return regdate;
 	}
 
 	public void setRegdate(Date regdate) {

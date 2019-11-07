@@ -282,7 +282,7 @@ $(document).on('click', '#all-comments', function (e) {
     </tr>
 </table>
 <div id="detail">
-    <div id="date-writer-hit">edited ${dateTime } by ${name } hit ${hit }</div>
+    <div id="date-writer-hit">edited ${regdate } by ${name } hit ${hit }</div>
     <div id="article-content">${content }</div>
     <div id="file-list" style="text-align: right">
         <c:forEach var="file" items="${attachFileList }" varStatus="status">
@@ -346,7 +346,7 @@ $(document).on('click', '#all-comments', function (e) {
         <th style="width: 84px;">DATE</th>
         <th style="width: 60px;">HIT</th>
     </tr>
-
+	<c:set var="locale" value="${pageContext.response.locale }" />
     <c:forEach var="article" items="${list }" varStatus="status">        
         <tr>
             <td style="text-align: center;">
@@ -368,7 +368,16 @@ $(document).on('click', '#all-comments', function (e) {
                     <span class="bbs-strong">[${article.commentNum }]</span>
                 </c:if>		
             </td>
-            <td style="text-align: center;">${article.regdate }</td>
+            <c:set var="writeDate" value="${article.regdate }"/>
+<%
+Object locale = pageContext.getAttribute("locale");
+java.text.DateFormat df = 
+	java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
+Object writeDate = pageContext.getAttribute("writeDate");
+pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
+%>           
+            <td style="text-align: center;">${writeDate }</td>
+            
             <td style="text-align: center;">${article.hit }</td>
         </tr>
     </c:forEach>
