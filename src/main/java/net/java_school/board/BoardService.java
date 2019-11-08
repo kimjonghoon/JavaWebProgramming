@@ -96,10 +96,6 @@ public interface BoardService {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     public Comment getComment(int commentNo);
 
-    //댓글 editable 세팅
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public void setEditableTrue(List<Comment> comments);
-
     //조회수 for 상세보기
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     public int getTotalViews(int articleNo);

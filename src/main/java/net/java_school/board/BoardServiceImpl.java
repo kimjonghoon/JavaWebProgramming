@@ -167,14 +167,6 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.selectOneComment(commentNo);
     }
 
-    //댓글 editable를 true로 세팅
-    @Override
-    public void setEditableTrue(List<Comment> comments) {
-        for (Comment comment : comments) {
-            comment.setEditable(true);
-        }
-    }
-
     //조회수 for 상세보기
     @Override
     public int getTotalViews(int articleNo) {

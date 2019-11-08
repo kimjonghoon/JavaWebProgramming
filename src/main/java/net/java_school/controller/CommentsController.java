@@ -32,18 +32,31 @@ public class CommentsController {
 		List<Comment> comments = boardService.getCommentList(articleNo);
 
 		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+		boolean isAdmin = false;
+		
 		for (GrantedAuthority authority : authorities) {
 			String role = authority.getAuthority();
 			if (role.equals("ROLE_ADMIN")) {
-				boardService.setEditableTrue(comments);
-				return comments;
+				isAdmin = true;
+				break;
 			}
 		}
 
-		String username = principal.getName();
-		for (Comment comment : comments) {
-			if (comment.getEmail().equals(username)) {
+		if (isAdmin) {
+			for (Comment comment : comments) {
 				comment.setEditable(true);
+				comment.setEmail(null);
+			}
+		} else {
+			String username = principal.getName();
+			for (Comment comment : comments) {
+				if (comment.getEmail().equals(username)) {
+					comment.setEditable(true);
+				}
+			}
+			for (Comment comment : comments) {
+				comment.setEmail(null);
 			}
 		}
 
