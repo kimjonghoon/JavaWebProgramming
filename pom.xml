@@ -13,7 +13,7 @@
 	
 	<properties>
 		<spring.version>5.2.1.RELEASE</spring.version>
-		<spring.security.version>5.2.0.RELEASE</spring.security.version>
+		<spring.security.version>5.2.1.RELEASE</spring.security.version>
 		<jdk.version>11</jdk.version>
 	</properties>
 	
@@ -151,7 +151,7 @@
 	</dependencies>
 
     <!-- $ mvn jetty:run -->
-    
+<!--     
 	<build>
 		<finalName>JavaWebProgrammingFinalSource</finalName>
 		<pluginManagement>
@@ -174,8 +174,9 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	 -->
     <!-- $ mvn compile war:inplace and run tomcat -->
-<!-- 
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -206,5 +207,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
- -->
+
 </project>
