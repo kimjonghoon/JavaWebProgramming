@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>6.1.1.Final</version>
+			<version>6.1.2.Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
@@ -81,7 +81,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.5.3</version>
+			<version>3.5.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
 		<dependency>
@@ -174,8 +174,8 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build> -->
-	
+	</build>
+	 -->
 	<!-- $ mvn compile war:inplace and run tomcat -->
 	<build>
 		<pluginManagement>
