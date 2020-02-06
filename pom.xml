@@ -13,7 +13,7 @@
 	
 	<properties>
 		<spring.version>5.2.3.RELEASE</spring.version>
-		<spring.security.version>5.2.1.RELEASE</spring.security.version>
+		<spring.security.version>5.2.2.RELEASE</spring.security.version>
 		<jdk.version>11</jdk.version>
 	</properties>
 	
@@ -152,7 +152,7 @@
 
 	<!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
 	<!-- $ mvn jetty:run -->
-<!-- 	
+	
 	<build>
 		<finalName>JavaWebProgrammingFinalSource</finalName>
 		<pluginManagement>
@@ -175,9 +175,9 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	 -->
+	
 	<!-- $ mvn compile war:inplace and run tomcat -->
-	<build>
+<!-- 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -206,5 +206,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build>
+	</build> -->
 </project>
