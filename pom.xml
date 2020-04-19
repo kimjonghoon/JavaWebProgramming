@@ -12,8 +12,8 @@
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-		<spring.version>5.2.3.RELEASE</spring.version>
-		<spring.security.version>5.2.2.RELEASE</spring.security.version>
+		<spring.version>5.2.5.RELEASE</spring.version>
+		<spring.security.version>5.3.1.RELEASE</spring.security.version>
 		<jdk.version>11</jdk.version>
 	</properties>
 	
@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>6.1.2.Final</version>
+			<version>6.1.4.Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
@@ -75,7 +75,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>2.0.3</version>
+			<version>2.0.4</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -94,19 +94,19 @@
 		<dependency>
 		    <groupId>org.apache.logging.log4j</groupId>
 		    <artifactId>log4j-api</artifactId>
-		    <version>2.13.0</version>
+		    <version>2.13.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.13.0</version>
+			<version>2.13.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-jcl -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-jcl</artifactId>
-			<version>2.13.0</version>
+			<version>2.13.1</version>
 		</dependency>
 		<!-- File Upload -->
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -125,7 +125,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.10.2</version>
+			<version>2.10.3</version>
 		</dependency>
 		<!-- Servlet JSP JSTL -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -170,13 +170,15 @@
 				<plugin>
 					<groupId>org.eclipse.jetty</groupId>
 					<artifactId>jetty-maven-plugin</artifactId>
-					<version>9.4.26.v20200117</version>
+					<version>9.4.28.v20200408</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-	</build>
-	 -->
+	</build> 
+-->
+	
 	<!-- $ mvn compile war:inplace and run tomcat -->
+ 	
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -207,4 +209,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
 </project>
