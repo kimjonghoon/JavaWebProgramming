@@ -11,7 +11,7 @@
     </select>
 
     <select id="selectAllBoard" resultType="Board">
-        SELECT * FROM board
+        SELECT * FROM board order by boardcd
     </select>
 
     <update id="updateBoard" parameterType="Board">
