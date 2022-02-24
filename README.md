@@ -187,8 +187,7 @@ SpringBbs
  
 > mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.2.0 -Dpackaging=jar
 
-(You can download ojdbc6.jar from http://www.oracle.com/technetwork/apps-tech/jdbc-112010-090769.html)
-
+(You can download ojdbc6.jar from https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc6/11.2.0.4/)
 ### 3.Modify the **fileName** in log4j.xml
 
 > &lt;File name="A1" fileName="**/home/kim/logs/A1.log**" append="false"&gt;
