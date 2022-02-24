@@ -48,12 +48,12 @@ public class BbsController extends Paginator {
 		Board board = boardService.getBoard(boardCd);
 
 		switch (lang) {
-		case "en":
-			return board.getBoardNm();
-		case "ko":
-			return board.getBoardNm_ko();
-		default:
-			return board.getBoardNm();
+			case "en":
+				return board.getBoardNm();
+			case "ko":
+				return board.getBoardNm_ko();
+			default:
+				return board.getBoardNm();
 		}
 	}
 
@@ -77,22 +77,20 @@ public class BbsController extends Paginator {
 		map.put("boardCd", boardCd);
 		map.put("searchWord", searchWord);
 
-
+		/*
 		//Oracle start
 		Integer startRecord = (page - 1) * numPerPage + 1;
 		Integer endRecord = page * numPerPage;
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
-
-		/*		        
-        //MySQL and MariaDB start
-        Integer offset = (page - 1) * numPerPage;
-        Integer rowCount = numPerPage;
-        map.put("offset", offset.toString());
-        map.put("rowCount", rowCount.toString());
-        //MySQL and MariaDB end
-		 */
+		*/
+		//MySQL and MariaDB start
+		Integer offset = (page - 1) * numPerPage;
+		Integer rowCount = numPerPage;
+		map.put("offset", offset.toString());
+		map.put("rowCount", rowCount.toString());
+		//MySQL and MariaDB end
 
 		List<Article> list = boardService.getArticleList(map);
 
@@ -163,7 +161,7 @@ public class BbsController extends Paginator {
 		//int hit = article.getHit();//조회수
 		String name = article.getName();//작성자 이름
 		String email = article.getEmail();//작성자 ID
-		
+
 		Date date = article.getRegdate();
 		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
 		String regdate = df.format(date);
@@ -197,22 +195,21 @@ public class BbsController extends Paginator {
 		map.put("searchWord", searchWord);
 
 
-
+		/*
 		//Oracle start
 		Integer startRecord = (page - 1) * numPerPage + 1;
 		Integer endRecord = page * numPerPage;
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
+		*/
 
-		/*		       
-        //MySQL and MariaDB start
-        Integer offset = (page - 1) * numPerPage;
-        Integer rowCount = numPerPage;
-        map.put("offset", offset.toString());
-        map.put("rowCount", rowCount.toString());
-        //MySQL and MariaDB end
-		 */
+		//MySQL and MariaDB start
+		Integer offset = (page - 1) * numPerPage;
+		Integer rowCount = numPerPage;
+		map.put("offset", offset.toString());
+		map.put("rowCount", rowCount.toString());
+		//MySQL and MariaDB end
 
 		List<Article> list = boardService.getArticleList(map);
 
@@ -397,13 +394,13 @@ public class BbsController extends Paginator {
 		searchWord = URLEncoder.encode(searchWord, "UTF-8");
 
 		return "redirect:/bbs/"
-		+ boardCd
-		+ "/"
-		+ articleNo
-		+ "?page="
-		+ page
-		+ "&searchWord="
-		+ searchWord;
+			+ boardCd
+			+ "/"
+			+ articleNo
+			+ "?page="
+			+ page
+			+ "&searchWord="
+			+ searchWord;
 
 	}
 
@@ -413,11 +410,11 @@ public class BbsController extends Paginator {
 		boardService.removeArticle(article);
 
 		return "redirect:/bbs/"
-		+ boardCd
-		+ "?page="
-		+ page
-		+ "&searchWord="
-		+ searchWord;
+			+ boardCd
+			+ "?page="
+			+ page
+			+ "&searchWord="
+			+ searchWord;
 
 	}
 
@@ -434,13 +431,13 @@ public class BbsController extends Paginator {
 		searchWord = URLEncoder.encode(searchWord, "UTF-8");
 
 		return "redirect:/bbs/"
-		+ boardCd
-		+ "/"
-		+ articleNo
-		+ "?page="
-		+ page
-		+ "&searchWord="
-		+ searchWord;
+			+ boardCd
+			+ "/"
+			+ articleNo
+			+ "?page="
+			+ page
+			+ "&searchWord="
+			+ searchWord;
 
 	}
 
