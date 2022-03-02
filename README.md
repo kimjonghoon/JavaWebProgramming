@@ -83,7 +83,7 @@ SpringBbs
 	CREATE UNIQUE INDEX ix_authorities ON authorities(email, authority); 
 	
 	-- for test records
-	insert into board values ('chat', 'Chat', '수다');
+	insert into board values ('chat', 'Chat', '자유 게시판');
 	
 	commit;
 	
@@ -168,9 +168,6 @@ SpringBbs
 	    constraint PK_ATTACHFILE PRIMARY KEY(attachfileno)
 	);
 	
-	insert into board values ('chat','Chat','수다');
-	commit;
-	
 	create table views (
 	  no int primary key AUTO_INCREMENT,
 	  articleNo int,
@@ -178,6 +175,9 @@ SpringBbs
 	  yearMonthDayHour char(10),
 	  unique key (articleNo, ip, yearMonthDayHour)
 	);
+	
+	insert into board values ('chat','Chat','자유 게시판');
+	commit;
 
 ## Have to do
 ### 1.Modify the **UPLOAD_PATH** in WebContants.java
@@ -217,7 +217,6 @@ if you want use jetty plugin, edit pom.xml and run $ **mvn jetty:run**.
 ### 1. applicationContext.xml
 
 Comment out Oracle datasource.
-Comment out MariaDB datasource.
 
 ### 3. AdminController.java
 
