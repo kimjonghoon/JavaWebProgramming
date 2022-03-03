@@ -157,3 +157,5 @@ nbdist/
 .nb-gradle/
 nbactions.xml
 
+### classes folder ###
+classes/
