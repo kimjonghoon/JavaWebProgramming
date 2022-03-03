@@ -3,8 +3,8 @@ SpringBbs
 
 ## A Bulletin Board Program with 
 * Spring MVC
-* MyBatis-Spring
 * Spring-Security
+* MyBatis-Spring
 * Bean Validation
 * i18n
 * Apache Tiles
@@ -277,4 +277,4 @@ Comment out Oracle datasource.
 ## for Admin Test
 After sign up, add admin role as following.
 
-	insert into authorities values ('user email','ROLE_ADMIN');	
+	insert into authorities values ('User Email','ROLE_ADMIN');	
