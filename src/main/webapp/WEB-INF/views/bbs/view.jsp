@@ -205,7 +205,7 @@ $(document).on('click', '#all-comments', function (e) {
         var url = $form.attr("action");
         $.ajax({
             url: url,
-            type: 'PUT',
+            type: 'POST',
             data: dataToBeSent,
             success: function () {
                 displayComments();
@@ -450,12 +450,11 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
     <sf:form id="downForm" action="/data" method="post">
         <input type="hidden" name="filename" />
     </sf:form>
-    <form id="modifyCommentForm">
-        <input type="hidden" name="memo" />
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    </form>
-	<sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="delete">
-	</sf:form>
+    <sf:form id="modifyCommentForm" method="put">
+    	<input type="hidden" name="memo" />
+    </sf:form>
+    <sf:form id="deleteCommentForm" action="/comments/${articleNo }/" method="delete">
+    </sf:form>
 </div>
 <!-- content end -->
 		</div>
