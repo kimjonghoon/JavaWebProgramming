@@ -7,224 +7,168 @@
 <h2 class="floatstop">JDK 인스톨러 다운로드</h2>
 
 <p>
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br /> 
-<img src="https://lh3.googleusercontent.com/sNU6sxTFqx5KRGyidv06RHlJEBPXdCGhYhNCUY9DIgK_BA4WRUqdfg5EbqF_eofNSgC8n8Sy7Y0vrJ6lpBa9K1b0OF_CgEqsF6aEqKyIPWHWnTYIZG-gItHqx8WRBT15vkoXxszLDSYw4HyzBJ6LKZIbveqKQqoerLy8PLFcWZFNgqEm2j_FFhebgjWJjGTR6tRRq9jq2UHfno83bMWYllyXfJoCyC_LzY19G2W2o8y1t0S7QnRZe_dd3ZRKH-U9CZ3DbaMDtvbjRPezRslZ9rk6ty4-32DLbqeSSzNctlXt9wm57nSxUmKOf5sVhHdluOVN2V6wGhfQIgevVNu5RZamPK4PW5fOq2HTOuvRX1tuYOxA3zw7N8eYryq3QNyz_I4eMKJPxNy80ucKnz6B8Eo3nFKIykxbI3bUXIelYj0aatoQri5tE1rxhTlmX1Wytis1pvLH0y585gqw-HvmbYX092yX-pTFagMyS91NLAdIT8IuYCnI3xPP1yu-9aQxOttj7NWCSx3yhUFMtiG0TfL4iuE65cxlCgtN466QsyX9YKnUwENcsliGM73AIWUY6IpENgUE3S2e2V3x-YAakhi4FKxIrqDSPm38ZcJ-juQqy7qvMjqgLby1y57uWbez5btEVDg284VZIHiddOfElJA8=w511-h233-no" alt="JDK 11" /><br />
-<img src="https://lh3.googleusercontent.com/ZlCYcuo0b8f4IUShYt72dBLbanYXz-kRfShk_Hqjs2kYPzBH3Ri-HVxNAennvz0gEjS6u0wOtB6YYV7Vxs5fOphOsulijSzryGyA-U1Dxg4Tb1oYI-j7FGOu1QG19tFAZREYceoJPIyYrK58CQSj9sy6PUvgjRMRza4NRDomJef7i7TKXh_FKSyPMSTX39XFWbGVQl4fXVK3P1iRHYSQvJY777Hx5cil_8iqpyuKi46QZm6lYAtzPPmpwxLHOkrr5fjTRAgILUwDhHlWUGLXLtZsxgYnhLO1iXAZ-BIEvA-ubV1aspBhDr8NomYmEuuXt4h8zVNmDc4EF5uljUZUjnaWALRHP4_-g8zws8ui2Iu7-g8DqhxCGnC74e0Y-JKT0J85yG8Opb4Ce8NTjdaN2l8jZNCVwmqw1fmXkuMbW9Y3mMBichkiQ9MBHiDL3t94-MQPHHfIpk0kKFBUJ46katqdBXReoUWDmbRuBF5XeJvSbKv3lQL7zUyKOf1geuTXiJQe4ExjVrbjD1neZ045UPHThF9kpJhixB-OnIPpttyfEPyAIBb-MLEklZeVbN0TK-O0FT-Eh0_u_r5LyY4d-DJT4MclaRhfOnhyKr4qxGskDde0CB8eSW7_uGJGJKyBLnJWxg7-GqruzjW6y3co0HCF=w555-h267-no" alt="Windows Java 11 Installer" /><br />
-자바 9부터 32 비트 윈도 시스템은 지원하지 않는다.<br />
-32 비트 윈도 시스템은 자바 8 최신 버전을 설치한다.
+<a href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a> 
 </p>
 
 <p>
-내려받은 파일을 실행하고, Next 버튼을 계속 클릭하면 JDK를 설치할 수 있다.<br />
+<img src="https://lh3.googleusercontent.com/NPFI5WCRekGIjG8sYrKP4rIDrsSwCw0ETc9LyjYFJzv_00BrXZ7pYKe-f4kqK9mORF9Si2XBYx81NSPsl19DvazAM87Uqw4OpF2gj9egANGS0MeCZKdZVTeWuJz2gdNlDor3Xvfj3y0L77JU_arerf4jq26o1p1GwtJMLt87-P4_x80bVg6zW2AG90fgDeB7bQZpK_LehwJ0NNGfcUqOX-53UK1ZWIsUlvvZyVFY8CPZ988n4FW4IrExv1H8WfSU7vvI13iVFcGJCpps40d-Cm7ypmPwQe6KM5cSt40ZyRR7iwq9kRtBcPwzTskZkRot3aaue_WLYAAH7YulF4CTpaJjdD5OPK2d28UdlRVhMkPYHbwq7o-FHNxMM9bRzzURC0zMd3YbYY79AtAz9T5u5jclcaZnZ8DTn1T0E8Bb0mhS4_RO1bRl5aygLmjFN7S5zjtCJDHKBF7YmwPVLHJTeKIvZzK_keHg9vAmn_BALWlVtrfmLelMjaR0xDkK9uGs7AwUKaKx-PjnE7n_plyyjFGcpPr2nlOE51cEGgxKccAUlaKRlpO_4RmDTvN6YD_8dhY0gkek5NUuoKLhGJ30K-90OIhhxSMilYnQHof4WxBf-8cGiF4j8cLVsxHiOcjnfuLJQLyuH_Uua2p4Pf4n59zzlQnQ4niiiNzsbCPeKifqNaohXCsmnSgBDyBquNq-p8OyJrWn93LitJrn9Opip7SF=w1194-h889-no?authuser=0" alt="JDK latest version" />
+</p>
+
+<div class="explain">
+<b>Note:</b>
+자바 9부터 32 비트 윈도 시스템은 지원하지 않는다.<br />
+32 비트 시스템은 자바 8 최신 버전을 설치한다.
+</div>
+
+<p>
+공식 사이트에서 x64 Installer를 내려받는다.
+내려받은 파일을 실행하고, Next 버튼을 계속 클릭하면 JDK를 설치한다.
 JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <h3>Path 환경변수에 JDK의 bin 디렉터리 추가</h3>
 
 <p>
-제어판에서 시스템을 선택한다.<br />
-고급<sup>Advanced</sup> 탭에서 환경 변수<sup>Environment Variables</sup> 버튼을 클릭한다.<br />
-<img src="https://lh3.googleusercontent.com/-zcZel2n21yk/VYDNqu5CxGI/AAAAAAAACMs/zIwc6Mz6__8optVwJUZnakdVUcAb6ostQCCo/s483/System-Properties_Advanced.png" alt="시스템 속성 창" /><br />
-사용자 변수<sup>User Varialbes</sup>의 New 버튼을 클릭한다.
+윈도 10의 경우, 시작 메뉴를 마우스 오른쪽 버튼으로 클릭한 후 '시스템(Y)'을 선택한다.
 </p>
-
-<!-- Environment Variables box start -->
-<div class="environment-variables">
-<div class="environment-variables-header">Environment Variables</div>
-<fieldset>
-<legend>User variables for JohnDoe</legend>
-<table>
-<tr>
-	<th style="width: 30%;">Variable</th>
-	<th>Value</th>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-</table>
-<div class="environment-variables-buttons">
-	<input type="button" value="New" style="border: 3px solid red;" />
-	<input type="button" value="Edit" />
-	<input type="button" value="Delete" />
-</div>
-</fieldset>
-
-<fieldset>
-<legend>System variables</legend>
-<table>
-<tr>
-	<th style="width: 30%;">Variable</th>
-	<th>Value</th>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td>&nbsp;</td>
-</tr>
-</table>
-<div class="environment-variables-buttons">
-	<input type="button" value="New" />
-	<input type="button" value="Edit" />
-	<input type="button" value="Delete" />
-</div>
-</fieldset>
-<div class="environment-variables-ok-cancel-buttons">
-	<input type="button" value="OK" />
-	<input type="button" value="Cancel" />
-</div>
-</div>
-<!-- Environment Variables box end -->
-<p>
-아래와 같이 JAVA_HOME 환경 변수를 생성한다.<br />
-값은 윈도 탐색기를 이용하여 JDK 설치 디렉터리를 붙여넣는다.
-</p>
-
-<!-- New User Variable JAVA_HOME start -->
-<div class="new-user-variable">
-<div class="new-user-variable-header">New User Variable</div>
-<table>
-<tr>
-	<td style="width: 30%;">Variable name:</td>
-	<td><input type="text" name="user-variable-name" value="JAVA_HOME" style="width: 90%;" /></td>
-</tr>
-<tr>
-	<td>Variable value:</td>
-	<td><input type="text" name="user-variable-value" value="C:\Program Files\Java\jdk-11.0.2" style="width: 90%;" /></td>
-</tr>
-</table>
-<div class="environment-variables-ok-cancel-buttons">
-	<input type="button" value="OK" />
-	<input type="button" value="Cancel" />
-</div>
-</div>
-<!-- New User Variable end -->
 
 <p>
-다시 사용자 변수의 New 버튼을 클릭하고 Path 환경 변수를 생성한다.<br />
-값에 <b>%JAVA_HOME%\bin</b>을 입력한다.
+<img src="https://lh3.googleusercontent.com/r7P8_xbqIofwoVvNhEKcNQEDOyaQINiGvVYY9k3N9WejVyZXNqoHIC5YYF9PIJDC-Oc94oOvjnSnXi9eV2LSmHumMOjVJCHqB9G6CUEBFKwDN20ixS5G0L942FZ0TgN-hZbCW3FJLWZzIW9yE74rzj_4Hd-gElBACOpS73j1uDs_fYq22b1PElO_ePeHfUDNLCL7V2mKY1P_mLqFMPQPYl8tV1ZCM9SmnKBUHq9m4ZbEuWm04Z6TUd4a8ypvfsPV9d5mUYAhfL1QplyhuHjFGUfuZnHgp42QjDOGYKdEMu7B3M39DDvLmQngqO3rfXLJ0ZIja6Pg6_qXVw2MHL7ERR99m70cd8Bq4d6fmbF6qdGBxpvqEjEnNoNCJmpzpGMJcbAt5ZctL6OsM0SdVDZBOoaAo-SiBMgf0N0gKzyUdaPSgZMpePKay38muMbddvk4qfNeCeLs1aad9KZjt9kNr78aUsxMGqg49Lw4zwy67S4bPh3zt0iQbdurFVbRx5zr7F09EYsV0Yi_ymk2fGlRDyA2izhqglA0HBw5KN2ttO4ZtlUpJwvIvj9KhcwhwhqOzOxqI2n5muflCUlzskN2lqI-HtWqINxMnbelylnMV9sp3DTpSO12cd3cZUlJS2zfbADpYKScDmC-BWJUK67EZH_yR_D6uTZO8MN2SEAISUl1t9wi9yXwYp-8-uxfM4o5FCbO5XVbpyVGaGA8k_Ot65b5=w509-h631-no?authuser=0" alt="System" />
 </p>
-
-<!-- New User Variable Path start -->
-<div class="new-user-variable">
-<div class="new-user-variable-header">New User Variable</div>
-<table>
-<tr>
-	<td style="width: 30%;">Variable name:</td>
-	<td><input type="text" name="user-variable-name" value="Path" style="width: 90%;" /></td>
-</tr>
-<tr>
-	<td>Variable value:</td>
-	<td><input type="text" name="user-variable-value" value="%JAVA_HOME%\bin" style="width: 90%;" /></td>
-</tr>
-</table>
-<div class="environment-variables-ok-cancel-buttons">
-	<input type="button" value="OK" />
-	<input type="button" value="Cancel" />
-</div>
-</div>
-<!-- New User Variable end -->
-<!--
-<div>
-<div style="font-size: 11px;position: relative;top: 147px;left: 135px;">C:\Program Files\Java\jdk-10.0.1</div>
-<img src="https://lh3.googleusercontent.com/62L-4j6Aha7ckpW3ZrKJYO4Z3hJ5pCSRxivtfTXLZchGEn-n3UBhInrKiUmRyjFr7rZA7UrxB_C-qGIe8awKu5EUqmrPaFefXGe1GYFjaUqqncsgYHzCpvF9nPySr23JDRt4cwzKzYxQ6bMItHfRRlFPzaA8dD7U8i_l7Z8o3qC4P9VmRZhYjsqfM5ybnbrvGon_IyeKji9CYSC-CX3z8lwgGp4Y2l3IMFbbGiSGyiEG-jj3rdg1yAm9OvmHR9xB37CtrSrNnrHpe35RCVKy_1946KJlcFM9CziPu5Besy5ScWC8e8Au_rF3-TicR6hA-r5LdhIX00skYZIzzQexd-VY7pBVAsfDip8ADPXc81g8Zw8n3UsBbIUy_mEdpzv9HqZsi73S2VOvIsNKq8uKD1UAgyn0Ta28FK8CtV33gx-jLWPZ7FQSJ060jhdDo3-zBiyXm5GAIAqMavtFtJz6NJe1JVSLn-Z8ye3lcMKk2XvpoCesVtfegxPLquSjTLhHaYlU9OvZRsZZ0vHrbHth3uX7Q13nlQ8uBbVr0gh1YJRp-Vya9u2I1TvRD9uz1e44HOzQgO7KcaMC144NW_dqMUVGk_4XPUFRgYfL898=w379-h424-no" alt="시스템 속청 창" />
-</div>
 
 <p>
-시스템 변수<sup>System Varialbes</sup>에서 Path를 선택하고 편집<sup>Edit</sup> 버튼을 클릭한다.<br />
-기존 Path 값 뒤에 <strong>;%JAVA_HOME%\bin</strong>을 추가한다.<br />
-<img src="https://lh3.googleusercontent.com/-iOuENrZbFAc/VYDNqqHl9zI/AAAAAAAACMg/BhZ60DJrp1EjfSclW23kNc6-y7fCzcAEgCCo/s493/add-jdk-bin-path.png" alt="%JAVA_HOME%\bin added in Path" /><br />
+'고급 시스템 설정' 선택
 </p>
--->
-<dl class="note">
-<dt>Path</dt>
-<dd>
-사용자 변수 Path 값은 시스템 변수 Path에 추가된다.<br />
-윈도 운영체제는 실행 프로그램을 시스템 변수 Path에 추가된 디렉터리에서 찾는다.<br />
-Path에 JDK의 bin 폴더를 추가하면, 어느 디렉터리에서나 JDK의 bin에 있는 윈도 실행 프로그램(javac.exe, java.exe, jar.exe 등)을 실행할 수 있다.<br />
-Path에 JDK의 bin 폴더를 추가하지 않았다면, 컴파일할 때 javac.exe 윈도 실행 프로그램이 있는 경로로 이동하여 실행해야 한다.<br />
-<pre><strong>C:\Program Files\Java\jdk-11.0.2\bin</strong>&gt;javac C:\Users\Test.java</pre>
-Path 환경변수는 명령 프롬프트에서 다음 명령으로 확인할 수 있다.
-<pre><strong>echo %Path%</strong></pre>
-</dd>
-<dt>
-세미콜론 (;)은 윈도 시스템에서 Path 환경 변수의 값을 구분할 때 사용된다.<br />
-유닉스 계열은 콜론(:)을 사용한다.
-</dt>
-</dl>
+
+<p>
+<img src="https://lh3.googleusercontent.com/6-rkB0XujleuNLYZfI2Ajlt2fid3bZv5LGqNAC61dxt2dMNbVHPR1h3FkqqZRdyvuEfn5xQfwe57S0ow61P59owRSVBORwozj3zOJsVXVn596xqq9dORoOZKuObwTKnyymiitFHjm_gtRunIsGp-JyGcq8MoubmHdsYh2tK7-8bxTjBhPXcBxSH_W4tVB45DumdzcCq4DyEQcq0QfGh5jk88HZMpbOymsC0TBG8XFlTcERnhxeDs6YspSyW0WnhxHSXT1xKnu7MnTw1BXiDzjX0Nu9PyrAhkFoBYVo9RBOQ1NRJtdy_QIBlIlIwH0fwpp2NOrCmgn4Nj_uc-wLTm9eyY01rZnUq4Hh_fc1-qu2bMKTwiW6ziz3L7nUYs0gf52C3aIQzM58jiXVniggTLDtLHF2Gr58JPZT6guEHS3VAvIwbHifKycG0vZHOeuNfXplGVW1wD9krLPDj-xhNujOAzmw8KL90XSjyYtz8NWtRc_9rlNJpHo1_FfVjpRtMVgP_23jiXgYvKn2emrN4c9uEOxaNII-oPNYWmtXXBEB6hmdfvJZVNkDLGvhwVEXYkimSuces2xAB3xl7aezK14x5qOkEdlBxandwbYWG8JfIt5z3el7eLafSw3VIsNsMubD6C3q0hpn_aC15cSwKjFy5VOPcqe32LdaoA-OLCAoOnCGnWrk9drjuJHb0TmAkVxUC3bcTygH4eX9WnOkJ0yzMp=w1042-h344-no?authuser=0" alt="고급 시스템 설정" />
+<p>
+
+<p>
+'고급' 탭에서 '환경 변수(N)' 클릭 
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/JJyvk_75ZPtE6NaOF2A-Kzs0BVk44wQuAb9kvSMEPqg-twL76FYFIT37FuiprTLFj8JIuOJsrzY3yzAI7A2F8LOZ7gUskEpbZZLTpClrekHAoAsFUCrHXcJCYIqVoa_5qJnlCbCEfkHiGEIU0PYc7ZlqSeXhcfG-Lyjv-7mAuROdDR4JVMFxG73IASYesG-KRDLUCl78hreTXtNzSsh7F3KlPbHzRSv3XcRVlvpdV0cpTiRg4dC9cVcHJO1Rq7NukdbLRzepW9QM2rbM9f9Ek6utEI_-Ub2bP3EBfgYgf4oCShZIjXDKWlvZtViwzKbaUe28nMxwGTPhHIuoaw8HLcHoYtO62cl0y5uUXd5teJQWWzL9IFUNuPKY5AAWjGgAZTRUzcLNkGWCRErc0UpfNyiNxWRiOkZqn0e5UNRFn0tteQw4EhcBtm4q99Fx1JAw8Rd12OP2tthrKDy1Oh8MtXSgOI4BYgSq9iDmwN5qvcOc5G0NwMGymlwwrH6XpDmZdN70uaDr1-fWmVjKHAUjGWYvFKBWU0VPXiZosMGvRfHp1ZC_KQOos3WONi1jhmyxn51Se9eZqIlK9LUursHrp925QrOkHUYTO7aRNT62_wEgNTp8CAl-2gQw8-lo7uwEGKccqWmkZ2h65Or5ttRIS1hawv788WdyUPa54rGaq9Nl1RxM5sQADXGZld2n_2_F-Muag7uLTLpYNs8IezvD5kNc=w481-h535-no?authuser=0" alt="환경 변수" />
+</p>
+
+<p>
+사용자 변수(U)의 '새로 만들기(N)' 버튼 클릭
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/UhxnkXOpx0JoYnaPY0265pwBSQkQ4vS4rDnMGWiyO2a5apuxrMlXzEsYlOFqVBTwh1c9jJCeRY-VBfd0exm7a30f8xzpkIzOGbgy3JS1cFrzEcGgOA2expgAbVaMTees39p0lhqug6P1dLEtaOCo_FUK2XO-cGyxhv24DlTDFX7RlfftjECXTIY6BgR8KPW3xShSMZnKPwaaoH6bMup77UPOKn25-5ADTSPdnlNXSufXK3Pl79saB06zfiH_LzKiiG67vn58sWBbroQ5eotzgWgVkD8i-exJM-MOuOztuZJ6Ji-TyHZl7JWCq5SZEVs6yKvnKlTUMv3A2A-RdC4W4-_Xshq98QBeGCEPrL4VVhEH9IqcPhwv3CWax6Eaq37LcysduJsUNzTkwpX39UUNIOXEi5TdINkr9S1qNSB77lH1HjKpL9DJreKlyK_h_FECMrKmOIqW6qeMfrodErD6A8SrjZ9yEWuL6mM3AiCpZ_OjQfwRI0f87LuhnkmCpkoEABnu67wU4iLRSLAt1LTeJVYSQKAySAQg2a8RXqX5d9XsBN6trMmikoGpAe9hLt3h6YAOyGlpeK1TF5R7wdrMdoGSm9_HNFM3zd2h4hHMWD5yc2UoqSqlIQYHED4tU10rEq--Q9RB5ReQ0qy-dS16WyjyynbA8qVzC_aZiUbfnXats4RZHSVgNizW-ZzQUzSKKnHmcIkHUICyfnHm0Uf2KiG-=w478-h517-no?authuser=0" alt="사용자 변수(U)의 새로 만들기(N) 버튼" />
+</p>
+
+<p>
+변수 이름(N)에 JAVA_HOME, 변수 값(V)에 '디렉터리 찾아보기(D)'로 자바가 설치된 디렉터리 입력 
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/tuSsQrP-iKoFoOKO-i3DgDKs78rnrsN1C7-o8zjTRNcRc_WgnmN7kKOi1f-bv4hT9zMRGMBdL-41i6VMM-g3H1rc_TnsBaFV9Q70zRarEwg57gYJ1wZTsN5lE4fVV6776IRm3QBUwUhZTalh8T0vTzfcn0lAArxA3HgJhqesG7zKofZmShN79Qd3hgFEZ7XwoUcvE4LaBFtaIobsgQOjS_np12k77D1E7YuIVJL2wKPb6UDFc9kLp8_iPGPwhz1UsNpqJ65uGWPDgU9D3fD2LPawPvXwR-3Sj1mTtlP1P5x0zJjrAHqLw0zUiMJ3HlgDObjB9TQwsXcR2WwlZYSlICw7HR1nFCS75ovcQoB1qHNVBXhPldmiNF6lLpTVhjFV4pz6UHJ-PrIrhKzIDci8nHLRQfBbDliLUIB0jWzgsyS_2WwTzI5gsABe_ycM2qaMco49Yfg6vfnTKtZFOGOizE9QMGsZrsrpXkfrStwAjzPo4kLdSI3TJDnacV3EFC2XfsuASV1eOmn4K-OKyKgprNdCs6r1YWXfo5mzbU90CkT-W0PT4LGWORyTu_2tRWy_GXcEONC4_Us85jndkc3wYWNmuy21dGS5ifrzI7YUHthC-w7frNQcftK1_LJHw5lTd3xZggTh4EVQOqUGQVTnNSwlkx8kWrejMUuexxSP80TaQ7x3bHXNCvpJzWb_8eAy8Je8Qmmum30ArgVg2SQdBlLBnzWaK5KS9V7g322-zXBodF4vTGwV--p_ohGrJw=w555-h165-no?authuser=0" alt="JAVA_HOME" />
+</p>
+
+<p>
+사용자 변수(U) 목록에서 Path 선택하고 '편집(E)' 버튼 클릭 
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/pnmvQn_5hDnJtYJNvss3ouh-kKxgrHdMX0cL20nG0DvRH-76bMPD7fFOWGbx9gYpg193Z-nrpfFljQSUtBXf5zJ86TdXPuji_8sAnK3IgB18GcmILxmJScRDuEZzOz62ZNifj7pTsZaF-NBgO5-72vmInOap4NjG8K5aaXy-JxzpSqcXzPN863SrtO5UZiIFFRFcdk0_6qrY_F4_7NipVjEZjuqPmRwsQFocRSYw_aezR2j0pmANshmv4nvNPwyGHhnTabupUn-ku5xVyeTM-fzR1PALRGxCAYqB8I7QWKwjmEXcSv-KtUl73E7w0NV1GfvDL63tJsBl5_mL8rcT4AFtUVTE3ARw_gzSfPTGBpg1yLEikzDUIb7NdiVwvpAi2ETp06NLaoAGyOzUSTJdc4coRnHHjMvKYDuIv0ICmSa6t_uZtduCDv5fUwcWQwaFkjdz940i1MTA2nSf16DUX0XOYlPss946hC97WiUfsNPJwf34bF3oELIyd5TspAleVfjfZ67sJoPrpGBri9uL-Zl681QAt9quLtynlhuWetKDLX4lcKob5tF3Zim23zK4EzRWkXU9xgR-WJgXrryp22-bcl6UdqMspytWOYOE1IpiGR5Mir7TOpw6rKRFJIiCYzVuOIMhGaBFXpH37xnDtphFP39vmXE8wOnG_aRHDWM20evmgTa71AD5fpHrhRqGDQMqc2H27wHS18gPEkswdknq=w468-h507-no?authuser=0" alt="Edit your Path" />
+</p>
+
+<p>
+'새로 만들기(N)' 버튼을 사용해 %JAVA_HOME%\bin 추가
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/eoKh0I3cfiW1o1NUv7YkuK5OBxeMSwKIB3pl3Lz-VcLEkvpi2Df-mKnoF5L-AillaECZOols5RL2uD-EoH2KoyWky7sIhT0e1ZT7R0gayQz2e9unQ5Op0-TVI40vDKxNi0sgXx6Vm9lOmO-I3nhnE-gAuXjgYJLQu7W0nTzmmYxpB4nCdmFbAiWX5SL1UwE6PWT3uqj9Niv8l3buT5SqRNodJe6K9G2jQgtfQ9zP-aJ2-QupdSaapTokxOfkZrDcIjtk-TM86Pch5Le7MmbKLpKxLheXFLsRbBWYF5Hy5sknSl-64hxZlQqiVAaFi0yN66p5Ey12hr_8p97n0rEkbmbG5D3OUAi0ftUvCsjs-JlXE5pEaUQrVXLnl6rrs3NU83Xz4V-7kgWQffN39O6HByXIQdvUXlkR85yCPmD21tLRjfx0AEyuhp3LJ3FSoqrOXK7eq8jejMEEXSHeuoQ6dl2MqNT-nM6k2hnwzdxXEhBbZ6E3vjfyJg5JFuth0kOtRGcY6vX4fhuS1_hylRpRPuOUAfC1InxQ5IQKTkBs-t-2ZJqsWrjocKkSeS5xql9f7XFfcOty4GVA6JzBkJWU039SkEfPn-LpvM4JQnZ63MVqWG4FM6FuYB4_7yOJQCFE7Hx6u4XAw18ovWA9trwxLBa0C91yagwfnqSL9cwzFOHQrcBgEtn46fNp2IXoNnEY8IDHWGX5xcxPNe-T4MePeKD6=w527-h434-no?authuser=0" alt="%JAVA_HOME%\bin" />
+</p>
+
+<div class="explain">
+<p>
+<b>Note:</b>
+사용자 변수 Path 값은 시스템 변수 Path에 추가된다. 윈도 운영 체제는 실행 프로그램을 시스템 변수 Path에 추가된 디렉터리에서 찾는다. Path에 JDK의 bin 디렉터리를 추가하면, 어느 디렉터리에서나 JDK의 bin에 있는 윈도 실행 프로그램(javac.exe, java.exe, jar.exe 등)을 실행할 수 있다. Path에 JDK의 bin 디렉터리를 추가하지 않았다면, 컴파일할 때 javac.exe 윈도 실행 프로그램이 있는 경로로 이동하여 실행해야 한다.
+</p>
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">C:\Program Files\Java\jdk-17.0.2\bin&gt;javac C:\Users\javaschool\Test.java
+</pre>
+<p>
+명령 프롬프트에서 echo %PATH%를 실행하면 설정된 Path를 확인할 수 있다.
+</p>
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">C:\Users\javaschool&gt;echo %PATH%
+C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\javaschool\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17.0.2\bin;
+</pre>
+<p>
+출력된 경로를 보면 세미콜론(;)으로 디렉터리를 구분하고 있음을 알 수 있다. 윈도 시스템에선 세미콜론을 환경 변수 구분자로 사용한다.
+</p>
+</div>
 
 <h2>테스트</h2>
+
+<p>
+명령 프롬프트를 열고 다음을 실행한다.
+</p>
+
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">C:\Users\javaschool&gt;notepad Test.java
+</pre>
+
+<p>
+파일을 저장한 후 다음을 입력한다.
+</p>
 
 <h6 class="src">Test.java</h6>
 <pre class="prettyprint">
 public class Test {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }
 </pre>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users&gt; javac Test.java
+<pre class="screen">C:\Users\javaschool&gt;javac Test.java
 
-C:\Users&gt; java Test
+C:\Users\javaschool&gt;java Test
 Hello World!
 </pre>
 
-<dl class="note">
-<dt>테스트 실패시 체크 리스트</dt>
-<dd>
-<pre>javac Test.java</pre>
-<p style="margin-bottom: 1em;">
-<strong>'javac'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.</strong><br />
-PATH 환경변수에 JDK의 bin 폴더를 추가되지 않았거나 잘못 추가된 경우이다.<br />
+<p>
+javac Test.java로 컴파일할 때, <em>'javac'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.'</em> 라는 에러는 Path 환경 변수에 JDK의 bin 디렉터리를 추가하지 않았거나 잘못 추가했을 때 발생한다.
 </p>
-<pre>java Test</pre>
-<p style="margin-bottom: 1em;">
-<strong>Exception in thread "main" java.lang.NoClassDefFoundError: Test</strong><br />
-Test.class 파일을 찾지 못했다는 메시지이다.<br />
-Test.class 파일이 없는 디렉터리에서 java Test를 실행할 때 이런 에러를 만난다.<br />
-클래스 파일이 없는 디렉터리에서 실행하려면 java.exe의 -cp 옵션을 사용한다.<br />
+
+<p>
+java Test로 실행할 때, <em>'Exception in thread "main" java.lang.NoClassDefFoundError: Test'</em> 에러는 자바가 Test.class 파일을 찾지 못할 때 발생한다.
 </p>
-<pre>C:\javawork&gt;java -cp C:\Users Test</pre>
-cp 옵션 다음은 클래스 파일이 있는 디렉터리다.<br />
-마지막 Test는 실행할 자바 클래스다.
-</dd>
-</dl>
+
+<p>
+Test.class 파일이 없는 디렉터리에서 java Test를 실행하면 같은 에러를 만난다. 클래스 파일(Test.class)이 없는 디렉터리에서 실행하려면, java 다음에 -classpath 또는 -cp를 입력한 후, 한 칸 띄고 클래스 파일이 있는 경로를 입력하고, 마지막에 실행할 클래스 이름을 입력해야 한다.
+</p>
+
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">C:\Users\javaschool&gt;cd ..
+
+C:\Users&gt;java -cp C:\Users\javaschool Test
+Hello World!
+</pre>
 
 <h2>에디터 선택</h2>
 
 <p>
 <a href="/java/Package_Modifiers">패키지와 접근자</a>까지 
 <a href="http://www.editplus.com/kr/">에디트플러스</a>나 
-<a href="https://notepad-plus-plus.org/download/v7.5.6.html">Notepad++</a>
+<a href="https://notepad-plus-plus.org">Notepad++</a>
 같은 단순한 에디터를 사용하는 게 좋다.<br />
-패키지와 접근자를 학습한 후에 이클립스를 사용한다.
+패키지와 접근자를 학습한 후에 <a href="https://www.eclipse.org">이클립스</a>를 사용한다.
 </p>
 
 </article>
-				<article>
+
+<article>
 <div id="next-prev">
-	
-		<ul>
-			<li>다음 : <a href="/java/Features">자바의 특징</a></li>
-		</ul>
-		
-	
+  <ul>
+    <li>다음 : <a href="/java/Features">자바의 특징</a></li>
+  </ul>
 </div>
 </article>

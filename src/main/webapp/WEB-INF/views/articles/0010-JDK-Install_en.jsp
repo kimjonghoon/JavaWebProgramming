@@ -5,11 +5,11 @@
 <h2 class="floatstop">Downloading the JDK installer</h2>
 
 <p>
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br />
-<img src="https://lh3.googleusercontent.com/sNU6sxTFqx5KRGyidv06RHlJEBPXdCGhYhNCUY9DIgK_BA4WRUqdfg5EbqF_eofNSgC8n8Sy7Y0vrJ6lpBa9K1b0OF_CgEqsF6aEqKyIPWHWnTYIZG-gItHqx8WRBT15vkoXxszLDSYw4HyzBJ6LKZIbveqKQqoerLy8PLFcWZFNgqEm2j_FFhebgjWJjGTR6tRRq9jq2UHfno83bMWYllyXfJoCyC_LzY19G2W2o8y1t0S7QnRZe_dd3ZRKH-U9CZ3DbaMDtvbjRPezRslZ9rk6ty4-32DLbqeSSzNctlXt9wm57nSxUmKOf5sVhHdluOVN2V6wGhfQIgevVNu5RZamPK4PW5fOq2HTOuvRX1tuYOxA3zw7N8eYryq3QNyz_I4eMKJPxNy80ucKnz6B8Eo3nFKIykxbI3bUXIelYj0aatoQri5tE1rxhTlmX1Wytis1pvLH0y585gqw-HvmbYX092yX-pTFagMyS91NLAdIT8IuYCnI3xPP1yu-9aQxOttj7NWCSx3yhUFMtiG0TfL4iuE65cxlCgtN466QsyX9YKnUwENcsliGM73AIWUY6IpENgUE3S2e2V3x-YAakhi4FKxIrqDSPm38ZcJ-juQqy7qvMjqgLby1y57uWbez5btEVDg284VZIHiddOfElJA8=w511-h233-no" alt="JDK 11" /><br />
-<img src="https://lh3.googleusercontent.com/ZlCYcuo0b8f4IUShYt72dBLbanYXz-kRfShk_Hqjs2kYPzBH3Ri-HVxNAennvz0gEjS6u0wOtB6YYV7Vxs5fOphOsulijSzryGyA-U1Dxg4Tb1oYI-j7FGOu1QG19tFAZREYceoJPIyYrK58CQSj9sy6PUvgjRMRza4NRDomJef7i7TKXh_FKSyPMSTX39XFWbGVQl4fXVK3P1iRHYSQvJY777Hx5cil_8iqpyuKi46QZm6lYAtzPPmpwxLHOkrr5fjTRAgILUwDhHlWUGLXLtZsxgYnhLO1iXAZ-BIEvA-ubV1aspBhDr8NomYmEuuXt4h8zVNmDc4EF5uljUZUjnaWALRHP4_-g8zws8ui2Iu7-g8DqhxCGnC74e0Y-JKT0J85yG8Opb4Ce8NTjdaN2l8jZNCVwmqw1fmXkuMbW9Y3mMBichkiQ9MBHiDL3t94-MQPHHfIpk0kKFBUJ46katqdBXReoUWDmbRuBF5XeJvSbKv3lQL7zUyKOf1geuTXiJQe4ExjVrbjD1neZ045UPHThF9kpJhixB-OnIPpttyfEPyAIBb-MLEklZeVbN0TK-O0FT-Eh0_u_r5LyY4d-DJT4MclaRhfOnhyKr4qxGskDde0CB8eSW7_uGJGJKyBLnJWxg7-GqruzjW6y3co0HCF=w555-h267-no" alt="Windows Java 11 Installer" /><br />
-Since Java 9, Oracle Java does not support 32-bit Windows systems.<br />
-Therefore, install the latest version of Java 8 on 32-bit Windows systems.
+<a href="https://www.oracle.com/java/technologies/downloads/">https://www.oracle.com/java/technologies/downloads/</a>
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/NPFI5WCRekGIjG8sYrKP4rIDrsSwCw0ETc9LyjYFJzv_00BrXZ7pYKe-f4kqK9mORF9Si2XBYx81NSPsl19DvazAM87Uqw4OpF2gj9egANGS0MeCZKdZVTeWuJz2gdNlDor3Xvfj3y0L77JU_arerf4jq26o1p1GwtJMLt87-P4_x80bVg6zW2AG90fgDeB7bQZpK_LehwJ0NNGfcUqOX-53UK1ZWIsUlvvZyVFY8CPZ988n4FW4IrExv1H8WfSU7vvI13iVFcGJCpps40d-Cm7ypmPwQe6KM5cSt40ZyRR7iwq9kRtBcPwzTskZkRot3aaue_WLYAAH7YulF4CTpaJjdD5OPK2d28UdlRVhMkPYHbwq7o-FHNxMM9bRzzURC0zMd3YbYY79AtAz9T5u5jclcaZnZ8DTn1T0E8Bb0mhS4_RO1bRl5aygLmjFN7S5zjtCJDHKBF7YmwPVLHJTeKIvZzK_keHg9vAmn_BALWlVtrfmLelMjaR0xDkK9uGs7AwUKaKx-PjnE7n_plyyjFGcpPr2nlOE51cEGgxKccAUlaKRlpO_4RmDTvN6YD_8dhY0gkek5NUuoKLhGJ30K-90OIhhxSMilYnQHof4WxBf-8cGiF4j8cLVsxHiOcjnfuLJQLyuH_Uua2p4Pf4n59zzlQnQ4niiiNzsbCPeKifqNaohXCsmnSgBDyBquNq-p8OyJrWn93LitJrn9Opip7SF=w1194-h889-no?authuser=0" alt="java latest version" />
 </p>
 
 <p>
@@ -20,10 +20,22 @@ The JDK is installed in "C:\Program Files\Java\jdk-<em>&lt;version&gt;</em>".
 <h3>Environment Variable</h3>
 
 <p>
-Click Start, then Control Panel, then System.<br />
-<img src="https://lh3.googleusercontent.com/-98m_YiFDhwU/V2SxgUU4K7I/AAAAAAAAC64/7KQ8b3Cpdbcuv7OWi746lg9RRkzvxJamACCo/s488/start-My_Computer-Properties.png" alt="System Properties" /><br />
-Select Advanced tab, then Click Environment Variables button.<br />
-<img src="https://lh3.googleusercontent.com/-zcZel2n21yk/VYDNqu5CxGI/AAAAAAAACMs/zIwc6Mz6__8optVwJUZnakdVUcAb6ostQCCo/s483/System-Properties_Advanced.png" alt="System Properties Advanced" /><br />
+Click Start, then Control Panel, then System.
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/-98m_YiFDhwU/V2SxgUU4K7I/AAAAAAAAC64/7KQ8b3Cpdbcuv7OWi746lg9RRkzvxJamACCo/s488/start-My_Computer-Properties.png" alt="System Properties" />
+</p>
+
+<p>
+Select Advanced tab, then Click Environment Variables button.
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/-zcZel2n21yk/VYDNqu5CxGI/AAAAAAAACMs/zIwc6Mz6__8optVwJUZnakdVUcAb6ostQCCo/s483/System-Properties_Advanced.png" alt="System Properties Advanced" />
+</p>
+
+<p>
 Click New button in User Variables.
 </p>
 
@@ -31,7 +43,7 @@ Click New button in User Variables.
 <div class="environment-variables">
 <div class="environment-variables-header">Environment Variables</div>
 <fieldset>
-<legend>User variables for JohnDoe</legend>
+<legend>User variables for John</legend>
 <table>
 <tr>
 	<th style="width: 30%;">Variable</th>
@@ -105,8 +117,7 @@ To obtain the correct value, use the Windows Explorer.<br />
 </tr>
 <tr>
 	<td>Variable value:</td>
-	<td><input type="text" name="user-variable-value" value="C:\Program Files\Java\jdk-11.0.2" style="width: 90%;" /></td>
-</tr>
+	<td><input type="text" name="user-variable-value" value="C:\Program Files\Java\jdk-17.0.2" style="width: 90%;" /></td> </tr>
 </table>
 <div class="environment-variables-ok-cancel-buttons">
 	<input type="button" value="OK" />
@@ -151,7 +162,7 @@ you are able to conveniently run the executables (javac.exe, java.exe, jar.exe, 
 Without moving to the directory where the executable program is located, such as:<br />
 <b>C:\Users&gt;javac Test.java</b><br />
 If you do not set the Path variable, you need to move to the directory where the executable program is located, such as:<br />
-<b>C:\Program Files\Java\jdk-11.0.2\bin&gt;javac C:\Users\Test.java</b><br />
+<b>C:\Program Files\Java\jdk-17.0.2\bin&gt;javac C:\Users\Test.java</b><br />
 To confirm the Path, run <b>echo %Path%</b> in command prompt.<br />
 </dd>
 <dt>
@@ -165,38 +176,35 @@ Colon (:) is used to separate values of the PATH environment variable in Unix an
 <h6 class="src">Test.java</h6>
 <pre class="prettyprint">
 public class Test {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
 }
 </pre>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
 <pre class="screen">
-C:\Users&gt;javac Test.java
+C:\Users\John&gt;javac Test.java
 
-C:\Users&gt;java Test
+C:\Users\John&gt;java Test
 Hello World!
 </pre>
 
 <dl class="note">
 <dt>Test failure checklist</dt>
 <dd>
-<pre>javac Test.java</pre>
 <p>
-<strong>'javac' is not recognized as an internal or external command, operable program or batch file.</strong><br />
-Update the Path Environment Variable<br />
+javac Test.java -&gt; <strong>'javac' is not recognized as an internal or external command, operable program or batch file.</strong><br />
+Check your Path Environment Variable
 </p>
-<pre>java Test</pre>
 <p>
-<strong>Exception in thread "main" java.lang.NoClassDefFoundError: Test</strong><br />
+java Test -&gt; <strong>Exception in thread "main" java.lang.NoClassDefFoundError: Test</strong><br />
 The above error occurs when Test.class file was not found.<br />
-When you run "java Test" in the directory where Test.class file does not exist, you will get this error.<br />
-If you want to run the class in the directory where the class file does not located, use the -cp option of java.exe, such as:<br />
+When you run "java Test" in the directory where Test.class file does not exist, you will get this error. If you want to run the class in the directory where the class file does not located, use the -cp option of java.exe, such as:<br />
 </p>
-<pre>C:\javawork&gt;java -cp <span>C:\Users</span> <span>Test</span></pre>
 <p>
-<span>C:\Users</span> is the directory where the class file is located.<br />
+C:\Program Files&gt;java -cp C:\Users\John Test<br /><br />
+<span>C:\Users\John</span> is the directory where the class file is located.<br />
 <span>Test</span> is a Java class to run.
 </p>
 </dd>
@@ -205,9 +213,7 @@ If you want to run the class in the directory where the class file does not loca
 <h2>Editor</h2>
 
 <p>
-Until <a href="/java/Package_Modifiers">Package and Modifiers</a>, 
-it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org/download/v7.5.6.html">Notepad++</a>.<br />
-After you finish the Package and Modifiers, use Eclipse.<br />
+Until <a href="/java/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
 </p>
 
 </article>
