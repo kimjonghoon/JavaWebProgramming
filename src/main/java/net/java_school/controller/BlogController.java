@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class BlogController {
 
-	@GetMapping("/blog")
+	@GetMapping("blog")
 	public String blogIndex() {
-		return "blog";
+		return "blog/index";
 	}
 
 	@GetMapping("blog/{year}/{article}")

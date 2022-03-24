@@ -8,7 +8,6 @@
 	pre {
 		white-space: pre-wrap;
 		word-break: break-all;
-		overflow: auto;
 		font-size: 0.88em;
 	}
 	table {
