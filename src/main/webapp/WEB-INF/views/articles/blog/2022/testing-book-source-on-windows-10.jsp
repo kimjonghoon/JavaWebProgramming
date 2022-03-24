@@ -657,7 +657,7 @@ pom.xml 파일에서 톰캣 설정은 주석 처리하고 제티 설정은 주�
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/java/JDK-Install">자바 설치</a></li>
+	<li><a href="/">자바 설치</a></li>
 	<li><a href="/spring/building-java-projects-with-maven">메이븐으로 자바 개발</a></li>
 	<li><a href="/jsp/How-to-install-Tomcat">톰캣 설치</a></li>
 	<li><a href="/jsp/Creating-a-new-web-application">웹 애플리케이션 작성 실습</a></li>

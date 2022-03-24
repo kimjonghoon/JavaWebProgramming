@@ -658,7 +658,7 @@ In the pom.xml file, Comment out the Tomcat configuration, uncomment the Jetty c
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/java/JDK-Install">Java Install</a></li>
+	<li><a href="/">Java Install</a></li>
 	<li><a href="/spring/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
 	<li><a href="/jsp/How-to-install-Tomcat">Tomcat Install</a></li>
 	<li><a href="/jsp/Creating-a-new-web-application">Creating a new web application</a></li>

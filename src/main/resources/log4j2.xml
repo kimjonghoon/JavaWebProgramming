@@ -10,10 +10,10 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="net.java_school" level="DEBUG">
+        <Logger name="net.java_school" level="INFO">
             <AppenderRef ref="A1" />
         </Logger>
-        <Root level="info">
+        <Root level="INFO">
             <AppenderRef ref="STDOUT" />
         </Root>
     </Loggers>

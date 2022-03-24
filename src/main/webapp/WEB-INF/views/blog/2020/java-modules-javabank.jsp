@@ -7,10 +7,10 @@
 <html lang="<spring:message code="lang" />">
 <head>
 <meta charset="UTF-8" />
-<title><spring:message code="testing-book-source-on-windows-10.title" /></title>
+<title><spring:message code="java-modules-javabank.title" /></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="Keywords" content="<spring:message code="testing-book-source-on-windows-10.keys" />" />
-<meta name="Description" content="<spring:message code="testing-book-source-on-windows-10.desc" />" />
+<meta name="Keywords" content="<spring:message code="java-modules-javabank.keys" />" />
+<meta name="Description" content="<spring:message code="java-modules-javabank.desc" />" />
 <link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
 <link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
 <link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
@@ -47,10 +47,10 @@
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows-10.jsp" />
+		<jsp:include page="../../articles/blog/2020/java-modules-javabank.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows-10_en.jsp" />
+		<jsp:include page="../../articles/blog/2020/java-modules-javabank_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->
