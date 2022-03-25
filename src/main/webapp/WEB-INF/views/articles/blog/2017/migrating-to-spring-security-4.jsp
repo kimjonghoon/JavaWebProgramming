@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <article>
 <div class="last-modified">Last Modified 2020.2.7</div>
 
@@ -20,17 +21,17 @@
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${spring.security.version}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-taglibs&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${spring.security.version}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-config&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${spring.security.version}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 
@@ -54,7 +55,7 @@ mvn clean compile war:inplace
 </p>
 
 <pre class="prettyprint">
-<strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+<strong>&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</strong>
 </pre>
 
 <p>
@@ -115,13 +116,13 @@ http의 use-expressions의 속성 기본값이 false에서 true로 변경되었�
 
 <h6 class="src">/users/login.jsp</h6>
 <pre class="prettyprint">
-&lt;c:if test="${<strong>param.error</strong> != null }"&gt;
+&lt;c:if test=<strong>${fn:escapeXml("${param.error != null }")}</strong>&gt;
         &lt;h2&gt;Username/Password not corrrect&lt;/h2&gt;
 &lt;/c:if&gt;
 &lt;c:url var="loginUrl" value="<strong>/login</strong>" /&gt;
-&lt;form action="<strong>${loginUrl }</strong>" method="post"&gt;
+&lt;form action="<strong>${fn:escapeXml("${loginUrl }")}</strong>" method="post"&gt;
 &lt;p style="margin:0; padding: 0;"&gt;
-<strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+<strong>&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</strong>
 &lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -154,15 +155,15 @@ header.jsp 가장 아래에 다음을 추가한다.<br />
 
 <pre class="prettyprint">
 <strong>&lt;form id="logoutForm" action="/logout" method="post" style="display:none"&gt;
-	&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;
+	&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;
 &lt;/form&gt;
 
 &lt;script&gt;
 $(document).ready(function() {
-        $('#logout').click(function() {
-                $('#logoutForm').submit();
-                return false;
-        });
+  $('#logout').click(function() {
+    $('#logoutForm').submit();
+    return false;
+  });
 });
 &lt;/script&gt;</strong>
 </pre>
@@ -179,20 +180,20 @@ header.jsp에 jQuery를 사용하고 있으므로 화면을 보여주는 페이�
 <p>
 로그아웃까지 테스트했다면 다시 로그인하고 새글 쓰기를 시도한다.<br />
 새글 쓰기 처리에서 다시 빈 화면을 만나게 된다.<br />
-첨부 파일의 경우 <em class="path">&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</em>이 아닌 쿼리 스프링으로 CSRF 토큰을 전달해야 한다.<br />
+첨부 파일의 경우 <em class="path">&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</em>이 아닌 쿼리 스프링으로 CSRF 토큰을 전달해야 한다.<br />
 이는 스프링 폼 태그를 사용하고 있다 하더라도 마찬가지다.<br />
-write.jsp와 modify.jsp 파일을 열고 <em class="path">&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</em>이 있다면 지우고, 
+write.jsp와 modify.jsp 파일을 열고 <em class="path">&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</em>이 있다면 지우고, 
 아래와 같이 폼의 action 속성을 수정한다.<br />
 </p>
 
 <h6 class="src">write.jsp의 action 속성</h6>
 <pre class="prettyprint">
-&lt;sf:form action="write?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="write?<strong>${fn:escapeXml("${_csrf.parameterName}")}=${fn:escapeXml("${_csrf.token}")}</strong> method="post" ...
 </pre>
 
 <h6 class="src">modify.jsp action 속성</h6>
 <pre class="prettyprint">
-&lt;sf:form action="modify?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="modify?<strong>${fn:escapeXml("${_csrf.parameterName}")}=${fn:escapeXml("${_csrf.token}")}</strong> method="post" ...
 </pre>
 
 <p>

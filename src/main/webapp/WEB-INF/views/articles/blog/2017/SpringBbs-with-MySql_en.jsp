@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>    
 <article>
 <div class="last-modified">Last Modified 2021.11.29</div>
 
@@ -28,7 +29,7 @@ Then run:
 <h3>Modify sources</h3>
 
 <p>
-Add the following to the pom.xml.
+Add the following to the pom.xml.<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 </p>
 
 <pre class="prettyprint">
@@ -102,178 +103,178 @@ Modify BoardMapper.xml as follows.
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 
 &lt;!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;
 
 &lt;mapper namespace="net.java_school.mybatis.BoardMapper"&gt;
 
-  &lt;select id="selectListOfArticles" parameterType="hashmap" resultType="Article"&gt;
-    SELECT 
-      a.articleno, a.title, a.regdate, a.hit, m.name, 
-      count(distinct(f.attachfileno)) attachfileNum, 
-      count(distinct(c.commentno)) commentNum
-    FROM 
-      article as a left join attachfile as f on a.articleno = f.articleno
-        left join comments as c on a.articleno = c.articleno
-        left join member as m on a.email = m.email
-    WHERE
-      a.boardcd = #{boardCd}
-      &lt;if test="searchWord != null and searchWord != ''"&gt;
-      AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
-      &lt;/if&gt;
-    GROUP BY a.articleno, title, a.regdate, hit, m.name
-    ORDER BY articleno DESC
-    LIMIT #{offset}, #{rowCount}
-  &lt;/select&gt;
+	&lt;select id="selectListOfArticles" parameterType="hashmap" resultType="Article"&gt;
+		SELECT 
+			a.articleno, a.title, a.regdate, a.hit, m.name, 
+			count(distinct(f.attachfileno)) attachfileNum, 
+			count(distinct(c.commentno)) commentNum
+		FROM 
+			article as a left join attachfile as f on a.articleno = f.articleno
+				left join comments as c on a.articleno = c.articleno
+				left join member as m on a.email = m.email
+		WHERE
+			a.boardcd = ${fn:escapeXml("#{boardCd}")}
+			&lt;if test="searchWord != null and searchWord != ''"&gt;
+			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+			&lt;/if&gt;
+		GROUP BY a.articleno, title, a.regdate, hit, m.name
+		ORDER BY articleno DESC
+		LIMIT ${fn:escapeXml("#{offset}")}, ${fn:escapeXml("#{rowCount}")}
+	&lt;/select&gt;
 
-  &lt;select id="selectCountOfArticles" parameterType="hashmap" resultType="int"&gt;
-    SELECT count(*) FROM article 
-    WHERE 
-      boardcd = #{boardCd}
-      &lt;if test="searchWord != null and searchWord != ''"&gt;
-      AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
-      &lt;/if&gt;
-  &lt;/select&gt;
+	&lt;select id="selectCountOfArticles" parameterType="hashmap" resultType="int"&gt;
+		SELECT count(*) FROM article 
+		WHERE 
+			boardcd = ${fn:escapeXml("#{boardCd}")}
+			&lt;if test="searchWord != null and searchWord != ''"&gt;
+			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+			&lt;/if&gt;
+	&lt;/select&gt;
 
-  &lt;insert id="insert" parameterType="Article" useGeneratedKeys="true" keyProperty="articleNo"&gt;
-    INSERT INTO article (boardcd, title, content, email, hit, regdate)
-    VALUES
-    (#{boardCd}, #{title}, #{content}, #{email}, 0, now())
-  &lt;/insert&gt;
+	&lt;insert id="insert" parameterType="Article" useGeneratedKeys="true" keyProperty="articleNo"&gt;
+		INSERT INTO article (boardcd, title, content, email, hit, regdate)
+		VALUES
+		(${fn:escapeXml("#{boardCd}")}, ${fn:escapeXml("#{title}")}, ${fn:escapeXml("#{content}")}, ${fn:escapeXml("#{email}")}, 0, now())
+	&lt;/insert&gt;
 	
-  &lt;insert id="insertAttachFile" parameterType="AttachFile"&gt;
-    INSERT INTO attachfile (filename, filetype, filesize, articleno, email)
-    VALUES
-    (#{filename}, #{filetype}, #{filesize}, #{articleNo}, #{email})
-  &lt;/insert&gt;
+	&lt;insert id="insertAttachFile" parameterType="AttachFile"&gt;
+		INSERT INTO attachfile (filename, filetype, filesize, articleno, email)
+		VALUES
+		(${fn:escapeXml("#{filename}")}, ${fn:escapeXml("#{filetype}")}, ${fn:escapeXml("#{filesize}")}, ${fn:escapeXml("#{articleNo}")}, ${fn:escapeXml("#{email}")})
+	&lt;/insert&gt;
 
-  &lt;update id="update" parameterType="Article"&gt;
-    UPDATE article 
-    SET title = #{title}, content = #{content} 
-    WHERE articleno = #{articleNo}
-  &lt;/update&gt;
+	&lt;update id="update" parameterType="Article"&gt;
+		UPDATE article 
+		SET title = ${fn:escapeXml("#{title}")}, content = ${fn:escapeXml("#{content}")} 
+		WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+	&lt;/update&gt;
 
-  &lt;delete id="delete" parameterType="int"&gt;
-    DELETE FROM article WHERE articleno = #{articleNo}
-  &lt;/delete&gt;
+	&lt;delete id="delete" parameterType="int"&gt;
+		DELETE FROM article WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+	&lt;/delete&gt;
 
-  &lt;update id="updateHitPlusOne" parameterType="int"&gt;
-    UPDATE article SET hit = hit + 1 WHERE articleno = #{articleNo}
-  &lt;/update&gt;
+	&lt;update id="updateHitPlusOne" parameterType="int"&gt;
+		UPDATE article SET hit = hit + 1 WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+	&lt;/update&gt;
 
-  &lt;select id="selectOne" parameterType="int" resultType="Article"&gt;
-    SELECT 
-      articleno,
-      title,
-      content,
-      a.email,
-      ifNull(name, 'Anonymous') name,
-      hit,
-      regdate
-    FROM article as a left join member as m on a.email = m.email
-    WHERE 
-      articleno = #{articleNo}
-  &lt;/select&gt;
+	&lt;select id="selectOne" parameterType="int" resultType="Article"&gt;
+		SELECT 
+			articleno,
+			title,
+			content,
+			a.email,
+			ifNull(name, 'Anonymous') name,
+			hit,
+			regdate
+		FROM article as a left join member as m on a.email = m.email
+		WHERE 
+			articleno = ${fn:escapeXml("#{articleNo}")}
+	&lt;/select&gt;
 
-  &lt;select id="selectNextOne" parameterType="hashmap" resultType="Article"&gt;
-    SELECT articleno, title 
-    FROM article 
-    WHERE 
-      boardCd = #{boardCd} 
-      AND articleno &amp;gt; #{articleNo}
-    &lt;if test="searchWord != null and searchWord != ''"&gt;
-      AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
-    &lt;/if&gt; 
-    ORDER BY articleno
-    LIMIT 1
-  &lt;/select&gt;
+	&lt;select id="selectNextOne" parameterType="hashmap" resultType="Article"&gt;
+		SELECT articleno, title 
+		FROM article 
+		WHERE 
+			boardCd = ${fn:escapeXml("#{boardCd}")} 
+			AND articleno &amp;gt; ${fn:escapeXml("#{articleNo}")}
+		&lt;if test="searchWord != null and searchWord != ''"&gt;
+			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+		&lt;/if&gt; 
+		ORDER BY articleno
+		LIMIT 1
+	&lt;/select&gt;
 	
-  &lt;select id="selectPrevOne" parameterType="hashmap" resultType="Article"&gt;
-    SELECT articleno, title 
-    FROM article 
-    WHERE 
-      boardCd = #{boardCd} 
-      AND articleno &amp;lt; #{articleNo}
-    &lt;if test="searchWord != null and searchWord != ''"&gt;
-      AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
-    &lt;/if&gt; 
-    ORDER BY articleno DESC
-    LIMIT 1
-  &lt;/select&gt;
+	&lt;select id="selectPrevOne" parameterType="hashmap" resultType="Article"&gt;
+		SELECT articleno, title 
+		FROM article 
+		WHERE 
+			boardCd = ${fn:escapeXml("#{boardCd}")} 
+			AND articleno &amp;lt; ${fn:escapeXml("#{articleNo}")}
+		&lt;if test="searchWord != null and searchWord != ''"&gt;
+			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+		&lt;/if&gt; 
+		ORDER BY articleno DESC
+		LIMIT 1
+	&lt;/select&gt;
 
-  &lt;select id="selectListOfAttachFiles" parameterType="int" resultType="AttachFile"&gt;
-    SELECT 
-      attachfileno,
-      filename,
-      filetype,
-      filesize,
-      articleno,
-      email 
-    FROM attachfile 
-    WHERE articleno = #{articleNo} 
-    ORDER BY attachfileno
-  &lt;/select&gt;
+	&lt;select id="selectListOfAttachFiles" parameterType="int" resultType="AttachFile"&gt;
+		SELECT 
+			attachfileno,
+			filename,
+			filetype,
+			filesize,
+			articleno,
+			email 
+		FROM attachfile 
+		WHERE articleno = ${fn:escapeXml("#{articleNo}")} 
+		ORDER BY attachfileno
+	&lt;/select&gt;
 
-  &lt;delete id="deleteFile" parameterType="int"&gt;
-    DELETE FROM attachfile WHERE attachfileno = #{attachFileNo}
-  &lt;/delete&gt;
+	&lt;delete id="deleteFile" parameterType="int"&gt;
+		DELETE FROM attachfile WHERE attachfileno = ${fn:escapeXml("#{attachFileNo}")}
+	&lt;/delete&gt;
 
-  &lt;select id="selectOneBoard" parameterType="string" resultType="string"&gt;
-    SELECT * FROM board WHERE boardcd = #{boardCd}
-  &lt;/select&gt;
+	&lt;select id="selectOneBoard" parameterType="string" resultType="string"&gt;
+		SELECT * FROM board WHERE boardcd = ${fn:escapeXml("#{boardCd}")}
+	&lt;/select&gt;
 
-  &lt;insert id="insertComment" parameterType="Comment"&gt;
-    INSERT INTO comments (articleno, email, memo, regdate)
-    VALUES (#{articleNo}, #{email}, #{memo}, now())
-  &lt;/insert&gt;
+	&lt;insert id="insertComment" parameterType="Comment"&gt;
+		INSERT INTO comments (articleno, email, memo, regdate)
+		VALUES (${fn:escapeXml("#{articleNo}")}, ${fn:escapeXml("#{email}")}, ${fn:escapeXml("#{memo}")}, now())
+	&lt;/insert&gt;
 
-  &lt;update id="updateComment" parameterType="Comment"&gt;
-    UPDATE comments SET memo = #{memo} WHERE commentno = #{commentNo}
-  &lt;/update&gt;
+	&lt;update id="updateComment" parameterType="Comment"&gt;
+		UPDATE comments SET memo = ${fn:escapeXml("#{memo}")} WHERE commentno = ${fn:escapeXml("#{commentNo}")}
+	&lt;/update&gt;
 	
-  &lt;delete id="deleteComment" parameterType="int"&gt;
-    DELETE FROM comments WHERE commentno = #{commentNo}
-  &lt;/delete&gt;
+	&lt;delete id="deleteComment" parameterType="int"&gt;
+		DELETE FROM comments WHERE commentno = ${fn:escapeXml("#{commentNo}")}
+	&lt;/delete&gt;
 
-  &lt;select id="selectListOfComments" parameterType="int" resultType="Comment"&gt;
-    SELECT 
-      commentno, 
-      articleno, 
-      c.email, 
-      ifNull(name, 'Anonymous') name,
-      memo, 
-      regdate
-    FROM comments as c left join member as m on c.email = m.email
-    WHERE 
-      articleno = #{articleNo}
-    ORDER BY commentno DESC
-  &lt;/select&gt;
+	&lt;select id="selectListOfComments" parameterType="int" resultType="Comment"&gt;
+		SELECT 
+			commentno, 
+			articleno, 
+			c.email, 
+			ifNull(name, 'Anonymous') name,
+			memo, 
+			regdate
+		FROM comments as c left join member as m on c.email = m.email
+		WHERE 
+			articleno = ${fn:escapeXml("#{articleNo}")}
+		ORDER BY commentno DESC
+	&lt;/select&gt;
 
-  &lt;select id="selectOneAttachFile" parameterType="int" resultType="AttachFile"&gt;
-    SELECT
-      attachfileno,
-      filename,
-      filetype,
-      filesize,
-      articleno,
-      email
-    FROM
-      attachfile
-    WHERE
-      attachfileno = #{attachfileno}
-  &lt;/select&gt;
+	&lt;select id="selectOneAttachFile" parameterType="int" resultType="AttachFile"&gt;
+		SELECT
+			attachfileno,
+			filename,
+			filetype,
+			filesize,
+			articleno,
+			email
+		FROM
+			attachfile
+		WHERE
+			attachfileno = ${fn:escapeXml("#{attachfileno}")}
+	&lt;/select&gt;
 
-  &lt;select id="selectOneComment" parameterType="int" resultType="Comment"&gt;
-    SELECT 
-      commentno,
-      articleno,
-      email,
-      memo,
-      regdate 
-    FROM comments 
-    WHERE
-      commentno = #{commentNo}
-  &lt;/select&gt;
+	&lt;select id="selectOneComment" parameterType="int" resultType="Comment"&gt;
+		SELECT 
+			commentno,
+			articleno,
+			email,
+			memo,
+			regdate 
+		FROM comments 
+		WHERE
+			commentno = ${fn:escapeXml("#{commentNo}")}
+	&lt;/select&gt;
 
  &lt;/mapper&gt;
 </pre>

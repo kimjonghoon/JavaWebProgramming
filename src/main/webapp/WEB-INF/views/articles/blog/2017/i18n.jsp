@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <article>
 <div class="last-modified">Last Modified 2017.10.27</div>
 
@@ -256,7 +257,7 @@ data      Data      자료실
 <h6 class="src">BoardMapper.xml</h6>
 <pre class="prettyprint">
 &lt;select id="selectOneBoard" parameterType="string" resultType="Board"&gt;
-	SELECT * FROM board WHERE boardcd = #{boardCd}
+	SELECT * FROM board WHERE boardcd = ${fn:escapeXml("#{boardCd}")}
 &lt;/select&gt;
 &lt;select id="selectAllBoards" resultType="Board"&gt;
 	SELECT * FROM board
