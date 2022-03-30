@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <article>
-<div class="last-modified">Last Modified 2022.3.23</div>
+<div class="last-modified">Last Modified 2022.3.30</div>
 
 <h1>Testing the book source on Windows 10</h1>
 
@@ -655,6 +655,41 @@ In the pom.xml file, Comment out the Tomcat configuration, uncomment the Jetty c
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
 <pre class="screen">mvn jetty:run 
 </pre>
+<div class="explain">
+<p>
+<b>Note:</b>
+In most cases where you see the following error message when trying to log in, it is because your system did not start Oracle.
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/p5rGTDVSWP5VlEQQI8H738n0oWYLfE2c68GgpI-QHWRJZxCGyJ1lu8n1ymATpXyjyRP510CKV0zDnvqAYVyivFzoI_qWvW53DNi9-S9Zf5QuIZOzEn8Fp4E7bqrtM6yS3kgWmTC7hfh2Twc9riztt3Zz7YO7T_BE8aRFfPa-_oonAWgx7p2_mWByOOSklCyetgMihNBgIxX7jev4eoMwlsaR441Bp9wexmRVjMe4TigbyTgqQONLu-KJ9T_EkquRqqPmH2f-bgz664fKtREI9-oKvQzfo3-7DajPdHnwQvr554dROaS9SSe40-0jOUvBVgf9qawQ8FdwaAqP3ipbRUHE3zdg8fZMuiNRUou8kbIHH-HY-desXOZKA4Y6dDmAPWjADVnGX1e3dheE24bBKeYnq49mBJ2z5vy6-GLCSZvuOAsiul4ZOgM3DnrzMEAARFrQuEsjJal3qw9qaeyal5SOd8BroOSQ_v5KsS07TEvXJtN8MfZsiAmnmTHVUlc2HRl7ENIuyGp5Kn_fVr5PZaZVxi19Bl47L6N4a4U6wdYeMyy5dl3ZCBDuNesZZooE2Qn04DxhlHpZiEfBT6zFXk9awk3Qc4agBz02r65_4XM4gXUki66b0DwuZTdIOjD5cItuhBoq1Mjq-3Hw0GCnS3cnZAPPFXUFrA4UzdmLW4KGUeLSq9YMM1kmab-ChlmF0i9s2gGF6fDHW_8qwOWco8ERdcKBiBNJIljI-n9mug4Eqcb1tqIKguN6Jdk=w794-h355-no?authuser=0" alt="Log in failed" />
+</p>
+
+<p>
+Start Oracle database.
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/hgZnOQJZafrYzVNYmylu21CfhhrHe7k7eM9lceZJSii4yVQhkASh-sTV9y8YokBZ0_MyS9iMm-9xwPjgEZnN-PkvbjCXTd5CA1YSAlJU6Cuza-E2TeKeXYI5hFeEnOy8UfY2jmkqocufk8Sy18up0vbv8bbSDZs8jkru-7KVhfpS13rTTivyT9dhWdQN_L6oafBizxDO5D2UjBgMzHI7qkUCkYI9rnfslJJBHx-WGi7XF49GmT_e5HtrEYaYqFdV5Hv6VHJjgeJKo-euKhKOpYsq1IZePW2rtRR4NJBDbI6n_-rJr6dco6flxZVVePqiN4xUklV9kORXJ3LzgEOuYw-X-Htonhl7x-ZfBtp6scOIjVHO_A9mfUhCVm3YJFkzomOgiv7AAxNEnJUeY8nZpLCRY5TkuPr_NGt37PRgNO1LzA9Sv4yaMvxY_c3R72ZnuBcrksvM9gFysBJyVT44tJr3GX-VFkA7dE8ORYtnkkf-W3GFYv9jg9uLq2et3FrV2A0wrEeCqO1vmzmm7SQZBj3VI1JPiupLh7qlqdh0bUhaDpm10jAoPMU5M10Pa5DYeW1X-LzKcr8oOetquwAXfrXJV-dE-tAtiZ-34lAPt8YYVAhiwy2uaNzu4V3pKoufQCIMpqYsjKX-4vIlOnTGxCz1_MnD5L7tusrDNpHgu_IE-E5c5TwbxU2LLasHeCadOgQBdLtnCAYMermdyXycF5qCCyMl17WpRA3GW7tvScNRN0ClvCbb5d2ttRE=w322-h473-no?authuser=0" alt="Start Database" />
+</p>
+
+<p>
+If Tomcat Startup Type is Manual, Tomcat does not start automatically after booting.
+</p>
+
+<p>
+Start Tomcat.
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/YbVPxLgbxWGrl_nUINvNmQtLnrEa42kYBXtgkePBrsw7OBKStr_3Fhkf-qFFuIoQB_YDxYtyR9cZxodRqHusFVrd754hOCZ5f7qbba1KnCPpLCT_zH92EyUQunp1R0h82ok_AbT3rTchw67J2cRjI8avRH4HzEgICVGZ-jWyFNPwv3YjtnytHNS1oPB7f2bygiT-YNURC7ls4H-f5W1rKkRiPRm-mRM_9aSBfseblFPWNQadrqBiV2tdXYRIsE5Epa77QdTiqTYIj0KOas9wPa4iJXXoPj4N3XvOY9UCJTVcGKP2vq4a8Dcm7URnY3tRJofuXxmAvnTYJjZ845CoxjrRO2ybGhFfjIWZgPTOJZY0qNB8IMSB229e4jlWU0klHcfDYghB25Bl42yUzeadVWgr4WA3f5OnocgC4G0evyepCD55Kr8KqwYJr9Pm_zsJt8Hmn5nXncJo7fnntCkDXUOfndSMt53CmAc0ED32AeiubsTEgZ4p4KNEA7tH6OVZ9K4V0ZAttybqczVtjNE9CuhEqLXK9m40IzrkrsNLc1iB_1b1VlO2_cZrw9_4z6K8_4LpjzcoT2LlFXPC4e9PIMUyrTIrxo769aA-haxU3_EkHO6lFS9YVeiM3JzUZqIOhTNp7dGYwUq-po3TomlBBdWb3xtaTzz0Lu_pW2rBq2FdmMaHR6I31p-ohvopuK_fYszHakDGUSLG0WEkPJ8zDjYCQrsGRNfZcNbRUirI_Mz8bOPk2x5_YbqJsyI=w325-h362-no?authuser=0" alt="Monitor Tomcat" />
+</p>
+
+<p>
+<img src="https://lh3.googleusercontent.com/zDln74pTefrijGGtejutdrxuUnJUov5p211HVQZ6gd0SUQXQ8xHArJsW7J-lmuE3Vi625L1Vg8tmAQjiYeFGhKedrDBD9n-vtoqLNF_CmHYtmXlniafl3qxfNI-20nleQ66X33DEHdWyGznZSrn0MFm1SIf3ONRBdM7UskWn7kmT1IHT8YpmzLpv5H44zKYT5yoLURi-CGVoh3IIIa-1s3GEh3g5eiTd-SSVl3a6JR3YW9sIVmOLtcIIuJ-mFdk_R09Nqt44gTZ_ERPdiS7k5qWfl6Ev8HKOErQwBQQyucxUx5riiCPDbLyR1wKi6NdQkmrBjerDSw-wEqrTx7RL51Tri9CAVa6ZkhG4sSvISlbhKW0x7UcTvkcbkAVIbwlgZynrykVVjxEBGqnHMNFS2UG26itXpYacSzcqmfQ_jB4pZf4jXERQqIUzju47k5hDpkaEfz0XB4YkyBsMS_2Lkvf1dWVllu8En8xB9M15i2LRKkP4rVEdQKh2MtO9HqAJ0crRgQgusjQ3gPzOtfvq3zN4HIcYoRhorpIgsmatqijOcrRAS2SFkN_tTpMAOG4Urn5HZVrOlYiWtLZxvkBbNTw0ccNt2DjxtsrofgQXKHMYxBkmd3sAnKEHWR7bjCQDCnMPl-9bdDx5Uotv8nbit9pF1ohsKAXF0aVhljOAeQOD2XwnoSkkIAePZo-1pw8j-9_fIkt5YaO8NCoagOOd9uy3PwxV_Twx_Ktgyjpp9Bmd_YEz7O4hTC-sEK4=w485-h177-no?authuser=0" alt="Apache Commons Daemon Service Manager" />
+</p>
+
+</div>
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
