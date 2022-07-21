@@ -20,9 +20,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import net.java_school.commons.WebContants;
+import net.java_school.board.BoardService;
+import net.java_school.board.AttachFile;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class DownloadController {
+	
+	@Autowired
+	private BoardService boardService;
 
 	@GetMapping("data/{filename:.+}")
 	public ResponseEntity<InputStreamResource> download(@PathVariable String filename, HttpServletRequest req) throws IOException {
@@ -46,11 +52,14 @@ public class DownloadController {
 
 	// I use this
 	@PostMapping("data")
-	public void boardDataDownload(String filename, HttpServletRequest req, HttpServletResponse resp) {
+	public void boardDataDownload(String filename, int fileno, HttpServletRequest req, HttpServletResponse resp) {
 		OutputStream outputStream = null;
 
+		AttachFile attachFile = boardService.getAttachFile(fileno);
+		String owner = attachFile.getEmail();
+
 		try {
-			File file = new File(WebContants.UPLOAD_PATH + filename);
+			File file = new File(WebContants.UPLOAD_PATH + owner + File.separator + filename);
 
 			String filetype = filename.substring(filename.indexOf(".") + 1, filename.length());
 

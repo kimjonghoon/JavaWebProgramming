@@ -284,11 +284,15 @@ public class BbsController extends Paginator {
 		//파일 업로드
 		Iterator<String> it = mpRequest.getFileNames();
 		List<MultipartFile> fileList = new ArrayList<>();
+		File myDir = new File(WebContants.UPLOAD_PATH + principal.getName());
+
+		if (!myDir.exists()) myDir.mkdirs();
+
 		while (it.hasNext()) {
 			MultipartFile multiFile = mpRequest.getFile((String) it.next());
 			if (multiFile != null && multiFile.getSize() > 0) {
 				String filename = multiFile.getOriginalFilename();
-				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + filename));
+				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + principal.getName() + File.separator + filename));
 				fileList.add(multiFile);
 			}
 		}
@@ -367,11 +371,15 @@ public class BbsController extends Paginator {
 		//파일업로드
 		Iterator<String> it = mpRequest.getFileNames();
 		List<MultipartFile> fileList = new ArrayList<>();
+		File myDir = new File(WebContants.UPLOAD_PATH + email);
+
+		if (!myDir.exists()) myDir.mkdirs();
+		
 		while (it.hasNext()) {
 			MultipartFile multiFile = mpRequest.getFile((String) it.next());
 			if (multiFile != null && multiFile.getSize() > 0) {
 				String filename = multiFile.getOriginalFilename();
-				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + filename));
+				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + email + File.separator + filename));
 				fileList.add(multiFile);
 			}
 		}

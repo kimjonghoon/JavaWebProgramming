@@ -52,7 +52,7 @@ function displayComments() {
 }
 
 $(document).ready(function () {
-	displayComments();
+    displayComments();
     $('title').empty();
     var title = $('#bbs-title').html();
     $('title').append(title);
@@ -60,7 +60,9 @@ $(document).ready(function () {
     $('#file-list a.download').click(function (e) {
         e.preventDefault();
         var filename = this.title;
+	var fileno = $(this).attr('href');
         $('#downForm input[name*=filename]').val(filename);
+        $('#downForm input[name*=fileno]').val(fileno);
         $('#downForm').submit();
     });
     $('#file-list a:not(.download)').click(function (e) {
@@ -287,9 +289,9 @@ $(document).on('click', '#all-comments', function (e) {
     <div id="file-list" style="text-align: right">
         <c:forEach var="file" items="${attachFileList }" varStatus="status">
             <div id="attachfile${file.attachFileNo }" class="attach-file">
-                <a href="#" title="${file.filename }" class="download">${file.filename }</a>
+		<a href="${file.attachFileNo }" title="${file.filename }" class="download">${file.filename }</a>
                 <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
-                    <a href="#" title="${file.attachFileNo }"><spring:message code="delete" /></a>
+                <a href="#" title="${file.attachFileNo }"><spring:message code="delete" /></a>
                 </security:authorize>
             </div>
         </c:forEach>
@@ -449,6 +451,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
     </sf:form>
     <sf:form id="downForm" action="/data" method="post">
         <input type="hidden" name="filename" />
+        <input type="hidden" name="fileno" />
     </sf:form>
     <sf:form id="modifyCommentForm" method="put">
     	<input type="hidden" name="memo" />
