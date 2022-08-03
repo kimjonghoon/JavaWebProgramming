@@ -15,7 +15,7 @@
 <meta name="Description" content="<spring:message code="bbs.view.desc" />" />
 <link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
 <link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<script src="/resources/js/jquery-3.2.1.min.js"></script>
+<script src="/resources/js/jquery-3.6.0.min.js"></script>
 <script src="/resources/js/commons.js"></script>
 <script>
 function displayComments() {
@@ -23,10 +23,10 @@ function displayComments() {
     $.getJSON(url, function (data) {
         $('#all-comments').empty();
         $.each(data, function (i, item) {
-            var creation = new Date(item.regdate);
+	    var creation = new Intl.DateTimeFormat('<spring:message code="lang" />', {dateStyle: 'medium', timeStyle: 'medium'}).format(new Date(item.regdate));
             var comments = '<div class="comments">'
                     + '<span class="writer">' + item.name + '</span>'
-                    + '<span class="date">' + creation.toLocaleString() + '</span>';
+                    + '<span class="date">' + creation + '</span>';
             if (item.editable === true) {
                 comments = comments
                         + '<span class="modify-del">'
@@ -46,7 +46,7 @@ function displayComments() {
                     + '</form>'
                     + '</div>';
             $('#all-comments').append(comments);
-            console.log(item);
+            //console.log(item);
         });
     });
 }

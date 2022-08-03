@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
 <link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
 <link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.2.1.min.js"></script>
+<script src="/resources/js/jquery-3.6.0.min.js"></script>
 <script src="/resources/js/commons.js"></script>
 </head>
 <body>
