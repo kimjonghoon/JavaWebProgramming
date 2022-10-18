@@ -74,6 +74,31 @@ $(document).ready(function () {
             $('#deleteAttachFileForm').submit();
         }
     });
+    //2022.10.18 added
+    $('#next-article-link').click(function (e) {
+        e.preventDefault();
+        var articleNo = this.title;
+        var action = $('#viewForm').attr('action');
+        action += articleNo;
+        $('#viewForm').attr('action', action);
+        if (articleNo > ${firstArticleNo }) {
+        	$('#viewForm-page').val(${param.page - 1});
+	}
+        $('#viewForm').submit();
+    });
+    //2022.10.18 added
+    $('#prev-article-link').click(function (e) {
+        e.preventDefault();
+        var articleNo = this.title;
+        var action = $('#viewForm').attr('action');
+        action += articleNo;
+        $('#viewForm').attr('action', action);
+        if (articleNo < ${lastArticleNo }) {
+		$('#viewForm-page').val(${param.page + 1});
+	}
+        $('#viewForm').submit();
+    });
+    /* 2022.10.18 removed 
     $('.next-prev a').click(function (e) {
         e.preventDefault();
         var articleNo = this.title;
@@ -81,7 +106,7 @@ $(document).ready(function () {
         action += articleNo;
         $('#viewForm').attr('action', action);
         $('#viewForm').submit();
-    });
+    }); */
     //Modify Button
     $('.goModify').click(function () {
         $('#modifyForm').submit();
@@ -99,6 +124,10 @@ $(document).ready(function () {
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
+	//2022.10.18 added
+        if (articleNo > ${firstArticleNo }) {
+		$('#viewForm-page').val(${param.page - 1});
+	}
         $('#viewForm').submit();
     });
     //Prev Article Button
@@ -107,6 +136,10 @@ $(document).ready(function () {
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
+	//2022.10.18 added
+        if (articleNo < ${lastArticleNo }) {
+		$('#viewForm-page').val(${param.page + 1});
+	}
         $('#viewForm').submit();
     });
     //List Button
@@ -314,10 +347,10 @@ $(document).on('click', '#all-comments', function (e) {
 
 <div class="next-prev">
     <c:if test="${nextArticle != null }">
-        <p><spring:message code="next.article" /> : <a href="#" title="${nextArticle.articleNo }">${nextArticle.title }</a></p>
+        <p><spring:message code="next.article" /> : <a href="#" title="${nextArticle.articleNo }" id="next-article-link">${nextArticle.title }</a></p>
     </c:if>
     <c:if test="${prevArticle != null }">
-        <p><spring:message code="prev.article" /> : <a href="#" title="${prevArticle.articleNo }">${prevArticle.title }</a></p>
+        <p><spring:message code="prev.article" /> : <a href="#" title="${prevArticle.articleNo }" id="prev-article-link">${prevArticle.title }</a></p>
     </c:if>
 </div>
 
@@ -426,7 +459,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
     <form id="viewForm" action="/bbs/${boardCd }/" method="get">
-        <input type="hidden" name="page" value="${param.page }" />
+        <input type="hidden" name="page" value="${param.page }" id="viewForm-page" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
     <form id="writeForm" action="/bbs/${boardCd}/new" method="get">
