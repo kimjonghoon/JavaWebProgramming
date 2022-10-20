@@ -183,6 +183,13 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.3.2</version>
+					<configuration>
+						<failOnMissionWebXml>false</failOnMissionWebXml>
+					</configuration>
+				</plugin>
+				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.10.1</version>
 					<configuration>
