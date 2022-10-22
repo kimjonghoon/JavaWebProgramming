@@ -74,14 +74,15 @@ $(document).ready(function () {
             $('#deleteAttachFileForm').submit();
         }
     });
-    //2022.10.18 added
+    //2022.10.22 added
     $('#next-article-link').click(function (e) {
         e.preventDefault();
         var articleNo = this.title;
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
-        if (articleNo > ${firstArticleNo }) {
+	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
+        if (articleNo > firstItemNo) {
         	$('#viewForm-page').val(${param.page - 1});
 	}
         $('#viewForm').submit();
@@ -93,7 +94,9 @@ $(document).ready(function () {
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
-        if (articleNo < ${lastArticleNo }) {
+	//2022.10.22 added
+        var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
+        if (articleNo < lastItemNo) {
 		$('#viewForm-page').val(${param.page + 1});
 	}
         $('#viewForm').submit();
@@ -124,8 +127,9 @@ $(document).ready(function () {
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
-	//2022.10.18 added
-        if (articleNo > ${firstArticleNo }) {
+	//2022.10.22 added
+	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
+        if (articleNo > firstItemNo) {
 		$('#viewForm-page').val(${param.page - 1});
 	}
         $('#viewForm').submit();
@@ -136,8 +140,9 @@ $(document).ready(function () {
         var action = $('#viewForm').attr('action');
         action += articleNo;
         $('#viewForm').attr('action', action);
-	//2022.10.18 added
-        if (articleNo < ${lastArticleNo }) {
+	//2022.10.22 added
+        var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
+        if (articleNo < lastItemNo) {
 		$('#viewForm-page').val(${param.page + 1});
 	}
         $('#viewForm').submit();

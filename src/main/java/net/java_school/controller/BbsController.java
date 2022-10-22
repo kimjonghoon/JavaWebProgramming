@@ -235,12 +235,6 @@ public class BbsController extends Paginator {
 		model.addAttribute("articleNo", articleNo);
 		model.addAttribute("boardCd", boardCd);
 		
-		//2022.10.18 added
-		int firstArticleNo = list.get(0).getArticleNo();//The first article number on the current page
-		int lastArticleNo = list.get(list.size() - 1).getArticleNo();//The last article number on the current page
-		model.addAttribute("firstArticleNo",firstArticleNo);
-		model.addAttribute("lastArticleNo", lastArticleNo);
-
 		return "bbs/view";
 	}
 
