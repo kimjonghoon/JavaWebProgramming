@@ -82,7 +82,7 @@ $(document).ready(function () {
         action += articleNo;
         $('#viewForm').attr('action', action);
 	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
-        if (articleNo > firstItemNo) {
+        if (parseInt(articleNo) > parseInt(firstItemNo)) {
         	$('#viewForm-page').val(${param.page - 1});
 	}
         $('#viewForm').submit();
@@ -96,7 +96,7 @@ $(document).ready(function () {
         $('#viewForm').attr('action', action);
 	//2022.10.22 added
         var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
-        if (articleNo < lastItemNo) {
+        if (parseInt(articleNo) < parseInt(lastItemNo)) {
 		$('#viewForm-page').val(${param.page + 1});
 	}
         $('#viewForm').submit();
@@ -129,7 +129,7 @@ $(document).ready(function () {
         $('#viewForm').attr('action', action);
 	//2022.10.22 added
 	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
-        if (articleNo > firstItemNo) {
+        if (parseInt(articleNo) > parseInt(firstItemNo)) {
 		$('#viewForm-page').val(${param.page - 1});
 	}
         $('#viewForm').submit();
@@ -142,7 +142,7 @@ $(document).ready(function () {
         $('#viewForm').attr('action', action);
 	//2022.10.22 added
         var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
-        if (articleNo < lastItemNo) {
+        if (parseInt(articleNo) < parseInt(lastItemNo)) {
 		$('#viewForm-page').val(${param.page + 1});
 	}
         $('#viewForm').submit();
