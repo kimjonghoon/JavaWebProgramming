@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc" 
        xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
 			http://www.springframework.org/schema/beans/spring-beans.xsd
-			http://www.springframework.org/schema/security
-			http://www.springframework.org/schema/security/spring-security.xsd
-			http://www.springframework.org/schema/context
-			http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/mvc
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context.xsd
 			http://mybatis.org/schema/mybatis-spring 
-			http://mybatis.org/schema/mybatis-spring.xsd">
+			http://mybatis.org/schema/mybatis-spring.xsd
+			http://www.springframework.org/schema/security
+			http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<security:global-method-security pre-post-annotations="enabled" />
 	
-	<mvc:resources location="/resources/" mapping="/resources/**" />
-	<mvc:resources location="/examples/" mapping="/examples/**" />
-	<mvc:resources location="/favicon.ico" mapping="/favicon.ico" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/examples/**" location="/examples/" />
+	<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
 
 	<mvc:annotation-driven validator="validator" />
 
-	<context:component-scan base-package="net.java_school.controller,net.java_school.board,net.java_school.user" />
+	<context:component-scan base-package="net.java_school.controller,
+		net.java_school.board,
+		net.java_school.user" />
 
 	<mybatis:scan base-package="net.java_school.mybatis" />
 	
