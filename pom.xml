@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 <modelVersion>4.0.0</modelVersion>
+
 <groupId>net.java_school</groupId>
 <artifactId>JavaWebProgrammingSource</artifactId>
+<version>1.0-SNAPSHOT</version>
 <packaging>war</packaging>
-<version>0.0.1-SNAPSHOT</version>
-<name>spring-bbs Maven Webapp</name>
-<url>http://maven.apache.org</url>
+
+<name>Java Web Programming Source Webapp</name>
+<url>http://localhost:8080</url>
 
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>17</maven.compiler.source>
+	<maven.compiler.target>17</maven.compiler.target>
 	<spring.version>5.3.24</spring.version>
 	<spring.security.version>5.8.1</spring.security.version>
-	<jdk.version>17</jdk.version>
 </properties>
 
 <dependencies>
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
-		<version>4.13.2</version>
+		<version>4.11</version>
 		<scope>test</scope>
 	</dependency>
 	<dependency>
@@ -151,70 +155,55 @@
 		<version>1.2</version>
 	</dependency>
 </dependencies>
-
-<!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
-<!-- $ mvn jetty:run -->
-<!--
-	<build>
-	<finalName>JavaWebProgrammingFinalSource</finalName>
+<build>
+	<finalName>spring-bbs</finalName>
 	<pluginManagement>
-	<plugins>
-	<plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-compiler-plugin</artifactId>
-	<version>3.8.1</version>
-	<configuration>
-	<source>${jdk.version}</source>
-	<target>${jdk.version}</target>
-	<encoding>UTF-8</encoding>
-	</configuration>
-	</plugin>
-	<plugin>
-	<groupId>org.eclipse.jetty</groupId>
-	<artifactId>jetty-maven-plugin</artifactId>
-	<version>10.0.11</version>
-	</plugin>
-	</plugins>
+		<plugins>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>src/main/webapp/WEB-INF/classes</directory>
+						</fileset>
+						<fileset>
+							<directory>src/main/webapp/WEB-INF/lib</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+			</plugin>
+			<!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>10.0.13</version>
+			</plugin>
+		</plugins>
 	</pluginManagement>
-	</build> 
--->
-
-	<!-- $ mvn compile war:inplace and run tomcat -->
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>3.3.2</version>
-					<configuration>
-						<failOnMissionWebXml>false</failOnMissionWebXml>
-					</configuration>
-				</plugin>
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.10.1</version>
-					<configuration>
-						<source>${jdk.version}</source>
-						<target>${jdk.version}</target>
-						<compilerArgument></compilerArgument>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>3.2.0</version>
-					<configuration>
-						<filesets>
-							<fileset>
-								<directory>src/main/webapp/WEB-INF/classes</directory>
-							</fileset>
-							<fileset>
-								<directory>src/main/webapp/WEB-INF/lib</directory>
-							</fileset>
-						</filesets>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+</build>
 </project>
