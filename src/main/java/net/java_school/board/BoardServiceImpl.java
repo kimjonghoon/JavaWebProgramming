@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import net.java_school.mybatis.BoardMapper;
 
 @Service
@@ -74,7 +76,19 @@ public class BoardServiceImpl implements BoardService {
 
     //글삭제
     @Override
+    @Transactional
     public void removeArticle(Article article) {
+	//1. 첨부파일 정보 삭제
+	List<AttachFile> files = this.getAttachFileList(article.getArticleNo());
+	for (AttachFile file : files) {
+		this.removeAttachFile(file);
+	}
+	//2. 댓글 삭제
+	List<Comment> comments = this.getCommentList(article.getArticleNo());
+	for (Comment comment : comments) {
+		this.removeComment(comment);
+	}
+	//3. 게시글 삭제
         boardMapper.delete(article.getArticleNo());
     }
 

@@ -4,9 +4,11 @@
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/security
-		http://www.springframework.org/schema/security/spring-security.xsd">
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<global-method-security pre-post-annotations="enabled" />
 
 	<http>
 		<access-denied-handler error-page="/403" />
@@ -20,7 +22,7 @@
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 		<intercept-url pattern="/bbs/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
-		
+
 		<form-login login-page="/users/login"
 			authentication-failure-url="/users/login?error=1"
 			default-target-url="/bbs/chat?page=1" />
@@ -32,10 +34,6 @@
 				error-if-maximum-exceeded="true" />
 		</session-management>
 	</http>
-
-	<!-- http에 access-denied-handler ref="my403"와 같이 설정했다면 다음이 필요 -->
-	<!-- <beans:bean id="my403" class="net.java_school.spring.MyAccessDeniedHandler"> 
-		<beans:property name="errorPage" value="403" /> </beans:bean> -->
 
 	<beans:bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
@@ -51,3 +49,4 @@
 	</authentication-manager>
 
 </beans:beans>
+
