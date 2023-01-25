@@ -11,7 +11,6 @@ Source: <a href="https://github.com/kimjonghoon/simpleAjaxExampleOnSpringMVC">ht
 
 <h3>Create webapp archetype</h3>
 
-<div>
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
 <pre class="screen">mvn archetype:generate -Dfilter=maven-archetype-webapp
 

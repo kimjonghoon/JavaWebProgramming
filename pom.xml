@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -18,7 +17,7 @@
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.source>17</maven.compiler.source>
 	<maven.compiler.target>17</maven.compiler.target>
-	<spring.version>5.3.24</spring.version>
+	<spring.version>5.3.25</spring.version>
 	<spring.security.version>5.8.1</spring.security.version>
 </properties>
 
@@ -74,7 +73,7 @@
 	<dependency>
 		<groupId>com.mysql</groupId>
 		<artifactId>mysql-connector-j</artifactId>
-		<version>8.0.31</version>
+		<version>8.0.32</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
 	<dependency>

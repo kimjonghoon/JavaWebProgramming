@@ -454,7 +454,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
     <input type="hidden" name="page" value="1" />
     <div id="search">
         <input type="text" name="searchWord" size="15" maxlength="30" />
-    <input type="submit" value="<spring:message code="search" />" />
+        <input type="submit" value="<spring:message code="search" />" />
     </div>
 </form>
 

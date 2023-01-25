@@ -17,5 +17,4 @@ public class HomeController {
 	public String error403() {
 		return "403";
 	}
-
 }

@@ -79,12 +79,10 @@
 </bean>
 
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-	<property name="defaultErrorView" value="error" />
+	<property name="defaultErrorView" value="error" /> 
 	<property name="exceptionMappings">
 		<props>
-			<prop key="AccessDeniedException">
-				error-403
-			</prop>
+			<prop key="AccessDeniedException">error-403</prop>
 		</props>
 	</property>
 </bean>

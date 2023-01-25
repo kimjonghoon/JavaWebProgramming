@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -57,9 +58,13 @@ public class BbsController extends Paginator {
 		}
 	}
 
-	//목록
 	@GetMapping("{boardCd}")
-	public String list(@CookieValue(value="numPerPage", defaultValue="10") String num, @PathVariable String boardCd, Integer page, String searchWord, Locale locale, Model model) {
+	public String list(@CookieValue(value="numPerPage", defaultValue="10") String num,
+		       	@PathVariable String boardCd,
+		       	Integer page,
+		       	String searchWord,
+		       	Locale locale,
+		       	Model model) {
 
 		if (page == null) {
 			page = 1;
@@ -114,25 +119,27 @@ public class BbsController extends Paginator {
 		String boardName = this.getBoardName(boardCd, lang);
 		model.addAttribute("boards", boards);
 		model.addAttribute("boardName", boardName);
-
-		//파라미터로 전달되지 않는다.
 		model.addAttribute("boardCd", boardCd);
 
 		return "bbs/list";
-
 	}
 
-	//상세보기
 	@GetMapping("{boardCd}/{articleNo}")
-	public String view(@CookieValue(value="numPerPage", defaultValue="10") String num, @PathVariable String boardCd, @PathVariable Integer articleNo,
-			Integer page, String searchWord, Locale locale, HttpServletRequest req, Model model) {
+	public String view(@CookieValue(value="numPerPage", defaultValue="10") String num,
+		       	@PathVariable String boardCd,
+		       	@PathVariable Integer articleNo,
+			Integer page,
+		       	String searchWord,
+		       	Locale locale,
+		       	HttpServletRequest req,
+		       	Model model) {
 
 		if (page == null) {
 			page = 1;
 		}
+
 		String lang = locale.getLanguage();
 
-		//조회수 증가 수정: views 테이블 이용 2017.8.14 추가
 		//articleNo, user'ip, yearMonthDayHour
 		String ip = req.getRemoteAddr();
 		LocalDateTime now = LocalDateTime.now();
@@ -148,19 +155,18 @@ public class BbsController extends Paginator {
 
 		}
 
-		Article article = boardService.getArticle(articleNo);//상세보기에서 볼 게시글
+		Article article = boardService.getArticle(articleNo);
 		List<AttachFile> attachFileList = boardService.getAttachFileList(articleNo);
 		Article nextArticle = boardService.getNextArticle(articleNo, boardCd, searchWord);
 		Article prevArticle = boardService.getPrevArticle(articleNo, boardCd, searchWord);
 		//List<Comment> commentList = boardService.getCommentList(articleNo);
 		String boardName = this.getBoardName(boardCd, lang);
 
-		//상세보기에서 볼 게시글 관련 정보
-		String title = article.getTitle();//제목
-		String content = article.getContent();//내용
-		//int hit = article.getHit();//조회수
-		String name = article.getName();//작성자 이름
-		String email = article.getEmail();//작성자 ID
+		String title = article.getTitle();
+		String content = article.getContent();
+		//int hit = article.getHit();
+		String name = article.getName();
+		String email = article.getEmail();
 
 		Date date = article.getRegdate();
 		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
@@ -168,7 +174,6 @@ public class BbsController extends Paginator {
 		df = DateFormat.getTimeInstance(DateFormat.MEDIUM, locale);
 		regdate = regdate + " " + df.format(date);
 
-		//조회수 구하기 추가 2017.8.14
 		int hit = boardService.getTotalViews(articleNo);
 
 		model.addAttribute("title", title);
@@ -182,9 +187,8 @@ public class BbsController extends Paginator {
 		model.addAttribute("prevArticle", prevArticle);
 		//model.addAttribute("commentList", commentList);
 
-		//목록관련
-		int numPerPage = Integer.parseInt(num);//페이지당 레코드 수
-		int pagePerBlock = 10;//블록당 페이지 링크수
+		int numPerPage = Integer.parseInt(num);
+		int pagePerBlock = 10;
 
 		int totalRecord = boardService.getTotalRecord(boardCd, searchWord);
 
@@ -194,14 +198,12 @@ public class BbsController extends Paginator {
 		map.put("boardCd", boardCd);
 		map.put("searchWord", searchWord);
 
-
 		//Oracle start
 		Integer startRecord = (page - 1) * numPerPage + 1;
 		Integer endRecord = page * numPerPage;
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
-
 /*
 		//MySQL and MariaDB start
 		Integer offset = (page - 1) * numPerPage;
@@ -231,16 +233,17 @@ public class BbsController extends Paginator {
 		List<Board> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);
 
-		//파라미터로 전달되지 않기에
 		model.addAttribute("articleNo", articleNo);
 		model.addAttribute("boardCd", boardCd);
 		
 		return "bbs/view";
 	}
 
-	//글쓰기 양식
 	@GetMapping("{boardCd}/new")
-	public String writeForm(@PathVariable String boardCd, Locale locale, Model model) {
+	public String writeForm(@PathVariable String boardCd,
+		       	Locale locale,
+		       	Model model) {
+
 		String lang = locale.getLanguage();
 		String boardName = this.getBoardName(boardCd, lang);
 		List<Board> boards = boardService.getBoards();
@@ -248,14 +251,11 @@ public class BbsController extends Paginator {
 		model.addAttribute("boardName", boardName);
 		model.addAttribute("article", new Article());
 		model.addAttribute("boards", boards);
-		//boardCd 파라미터가 전달되지 않는다.
 		model.addAttribute("boardCd", boardCd);
 
 		return "bbs/write";
-
 	}
 
-	//글쓰기
 	@PostMapping("{boardCd}")
 	public String write(@Valid Article article,
 			BindingResult bindingResult,
@@ -270,7 +270,6 @@ public class BbsController extends Paginator {
 			model.addAttribute("boardName", boardName);
 			List<Board> boards = boardService.getBoards();
 			model.addAttribute("boards", boards);
-			//boardCd 파라미터가 전달되지 않는다.
 			model.addAttribute("boardCd", boardCd);
 
 			return "bbs/write";
@@ -281,7 +280,6 @@ public class BbsController extends Paginator {
 
 		boardService.addArticle(article);
 
-		//파일 업로드
 		Iterator<String> it = mpRequest.getFileNames();
 		List<MultipartFile> fileList = new ArrayList<>();
 		File myDir = new File(WebContants.UPLOAD_PATH + principal.getName());
@@ -297,7 +295,6 @@ public class BbsController extends Paginator {
 			}
 		}
 
-		//파일데이터 삽입
 		int size = fileList.size();
 		for (int i = 0; i < size; i++) {
 			MultipartFile mpFile = fileList.get(i);
@@ -312,31 +309,29 @@ public class BbsController extends Paginator {
 		}
 
 		return "redirect:/bbs/" + article.getBoardCd() + "?page=1";
-
 	}
 
-	//수정 양식
 	@GetMapping("{boardCd}/{articleNo}/edit")
-	public String modifyForm(@PathVariable String boardCd, @PathVariable Integer articleNo, Locale locale, Model model) {
+	public String modifyForm(@PathVariable String boardCd,
+		       	@PathVariable Integer articleNo,
+		       	Locale locale,
+		       	Model model) {
 
 		String lang = locale.getLanguage();
 		Article article = boardService.getArticle(articleNo);
 		String boardName = this.getBoardName(boardCd, lang);
 
-		//수정페이지에서의 보일 게시글 정보
 		model.addAttribute("article", article);
 		model.addAttribute("boardName", boardName);
 
 		List<Board> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);
-		//파라미터로 전달하지 않는다.
 		model.addAttribute("boardCd", boardCd);
 		model.addAttribute("articleNo", articleNo);
 
 		return "bbs/modify";
 	}
 
-	//수정
 	@PostMapping("{boardCd}/{articleNo}")
 	public String modify(@Valid Article article,
 			BindingResult bindingResult,
@@ -361,14 +356,11 @@ public class BbsController extends Paginator {
 
 		article.setArticleNo(articleNo);
 		article.setBoardCd(boardCd);
-		//관리자가 수정하더라도 원글 소유자를 그대로 유지하기 위해서 
 		String email = boardService.getArticle(article.getArticleNo()).getEmail();
 		article.setEmail(email);
 
-		//게시글 수정
 		boardService.modifyArticle(article);
 
-		//파일업로드
 		Iterator<String> it = mpRequest.getFileNames();
 		List<MultipartFile> fileList = new ArrayList<>();
 		File myDir = new File(WebContants.UPLOAD_PATH + email);
@@ -384,7 +376,6 @@ public class BbsController extends Paginator {
 			}
 		}
 
-		//파일데이터 삽입
 		int size = fileList.size();
 		for (int i = 0; i < size; i++) {
 			MultipartFile mpFile = fileList.get(i);
@@ -394,7 +385,7 @@ public class BbsController extends Paginator {
 			attachFile.setFiletype(mpFile.getContentType());
 			attachFile.setFilesize(mpFile.getSize());
 			attachFile.setArticleNo(article.getArticleNo());
-			attachFile.setEmail(article.getEmail());//첨부파일 소유자는 원글 소유자가 되도록
+			attachFile.setEmail(article.getEmail());
 			boardService.addAttachFile(attachFile);
 		}
 
@@ -408,13 +399,18 @@ public class BbsController extends Paginator {
 			+ page
 			+ "&searchWord="
 			+ searchWord;
-
 	}
 
 	@DeleteMapping("/{boardCd}/{articleNo}")
-	public String deleteArticle(@PathVariable String boardCd, @PathVariable Integer articleNo, Integer page, String searchWord) {
+	public String deleteArticle(@PathVariable String boardCd,
+		       	@PathVariable Integer articleNo,
+		       	Integer page,
+		       	String searchWord) throws Exception {
+
 		Article article = boardService.getArticle(articleNo);
 		boardService.removeArticle(article);
+
+		searchWord = URLEncoder.encode(searchWord, "UTF-8");
 
 		return "redirect:/bbs/"
 			+ boardCd
@@ -422,7 +418,6 @@ public class BbsController extends Paginator {
 			+ page
 			+ "&searchWord="
 			+ searchWord;
-
 	}
 
 	@DeleteMapping("deleteAttachFile")
@@ -445,7 +440,5 @@ public class BbsController extends Paginator {
 			+ page
 			+ "&searchWord="
 			+ searchWord;
-
 	}
-
 }
