@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx.xsd
-	http://www.springframework.org/schema/mvc
-	http://www.springframework.org/schema/mvc/spring-mvc.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd
-	http://mybatis.org/schema/mybatis-spring 
-	http://mybatis.org/schema/mybatis-spring.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://mybatis.org/schema/mybatis-spring 
+		http://mybatis.org/schema/mybatis-spring.xsd">
 
 <mvc:resources mapping="/resources/**" location="/resources/" />
 <mvc:resources mapping="/examples/**" location="/examples/" />
@@ -50,7 +47,7 @@
 
 <!-- MySQL datasource -->
 <!--    
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 	<property name="url" value="jdbc:mysql://localhost:3306/javaskool?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
 	<property name="username" value="java" />
@@ -60,7 +57,7 @@
 	<property name="poolPreparedStatements" value="true" />
 	<property name="defaultAutoCommit" value="true" />
 	<property name="validationQuery" value="SELECT 1" />
-	</bean> 
+</bean> 
 -->
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
