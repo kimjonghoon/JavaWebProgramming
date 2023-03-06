@@ -39,7 +39,7 @@
 	#wrap {
 		margin: 0 auto;
 		padding: 0;
-		width: 1000px;
+		width: 1200px;
 	}
 	#header {
 		width: 100%;;
@@ -66,7 +66,7 @@
 		border-top: 1px solid #DAEAAA;
 	}
 	#content {
-		margin-left: 180px;
+		margin-left: 214px;
 		margin-right: 210px;
 		padding-left: 9px;
 		padding-right: 9px;
@@ -75,7 +75,7 @@
 	}
 	#sidebar {
 		float: left;
-		width: 173px;
+		width: 205px;
 		margin-left: -100%;
 		margin-bottom: 20px;
 		font-family: Verdana, sans-serif;
@@ -88,8 +88,8 @@
 	}
 	#extra {
 		float: left;
-		width: 205px;
-		margin-left: -205px;
+		width: 201px;
+		margin-left: -201px;
 		margin-bottom: 20px;
 		position: relative;
 		top: 7px;
