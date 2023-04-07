@@ -18,7 +18,13 @@ pre:lang(en) {
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 }
 
-input, select, textarea, td, th {
+td, th {
+	color: #646464;
+	font-size: 13px;
+	font-family: "돋움", dotum, sans-serif;
+}
+
+input, select, textarea {
 	color: #646464;
 	font-size: 12px;
 	font-family: "돋움", dotum, sans-serif;
