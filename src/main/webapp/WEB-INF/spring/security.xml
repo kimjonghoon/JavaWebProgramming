@@ -12,16 +12,14 @@
 
 	<http>
 		<access-denied-handler error-page="/403" />
-		<intercept-url pattern="/download/**" access="permitAll" />
 		<intercept-url pattern="/users/bye_confirm" access="permitAll" />
 		<intercept-url pattern="/users/welcome" access="permitAll" />
 		<intercept-url pattern="/users/signUp" access="permitAll" />
 		<intercept-url pattern="/users/login" access="permitAll" />
-		<intercept-url pattern="/resources/**" access="permitAll" />
-		<intercept-url pattern="/examples/**" access="permitAll" />
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/users/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
 		<intercept-url pattern="/bbs/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+		<intercept-url pattern="/**" access="permitAll" />
 
 		<form-login login-page="/users/login"
 			authentication-failure-url="/users/login?error=1"

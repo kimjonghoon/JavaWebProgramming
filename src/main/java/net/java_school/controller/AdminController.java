@@ -32,9 +32,7 @@ public class AdminController extends Paginator {
 	@GetMapping
 	public String index(Integer page, String search, Model model) {
 
-		if (page == null) {
-			page = 1;
-		}
+		if (page == null) return "redirect:/admin?page=1";
 
 		int numPerPage = 20;
 		int pagePerBlock = 10;
