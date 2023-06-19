@@ -25,21 +25,14 @@
 
 <mybatis:scan base-package="net.java_school.mybatis" />
 
-<!-- ViewResolver -->
-<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-	<property name="prefix" value="/WEB-INF/views/" />
-	<property name="suffix" value=".jsp" />
-</bean>
-
 <!-- Oracle datasource-->
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 	<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
 	<property name="username" value="java" />
 	<property name="password" value="school" />
-	<property name="maxActive" value="100" />
-	<property name="maxWait" value="1000" />
+	<property name="maxTotal" value="100" />
+	<property name="maxWaitMillis" value="1000" />
 	<property name="poolPreparedStatements" value="true" />
 	<property name="defaultAutoCommit" value="true" />
 	<property name="validationQuery" value=" SELECT 1 FROM DUAL" />
@@ -47,13 +40,13 @@
 
 <!-- MySQL datasource -->
 <!--    
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 	<property name="url" value="jdbc:mysql://localhost:3306/javaskool?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" />
 	<property name="username" value="java" />
 	<property name="password" value="school" />
-	<property name="maxActive" value="100" />
-	<property name="maxWait" value="1000" />
+	<property name="maxTotal" value="100" />
+	<property name="maxWaitMillis" value="1000" />
 	<property name="poolPreparedStatements" value="true" />
 	<property name="defaultAutoCommit" value="true" />
 	<property name="validationQuery" value="SELECT 1" />
@@ -65,8 +58,17 @@
 	<property name="configLocation" value="classpath:net/java_school/mybatis/Configuration.xml" />
 </bean>
 
-<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-	<property name="maxUploadSize" value="1000000" />
+<mvc:interceptors>
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+</mvc:interceptors>
+
+<!-- ViewResolver -->
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	<property name="prefix" value="/WEB-INF/views/" />
+	<property name="suffix" value=".jsp" />
 </bean>
 
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -87,14 +89,10 @@
 	<property name="defaultLocale" value="ko" />
 </bean>
 
-<mvc:interceptors>
-	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-		<property name="paramName" value="lang" />
-	</bean>
-</mvc:interceptors>
-
 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
 	<property name="validationMessageSource" ref="messageSource" />
 </bean>
+
+<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
 
 </beans>

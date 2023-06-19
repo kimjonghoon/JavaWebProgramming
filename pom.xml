@@ -4,28 +4,24 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 <modelVersion>4.0.0</modelVersion>
-
 <groupId>net.java_school</groupId>
 <artifactId>JavaWebProgrammingSource</artifactId>
 <version>1.0-SNAPSHOT</version>
 <packaging>war</packaging>
-
 <name>Java Web Programming Source Webapp</name>
 <url>http://localhost:8080</url>
-
 <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.source>17</maven.compiler.source>
 	<maven.compiler.target>17</maven.compiler.target>
-	<spring.version>5.3.27</spring.version>
-	<spring.security.version>5.8.3</spring.security.version>
+	<spring.version>6.0.10</spring.version>
+	<spring.security.version>6.1.0</spring.security.version>
 </properties>
-
 <dependencies>
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
-		<version>4.13.1</version>
+		<version>4.13.2</version>
 		<scope>test</scope>
 	</dependency>
 	<dependency>
@@ -41,11 +37,6 @@
 	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-jdbc</artifactId>
-		<version>${spring.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-tx</artifactId>
 		<version>${spring.version}</version>
 	</dependency>
 	<dependency>
@@ -67,7 +58,7 @@
 	<dependency>
 		<groupId>org.hibernate.validator</groupId>
 		<artifactId>hibernate-validator</artifactId>
-		<version>6.2.5.Final</version>
+		<version>8.0.0.Final</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 	<dependency>
@@ -85,7 +76,7 @@
 	<dependency>
 		<groupId>org.mybatis</groupId>
 		<artifactId>mybatis-spring</artifactId>
-		<version>2.1.1</version>
+		<version>3.0.2</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 	<dependency>
@@ -93,11 +84,11 @@
 		<artifactId>mybatis</artifactId>
 		<version>3.5.13</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 	<dependency>
-		<groupId>commons-dbcp</groupId>
-		<artifactId>commons-dbcp</artifactId>
-		<version>1.4</version>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-dbcp2</artifactId>
+		<version>2.9.0</version>
 	</dependency>
 	<!-- Logging -->
 	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
@@ -118,49 +109,36 @@
 		<artifactId>log4j-jcl</artifactId>
 		<version>2.20.0</version>
 	</dependency>
-	<!-- File Upload -->
-	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-	<dependency>
-		<groupId>commons-io</groupId>
-		<artifactId>commons-io</artifactId>
-		<version>2.12.0</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-	<dependency>
-		<groupId>commons-fileupload</groupId>
-		<artifactId>commons-fileupload</artifactId>
-		<version>1.5</version>
-	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->	
 	<dependency>
 		<groupId>com.fasterxml.jackson.core</groupId>
 		<artifactId>jackson-databind</artifactId>
 		<version>2.15.2</version>
 	</dependency>
-	<!-- Servlet JSP JSTL -->
-	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>javax.servlet-api</artifactId>
-		<version>4.0.1</version>
+		<groupId>jakarta.servlet</groupId>
+		<artifactId>jakarta.servlet-api</artifactId>
+		<version>6.0.0</version>
 		<scope>provided</scope>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
-	<dependency>
-		<groupId>javax.servlet.jsp</groupId>
-		<artifactId>javax.servlet.jsp-api</artifactId>
-		<version>2.3.3</version>
-		<scope>provided</scope>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jstl</artifactId>
-		<version>1.2</version>
-	</dependency>
+	<!--Ubuntu 23.04 Tomcat10 -->
+<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
+<dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>3.0.1</version>
+</dependency>
+	
 </dependencies>
 <build>
-	<finalName>spring-bbs</finalName>
+	<finalName>JavaWebProgrammingSource</finalName>
 	<pluginManagement>
 		<plugins>
 			<plugin>
@@ -205,7 +183,7 @@
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>10.0.15</version>
+				<version>11.0.15</version>
 			</plugin>
 		</plugins>
 	</pluginManagement>

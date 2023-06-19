@@ -8,8 +8,6 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<global-method-security pre-post-annotations="enabled" />
-
 	<http>
 		<access-denied-handler error-page="/403" />
 		<intercept-url pattern="/users/bye_confirm" access="permitAll" />
@@ -32,6 +30,10 @@
 				error-if-maximum-exceeded="true" />
 		</session-management>
 	</http>
+
+	<global-method-security pre-post-annotations="enabled" />
+
+	<beans:bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" /> 
 
 	<beans:bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">

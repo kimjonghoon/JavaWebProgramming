@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;

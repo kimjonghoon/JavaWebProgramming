@@ -51,13 +51,11 @@ if (requestUri == null) {
 <spring:message code="error.msg" />
 </p>
 <%
-if(statusCode != 500){
+if(statusCode != null && statusCode != 500){
     out.write("<h3>Error Details</h3>");
     out.write("<ul><li>Status Code:" + statusCode + "</li>");
     out.write("<li>Requested URI:"+requestUri + "</li></ul>");
 }
-
-
 if (throwable != null) {
     out.write("<h3>Exception Details</h3>");
     out.write("<ul><li>Servlet Name:" + servletName + "</li>");

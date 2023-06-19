@@ -83,7 +83,7 @@ SpringBbs
 	CREATE UNIQUE INDEX ix_authorities ON authorities(email, authority); 
 	
 	-- for test records
-	insert into board values ('chat', 'Chat', '자유 게시판');
+	insert into board values ('chat', 'Chat', '자유게시판');
 	
 	commit;
 	
@@ -176,26 +176,27 @@ SpringBbs
 	  unique key (articleNo, ip, yearMonthDayHour)
 	);
 	
-	insert into board values ('chat','Chat','자유 게시판');
+	insert into board values ('chat','Chat','자유게시판');
 	commit;
 
 ## Have to do
 ### 1.Modify the **UPLOAD_PATH** in WebContants.java
-(e.g. **/home/kim/Lab/**SpringBbs/download/data/ => **C:\www\**SpringBbs\download\data\)
+(e.g. /home/kim/upload/ => C:\www\SpringBbs\download\data\)
 
-### 2.Install the Oracle JDBC driver(ojdbc6.jar) to your local repository with the following command:
- 
-> mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.2.0 -Dpackaging=jar
+On Linux, the following additional work is required.
 
-(You can download ojdbc6.jar from https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc6/11.2.0.4/)
-### 3.Modify the **fileName** in log4j.xml
+> sudo chown -R tomcat:tomcat /var/opt/upload/
 
-> &lt;File name="A1" fileName="**/home/kim/logs/A1.log**" append="false"&gt;
+> sudo chmod 777 /var/opt/upload
+
+### 2.Modify the **fileName** in log4j.xml
+(e.g. /var/log/tomcat10/A1.log => C:\www\SpringBbs\A1.log)
+> &lt;File name="A1" fileName="**C:\www\SpringBbs\A1.log**" append="false"&gt;
 
 On Linux, the following additional work is required.
 #### 1 Change ownership to the directory where log files are to be created.
 
-> sudo chown tomcat.tomcat -R logs/
+> sudo chown -R tomcat.tomcat logs/
 
 #### 2 You may also need the following:
 
@@ -205,7 +206,9 @@ On Linux, the following additional work is required.
 
 ### 1. (Current Settings)
 Edit ROOT.xml.(Context file of Tomcat's root application)
-$ **mvn compile war:inplace**
+
+> **mvn compile war:inplace**
+
 Start Tomcat and visit http://localhost:8080
 (If dependencies change, run $ **mvn clean** first)
 

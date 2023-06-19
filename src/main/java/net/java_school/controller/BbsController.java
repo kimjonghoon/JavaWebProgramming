@@ -1,18 +1,21 @@
 package net.java_school.controller;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 import net.java_school.board.Article;
 import net.java_school.board.AttachFile;
@@ -32,15 +35,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 @Controller
 @RequestMapping("bbs")
 public class BbsController extends Paginator {
+	private Logger log = LogManager.getLogger("net.java_school");
 
 	@Autowired
 	private BoardService boardService;
@@ -262,8 +268,14 @@ public class BbsController extends Paginator {
 			@PathVariable String boardCd,
 			Locale locale,
 			Model model,
-			MultipartHttpServletRequest mpRequest,
+			@RequestParam("attachFile") MultipartFile attachFile,
 			Principal principal) throws Exception {
+		/*
+		if (article != null) {
+			log.debug(article.getTitle());
+			log.debug("article is not null but title is null");
+		} else log.debug("Article is null!!!");
+		*/
 
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(boardCd, locale.getLanguage());
@@ -280,32 +292,31 @@ public class BbsController extends Paginator {
 
 		boardService.addArticle(article);
 
-		Iterator<String> it = mpRequest.getFileNames();
-		List<MultipartFile> fileList = new ArrayList<>();
-		File myDir = new File(WebContants.UPLOAD_PATH + principal.getName());
+		if (!attachFile.isEmpty()) {
+			AttachFile file = new AttachFile();
+			file.setFilename(attachFile.getOriginalFilename());
+			file.setFiletype(attachFile.getContentType());
+			file.setFilesize(attachFile.getSize());
+			file.setArticleNo(article.getArticleNo());
+			file.setEmail(principal.getName());
+			boardService.addAttachFile(file);
 
-		if (!myDir.exists()) myDir.mkdirs();
+			log.warn("1---");
+			File dir = new File(WebContants.UPLOAD_PATH + principal.getName());
+			log.warn("2---");
+			if (!dir.exists()) dir.mkdirs();
+			log.warn("3---");
 
-		while (it.hasNext()) {
-			MultipartFile multiFile = mpRequest.getFile((String) it.next());
-			if (multiFile != null && multiFile.getSize() > 0) {
-				String filename = multiFile.getOriginalFilename();
-				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + principal.getName() + File.separator + filename));
-				fileList.add(multiFile);
+			Path path = Paths.get(WebContants.UPLOAD_PATH + principal.getName());
+			log.warn("4---");
+
+			try (InputStream inputStream = attachFile.getInputStream()) {
+			log.warn("5---");
+				Files.copy(inputStream, path.resolve(attachFile.getOriginalFilename()),
+						StandardCopyOption.REPLACE_EXISTING);
+			log.warn("7---");
 			}
-		}
 
-		int size = fileList.size();
-		for (int i = 0; i < size; i++) {
-			MultipartFile mpFile = fileList.get(i);
-			AttachFile attachFile = new AttachFile();
-			String filename = mpFile.getOriginalFilename();
-			attachFile.setFilename(filename);
-			attachFile.setFiletype(mpFile.getContentType());
-			attachFile.setFilesize(mpFile.getSize());
-			attachFile.setArticleNo(article.getArticleNo());
-			attachFile.setEmail(principal.getName());
-			boardService.addAttachFile(attachFile);
 		}
 
 		return "redirect:/bbs/" + article.getBoardCd() + "?page=1";
@@ -339,10 +350,16 @@ public class BbsController extends Paginator {
 			@PathVariable Integer articleNo,
 			Integer page,
 			String searchWord,
+			MultipartFile attachFile,
 			Locale locale,
-			Model model,
-			MultipartHttpServletRequest mpRequest) throws Exception {
+			Model model) throws Exception {
 
+		if (article != null) {
+			log.debug(article.getTitle());
+			log.debug("article is not null but title is null");
+		}
+		else
+			log.debug("Article is null!!!");
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(article.getBoardCd(), locale.getLanguage());
 			model.addAttribute("boardName", boardName);
@@ -361,32 +378,24 @@ public class BbsController extends Paginator {
 
 		boardService.modifyArticle(article);
 
-		Iterator<String> it = mpRequest.getFileNames();
-		List<MultipartFile> fileList = new ArrayList<>();
-		File myDir = new File(WebContants.UPLOAD_PATH + email);
+		if (!attachFile.isEmpty()) {
+			AttachFile file = new AttachFile();
+			file.setFilename(attachFile.getOriginalFilename());
+			file.setFiletype(attachFile.getContentType());
+			file.setFilesize(attachFile.getSize());
+			file.setArticleNo(article.getArticleNo());
+			file.setEmail(article.getEmail());
+			boardService.addAttachFile(file);
 
-		if (!myDir.exists()) myDir.mkdirs();
-		
-		while (it.hasNext()) {
-			MultipartFile multiFile = mpRequest.getFile((String) it.next());
-			if (multiFile != null && multiFile.getSize() > 0) {
-				String filename = multiFile.getOriginalFilename();
-				multiFile.transferTo(new File(WebContants.UPLOAD_PATH + email + File.separator + filename));
-				fileList.add(multiFile);
+			File dir = new File(WebContants.UPLOAD_PATH + email);
+			if (!dir.exists()) dir.mkdirs();
+
+			Path path = Paths.get(WebContants.UPLOAD_PATH + email);
+
+			try (InputStream inputStream = attachFile.getInputStream()) {
+				Files.copy(inputStream, path.resolve(attachFile.getOriginalFilename()),
+						StandardCopyOption.REPLACE_EXISTING);
 			}
-		}
-
-		int size = fileList.size();
-		for (int i = 0; i < size; i++) {
-			MultipartFile mpFile = fileList.get(i);
-			AttachFile attachFile = new AttachFile();
-			String filename = mpFile.getOriginalFilename();
-			attachFile.setFilename(filename);
-			attachFile.setFiletype(mpFile.getContentType());
-			attachFile.setFilesize(mpFile.getSize());
-			attachFile.setArticleNo(article.getArticleNo());
-			attachFile.setEmail(article.getEmail());
-			boardService.addAttachFile(attachFile);
 		}
 
 		searchWord = URLEncoder.encode(searchWord, "UTF-8");
