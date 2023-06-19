@@ -270,12 +270,6 @@ public class BbsController extends Paginator {
 			Model model,
 			@RequestParam("attachFile") MultipartFile attachFile,
 			Principal principal) throws Exception {
-		/*
-		if (article != null) {
-			log.debug(article.getTitle());
-			log.debug("article is not null but title is null");
-		} else log.debug("Article is null!!!");
-		*/
 
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(boardCd, locale.getLanguage());
@@ -301,22 +295,15 @@ public class BbsController extends Paginator {
 			file.setEmail(principal.getName());
 			boardService.addAttachFile(file);
 
-			log.warn("1---");
 			File dir = new File(WebContants.UPLOAD_PATH + principal.getName());
-			log.warn("2---");
 			if (!dir.exists()) dir.mkdirs();
-			log.warn("3---");
 
 			Path path = Paths.get(WebContants.UPLOAD_PATH + principal.getName());
-			log.warn("4---");
 
 			try (InputStream inputStream = attachFile.getInputStream()) {
-			log.warn("5---");
 				Files.copy(inputStream, path.resolve(attachFile.getOriginalFilename()),
 						StandardCopyOption.REPLACE_EXISTING);
-			log.warn("7---");
 			}
-
 		}
 
 		return "redirect:/bbs/" + article.getBoardCd() + "?page=1";
@@ -354,12 +341,6 @@ public class BbsController extends Paginator {
 			Locale locale,
 			Model model) throws Exception {
 
-		if (article != null) {
-			log.debug(article.getTitle());
-			log.debug("article is not null but title is null");
-		}
-		else
-			log.debug("Article is null!!!");
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(article.getBoardCd(), locale.getLanguage());
 			model.addAttribute("boardName", boardName);
