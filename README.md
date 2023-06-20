@@ -185,9 +185,9 @@ SpringBbs
 
 On Linux, the following additional work is required.
 
-> sudo chown -R tomcat:tomcat /var/opt/upload/
+> sudo chown -R tomcat:tomcat /home/kim/upload/
 
-> sudo chmod 777 /var/opt/upload
+> sudo chmod u=rwX,g=rwXs,o=rX /home/kim/upload
 
 ### 2.Modify the **fileName** in log4j.xml
 (e.g. /var/log/tomcat10/A1.log => C:\www\SpringBbs\A1.log)
