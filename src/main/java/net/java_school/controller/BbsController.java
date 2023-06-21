@@ -268,7 +268,7 @@ public class BbsController extends Paginator {
 			@PathVariable String boardCd,
 			Locale locale,
 			Model model,
-			@RequestParam("attachFile") MultipartFile attachFile,
+			MultipartFile attachFile,
 			Principal principal) throws Exception {
 
 		if (bindingResult.hasErrors()) {
