@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 import net.java_school.board.Article;
 import net.java_school.board.AttachFile;
@@ -38,7 +38,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
