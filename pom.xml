@@ -16,8 +16,8 @@
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.source>17</maven.compiler.source>
 	<maven.compiler.target>17</maven.compiler.target>
-	<spring.version>5.3.28</spring.version>
-	<spring.security.version>5.8.3</spring.security.version>
+	<spring.version>5.3.29</spring.version>
+	<spring.security.version>5.8.4</spring.security.version>
 </properties>
 
 <dependencies>
@@ -67,7 +67,7 @@
 	<dependency>
 		<groupId>com.mysql</groupId>
 		<artifactId>mysql-connector-j</artifactId>
-		<version>8.0.33</version>
+		<version>8.1.0</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 -->
 	<dependency>
@@ -126,10 +126,10 @@
 		<scope>provided</scope>
 	</dependency>
 	<dependency>
-        <groupId>jstl</groupId>
-        <artifactId>jstl</artifactId>
-        <version>1.2</version>
-    </dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
 </dependencies>
 
 <build>
