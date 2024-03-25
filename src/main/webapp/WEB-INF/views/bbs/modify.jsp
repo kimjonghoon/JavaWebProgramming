@@ -73,13 +73,13 @@ $(document).ready(function() {
 <tr>
     <td><spring:message code="title" /></td>
     <td>
-    	<sf:input path="title" style="width: 90%" value="${article.title }" /><br />
+    	<sf:input path="title" style="width: 90%" /><br />
     	<sf:errors path="title" cssClass="error" />
     </td>
 </tr>
 <tr>
     <td colspan="2">
-        <textarea name="content" rows="17" cols="50" id="modifyForm-ta">${article.content }</textarea><br />
+	<sf:textarea path="content" rows="17" cols="50" id="modifyForm-ta" /><br />
         <sf:errors path="content" cssClass="error" />
     </td>
 </tr>

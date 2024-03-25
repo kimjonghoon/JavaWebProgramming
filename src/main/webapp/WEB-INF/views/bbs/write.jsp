@@ -80,7 +80,7 @@ $(document).ready(function() {
 </tr>
 <tr>
     <td colspan="2">
-        <textarea name="content" rows="17" cols="50" id="writeForm-ta"></textarea><br />
+        <sf:textarea path="content" rows="17" cols="50" id="writeForm-ta"></sf:textarea><br />
         <sf:errors path="content" cssClass="error" />
     </td>
 </tr>
