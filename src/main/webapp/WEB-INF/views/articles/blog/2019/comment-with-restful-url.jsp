@@ -517,8 +517,8 @@ web.xml에 다음 필터를 추가한다.
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/restful-url">RESTful URL</a></li>
-	<li><a href="/blog/2019/comment-with-restful-url">게시판 댓글을 RESTful URL로 수정</a></li>
+	<li><a href="${ctx}/blog/2019/restful-url">RESTful URL</a></li>
+	<li><a href="${ctx}/blog/2019/comment-with-restful-url">게시판 댓글을 RESTful URL로 수정</a></li>
 </ul>
 
 </article>

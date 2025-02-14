@@ -11,11 +11,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="bbs.list.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.list.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <script>
 $(document).ready(function() {
     $('#paging a').click(function(e) {
@@ -101,7 +101,7 @@ function createCookie(name, value, days) {
             <td>
                 <a href="#" title="${article.articleNo }" class="view-link">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">
-                    <img src="/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
+                    <img src="${ctx}/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">
                     <span class="bbs-strong">[${article.commentNum }]</span>

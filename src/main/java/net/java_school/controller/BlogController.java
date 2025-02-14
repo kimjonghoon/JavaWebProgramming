@@ -13,7 +13,7 @@ public class BlogController {
 	}
 
 	@GetMapping("blog/{year}/{article}")
-	public String getBlog(@PathVariable String year, @PathVariable String article) {
+	public String getBlog(@PathVariable(name="year") String year, @PathVariable(name="article") String article) {
 		return "blog/" + year + "/" + article;
 	}
 

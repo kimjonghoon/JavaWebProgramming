@@ -693,14 +693,14 @@ Start Tomcat.
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/">Java Install</a></li>
-	<li><a href="/spring/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
-	<li><a href="/jsp/How-to-install-Tomcat">Tomcat Install</a></li>
-	<li><a href="/jsp/Creating-a-new-web-application">Creating a new web application</a></li>
-	<li><a href="/blog/2017/jetty-maven-plugin">Jetty Maven Plugin</a></li>
-	<li><a href="/jdbc/How-to-install-Oracle">Oracle Install</a></li>
-	<li><a href="/blog/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
-	<li><a href="/blog/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
+	<li><a href="${ctx}/">Java Install</a></li>
+	<li><a href="${ctx}/spring/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
+	<li><a href="${ctx}/jsp/How-to-install-Tomcat">Tomcat Install</a></li>
+	<li><a href="${ctx}/jsp/Creating-a-new-web-application">Creating a new web application</a></li>
+	<li><a href="${ctx}/blog/2017/jetty-maven-plugin">Jetty Maven Plugin</a></li>
+	<li><a href="${ctx}/jdbc/How-to-install-Oracle">Oracle Install</a></li>
+	<li><a href="${ctx}/blog/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
+	<li><a href="${ctx}/blog/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
 </ul>
 
 </article>

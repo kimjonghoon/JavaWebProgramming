@@ -7,7 +7,7 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/model2mysqlboard-using-DBCP">https://github.com/kimjonghoon/model2mysqlboard-using-DBCP</a><br />
-For more information about DBCP, See <a href="/jdbc/Connection-Pool#DBCP">DBCP</a>.
+For more information about DBCP, See <a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>.
 </p>
 
 <p>
@@ -145,7 +145,7 @@ commit;
 </pre>
 
 <p>
-For more information about family, parent, depth, indent column, See <a href="/jsp/Thread-BBS">Bulletin Boards with replies</a>
+For more information about family, parent, depth, indent column, See <a href="${ctx}/jsp/Thread-BBS">Bulletin Boards with replies</a>
 </p>
 
 
@@ -157,10 +157,10 @@ Go to the root directory and run <strong>mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="/jsp/Thread-BBS">Bulletin Boards with replies</a></li>
-  <li><a href="/java/Logging#logback">Logback</a>
-  <li><a href="/jdbc/Connection-Pool#DBCP">DBCP</a>
-  <li><a href="/jsp/Model2">Model 2</a></li>
+  <li><a href="${ctx}/jsp/Thread-BBS">Bulletin Boards with replies</a></li>
+  <li><a href="${ctx}/java/Logging#logback">Logback</a>
+  <li><a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>
+  <li><a href="${ctx}/jsp/Model2">Model 2</a></li>
 </ul>
 
 </article>

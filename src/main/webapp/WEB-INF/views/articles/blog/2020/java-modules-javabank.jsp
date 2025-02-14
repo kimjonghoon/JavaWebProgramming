@@ -6,7 +6,7 @@
 <h1>JavaBank 예제 모듈화</h1>
 
 <p>
-이 글은 <a href="/jdbc/JavaBank">자바 은행</a> 예제를 모듈화하는 과정을 다룬다.<br />
+이 글은 <a href="${ctx}/jdbc/JavaBank">자바 은행</a> 예제를 모듈화하는 과정을 다룬다.<br />
 자바 은행 소스에 내려받는다.
 </p>
 
@@ -378,9 +378,9 @@ java -cp $CP -p jars:out \
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/jdbc/JavaBank">JDBC 예제 - 자바 은행</a></li>
-	<li><a href="/blog/2019/java-9-modules">자바 9 모듈</a></li>
-	<li><a href="/blog/2020/java-modules-javabank">자바 은행 예제 모듈화</a></li>
+	<li><a href="${ctx}/jdbc/JavaBank">JDBC 예제 - 자바 은행</a></li>
+	<li><a href="${ctx}/blog/2019/java-9-modules">자바 9 모듈</a></li>
+	<li><a href="${ctx}/blog/2020/java-modules-javabank">자바 은행 예제 모듈화</a></li>
 </ul>
 
 <span id="refer">참조</span>

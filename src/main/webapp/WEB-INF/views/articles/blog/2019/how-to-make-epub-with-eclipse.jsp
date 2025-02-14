@@ -36,7 +36,7 @@ WebContent 폴더를 OEBPS로 변경
 <h3>EPUB을 구성하는 폴더와 파일 생성</h3>
 
 <p>
-<a href="/blog/2019/how-to-make-epub">EPUB ebook 만들기</a>를 참조해서 아래 디렉터리 구조대로 파일을 생성한다.
+<a href="${ctx}/blog/2019/how-to-make-epub">EPUB ebook 만들기</a>를 참조해서 아래 디렉터리 구조대로 파일을 생성한다.
 </p>
 
 <pre style="border: 2px dotted grey;padding: 0.3em;" lang="en">MyFirstBook (ROOT Directory)
@@ -203,8 +203,8 @@ java -jar C:/epubcheck-4.1.1/epubcheck.jar C:/EPUB/MyFirstBook/MyFirstBook.epub
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
-	<li><a href="/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
 </ul>
 
 </article>

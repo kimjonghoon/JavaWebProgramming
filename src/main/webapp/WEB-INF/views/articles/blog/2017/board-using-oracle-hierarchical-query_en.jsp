@@ -132,7 +132,7 @@ commit;
 
 <p>
 Install the Oracle JDBC Driver in the local repository.<br />
-See <a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
+See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
 </p>
 
 
@@ -144,8 +144,8 @@ Go to root directory and run mvn jetty:run and visit http://localhost:8080.
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="/jsp/Thread-BBS#board-using-oracle-hierarchical-query">Bulletin board using oracle hierarchical query</a></li>
-  <li><a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${ctx}/jsp/Thread-BBS#board-using-oracle-hierarchical-query">Bulletin board using oracle hierarchical query</a></li>
+  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

@@ -36,7 +36,7 @@ Change WebContent to OEBPS
 <h3>Create folders and files that make up EPUB</h3>
 
 <p>
-Refer to the <a href="/blog/2019/how-to-make-epub">How to make EPUB ebook</a> and create the files in the directory structure below.
+Refer to the <a href="${ctx}/blog/2019/how-to-make-epub">How to make EPUB ebook</a> and create the files in the directory structure below.
 </p>
 
 <pre style="border: 2px dotted grey;padding: 0.3em;" lang="en">MyFirstBook (ROOT Directory)
@@ -196,8 +196,8 @@ Refer to the Linux configuration above and set it as follows.
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
-	<li><a href="/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

@@ -38,7 +38,7 @@ A 모듈이 B 모듈을 의존하고 B 모듈이 C 모듈을 의존하고 C 모�
 </dl>
 
 <p>
-<a href="/jdbc/Connection-Pool">커넥션 풀</a> 소스를 모듈화하는 실습을 준비했다.<br />
+<a href="${ctx}/jdbc/Connection-Pool">커넥션 풀</a> 소스를 모듈화하는 실습을 준비했다.<br />
 실습하기 전 아랫글을 읽어 보는 게 좋다.
 </p>
 
@@ -1551,8 +1551,8 @@ main.app 모듈은 소비자<sup>Consumer</sup>다--
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/java-9-modules">자바 9 모듈</a></li>
-	<li><a href="/blog/2020/java-modules-javabank">자바은행 예제 모듈화</a></li>
+	<li><a href="${ctx}/blog/2019/java-9-modules">자바 9 모듈</a></li>
+	<li><a href="${ctx}/blog/2020/java-modules-javabank">자바은행 예제 모듈화</a></li>
 </ul>
 
 <span id="refer">참조</span>

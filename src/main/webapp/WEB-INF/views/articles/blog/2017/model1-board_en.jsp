@@ -7,7 +7,7 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/model1board">https://github.com/kimjonghoon/model1board</a><br />
-For more information, see the <a href="/jsp/BBS-Model1">Model 1 bulletin board</a>.
+For more information, see the <a href="${ctx}/jsp/BBS-Model1">Model 1 bulletin board</a>.
 </p>
 
 <p>
@@ -133,7 +133,7 @@ commit;
 
 <p>
 Install the Oracle JDBC Driver in the local repository.<br />
-See <a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
+See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
 </p>
 
 
@@ -145,8 +145,8 @@ Go to the root directory and <strong>run mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="/jsp/BBS-Model1">Model 1 bulletin board</a></li>
-  <li><a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${ctx}/jsp/BBS-Model1">Model 1 bulletin board</a></li>
+  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

@@ -288,8 +288,8 @@ If you paste the MyFirstBook.epub to iPad via iTunes, iPad register it to the iP
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
-	<li><a href="/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

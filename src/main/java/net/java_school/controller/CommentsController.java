@@ -13,6 +13,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ public class CommentsController {
 	private BoardService boardService;
 
 	@GetMapping("{articleNo}")
-	public List<Comment> getAllComments(@PathVariable Integer articleNo, 
+	public List<Comment> getAllComments(@PathVariable(name="articleNo") Integer articleNo, 
 			Principal principal, Authentication authentication) {
 
 		List<Comment> comments = boardService.getCommentList(articleNo);
@@ -64,8 +65,8 @@ public class CommentsController {
 	}
 
 	@PostMapping("{articleNo}")
-	public void addComment(@PathVariable Integer articleNo, 
-			String memo, Principal principal) {
+	public void addComment(@PathVariable(name="articleNo") Integer articleNo, 
+			@RequestParam(name="memo") String memo, Principal principal) {
 		Comment comment = new Comment();
 		comment.setMemo(memo);
 		comment.setArticleNo(articleNo);
@@ -75,15 +76,15 @@ public class CommentsController {
 	}
 
 	@PutMapping("{articleNo}/{commentNo}")
-	public void updateComment(@PathVariable Integer articleNo, 
-			@PathVariable Integer commentNo, String memo, Principal principal) {
+	public void updateComment(@PathVariable(name="articleNo") Integer articleNo, 
+			@PathVariable(name="commentNo") Integer commentNo, @RequestParam(name="memo") String memo, Principal principal) {
 		Comment comment = boardService.getComment(commentNo);
 		comment.setMemo(memo);
 		boardService.modifyComment(comment);
 	}
 
 	@DeleteMapping("{articleNo}/{commentNo}")
-	public void deleteComment(@PathVariable Integer articleNo, @PathVariable Integer commentNo) {
+	public void deleteComment(@PathVariable(name="articleNo") Integer articleNo, @PathVariable(name="commentNo") Integer commentNo) {
 		Comment comment = boardService.getComment(commentNo);
 		boardService.removeComment(comment);
 	}

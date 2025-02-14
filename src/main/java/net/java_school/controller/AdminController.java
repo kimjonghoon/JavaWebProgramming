@@ -18,6 +18,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 @RequestMapping("admin")
@@ -30,7 +32,10 @@ public class AdminController extends Paginator {
 	private BoardService boardService;
 
 	@GetMapping
-	public String index(Integer page, String search, Model model) {
+	public String index (
+			@RequestParam(name="page", defaultValue="1") Integer page, 
+			@RequestParam(name="search", defaultValue="") String search, 
+			Model model) {
 
 		if (page == null) return "redirect:/admin?page=1";
 
@@ -78,7 +83,7 @@ public class AdminController extends Paginator {
 	}
 
 	@GetMapping("editAccount")
-	public String editAccountForm(String email, Model model) {
+	public String editAccountForm(@RequestParam(name="email") String email, Model model) {
 		User user = userService.getUser(email);
 		//List<String> authorities = userService.getAuthoritiesOfUser(email);
 		model.addAttribute(WebContants.USER_KEY, user);
@@ -88,7 +93,10 @@ public class AdminController extends Paginator {
 	}
 
 	@PostMapping("editAccount")
-	public String editAccount(User user, String page, String search) throws Exception {
+	public String editAccount(
+			@ModelAttribute(name="user") User user, 
+			@RequestParam(name="page") String page, 
+			@RequestParam(name="search", defaultValue="") String search) throws Exception {
 		userService.editAccountByAdmin(user);
 
 		if (search != null && !search.equals("")) {
@@ -98,7 +106,10 @@ public class AdminController extends Paginator {
 	}
 
 	@PostMapping("changePasswd")
-	public String changePasswd(User user, String page, String search) throws Exception {
+	public String changePasswd(
+			@ModelAttribute(name="user") User user, 
+			@RequestParam(name="page") String page, 
+			@RequestParam(name="search") String search) throws Exception {
 		userService.changePasswdByAdmin(user);
 
 		if (search != null && !search.equals("")) {
@@ -108,7 +119,10 @@ public class AdminController extends Paginator {
 	}
 
 	@PostMapping("delUser")
-	public String delUser(User user, String page, String search) throws Exception {
+	public String delUser(
+			@ModelAttribute(name="user") User user, 
+			@RequestParam(name="page") String page, 
+			@RequestParam(name="search", defaultValue="") String search) throws Exception {
 		userService.delUser(user);
 
 		if (search != null && !search.equals("")) {
@@ -126,21 +140,25 @@ public class AdminController extends Paginator {
 	}
 
 	@PostMapping("createBoard")
-	public String createBoard(Board board) {
+	public String createBoard(@ModelAttribute(name="board") Board board) {
 		boardService.createBoard(board);
 
 		return "redirect:/admin/board";
 	}
 
 	@PostMapping("editBoard")
-	public String editBoard(Board board) {
+	public String editBoard(@ModelAttribute(name="board") Board board) {
 		boardService.editBoard(board);
 
 		return "redirect:/admin/board";
 	}
 
 	@GetMapping("delAuthority")
-	public String delAuthority(String authority, String email, String page, String search) throws Exception {
+	public String delAuthority(
+			@RequestParam(name="authority") String authority, 
+			@RequestParam(name="email") String email, 
+			@RequestParam(name="page") String page, 
+			@RequestParam(name="search", defaultValue="") String search) throws Exception {
 
 		userService.delAuthorityOfUser(email, authority);
 		if (search != null && !search.equals("")) {
@@ -150,7 +168,11 @@ public class AdminController extends Paginator {
 	}
 
 	@PostMapping("addAuthority")
-	public String addAuthority(String authority, String email, String page, String search) throws Exception {
+	public String addAuthority(
+			@RequestParam(name="authority") String authority, 
+			@RequestParam(name="email") String email, 
+			@RequestParam(name="page") String page, 
+			@RequestParam(name="search", defaultValue="") String search) throws Exception {
 
 		userService.addAuthority(email, authority);
 		if (search != null && !search.equals("")) {
@@ -158,5 +180,4 @@ public class AdminController extends Paginator {
 		}
 		return "redirect:/admin/editAccount?email=" + email + "&page=" + page + "&search=" + search;
 	}
-
 }

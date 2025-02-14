@@ -11,7 +11,7 @@
 
 <p>
 실습할 예제는 사용자 정의 커넥션 풀 대신 아파치의 DBCP를 사용하는, MySQL용 답변형 게시판이다.
-DBCP에 대한 자세한 설명은 <a href="/jdbc/Connection-Pool#DBCP">DBCP</a>를 참조한다.
+DBCP에 대한 자세한 설명은 <a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>를 참조한다.
 </p>
 
 <p>
@@ -149,7 +149,7 @@ commit;
 </pre>
 
 <p>
-family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="/jsp/Thread-BBS">계층형 게시판</a>을 참조한다.
+family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="${ctx}/jsp/Thread-BBS">계층형 게시판</a>을 참조한다.
 </p>
 
 
@@ -161,10 +161,10 @@ family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="/jsp/Th
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="/jsp/Thread-BBS">계층형 게시판</a></li>
-	<li><a href="/java/Logging#logback">Logback</a>
-	<li><a href="/jdbc/Connection-Pool#DBCP">DBCP</a>
-	<li><a href="/jsp/Model2">모델 2</a></li>
+	<li><a href="${ctx}/jsp/Thread-BBS">계층형 게시판</a></li>
+	<li><a href="${ctx}/java/Logging#logback">Logback</a>
+	<li><a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>
+	<li><a href="${ctx}/jsp/Model2">모델 2</a></li>
 </ul>
 
 </article>

@@ -13,10 +13,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="bbs.view.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.view.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <script>
 function displayComments() {
     var url = '/comments/' + ${articleNo};
@@ -392,7 +392,7 @@ $(document).on('click', '#all-comments', function (e) {
             <td style="text-align: center;">
                 <c:choose>
                     <c:when test="${articleNo == article.articleNo }">	
-                        <img src="/resources/images/arrow.gif" alt="<spring:message code="here" />" />
+                        <img src="${ctx}/resources/images/arrow.gif" alt="<spring:message code="here" />" />
                     </c:when>
                     <c:otherwise>
                         ${listItemNo - status.index }
@@ -402,7 +402,7 @@ $(document).on('click', '#all-comments', function (e) {
             <td>
                 <a href="#" title="${article.articleNo }">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">		
-                    <img src="/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
+                    <img src="${ctx}/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">		
                     <span class="bbs-strong">[${article.commentNum }]</span>

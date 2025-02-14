@@ -6,7 +6,7 @@
 <h1>Modularization - JavaBank</h1>
 
 <p>
-This article covers the modularization of the <a href="/jdbc/JavaBank">JDBC Example JavaBank</a>.
+This article covers the modularization of the <a href="${ctx}/jdbc/JavaBank">JDBC Example JavaBank</a>.
 </p>
 
 <p>
@@ -385,9 +385,9 @@ java -cp $CP -p jars:out \
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/jdbc/JavaBank">JavaBank</a></li>
-	<li><a href="/blog/2019/java-9-modules">Java 9 Modules</a></li>
-	<li><a href="/blog/2020/java-modules-javabank">Modularization - JavaBank</a></li>
+	<li><a href="${ctx}/jdbc/JavaBank">JavaBank</a></li>
+	<li><a href="${ctx}/blog/2019/java-9-modules">Java 9 Modules</a></li>
+	<li><a href="${ctx}/blog/2020/java-modules-javabank">Modularization - JavaBank</a></li>
 </ul>
 
 <span id="refer">References</span>

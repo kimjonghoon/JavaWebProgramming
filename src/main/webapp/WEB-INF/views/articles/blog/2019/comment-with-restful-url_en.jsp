@@ -504,8 +504,8 @@ Change the type from PUT to POST in the ajax transmission code related to commen
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/restful-url">RESTful URL</a></li>
-	<li><a href="/blog/2019/comment-with-restful-url">Comments with RESTful URL</a></li>
+	<li><a href="${ctx}/blog/2019/restful-url">RESTful URL</a></li>
+	<li><a href="${ctx}/blog/2019/comment-with-restful-url">Comments with RESTful URL</a></li>
 </ul>
 
 </article>

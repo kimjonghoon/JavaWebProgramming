@@ -1446,8 +1446,8 @@ Source: <a href="https://github.com/kimjonghoon/java-module-test">https://github
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/java-9-modules">Java 9 Modules</a></li>
-	<li><a href="/blog/2020/java-modules-javabank">JavaBank Modularization</a></li>
+	<li><a href="${ctx}/blog/2019/java-9-modules">Java 9 Modules</a></li>
+	<li><a href="${ctx}/blog/2020/java-modules-javabank">JavaBank Modularization</a></li>
 </ul>
 
 <span id="refer">References</span>

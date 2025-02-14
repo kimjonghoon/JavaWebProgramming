@@ -481,8 +481,8 @@ gcloud init
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="/blog/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a></li>
-	<li><a href="/blog/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
+	<li><a href="${ctx}/blog/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a></li>
+	<li><a href="${ctx}/blog/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
 	<li><a href="https://cloud.google.com/sdk/docs/downloads-apt-get">https://cloud.google.com/sdk/docs/downloads-apt-get</a></li>
 	<li><a href="https://cloud.google.com/compute/docs/regions-zones/">https://cloud.google.com/compute/docs/regions-zones/</a></li>
 	<li><a href="https://rogerdudler.github.io/git-guide/index.ko.html">https://rogerdudler.github.io/git-guide/index.ko.html</a></li>

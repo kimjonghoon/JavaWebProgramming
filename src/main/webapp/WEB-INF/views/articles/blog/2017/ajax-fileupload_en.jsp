@@ -8,7 +8,7 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/js-ajax-fileupload">https://github.com/kimjonghoon/js-ajax-fileupload</a><br />
-Added upload/download/delete file function to <a href="/blog/2017/REST-example">the example of creating/modifying/deleting comments while watching a video</a>.
+Added upload/download/delete file function to <a href="${ctx}/blog/2017/REST-example">the example of creating/modifying/deleting comments while watching a video</a>.
 </p>
 
 <h3>Test</h3>

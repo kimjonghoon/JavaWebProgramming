@@ -7,7 +7,7 @@
 
 <p>
 최종 소스 : <a href="https://github.com/kimjonghoon/gae-comment">https://github.com/kimjonghoon/gae-comment</a><br />
-(<a href="/blog/2018/gaefile">구글 클라우드 Blobstore</a> 예제에서 댓글을 데이터스토어에 저장하도록 수정함)
+(<a href="${ctx}/blog/2018/gaefile">구글 클라우드 Blobstore</a> 예제에서 댓글을 데이터스토어에 저장하도록 수정함)
 </p>
 
 

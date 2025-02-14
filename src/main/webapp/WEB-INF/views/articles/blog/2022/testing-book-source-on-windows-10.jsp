@@ -696,14 +696,14 @@ pom.xml 파일에서 톰캣 설정은 주석 처리하고 제티 설정은 주�
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/">자바 설치</a></li>
-	<li><a href="/spring/building-java-projects-with-maven">메이븐으로 자바 개발</a></li>
-	<li><a href="/jsp/How-to-install-Tomcat">톰캣 설치</a></li>
-	<li><a href="/jsp/Creating-a-new-web-application">웹 애플리케이션 작성 실습</a></li>
-	<li><a href="/blog/2017/jetty-maven-plugin">제티 메이븐 플러그인</a></li>
-	<li><a href="/jdbc/How-to-install-Oracle">오라클 설치</a></li>
-	<li><a href="/blog/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
-	<li><a href="/blog/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a></li>
+	<li><a href="${ctx}/">자바 설치</a></li>
+	<li><a href="${ctx}/spring/building-java-projects-with-maven">메이븐으로 자바 개발</a></li>
+	<li><a href="${ctx}/jsp/How-to-install-Tomcat">톰캣 설치</a></li>
+	<li><a href="${ctx}/jsp/Creating-a-new-web-application">웹 애플리케이션 작성 실습</a></li>
+	<li><a href="${ctx}/blog/2017/jetty-maven-plugin">제티 메이븐 플러그인</a></li>
+	<li><a href="${ctx}/jdbc/How-to-install-Oracle">오라클 설치</a></li>
+	<li><a href="${ctx}/blog/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
+	<li><a href="${ctx}/blog/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a></li>
 </ul>
 
 </article>

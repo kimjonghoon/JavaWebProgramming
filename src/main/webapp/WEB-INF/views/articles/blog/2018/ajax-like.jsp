@@ -7,7 +7,7 @@
 
 <p>
 예제 소스 : <a href="https://github.com/kimjonghoon/ajax-like">https://github.com/kimjonghoon/ajax-like</a><br />
-(<a href="/blog/2017/ajax-fileupload">에이잭스 파일 업로드 예제</a>에 좋아요 기능 추가)
+(<a href="${ctx}/blog/2017/ajax-fileupload">에이잭스 파일 업로드 예제</a>에 좋아요 기능 추가)
 </p>
 
 

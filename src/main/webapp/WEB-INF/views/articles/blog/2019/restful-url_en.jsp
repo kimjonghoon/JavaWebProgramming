@@ -254,8 +254,8 @@ Modify JSPs by referring to the followings:
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/restful-url">1 RESTful URL</a></li>
-	<li><a href="/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<li><a href="${ctx}/blog/2019/restful-url">1 RESTful URL</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

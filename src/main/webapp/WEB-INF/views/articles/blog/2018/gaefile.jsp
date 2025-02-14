@@ -7,7 +7,7 @@
 
 <p>
 예제 : <a href="https://github.com/kimjonghoon/gaefile">https://github.com/kimjonghoon/gaefile</a><br />
-(<a href="/blog/2017/ajax-fileupload">에이젝스 파일 업로드</a> 예제를 Blobstore를 이용하는 것으로 수정)
+(<a href="${ctx}/blog/2017/ajax-fileupload">에이젝스 파일 업로드</a> 예제를 Blobstore를 이용하는 것으로 수정)
 </p>
 
 

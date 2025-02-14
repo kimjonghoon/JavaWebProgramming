@@ -7,7 +7,7 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/basic-board">https://github.com/kimjonghoon/basic-board</a><br />
-This example covers the basics of the bulletin board. for more information, See <a href="/jsp/BBS-Study">Understanding Bulletin Board Program</a>. 
+This example covers the basics of the bulletin board. for more information, See <a href="${ctx}/jsp/BBS-Study">Understanding Bulletin Board Program</a>. 
 </p>
 
 <p>
@@ -132,7 +132,7 @@ commit;
 
 <p>
 Install the Oracle JDBC driver in the local repository.<br />
-See <a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>. 
+See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>. 
 </p>
 
 <h3>Test</h3>
@@ -143,8 +143,8 @@ Go to the root directory, and run <strong>mvn jetty:run</strong> and visit http:
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="/jsp/BBS-Study">Understanding bulletin board program</a></li>
-  <li><a href="/spring/di#Oralce-JDBC-Driver-Dependency">Install the oracle JDBC driver in the local repository</a></li>
+  <li><a href="${ctx}/jsp/BBS-Study">Understanding bulletin board program</a></li>
+  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Install the oracle JDBC driver in the local repository</a></li>
 </ul>
 
 </article>

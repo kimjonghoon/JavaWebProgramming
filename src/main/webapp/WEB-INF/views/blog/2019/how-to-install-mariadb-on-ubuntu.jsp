@@ -11,15 +11,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="how-to-install-mariadb-on-ubuntu.keys" />" />
 <meta name="Description" content="<spring:message code="how-to-install-mariadb-on-ubuntu.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.2.1.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.2.1.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <!-- for pretty code begin -->
-<link rel="stylesheet" href="/resources/css/prettify.css" type="text/css" />
-<script src="/resources/js/prettify.js"></script>
-<script src="/resources/js/javaschool-prettify.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/prettify.css" type="text/css" />
+<script src="${ctx}/resources/js/prettify.js"></script>
+<script src="${ctx}/resources/js/javaschool-prettify.js"></script>
 <!-- for pretty code end -->
 <style>
 #sidebar  {

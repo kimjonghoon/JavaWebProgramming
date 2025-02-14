@@ -10,17 +10,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="500.keys" />" />
 <meta name="Description" content="<spring:message code="500.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 </head>
 <body>
 <div id="wrap">
 	
 	<div id="header">
-		<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="/"><img src="/resources/images/ci.gif" alt="java-school" /></a></div>
+		<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
 	</div>
 	
 	<div id="main-menu" lang="en">

@@ -10,11 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="admin.index.keys" />" />
 <meta name="Description" content="<spring:message code="admin.index.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <script>
 $(document).ready(function() {
     $('.del-user-link').click(function(e) {
@@ -62,7 +62,7 @@ $(document).ready(function() {
             <td>${user.mobile }</td>
             <td>${user.authorities }</td>
             <td>
-                <a href="/admin/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
+                <a href="${ctx}/admin/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
                 <a href="#" title="${user.email }" class="del-user-link"><spring:message code="delete" /></a>
             </td>
         </tr>
@@ -70,8 +70,8 @@ $(document).ready(function() {
 </table>
 <div id="paging">
     <c:if test="${prev > 0 }">
-        <a href="/admin?page=1">1</a>
-        <a href="/admin?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
+        <a href="${ctx}/admin?page=1">1</a>
+        <a href="${ctx}/admin?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
     </c:if>
     <c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="stat">
         <c:choose>
@@ -79,13 +79,13 @@ $(document).ready(function() {
                 <span class="bbs-strong">${i }</span>
             </c:when>
             <c:otherwise>
-                <a href="/admin?page=${i }&search=${param.search }">[ ${i } ]</a>
+                <a href="${ctx}/admin?page=${i }&search=${param.search }">[ ${i } ]</a>
             </c:otherwise>
         </c:choose>
     </c:forEach>
     <c:if test="${next > 0 }">
-        <a href="/admin?page=${next }&search=${search }">[ <spring:message code="next" /> ]</a>
-        <a href="/admin?page=${totalPage }">[ <spring:message code="last" /> ]</a>
+        <a href="${ctx}/admin?page=${next }&search=${search }">[ <spring:message code="next" /> ]</a>
+        <a href="${ctx}/admin?page=${totalPage }">[ <spring:message code="last" /> ]</a>
     </c:if>
 </div>
 

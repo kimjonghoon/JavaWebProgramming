@@ -11,11 +11,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="user.changepasswd.keys" />" />
 <meta name="Description" content="<spring:message code="user.changepasswd.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <script>
 $(document).ready(function () {
     $('#changePasswordForm').submit(function() {

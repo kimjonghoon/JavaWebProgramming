@@ -7,7 +7,7 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/threadboard">https://github.com/kimjonghoon/threadboard</a><br />
-For more information, See the <a href="/jsp/Thread-BBS">Bulletin board with replies</a>. 
+For more information, See the <a href="${ctx}/jsp/Thread-BBS">Bulletin board with replies</a>. 
 </p>
 
 <p>
@@ -138,7 +138,7 @@ commit;
 
 <p>
 Install the Oracle JDBC driver in the local repository.<br />
-See <a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
+See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
 </p>
 
 <h3>Test</h3>
@@ -151,8 +151,8 @@ Visit http://localhost:8080.
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="/jsp/Thread-BBS">Bulletin board with replies</a></li>
-  <li><a href="/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${ctx}/jsp/Thread-BBS">Bulletin board with replies</a></li>
+  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

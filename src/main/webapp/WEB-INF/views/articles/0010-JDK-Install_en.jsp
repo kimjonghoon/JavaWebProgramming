@@ -213,7 +213,7 @@ C:\Program Files&gt;java -cp C:\Users\John Test<br /><br />
 <h2>Editor</h2>
 
 <p>
-Until <a href="/java/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
+Until <a href="${ctx}/java/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
 </p>
 
 </article>

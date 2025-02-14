@@ -297,8 +297,8 @@ MyFirstBook.epub를 iTunes를 통해 아이패드로 옮기면, 아이패드의 
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="/blog/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
-	<li><a href="/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
+	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
 </ul>
 
 </article>

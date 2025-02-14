@@ -10,16 +10,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="0010.keys" />" />
 <meta name="Description" content="<spring:message code="0010.desc" />" />
-<link rel="stylesheet" href="/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/print.css" type="text/css" />
-<script src="/resources/js/jquery-3.6.0.min.js"></script>
-<script src="/resources/js/commons.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
+<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
+<script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>
+<script src="${ctx}/resources/js/commons.js"></script>
 <!-- for pretty code begin -->
-<link rel="stylesheet" href="/resources/css/prettify.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/windows.css" type="text/css" />
-<script src="/resources/js/prettify.js"></script>
-<script src="/resources/js/javaschool-prettify.js"></script>
+<link rel="stylesheet" href="${ctx}/resources/css/prettify.css" type="text/css" />
+<link rel="stylesheet" href="${ctx}/resources/css/windows.css" type="text/css" />
+<script src="${ctx}/resources/js/prettify.js"></script>
+<script src="${ctx}/resources/js/javaschool-prettify.js"></script>
 <!-- for pretty code end -->
 </head>
 <body>
@@ -56,8 +56,8 @@
 		    <li><a href="https://github.com/kimjonghoon/JavaWebProgramming"><spring:message code="1st.book" /></a></li>
 		    <li><a href="https://github.com/kimjonghoon/GoogleCloudJavaProgrammingV2"><spring:message code="2nd.book" /></a></li>
 		</ul>
-		<a href="https://play.google.com/store/books/details?id=vlqKBgAAQBAJ"><img alt="Java Web Programming" src="/resources/images/JavaWebPrograming.png" style="display: block;width: 100%;margin: 10px 0;"></a>
-		<a href="https://play.google.com/store/books/details?id=HOe4DAAAQBAJ"><img alt="Google Cloud Java Programming" src="/resources/images/GAEJavaProgramming.jpg" style="display: block;width: 100%;margin: 10px 0;"></a>
+		<a href="https://play.google.com/store/books/details?id=vlqKBgAAQBAJ"><img alt="Java Web Programming" src="${ctx}/resources/images/JavaWebPrograming.png" style="display: block;width: 100%;margin: 10px 0;"></a>
+		<a href="https://play.google.com/store/books/details?id=HOe4DAAAQBAJ"><img alt="Google Cloud Java Programming" src="${ctx}/resources/images/GAEJavaProgramming.jpg" style="display: block;width: 100%;margin: 10px 0;"></a>
 	</div>
 
 	<div id="extra">
