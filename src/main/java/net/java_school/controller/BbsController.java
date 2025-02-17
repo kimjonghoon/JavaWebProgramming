@@ -40,13 +40,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.Valid;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
 @Controller
 @RequestMapping("bbs")
 public class BbsController extends Paginator {
-	private Logger log = LogManager.getLogger("net.java_school");
 
 	@Autowired
 	private BoardService boardService;

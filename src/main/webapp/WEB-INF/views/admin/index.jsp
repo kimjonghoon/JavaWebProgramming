@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
@@ -94,7 +94,7 @@ $(document).ready(function() {
     <input type="text" name="search" /><input type="submit" value="<spring:message code="search" />" />
 </form>
 
-<form id="delUserForm" action="/admin/delUser" method="post">
+<form id="delUserForm" action="${ctx}/admin/delUser" method="post">
     <input type="hidden" name="page" value="${param.page }" />
     <input type="hidden" name="search" value="${param.search }" />
     <input type="hidden" name="email" />

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="jakarta.tags.functions" prefix="fn" %>
 <article>
 <div class="last-modified">Last Modified 2020.2.7</div>
 

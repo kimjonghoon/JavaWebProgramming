@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c"  %>
+<%@ taglib uri="jakarta.tags.fmt" prefix="fmt"  %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
@@ -164,11 +164,11 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <form id="viewForm" action="/bbs/${boardCd }/" method="get">
+    <form id="viewForm" action="${ctx}/bbs/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <form id="writeForm" action="/bbs/${boardCd }/new" method="get">
+    <form id="writeForm" action="${ctx}/bbs/${boardCd }/new" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>

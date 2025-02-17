@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="jakarta.tags.functions" prefix="fn" %>
 <article>
 <div class="last-modified">Last Modified 2017.10.27</div>
 
@@ -116,7 +116,7 @@ header.jsp에 로케일 변경 링크를 추가한다.<br />
 <pre class="prettyprint">
 &lt;%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
 &lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;
 &lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;
 &lt;h1 style="float: left;width: 150px;"&gt;&lt;a href="/"&gt;&lt;img src="/images/ci.gif" alt="java-school" /&gt;&lt;/a&gt;&lt;/h1&gt;
@@ -299,7 +299,7 @@ public List&lt;Board&gt; getAllBoards() {
 
 <h6 class="src">bbs-sub.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+<strong>&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
 &lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;
@@ -313,7 +313,7 @@ public List&lt;Board&gt; getAllBoards() {
 
 <h6 class="src">bbs-sub_ko.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+<strong>&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
 &lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;

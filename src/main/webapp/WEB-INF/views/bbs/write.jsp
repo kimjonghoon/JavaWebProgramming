@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <!DOCTYPE html>
@@ -68,7 +68,7 @@ $(document).ready(function() {
 
 <h3><spring:message code="new.article" /></h3>
 
-<sf:form id="writeForm" action="/bbs/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
+<sf:form id="writeForm" action="${ctx}/bbs/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <sf:errors path="*" cssClass="error" />
 <table id="write-form" class="bbs-table">
 <tr>
@@ -99,11 +99,11 @@ $(document).ready(function() {
 </sf:form>
 
 <div id="form-group" style="display: none">
-    <form id="viewForm" action="/bbs/${boardCd }/${param.articleNo }" method="get">
+    <form id="viewForm" action="${ctx}/bbs/${boardCd }/${param.articleNo }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <form id="listForm" action="/bbs/${boardCd }" method="get">
+    <form id="listForm" action="${ctx}/bbs/${boardCd }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
@@ -129,5 +129,4 @@ $(document).ready(function() {
 	
 </div>
 </body>
-</html>	
-	
+</html>

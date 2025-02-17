@@ -2,7 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -121,7 +121,7 @@ $(document).ready(function () {
 </form>
 
 <div style="text-align: right;">
-    <form action="/admin">
+    <form action="${ctx}/admin">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
         <input type="submit" value="<spring:message code="user.list" />" />

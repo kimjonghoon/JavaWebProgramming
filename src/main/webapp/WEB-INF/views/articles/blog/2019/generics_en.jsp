@@ -61,7 +61,7 @@ To create a parameterized type of Box&lt;T&gt;, you supply an actual type argume
 <pre class="prettyprint">Box&lt;Integer&gt; intBox = new Box&lt;Integer&gt;();</pre>
 
 <p>
-If you omit the actual type argument, you can create the primitive type of Box<T> as follow.
+If you omit the actual type argument, you can create the primitive type of Box&lt;T&gt; as follow.
 </p>
 
 <pre class="prettyprint">Box rawBox = new Box();//Box is the raw type of the generic type Box&lt;T&gt;</pre>
@@ -261,7 +261,7 @@ Java already has the Comparable&lt;T&gt; interface.
 
 <pre class="prettyprint">package java.lang;
 
-public interface Comparable<T> {
+public interface Comparable&lt;T&gt; {
   public int compareTo(T o);
 }
 </pre>
@@ -289,7 +289,7 @@ if a &lt; b, -1.
 </pre>
 
 <p>
-The Integer class inherits the Number class, and it also implements Comparable<Integer> Interface. Double, Long, Float, Short, and Byte inherit the Number class and implement the Comparable interface.
+The Integer class inherits the Number class, and it also implements Comparable&lt;Integer&gt; Interface. Double, Long, Float, Short, and Byte inherit the Number class and implement the Comparable interface.
 </p>
 
 <pre class="prettyprint">package net.java_school.examples;
@@ -481,7 +481,7 @@ Since the compiler needs a value of type T, it starts with the value Object. The
 <pre class="prettyprint no-border">processStringList(Collections.<strong>&lt;String&gt;</strong>emptyList());</pre>
 
 <p>
-Java 8 extended the notion of a target type to include method arguments. The Java 8 compiler infers the type parameter T as String because the processStringList method needs the List<String> type argument. Thus, in Java 8, the following statement compiles:
+Java 8 extended the notion of a target type to include method arguments. The Java 8 compiler infers the type parameter T as String because the processStringList method needs the List&lt;String&gt; type argument. Thus, in Java 8, the following statement compiles:
 </p>
 
 <pre class="prettyprint no-border">processStringList(Collections.emptyList());</pre>
@@ -1127,7 +1127,7 @@ Because the Java compiler erases all type parameters in generic code, you cannot
 </pre>
 
 <p>
-The runtime does not distinguish between ArrayList<Integer> and ArrayList<String>. The most you can do is to use an unbounded wildcard to verify that the list is an ArrayList:
+The runtime does not distinguish between ArrayList&lt;Integer&gt; and ArrayList&lt;String&gt;. The most you can do is to use an unbounded wildcard to verify that the list is an ArrayList:
 </p>
 
 <pre class="prettyprint">public static void rtti(List&lt;?&gt; list) {

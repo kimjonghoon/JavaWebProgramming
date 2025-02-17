@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"  %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
 <h2><spring:message code="board.edit" /></h2>
 
-<form id="editBoard" action="/admin/editBoard" method="post">
+<form id="editBoard" action="${ctx}/admin/editBoard" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <table class="bbs-table">
         <tr>
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 <h2><spring:message code="board.new" /></h2>
 
-<form id="createBoard" action="/admin/createBoard" method="post">
+<form id="createBoard" action="${ctx}/admin/createBoard" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <table class="bbs-table">
         <tr>
