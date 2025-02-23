@@ -487,7 +487,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </sf:form>
-    <sf:form id="downForm" action="${ctx}/data" method="post">
+    <sf:form id="downForm" action="${ctx}/data" method="get">
         <input type="hidden" name="filename" />
         <input type="hidden" name="fileno" />
     </sf:form>

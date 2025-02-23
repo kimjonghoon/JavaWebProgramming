@@ -23,7 +23,7 @@
 	net.java_school.board,
 	net.java_school.user" />
 
-<mybatis:scan base-package="net.java_school.mybatis" />
+<mybatis:scan base-package="net.java_school.mapper" />
 
 <!-- Oracle datasource-->
 <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
@@ -81,8 +81,9 @@
 </bean>
 
 <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-	<property name="basename" value="classpath:messages" />
+	<property name="basename" value="WEB-INF/messages" />
 	<property name="defaultEncoding" value="UTF-8" />
+	<property name="cacheSeconds" value="10" />
 </bean>
 
 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
