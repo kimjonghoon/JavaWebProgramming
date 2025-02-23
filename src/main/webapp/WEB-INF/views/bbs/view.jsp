@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="bbs.view.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.view.desc" />" />
+<link rel="icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
 <link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
 <link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
 <script src="${ctx}/resources/js/jquery-3.6.0.min.js"></script>

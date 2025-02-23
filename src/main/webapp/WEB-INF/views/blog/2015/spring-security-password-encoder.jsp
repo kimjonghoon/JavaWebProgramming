@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="spring-security-password-encoder.keys" />" />
 <meta name="Description" content="<spring:message code="spring-security-password-encoder.desc" />" />
+<link rel="icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
 <link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
 <link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
 <link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
