@@ -46,7 +46,7 @@ $(document).ready(function () {
 <h2><spring:message code="user.modify" /></h2>
 
 <form:form id="editAccountForm" action="editAccount" method="post" modelAttribute="user">
-    <form:hidden path="email" value="${user.email }" />
+    <form:hidden path="email" />
     <input type="hidden" name="page" value="${param.page }" />
     <input type="hidden" name="search" value="${param.search }" />
     <form:errors path="*" cssClass="error" />
@@ -54,14 +54,14 @@ $(document).ready(function () {
         <tr>
             <td><spring:message code="full.name" /></td>
             <td>
-                <form:input path="name" value="${user.name }" /><br />
+                <form:input path="name" /><br />
                 <form:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="mobile" /></td>
             <td>
-                <form:input path="mobile" value="${users.mobile }" /><br />
+                <form:input path="mobile" /><br />
                 <form:errors path="mobile" cssClass="error" />
             </td>
         </tr>
@@ -74,7 +74,7 @@ $(document).ready(function () {
 <hr />
 
 <form:form id="changePasswdForm" action="changePasswd" method="post" modelAttribute="user">
-    <form:hidden path="email" value="${user.email }" />
+    <form:hidden path="email" />
     <input type="hidden" name="page" value="${param.page }" />
     <input type="hidden" name="search" value="${param.search }" />
     <form:errors path="*" cssClass="error" />

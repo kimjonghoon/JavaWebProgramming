@@ -70,20 +70,20 @@ $(document).ready(function() {
     <a href="changePasswd"><spring:message code="change.password" /></a><br />
 </p>
 <form:form id="editAccountForm" action="editAccount" method="post" modelAttribute="user">
-    <form:hidden path="email" value="abc@def.ghi" />
+    <form:hidden path="email" />
     <form:errors path="*" cssClass="error" />
     <table>
         <tr>
             <td><spring:message code="full.name" /></td>
             <td>
-                <form:input path="name" value="${user.name }" /><br />
+                <form:input path="name" /><br />
                 <form:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="mobile" /></td>
             <td>
-                <form:input path="mobile" value="${users.mobile }" /><br />
+                <form:input path="mobile" /><br />
                 <form:errors path="mobile" cssClass="error" />
             </td>
         </tr>
