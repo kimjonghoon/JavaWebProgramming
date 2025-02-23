@@ -43,11 +43,11 @@
 <table>
 <tr>
     <td style="width: 200px;"><spring:message code="email" /></td>
-    <td style="width: 390px"><form:input path="username" style="width: 99%;" /></td>
+    <td style="width: 390px"><input type="text" name="username" style="width: 99%;" /></td>
 </tr>
 <tr>
     <td><spring:message code="password" /></td>
-    <td><form:input path="password" style="width: 99%;" /></td>
+    <td><input type="password" name="password" style="width: 99%;" /></td>
 </tr>
 </table>
 <div style="text-align: center;padding: 15px 0;">
