@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -68,36 +68,36 @@ $(document).ready(function() {
     <spring:message code="editAccount.content" />
     <a href="changePasswd"><spring:message code="change.password" /></a><br />
 </p>
-<sf:form id="editAccountForm" action="editAccount" method="post" modelAttribute="user">
-    <sf:hidden path="email" value="abc@def.ghi" />
-    <sf:errors path="*" cssClass="error" />
+<form:form id="editAccountForm" action="editAccount" method="post" modelAttribute="user">
+    <form:hidden path="email" value="abc@def.ghi" />
+    <form:errors path="*" cssClass="error" />
     <table>
         <tr>
             <td><spring:message code="full.name" /></td>
             <td>
-                <sf:input path="name" value="${user.name }" /><br />
-                <sf:errors path="name" cssClass="error" />
+                <form:input path="name" value="${user.name }" /><br />
+                <form:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="mobile" /></td>
             <td>
-                <sf:input path="mobile" value="${users.mobile }" /><br />
-                <sf:errors path="mobile" cssClass="error" />
+                <form:input path="mobile" value="${users.mobile }" /><br />
+                <form:errors path="mobile" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="password" /></td>
             <td>
-                <sf:password path="passwd" /><br />
-                <sf:errors path="passwd" cssClass="error" />
+                <form:password path="passwd" /><br />
+                <form:errors path="passwd" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="<spring:message code="submit" />" /></td>
         </tr>
     </table>
-</sf:form>
+</form:form>
 <!-- content end -->
 		</div>
 	</div>

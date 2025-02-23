@@ -3,7 +3,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="jakarta.tags.fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
@@ -336,14 +336,14 @@ $(document).on('click', '#all-comments', function (e) {
     </div>
 </div>
 
-<sf:form id="addCommentForm" action="${ctx}/comments/${articleNo }" method="post" style="margin: 10px 0;">
+<form:form id="addCommentForm" action="${ctx}/comments/${articleNo }" method="post" style="margin: 10px 0;">
     <div id="addComment">
         <textarea id="addComment-ta" name="memo" rows="7" cols="50"></textarea>
     </div>
     <div style="text-align: right;">
         <input type="submit" value="<spring:message code="new.comments" />" />
     </div>
-</sf:form>
+</form:form>
 
 <!--  comments begin -->
 <div id="all-comments">
@@ -472,30 +472,30 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <sf:form id="delForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="delete">
+    <form:form id="delForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="delete">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
-    </sf:form>
+    </form:form>
     <form id="modifyForm" action="${ctx}/bbs/${boardCd }/${articleNo }/edit" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
     </form>
-    <sf:form id="deleteAttachFileForm" action="${ctx}/bbs/deleteAttachFile" method="delete">
+    <form:form id="deleteAttachFileForm" action="${ctx}/bbs/deleteAttachFile" method="delete">
         <input type="hidden" name="attachFileNo" />
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="boardCd" value="${boardCd }" />
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="searchWord" value="${param.searchWord }" />
-    </sf:form>
-    <sf:form id="downForm" action="${ctx}/data" method="get">
+    </form:form>
+    <form:form id="downForm" action="${ctx}/data" method="get">
         <input type="hidden" name="filename" />
         <input type="hidden" name="fileno" />
-    </sf:form>
-    <sf:form id="modifyCommentForm" method="put">
+    </form:form>
+    <form:form id="modifyCommentForm" method="put">
     	<input type="hidden" name="memo" />
-    </sf:form>
-    <sf:form id="deleteCommentForm" action="${ctx}/comments/${articleNo }/" method="delete">
-    </sf:form>
+    </form:form>
+    <form:form id="deleteCommentForm" action="${ctx}/comments/${articleNo }/" method="delete">
+    </form:form>
 </div>
 <!-- content end -->
 		</div>

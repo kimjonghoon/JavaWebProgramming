@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -65,34 +65,34 @@ $(document).ready(function() {
 
 <h3><spring:message code="modify" /></h3>
 
-<sf:form id="modifyForm" action="${ctx}/bbs/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
+<form:form id="modifyForm" action="${ctx}/bbs/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <input type="hidden" name="page" value="${param.page }" />
 <input type="hidden" name="searchWord" value="${param.searchWord }" />
-<sf:errors path="*" cssClass="error"/>
+<form:errors path="*" cssClass="error"/>
 <table id="write-form" class="bbs-table">
 <tr>
     <td><spring:message code="title" /></td>
     <td>
-    	<sf:input path="title" style="width: 90%" /><br />
-    	<sf:errors path="title" cssClass="error" />
+    	<form:input path="title" style="width: 90%" /><br />
+    	<form:errors path="title" cssClass="error" />
     </td>
 </tr>
 <tr>
-    <td colspan="2">
-	<sf:textarea path="content" rows="17" cols="50" id="modifyForm-ta" /><br />
-        <sf:errors path="content" cssClass="error" />
-    </td>
+	<td colspan="2">
+		<form:textarea path="content" rows="17" cols="50" id="modifyForm-ta" /><br />
+		<form:errors path="content" cssClass="error" />
+	</td>
 </tr>
 <tr>
-    <td><spring:message code="attach.file" /></td>
-    <td><input type="file" name="attachFile" /></td>
+	<td><spring:message code="attach.file" /></td>
+	<td><input type="file" name="attachFile" /></td>
 </tr>
 </table>
 <div style="text-align: center;padding-bottom: 15px;">
-    <input type="submit" value="<spring:message code="submit" />" />
-    <input type="button" value="<spring:message code="back.to.article" />" id="goView" />
+	<input type="submit" value="<spring:message code="submit" />" />
+	<input type="button" value="<spring:message code="back.to.article" />" id="goView" />
 </div>
-</sf:form>
+</form:form>
 		
 <div id="form-group" style="display: none">
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="get">

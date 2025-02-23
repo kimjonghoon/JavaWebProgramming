@@ -3,6 +3,7 @@
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:set var="ctx" value="<%=request.getContextPath() %>" scope="application" />
 <div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
 
@@ -56,9 +57,8 @@ pageContext.setAttribute("korean", korean);
   <input type="button" value="English" onclick="location.href = '${english}'" />
   <input type="button" value="Korean" onclick="location.href = '${korean }'" />
 </div>
-<form id="logoutForm" action="${ctx}/logout" method="post" style="display:none">
-  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-</form>
+<form:form id="logoutForm" style="display:none" action="${ctx}/logout" method="post">
+</form:form>
 <script>
 $(document).ready(function () {
   $('#logout').click(function () {

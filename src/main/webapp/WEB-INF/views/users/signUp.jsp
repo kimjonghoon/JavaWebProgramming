@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>    
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -84,21 +84,21 @@ $(document).ready(function() {
 
 <h2><spring:message code="signup.heading" /></h2>
 
-<sf:form id="signUpForm" action="signUp" method="post" modelAttribute="user">
-    <sf:errors path="*" cssClass="error" />
+<form:form id="signUpForm" action="signUp" method="post" modelAttribute="user">
+    <form:errors path="*" cssClass="error" />
     <table style="width: 98%;">
         <tr>
             <td style="width: 18%;"><spring:message code="full.name" /></td>
             <td>
-                <sf:input path="name" style="width: 80%;" /><br />
-                <sf:errors path="name" cssClass="error" />
+                <form:input path="name" style="width: 80%;" /><br />
+                <form:errors path="name" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="password" /></td>
             <td>
-                <sf:password path="passwd" style="width: 80%;" /><br />
-                <sf:errors path="passwd" cssClass="error" />
+                <form:password path="passwd" style="width: 80%;" /><br />
+                <form:errors path="passwd" cssClass="error" />
             </td>
         </tr>
         <tr>
@@ -113,22 +113,22 @@ $(document).ready(function() {
         <tr>
             <td><spring:message code="email" /></td>
             <td>
-                <sf:input path="email" style="width: 80%;" /><br />
-                <sf:errors path="email" cssClass="error" />
+                <form:input path="email" style="width: 80%;" /><br />
+                <form:errors path="email" cssClass="error" />
             </td>
         </tr>
         <tr>
             <td><spring:message code="mobile" /></td>
             <td>
-                <sf:input path="mobile" style="width: 80%;" /><br />
-                <sf:errors path="mobile" cssClass="error" />
+                <form:input path="mobile" style="width: 80%;" /><br />
+                <form:errors path="mobile" cssClass="error" />
             </td>
         </tr>
     </table>
     <div style="text-align: center;padding-bottom: 15px;">
         <input type="submit" value="<spring:message code="submit" />" />
     </div>
-</sf:form>
+</form:form>
 <!-- content end -->
 		</div>
 	</div>

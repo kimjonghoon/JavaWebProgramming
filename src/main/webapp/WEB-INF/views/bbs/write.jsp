@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -68,20 +68,20 @@ $(document).ready(function() {
 
 <h3><spring:message code="new.article" /></h3>
 
-<sf:form id="writeForm" action="${ctx}/bbs/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
-<sf:errors path="*" cssClass="error" />
+<form:form id="writeForm" action="${ctx}/bbs/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
+<form:errors path="*" cssClass="error" />
 <table id="write-form" class="bbs-table">
 <tr>
     <td><spring:message code="title" /></td>
     <td>
-    	<sf:input path="title" style="width: 90%" /><br />
-    	<sf:errors path="title" cssClass="error" />
+    	<form:input path="title" style="width: 90%" /><br />
+    	<form:errors path="title" cssClass="error" />
     </td>
 </tr>
 <tr>
     <td colspan="2">
-        <sf:textarea path="content" rows="17" cols="50" id="writeForm-ta"></sf:textarea><br />
-        <sf:errors path="content" cssClass="error" />
+        <form:textarea path="content" rows="17" cols="50" id="writeForm-ta"></form:textarea><br />
+        <form:errors path="content" cssClass="error" />
     </td>
 </tr>
 <tr>
@@ -96,7 +96,7 @@ $(document).ready(function() {
     <input type="button" value="<spring:message code="back.to.article" />" id="goView" />
     </c:if>
 </div>
-</sf:form>
+</form:form>
 
 <div id="form-group" style="display: none">
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/${param.articleNo }" method="get">
