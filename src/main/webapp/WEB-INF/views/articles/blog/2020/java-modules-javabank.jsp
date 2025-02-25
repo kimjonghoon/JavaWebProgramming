@@ -55,13 +55,13 @@ create table bankaccount (
 );  
 
 create table transaction (
-    transactiondate timestamp,
-    kind varchar2(10),
-    amount number,
-    balance number,
-    accountno varchar2(50),
-    constraint FK_TRANSACTION FOREIGN KEY(accountno)
-    	REFERENCES bankaccount(accountno)
+	transactiondate timestamp,
+	kind varchar2(10),
+	amount number,
+	balance number,
+	accountno varchar2(50),
+	constraint FK_TRANSACTION FOREIGN KEY(accountno)
+		REFERENCES bankaccount(accountno)
 );
 
 create or replace trigger bank_trigger

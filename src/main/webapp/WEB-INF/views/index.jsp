@@ -14,9 +14,18 @@
 <!-- for pretty code begin -->
 <link rel="stylesheet" href="${ctx}/resources/css/prettify.css" type="text/css" />
 <link rel="stylesheet" href="${ctx}/resources/css/windows.css" type="text/css" />
-<script src="${ctx}/resources/js/prettify.js"></script>
-<script src="${ctx}/resources/js/javaschool-prettify.js"></script>
+<script src="${ctx}/resources/js/run_prettify.js"></script>
 <!-- for pretty code end -->
+<script>
+$(document).ready(function() {
+	$('pre.prettyprint').html(function() {
+		return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
+	});
+	$('pre.prettyprint').dblclick(function() {
+		selectRange(this);
+	})
+})
+</script>
 </head>
 <body>
 <div id="wrap">
