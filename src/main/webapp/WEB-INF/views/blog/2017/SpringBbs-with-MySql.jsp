@@ -8,14 +8,9 @@
 <head>
 <meta charset="UTF-8" />
 <title><spring:message code="SpringBbs-with-MySql.title" /></title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="Keywords" content="<spring:message code="SpringBbs-with-MySql.keys" />" />
 <meta name="Description" content="<spring:message code="SpringBbs-with-MySql.desc" />" />
-<link rel="icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
-<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" />
-<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
-<script src="${ctx}/resources/js/jquery-3.2.1.min.js"></script>
+<%@ include file="../../inc/common-meta-links-scripts.jsp" %>
 <script src="${ctx}/resources/js/commons.js"></script>
 <!-- for pretty code begin -->
 <link rel="stylesheet" href="${ctx}/resources/css/prettify.css" type="text/css" />
