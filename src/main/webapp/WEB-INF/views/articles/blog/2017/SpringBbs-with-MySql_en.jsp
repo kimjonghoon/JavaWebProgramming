@@ -197,8 +197,8 @@ Modify BoardMapper.xml as follows.
 				left join member as m on a.email = m.email
 		WHERE
 			a.boardcd = ${fn:escapeXml("#{boardCd}")}
-			&lt;if test="searchWord != null and searchWord != ''"&gt;
-			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+			&lt;if test="search != null and search != ''"&gt;
+			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
 			&lt;/if&gt;
 		GROUP BY a.articleno, title, a.regdate, hit, m.name
 		ORDER BY articleno DESC
@@ -209,8 +209,8 @@ Modify BoardMapper.xml as follows.
 		SELECT count(*) FROM article 
 		WHERE 
 			boardcd = ${fn:escapeXml("#{boardCd}")}
-			&lt;if test="searchWord != null and searchWord != ''"&gt;
-			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+			&lt;if test="search != null and search != ''"&gt;
+			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
 			&lt;/if&gt;
 	&lt;/select&gt;
 
@@ -260,8 +260,8 @@ Modify BoardMapper.xml as follows.
 		WHERE 
 			boardCd = ${fn:escapeXml("#{boardCd}")} 
 			AND articleno &amp;gt; ${fn:escapeXml("#{articleNo}")}
-		&lt;if test="searchWord != null and searchWord != ''"&gt;
-			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+		&lt;if test="search != null and search != ''"&gt;
+			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
 		&lt;/if&gt; 
 		ORDER BY articleno
 		LIMIT 1
@@ -273,8 +273,8 @@ Modify BoardMapper.xml as follows.
 		WHERE 
 			boardCd = ${fn:escapeXml("#{boardCd}")} 
 			AND articleno &amp;lt; ${fn:escapeXml("#{articleNo}")}
-		&lt;if test="searchWord != null and searchWord != ''"&gt;
-			AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+		&lt;if test="search != null and search != ''"&gt;
+			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
 		&lt;/if&gt; 
 		ORDER BY articleno DESC
 		LIMIT 1
@@ -365,13 +365,13 @@ Modify BbsController.java as follows.
 <pre class="prettyprint">
 //List
 @RequestMapping(value="/{boardCd}", method=RequestMethod.GET)
-public String list(@PathVariable String boardCd, Integer page, String searchWord, Locale locale, Model model) {
+public String list(@PathVariable String boardCd, Integer page, String search, Locale locale, Model model) {
   if (page == null) page = 1;
 	
   int numPerPage = 10;
   int pagePerBlock = 10;
 
-  int totalRecord = boardService.getTotalRecord(boardCd, searchWord);
+  int totalRecord = boardService.getTotalRecord(boardCd, search);
 
   NumbersForPaging numbers = this.getNumbersForPaging(totalRecord, page, numPerPage, pagePerBlock);
 
@@ -379,7 +379,7 @@ public String list(@PathVariable String boardCd, Integer page, String searchWord
   Integer offset = (page - 1) * numPerPage;
   HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
   map.put("boardCd", boardCd);
-  map.put("searchWord", searchWord);
+  map.put("search", search);
   map.put("offset", offset.toString());
   Integer rowCount = numPerPage;
   map.put("rowCount", rowCount.toString());
@@ -412,15 +412,15 @@ public String list(@PathVariable String boardCd, Integer page, String searchWord
 //Detailed view
 @RequestMapping(value="/{boardCd}/{articleNo}", method=RequestMethod.GET)
 public String view(@PathVariable String boardCd, @PathVariable Integer articleNo,   
-    Integer page, String searchWord, Locale locale, Model model) {
+    Integer page, String search, Locale locale, Model model) {
   if(page == null) page = 1;
   String lang = locale.getLanguage();
   boardService.increaseHit(articleNo);
 
   Article article = boardService.getArticle(articleNo);
   List&lt;AttachFile&gt; attachFileList = boardService.getAttachFileList(articleNo);
-  Article nextArticle = boardService.getNextArticle(articleNo, boardCd, searchWord);
-  Article prevArticle = boardService.getPrevArticle(articleNo, boardCd, searchWord);
+  Article nextArticle = boardService.getNextArticle(articleNo, boardCd, search);
+  Article prevArticle = boardService.getPrevArticle(articleNo, boardCd, search);
   List&lt;Comment&gt; commentList = boardService.getCommentList(articleNo);
   String boardName = this.getBoardName(boardCd, lang);
 
@@ -446,7 +446,7 @@ public String view(@PathVariable String boardCd, @PathVariable Integer articleNo
   int numPerPage = 10;
   int pagePerBlock = 10;
 
-  int totalRecord = boardService.getTotalRecord(boardCd, searchWord);
+  int totalRecord = boardService.getTotalRecord(boardCd, search);
 	
   NumbersForPaging numbers = this.getNumbersForPaging(totalRecord, page, numPerPage, pagePerBlock);
 	
@@ -454,7 +454,7 @@ public String view(@PathVariable String boardCd, @PathVariable Integer articleNo
   Integer offset = (page - 1) * numPerPage;
   HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
   map.put("boardCd", boardCd);
-  map.put("searchWord", searchWord);
+  map.put("search", search);
   map.put("offset", offset.toString());
   Integer rowCount = numPerPage;
   map.put("rowCount", rowCount.toString());

@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 <form:form id="modifyForm" action="${ctx}/bbs/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <input type="hidden" name="page" value="${param.page }" />
-<input type="hidden" name="searchWord" value="${param.searchWord }" />
+<input type="hidden" name="search" value="${param.search }" />
 <form:errors path="*" cssClass="error"/>
 <table id="write-form" class="bbs-table">
 <tr>
@@ -93,7 +93,7 @@ $(document).ready(function() {
 <div id="form-group" style="display: none">
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
 </div>
 <!-- content end -->

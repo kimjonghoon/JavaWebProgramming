@@ -40,9 +40,9 @@ $(document).ready(function() {
         }
     });
     $('#searchForm').submit(function() {
-        var $searchWord = $('#searchForm input[name*=searchWord]').val();
-        $searchWord = $.trim($searchWord);
-        $('#searchForm input[name*=searchWord]').val($searchWord);
+        var $search = $('#searchForm input[name*=search]').val();
+        $search = $.trim($search);
+        $('#searchForm input[name*=search]').val($search);
         $('#searchForm').submit();
     });
 });
@@ -150,7 +150,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <form id="searchForm" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">
-        <input type="text" name="searchWord" size="15" maxlength="30" />
+        <input type="text" name="search" size="15" maxlength="30" />
         <input type="submit" value="<spring:message code="search" />" />
     </div>
 </form>
@@ -158,15 +158,15 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <div id="form-group">
     <form id="listForm" method="get">
         <input type="hidden" name="page" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form id="writeForm" action="${ctx}/bbs/${boardCd }/new" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
 </div>
 <!-- content end -->

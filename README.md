@@ -247,7 +247,7 @@ Comment out Oracle datasource.
 
 	HashMap<String, String> map = new HashMap<String, String>();
 	map.put("boardCd", boardCd);
-	map.put("searchWord", searchWord);
+	map.put("search", search);
 
 	/*
 	//Oracle start

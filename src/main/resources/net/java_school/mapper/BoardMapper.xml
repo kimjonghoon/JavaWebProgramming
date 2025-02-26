@@ -115,8 +115,8 @@
         WHERE 
             boardCd = #{boardCd} 
             AND articleno &gt; #{articleNo}
-        <if test="searchWord != null and searchWord != ''">
-            AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+        <if test="search != null and search != ''">
+            AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
         </if> 
         ORDER BY articleno
         LIMIT 1
@@ -127,8 +127,8 @@
         WHERE 
             boardCd = #{boardCd} 
             AND articleno &lt; #{articleNo}
-        <if test="searchWord != null and searchWord != ''">
-            AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+        <if test="search != null and search != ''">
+            AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
         </if> 
         ORDER BY articleno DESC
         LIMIT 1
@@ -171,8 +171,8 @@
             left join views as v on a.articleno = v.articleNo
         WHERE
             a.boardcd = #{boardCd}
-            <if test="searchWord != null and searchWord != ''">
-            AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+            <if test="search != null and search != ''">
+            AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
             </if>
         GROUP BY a.articleno, title, a.regdate
         ORDER BY articleno DESC
@@ -182,8 +182,8 @@
         SELECT count(*) FROM article 
         WHERE 
             boardcd = #{boardCd}
-            <if test="searchWord != null and searchWord != ''">
-            AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+            <if test="search != null and search != ''">
+            AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
             </if>
     </select>
 -->    
@@ -220,8 +220,8 @@
                 WHERE 
                     boardCd = #{boardCd} 
                     AND articleno &gt; #{articleNo}
-                <if test="searchWord != null and searchWord != ''">
-                    AND (title LIKE '%${searchWord}%' 	OR 	DBMS_LOB.INSTR(content, #{searchWord}) > 0)
+                <if test="search != null and search != ''">
+                    AND (title LIKE '%${search}%' 	OR 	DBMS_LOB.INSTR(content, #{search}) > 0)
                 </if> 
                 ORDER BY articleno) 
             a)
@@ -237,8 +237,8 @@
                 WHERE 
                     boardCd = #{boardCd} 
                     AND articleno &lt; #{articleNo}
-                <if test="searchWord != null and searchWord != ''">
-                    AND (title LIKE '%${searchWord}%' OR DBMS_LOB.INSTR(content, #{searchWord}) > 0)
+                <if test="search != null and search != ''">
+                    AND (title LIKE '%${search}%' OR DBMS_LOB.INSTR(content, #{search}) > 0)
                 </if> 
                 ORDER BY articleno DESC)
                 a)
@@ -277,8 +277,8 @@
             SELECT count(*) FROM article 
             WHERE 
                     boardcd = #{boardCd}
-                    <if test="searchWord != null and searchWord != ''">
-                    AND (title LIKE '%${searchWord}%' 	OR 	DBMS_LOB.INSTR(content, #{searchWord}) > 0)
+                    <if test="search != null and search != ''">
+                    AND (title LIKE '%${search}%' 	OR 	DBMS_LOB.INSTR(content, #{search}) > 0)
                     </if>
     </select>
     <select id="selectListOfArticles" parameterType="hashmap" resultType="Article">
@@ -297,8 +297,8 @@
                         left join views v on a.articleno = v.articleNo
                     WHERE
                         a.boardcd = #{boardCd}
-                        <if test="searchWord != null and searchWord != ''">
-                        AND (title LIKE '%${searchWord}%' 	OR DBMS_LOB.INSTR(content, #{searchWord}) > 0)
+                        <if test="search != null and search != ''">
+                        AND (title LIKE '%${search}%' 	OR DBMS_LOB.INSTR(content, #{search}) > 0)
                         </if>
                     GROUP BY a.articleno, title, a.regdate
                     ORDER BY articleno DESC

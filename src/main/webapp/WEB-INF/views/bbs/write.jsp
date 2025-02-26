@@ -97,11 +97,11 @@ $(document).ready(function() {
 <div id="form-group" style="display: none">
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/${param.articleNo }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form id="listForm" action="${ctx}/bbs/${boardCd }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     
     <div id="title-empty" title="<spring:message code="title.empty" />"></div>

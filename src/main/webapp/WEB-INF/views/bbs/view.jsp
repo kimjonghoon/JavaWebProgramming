@@ -173,9 +173,9 @@ $(document).ready(function () {
         $('#writeForm').submit();
     });
     $('#searchForm').submit(function() {
-        var $searchWord = $('#searchForm input[name*=searchWord]').val();
-        $searchWord = $.trim($searchWord);
-        $('#searchForm input[name*=searchWord]').val($searchWord);
+        var $search = $('#searchForm input[name*=search]').val();
+        $search = $.trim($search);
+        $('#searchForm input[name*=search]').val($search);
         $('#searchForm').submit();
     });
     $("#addCommentForm").submit(function (event) {
@@ -450,7 +450,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <form id="searchForm" action="${ctx}/bbs/${boardCd }" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">
-        <input type="text" name="searchWord" size="15" maxlength="30" />
+        <input type="text" name="search" size="15" maxlength="30" />
         <input type="submit" value="<spring:message code="search" />" />
     </div>
 </form>
@@ -458,31 +458,31 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <div id="form-group" style="display: none">
     <form id="listForm" action="${ctx}/bbs/${boardCd }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form id="viewForm" action="${ctx}/bbs/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" id="viewForm-page" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form id="writeForm" action="${ctx}/bbs/${boardCd}/new" method="get">
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form:form id="delForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="delete">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form:form>
     <form id="modifyForm" action="${ctx}/bbs/${boardCd }/${articleNo }/edit" method="get">
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form>
     <form:form id="deleteAttachFileForm" action="${ctx}/bbs/deleteAttachFile" method="delete">
         <input type="hidden" name="attachFileNo" />
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="boardCd" value="${boardCd }" />
         <input type="hidden" name="page" value="${param.page }" />
-        <input type="hidden" name="searchWord" value="${param.searchWord }" />
+        <input type="hidden" name="search" value="${param.search }" />
     </form:form>
     <form:form id="downForm" action="${ctx}/data" method="get">
         <input type="hidden" name="filename" />

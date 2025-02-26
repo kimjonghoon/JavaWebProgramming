@@ -534,8 +534,8 @@ map.put("rowCount", rowCount.toString());
 &lt;-- Omit --&gt;
 
 
-        &lt;if test="searchWord != null and searchWord != ''"&gt;
-        AND (title LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%')
+        &lt;if test="search != null and search != ''"&gt;
+        AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
         &lt;/if&gt;
 &lt;/select&gt;
 &lt;!-- MySQL and MariaDB end --&gt;

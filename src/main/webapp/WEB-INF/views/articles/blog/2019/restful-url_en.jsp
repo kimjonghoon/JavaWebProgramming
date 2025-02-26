@@ -42,13 +42,13 @@ Assume you didn't search.
 </p>
 
 <pre style="border: 1px solid grey;padding: 0.3em;">
-List:		GET /list?boardCd=chat&amp;page=1&amp;searchWord=
-Detailed View:	GET /view?boardCd=chat&amp;page=1&amp;searchWord=
-New Form:	GET /write?boardCd=chat&amp;page=1&amp;searchWord=
+List:		GET /list?boardCd=chat&amp;page=1&amp;search=
+Detailed View:	GET /view?boardCd=chat&amp;page=1&amp;search=
+New Form:	GET /write?boardCd=chat&amp;page=1&amp;search=
 New:		POST /write?boardCd=chat&amp;page=1
-Modify Form:	GET /modify?boardCd=chat&amp;page=1&amp;searchWord=
-Modify:		POST /modify?boardCd=chat&amp;page=1&amp;searchWord=
-Delete:		POST /del?boardCd=chat&amp;page=1&amp;searchWord=
+Modify Form:	GET /modify?boardCd=chat&amp;page=1&amp;search=
+Modify:		POST /modify?boardCd=chat&amp;page=1&amp;search=
+Delete:		POST /del?boardCd=chat&amp;page=1&amp;search=
 </pre>
 
 <p>
@@ -56,17 +56,17 @@ The following is converting bulletin board request URLs to RESTful URLs.
 </p>
 
 <pre style="border: 2px dotted grey;padding: 0.3em;">
-List:		GET /chat?page=1&amp;searchWord=
-Detailed View:	GET /chat/54?page=1&amp;searchWord=
-New Form:	GET /chat/new?page=1&amp;searchWord=
+List:		GET /chat?page=1&amp;search=
+Detailed View:	GET /chat/54?page=1&amp;search=
+New Form:	GET /chat/new?page=1&amp;search=
 New:		POST /chat?page=1
-Modify Form:	GET /chat/54/edit?page=1&amp;searchWord=
-Modify:		PUT /chat/54?page=1&amp;searchWord=
-Delete:		DELETE /chat/54?page=1&amp;searchWord=
+Modify Form:	GET /chat/54/edit?page=1&amp;search=
+Modify:		PUT /chat/54?page=1&amp;search=
+Delete:		DELETE /chat/54?page=1&amp;search=
 </pre>
 
 <p>
-In /chat?page=1&amp;searchWord=, chat is the board code. Do you think '/chat/1?searchWord=' is better? The answer is no. There are two reasons for this. First, according to Clean URL, 1 in '/chat/1?searchWord=' means the first post of the chat bulletin board, not the page number. --Clean URL is similar in concept to RESFful URL-- Second, if you don't search, you can use '/chat?page=1' instead of '/chat?page=1&amp;searchWord='. That means seachWord is an optional parameter. You better not add optional parameters to the URL. A page value changes depending on a searchWord value. You better not add the parameter that is affected by the value of the optional parameter to the URL.
+In /chat?page=1&amp;search=, chat is the board code. Do you think '/chat/1?search=' is better? The answer is no. There are two reasons for this. First, according to Clean URL, 1 in '/chat/1?search=' means the first post of the chat bulletin board, not the page number. --Clean URL is similar in concept to RESFful URL-- Second, if you don't search, you can use '/chat?page=1' instead of '/chat?page=1&amp;search='. That means seachWord is an optional parameter. You better not add optional parameters to the URL. A page value changes depending on a search value. You better not add the parameter that is affected by the value of the optional parameter to the URL.
 </p>
 
 <h3>List</h3>
@@ -90,13 +90,13 @@ public String list(..., @PathVariable String boardCd, ...)
 </pre>
 
 <p>
-In @RequestMapping(value = "{boardCd}", method = RequestMethod.GET) and @GetMapping("{boardCd}"), {boardCd} does not literally mean. If the list method has a parameter declared as @PathVariable String boardCd, in a '/chat?page=1&amp;searchWord=' request, 'chat' is assigned to the boardCd parameter.
+In @RequestMapping(value = "{boardCd}", method = RequestMethod.GET) and @GetMapping("{boardCd}"), {boardCd} does not literally mean. If the list method has a parameter declared as @PathVariable String boardCd, in a '/chat?page=1&amp;search=' request, 'chat' is assigned to the boardCd parameter.
 </p>
 
 <h3>Detailed View</h3>
 
 <p>
-In '/chat/54?page=1&amp;searchWord=', 54 is the unique number of the post. Modify the view method declaration of the board controller to handle the changed request as follows:
+In '/chat/54?page=1&amp;search=', 54 is the unique number of the post. Modify the view method declaration of the board controller to handle the changed request as follows:
 </p>
 
 <pre class="prettyprint no-border">@RequestMapping(value = "{boardCd}/{articleNo}", method = RequestMethod.GET)
@@ -113,13 +113,13 @@ public String view (..., @PathVariable String boardCd, @PathVariable Integer art
 </pre>
 
 <p>
-When '/chat/54?page=1&amp;searchWord=' request comes in, 'chat' is assigned to the parameter boardCd and '54' is assigned to the parameter articleNo.
+When '/chat/54?page=1&amp;search=' request comes in, 'chat' is assigned to the parameter boardCd and '54' is assigned to the parameter articleNo.
 </p>
 
 <h3>New Form</h3>
 
 <p>
-'/chat?page=1&amp;searchWord=' is a RESTful URL for New Form. But you must add a form for adding a post on the list page to use this URL. This change makes bean validation difficult.
+'/chat?page=1&amp;search=' is a RESTful URL for New Form. But you must add a form for adding a post on the list page to use this URL. This change makes bean validation difficult.
 </p>
 
 <p>
@@ -127,7 +127,7 @@ It doesn't fit a RESTful URL, but let's use the new form request URL as follows:
 </p>
 
 <p>
-/chat/new?page=1&amp;searchWord=
+/chat/new?page=1&amp;search=
 </p>
 
 <p>
@@ -171,7 +171,7 @@ public String write(..., @PathVariable String boardCd, ...)
 <h3>Modify Form</h3>
 
 <p>
-'/chat/54?page=1&amp;searchWord=' is a RESTful URL for the modify form. But you must add the form for modifying the post to the detailed view page to use the above URL. This change makes bean validation difficult.
+'/chat/54?page=1&amp;search=' is a RESTful URL for the modify form. But you must add the form for modifying the post to the detailed view page to use the above URL. This change makes bean validation difficult.
 </p>
 
 <p>
@@ -179,7 +179,7 @@ It doesn't fit a RESTful URL, but let's use the Modify Form request URL as follo
 </p>
 
 <p>
-/chat/54/<strong>edit</strong>?page=1&amp;searchWord=
+/chat/54/<strong>edit</strong>?page=1&amp;search=
 </p>
 
 <p>
@@ -203,7 +203,7 @@ public String modifyForm(..., @PathVariable String boardCd, ...)
 <h3>Modify</h3>
 
 <p>
-'PUT /chat/54?page=1&amp;searchWord=' is a RESTful URL for the modifying post URL. Modify the modify method declaration of the board controller to handle this request as follows:
+'PUT /chat/54?page=1&amp;search=' is a RESTful URL for the modifying post URL. Modify the modify method declaration of the board controller to handle this request as follows:
 </p>
 
 <pre class="prettyprint no-border">
@@ -223,7 +223,7 @@ public String modify(..., @PathVariable String boardCd, @PathVariable Integer ar
 <h3>Delete</h3>
 
 <p>
-'DELETE /chat/54?page=1&amp;searchWord=' is a RESTful URL for the deleting a post URL. Modify the deleteArticle method declaration of the board controller to handle this request as follows:
+'DELETE /chat/54?page=1&amp;search=' is a RESTful URL for the deleting a post URL. Modify the deleteArticle method declaration of the board controller to handle this request as follows:
 </p>
 
 <pre class="prettyprint no-border">

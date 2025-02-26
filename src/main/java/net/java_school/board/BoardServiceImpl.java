@@ -40,10 +40,10 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int getTotalRecord(String boardCd, String searchWord) {
+    public int getTotalRecord(String boardCd, String search) {
         HashMap<String, String> hashmap = new HashMap<>();
         hashmap.put("boardCd", boardCd);
-        hashmap.put("searchWord", searchWord);
+        hashmap.put("search", search);
 
         return boardMapper.selectCountOfArticles(hashmap);
     }
@@ -84,23 +84,23 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public Article getNextArticle(int articleNo, String boardCd, String searchWord) {
+    public Article getNextArticle(int articleNo, String boardCd, String search) {
         HashMap<String, String> hashmap = new HashMap<>();
         Integer no = articleNo;
         hashmap.put("articleNo", no.toString());
         hashmap.put("boardCd", boardCd);
-        hashmap.put("searchWord", searchWord);
+        hashmap.put("search", search);
 
         return boardMapper.selectNextOne(hashmap);
     }
 
     @Override
-    public Article getPrevArticle(int articleNo, String boardCd, String searchWord) {
+    public Article getPrevArticle(int articleNo, String boardCd, String search) {
         HashMap<String, String> hashmap = new HashMap<>();
         Integer no = articleNo;
         hashmap.put("articleNo", no.toString());
         hashmap.put("boardCd", boardCd);
-        hashmap.put("searchWord", searchWord);
+        hashmap.put("search", search);
 
         return boardMapper.selectPrevOne(hashmap);
     }
