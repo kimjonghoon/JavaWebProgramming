@@ -56,7 +56,7 @@ public class BbsController extends Paginator {
 			case "ko":
 				return board.getBoardNm_ko();
 			default:
-				return board.getBoardNm_ko();
+				return board.getBoardNm();
 		}
 	}
 
