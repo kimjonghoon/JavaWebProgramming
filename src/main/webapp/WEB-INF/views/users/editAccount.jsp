@@ -38,9 +38,7 @@ $(document).ready(function() {
         $('#editAccountForm input[name*=name]').val(name);
         $('#editAccountForm input[name*=mobile]').val(mobile);
         $('#editAccountForm input[name*=passwd]').val(passwd);
-            
     });
-   
 });
 </script>
 </head>
