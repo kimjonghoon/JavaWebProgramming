@@ -7,7 +7,6 @@ SpringBbs
 * MyBatis-Spring
 * Bean Validation
 * i18n
-* Apache Tiles
 
 ## Database Design (Oracle)
 
@@ -103,8 +102,6 @@ SpringBbs
 
 ## Database Design (MySQL)
 
-	mysql --user=root --password mysql
-	
 	create user 'java'@'%' identified by 'school';
 	grant all privileges on *.* to 'java'@'%';
 	
@@ -181,17 +178,15 @@ SpringBbs
 
 ## Have to do
 ### 1.Modify the **UPLOAD_PATH** in WebContants.java
-(e.g. /home/kim/upload/ => C:\www\SpringBbs\download\data\)
+(e.g. /var/lib/tomcat10/logs/upload/ => C:\Users\john\data\)
 
 On Linux, the following additional work is required.
 
-> sudo chown -R tomcat:tomcat /home/kim/upload/
-
-> sudo chmod u=rwX,g=rwXs,o=rX /home/kim/upload
+> sudo chmod u=rwX,g=rwXs,o=rX /var/lib/tomcat10/logs/upload/
 
 ### 2.Modify the **fileName** in log4j.xml
-(e.g. /var/log/tomcat10/A1.log => C:\www\SpringBbs\A1.log)
-> &lt;File name="A1" fileName="**C:\www\SpringBbs\A1.log**" append="false"&gt;
+(e.g. /var/lib/tomcat10/logs/A1.log => C:\Users\john\logs\A1.log)
+> &lt;File name="A1" fileName="**C:\Users\john\logs\A1.log**" append="false"&gt;
 
 On Linux, the following additional work is required.
 #### 1 Change ownership to the directory where log files are to be created.
@@ -213,7 +208,7 @@ Start Tomcat and visit http://localhost:8080
 (If dependencies change, run $ **mvn clean** first)
 
 ### 2.
-if you want use jetty plugin, edit pom.xml and run $ **mvn jetty:run**. 
+if you want use jetty plugin, run $ **mvn clean jetty:run**. 
 
 ## Oracle -> MySQL
 
