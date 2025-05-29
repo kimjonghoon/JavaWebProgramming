@@ -33,7 +33,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/r7P8_xbqIofwoVvNhEKcNQEDOyaQINiGvVYY9k3N9WejVyZXNqoHIC5YYF9PIJDC-Oc94oOvjnSnXi9eV2LSmHumMOjVJCHqB9G6CUEBFKwDN20ixS5G0L942FZ0TgN-hZbCW3FJLWZzIW9yE74rzj_4Hd-gElBACOpS73j1uDs_fYq22b1PElO_ePeHfUDNLCL7V2mKY1P_mLqFMPQPYl8tV1ZCM9SmnKBUHq9m4ZbEuWm04Z6TUd4a8ypvfsPV9d5mUYAhfL1QplyhuHjFGUfuZnHgp42QjDOGYKdEMu7B3M39DDvLmQngqO3rfXLJ0ZIja6Pg6_qXVw2MHL7ERR99m70cd8Bq4d6fmbF6qdGBxpvqEjEnNoNCJmpzpGMJcbAt5ZctL6OsM0SdVDZBOoaAo-SiBMgf0N0gKzyUdaPSgZMpePKay38muMbddvk4qfNeCeLs1aad9KZjt9kNr78aUsxMGqg49Lw4zwy67S4bPh3zt0iQbdurFVbRx5zr7F09EYsV0Yi_ymk2fGlRDyA2izhqglA0HBw5KN2ttO4ZtlUpJwvIvj9KhcwhwhqOzOxqI2n5muflCUlzskN2lqI-HtWqINxMnbelylnMV9sp3DTpSO12cd3cZUlJS2zfbADpYKScDmC-BWJUK67EZH_yR_D6uTZO8MN2SEAISUl1t9wi9yXwYp-8-uxfM4o5FCbO5XVbpyVGaGA8k_Ot65b5=w509-h631-no?authuser=0" alt="System" />
+<img src="${ctx}/resources/images/windows10-system.png" alt="System" />
 </p>
 
 <p>
@@ -41,7 +41,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/6-rkB0XujleuNLYZfI2Ajlt2fid3bZv5LGqNAC61dxt2dMNbVHPR1h3FkqqZRdyvuEfn5xQfwe57S0ow61P59owRSVBORwozj3zOJsVXVn596xqq9dORoOZKuObwTKnyymiitFHjm_gtRunIsGp-JyGcq8MoubmHdsYh2tK7-8bxTjBhPXcBxSH_W4tVB45DumdzcCq4DyEQcq0QfGh5jk88HZMpbOymsC0TBG8XFlTcERnhxeDs6YspSyW0WnhxHSXT1xKnu7MnTw1BXiDzjX0Nu9PyrAhkFoBYVo9RBOQ1NRJtdy_QIBlIlIwH0fwpp2NOrCmgn4Nj_uc-wLTm9eyY01rZnUq4Hh_fc1-qu2bMKTwiW6ziz3L7nUYs0gf52C3aIQzM58jiXVniggTLDtLHF2Gr58JPZT6guEHS3VAvIwbHifKycG0vZHOeuNfXplGVW1wD9krLPDj-xhNujOAzmw8KL90XSjyYtz8NWtRc_9rlNJpHo1_FfVjpRtMVgP_23jiXgYvKn2emrN4c9uEOxaNII-oPNYWmtXXBEB6hmdfvJZVNkDLGvhwVEXYkimSuces2xAB3xl7aezK14x5qOkEdlBxandwbYWG8JfIt5z3el7eLafSw3VIsNsMubD6C3q0hpn_aC15cSwKjFy5VOPcqe32LdaoA-OLCAoOnCGnWrk9drjuJHb0TmAkVxUC3bcTygH4eX9WnOkJ0yzMp=w1042-h344-no?authuser=0" alt="고급 시스템 설정" />
+<img src="${ctx}/resources/images/system-properties.png" alt="고급 시스템 설정" />
 <p>
 
 <p>
@@ -49,7 +49,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/JJyvk_75ZPtE6NaOF2A-Kzs0BVk44wQuAb9kvSMEPqg-twL76FYFIT37FuiprTLFj8JIuOJsrzY3yzAI7A2F8LOZ7gUskEpbZZLTpClrekHAoAsFUCrHXcJCYIqVoa_5qJnlCbCEfkHiGEIU0PYc7ZlqSeXhcfG-Lyjv-7mAuROdDR4JVMFxG73IASYesG-KRDLUCl78hreTXtNzSsh7F3KlPbHzRSv3XcRVlvpdV0cpTiRg4dC9cVcHJO1Rq7NukdbLRzepW9QM2rbM9f9Ek6utEI_-Ub2bP3EBfgYgf4oCShZIjXDKWlvZtViwzKbaUe28nMxwGTPhHIuoaw8HLcHoYtO62cl0y5uUXd5teJQWWzL9IFUNuPKY5AAWjGgAZTRUzcLNkGWCRErc0UpfNyiNxWRiOkZqn0e5UNRFn0tteQw4EhcBtm4q99Fx1JAw8Rd12OP2tthrKDy1Oh8MtXSgOI4BYgSq9iDmwN5qvcOc5G0NwMGymlwwrH6XpDmZdN70uaDr1-fWmVjKHAUjGWYvFKBWU0VPXiZosMGvRfHp1ZC_KQOos3WONi1jhmyxn51Se9eZqIlK9LUursHrp925QrOkHUYTO7aRNT62_wEgNTp8CAl-2gQw8-lo7uwEGKccqWmkZ2h65Or5ttRIS1hawv788WdyUPa54rGaq9Nl1RxM5sQADXGZld2n_2_F-Muag7uLTLpYNs8IezvD5kNc=w481-h535-no?authuser=0" alt="환경 변수" />
+<img src="${ctx}/resources/images/advanced-environment-variables.png" alt="환경 변수" />
 </p>
 
 <p>
@@ -57,7 +57,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/UhxnkXOpx0JoYnaPY0265pwBSQkQ4vS4rDnMGWiyO2a5apuxrMlXzEsYlOFqVBTwh1c9jJCeRY-VBfd0exm7a30f8xzpkIzOGbgy3JS1cFrzEcGgOA2expgAbVaMTees39p0lhqug6P1dLEtaOCo_FUK2XO-cGyxhv24DlTDFX7RlfftjECXTIY6BgR8KPW3xShSMZnKPwaaoH6bMup77UPOKn25-5ADTSPdnlNXSufXK3Pl79saB06zfiH_LzKiiG67vn58sWBbroQ5eotzgWgVkD8i-exJM-MOuOztuZJ6Ji-TyHZl7JWCq5SZEVs6yKvnKlTUMv3A2A-RdC4W4-_Xshq98QBeGCEPrL4VVhEH9IqcPhwv3CWax6Eaq37LcysduJsUNzTkwpX39UUNIOXEi5TdINkr9S1qNSB77lH1HjKpL9DJreKlyK_h_FECMrKmOIqW6qeMfrodErD6A8SrjZ9yEWuL6mM3AiCpZ_OjQfwRI0f87LuhnkmCpkoEABnu67wU4iLRSLAt1LTeJVYSQKAySAQg2a8RXqX5d9XsBN6trMmikoGpAe9hLt3h6YAOyGlpeK1TF5R7wdrMdoGSm9_HNFM3zd2h4hHMWD5yc2UoqSqlIQYHED4tU10rEq--Q9RB5ReQ0qy-dS16WyjyynbA8qVzC_aZiUbfnXats4RZHSVgNizW-ZzQUzSKKnHmcIkHUICyfnHm0Uf2KiG-=w478-h517-no?authuser=0" alt="사용자 변수(U)의 새로 만들기(N) 버튼" />
+<img src="${ctx}/resources/images/user-variables-new-button.png" alt="사용자 변수(U)의 새로 만들기(N) 버튼" />
 </p>
 
 <p>
@@ -65,7 +65,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/tuSsQrP-iKoFoOKO-i3DgDKs78rnrsN1C7-o8zjTRNcRc_WgnmN7kKOi1f-bv4hT9zMRGMBdL-41i6VMM-g3H1rc_TnsBaFV9Q70zRarEwg57gYJ1wZTsN5lE4fVV6776IRm3QBUwUhZTalh8T0vTzfcn0lAArxA3HgJhqesG7zKofZmShN79Qd3hgFEZ7XwoUcvE4LaBFtaIobsgQOjS_np12k77D1E7YuIVJL2wKPb6UDFc9kLp8_iPGPwhz1UsNpqJ65uGWPDgU9D3fD2LPawPvXwR-3Sj1mTtlP1P5x0zJjrAHqLw0zUiMJ3HlgDObjB9TQwsXcR2WwlZYSlICw7HR1nFCS75ovcQoB1qHNVBXhPldmiNF6lLpTVhjFV4pz6UHJ-PrIrhKzIDci8nHLRQfBbDliLUIB0jWzgsyS_2WwTzI5gsABe_ycM2qaMco49Yfg6vfnTKtZFOGOizE9QMGsZrsrpXkfrStwAjzPo4kLdSI3TJDnacV3EFC2XfsuASV1eOmn4K-OKyKgprNdCs6r1YWXfo5mzbU90CkT-W0PT4LGWORyTu_2tRWy_GXcEONC4_Us85jndkc3wYWNmuy21dGS5ifrzI7YUHthC-w7frNQcftK1_LJHw5lTd3xZggTh4EVQOqUGQVTnNSwlkx8kWrejMUuexxSP80TaQ7x3bHXNCvpJzWb_8eAy8Je8Qmmum30ArgVg2SQdBlLBnzWaK5KS9V7g322-zXBodF4vTGwV--p_ohGrJw=w555-h165-no?authuser=0" alt="JAVA_HOME" />
+<img src="${ctx}/resources/images/user-variables-new.png" alt="JAVA_HOME" />
 </p>
 
 <p>
@@ -73,7 +73,8 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/pnmvQn_5hDnJtYJNvss3ouh-kKxgrHdMX0cL20nG0DvRH-76bMPD7fFOWGbx9gYpg193Z-nrpfFljQSUtBXf5zJ86TdXPuji_8sAnK3IgB18GcmILxmJScRDuEZzOz62ZNifj7pTsZaF-NBgO5-72vmInOap4NjG8K5aaXy-JxzpSqcXzPN863SrtO5UZiIFFRFcdk0_6qrY_F4_7NipVjEZjuqPmRwsQFocRSYw_aezR2j0pmANshmv4nvNPwyGHhnTabupUn-ku5xVyeTM-fzR1PALRGxCAYqB8I7QWKwjmEXcSv-KtUl73E7w0NV1GfvDL63tJsBl5_mL8rcT4AFtUVTE3ARw_gzSfPTGBpg1yLEikzDUIb7NdiVwvpAi2ETp06NLaoAGyOzUSTJdc4coRnHHjMvKYDuIv0ICmSa6t_uZtduCDv5fUwcWQwaFkjdz940i1MTA2nSf16DUX0XOYlPss946hC97WiUfsNPJwf34bF3oELIyd5TspAleVfjfZ67sJoPrpGBri9uL-Zl681QAt9quLtynlhuWetKDLX4lcKob5tF3Zim23zK4EzRWkXU9xgR-WJgXrryp22-bcl6UdqMspytWOYOE1IpiGR5Mir7TOpw6rKRFJIiCYzVuOIMhGaBFXpH37xnDtphFP39vmXE8wOnG_aRHDWM20evmgTa71AD5fpHrhRqGDQMqc2H27wHS18gPEkswdknq=w468-h507-no?authuser=0" alt="Edit your Path" />
+<img src="${ctx}/resources/images/user-variables-path-edit.png" alt="Edit Path" />
+
 </p>
 
 <p>
@@ -81,7 +82,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/eoKh0I3cfiW1o1NUv7YkuK5OBxeMSwKIB3pl3Lz-VcLEkvpi2Df-mKnoF5L-AillaECZOols5RL2uD-EoH2KoyWky7sIhT0e1ZT7R0gayQz2e9unQ5Op0-TVI40vDKxNi0sgXx6Vm9lOmO-I3nhnE-gAuXjgYJLQu7W0nTzmmYxpB4nCdmFbAiWX5SL1UwE6PWT3uqj9Niv8l3buT5SqRNodJe6K9G2jQgtfQ9zP-aJ2-QupdSaapTokxOfkZrDcIjtk-TM86Pch5Le7MmbKLpKxLheXFLsRbBWYF5Hy5sknSl-64hxZlQqiVAaFi0yN66p5Ey12hr_8p97n0rEkbmbG5D3OUAi0ftUvCsjs-JlXE5pEaUQrVXLnl6rrs3NU83Xz4V-7kgWQffN39O6HByXIQdvUXlkR85yCPmD21tLRjfx0AEyuhp3LJ3FSoqrOXK7eq8jejMEEXSHeuoQ6dl2MqNT-nM6k2hnwzdxXEhBbZ6E3vjfyJg5JFuth0kOtRGcY6vX4fhuS1_hylRpRPuOUAfC1InxQ5IQKTkBs-t-2ZJqsWrjocKkSeS5xql9f7XFfcOty4GVA6JzBkJWU039SkEfPn-LpvM4JQnZ63MVqWG4FM6FuYB4_7yOJQCFE7Hx6u4XAw18ovWA9trwxLBa0C91yagwfnqSL9cwzFOHQrcBgEtn46fNp2IXoNnEY8IDHWGX5xcxPNe-T4MePeKD6=w527-h434-no?authuser=0" alt="%JAVA_HOME%\bin" />
+<img src="${ctx}/resources/images/add-java_home-to-path.png" alt="%JAVA_HOME%\bin" />
 </p>
 
 <div class="explain">
