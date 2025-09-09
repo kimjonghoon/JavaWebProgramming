@@ -13,7 +13,8 @@
     <li><a href="${ctx}/google-app-engine/building-gae-projects-with-maven">Google Cloud</a></li>
     <li><a href="${ctx}/blog">Blog</a></li>
     <li><a href="${ctx}/bbs/chat?page=1">BBS</a></li>
-    <security:authorize access="hasRole('ROLE_ADMIN')">
+<!--     <security:authorize access="hasRole('ROLE_ADMIN')"> 
         <li><a href="${ctx}/admin">Admin</a></li>
     </security:authorize>
+-->
 </ul>
