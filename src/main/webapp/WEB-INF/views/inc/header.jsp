@@ -7,28 +7,15 @@
 <c:set var="ctx" value="<%=request.getContextPath() %>" scope="application" />
 <div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
 
-<!-- 2025.9.9 fixed for only spring security taglibs-->
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
-<!-- 
-    <security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
-        <security:authentication property="principal.username" var="check" />
-    </security:authorize> 
-    <c:choose>
-        <c:when test="${empty check}"> -->
-    <security:authorize access="!isAuthenticated()">    
-            <input type="button" value="<spring:message code="login" />" onclick="location.href = '${ctx}/users/login'" />
-            <input type="button" value="<spring:message code="signup" />" onclick="location.href = '${ctx}/users/signUp'" />
-    </security:authorize>        
-<!--            
-        </c:when>
-        <c:otherwise> -->
-    <security:authorize access="isAuthenticated()">    
-            <input type="button" value="<spring:message code="logout" />" id="logout" />
-            <input type="button" value="<spring:message code="modify.account" />" onclick="location.href = '${ctx}/users/editAccount'" />
-    </security:authorize>        
-<!--            
-        </c:otherwise>
-	</c:choose> -->
+	<security:authorize access="!isAuthenticated()">    
+		<input type="button" value="<spring:message code="login" />" onclick="location.href = '${ctx}/users/login'" />
+		<input type="button" value="<spring:message code="signup" />" onclick="location.href = '${ctx}/users/signUp'" />
+	</security:authorize>        
+	<security:authorize access="isAuthenticated()">    
+		<input type="button" value="<spring:message code="logout" />" id="logout" />
+		<input type="button" value="<spring:message code="modify.account" />" onclick="location.href = '${ctx}/users/editAccount'" />
+	</security:authorize>        
 	<security:authorize access="hasRole('ADMIN')">
 		<input type="button" value="Admin" onclick="location.href='${ctx }/admin'" />
 	</security:authorize>
