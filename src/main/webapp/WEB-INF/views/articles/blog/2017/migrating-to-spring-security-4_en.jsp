@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="jakarta.tags.functions" prefix="fn" %>    
 <article>
 <div class="last-modified">Last Modified 2021.11.29</div>
 
@@ -23,17 +22,17 @@ Modify pom.xml as follows.
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-web&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>&#36;{spring.security.version}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-taglibs&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>&#36;{spring.security.version}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
 	&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
 	&lt;artifactId&gt;spring-security-config&lt;/artifactId&gt;
-	&lt;version&gt;<strong>${fn:escapeXml("${spring.security.version}")}</strong>&lt;/version&gt;
+	&lt;version&gt;<strong>&#36;{spring.security.version}</strong>&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 
@@ -46,7 +45,7 @@ Open the login.jsp file and add the following to the form:
 </p>
 
 <pre class="prettyprint">
-<strong>&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</strong>
+<strong>&lt;input type="hidden" name="&#36;{_csrf.parameterName}" value="&#36;{_csrf.token}" /&gt;</strong>
 </pre>
 
 <p>
@@ -119,13 +118,13 @@ Modify login.jsp as follows.
 
 <h6 class="src">/users/login.jsp</h6>
 <pre class="prettyprint">
-&lt;c:if test=<strong>${fn:escapeXml("${param.error != null }")}</strong>&gt;
+&lt;c:if test="<strong>&#36;{param.error != null }</strong>"&gt;
         &lt;h2&gt;Username/Password not corrrect&lt;/h2&gt;
 &lt;/c:if&gt;
 &lt;c:url var="loginUrl" value="<strong>/login</strong>" /&gt;
-&lt;form action="<strong>${fn:escapeXml("${loginUrl }")}</strong>" method="post"&gt;
+&lt;form action="<strong>&#36;{loginUrl }</strong>" method="post"&gt;
 &lt;p style="margin:0; padding: 0;"&gt;
-<strong>&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</strong>
+<strong>&lt;input type="hidden" name="&#36;{_csrf.parameterName}" value="&#36;{_csrf.token}" /&gt;</strong>
 &lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -161,7 +160,7 @@ Add the following at the bottom of header.jsp.
 
 <pre class="prettyprint">
 <strong>&lt;form id="logoutForm" action="/logout" method="post" style="display:none"&gt;
-	&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;
+	&lt;input type="hidden" name="&#36;{_csrf.parameterName}" value="&#36;{_csrf.token}" /&gt;
 &lt;/form&gt;
 
 &lt;script&gt;
@@ -189,7 +188,7 @@ When uploading attachments in a new post, you need to include the CSRF token in 
 </p>
 
 <p>
-Open the write.jsp and modify.jsp files and delete the <b>&lt;input type="hidden" name=${fn:escapeXml("${_csrf.parameterName}")} value=${fn:escapeXml("${_csrf.token}")} /&gt;</b> in both files.
+Open the write.jsp and modify.jsp files and delete the <b>&lt;input type="hidden" name="&#36;{_csrf.parameterName}" value="&#36;{_csrf.token}" /&gt;</b> in both files.
 </p>
 
 <p>
@@ -198,12 +197,12 @@ Modify the form's action attribute as shown below.
 
 <h6 class="src">write.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="write?<strong>${fn:escapeXml("${_csrf.parameterName}")}=${fn:escapeXml("${_csrf.token}")}</strong> method="post" ...
+&lt;sf:form action="write?<strong>&#36;{_csrf.parameterName}=&#36;{_csrf.token}</strong> method="post" ...
 </pre>
 
 <h6 class="src">modify.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="modify?<strong>${fn:escapeXml("${_csrf.parameterName}")}=${fn:escapeXml("${_csrf.token}")}</strong> method="post" ...
+&lt;sf:form action="modify?<strong>&#36;{_csrf.parameterName}=&#36;{_csrf.token}</strong> method="post" ...
 </pre>
 
 <span id="refer">References</span>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="jakarta.tags.funtions" prefix="fn" %>
 <article>
 <div class="last-modified">Last Modified 2017.7.6</div>
 
@@ -182,48 +181,48 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 				left join comments as c on a.articleno = c.articleno
 				left join member as m on a.email = m.email
 		WHERE
-			a.boardcd = ${fn:escapeXml("#{boardCd}")}
+			a.boardcd = &#35;{boardCd}
 			&lt;if test="search != null and search != ''"&gt;
-			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
+			AND (title LIKE '%&#36;{search}%' OR content LIKE '%&#36;{search}%')
 			&lt;/if&gt;
 		GROUP BY a.articleno, title, a.regdate, hit, m.name
 		ORDER BY articleno DESC
-		LIMIT ${fn:escapeXml("#{offset}")}, ${fn:escapeXml("#{rowCount}")}
+		LIMIT &#35;{offset}, &#35;{rowCount}
 	&lt;/select&gt;
 
 	&lt;select id="selectCountOfArticles" parameterType="hashmap" resultType="int"&gt;
 		SELECT count(*) FROM article 
 		WHERE 
-			boardcd = ${fn:escapeXml("#{boardCd}")}
+			boardcd = &#35;{boardCd}
 			&lt;if test="search != null and search != ''"&gt;
-			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
+			AND (title LIKE '%&#36;{search}%' OR content LIKE '%&#36;{search}%')
 			&lt;/if&gt;
 	&lt;/select&gt;
 
 	&lt;insert id="insert" parameterType="Article" useGeneratedKeys="true" keyProperty="articleNo"&gt;
 		INSERT INTO article (boardcd, title, content, email, hit, regdate)
 		VALUES
-		(${fn:escapeXml("#{boardCd}")}, ${fn:escapeXml("#{title}")}, ${fn:escapeXml("#{content}")}, ${fn:escapeXml("#{email}")}, 0, now())
+		(&#35;{boardCd}, &#35;{title}, &#35;{content}, &#35;{email}, 0, now())
 	&lt;/insert&gt;
 	
 	&lt;insert id="insertAttachFile" parameterType="AttachFile"&gt;
 		INSERT INTO attachfile (filename, filetype, filesize, articleno, email)
 		VALUES
-		(${fn:escapeXml("#{filename}")}, ${fn:escapeXml("#{filetype}")}, ${fn:escapeXml("#{filesize}")}, ${fn:escapeXml("#{articleNo}")}, ${fn:escapeXml("#{email}")})
+		(&#35;{filename}, &#35;{filetype}, &#35;{filesize}, &#35;{articleNo}, &#35;{email})
 	&lt;/insert&gt;
 
 	&lt;update id="update" parameterType="Article"&gt;
 		UPDATE article 
-		SET title = ${fn:escapeXml("#{title}")}, content = ${fn:escapeXml("#{content}")} 
-		WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+		SET title = &#35;{title}, content = &#35;{content} 
+		WHERE articleno = &#35;{articleNo}
 	&lt;/update&gt;
 
 	&lt;delete id="delete" parameterType="int"&gt;
-		DELETE FROM article WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+		DELETE FROM article WHERE articleno = &#35;{articleNo}
 	&lt;/delete&gt;
 
 	&lt;update id="updateHitPlusOne" parameterType="int"&gt;
-		UPDATE article SET hit = hit + 1 WHERE articleno = ${fn:escapeXml("#{articleNo}")}
+		UPDATE article SET hit = hit + 1 WHERE articleno = &#35;{articleNo}
 	&lt;/update&gt;
 
 	&lt;select id="selectOne" parameterType="int" resultType="Article"&gt;
@@ -237,17 +236,17 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 			regdate
 		FROM article as a left join member as m on a.email = m.email
 		WHERE 
-			articleno = ${fn:escapeXml("#{articleNo}")}
+			articleno = &#35;{articleNo}
 	&lt;/select&gt;
 
 	&lt;select id="selectNextOne" parameterType="hashmap" resultType="Article"&gt;
 		SELECT articleno, title 
 		FROM article 
 		WHERE 
-			boardCd = ${fn:escapeXml("#{boardCd}")} 
-			AND articleno &amp;gt; ${fn:escapeXml("#{articleNo}")}
+			boardCd = &#35;{boardCd} 
+			AND articleno &amp;gt; &#35;{articleNo}
 		&lt;if test="search != null and search != ''"&gt;
-			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
+			AND (title LIKE '%&#36;{search}%' OR content LIKE '%&#36;{search}%')
 		&lt;/if&gt; 
 		ORDER BY articleno
 		LIMIT 1
@@ -257,10 +256,10 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 		SELECT articleno, title 
 		FROM article 
 		WHERE 
-			boardCd = ${fn:escapeXml("#{boardCd}")} 
-			AND articleno &amp;lt; ${fn:escapeXml("#{articleNo}")}
+			boardCd = &#35;{boardCd} 
+			AND articleno &amp;lt; &#35;{articleNo}
 		&lt;if test="search != null and search != ''"&gt;
-			AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
+			AND (title LIKE '%&#36;{search}%' OR content LIKE '%&#36;{search}%')
 		&lt;/if&gt; 
 		ORDER BY articleno DESC
 		LIMIT 1
@@ -275,29 +274,29 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 			articleno,
 			email 
 		FROM attachfile 
-		WHERE articleno = ${fn:escapeXml("#{articleNo}")} 
+		WHERE articleno = &#35;{articleNo} 
 		ORDER BY attachfileno
 	&lt;/select&gt;
 
 	&lt;delete id="deleteFile" parameterType="int"&gt;
-		DELETE FROM attachfile WHERE attachfileno = ${fn:escapeXml("#{attachFileNo}")}
+		DELETE FROM attachfile WHERE attachfileno = &#35;{attachFileNo}
 	&lt;/delete&gt;
 
 	&lt;select id="selectOneBoard" parameterType="string" resultType="string"&gt;
-		SELECT * FROM board WHERE boardcd = ${fn:escapeXml("#{boardCd}")}
+		SELECT * FROM board WHERE boardcd = &#35;{boardCd}
 	&lt;/select&gt;
 
 	&lt;insert id="insertComment" parameterType="Comment"&gt;
 		INSERT INTO comments (articleno, email, memo, regdate)
-		VALUES (${fn:escapeXml("#{articleNo}")}, ${fn:escapeXml("#{email}")}, ${fn:escapeXml("#{memo}")}, now())
+		VALUES (&#35;{articleNo}, &#35;{email}, &#35;{memo}, now())
 	&lt;/insert&gt;
 
 	&lt;update id="updateComment" parameterType="Comment"&gt;
-		UPDATE comments SET memo = ${fn:escapeXml("#{memo}")} WHERE commentno = ${fn:escapeXml("#{commentNo}")}
+		UPDATE comments SET memo = &#35;{memo} WHERE commentno = &#35;{commentNo}
 	&lt;/update&gt;
 	
 	&lt;delete id="deleteComment" parameterType="int"&gt;
-		DELETE FROM comments WHERE commentno = ${fn:escapeXml("#{commentNo}")}
+		DELETE FROM comments WHERE commentno = &#35;{commentNo}
 	&lt;/delete&gt;
 
 	&lt;select id="selectListOfComments" parameterType="int" resultType="Comment"&gt;
@@ -310,7 +309,7 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 			regdate
 		FROM comments as c left join member as m on c.email = m.email
 		WHERE 
-			articleno = ${fn:escapeXml("#{articleNo}")}
+			articleno = &#35;{articleNo}
 		ORDER BY commentno DESC
 	&lt;/select&gt;
 
@@ -325,7 +324,7 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 		FROM
 			attachfile
 		WHERE
-			attachfileno = ${fn:escapeXml("#{attachfileno}")}
+			attachfileno = &#35;{attachfileno}
 	&lt;/select&gt;
 
 	&lt;select id="selectOneComment" parameterType="int" resultType="Comment"&gt;
@@ -337,7 +336,7 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 			regdate 
 		FROM comments 
 		WHERE
-			commentno = ${fn:escapeXml("#{commentNo}")}
+			commentno = &#35;{commentNo}
 	&lt;/select&gt;
 
  &lt;/mapper&gt;

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="jakarta.tags.functions" prefix="fn" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <article>
 <div class="last-modified">Last Modified 2017.10.27</div>
 
@@ -116,9 +116,9 @@ header.jsp에 로케일 변경 링크를 추가한다.<br />
 <pre class="prettyprint">
 &lt;%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
-&lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;
-&lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;
+&lt;%@ taglib prefix="c" uri="jakarta.tags.core"%&gt;
+&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%&gt;
+&lt;%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%&gt;
 &lt;h1 style="float: left;width: 150px;"&gt;&lt;a href="/"&gt;&lt;img src="/images/ci.gif" alt="java-school" /&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;div id="memberMenu" style="float: right;position: relative;top: 7px;"&gt;
 &lt;security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"&gt;
@@ -257,7 +257,7 @@ data      Data      자료실
 <h6 class="src">BoardMapper.xml</h6>
 <pre class="prettyprint">
 &lt;select id="selectOneBoard" parameterType="string" resultType="Board"&gt;
-	SELECT * FROM board WHERE boardcd = ${fn:escapeXml("#{boardCd}")}
+	SELECT * FROM board WHERE boardcd = &#35;{boardCd}
 &lt;/select&gt;
 &lt;select id="selectAllBoards" resultType="Board"&gt;
 	SELECT * FROM board
@@ -299,7 +299,7 @@ public List&lt;Board&gt; getAllBoards() {
 
 <h6 class="src">bbs-sub.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
+<strong>&lt;%@ taglib prefix="c" uri="jakarta.tags.core"%&gt;
 &lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;
@@ -313,7 +313,7 @@ public List&lt;Board&gt; getAllBoards() {
 
 <h6 class="src">bbs-sub_ko.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;%@ taglib uri="jakarta.tags.core" prefix="c" %&gt;
+<strong>&lt;%@ taglib prefix="c" uri="jakarta.tags.core"%&gt;
 &lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;
