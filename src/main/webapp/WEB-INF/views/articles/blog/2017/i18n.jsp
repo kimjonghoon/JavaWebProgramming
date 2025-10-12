@@ -73,7 +73,7 @@ LocalChangeInterceptor 설정을 추가한다.
 </p>
 
 <pre class="prettyprint no-border">
-&lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;
+&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%&gt;
 </pre>
 
 <p>
@@ -300,7 +300,7 @@ public List&lt;Board&gt; getAllBoards() {
 <h6 class="src">bbs-sub.jsp</h6>
 <pre class="prettyprint">
 <strong>&lt;%@ taglib prefix="c" uri="jakarta.tags.core"%&gt;
-&lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
+&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;
 
@@ -314,7 +314,7 @@ public List&lt;Board&gt; getAllBoards() {
 <h6 class="src">bbs-sub_ko.jsp</h6>
 <pre class="prettyprint">
 <strong>&lt;%@ taglib prefix="c" uri="jakarta.tags.core"%&gt;
-&lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;</strong>
+&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%&gt;</strong>
 
 &lt;!-- 중간 생략 --&gt;
 

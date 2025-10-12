@@ -43,7 +43,7 @@ WEB-INF/views/403.jsp 파일을 만들고 HomeController에 다음 메소드를 
 <pre class="prettyprint">
 &lt;%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%&gt;
-&lt;%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%&gt;
+&lt;%@ taglib prefix="spring" uri="http://www.springframework.org/tags"&gt;
 &lt;%@ page import="net.java_school.user.User" %&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
