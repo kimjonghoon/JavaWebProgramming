@@ -13,7 +13,7 @@
 <script src="${ctx}/resources/js/commons.js"></script>
 <script>
 $(document).ready(function() {
-    $('.del-user-link').click(function(e) {
+	$('.del-user-link').click(function(e) {
         e.preventDefault();
         var check = confirm('<spring:message code="delete.confirm" />')
         if (check) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
     </tr>
     <c:forEach var="user" items="${list }" varStatus="status">
         <tr>
-            <td>${listItemNo - status.index }</td>
+            <td>${pagingNumbers.listItemNo - status.index }</td>
             <td>${user.name }</td>
             <td>${user.email }</td>
             <td>${user.mobile }</td>
@@ -64,11 +64,11 @@ $(document).ready(function() {
     </c:forEach>
 </table>
 <div id="paging">
-    <c:if test="${prev > 0 }">
+    <c:if test="${pagingNumbers.finalOfPrevGroup > 0 }">
         <a href="${ctx}/admin?page=1">1</a>
         <a href="${ctx}/admin?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
     </c:if>
-    <c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="stat">
+    <c:forEach var="i" begin="${pagingNumbers.startPage }" end="${pagingNumbers.finalPage }" varStatus="stat">
         <c:choose>
             <c:when test="${param.page == i}">
                 <span class="bbs-strong">${i }</span>
@@ -78,9 +78,9 @@ $(document).ready(function() {
             </c:otherwise>
         </c:choose>
     </c:forEach>
-    <c:if test="${next > 0 }">
-        <a href="${ctx}/admin?page=${next }&search=${search }">[ <spring:message code="next" /> ]</a>
-        <a href="${ctx}/admin?page=${totalPage }">[ <spring:message code="last" /> ]</a>
+    <c:if test="${pagingNumbers.startOfNextGroup > 0 }">
+        <a href="${ctx}/admin?page=${pagingNumbers.startOfNextGroup }&search=${search }">[ <spring:message code="next" /> ]</a>
+        <a href="${ctx}/admin?page=${pagingNumbers.lastPage }">[ <spring:message code="last" /> ]</a>
     </c:if>
 </div>
 
@@ -93,7 +93,7 @@ $(document).ready(function() {
     <input type="hidden" name="page" value="${param.page }" />
     <input type="hidden" name="search" value="${param.search }" />
     <input type="hidden" name="email" />
-    <input type="hidden"	name="${_csrf.parameterName}" value="${_csrf.token}" />
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
 <!-- content end -->
 		</div>

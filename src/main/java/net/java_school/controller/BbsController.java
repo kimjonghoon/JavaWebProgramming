@@ -21,7 +21,7 @@ import net.java_school.board.Article;
 import net.java_school.board.AttachFile;
 import net.java_school.board.Board;
 import net.java_school.board.BoardService;
-import net.java_school.commons.NumbersForPaging;
+import net.java_school.commons.PagingNumbers;
 import net.java_school.commons.Paginator;
 import net.java_school.commons.WebContants;
 
@@ -51,34 +51,29 @@ public class BbsController extends Paginator {
 		Board board = boardService.getBoard(boardCd);
 
 		switch (lang) {
-			case "en":
-				return board.getBoardNm();
-			case "ko":
-				return board.getBoardNm_ko();
-			default:
-				return board.getBoardNm();
+		case "en":
+			return board.getBoardNm();
+		case "ko":
+			return board.getBoardNm_ko();
+		default:
+			return board.getBoardNm();
 		}
 	}
 
 	@GetMapping("{boardCd}")
 	public String list (
-			@CookieValue(name="numPerPage", defaultValue="10") String num,
-		       	@PathVariable(name="boardCd") String boardCd,
-		       	@RequestParam(name="page", defaultValue="1") Integer page,
-		       	@RequestParam(name="search", defaultValue="") String search,
-		       	Locale locale,
-		       	Model model) {
+			@CookieValue(name="numPerPage", defaultValue="10") Integer recordsPerPage,
+			@PathVariable(name="boardCd") String boardCd,
+			@RequestParam(name="page", defaultValue="1") Integer page,
+			@RequestParam(name="search", defaultValue="") String search,
+			Locale locale,
+			Model model) {
 
-		if (page == null) {
-			page = 1;
-		}
+		int pagesPerGroup = 10;
 
-		int numPerPage = Integer.parseInt(num);
-		int pagePerBlock = 10;
+		int totalRecords = boardService.getTotalRecord(boardCd, search);
 
-		int totalRecord = boardService.getTotalRecord(boardCd, search);
-
-		NumbersForPaging numbers = this.getNumbersForPaging(totalRecord, page, numPerPage, pagePerBlock);
+		PagingNumbers pagingNumbers = this.getPagingNumbers(totalRecords, page, recordsPerPage, pagesPerGroup);
 
 		HashMap<String, String> map = new HashMap<>();
 
@@ -86,42 +81,30 @@ public class BbsController extends Paginator {
 		map.put("search", search);
 
 		//Oracle start
-		Integer startRecord = (page - 1) * numPerPage + 1;
-		Integer endRecord = page * numPerPage;
+		Integer startRecord = (page - 1) * recordsPerPage + 1;
+		Integer endRecord = page * recordsPerPage;
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
 
-/*		
+		/*		
 		//MySQL and MariaDB start
 		Integer offset = (page - 1) * numPerPage;
 		Integer rowCount = numPerPage;
 		map.put("offset", offset.toString());
 		map.put("rowCount", rowCount.toString());
 		//MySQL and MariaDB end
-*/
+		 */
 		List<Article> list = boardService.getArticleList(map);
 
-		Integer listItemNo = numbers.getListItemNo();
-		Integer prevPage = numbers.getPrevBlock();
-		Integer nextPage = numbers.getNextBlock();
-		Integer firstPage = numbers.getFirstPage();
-		Integer lastPage = numbers.getLastPage();
-		Integer totalPage = numbers.getTotalPage();
-
 		model.addAttribute("list", list);
-		model.addAttribute("listItemNo", listItemNo);
-		model.addAttribute("prevPage", prevPage);
-		model.addAttribute("nextPage", nextPage);
-		model.addAttribute("firstPage", firstPage);
-		model.addAttribute("lastPage", lastPage);
-		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("pagingNumbers", pagingNumbers);
 
 		String lang = locale.getLanguage();
-		List<Board> boards = boardService.getBoards();
 		String boardName = this.getBoardName(boardCd, lang);
-		model.addAttribute("boards", boards);
 		model.addAttribute("boardName", boardName);
+		List<Board> boards = boardService.getBoards();
+		model.addAttribute("boards", boards);
 		model.addAttribute("boardCd", boardCd);
 
 		return "bbs/list";
@@ -129,18 +112,14 @@ public class BbsController extends Paginator {
 
 	@GetMapping("{boardCd}/{articleNo}")
 	public String view(
-			@CookieValue(name="numPerPage", defaultValue="10") String num,
-		       	@PathVariable(name="boardCd") String boardCd,
-		       	@PathVariable(name="articleNo")  Integer articleNo,
+			@CookieValue(name="numPerPage", defaultValue="10") Integer recordsPerPage,
+			@PathVariable(name="boardCd") String boardCd,
+			@PathVariable(name="articleNo")  Integer articleNo,
 			@RequestParam(name="page", defaultValue="1") Integer page,
-		       	@RequestParam(name="search", defaultValue="") String search,
-		       	Locale locale,
-		       	HttpServletRequest req,
-		       	Model model) {
-
-		if (page == null) {
-			page = 1;
-		}
+			@RequestParam(name="search", defaultValue="") String search,
+			Locale locale,
+			HttpServletRequest req,
+			Model model) {
 
 		String lang = locale.getLanguage();
 
@@ -191,63 +170,48 @@ public class BbsController extends Paginator {
 		model.addAttribute("prevArticle", prevArticle);
 		//model.addAttribute("commentList", commentList);
 
-		int numPerPage = Integer.parseInt(num);
-		int pagePerBlock = 10;
+		int pagesPerGroup = 10;
 
-		int totalRecord = boardService.getTotalRecord(boardCd, search);
+		int totalRecords = boardService.getTotalRecord(boardCd, search);
 
-		NumbersForPaging numbers = this.getNumbersForPaging(totalRecord, page, numPerPage, pagePerBlock);
+		PagingNumbers pagingNumbers = this.getPagingNumbers(totalRecords, page, recordsPerPage, pagesPerGroup);
 
 		HashMap<String, String> map = new HashMap<>();
 		map.put("boardCd", boardCd);
 		map.put("search", search);
 
 		//Oracle start
-		Integer startRecord = (page - 1) * numPerPage + 1;
-		Integer endRecord = page * numPerPage;
+		Integer startRecord = (page - 1) * recordsPerPage + 1;
+		Integer endRecord = page * recordsPerPage;
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
-/*
+		/*
 		//MySQL and MariaDB start
 		Integer offset = (page - 1) * numPerPage;
 		Integer rowCount = numPerPage;
 		map.put("offset", offset.toString());
 		map.put("rowCount", rowCount.toString());
 		//MySQL and MariaDB end
-*/
+		 */
 		List<Article> list = boardService.getArticleList(map);
 
-		int listItemNo = numbers.getListItemNo();
-		int prevPage = numbers.getPrevBlock();
-		int nextPage = numbers.getNextBlock();
-		int firstPage = numbers.getFirstPage();
-		int lastPage = numbers.getLastPage();
-		int totalPage = numbers.getTotalPage();
-
 		model.addAttribute("list", list);
-		model.addAttribute("listItemNo", listItemNo);
-		model.addAttribute("prevPage", prevPage);
-		model.addAttribute("firstPage", firstPage);
-		model.addAttribute("lastPage", lastPage);
-		model.addAttribute("nextPage", nextPage);
-		model.addAttribute("totalPage", totalPage);
+		model.addAttribute("pagingNumbers", pagingNumbers);
 		model.addAttribute("boardName", boardName);
-
 		List<Board> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);
-
 		model.addAttribute("articleNo", articleNo);
 		model.addAttribute("boardCd", boardCd);
-		
+
 		return "bbs/view";
 	}
 
 	@GetMapping("{boardCd}/new")
 	public String writeForm(
 			@PathVariable(name="boardCd") String boardCd,
-		       	Locale locale,
-		       	Model model) {
+			Locale locale,
+			Model model) {
 
 		String lang = locale.getLanguage();
 		String boardName = this.getBoardName(boardCd, lang);
@@ -312,9 +276,9 @@ public class BbsController extends Paginator {
 	@GetMapping("{boardCd}/{articleNo}/edit")
 	public String modifyForm(
 			@PathVariable(name="boardCd") String boardCd,
-		       	@PathVariable(name="articleNo") Integer articleNo,
-		       	Locale locale,
-		       	Model model) {
+			@PathVariable(name="articleNo") Integer articleNo,
+			Locale locale,
+			Model model) {
 
 		String lang = locale.getLanguage();
 		Article article = boardService.getArticle(articleNo);
@@ -383,21 +347,21 @@ public class BbsController extends Paginator {
 		search = URLEncoder.encode(search, "UTF-8");
 
 		return "redirect:/bbs/"
-			+ boardCd
-			+ "/"
-			+ articleNo
-			+ "?page="
-			+ page
-			+ "&search="
-			+ search;
+		+ boardCd
+		+ "/"
+		+ articleNo
+		+ "?page="
+		+ page
+		+ "&search="
+		+ search;
 	}
 
 	@DeleteMapping("/{boardCd}/{articleNo}")
 	public String deleteArticle(
 			@PathVariable(name="boardCd") String boardCd,
-		       	@PathVariable(name="articleNo") Integer articleNo,
-		       	@RequestParam(name="page") Integer page,
-		       	@RequestParam(name="search") String search) throws Exception {
+			@PathVariable(name="articleNo") Integer articleNo,
+			@RequestParam(name="page") Integer page,
+			@RequestParam(name="search") String search) throws Exception {
 
 		Article article = boardService.getArticle(articleNo);
 		boardService.removeArticle(article);
@@ -405,11 +369,11 @@ public class BbsController extends Paginator {
 		search = URLEncoder.encode(search, "UTF-8");
 
 		return "redirect:/bbs/"
-			+ boardCd
-			+ "?page="
-			+ page
-			+ "&search="
-			+ search;
+		+ boardCd
+		+ "?page="
+		+ page
+		+ "&search="
+		+ search;
 	}
 
 	@DeleteMapping("deleteAttachFile")
@@ -426,12 +390,12 @@ public class BbsController extends Paginator {
 		search = URLEncoder.encode(search, "UTF-8");
 
 		return "redirect:/bbs/"
-			+ boardCd
-			+ "/"
-			+ articleNo
-			+ "?page="
-			+ page
-			+ "&search="
-			+ search;
+		+ boardCd
+		+ "/"
+		+ articleNo
+		+ "?page="
+		+ page
+		+ "&search="
+		+ search;
 	}
 }

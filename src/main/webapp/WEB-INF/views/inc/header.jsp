@@ -17,7 +17,7 @@
 		<input type="button" value="<spring:message code="modify.account" />" onclick="location.href = '${ctx}/users/editAccount'" />
 	</security:authorize>        
 	<security:authorize access="hasRole('ADMIN')">
-		<input type="button" value="Admin" onclick="location.href='${ctx }/admin'" />
+		<input type="button" value="Admin" onclick="location.href='${ctx }/admin?page=1'" />
 	</security:authorize>
 </div>
 <%

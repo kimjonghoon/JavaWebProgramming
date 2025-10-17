@@ -391,7 +391,7 @@ $(document).on('click', '#all-comments', function (e) {
                         <img src="${ctx}/resources/images/arrow.gif" alt="<spring:message code="here" />" />
                     </c:when>
                     <c:otherwise>
-                        ${listItemNo - status.index }
+                        ${pagingNumbers.listItemNo - status.index }
                     </c:otherwise>
                 </c:choose>	
             </td>
@@ -420,12 +420,12 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 </table>
 
 <div id="paging">
-    <c:if test="${prevPage > 0 }">
+    <c:if test="${pagingNumbers.finalOfPrevGroup > 0 }">
         <a href="#" title="1">[<spring:message code="first" />]</a>
-        <a href="#" title="${prevPage }">[<spring:message code="prev" />]</a>
+        <a href="#" title="${pagingNumbers.finalOfPrevGroup }">[<spring:message code="prev" />]</a>
     </c:if>
 
-    <c:forEach var="i" begin="${firstPage }" end="${lastPage }">
+    <c:forEach var="i" begin="${pagingNumbers.startPage }" end="${pagingNumbers.finalPage }">
         <c:choose>
             <c:when test="${param.page == i }">
                 <span class="bbs-strong">${i }</span>
@@ -436,9 +436,9 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         </c:choose>			
     </c:forEach>
 
-    <c:if test="${nextPage > 0 }">	
-        <a href="#" title="${nextPage }">[<spring:message code="next" />]</a>
-        <a href="#" title="${totalPage }">[<spring:message code="last" />]</a>
+    <c:if test="${pagingNumbers.startOfNextGroup > 0 }">
+        <a href="#" title="${pagingNumbers.startOfNextGroup }">[<spring:message code="next" />]</a>
+        <a href="#" title="${pagingNumbers.lastPage }">[<spring:message code="last" />]</a>
     </c:if>
 </div>
 

@@ -2,51 +2,50 @@ package net.java_school.commons;
 
 public class Paginator {
 
-    public NumbersForPaging getNumbersForPaging(int totalRecord, int page, int numPerPage, int pagePerBlock) {
-        int totalPage = totalRecord / numPerPage;
-        if (totalRecord % numPerPage != 0) {
-            totalPage++;
-        }
+	public PagingNumbers getPagingNumbers(int totalRecords, int page, int recordsPerPage, int pagesPerGroup) {
+		int totalPages = totalRecords / recordsPerPage;
+		if (totalRecords % recordsPerPage != 0) {
+			totalPages++;
+		}
 
-        int totalBlock = totalPage / pagePerBlock;
-        if (totalPage % pagePerBlock != 0) {
-            totalBlock++;
-        }
+		int totalGroups = totalPages / pagesPerGroup;
 
-        int block = page / pagePerBlock;
-        if (page % pagePerBlock != 0) {
-            block++;
-        }
+		if (totalPages % pagesPerGroup != 0) {
+			totalGroups++;
+		}
 
-        int firstPage = (block - 1) * pagePerBlock + 1;
-        int lastPage = block * pagePerBlock;
+		int group = page / pagesPerGroup;
+		if (page % pagesPerGroup != 0) {
+			group++;
+		}
 
-        int prevPage = 0;
-        if (block > 1) {
-            prevPage = firstPage - 1;
-        }
+		int startPage = (group - 1) * pagesPerGroup + 1;
+		int finalPage = group * pagesPerGroup;
 
-        int nextPage = 0;
-        if (block < totalBlock) {
-            nextPage = lastPage + 1;
-        }
-        if (block >= totalBlock) {
-            lastPage = totalPage;
-        }
+		int finalOfPrevGroup = 0;
+		if (group > 1) {
+			finalOfPrevGroup = startPage - 1;
+		}
 
-        int listItemNo = totalRecord - (page - 1) * numPerPage;
+		int startOfNextGroup = 0;
+		if (group < totalGroups) {
+			startOfNextGroup = finalPage + 1;
+		}
+		if (group >= totalGroups) {
+			finalPage = totalPages;
+		}
 
-        NumbersForPaging numbers = new NumbersForPaging();
+		int listItemNo = totalRecords - (page - 1) * recordsPerPage;
 
-        numbers.setTotalPage(totalPage);
-        numbers.setFirstPage(firstPage);
-        numbers.setLastPage(lastPage);
-        numbers.setPrevBlock(prevPage);
-        numbers.setNextBlock(nextPage);
-        numbers.setListItemNo(listItemNo);
-        numbers.setTotalPage(totalPage);
+		PagingNumbers numbers = new PagingNumbers();
 
-        return numbers;
-    }
+		numbers.setLastPage(totalPages);
+		numbers.setStartPage(startPage);
+		numbers.setFinalPage(finalPage);
+		numbers.setFinalOfPrevGroup(finalOfPrevGroup);
+		numbers.setStartOfNextGroup(startOfNextGroup);
+		numbers.setListItemNo(listItemNo);
 
+		return numbers;
+	}
 }
