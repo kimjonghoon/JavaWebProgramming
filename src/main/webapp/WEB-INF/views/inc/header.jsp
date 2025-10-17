@@ -9,7 +9,7 @@
 
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
 	<security:authorize access="!isAuthenticated()">    
-		<a href="${ctx}/users/login"></a><button type="button"><spring:message code="login" /></button></a>
+		<a href="${ctx}/users/login"><button type="button"><spring:message code="login" /></button></a>
 		<a href="${ctx}/users/signUp"><button type="button"><spring:message code="signup" /></button></a>
 	</security:authorize>        
 	<security:authorize access="isAuthenticated()">    
