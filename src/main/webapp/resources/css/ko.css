@@ -1,6 +1,4 @@
-@CHARSET "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 html, body {
 	margin: 0;
 	padding: 0;
@@ -8,23 +6,24 @@ html, body {
 	font-family: "Noto Sans KR", "Liberation Sans", Helvetica, "돋움", dotum, sans-serif;
 	font-size: 1em;
 }
-
 pre {
 	margin: 0 0 0.7em 0;
 	font-family: Consolas, "Liberation Mono", Courier, "Noto Sans KR", dotum, monospace;
 }
-
 pre:lang(en) {
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 }
-
 td, th {
 	color: #646464;
 	font-size: 13px;
 	font-family: "돋움", dotum, sans-serif;
 }
-
 input, select, textarea {
+	color: #646464;
+	font-size: 12px;
+	font-family: "돋움", dotum, sans-serif;
+}
+button {
 	color: #646464;
 	font-size: 12px;
 	font-family: "돋움", dotum, sans-serif;

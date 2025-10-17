@@ -30,7 +30,7 @@
 <h2><spring:message code="welcome.heading" /></h2>
 
 <spring:message code="welcome.message" /><br />
-<input type="button" value="<spring:message code="login" />" onclick="javascript:location.href='login'" />
+<a href="login"><button type="button"><spring:message code="login" /></button></a>
 <!-- content end -->
 		</div>
 	</div>

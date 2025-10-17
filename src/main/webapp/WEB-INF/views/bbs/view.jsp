@@ -295,19 +295,19 @@ $(document).on('click', '#all-comments', function (e) {
 <div class="view-menu" style="margin-top: 15px;margin-bottom: 5px;">
     <security:authorize access="#email == principal.username or hasAuthority('ROLE_ADMIN')">
         <div class="fl">
-            <input type="button" value="<spring:message code="modify" />" class="goModify" />
-            <input type="button" value="<spring:message code="delete" />" class="goDelete" />
+            <button type="button" class="goModify"><spring:message code="modify" /></button>
+            <button type="button" class="goDelete"><spring:message code="delete" /></button>
         </div>
     </security:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
-            <input type="button" value="<spring:message code="next.article" />" title="${nextArticle.articleNo }" class="next-article" />
+            <button type="button" title="${nextArticle.articleNo }" class="next-article"><spring:message code="next.article" /></button>
         </c:if>
         <c:if test="${prevArticle != null }">        
-            <input type="button" value="<spring:message code="prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
+            <button type="button" title="${prevArticle.articleNo}" class="prev-article"><spring:message code="prev.article" /></button>
         </c:if>        
-        <input type="button" value="<spring:message code="list" />" class="goList" />
-        <input type="button" value="<spring:message code="new.article" />" class="goWrite" />
+        <button type="button" class="goList"><spring:message code="list" /></button>
+        <button type="button" class="goWrite"><spring:message code="new.article" /></button>
     </div>
 </div>
 
@@ -358,19 +358,19 @@ $(document).on('click', '#all-comments', function (e) {
 <div class="view-menu" style="margin-bottom: 47px;">
     <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
         <div class="fl">
-            <input type="button" value="<spring:message code="modify" />" class="goModify" />
-            <input type="button" value="<spring:message code="delete" />" class="goDelete" />
+            <button type="button" class="goModify"><spring:message code="modify" /></button>
+            <button type="button" class="goDelete"><spring:message code="delete" /></button>
         </div>
     </security:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
-            <input type="button" value="<spring:message code="next.article" />" title="${nextArticle.articleNo }" class="next-article" />
+            <button type="button" title="${nextArticle.articleNo }" class="next-article"><spring:message code="next.article" /></button>
         </c:if>
         <c:if test="${prevArticle != null }">        
-            <input type="button" value="<spring:message code="prev.article" />" title="${prevArticle.articleNo}" class="prev-article" />
+            <button type="button" title="${prevArticle.articleNo}" class="prev-article"><spring:message code="prev.article" /></button>
         </c:if>        
-        <input type="button" value="<spring:message code="list" />" class="goList" />
-        <input type="button" value="<spring:message code="new.article" />" class="goWrite" />
+        <button type="button" class="goList"><spring:message code="list" /></button>
+        <button type="button" class="goWrite"><spring:message code="new.article" /></button>
     </div>
 </div>
 
@@ -443,7 +443,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 </div>
 
 <div id="list-menu">
-    <input type="button" value="<spring:message code="new.article" />" />
+    <button type="button"><spring:message code="new.article" /></button>
 </div>
 
 <form id="searchForm" action="${ctx}/bbs/${boardCd }" method="get">

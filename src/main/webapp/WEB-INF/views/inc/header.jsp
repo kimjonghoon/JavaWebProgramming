@@ -9,15 +9,15 @@
 
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
 	<security:authorize access="!isAuthenticated()">    
-		<input type="button" value="<spring:message code="login" />" onclick="location.href = '${ctx}/users/login'" />
-		<input type="button" value="<spring:message code="signup" />" onclick="location.href = '${ctx}/users/signUp'" />
+		<a href="${ctx}/users/login"></a><button type="button"><spring:message code="login" /></button></a>
+		<a href="${ctx}/users/signUp"><button type="button"><spring:message code="signup" /></button></a>
 	</security:authorize>        
 	<security:authorize access="isAuthenticated()">    
-		<input type="button" value="<spring:message code="logout" />" id="logout" />
-		<input type="button" value="<spring:message code="modify.account" />" onclick="location.href = '${ctx}/users/editAccount'" />
+		<button type="button" id="logout"><spring:message code="logout" /></button>
+		<a href="${ctx}/users/editAccount"><button type="button"><spring:message code="modify.account" /></button></a>
 	</security:authorize>        
 	<security:authorize access="hasRole('ADMIN')">
-		<input type="button" value="Admin" onclick="location.href='${ctx }/admin?page=1'" />
+		<a href="${ctx }/admin?page=1"><button type="button">Admin</button></a>
 	</security:authorize>
 </div>
 <%
@@ -52,8 +52,8 @@ pageContext.setAttribute("english", english);
 pageContext.setAttribute("korean", korean);
 %>
 <div id="localeChangeMenu" style="float: right;position: relative;top: 7px;margin-right: 10px;">
-  <input type="button" value="English" onclick="location.href = '${english}'" />
-  <input type="button" value="Korean" onclick="location.href = '${korean }'" />
+	<a href="${english}"><button type="button">english</button></a>
+	<a href="${korean}"><button type="button">korean</button></a>
 </div>
 <form:form id="logoutForm" style="display:none" action="${ctx}/logout" method="post">
 </form:form>

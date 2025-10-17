@@ -48,7 +48,7 @@
 </table>
 <div style="text-align: center;padding: 15px 0;">
     <input type="submit" value="<spring:message code="submit" />" />
-    <input type="button" value="<spring:message code="signup" />" onclick="location.href='signUp'" />
+    <a href="signUp"><button type="button"><spring:message code="signup" /></button></a>
 </div>
 </form:form>
 <!-- content end -->

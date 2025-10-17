@@ -28,7 +28,7 @@
 <div id="content-categories"><spring:message code="membership" /></div>
 <h2><spring:message code="changePasswd.confirm.heading" /></h2>
 <spring:message code="changePasswd.confirm.login.again" />
-<input type="button" value="<spring:message code="login" />" onclick="javascript:location.href='login'" />
+<a href="login"><button type="button"><spring:message code="login" /></button></a>
 <!-- content end -->
 		</div>
 	</div>
