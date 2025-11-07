@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-framework-bom</artifactId>
-			<version>6.2.11</version>
+			<version>6.2.12</version>
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
@@ -125,17 +125,17 @@
 		<artifactId>log4j-jcl</artifactId>
 		<version>2.25.2</version>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->	
+	<!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
 	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
+		<groupId>tools.jackson.core</groupId>
 		<artifactId>jackson-databind</artifactId>
-		<version>2.20.0</version>
+		<version>3.0.1</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 	<dependency>
 		<groupId>jakarta.servlet</groupId>
 		<artifactId>jakarta.servlet-api</artifactId>
-		<version>6.1.0</version>
+		<version>6.0.0</version>
 		<scope>provided</scope>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
