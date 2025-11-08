@@ -16,7 +16,7 @@
 <div id="wrap">
 	
 	<div id="header">
-		<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
+		<%@ include file="./inc/header.jsp" %>	
 	</div>
 	
 	<div id="main-menu" lang="en">

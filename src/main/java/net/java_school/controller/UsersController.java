@@ -88,7 +88,6 @@ public class UsersController {
 		}    
 
 		return "redirect:/users/changePasswd";
-
 	}
 
 	@GetMapping("changePasswd")
