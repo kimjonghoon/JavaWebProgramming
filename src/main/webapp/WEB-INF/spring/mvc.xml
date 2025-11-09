@@ -27,13 +27,13 @@
 
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 	<property name="defaultErrorView" value="error" />
-	<property name="exceptionMappings">
+<!-- 	<property name="exceptionMappings">
 		<props>
-			<prop key="AccessDeniedException">
-				403
+			<prop key="org.springframework.security.access.AccessDeniedException">
+				error-403
 			</prop>
 		</props>
-	</property>
+	</property> -->
 </bean>
 
 <!-- Oracle datasource-->

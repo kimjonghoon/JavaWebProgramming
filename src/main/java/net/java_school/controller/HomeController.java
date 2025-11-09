@@ -12,9 +12,9 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping("/403")
+	@RequestMapping("/error-403")
 	public String error403() {
-		return "403";
+		return "error-403";
 	}
 	
 }
