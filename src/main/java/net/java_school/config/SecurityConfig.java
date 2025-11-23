@@ -11,6 +11,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
+
+import net.java_school.exception.MyAccessDeniedHandler;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 import javax.sql.DataSource;
@@ -50,6 +53,11 @@ public class SecurityConfig {
 		builder.jdbcAuthentication().dataSource(dataSource).passwordEncoder(this.passwordEncoder());
 	}
 	*/
+
+	@Bean
+	public AccessDeniedHandler accessDeniedHandler() {
+		return new MyAccessDeniedHandler();
+	}
 	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -78,7 +86,7 @@ public class SecurityConfig {
 			)
 			.formLogin(form -> form.loginPage("/users/login").permitAll().loginProcessingUrl("/login").defaultSuccessUrl("/bbs/chat?page=1").failureUrl("/users/login?error=1"))
 			.logout((logout) -> logout.logoutSuccessUrl("/"))
-			.httpBasic(withDefaults());
+			.httpBasic(withDefaults()).exceptionHandling(exceptionHandling -> exceptionHandling.accessDeniedHandler(accessDeniedHandler()));
 			
 		return http.build();
 	}
