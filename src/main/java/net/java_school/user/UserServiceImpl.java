@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import net.java_school.mapper.UserMapper;
@@ -17,11 +17,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Autowired
-    private BCryptPasswordEncoder bcryptPasswordEncoder;
+    private PasswordEncoder passwordEncoder;
     
     @Override
     public void addUser(User user) {
-        user.setPasswd(this.bcryptPasswordEncoder.encode(user.getPasswd()));
+        user.setPasswd(this.passwordEncoder.encode(user.getPasswd()));
         userMapper.insert(user);
     }
 
@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public int editAccount(User user) {
         String encodedPassword = this.getUser(user.getEmail()).getPasswd();
-        boolean check = this.bcryptPasswordEncoder.matches(user.getPasswd(), encodedPassword);
+        boolean check = this.passwordEncoder.matches(user.getPasswd(), encodedPassword);
 
         if (check == false) {
             throw new AccessDeniedException("The password is incorrect!");
@@ -47,13 +47,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public int changePasswd(String currentPasswd, String newPasswd, String email) {
         String encodedPassword = this.getUser(email).getPasswd();
-        boolean check = this.bcryptPasswordEncoder.matches(currentPasswd, encodedPassword);
+        boolean check = this.passwordEncoder.matches(currentPasswd, encodedPassword);
 
         if (check == false) {
             throw new AccessDeniedException("The password is incorrect!");
         }
 
-        newPasswd = this.bcryptPasswordEncoder.encode(newPasswd);
+        newPasswd = this.passwordEncoder.encode(newPasswd);
 
         return userMapper.updatePasswd(encodedPassword, newPasswd, email);
     }
@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void bye(User user) {
         String encodedPassword = this.getUser(user.getEmail()).getPasswd();
-        boolean check = this.bcryptPasswordEncoder.matches(user.getPasswd(), encodedPassword);
+        boolean check = this.passwordEncoder.matches(user.getPasswd(), encodedPassword);
 
         if (check == false) {
             throw new AccessDeniedException("The password is incorrect!");
@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void changePasswdByAdmin(User user) {
-        String encodedPassword = this.bcryptPasswordEncoder.encode(user.getPasswd());
+        String encodedPassword = this.passwordEncoder.encode(user.getPasswd());
         user.setPasswd(encodedPassword);
 
         userMapper.updatePasswdByAdmin(user);
