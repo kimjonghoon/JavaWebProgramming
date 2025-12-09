@@ -194,16 +194,15 @@ $(document).ready(function () {
             $('#addComment-ta').val('');
         });
     });    
-    var originWidth = $('#article-content > iframe').width();
-    var originHeight = $('#article-content > iframe').height();
-
-    var width = $('#detail').width();
-    var height = originHeight * width / originWidth;
-
-    $('#article-content > iframe').attr('width', width);
-    $('#article-content > iframe').attr('height', height);
-
-    $('#article-content > iframe').attr('allowFullScreen', '');
+    if ($('#article-content iframe').length) {
+      const width = $('#article-content').width();
+      $('#article-content iframe').each(function(index,element) {
+        let originWidth = $(element).width();
+        let originHeight = $(element).height();
+        let height = originHeight * width / originWidth;
+        $(element).css({'width':width,'height':height,'allowFullScreen':''});
+      });
+    }
 });
 
 $(document).on('click', '#all-comments', function (e) {
