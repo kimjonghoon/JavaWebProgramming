@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -9,7 +10,8 @@
 <meta name="Keywords" content="<spring:message code="user.byeconfirm.keys" />" />
 <meta name="Description" content="<spring:message code="user.byeconfirm.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 </head>
 <body>
 <div id="wrap">

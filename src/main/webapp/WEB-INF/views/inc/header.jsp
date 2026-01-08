@@ -4,20 +4,24 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<c:set var="ctx" value="<%=request.getContextPath() %>" scope="application" />
-<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
+
+<c:url var="homeUrl" value="/"/>
+<c:url var="staticUrl" value="/resources"/>
+<c:url var="usersUrl" value="/users"/>
+<c:url var="adminUrl" value="/admin"/>
+<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${homeUrl}"><img src="${staticUrl}/images/ci.gif" alt="java-school" /></a></div>
 
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
 	<security:authorize access="!isAuthenticated()">    
-		<a href="${ctx}/users/login"><button type="button"><spring:message code="login" /></button></a>
-		<a href="${ctx}/users/signUp"><button type="button"><spring:message code="signup" /></button></a>
+		<a href="${usersUrl}/login"><button type="button"><spring:message code="login" /></button></a>
+		<a href="${usersUrl}/signUp"><button type="button"><spring:message code="signup" /></button></a>
 	</security:authorize>        
 	<security:authorize access="isAuthenticated()">    
 		<button type="button" id="logout"><spring:message code="logout" /></button>
-		<a href="${ctx}/users/editAccount"><button type="button"><spring:message code="modify.account" /></button></a>
+		<a href="${usersUrl}/editAccount"><button type="button"><spring:message code="modify.account" /></button></a>
 	</security:authorize>        
 	<security:authorize access="hasRole('ADMIN')">
-		<a href="${ctx }/admin?page=1"><button type="button">Admin</button></a>
+		<a href="${adminUrl}?page=1"><button type="button">Admin</button></a>
 	</security:authorize>
 </div>
 <%
@@ -55,7 +59,8 @@ pageContext.setAttribute("korean", korean);
 	<a href="${english}"><button type="button">english</button></a>
 	<a href="${korean}"><button type="button">korean</button></a>
 </div>
-<form:form id="logoutForm" style="display:none" action="${ctx}/logout" method="post">
+<c:url var="logoutUrl" value="/logout"/>
+<form:form id="logoutForm" style="display:none" action="${logoutUrl}" method="post">
 </form:form>
 <script>
 $(document).ready(function () {

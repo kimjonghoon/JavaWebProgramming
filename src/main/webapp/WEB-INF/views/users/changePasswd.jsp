@@ -11,7 +11,8 @@
 <meta name="Keywords" content="<spring:message code="user.changepasswd.keys" />" />
 <meta name="Description" content="<spring:message code="user.changepasswd.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function () {
     $('#changePasswordForm').submit(function() {

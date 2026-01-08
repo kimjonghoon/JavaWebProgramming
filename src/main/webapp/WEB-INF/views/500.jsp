@@ -10,13 +10,15 @@
 <meta name="Keywords" content="<spring:message code="500.keys" />" />
 <meta name="Description" content="<spring:message code="500.desc" />" />
 <%@ include file="./inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 </head>
 <body>
 <div id="wrap">
 	
 	<div id="header">
-		<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${ctx}/"><img src="${ctx}/resources/images/ci.gif" alt="java-school" /></a></div>
+		<c:url var="homeUrl" value="/"/>
+		<div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${homeUrl}"><img src="${staticUrl}/images/ci.gif" alt="java-school" /></a></div>
 	</div>
 	
 	<div id="main-menu" lang="en">

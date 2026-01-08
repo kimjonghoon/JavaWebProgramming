@@ -2,10 +2,11 @@
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<c:set var="ctx" value="${pageContext.request.contextPath}" />
+
+<c:url var="staticUrl" value="/resources"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" type="image/x-icon" href="${ctx}/resources/images/favicon.ico" />
-<link rel="stylesheet" href="${ctx}/resources/css/<spring:message code="lang" />.css" type="text/css" />
-<link rel="stylesheet" href="${ctx}/resources/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="${ctx}/resources/css/print.css" type="text/css" />
-<script src="${ctx}/resources/js/jquery.js"></script>
+<link rel="icon" type="image/x-icon" href="${staticUrl}/images/favicon.ico" />
+<link rel="stylesheet" href="${staticUrl}/css/<spring:message code="lang" />.css" type="text/css" />
+<link rel="stylesheet" href="${staticUrl}/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="${staticUrl}/css/print.css" type="text/css" />
+<script src="${staticUrl}/js/jquery.js"></script>

@@ -10,11 +10,12 @@
 <meta name="Keywords" content="<spring:message code="0010.keys" />" />
 <meta name="Description" content="<spring:message code="0010.desc" />" />
 <%@ include file="./inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <!-- for pretty code begin -->
-<link rel="stylesheet" href="${ctx}/resources/css/prettify.css" type="text/css" />
-<link rel="stylesheet" href="${ctx}/resources/css/windows.css" type="text/css" />
-<script src="${ctx}/resources/js/run_prettify.js"></script>
+<link rel="stylesheet" href="${staticUrl}/css/prettify.css" type="text/css" />
+<link rel="stylesheet" href="${staticUrl}/css/windows.css" type="text/css" />
+<script src="${staticUrl}/js/run_prettify.js"></script>
 <!-- for pretty code end -->
 <script>
 $(document).ready(function() {
@@ -60,7 +61,7 @@ $(document).ready(function() {
 		    <li class="sub-heading"><spring:message code="book.source" /></li>
 		    <li><a href="https://github.com/kimjonghoon/JavaWebProgramming"><spring:message code="1st.book" /></a></li>
 		</ul>
-		<a href="https://play.google.com/store/books/details?id=vlqKBgAAQBAJ"><img alt="Java Web Programming" src="${ctx}/resources/images/java-web-programming.png" style="display: block;width: 100%;margin: 10px 0;"></a>
+		<a href="https://play.google.com/store/books/details?id=vlqKBgAAQBAJ"><img alt="Java Web Programming" src="${staticUrl}/images/java-web-programming.png" style="display: block;width: 100%;margin: 10px 0;"></a>
 	</div>
 
 	<div id="extra">
