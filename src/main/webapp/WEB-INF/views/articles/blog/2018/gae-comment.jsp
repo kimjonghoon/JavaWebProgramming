@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefixe="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2018.3.30</div>
 	
@@ -7,7 +9,8 @@
 
 <p>
 최종 소스 : <a href="https://github.com/kimjonghoon/gae-comment">https://github.com/kimjonghoon/gae-comment</a><br />
-(<a href="${ctx}/blog/2018/gaefile">구글 클라우드 Blobstore</a> 예제에서 댓글을 데이터스토어에 저장하도록 수정함)
+<c:url var="blogUrl" value="/blog"/>
+(<a href="${blogUrl}/2018/gaefile">구글 클라우드 Blobstore</a> 예제에서 댓글을 데이터스토어에 저장하도록 수정함)
 </p>
 
 
