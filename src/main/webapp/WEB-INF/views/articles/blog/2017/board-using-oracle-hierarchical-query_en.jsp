@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <article>
 <div class="last-modified">Last Modified 2021.12.1</div>
 	
@@ -132,7 +134,8 @@ commit;
 
 <p>
 Install the Oracle JDBC Driver in the local repository.<br />
-See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
+<c:url var="springUrl" value="/spring"/>
+See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
 </p>
 
 
@@ -144,8 +147,9 @@ Go to root directory and run mvn jetty:run and visit http://localhost:8080.
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${ctx}/jsp/Thread-BBS#board-using-oracle-hierarchical-query">Bulletin board using oracle hierarchical query</a></li>
-  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+	<c:url var="jspUrl" value="/jsp"/>
+  <li><a href="${jspUrl}/Thread-BBS#board-using-oracle-hierarchical-query">Bulletin board using oracle hierarchical query</a></li>
+  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

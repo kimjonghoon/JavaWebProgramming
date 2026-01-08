@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <article>
 <div class="last-modified">Last Modified 2017.9.1</div>
 	
@@ -7,7 +9,8 @@
 
 <p>
 예제 소스 : <a href="https://github.com/kimjonghoon/hierarchicalboard">https://github.com/kimjonghoon/hierarchicalboard</a><br />
-(설명은 <a href="${ctx}/jsp/Thread-BBS#board-using-oracle-hierarchical-query">오라클 계층형 쿼리를 사용하는 게시판</a> 참조) 
+<c:url var="jspUrl" value="/jsp"/>
+(설명은 <a href="${jspUrl}/Thread-BBS#board-using-oracle-hierarchical-query">오라클 계층형 쿼리를 사용하는 게시판</a> 참조) 
 </p>
 
 <p>
@@ -133,7 +136,8 @@ commit;
 </pre>
 
 <p>
-<a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
+<c:url var="springUrl" value="/spring"/>
+<a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
 </p>
 
 
@@ -145,8 +149,8 @@ commit;
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="${ctx}/jsp/Thread-BBS#board-using-oracle-hierarchical-query">오라클 계층형 쿼리를 사용하는 게시판</a></li>
-	<li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
+	<li><a href="${jspUrl}/Thread-BBS#board-using-oracle-hierarchical-query">오라클 계층형 쿼리를 사용하는 게시판</a></li>
+	<li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
 </ul>
 
 </article>

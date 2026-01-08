@@ -10,7 +10,8 @@
 <meta name="Keywords" content="<spring:message code="admin.index.keys" />" />
 <meta name="Description" content="<spring:message code="admin.index.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function() {
 	$('.del-user-link').click(function(e) {
@@ -57,7 +58,8 @@ $(document).ready(function() {
             <td>${user.mobile }</td>
             <td>${user.authorities }</td>
             <td>
-                <a href="${ctx}/admin/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
+				<c:url var="adminUrl" value="/admin"/>
+                <a href="${adminUrl}/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
                 <a href="#" title="${user.email }" class="del-user-link"><spring:message code="delete" /></a>
             </td>
         </tr>
@@ -65,8 +67,8 @@ $(document).ready(function() {
 </table>
 <div id="paging">
     <c:if test="${pagingNumbers.finalOfPrevGroup > 0 }">
-        <a href="${ctx}/admin?page=1">1</a>
-        <a href="${ctx}/admin?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
+        <a href="${adminUrl}?page=1">1</a>
+        <a href="${adminUrl}?page=${prev }&search=${search }">[ <spring:message code="prev" /> ]</a>
     </c:if>
     <c:forEach var="i" begin="${pagingNumbers.startPage }" end="${pagingNumbers.finalPage }" varStatus="stat">
         <c:choose>
@@ -74,13 +76,13 @@ $(document).ready(function() {
                 <span class="bbs-strong">${i }</span>
             </c:when>
             <c:otherwise>
-                <a href="${ctx}/admin?page=${i }&search=${param.search }">[ ${i } ]</a>
+                <a href="${adminUrl}?page=${i }&search=${param.search }">[ ${i } ]</a>
             </c:otherwise>
         </c:choose>
     </c:forEach>
     <c:if test="${pagingNumbers.startOfNextGroup > 0 }">
-        <a href="${ctx}/admin?page=${pagingNumbers.startOfNextGroup }&search=${search }">[ <spring:message code="next" /> ]</a>
-        <a href="${ctx}/admin?page=${pagingNumbers.lastPage }">[ <spring:message code="last" /> ]</a>
+        <a href="${adminUrl}?page=${pagingNumbers.startOfNextGroup }&search=${search }">[ <spring:message code="next" /> ]</a>
+        <a href="${adminUrl}?page=${pagingNumbers.lastPage }">[ <spring:message code="last" /> ]</a>
     </c:if>
 </div>
 
@@ -89,7 +91,7 @@ $(document).ready(function() {
     <input type="text" name="search" /><input type="submit" value="<spring:message code="search" />" />
 </form>
 
-<form id="delUserForm" action="${ctx}/admin/delUser" method="post">
+<form id="delUserForm" action="${adminUrl}/delUser" method="post">
     <input type="hidden" name="page" value="${param.page }" />
     <input type="hidden" name="search" value="${param.search }" />
     <input type="hidden" name="email" />

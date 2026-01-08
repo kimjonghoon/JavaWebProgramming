@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <article>
 <div class="last-modified">Last Modified 2017.9.1</div>
 	
@@ -11,7 +13,8 @@
 
 <p>
 실습할 예제는 계층형 게시판은 답변을 달 수 있는 게시판이다.
-(<a href="${ctx}/jsp/Thread-BBS">계층형 게시판</a> 참조) 
+<c:url var="jspUrl" value="/jsp"/>
+(<a href="${jspUrl}/Thread-BBS">계층형 게시판</a> 참조) 
 </p>
 
 <p>
@@ -142,7 +145,8 @@ commit;
 </pre>
 
 <p>
-<a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
+<c:url var="springUrl" value="/spring"/>
+<a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
 </p>
 
 <h3>테스트</h3>
@@ -153,8 +157,8 @@ commit;
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="${ctx}/jsp/Thread-BBS">계층형 게시판</a></li>
-	<li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
+	<li><a href="${jspUrl}/Thread-BBS">계층형 게시판</a></li>
+	<li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
 </ul>
 
 </article>

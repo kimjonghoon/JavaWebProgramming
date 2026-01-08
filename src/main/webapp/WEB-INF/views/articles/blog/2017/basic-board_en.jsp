@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>    
 <article>
 <div class="last-modified">Last Modified 2021.12.1</div>
 	
@@ -7,13 +8,14 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/basic-board">https://github.com/kimjonghoon/basic-board</a><br />
-This example covers the basics of the bulletin board. for more information, See <a href="${ctx}/jsp/BBS-Study">Understanding Bulletin Board Program</a>. 
+<c:url var="jspUrl" value="/jsp"/>
+This example covers the basics of the bulletin board. for more information, See <a href="${jspUrl}/BBS-Study">Understanding Bulletin Board Program</a>. 
 </p>
 
 <p>
 Create article table and seq_article sequence in the SCOTT account and insert the test records as shown below. 
 </p>
-
+ctx
 <pre class="prettyprint">
 create table article (
   articleno number,
@@ -132,7 +134,8 @@ commit;
 
 <p>
 Install the Oracle JDBC driver in the local repository.<br />
-See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>. 
+<c:url var="springUrl" value="/spring"/>
+See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>. 
 </p>
 
 <h3>Test</h3>
@@ -143,8 +146,8 @@ Go to the root directory, and run <strong>mvn jetty:run</strong> and visit http:
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${ctx}/jsp/BBS-Study">Understanding bulletin board program</a></li>
-  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Install the oracle JDBC driver in the local repository</a></li>
+  <li><a href="${jspUrl}/BBS-Study">Understanding bulletin board program</a></li>
+  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Install the oracle JDBC driver in the local repository</a></li>
 </ul>
 
 </article>

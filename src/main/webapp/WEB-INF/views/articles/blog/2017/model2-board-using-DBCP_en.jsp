@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <article>
 <div class="last-modified">Last Modified 2021.12.1</div>
 	
@@ -7,7 +9,8 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/model2board-using-DBCP">https://github.com/kimjonghoon/model2board-using-DBCP</a><br />
-For more information about DBCP, See <a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>. 
+<c:url var="jdbcUrl" value="/jdbc"/>
+For more information about DBCP, See <a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>. 
 </p>
 
 <p>
@@ -134,7 +137,8 @@ commit;
 
 <p>
 Install the Oracle JDBC Driver in the local repository.<br />
-See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
+<c:url var="springUrl" value="/spring"/>
+See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
 </p>
 
 
@@ -146,10 +150,12 @@ Go to the root directory and run <strong>mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${ctx}/java/Logging#logback">Logback</a>
-  <li><a href="${ctx}/jdbc/Connection-Pool#DBCP">DBCP</a>
-  <li><a href="${ctx}/jsp/Model2">Model 2</a></li>
-  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+	<c:url var="javaUrl" value="/java"/>
+  <li><a href="${javaUrl}/Logging#logback">Logback</a>
+  <li><a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>
+	<c:url var="jspUrl" value="/jsp"/>
+  <li><a href="${jspUrl}/Model2">Model 2</a></li>
+  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

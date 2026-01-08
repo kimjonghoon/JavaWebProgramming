@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+
 <article>
 <div class="last-modified">Last Modified 2021.12.1</div>
 	
@@ -7,7 +9,8 @@
 
 <p>
 Source: <a href="https://github.com/kimjonghoon/model2board">https://github.com/kimjonghoon/model2board</a><br />
-For more information about Model 2, See <a href="${ctx}/jsp/Model2">Model 2</a>. 
+<c:url var="jspUrl" value="/jsp"/>
+For more information about Model 2, See <a href="${jspUrl}/Model2">Model 2</a>. 
 </p>
 
 <p>
@@ -133,7 +136,8 @@ commit;
 
 <p>
 Register the Oracle JDBC driver in the local repository.<br />
-See <a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>.
+<c:url var="springUrl" value="/spring"/>
+See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>.
 </p>
 
 
@@ -145,8 +149,8 @@ Go to the root directory and run <strong>mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${ctx}/jsp/Model2">Model 2</a></li>
-  <li><a href="${ctx}/spring/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${jspUrl}/Model2">Model 2</a></li>
+  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
 </ul>
 
 </article>

@@ -10,7 +10,8 @@
 <meta name="Keywords" content="<spring:message code="admin.board.keys" />" />
 <meta name="Description" content="<spring:message code="admin.board.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function() {
     $('.del-user-link').click(function(e) {
@@ -71,8 +72,8 @@ $(document).ready(function() {
 </table>
 
 <h2><spring:message code="board.edit" /></h2>
-
-<form id="editBoard" action="${ctx}/admin/editBoard" method="post">
+<c:url var="adminUrl" value="/admin"/>
+<form id="editBoard" action="${adminUrl}/editBoard" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <table class="bbs-table">
         <tr>
@@ -95,7 +96,7 @@ $(document).ready(function() {
 
 <h2><spring:message code="board.new" /></h2>
 
-<form id="createBoard" action="${ctx}/admin/createBoard" method="post">
+<form id="createBoard" action="${adminUrl}/createBoard" method="post">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     <table class="bbs-table">
         <tr>
