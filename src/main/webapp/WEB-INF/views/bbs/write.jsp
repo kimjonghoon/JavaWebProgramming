@@ -11,7 +11,8 @@
 <meta name="Keywords" content="<spring:message code="bbs.write.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.write.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function() {
    $('#writeForm').submit(function() {
@@ -63,8 +64,8 @@ $(document).ready(function() {
 <div id="content-categories">${boardName }</div>
 
 <h3><spring:message code="new.article" /></h3>
-
-<form:form id="writeForm" action="${ctx}/bbs/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
+<c:url var="bbsUrl" value="/bbs"/>
+<form:form id="writeForm" action="${bbsUrl}/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <form:errors path="*" cssClass="error" />
 <table id="write-form" class="bbs-table">
 <tr>
@@ -95,11 +96,11 @@ $(document).ready(function() {
 </form:form>
 
 <div id="form-group" style="display: none">
-    <form id="viewForm" action="${ctx}/bbs/${boardCd }/${param.articleNo }" method="get">
+    <form id="viewForm" action="${bbsUrl}/${boardCd }/${param.articleNo }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form id="listForm" action="${ctx}/bbs/${boardCd }" method="get">
+    <form id="listForm" action="${bbsUrl}/${boardCd }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>

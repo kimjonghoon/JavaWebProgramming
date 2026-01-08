@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2022.2.8</div>
 
@@ -36,7 +38,8 @@ Change WebContent to OEBPS
 <h3>Create folders and files that make up EPUB</h3>
 
 <p>
-Refer to the <a href="${ctx}/blog/2019/how-to-make-epub">How to make EPUB ebook</a> and create the files in the directory structure below.
+<c:url var="blogUrl" value="/blog"/>
+Refer to the <a href="${blogUrl}/2019/how-to-make-epub">How to make EPUB ebook</a> and create the files in the directory structure below.
 </p>
 
 <pre style="border: 2px dotted grey;padding: 0.3em;" lang="en">MyFirstBook (ROOT Directory)
@@ -196,8 +199,8 @@ Refer to the Linux configuration above and set it as follows.
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
-	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

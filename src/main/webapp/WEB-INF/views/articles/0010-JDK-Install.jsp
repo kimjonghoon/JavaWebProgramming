@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 
 <h1>Java 설치</h1>
@@ -11,7 +13,8 @@
 </p>
 
 <p>
-<img src="${ctx}/resources/images/java-latest.png" alt="java latest version" />
+<c:url var="staticUrl" value="/resources"/>
+<img src="${staticUrl}/images/java-latest.png" alt="java latest version" />
 </p>
 
 <div class="explain">
@@ -33,7 +36,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/windows10-system.png" alt="System" />
+<img src="${staticUrl}/images/windows10-system.png" alt="System" />
 </p>
 
 <p>
@@ -41,7 +44,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/system-properties.png" alt="고급 시스템 설정" />
+<img src="${staticUrl}/images/system-properties.png" alt="고급 시스템 설정" />
 <p>
 
 <p>
@@ -49,7 +52,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/advanced-environment-variables.png" alt="환경 변수" />
+<img src="${staticUrl}/images/advanced-environment-variables.png" alt="환경 변수" />
 </p>
 
 <p>
@@ -57,7 +60,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/user-variables-new-button.png" alt="사용자 변수(U)의 새로 만들기(N) 버튼" />
+<img src="${staticUrl}/images/user-variables-new-button.png" alt="사용자 변수(U)의 새로 만들기(N) 버튼" />
 </p>
 
 <p>
@@ -65,7 +68,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/user-variables-new.png" alt="JAVA_HOME" />
+<img src="${staticUrl}/images/user-variables-new.png" alt="JAVA_HOME" />
 </p>
 
 <p>
@@ -73,7 +76,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/user-variables-path-edit.png" alt="Edit Path" />
+<img src="${staticUrl}/images/user-variables-path-edit.png" alt="Edit Path" />
 
 </p>
 
@@ -82,7 +85,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${ctx}/resources/images/add-java_home-to-path.png" alt="%JAVA_HOME%\bin" />
+<img src="${staticUrl}/images/add-java_home-to-path.png" alt="%JAVA_HOME%\bin" />
 </p>
 
 <div class="explain">
@@ -157,7 +160,8 @@ Hello World!
 <h2>에디터 선택</h2>
 
 <p>
-<a href="${ctx}/java/Package_Modifiers">패키지와 접근자</a>까지 
+<c:url var="javaUrl" value="/java"/>
+<a href="${javaUrl}/Package_Modifiers">패키지와 접근자</a>까지 
 <a href="http://www.editplus.com/kr/">에디트플러스</a>나 
 <a href="https://notepad-plus-plus.org">Notepad++</a>
 같은 단순한 에디터를 사용하는 게 좋다.<br />
@@ -169,7 +173,7 @@ Hello World!
 <article>
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="${ctx}/java/Features">자바의 특징</a></li>
+    <li>다음 : <a href="${javaUrl}/Features">자바의 특징</a></li>
   </ul>
 </div>
 </article>

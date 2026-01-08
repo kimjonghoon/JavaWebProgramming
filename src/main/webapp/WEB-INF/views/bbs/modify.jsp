@@ -11,7 +11,8 @@
 <meta name="Keywords" content="<spring:message code="bbs.modify.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.modify.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function() {
    $('#modifyForm').submit(function() {
@@ -60,8 +61,8 @@ $(document).ready(function() {
 <div id="content-categories">${boardName }</div>
 
 <h3><spring:message code="modify" /></h3>
-
-<form:form id="modifyForm" action="${ctx}/bbs/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
+<c:url var="bbsUrl" value="/bbs"/>
+<form:form id="modifyForm" action="${bbsUrl}/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <input type="hidden" name="page" value="${param.page }" />
 <input type="hidden" name="search" value="${param.search }" />
 <form:errors path="*" cssClass="error"/>
@@ -91,7 +92,7 @@ $(document).ready(function() {
 </form:form>
 		
 <div id="form-group" style="display: none">
-    <form id="viewForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="get">
+    <form id="viewForm" action="${bbsUrl}/${boardCd }/${articleNo }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>

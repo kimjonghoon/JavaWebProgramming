@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2022.2.8</div>
 
@@ -254,8 +256,9 @@ Modify JSPs by referring to the followings:
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/blog/2019/restful-url">1 RESTful URL</a></li>
-	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<c:url var="blogUrl" value="/blog"/>
+	<li><a href="${blogUrl}/2019/restful-url">1 RESTful URL</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

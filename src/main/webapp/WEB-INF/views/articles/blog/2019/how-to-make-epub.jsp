@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2019.10.9</div>
 
@@ -297,8 +299,9 @@ MyFirstBook.epub를 iTunes를 통해 아이패드로 옮기면, 아이패드의 
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
-	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
+	<c:url var="blogUrl" value="/blog"/>
+	<li><a href="${blogUrl}/2019/how-to-make-epub">1 EPUB ebook 만들기</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
 </ul>
 
 </article>

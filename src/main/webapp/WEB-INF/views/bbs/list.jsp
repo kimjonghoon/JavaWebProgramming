@@ -10,7 +10,8 @@
 <meta name="Keywords" content="<spring:message code="bbs.list.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.list.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
 <script>
 $(document).ready(function() {
     $('#paging a').click(function(e) {
@@ -96,7 +97,7 @@ function createCookie(name, value, days) {
             <td>
                 <a href="#" title="${article.articleNo }" class="view-link">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">
-                    <img src="${ctx}/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
+                    <img src="${staticUrl}/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">
                     <span class="bbs-strong">[${article.commentNum }]</span>
@@ -159,11 +160,11 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form id="viewForm" action="${ctx}/bbs/${boardCd }/" method="get">
+    <form id="viewForm" action="${bbsUrl}/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form id="writeForm" action="${ctx}/bbs/${boardCd }/new" method="get">
+    <form id="writeForm" action="${bbsUrl}/${boardCd }/new" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <h1>Java Install</h1>
 <h2 class="floatstop">Downloading the JDK installer</h2>
@@ -213,7 +215,8 @@ C:\Program Files&gt;java -cp C:\Users\John Test<br /><br />
 <h2>Editor</h2>
 
 <p>
-Until <a href="${ctx}/java/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
+<c:url var="javaUrl" value="/java"/>
+Until <a href="${javaUrl}/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
 </p>
 
 </article>

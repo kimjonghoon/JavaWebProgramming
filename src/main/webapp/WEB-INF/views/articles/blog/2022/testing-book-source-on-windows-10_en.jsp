@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2022.3.30</div>
 
@@ -693,14 +695,19 @@ Start Tomcat.
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/">Java Install</a></li>
-	<li><a href="${ctx}/spring/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
-	<li><a href="${ctx}/jsp/How-to-install-Tomcat">Tomcat Install</a></li>
-	<li><a href="${ctx}/jsp/Creating-a-new-web-application">Creating a new web application</a></li>
-	<li><a href="${ctx}/blog/2017/jetty-maven-plugin">Jetty Maven Plugin</a></li>
-	<li><a href="${ctx}/jdbc/How-to-install-Oracle">Oracle Install</a></li>
-	<li><a href="${ctx}/blog/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
-	<li><a href="${ctx}/blog/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
+	<c:url var="homeUrl" value="/"/>
+	<li><a href="${homeUrl}">Java Install</a></li>
+	<c:url var="springUrl" value="/spring"/>
+	<li><a href="${springUrl}/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
+	<c:url var="jspUrl" value="/jsp"/>
+	<li><a href="${jspUrl}/How-to-install-Tomcat">Tomcat Install</a></li>
+	<li><a href="${jspUrl}/Creating-a-new-web-application">Creating a new web application</a></li>
+	<c:url var="blogUrl" value="/blog"/>
+	<li><a href="${blogUrl}/2017/jetty-maven-plugin">Jetty Maven Plugin</a></li>
+	<c:url var="jdbcUrl" value="/jdbc"/>
+	<li><a href="${jdbcUrl}/How-to-install-Oracle">Oracle Install</a></li>
+	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
+	<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
 </ul>
 
 </article>

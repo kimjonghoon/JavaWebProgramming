@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2022.2.8</div>
 
@@ -288,8 +290,9 @@ If you paste the MyFirstBook.epub to iPad via iTunes, iPad register it to the iP
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/blog/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
-	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
+	<c:url var="blogUrl" value="/blog"/>
+	<li><a href="${blogUrl}/2019/how-to-make-epub">1 How to make EPUB ebook</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
 </ul>
 
 </article>

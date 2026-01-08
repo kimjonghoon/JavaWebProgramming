@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2019.10.22</div>
 
@@ -276,8 +278,9 @@ boardCd와 articleNo가 더는 요청 파라미터로 전달되지 않기에, �
 
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
-	<li><a href="${ctx}/blog/2019/restful-url">1 RESTful URL</a></li>
-	<li><a href="${ctx}/blog/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
+	<c:url var="blogUrl" value="/blog"/>
+	<li><a href="${blogUrl}/2019/restful-url">1 RESTful URL</a></li>
+	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
 </ul>
 
 </article>

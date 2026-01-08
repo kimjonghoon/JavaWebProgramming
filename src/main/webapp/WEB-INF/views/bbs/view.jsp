@@ -12,10 +12,12 @@
 <meta name="Keywords" content="<spring:message code="bbs.view.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.view.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<script src="${ctx}/resources/js/commons.js"></script>
+<c:url var="staticUrl" value="/resources"/>
+<script src="${staticUrl}/js/commons.js"></script>
+<c:url var="commentsUrl" value="/comments"/>
 <script>
 function displayComments() {
-    var url = '${ctx}/comments/' + ${articleNo};
+    var url = '${commentsUrl}/' + ${articleNo};
     $.getJSON(url, function (data) {
         $('#all-comments').empty();
         $.each(data, function (i, item) {
@@ -32,7 +34,7 @@ function displayComments() {
             }
             comments = comments
                     + '<div class="comment-memo">' + item.memo + '</div>'
-                    + '<form class="comment-form" action="${ctx}/comments/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
+                    + '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
                     + '<div style="text-align: right;">'
                     + '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
                     + '</div>'
@@ -331,7 +333,7 @@ $(document).on('click', '#all-comments', function (e) {
     </div>
 </div>
 
-<form:form id="addCommentForm" action="${ctx}/comments/${articleNo }" method="post" style="margin: 10px 0;">
+<form:form id="addCommentForm" action="${commentsUrl}/${articleNo }" method="post" style="margin: 10px 0;">
     <div id="addComment">
         <textarea id="addComment-ta" name="memo" rows="7" cols="50"></textarea>
     </div>
@@ -387,7 +389,7 @@ $(document).on('click', '#all-comments', function (e) {
             <td style="text-align: center;">
                 <c:choose>
                     <c:when test="${articleNo == article.articleNo }">	
-                        <img src="${ctx}/resources/images/arrow.gif" alt="<spring:message code="here" />" />
+                        <img src="${staticUrl}/images/arrow.gif" alt="<spring:message code="here" />" />
                     </c:when>
                     <c:otherwise>
                         ${pagingNumbers.listItemNo - status.index }
@@ -397,7 +399,7 @@ $(document).on('click', '#all-comments', function (e) {
             <td>
                 <a href="#" title="${article.articleNo }">${article.title }</a>
                 <c:if test="${article.attachFileNum > 0 }">		
-                    <img src="${ctx}/resources/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
+                    <img src="${staticUrl}/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
                 <c:if test="${article.commentNum > 0 }">		
                     <span class="bbs-strong">[${article.commentNum }]</span>
@@ -444,8 +446,8 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <div id="list-menu">
     <button type="button" class="goWrite"><spring:message code="new.article" /></button>
 </div>
-
-<form id="searchForm" action="${ctx}/bbs/${boardCd }" method="get">
+<c:url var="bbsUrl" value="/bbs"/>
+<form id="searchForm" action="${bbsUrl}/${boardCd }" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">
         <input type="text" name="search" size="15" maxlength="30" />
@@ -454,42 +456,43 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 </form>
 
 <div id="form-group" style="display: none">
-    <form id="listForm" action="${ctx}/bbs/${boardCd }" method="get">
+    <form id="listForm" action="${bbsUrl}/${boardCd }" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form id="viewForm" action="${ctx}/bbs/${boardCd }/" method="get">
+    <form id="viewForm" action="${bbsUrl}/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" id="viewForm-page" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form id="writeForm" action="${ctx}/bbs/${boardCd}/new" method="get">
+    <form id="writeForm" action="${bbsUrl}/${boardCd}/new" method="get">
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form:form id="delForm" action="${ctx}/bbs/${boardCd }/${articleNo }" method="delete">
+    <form:form id="delForm" action="${bbsUrl}/${boardCd }/${articleNo }" method="delete">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form:form>
-    <form id="modifyForm" action="${ctx}/bbs/${boardCd }/${articleNo }/edit" method="get">
+    <form id="modifyForm" action="${bbsUrl}/${boardCd }/${articleNo }/edit" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <form:form id="deleteAttachFileForm" action="${ctx}/bbs/deleteAttachFile" method="delete">
+    <form:form id="deleteAttachFileForm" action="${bbsUrl}/deleteAttachFile" method="delete">
         <input type="hidden" name="attachFileNo" />
         <input type="hidden" name="articleNo" value="${articleNo }" />
         <input type="hidden" name="boardCd" value="${boardCd }" />
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
     </form:form>
-    <form:form id="downForm" action="${ctx}/data" method="get">
+    <c:url var="dataUrl" value="/data"/>
+    <form:form id="downForm" action="${dataUrl}" method="get">
         <input type="hidden" name="filename" />
         <input type="hidden" name="fileno" />
     </form:form>
     <form:form id="modifyCommentForm" method="put">
     	<input type="hidden" name="memo" />
     </form:form>
-    <form:form id="deleteCommentForm" action="${ctx}/comments/${articleNo }/" method="delete">
+    <form:form id="deleteCommentForm" action="${commentsUrl}/${articleNo }/" method="delete">
     </form:form>
 </div>
 <!-- content end -->
