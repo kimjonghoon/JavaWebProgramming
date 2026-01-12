@@ -10,16 +10,15 @@
 <c:url var="usersUrl" value="/users"/>
 <c:url var="adminUrl" value="/admin"/>
 <div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${homeUrl}"><img src="${staticUrl}/images/ci.gif" alt="java-school" /></a></div>
-
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
-	<security:authorize access="!isAuthenticated()">    
+	<security:authorize access="!isAuthenticated()">
 		<a href="${usersUrl}/login"><button type="button"><spring:message code="login" /></button></a>
 		<a href="${usersUrl}/signUp"><button type="button"><spring:message code="signup" /></button></a>
-	</security:authorize>        
-	<security:authorize access="isAuthenticated()">    
+	</security:authorize>
+	<security:authorize access="isAuthenticated()">
 		<button type="button" id="logout"><spring:message code="logout" /></button>
 		<a href="${usersUrl}/editAccount"><button type="button"><spring:message code="modify.account" /></button></a>
-	</security:authorize>        
+	</security:authorize>
 	<security:authorize access="hasRole('ADMIN')">
 		<a href="${adminUrl}?page=1"><button type="button">Admin</button></a>
 	</security:authorize>
