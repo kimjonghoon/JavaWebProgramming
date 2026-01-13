@@ -12,8 +12,7 @@
 <meta name="Keywords" content="<spring:message code="admin.editaccount.keys" />" />
 <meta name="Description" content="<spring:message code="admin.editaccount.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function () {
   $('.del-auth-link').click(function (e) {
@@ -117,7 +116,6 @@ $(document).ready(function () {
 </form:form>
 
 <div style="text-align: right;">
-	<c:url var="adminUrl"  value="/admin"/>
     <form action="${adminUrl}">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />

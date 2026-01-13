@@ -5,7 +5,7 @@
 
 <h1>Java</h1>
 <spring:message code="lang" var="lang" />
-<c:url var="javaUrl" value="/java"/>
+
 <c:choose>
 	<c:when test="${lang == 'ko'}">
 	<ul>

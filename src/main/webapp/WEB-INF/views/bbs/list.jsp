@@ -10,8 +10,7 @@
 <meta name="Keywords" content="<spring:message code="bbs.list.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.list.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
     $('#paging a').click(function(e) {
@@ -160,7 +159,6 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
-    <c:url var="bbsUrl" value="/bbs"/>
     <form id="viewForm" action="${bbsUrl}/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />

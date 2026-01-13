@@ -4,7 +4,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
-<c:url var="usersUrl" value="/users"/>
 <h1><spring:message code="membership" /></h1>
 <ul>
 	<security:authorize access="!isAuthenticated()">        

@@ -13,8 +13,7 @@
 </p>
 
 <p>
-<c:url var="staticUrl" value="/resources"/>
-<img src="${staticUrl}/images/java-latest.png" alt="java latest version" />
+<img src="<c:url value="/resources/images/java-latest.png"/>" alt="java latest version" />
 </p>
 
 <div class="explain">

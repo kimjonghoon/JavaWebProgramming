@@ -11,8 +11,7 @@
 <meta name="Keywords" content="<spring:message code="bbs.modify.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.modify.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
    $('#modifyForm').submit(function() {
@@ -61,7 +60,6 @@ $(document).ready(function() {
 <div id="content-categories">${boardName }</div>
 
 <h3><spring:message code="modify" /></h3>
-<c:url var="bbsUrl" value="/bbs"/>
 <form:form id="modifyForm" action="${bbsUrl}/${boardCd}/${articleNo}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <input type="hidden" name="page" value="${param.page }" />
 <input type="hidden" name="search" value="${param.search }" />

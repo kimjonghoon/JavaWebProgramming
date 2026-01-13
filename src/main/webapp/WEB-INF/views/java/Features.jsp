@@ -10,8 +10,7 @@
 <meta name="Keywords" content="<spring:message code="0020.keys" />" />
 <meta name="Description" content="<spring:message code="0020.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 </head>
 <body>
 <div id="wrap">

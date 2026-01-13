@@ -12,8 +12,11 @@
 <meta name="Keywords" content="<spring:message code="bbs.view.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.view.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
+<!-- for pretty code begin -->
+<link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
+<script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
+<!-- for pretty code end -->
 <c:url var="commentsUrl" value="/comments"/>
 <script>
 function displayComments() {
@@ -446,7 +449,6 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 <div id="list-menu">
     <button type="button" class="goWrite"><spring:message code="new.article" /></button>
 </div>
-<c:url var="bbsUrl" value="/bbs"/>
 <form id="searchForm" action="${bbsUrl}/${boardCd }" method="get">
     <input type="hidden" name="page" value="1" />
     <div id="search">

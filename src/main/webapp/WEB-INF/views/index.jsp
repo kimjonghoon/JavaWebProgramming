@@ -10,12 +10,11 @@
 <meta name="Keywords" content="<spring:message code="0010.keys" />" />
 <meta name="Description" content="<spring:message code="0010.desc" />" />
 <%@ include file="./inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <!-- for pretty code begin -->
-<link rel="stylesheet" href="${staticUrl}/css/prettify.css" type="text/css" />
-<link rel="stylesheet" href="${staticUrl}/css/windows.css" type="text/css" />
-<script src="${staticUrl}/js/run_prettify.js"></script>
+<link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
+<link rel="stylesheet" href="<c:url value="/resources/css/windows.css"/>" type="text/css" />
+<script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
 <!-- for pretty code end -->
 <script>
 $(document).ready(function() {

@@ -11,17 +11,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="Keywords" content="<spring:message code="model2-board-using-DBCP.keys"/>"/>
 <meta name="Description" content="<spring:message code="model2-board-using-DBCP.desc"/>"/>
-<c:url var="staticUrl" value="/resources"/>
-<link rel="icon" type="image/x-icon" href="${staticUrl}/images/favicon.ico"/>
-<link rel="stylesheet" href="${staticUrl}/css/${lang}.css" type="text/css"/>
-<link rel="stylesheet" href="${staticUrl}/css/screen.css" type="text/css"/>
-<link rel="stylesheet" href="${staticUrl}/css/print.css" type="text/css"/>
-<script src="${staticUrl}/js/jquery.js"></script>
-<script src="${staticUrl}/js/commons.js"></script>
+<link rel="icon" type="image/x-icon" href="<c:url value="/resources/images/favicon.ico"/>"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/${lang}.css"/>" type="text/css"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/screen.css"/>" type="text/css"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/print.css"/>" type="text/css"/>
+<script src="<c:url value="/resources/js/jquery.js"/>"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <!-- for pretty code begin -->
-<link rel="stylesheet" href="${staticUrl}/css/prettify.css" type="text/css"/>
-<script src="${staticUrl}/js/prettify.js"></script>
-<script src="${staticUrl}/js/javaschool-prettify.js"></script>
+<link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css"/>
+<script src="<c:url value="/resources/js/prettify.js"/>"></script>
+<script src="<c:url value="/resources/js/javaschool-prettify.js"/>"></script>
 <!-- for pretty code end -->
 <style>
 #sidebar  {

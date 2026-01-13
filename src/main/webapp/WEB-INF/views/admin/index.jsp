@@ -10,8 +10,7 @@
 <meta name="Keywords" content="<spring:message code="admin.index.keys" />" />
 <meta name="Description" content="<spring:message code="admin.index.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
 	$('.del-user-link').click(function(e) {
@@ -58,7 +57,6 @@ $(document).ready(function() {
             <td>${user.mobile }</td>
             <td>${user.authorities }</td>
             <td>
-				<c:url var="adminUrl" value="/admin"/>
                 <a href="${adminUrl}/editAccount?email=${user.email }&page=${param.page }&search=${param.search }"><spring:message code="modify" /></a> |
                 <a href="#" title="${user.email }" class="del-user-link"><spring:message code="delete" /></a>
             </td>

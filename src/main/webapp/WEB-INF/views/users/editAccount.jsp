@@ -11,8 +11,7 @@
 <meta name="Keywords" content="<spring:message code="user.editaccount.keys" />" />
 <meta name="Description" content="<spring:message code="user.editaccount.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
     $('#editAccountForm').submit(function(){

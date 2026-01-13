@@ -9,6 +9,17 @@
 <c:url var="staticUrl" value="/resources"/>
 <c:url var="usersUrl" value="/users"/>
 <c:url var="adminUrl" value="/admin"/>
+<c:url var="javaUrl" value="/java"/>
+<c:url var="jdbcUrl" value="/jdbc"/>
+<c:url var="jspUrl" value="/jsp"/>
+<c:url var="cssLayoutUrl" value="/css-layout"/>
+<c:url var="jspPjtUrl" value="/jsp-pjt"/>
+<c:url var="springUrl" value="/spring"/>
+<c:url var="javascriptUrl" value="/javascript"/>
+<c:url var="googleCloudUrl" value="/google-cloud"/>
+<c:url var="blogUrl" value="/blog"/>
+<c:url var="bbsUrl" value="/bbs"/>
+
 <div style="float: left;width: 150px;position: relative;top: 7px;"><a href="${homeUrl}"><img src="${staticUrl}/images/ci.gif" alt="java-school" /></a></div>
 <div id="memberMenu" style="float: right;position: relative;top: 7px;">
 	<security:authorize access="!isAuthenticated()">

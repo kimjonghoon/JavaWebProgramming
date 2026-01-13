@@ -11,8 +11,7 @@
 <meta name="Keywords" content="<spring:message code="bbs.write.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.write.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
-<c:url var="staticUrl" value="/resources"/>
-<script src="${staticUrl}/js/commons.js"></script>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
    $('#writeForm').submit(function() {
@@ -64,7 +63,6 @@ $(document).ready(function() {
 <div id="content-categories">${boardName }</div>
 
 <h3><spring:message code="new.article" /></h3>
-<c:url var="bbsUrl" value="/bbs"/>
 <form:form id="writeForm" action="${bbsUrl}/${boardCd}?${_csrf.parameterName}=${_csrf.token}" method="post" modelAttribute="article" enctype="multipart/form-data">
 <form:errors path="*" cssClass="error" />
 <table id="write-form" class="bbs-table">
