@@ -160,6 +160,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
         <input type="hidden" name="page" />
         <input type="hidden" name="search" value="${param.search }" />
     </form>
+    <c:url var="bbsUrl" value="/bbs"/>
     <form id="viewForm" action="${bbsUrl}/${boardCd }/" method="get">
         <input type="hidden" name="page" value="${param.page }" />
         <input type="hidden" name="search" value="${param.search }" />
