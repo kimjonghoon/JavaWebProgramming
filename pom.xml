@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-framework-bom</artifactId>
-			<version>7.0.2</version>
+			<version>7.0.3</version>
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
@@ -127,7 +127,7 @@
 	<dependency>
 		<groupId>tools.jackson.core</groupId>
 		<artifactId>jackson-databind</artifactId>
-		<version>3.0.3</version>
+		<version>3.0.4</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 	<dependency>
