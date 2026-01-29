@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
 <script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
 <!-- for pretty code end -->
+<link rel="stylesheet" href="<c:url value="/resources/css/bbs-view.css"/>" type="text/css" />
 <c:url var="commentsUrl" value="/comments"/>
 <script>
 function displayComments() {
@@ -208,6 +209,41 @@ $(document).ready(function () {
         $(element).css({'width':width,'height':height,'allowFullScreen':''});
       });
     }
+    $('#article-content img').click(function(event) {
+		toggleFullScreen(event.target);
+	});
+    function toggleFullScreen(elem) {
+        elem = elem || document.documentElement;
+
+        // Check if already fullscreen
+        if (!document.fullscreenElement &&
+            !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement &&
+            !document.msFullscreenElement) {
+            
+            // Enter fullscreen
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+        } else {
+            // Exit fullscreen
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }	
 });
 
 $(document).on('click', '#all-comments', function (e) {
