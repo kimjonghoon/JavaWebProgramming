@@ -63,6 +63,11 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests((authorize) -> authorize
+				.requestMatchers(HttpMethod.DELETE, "/bbs/admin/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.PATCH, "/bbs/admin/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.PUT, "/bbs/admin/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.POST, "/bbs/admin/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.GET, "/bbs/admin/**").hasRole("ADMIN")					
 				.requestMatchers(HttpMethod.GET, "/users/bye_confirm").permitAll()
 				.requestMatchers(HttpMethod.GET, "/users/welcome").permitAll()
 				.requestMatchers(HttpMethod.POST, "/users/signUp").permitAll()

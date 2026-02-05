@@ -11,6 +11,18 @@
 <meta name="Keywords" content="<spring:message code="bbs.write.keys" />" />
 <meta name="Description" content="<spring:message code="bbs.write.desc" />" />
 <%@ include file="../inc/common-meta-links-scripts.jsp" %>
+<style>
+#extra  {
+    display: none;
+}
+#content  {
+    margin-right: 0;
+}
+textarea {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+</style>
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
@@ -115,7 +127,7 @@ $(document).ready(function() {
 	</div>
 
 	<div id="extra">
-		<%@ include file="../inc/extra.jsp" %>
+		
 	</div>
 	
 	<div id="footer">
