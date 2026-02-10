@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
+<c:url var="staticUrl" value="/resources"/>
+ 
 <article>
 <h1>Java Install</h1>
 <h2 class="floatstop">Downloading the JDK installer</h2>
@@ -11,7 +12,7 @@
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/NPFI5WCRekGIjG8sYrKP4rIDrsSwCw0ETc9LyjYFJzv_00BrXZ7pYKe-f4kqK9mORF9Si2XBYx81NSPsl19DvazAM87Uqw4OpF2gj9egANGS0MeCZKdZVTeWuJz2gdNlDor3Xvfj3y0L77JU_arerf4jq26o1p1GwtJMLt87-P4_x80bVg6zW2AG90fgDeB7bQZpK_LehwJ0NNGfcUqOX-53UK1ZWIsUlvvZyVFY8CPZ988n4FW4IrExv1H8WfSU7vvI13iVFcGJCpps40d-Cm7ypmPwQe6KM5cSt40ZyRR7iwq9kRtBcPwzTskZkRot3aaue_WLYAAH7YulF4CTpaJjdD5OPK2d28UdlRVhMkPYHbwq7o-FHNxMM9bRzzURC0zMd3YbYY79AtAz9T5u5jclcaZnZ8DTn1T0E8Bb0mhS4_RO1bRl5aygLmjFN7S5zjtCJDHKBF7YmwPVLHJTeKIvZzK_keHg9vAmn_BALWlVtrfmLelMjaR0xDkK9uGs7AwUKaKx-PjnE7n_plyyjFGcpPr2nlOE51cEGgxKccAUlaKRlpO_4RmDTvN6YD_8dhY0gkek5NUuoKLhGJ30K-90OIhhxSMilYnQHof4WxBf-8cGiF4j8cLVsxHiOcjnfuLJQLyuH_Uua2p4Pf4n59zzlQnQ4niiiNzsbCPeKifqNaohXCsmnSgBDyBquNq-p8OyJrWn93LitJrn9Opip7SF=w1194-h889-no?authuser=0" alt="java latest version" />
+<img src="${staticUrl}/images/java-latest.png" alt="java latest version" />
 </p>
 
 <p>
@@ -26,7 +27,7 @@ Click Start, then Control Panel, then System.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-98m_YiFDhwU/V2SxgUU4K7I/AAAAAAAAC64/7KQ8b3Cpdbcuv7OWi746lg9RRkzvxJamACCo/s488/start-My_Computer-Properties.png" alt="System Properties" />
+<img src="${staticUrl}/images/start-my-computer-properties.png" alt="System Properties" />
 </p>
 
 <p>
@@ -34,7 +35,7 @@ Select Advanced tab, then Click Environment Variables button.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-zcZel2n21yk/VYDNqu5CxGI/AAAAAAAACMs/zIwc6Mz6__8optVwJUZnakdVUcAb6ostQCCo/s483/System-Properties_Advanced.png" alt="System Properties Advanced" />
+<img src="${staticUrl }/images/system-properties-advanced.png" alt="System Properties Advanced" />
 </p>
 
 <p>

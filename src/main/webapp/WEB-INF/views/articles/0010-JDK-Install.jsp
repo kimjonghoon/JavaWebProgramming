@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:url var="staticUrl" value="/resources"/>
 
 <article>
 
@@ -13,7 +14,7 @@
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/java-latest.png"/>" alt="java latest version" />
+<img src="${staticUrl }/images/java-latest.png" alt="java latest version"/>
 </p>
 
 <div class="explain">
