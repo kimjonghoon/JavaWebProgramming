@@ -597,5 +597,22 @@
 		background-color: #FFF;
 		display: block;
 	}
-
+	.cmd {
+		margin: 0;
+		padding: 0.2em;
+		color: #C0C0C0;
+		border: 2px solid silver;
+		background: #000;
+		font-weight: bold;
+	}
+	div.cmd-header {
+		border-top: 2px solid silver;
+		border-right: 2px solid silver;
+		border-left: 2px solid silver;
+		padding-left: 140px;
+		background: #FFF url('../images/cmd.png') no-repeat 0% 50%;
+	}
+	.cmd > b {
+		color: red;
+	}
 }

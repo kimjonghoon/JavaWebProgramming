@@ -10,33 +10,33 @@
 	<c:when test="${lang == 'ko'}">
 	<ul>
 	    <li class="sub-heading">자바 소개</li>
-	    <li><a href="${javaUrl}/Features">자바의 특징</a></li>
-	    <li><a href="${javaUrl}/Class-Object">객체와 클래스</a></li>
+	    <li><a href="${javaUrl}/features">자바의 특징</a></li>
+	    <li><a href="${javaUrl}/object-and-class">객체와 클래스</a></li>
 	
 	    <li class="sub-heading">자바 기초</li>
-	    <li><a href="${javaUrl}/Keyword_Identifiers_Comment">키워드 식별자 주석</a></li>
-	    <li><a href="${javaUrl}/DataType_Casting">데이터 타입과 타입 캐스팅</a></li>
-	    <li><a href="${javaUrl}/Arrays">배열</a></li>
-	    <li><a href="${javaUrl}/Operators_if_loops">연산자 switch if 반복문</a></li>
-	    <li><a href="${javaUrl}/Package_Modifiers">패키지와 접근자</a></li>
-	    <li><a href="${javaUrl}/Inheritance">상속</a></li>
-	    <li><a href="${javaUrl}/Static">static 키워드</a></li>
-	    <li><a href="${javaUrl}/Collection">컬렉션</a></li>
-	    <li><a href="${javaUrl}/Exception">예외</a></li>
+	    <li><a href="${javaUrl}/keyword-identifiers-comment">키워드,식별자,주석</a></li>
+	    <li><a href="${javaUrl}/dataType">데이터 타입과 타입 캐스팅</a></li>
+	    <li><a href="${javaUrl}/arrays">배열</a></li>
+	    <li><a href="${javaUrl}/operators-if-loops">연산자 switch if 반복문</a></li>
+	    <li><a href="${javaUrl}/package-modifiers">패키지와 접근자</a></li>
+	    <li><a href="${javaUrl}/inheritance">상속</a></li>
+	    <li><a href="${javaUrl}/static">static 키워드</a></li>
+	    <li><a href="${javaUrl}/collection">컬렉션</a></li>
+	    <li><a href="${javaUrl}/exception">예외</a></li>
 	
 	    <li class="sub-heading">예제: 자바은행</li>
-	    <li><a href="${javaUrl}/Javabank-Requirements-analysis">요구사항 분석</a></li>
-	    <li><a href="${javaUrl}/Javabank-Design">구현</a></li>
-	    <li><a href="${javaUrl}/Javabank-Inheritance">상속 적용</a></li>
-	    <li><a href="${javaUrl}/Javabank-Abstract-class">추상 클래스 적용</a></li>
-	    <li><a href="${javaUrl}/Javabank-Interface">인터페이스 적용</a></li>
+	    <li><a href="${javaUrl}/javabank-requirements-analysis">요구사항 분석</a></li>
+	    <li><a href="${javaUrl}/javabank-design">구현</a></li>
+	    <li><a href="${javaUrl}/javabank-inheritance">상속 적용</a></li>
+	    <li><a href="${javaUrl}/javabank-abstract-class">추상 클래스 적용</a></li>
+	    <li><a href="${javaUrl}/javabank-interface">인터페이스 적용</a></li>
 	
 	    <li class="sub-heading">스레드 I/O 네트워크</li>
-	    <li><a href="${javaUrl}/Thread">스레드</a></li>
-	    <li><a href="${javaUrl}/Stream">자바 I/O</a></li>
-	    <li><a href="${javaUrl}/Logging">로깅</a></li>
-	    <li><a href="${javaUrl}/Socket">소켓</a></li>
-	    <li><a href="${javaUrl}/RMI">RMI</a></li>
+	    <li><a href="${javaUrl}/thread">스레드</a></li>
+	    <li><a href="${javaUrl}/stream">자바 I/O</a></li>
+	    <li><a href="${javaUrl}/logging">로깅</a></li>
+	    <li><a href="${javaUrl}/socket">소켓</a></li>
+	    <li><a href="${javaUrl}/rmi">RMI</a></li>
 	</ul>	    	
 	</c:when>
 	<c:otherwise>
