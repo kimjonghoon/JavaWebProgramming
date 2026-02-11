@@ -1,0 +1,115 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>배열</title>
+<meta name="Keywords" content="배열,스트링 리터럴,String literals" />
+<meta name="Description" content="자바 배열에 대해 설명합니다" />
+<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/commons.js"></script>
+<script src="../../static/js/prettify.js"></script>
+<script src="../../static/js/javaschool-prettify.js"></script>
+</head>
+
+<body>
+
+<article>
+
+<h1>배열</h1>
+
+<p>
+배열은 같은 타입의 값을 여러개 담을 수 있다.<br />
+<img src="https://lh3.googleusercontent.com/FqtFaeRokroTk-T2RIW4CwDGqWTCyQ7pKjH-_VrViLOSSkl7gVZXayyfXjQwmaxyDuXSLqhSTxXEyrf54_s0RtwTdIaCHwRFi8ATWv3d_xFPHfVSqgftz1SdbS1Tsfdb6O5PDtK9h3xq68synD554BSPE-4HEkjR4-NWCMdrXM7LaYu7rT7V9m0Vh6dvtsZjp7fBq3yYrFF732RrpvREXsE0N-NqoFvDo5aqlXGR6zg283k27Rhslq--_ZDvIQw7pyc52rs0kZpUebCEjgApHx644dpb3a6LLLaKQ5rJx-Mm53d_ySKxgKxGrWpDn5BC5tNh4Q7SU_CR8-TcXPWzXMnmWpieYQImkmksgtJVd74Zxm7aVj4aoLc57fAcm8eSf8UmatSe5p7_ZQ6LjREGM4486OFwMooLdeRjLu68U2JgNdSycmVaaqsubjn4HIei8UwEl2ooqgbT7HAKaIrhvMN8op-vZAdbZUyRREhWQcqa0g4iZwQA427snTMmdgCMomlNxLu68_jgVHyqo36mRo-uQPibG1VtLxtW3x9dRxYz0uKex6n9c7hW-RzZohi4WtxvMh0qjUZa7c-RF04HOVFFORiZEfDNrnP2RWJlXuz8_flRG89_TQ2S=w913-h585-no" alt="변수상자가 여러개 이어져서 붙어있는 그림" style="width: 100%;" /><br />
+배열의 각 항목을 요소라 한다.
+요소는 0부터 순서대로 매겨지는 인덱스를 가진다.
+요소에 접근하기 위해선, 인덱스와 꺽쇠를 사용한다. 예를 들어, arr[4].
+자바에선 배열도 객체다.
+따라서 배열 객체를 생성해야 배열을 사용할 수 있다.
+</p>
+
+<h3>예제</h3>
+
+<pre class="prettyprint">
+int[] arr = null;//int 배열 선언
+
+arr = new int[4];
+/* 4는 배열의 크기다.
+이 값은 배열 객체의 변수 length에 저장되고 결코 변경할 수 없다.
+배열 요소는 0으로 초기화된다. */
+
+arr[0] = 1;//첫 번째 배열 요소에 1 할당
+arr[1] = 2;//두번째 배열 요소에 2 할당
+arr[2] = 3;//세번째 배열 요소에 3 할당
+arr[3] = 4;//마지막 배열 요소에 4 할당(배열크기가 4이므로 3이 마지막 인덱스)
+</pre>
+
+<p>
+배열 리터럴을 사용하면 이 코드를 한 줄로 줄일 수 있다.
+</p>
+
+<pre class="prettyprint">
+int[] arr2 = {1, 2, 3, 4};
+</pre>
+
+<pre class="prettyprint">
+String[] arr3 = null;//String 배열 선언
+arr3 = new String[2];//배열 크기는 2로 고정되고 모든 배열 요소는 null로 초기화
+arr2[0] = "Java";//첫 번째 배열 요소에 "Java" 레퍼런스 할당
+arr2[1] = "School";//두번째 배열 요소에 "School" 레퍼런스 할당
+</pre>
+
+<p>
+배열 리터럴을 사용하면 이 코드를 한 줄로 줄일 수 있다.
+</p>
+
+<pre class="prettyprint">
+String[] arr4 = {"Java", "School"};
+</pre>
+
+<h3>자바 프로그램에서 문자열 사용하기</h3>
+
+<p>
+자바는 String 클래스로부터 객체를 생성해 문자열을 표현한다.
+"안녕하세요"라는 문자열이 필요하면 다음과 같이 코딩한다.
+</p>
+
+<pre class="prettyprint">
+char[] arrayOfHello = {'안', '녕', '하', '세', '요'};
+String greetings = new String(arrayOfHello);
+</pre>
+
+<p>
+자바는 String 리터럴을 제공한다.
+</p>
+
+<pre class="prettyprint">
+String hello = "안녕하세요"; //여기서, "안녕하세요"는 String 리터럴이다. 
+</pre>
+
+<h3>main 메소드에 String[] 배열를 전달하는 방법</h3>
+
+<pre class="prettyprint">
+public class ArrayTest {
+    public static void main(String[] args) {
+        System.out.print(args[0] + "년 ");
+        System.out.print(args[1] + "월 ");
+        System.out.println(args[2] + "일");
+    }
+}
+</pre>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd">
+C:\javaApp&gt;javac ArrayTest.java
+
+C:\javaApp&gt;java ArrayTest 2018 12 31
+2018년 12월 31일
+</pre>
+
+</article>
+
+</body>
+</html>

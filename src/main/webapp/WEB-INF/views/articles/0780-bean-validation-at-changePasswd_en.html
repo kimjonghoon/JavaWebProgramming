@@ -1,0 +1,146 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Bean Validation - Change Password</title>
+<meta name="Keywords" content="bean validation,change password,hibernate-validator,@Size,@Valid,BindingResult,modelAttribute," />
+<meta name="Description" content="This article describes Change password bean validation" />
+<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/commons.js"></script>
+<script src="../../static/js/prettify.js"></script>
+<script src="../../static/js/javaschool-prettify.js"></script>
+</head>
+
+<body>
+
+<article>
+
+<h2>Bean Validation - Change Password</h2>
+
+<p>
+A password class is required to enable bean validation for passwords.
+</p>
+
+<h6 class="src">Password.java</h6>
+<pre class="prettyprint">package net.java_school.user;
+
+import javax.validation.constraints.Size;
+
+public class Password {
+
+  @Size(min=4, message="The password must be at least 4 characters long.")
+  private String currentPasswd;
+    
+  @Size(min=4, message="The password must be at least 4 characters long.")
+  private String newPasswd;
+
+  public String getCurrentPasswd() {
+    return currentPasswd;
+  }
+  public void setCurrentPasswd(String currentPasswd) {
+    this.currentPasswd = currentPasswd;
+  }
+  public String getNewPasswd() {
+    return newPasswd;
+  }
+  public void setNewPasswd(String newPasswd) {
+    this.newPasswd = newPasswd;
+  }
+}
+</pre>
+
+<h6 class="src">UsersController.java</h6>
+<pre class="prettyprint">@RequestMapping(value="/changePasswd", method=RequestMethod.GET)
+public String changePasswd(Principal principal, Model model) {
+  User user = userService.getUser(principal.getName());
+  model.addAttribute("user", user);
+  <strong>model.addAttribute("password", new Password());</strong>
+    
+  return "users/changePasswd";
+}
+
+@RequestMapping(value="/changePasswd", method=RequestMethod.POST)
+public String changePasswd(@Valid Password password,
+    BindingResult bindingResult,
+    Model model,
+    Principal principal) {
+
+  if (bindingResult.hasErrors()) {
+    User user = userService.getUser(principal.getName());
+    model.addAttribute("user", user);
+    return "users/changePasswd";
+  }
+    
+  int check = userService.changePasswd(password.getCurrentPasswd(),
+        password.getNewPasswd(), principal.getName());
+    
+  if (check &lt; 1) {
+    throw new RuntimeException(WebContants.CHANGE_PASSWORD_FAIL);
+  }
+
+  return "redirect:/users/changePasswd_confirm";
+}
+</pre>
+
+<h6 class="src">changePasswd.jsp</h6>
+<pre class="prettyprint"><strong>&lt;%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %&gt;</strong>
+
+<strong>&lt;sf:form</strong> id="changePasswordForm" action="changePasswd" method="post"
+    <strong>modelAttribute="password"</strong> onsubmit="return check();"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;td&gt;Current Password&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:password path="currentPasswd" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="currentPasswd" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Change password&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:password path="newPasswd" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="newPasswd" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Change password Confirm&lt;/td&gt;
+  &lt;td&gt;
+    &lt;input type="password" name="confirm" /&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan="2"&gt;&lt;input type="submit" value="Submit" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+<strong>&lt;/sf:form&gt;</strong>
+</pre>
+
+<p>
+On the Change Password screen, press the Submit button without typing anything.
+</p>
+
+<p>
+<img alt="Change password test 1" src="https://lh3.googleusercontent.com/0KJpiaAis48TT2dr5_gw86b3nwpHFttzaT5zmzbTLMDQnZmy6oa0Puwip7LSK6domksAqK80lTdxK9fSUjpTui0F-3RgIgHZxBc5l3OReMBh-VNhpM5B8wM1PZ5w21Cp6c5C6Ez2HXX_ZFEBm22Z-BKiHH9w6_NRR7asuz2qwTsQbPnP5pSR8tl30Q5KgA4NosR1fw3IP58inAe_c_LN0uWDlR9yiun279PCkSoO1jGxPjoKlhuKiBzHZ0ES3lcW0-27iK_NaYw0nnl3RWs1CqbMmvvCoKZCuobFWYyeqw0j7jP5ANb8Jqk8-_6o4r_xbCPpsDS8_fE0R8ZzD7pRfhwuX7cfs6faeWoclNi0RYv8HOmJR3hQAtEh-sXPVRd-dQQD8sbq7DQg44lm0JEO-r5Rkyrkw6DeggQ5J_HJOH-u2cOiVqr5Xh2YwXCRZ1F3QyFOfsfCORep1xsu21TEWxx6KCLUDU9-UMcM7JVQYg4h9QuHbD7zj9ecCgQi9pTOgWz223ls0n5c8yNIt1RpbYhjiHKNsVCoJQzSX0qnPOdMb66Cv6enzs4SN16StwyNT8ty9Hi8rdkjarQ4zIAybwpw6zy4P4kTDAkhzog=w305-h207-no" />
+</p>
+
+<p>
+<img alt="Change password test 2" src="https://lh3.googleusercontent.com/oViWmGzPPcFDlKJfFNssq2Td196p-11fhl34PgsTvcEZbJqY3ZXTxK6tPp9myrh_Np0iQmD-pm856zKtV25grIfNLLZsMpnAEzFEddV8467aEXfyUAq_SFGzogxnBfcinYi8e2PiA3r5rBv9Xykoxyf5NU01TJdMK7LffmWyLLPfr-_R2ieLjPPtyZWcARNdIQeWTLHbJC9QWPiKlnMQ6hND3hctKD-N9Rx7Ynx7SuzrsVRwcWe_FJ1wEzoiwcLkQPARByuNmmvCCasLqUaqQtba-WODZwI8lLFKfnx38aIue0cEgnwUHFNJAZXQd_aXKgUWWR81ybX_V5KrhQpQUCEdcM69W2INAgP07WqloWZGop1MrXNa1Un1BnWewbnvbiPNXMC_cLuJ1l75386OCuVfGDHgr6nzLCBMtIsgQw0W7BaY3pjpJIGtM-4hBR39swUaP2KhQZpUlgp1GlcR_AtZLdIVsVzdYIpHBoFLAJkdaBzGAwP9FFHqFrBVTBmcasAm1si-fA2Digo6dJSSJJe3q-SYx4kkOohqGvlMLCALN1kp3VtXYd70OJ4NUS0iMPcfl-CKGgAleh1oQ_X0duVfkOnYMxCZqa6qlrs=w416-h240-no" />
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://hibernate.org/validator/documentation/getting-started/">Getting started with Hibernate Validator</a></li>
+  <li><a href="http://forum.spring.io/forum/spring-projects/web/80192-validation-empty-int-field">Validation - Empty int field</a></li>
+  <li><a href="http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work">http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work</a></li>
+  <li><a href="http://stackoverflow.com/questions/6227547/spring-3-validation-not-working">http://stackoverflow.com/questions/6227547/spring-3-validation-not-working</a></li>
+  <li><a href="http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found">http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found</a></li>
+  <li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/pdf/">spring-framework-reference.pdf</a></li>
+  <li><a href="http://mybatis.github.io/mybatis-3/getting-started.html">MyBatis Getting started</a></li>
+</ul>
+</article>
+
+</body>
+</html>

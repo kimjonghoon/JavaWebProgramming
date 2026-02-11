@@ -1,0 +1,386 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>데이터 타입과 타입 캐스팅</title>
+<meta name="Keywords" content="리터럴,Literal,변수,Variable,자바 데이터 타입,Java Data Type,원시 데이터 타입,Primitive Data Types,boolean,char,byte,short,int,long,float,double,참조 데이터 타입,Reference Data Types,타입 캐스팅,Type Casting,업-캐스팅,Up-Casting,사칙연산에서 업-캐스팅,Up-Casting in arithmetic,다운 캐스팅,Down-Casting" />
+<meta name="Description" content="자바 데이터 타입과 타입 캐스팅에 대해 설명합니다" />
+<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/commons.js"></script>
+<script src="../../static/js/prettify.js"></script>
+<script src="../../static/js/javaschool-prettify.js"></script>
+</head>
+
+<body>
+
+<article>
+
+<h1>데이터 타입과 타입 캐스팅</h1>
+
+<h2>리터럴과 변수</h2>
+
+<pre class="prettyprint no-border">
+int year = 2019;
+</pre>
+
+<p>
+2019처럼 쓰이는 프로그램 요소를 리터럴(Literal)이라 한다.
+리터럴은 소스 코드에서 값을 표현한다.
+대부분, 리터럴과 같은 타입으로 값이 생성된다.
+--자바에서 리터럴과 같은 타입의 값이 만들어지는 않는 몇 안 되는 예가 있는데, 뒤에서 다룬다.--
+</p>
+
+<p>
+year처럼 쓰이는 프로그램 요소를 변수라 한다.
+변수란 값을 저장하기 위해 이름 붙인 메모리 공간으로 크기는 데이터 타입으로 결정된다.
+</p>
+
+<h2>데이터 타입</h2>
+
+<p>
+자바 데이터 타입은 두 종류로 나뉜다.
+</p>
+
+<ul>
+	<li>기본 데이터 타입(<em>Primitive Data Types</em>)</li>
+	<li>참조 데이터 타입(<em>Reference Data Types</em>)</li>
+</ul>
+
+<p>
+기본 데이터 타입은 일반적인 데이터를 위한 타입이다.
+참조 데이터 타입은 객체지향 프로그래밍 언어에서 추가된 데이터 타입으로 참조 데이터를 위한 타입이다.
+참조 데이터는 객체에 접근하기 위해 사용된다.
+</p>
+
+<h3>기본 데이터 타입</h3>
+
+<p>
+기본 데이터 타입에는 boolean, char, byte, short, int, long, float, double이 있다.
+</p>
+
+<h3>boolean</h3>
+
+<p>
+boolean 타입에는 true와 false의 두 가지 값만 있다.
+</p>
+
+<pre class="prettyprint no-border">
+boolean signIn = true;
+</pre>
+
+<h4>char</h4>
+
+<p>
+char 타입은 2바이트 단일 문자다.
+자바는 작은따옴표를 사용해 char 데이터를 표현한다.
+다음 예는 문자, 유니코드 문자, 제어 문자를 작은따옴표('')를 사용해 표현하고 있다.
+</p>
+
+<pre class="prettyprint">
+char grade = 'A';
+char ch = '\uFFFF';//UTF-16 문자셋에서 16진수 FFFF에 해당
+char ech = '\n';//new line
+char ech = '\b';//백스페이스
+char ech = '\t';//탭
+char ech = '\\';//역슬래시
+char ech = '\"';//큰 따옴표
+char ech = '\'';//작은 따옴표
+</pre>
+
+<h4>byte</h4>
+
+<p>
+byte 타입 1바이트 정수다.
+</p>
+
+<pre class="prettyprint no-border">
+byte weight = 71;
+</pre>
+
+<h4>short</h4>
+
+<p>
+short 타입은 2바이트 정수다.
+</p>
+
+<pre class="prettyprint no-border">
+short bill = 30000;
+</pre>
+
+<h4>int</h4>
+
+<p>
+int 타입 4바이트 정수다.
+</p>
+
+<pre class="prettyprint no-border">
+int balance = 56219618;
+</pre>
+
+<h4>long</h4>
+
+<p>
+long 타입은 8바이트 정수다.
+리터럴에는 대문자 L를 붙인다.
+</p>
+
+<pre class="prettyprint no-border">
+long worldPopulation = 7786000000L;
+</pre>
+
+<h3>float</h3>
+
+<p>
+float 타입은 4바이트 실수다.
+리터럴에는 소문자 f를 붙인다.
+</p>
+
+<pre class="prettyprint no-border">
+float rate = 6.195f;
+</pre>
+
+<h3>double</h3>
+
+<p>
+double 타입은 8바이트 실수다.
+</p>
+
+<pre class="prettyprint no-border">
+double rate = 6.195;
+</pre>
+
+<h2>값의 데이터 타입이 결정되는 규칙</h2>
+
+<p>
+다음은 '값의 데이터 타입이 어떻게 정해지는가?'에 대한 설명이다.
+</p>
+
+<pre class="prettyprint no-border">
+int i1 = 3;//정수형 숫자 뒤에 아무것도 붙지 않으면 int 리터럴이다.
+long l1 = 4;//4는 int 리터럴이다.
+</pre>
+
+<p>
+int 리터럴이 int 값이 되듯이, 대부분 리터럴 타입과 같은 타입의 값이 만들어진다.
+하지만 int의 경우 int 리터럴이 byte나 short 타입 값이 되기도 한다.
+다음 예를 보자.
+</p>
+
+<pre class="prettyprint no-border">
+byte b = 1; //1은 int 리터럴이지만 byte 값이 된다.
+short s = 2; //2는 int 리터럴이지만 short 값이 된다.
+</pre>
+
+<p>
+자바에는 byte와 short를 타입 값을 표현하기 위한 리터럴이 따로 없기 때문에 이런 규칙이 필요하다.
+</p>
+
+<p>
+모든 리터럴이 값이 되지는 않는다.
+</p>
+
+<pre class="prettyprint no-border">
+int i2 = 3000000000; //컴파일 에러
+</pre>
+
+<p>
+3000000000(30억)은 int 리터럴이지만 int 범위를 벗어난다.
+그 결과 int 값이 만들어지지 않고 컴파일 에러가 발생한다.
+</p>
+
+<p>
+정수 숫자 뒤에 L이 붙으면 long 리터럴이다. 
+</p>
+
+<pre class="prettyprint no-border">
+long l2 = 3000000000L; //3000000000L은 long 리터럴이다.
+</pre>
+
+<p>
+숫자 뒤에 알파벳이 붙지 않는 소수점을 가진 숫자나 숫자 뒤에 D 또는 d가 붙으면 double 리터럴이다.
+</p>
+
+<pre class="prettyprint no-border">
+double d1 = 3.14;  //3.14는 double 리터럴이다.
+double d2 = 3.14D; //3.14D는 double 리터럴이다.
+double d3 = 3.14d; //3.14d는 double 리터럴이다.
+float f1 = 3.14;   //컴파일 에러. double 타입 값을 float 타입 변수에 할당할 수 없다.
+</pre>
+
+<p>
+숫자 뒤에 f가 붙으면 float 리터럴이다.
+</p>
+
+<pre class="prettyprint no-border">
+float f2 = 3.14f; //3.14f는 float 리터럴이다.
+</pre>
+
+<h3>참조 타입(Reference Type)</h3>
+
+<p>
+자바 변수 선언에서 변수 앞에 데이터 타입을 반드시 두어야 한다.
+</p>
+
+<pre class="prettyprint no-border">
+Student kim = new Student();
+</pre>
+
+<p>
+변수 kim의 데이터 타입은 Student이다.
+Student는 기본 타입에 없으니 참조 타입이다.
+참조 타입에서 타입은 자바 클래스다.
+kim을 'Student 타입 변수'라고 부른다.
+new Student()가 실행되면 객체가 생성되고 생성된 객체의 참조 값이 kim에 할당된다.
+객체 자체가 kim에 할당되지 않는다.
+kim과 점(.)를 사용하면 kim이 참조하는 객체를 사용할 수 있다.
+</p>
+
+<pre class="prettyprint no-border">
+kim.name = "김선달";
+</pre>
+
+<p>
+앞으로 '객체 참조 값' 이나 '참조 값' 대신 '레퍼런스'(reference)란 용어를 사용한다.
+</p>
+
+<h2>타입 캐스팅(Type Casting)</h2>
+
+<p>
+타입 캐스팅이란 값의 데이터 타입을 원하는 타입으로 변환하는 작업을 말한다.
+변수의 타입을 바꾸는 타입 캐스팅은 없다.
+타입 캐스팅에는 JVM이 판단해서 행하는 '자동 타입 캐스팅'과 프로그래머가 의도적으로 발생시키는 '명시적 타입 캐스팅'이 있다.
+타입 캐스팅을 캐스팅으로 줄여 쓰기도 한다.
+</p>
+
+<h3>자동 타입 캐스팅</h3>
+
+<pre class="prettyprint no-border">
+long money = 300;
+</pre>
+
+<p>
+자바는 데이터 타입을 엄격하게 지킨다.
+long 타입 변수 money에는 long 타입 값만 저장할 수 있다.
+코드에서 300은 int 타입 값이다.
+JVM은 변수에 값을 할당하기 전에 300을 long 타입으로 변환한다.
+자동 타입 캐스팅은 작은 데이터 타입에서 큰 데이터 타입 방향으로 변환이 일어나므로, 업 캐스팅(Up-Casting)이라 한다.<br />
+
+<em>byte --&gt; short --&gt; int --&gt; long --&gt; float --&gt; double</em><br />
+
+long --&gt; float 순서에 주의한다.
+long은 8바이트, float은 4바이트 메모리를 차지하지만, float이 실수이므로 long에서 float 방향으로 자동 타입 캐스팅이 일어난다.
+</p>
+
+<pre class="prettyprint no-border">
+float x = 10L;//JVM은 10L을 10f로 타입 캐스팅한다.
+</pre>
+
+<h4>사칙연산에서의 자동 타입 캐스팅</h4>
+
+<pre class="prettyprint no-border">
+int x = 3 + <em>3.5</em> + 4; //컴파일 에러
+</pre>
+
+<p>
+3.5는 double 리터럴이고 3과 4는 int 리터럴이다.
+int 이상 타입의 산술 연산에서, 참여하는 값 중 가장 큰 타입으로 나머지 값의 타입이 캐스팅된다.
+</p>
+
+<pre class="prettyprint no-border">
+int x = <strong>3.0</strong> + 3.5 + <strong>4.0</strong>;
+</pre>
+
+<p>
+3.0 + 3.5 + 4.0의 결과는 dobule이고 int 타입 변수 x에 할당할 수 없으니 컴파일 에러가 발생한다.
+</p>
+
+<h3>명시적 타입 캐스팅(Down-Casting)</h3>
+
+<pre class="prettyprint no-border">
+float f = 1.1; //컴파일 에러
+</pre>
+
+<p>
+코드는 float 타입 변수에 double 타입 값을 할당하려고 시도한다.
+큰 타입에서 작은 타입으로의 타입 캐스팅은 자동으로 일어나지 않는다. 
+따라서 변수에 값을 할당할 때, 값의 타입이 변수의 타입보다 크면 컴파일 에러가 발생한다.
+</p>
+
+<pre class="prettyprint no-border">
+float f = (float) 1.1;
+</pre>
+
+<p>
+코드는 변수에 할당하려는 값의 타입을 double에서 float로 변환한다.
+괄호를 사용해 데이터 타입을 강제로 바꾸는 것을 명시적 타입 캐스팅이라 한다.
+다음에서 b에 할당되는 값을 예상해 보자.
+</p>
+
+<pre class="prettyprint no-border">
+byte b = (byte) 258;
+</pre>
+
+<p>
+b에는 2가 할당된다.
+int 타입을 byte 타입으로 명시적 타입 캐스팅하면 int의 앞 3바이트는 떨어져 나간다.
+</p>
+
+<p>
+byte나 short 타입 값이 참여하는 산술연산에선 연산이 진행되기 전 모든 값이 int 타입으로 자동 타입 캐스팅된다.
+</p>
+
+<pre class="prettyprint no-border">
+short s1 = 1;
+short s2 = 2;
+short sum = s1 + s2; //컴파일 에러
+</pre>
+
+<p>
+s1과 s2에 저장된 값이 연산에 참여하게 되면 모두 int 타입으로 자동 타입 캐스팅되므로 계산 결과는 int 타입 값이 된다.
+컴파일 에러를 피하려면 아래처럼 명시적 타입 캐스팅이 필요하다.
+</p>
+
+<pre class="prettyprint no-border">
+short sum = <em>(short)</em> (s1 + s2);
+</pre>
+
+<p>
+다음 예에서 z에 할당되는 값을 예상해 보자.
+</p>
+
+<pre class="prettyprint no-border">
+int x = 10;
+int y = 4;
+int z = x / y;
+</pre>
+
+<p>
+2.5를 기대했겠지만, z에는 2가 할당된다.
+x와 y가 모두 int 타입이므로 연산 결과 역시 int 타입이다.
+z에 2.5가 할당되도록 하려면, 변수 z의 타입을 double 타입으로 바꾸고
+x나 y 둘 중 하나를 double 타입으로 명시적 타입 캐스팅해야 한다.
+</p>
+
+<pre class="prettyprint no-border">
+double z = <b>(double)</b> x / y; 
+</pre>
+
+<p>
+x를 double 타입으로 캐스팅하면, 
+y는 double 타입으로 자동 캐스팅된다.
+</p>
+
+<span id="refer">참고</span>
+<ul id="references">
+	<li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</a></li>
+	<li><a href="http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals">http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/Literal_%28computer_programming%29">http://en.wikipedia.org/wiki/Literal_%28computer_programming%29</a></li>
+</ul>
+
+</article>
+
+</body>
+</html>

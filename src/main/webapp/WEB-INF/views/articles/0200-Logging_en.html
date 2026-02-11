@@ -1,0 +1,493 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Logging</title>
+<meta name="Keywords" content="Log4j 2,log4j2.xml,Logger,LogManager,Logger,Appender,Layout,Log Level,FATAL,ERROR,WARN,INFO,DEBUG,TRACE,Commons Logging,commons-logging.properties,Log,LogFactory,slf4j,Logger,LoggerFactory,logback,logback.xml" />
+<meta name="Description" content="This article describes log4j2, logback, slf4j, commons-logging" />
+<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/commons.js"></script>
+<script src="../../static/js/prettify.js"></script>
+<script src="../../static/js/javaschool-prettify.js"></script>
+</head>
+
+<body>
+
+<article>
+	
+<h1>Logging</h1>
+
+<p>
+Logs are texts for tracking problems during program development or operation or monitoring operational status. The easiest way for logging is to use the <em>System.out.println()</em>. A better way is to create a class dedicated to logging.
+</p>
+
+<h6 class="src">Log.java</h6>
+<pre class="prettyprint">
+package net.java_school.util;
+
+import java.io.*;
+import java.util.Date;
+
+public class Log {
+  String logFile = "C:/debug.log";
+  FileWriter fw;
+  static final String ENTER = System.getProperty("line.separator");
+  
+  public Log() {
+    try {
+      fw = new FileWriter(logFile, true);
+    } catch (IOException e){}
+  }
+
+  public void close() {
+    try {
+      fw.close();
+    } catch (IOException e){}
+  }
+
+  public void debug(String msg) {
+    try {
+      fw.write(new Date()+ " : ");
+      fw.write(msg + ENTER);
+      fw.flush();
+    } catch (IOException e) {
+      System.err.println("IOException!");
+    }
+  }
+}
+</pre>
+
+<p>
+Create the following file for testing.
+</p>
+
+<h6 class="src">LogTest1.java</h6>
+<pre class="prettyprint">
+package net.java_school.logtest;
+
+import net.java_school.util.Log;
+
+public class LogTest1 {
+
+  public void someMethod() {
+    Log log = new Log(); //Create an output stream.
+    log.debug("Log Test!"); //Logging
+    log.close(); //Closes the output stream.
+  }
+  
+  public static void main(String[] args) {
+    LogTest1 test = new LogTest1();
+    test.someMethod();
+  }
+}
+</pre>
+
+<h2 id="log4j-2">Log4j 2</h2>
+
+<p>
+There are frameworks dedicated to logging. Frameworks result from efforts to automate common tasks and allow developers to develop applications quickly.
+</p>
+
+<p>
+Download the Log4j binary file from the address below:<br />
+<a href="http://logging.apache.org/log4j/2.x/download.html">http://logging.apache.org/log4j/2.x/download.html</a>
+</p>
+
+<p>
+Copy log4j-api-2.x.x.jar and log4j-core-2.x.x.jar and paste them into the path that the class loader can find.
+</p>
+
+<p>
+Create the following property file in the path that the class loader can find.
+</p>
+
+<h6 class="src">log42.xml</h6>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Configuration&gt;
+  &lt;Appenders&gt;
+    &lt;File name="A1" fileName="A1.log" append="true"&gt;
+      &lt;PatternLayout pattern="%t %-5p %c{2} - %m%n" /&gt;
+    &lt;/File&gt;
+    &lt;Console name="STDOUT" target="SYSTEM_OUT"&gt;
+      &lt;PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" /&gt;
+    &lt;/Console&gt;
+  &lt;/Appenders&gt;
+  &lt;Loggers&gt;
+    &lt;Logger name="net.java_school" level="debug"&gt;
+      &lt;AppenderRef ref="A1" /&gt;
+    &lt;/Logger&gt;
+    &lt;Root level="debug"&gt;
+      &lt;AppenderRef ref="STDOUT" /&gt;
+    &lt;/Root&gt;
+  &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+</pre>
+
+<h3>Testing Log4j 2 in Eclipse</h3>
+
+<p>
+Follow these steps.
+</p>
+
+<ol>
+  <li>Create a new project from Java Perspective.</li>
+  <li>Add the Log4j 2 library to the project's Build Path.
+    <ol>
+      <li>In the Package Explorer view, select the project and right-click.</li>
+      <li>Select Build Path and then select Configure Build Path.</li>
+      <li>Select the Libraires tab and then select Add External JARs.</li>
+      <li>Add log4j-api-2.x.x.jar and log4j-core-2.x.x.jar and click the OK button.</li> 
+    </ol>
+  <li>Create the file LogTest2.java as shown below.</li>
+</ol>
+
+<h6 class="src">LogTest2.java</h6>
+<pre class="prettyprint">
+package net.java_school.logtest;
+
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
+public class LogTest2 {
+  /*
+  //Logger instance named "LogTest2". Only the ROOT Logger works.
+  private Logger log = LogManager.getLogger(LogTest2.class); 
+  */
+  private Logger log = LogManager.getLogger("net.java_school");
+
+  public void xxx() {
+    if (log.isDebugEnabled()) {
+      log.debug("debug message");
+    }
+  }
+
+  public void yyy() {
+    if (log.isInfoEnabled()) {
+      log.info("info message");
+    }
+  }
+
+  public static void main(String[] args) {
+    LogTest2 test = new LogTest2();
+    test.xxx();
+    test.yyy();
+  }
+}
+</pre>
+
+<p>
+After running, check the log messages in the console view and A1.log file. 
+Notice that no code closes the output stream.
+</p>
+
+<h3>A description of the main elements of the Log4j2 configuration file</h3>
+
+<p>
+<b>Log4j 2 consists of three main components</b>: Logger, Appender, and Layout, which work together to log.
+</p>
+
+<ol>
+	<li><b>Logger</b>: Pass the logging message to Appender.</li>
+	<li><b>Appender</b>: Specifies the output destination of the logging messages. see <a href="http://logging.apache.org/log4j/2.x/manual/appenders.html">Appenders</a></li>
+	<li><b>Layout</b>: Determine the log format. see <a href="http://logging.apache.org/log4j/2.x/manual/layouts.html">Layouts</a></li>
+</ol>
+
+<p>
+The Root Logger is the top logger.
+It always exists and is at the top of all loggers.
+</p>
+
+<p>
+For more information, see <a href="http://logging.apache.org/log4j/2.x/manual/configuration.html">http://logging.apache.org/log4j/2.x/manual/configuration.html</a>.
+</p>
+
+<h3>Log Level</h3>
+
+<p>
+The log levels are hierarchical as follows.<br />
+TRACE &gt; DEBUG &gt; INFO &gt; WARN &gt; ERROR &gt; FATAL<br />
+If set to INFO, INFO, WARN, ERROR, and FATAL are recorded.
+</p>
+
+<ol>
+	<li><b>FATAL</b>: The FATAL level designates severe error events that presumably lead the application to abort.</li>
+	<li><b>ERROR</b>: The ERROR level designates error events that might still allow the application to continue running.</li>
+	<li><b>WARN</b>: The WARN level designates potentially harmful situations.</li>
+	<li><b>INFO</b>: The INFO level designates informational messages that highlight the application's progress at a coarse-grained level.</li>
+	<li><b>DEBUG</b>: The DEBUG Level designates fine-grained informational events that are most useful to debug an application.</li>
+	<li><b>TRACE</b>: The TRACE Level designates finer-grained informational events than the DEBUG</li>
+</ol>
+
+<h3>Commons Logging with Log4j 2</h3>
+
+<p>
+Apache's commons-logging is a framework built to provide developers with a standard logging API that prevents applications from depending on a particular logging framework. Currently, many third-party logging frameworks are implemented based on commons-logging.
+</p>
+ 
+<p>
+Download the commons-logging binary from:<br />
+<a href="http://apache.mirror.cdnetworks.com/commons/logging/binaries/">http://apache.mirror.cdnetworks.com/commons/logging/binaries/</a>
+</p>
+
+<p>
+After unpacking, copy the commons-logging-1.2.jar file to the classpath.
+</p>
+
+<p>
+Commons logging is standardized logging.<br />
+Logging using commons-logging requires a separate logging implementation.
+</p>
+
+<p>
+Let's use Log4j 2 as the logging implementation.
+</p>
+
+<p>
+Create the following commons-logging properties file in the classpath.
+</p>
+
+<h6 class="src">commons-logging.properties</h6>
+<pre class="prettyprint">
+org.apache.commons.logging.Log = org.apache.commons.logging.impl.Log4JLogger
+</pre>
+
+<p>
+Create the following test file.
+</p>
+
+<h6 class="src">LogTest3.java</h6>
+<pre class="prettyprint">
+package net.java_school.logtest;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+public class LogTest3 {
+  private Log log = LogFactory.getLog(LogTest3.class);
+  //private Log log = LogFactory.getLog(this.getClass());
+	
+  public void xxx() {
+    if (log.isDebugEnabled()) {
+      log.debug("debug message");
+    }
+  }
+	
+  public void yyy() {
+    if (log.isInfoEnabled()) {
+      log.info("info message");
+    }
+  }
+  
+  public static void main(String[] args) {
+    LogTest3 test = new LogTest3();
+    test.xxx();
+    test.yyy();
+  }
+}
+</pre>
+
+<p>
+Add commons-logging-1.2.jar and log4j-jcl-2.8.jar to your classpath.
+--You can find the log4j-jcl-2.8.jar file in the Log4j 2 directory--
+</p>
+
+<h2>slf4j</h2>
+
+<p>
+Download the latest distribution from the following address:<br />
+<a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a>
+</p>
+
+<p>
+After unpacking, add the slf4j-api-1.7.25.jar and slf4j-simple-1.7.25.jar files to the classpath.
+</p>
+
+<p>
+Create and test the following example.
+</p>
+
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LogTest5 {
+	
+  public static void main(String[] args) {
+    Logger logger = LoggerFactory.getLogger(LogTest5.class);
+    int amount = 1000;
+    int balance = 10000;
+    logger.info("amount: {}, balance: {}", amount, balance);
+  }
+}
+</pre>
+
+<p>
+The default level for slf4j is INFO.<br />
+To change the logging level to DEBUG, make the simplelogger.properties file in the classpath as follows:
+</p>
+
+<h6 class="src">simplelogger.properties</h6>
+<pre class="prettyprint">
+org.slf4j.simpleLogger.defaultLogLevel=DEBUG
+</pre>
+
+<h3>Applying slf4j to a Javabank example</h3>
+
+<p>
+Add the slf4j-api-1.7.25.jar and slf4j-simple-1.7.25.jar files to the Javabank classpath.<br />
+Apply logging to the deposit and withdrawal methods of the Account, NormalAccount, and MinusAccount classes.
+</p>
+
+<h6 class="src">Account.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+//..Omit code..
+<strong>
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+</strong>
+public abstract class Account implements Serializable {
+  <strong>Logger logger = LoggerFactory.getLogger(Account.class);</strong>
+	
+  //..Omit code..
+	
+  public synchronized void deposit(double amount) {
+    balance = balance + amount;
+    Transaction transaction = new Transaction();
+    Calendar cal = Calendar.getInstance();
+    Date date = cal.getTime();
+    transaction.setTransactionDate(Account.DATE_FORMAT.format(date));
+    transaction.setTransactionTime(Account.TIME_FORMAT.format(date));
+    transaction.setAmount(amount);
+    transaction.setBalance(balance);
+    transaction.setKind(DEPOSIT);
+    transactions.add(transaction);
+    <strong>logger.debug("AccountNo:{} Amount:{} DEPOSIT/WITHDRAW:{} NORMAL/MINUS:{}", 
+      accountNo, amount, DEPOSIT, getKind());</strong>
+  }
+	
+  //..Omit code..
+}
+</pre>
+
+<h6 class="src">NormalAccount.java</h6>
+<pre class="prettyprint">
+@Override
+public synchronized void withdraw(double amount) {
+  if (amount &gt; balance) {
+    throw new InsufficientBalanceException("There is not enough balance.");
+  }
+  balance = balance + amount;
+  Transaction transaction = new Transaction();
+  Calendar cal = Calendar.getInstance();
+  Date date = cal.getTime();
+  transaction.setTransactionDate(Account.DATE_FORMAT.format(date));
+  transaction.setTransactionTime(Account.TIME_FORMAT.format(date));
+  transaction.setAmount(amount);
+  transaction.setBalance(balance);
+  transaction.setKind(Account.WITHDRAW);
+  transactions.add(transaction);
+  <strong>logger.debug("AccountNo:{} Amount:{} DEPOSIT/WITHDRAW:{} NORMAL/MINUS:{}", 
+    getAccountNo(), amount, Account.WITHDRAW, getKind());</strong>
+}
+</pre>
+
+<h6 class="src">MinusAccount.java</h6>
+<pre class="prettyprint">
+@Override
+public synchronized void withdraw(double amount) {
+  balance = balance - amount;
+  Transaction transaction = new Transaction();
+  Calendar cal = Calendar.getInstance();
+	
+  Date date = cal.getTime();
+  transaction.setTransactionDate(Account.DATE_FORMAT.format(date));
+  transaction.setTransactionTime(Account.TIME_FORMAT.format(date));
+  transaction.setAmount(amount);
+  transaction.setBalance(balance);
+  transaction.setKind(Account.WITHDRAW);
+  transactions.add(transaction);
+  <strong>logger.debug("AccountNo:{} Amount:{} DEPOSIT/WITHDRAW:{} NORMAL/MINUS:{}", 
+    getAccountNo(), amount, Account.WITHDRAW, getKind());</strong>
+}
+</pre>
+
+<p>
+If you want to output log messages to a file rather than the console, add the following setting to simplelogger.properties:
+</p>
+
+<h6 class="src">simplelogger.properties</h6>
+<pre class="prettyprint">
+<strong>org.slf4j.simpleLogger.logFile=C:/java/Bank/javabank.log</strong>
+org.slf4j.simpleLogger.defaultLogLevel=DEBUG
+</pre>
+
+<p>
+You can see the log messages in the javabank.log file. However, SimpleLogger does not accumulate log messages in the log file.
+</p>
+
+<h3>logback</h3>
+
+<p>
+Download the latest version from the address below:<br />
+<a href="http://logback.qos.ch/download.html">http://logback.qos.ch/download.html</a>
+</p>
+
+<p>
+Add logback-core-x.x.x.jar, logback-classic-x.x.x.jar, and logback-access-x.x.x.jar to the classpath.<br />
+Remove slf4-simple-x.x.x.jar from the classpath.
+</p>
+
+<p>
+Create a logback.xml file in the classpath.
+</p>
+
+<h6 class="src" id="logback-xml-javabank">logback.xml</h6>
+<pre class="prettyprint">
+&lt;configuration&gt;
+  &lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;
+    &lt;file&gt;javabank.log&lt;/file&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%date %level [%thread] %logger{10} [%file:%line] %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
+
+  &lt;appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"&gt;
+    &lt;!-- encoders are assigned the type
+      ch.qos.logback.classic.encoder.PatternLayoutEncoder by default --&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
+
+  &lt;root level="debug"&gt;
+    &lt;appender-ref ref="FILE" /&gt;
+    &lt;appender-ref ref="STDOUT" /&gt;
+  &lt;/root&gt;
+    
+&lt;/configuration&gt;
+</pre> 
+
+<p>
+Rerun LogTest5.<br />
+Check if the log has accumulated in the javabank.log in the project root directory.
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+	<li><a href="http://www.slf4j.org/">http://www.slf4j.org/</a></li>
+	<li><a href="http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html">http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html</a></li>
+	<li><a href="http://logback.qos.ch/manual/configuration.html">http://logback.qos.ch/manual/configuration.html</a></li> 
+</ul>
+
+</article>
+
+</body>
+</html>

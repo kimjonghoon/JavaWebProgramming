@@ -1,0 +1,489 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Board styling - Detailed view</title>
+<meta name="Keywords" content="css,css styling,board's detailed view styling," />
+<meta name="Description" content="This article describes CSS styling" />
+<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
+<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
+<script src="../../static/js/jquery.js"></script>
+<script src="../../static/js/commons.js"></script>
+<script src="../../static/js/prettify.js"></script>
+<script src="../../static/js/javaschool-prettify.js"></script>
+</head>
+
+<body>
+
+<article>
+
+<h1>Board styling - Detailed view</h1>
+
+<p>
+Open the list.html and use the Save As editor menu to create a view.html. Paste the following code below the <strong>div id="content-categories"</strong> element in #content of the view.html. (Do not delete the existing code that shows the list)
+</p>
+
+<pre class="prettyprint">
+&lt;div class="view-menu" style="margin-top: 15px;margin-bottom: 5px;"&gt;
+  &lt;div class="fl"&gt;
+    &lt;input type="button" value="Modify" /&gt;
+    &lt;input type="button" value="Del" /&gt;
+  &lt;/div&gt;
+  &lt;div class="fr"&gt;
+    &lt;input type="button" value="Next Article" /&gt;
+    &lt;input type="button" value="Prev Article" /&gt;
+    &lt;input type="button" value="List" /&gt;
+    &lt;input type="button" value="New" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;table class="bbs-table"&gt;
+&lt;tr&gt;
+  &lt;th style="width: 47px;text-align: left;vertical-align: top;font-size: 1em;"&gt;TITLE&lt;/th&gt;
+  &lt;th style="text-align: left;color: #555;font-size: 1em;"&gt;What makes us happy?&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;div id="detail"&gt;
+  &lt;div id="date-writer-hit"&gt;2014 10-09 17:50:30 by John hit 1330&lt;/div&gt;
+  &lt;div id="article-content"&gt;
+  What makes us happy?What makes us happy?What makes us happy?&lt;br /&gt;
+  What makes us happy?What makes us happy?What makes us happy?&lt;br /&gt;
+  &lt;/div&gt;
+    &lt;div id="file-list" style="text-align: right;"&gt;
+    &lt;div class="attach-file"&gt;
+      &lt;a href="#" title="filename" class="download"&gt;TEST.png&lt;/a&gt;
+      &lt;a href="#" title="filekey"&gt;Del&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--  New Comment --&gt;
+&lt;form id="addCommentForm" style="margin: 10px 0;" action="addComment.jsp" method="post"&gt;
+  &lt;div id="addComment"&gt;
+    &lt;textarea id="addComment-ta" name="memo" rows="7" cols="50"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div style="text-align: right;"&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+&lt;!--  Comments start --&gt;
+&lt;div class="comments"&gt;
+  &lt;span class="writer"&gt;xman&lt;/span&gt;
+  &lt;span class="date"&gt;2011.12.11 12:14:32&lt;/span&gt;
+  &lt;span class="modify-del"&gt;
+    &lt;a href="javascript:modifyCommentToggle('5')"&gt;Modify&lt;/a&gt;
+    | &lt;a href="javascript:deleteComment('5')"&gt;Del&lt;/a&gt;
+  &lt;/span&gt;
+  &lt;p id="comment5"&gt;What makes us happy?&lt;/p&gt;
+  &lt;form id="modifyCommentForm5" class="comment-form" action="updateComment.jsp" method="post" style="display: none;"&gt;
+  &lt;input type="hidden" name="commentNo" value="5" /&gt;
+  &lt;input type="hidden" name="boardCd" value="smalltalk" /&gt;
+  &lt;input type="hidden" name="articleNo" value="12" /&gt;
+  &lt;input type="hidden" name="curPage" value="1" /&gt;
+  &lt;input type="hidden" name="searchWord" value="happy" /&gt;
+  &lt;div class="fr"&gt;
+    &lt;a href="javascript:document.forms.modifyCommentForm5.submit()"&gt;Submit&lt;/a&gt;
+    | &lt;a href="javascript:modifyCommentToggle('5')"&gt;Cancel&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;textarea class="comment-textarea" name="memo" rows="7" cols="50"&gt;What makes us happy?&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+&lt;!--  Comments end --&gt;
+&lt;div id="next-prev"&gt;
+  &lt;p&gt;Next Article : &lt;a href="#"&gt;What makes us happy?&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Prev Article : &lt;a href="#"&gt;What makes us happy?&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="view-menu" style="margin-bottom: 47px;"&gt;
+  &lt;div class="fl"&gt;
+    &lt;input type="button" value="Modify" /&gt;
+    &lt;input type="button" value="Del" /&gt;
+  &lt;/div&gt;
+  &lt;div class="fr"&gt;
+    &lt;input type="button" value="Next Article" /&gt;
+    &lt;input type="button" value="Prev Article" /&gt;
+    &lt;input type="button" value="List" /&gt;
+    &lt;input type="button" value="New" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>
+In comment5 and modifyCommentForm5, <strong>5</strong> is the comment number. We should give this number programmatically.
+</p>
+
+<p>
+<img alt="bbs-view-01" src="https://lh3.googleusercontent.com/ZrqF84nRD9OjQEWyrf25rh6gw1g4IdAzJ0wr9tQEEu34VVjBL89FoiV2ZtvC2w608UrbMiaqcJABkhV1QojQtJlgfL5KJeHgogLfWNmmeAxIfG52LawrfTQt3aAD_dZceo1tho2ICfvFwh_HvD30crX-BAhky0V29F1iTf7CAF7pP1k7bHoGL865P9uoMYCv-q8FxwRc3L6DVqdBuJ8hUukQ427YWe5viY2qa0E66SrMdIYFkjSl3IQh8sGti7BNnqXO5xf2P_oTKi6iZlsRErYKINp2SW7WaJlpRzfw4TspalIicsdp1cZlvCQXbIs41NTRxyEt04IlipUmzFUY3h7uVFEOO4lfCPwhBCapA72KE0b4UZLN7BAKADqKZxSV2crtrBQDW6ydOMhauOb4M2Gr9UxX-9zYFaSPevrGYtd5KfEbah90r0nUIlcZLo2ojGDD02QxGIhlYIaciukm1cPYWL4ZZQZFpZJIWpI18HZ-ohjFaRt0pCoqAXpBcZko0pN77nFtPxS5pQrDPNufo7neezeAvism62dUOCapXtri0bK8YECGrhNbFMirQPM0pLt6F643QwNWXSDsos888yZY6wfSLZRosW663DY=w614-h760-no" style="border: 1px solid grey;"/>
+</p>
+
+<h3>JavaScript toggle function for modifying comments</h3>
+
+<p>
+Create a working JavaScript function by clicking on the <strong>Modify</strong> link. If you click on the <strong>Modify</strong> link, a modification form containing the text area should appear. (modification form is not visible at first)
+</p>
+
+<p>
+Paste the following JavaScript code before &lt;/ head&gt;:
+</p>
+
+<pre class="prettyprint">
+&lt;script type="text/javascript"&gt;
+function modifyCommentToggle(articleNo) {
+  var p_id = "comment" + articleNo;
+  var p = document.getElementById(p_id);
+    
+  var form_id = "modifyCommentForm" + articleNo;
+  var form = document.getElementById(form_id);
+    
+  var p_display;
+  var form_display;
+    
+  if (p.style.display) {
+    p_display = '';
+    form_display = 'none';
+  } else {
+    p_display = 'none';
+    form_display = '';
+  }
+  p.style.display = p_display;
+  form.style.display = form_display;
+}
+&lt;/script&gt;
+</pre>
+
+<p>
+Click the Modify and Cancel links to make sure the JavaScript function is working correctly.
+</p>
+
+<p>
+<img alt="Comment modify link" src="https://lh3.googleusercontent.com/O8HB0Ud85bOmvLpPD0RgkKvR7zueSjxdq4VhLo774lnWdp611RgLyZMoNaGwdTCrDpgftRDJnN5ucJAKkpfPzJd8yUyUWVHVtFQVyI8CrwrNY2EHF8dHckVrMYatUNiMi4xSyolnKnODRbkfZYz0zckw0fLQzELW2vCJVj6GMbHbTDTFDE4_70j7GdbD_HgUtR8fIS0UVzNr25sLtF4oLLrfL0iVTbc7w9n9bC-yreYI7582f_0FxNM81N7b2e6vAdFsFBQXgw_ui6YWaRZ2oQ8LhcfgGcG_ziyScwgb1JuTNjBzw3Bq1g8zVMuq9gNtTEV40DSRgrJv-AQhR0Y2uc5sixCBuvUnt2paxg-ALe1xTPEPhgL7wWvJ2LAxayfmnM5eHM0rk-1pCMumj05o8gmFoYM24nTB1bj_QP6uDWVSGVgIRqgvZlIZQImIThlUpF-xmedTTGra4mRE6cEpp8Zq18Eycleynsux5LH25bscJj6gbH0Rqmmv1z6oFAxd2MI0jzV-XOB23VLWbsO8t-pSJgV7qCiRCWbw5cvwhC4JtgqmQMwe68qgi5wNh65nkC-QljJA2N2W5XLboZuLgbSHWwiIc4seYF-1BZU=w436-h71-no" style="border: 1px solid grey;"/>
+</p>
+
+<p>
+<img alt="Comment modify link click" src="https://lh3.googleusercontent.com/bWanhB4w0NWVNYY0upxLO-xIJqelszVJgeY1Ofuvs18rzUJahSv1uGNEsGD3A1fOHkISMJbeFJ5yZ6aLSt3a8YgP4D22f-SK4gE9BFiQP3uuccogRy_1dYo-6slrlirHnTCQKKRDFOtYNMabZ8H_eZS9IYhHjG_g6V8dmg6cV8JqvipIDn8N-_AtKHaO-nwg4obIpGDDNXOdYzOAtNTH-bNv4vb7DN6_aEKpE2EEKg-3SLFGWRgWM3OkkKu-pU9VWWk1cCCw1DS0UCBlX7zN5-nhs4AGIyaobHo1BksE2zvjVhR_nHP50zJs5a8ByDdloZwRiVryfh8lHvCCK4thP2aZDJR2bTcbgxVz-9v0RHTQMRZHChrJLGtCihGV-VXTeu2PjOj6ouJUHqz1TG2jPftSar-su28n12fgt_28NIByfij7y6_j4CbOxmLst1VfZYxtySaoOHDUvt2Q9p_Cfbvz70eE7p_woB5E6qNMtpAu5L9ZDOVILoIyhbSC-rBw7O1TMgv3XuMPjruk-U3u3FVarZ_Xuz46DoX7T4DC9fiSa6L_RS1nAQsQOf3Bj2fagkcMWeUHTrzJKxKalSCYAu0YaoKimEQNV0EY_2M=w447-h173-no" style="border: 1px solid grey;"/>
+</p>
+
+<p>
+Modify and Cancel links work the same way. If you click these links when the modify form is visible, the modify form disappears. If you click the same link when the modification form is not visible, the modification form appears. The p element works the opposite. This feature is called a toggle.
+</p>
+
+<h3>Styling Date, Writer, Hit</h3>
+
+<p>
+[Before]
+<img alt="creation date writer read styling before" src="https://lh3.googleusercontent.com/S742yrg7zYIZ66JMmPezC6fyqtqVcqQtRHel_1Rof3C7V0r74g6GZIbuG1M0BAKlH9b1kCx1638EIHrueCxxxWQaLpEQSPySND0N2RQz9WKrAsiFSxCMiN4OKpaIzgMwHbxwvlPE0tWTzzgzFxbQwDmmbLXKcg14MgF36n7cymGFaCnrRppBWUqLu3zHEQs2hOEZ9tShN8LPmRT0-jaWqGX8NTzzYotB41AdBDWbNu8DYGw6m8X40KbD_siCJrrAaZMAmDaORX-2A2mYFrm8f7Rw51PM5PngLUYt_RQzbnE0v6GrddBmnIuuHKcYb_GYQT1POeUYkB8LSY1bTbV6nIUTtzariL-rCXmYyc6SyuP1vLXV91AOpcXkh94XtCJVMN-I5Cw0EXYK9RZMWJRNIHLts4P7L-D6P-jSa_smVqrKR7xF80KUydjBinq3dkwrL8HdvwWFisFiuhNtAJlhu_GwSKyD2GcsQDneyAb5DCOdp4PumZHn3byoPoNVeL1pNZGpVZy693NzeU8orAetI2rMjfYjUhG34joYBhbjoBHQGIzbJcAiYWpToUoRUIBrG05ltDb24zJVYxWeqwH6HTjWh4j1Lvbjf0vZaUA=w605-h129-no" style="border: 1px solid grey;"/>
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;span id="date-writer-hit&gt;2014 10-09 17:50:30 by John hit 1330&lt;/span&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>#date-writer-hit {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  color: #555;
+  text-align: right;
+}</strong>
+</pre>
+
+<p>
+[After]
+<img alt="creation date writer read styling after" src="https://lh3.googleusercontent.com/aLshBZgscP0W9wN_ENorwodEyu6W57U2M9SfF0xRiDl28Krb9dNtDFmYJIwxoftw8htS90bBDIpd0fMy5avUgfoPQeVtRhQ8QzdIFcHk-D_32MKmdtOmvUD3EaHJvyPWsMVUYJeHJlw_WXNq3V-qMvN6o0H52ytjJ0YEw5lLs-3zcPACTvC7Z79Q9wp4mdkIoeu5X7NWtTvy-XtQUNLGqtLZDHYwnXHAvxgmpISFkvMBmgZ5kn2U8x6j6t9iJx0TNp8N2paez78lNXirLcRMLSPWO8QRkSWiaWdqtzxjcthaiHdUwnpc8DkJsaw9-HLAxVAlXFxqQSSfkOh649XhwctzDwbb_sq4rLL9N_pqK4U2xJw8aOnFRv_PP6dvI_YrxGij-MCvi_5a3nMpGCzNIUm9yvZ0zCiw3teWu-lC9HWqBCqcv97kLyhmzTiowITUAaZ90mop9xx6aWhiMX578uKjNsVlT5GJXV4ut46Ycm33AUA5nNN5bywoCQDPb5YC7ZgOF_h1vOSLjTSf9vnysQnNARiGO3gLbIfXdo54Q4Cy885G3qCgD11MQGXO5uEfiMyNkp9RL8Im8hMz0O3-2yHlVJOkGniSSAiAfL0=w612-h126-no" style="border: 1px solid grey;" />
+</p>
+
+<h3>Styling #article-content and #attach-file</h3>
+
+<p>
+[Before]
+<img alt="article content and attach file before" src="https://lh3.googleusercontent.com/9r4yoEByNnKwVtorid2NcUj19pDI0dHrVk7wphku1HjNiVKmb4FdWS5db9ChJhyLVDxNGWkq33vvINskja5-kQxcfsiNROx2wbFxPjSz4NG2Z2Y3XiFOk5WaV3LOZyYcX8zAr4tDO1-MvyJZ5BqhdAwZVD3CWrYoSu-ipbmUF66qb2SHPptCCa7LUXw6tgHvClgEUd6zSsBP_wmKsTjeFmAV41sEnT3hJ5Ee7fY3Ky7P_ybBBAmyJY0K6IMdS20n7tmy4vmBzvtuNLPLo-yh-E0857fTd8sVJc_uTxVfCm7ALlRAsqZdLJLayXVgAOrGShaswirDYaKUjtQeVERgN51SU9wI4ftAbzGMs31ZSD03Q6N-ToPCyy6k2NO45t1XynZYTXIm2QGGQhE4e4tPmdOk1MUDdVpJpSICvBsoR0uQn5W2emQzlRx_jVZEVgxGHaocrxwvdK_itDZ6jHIdw69xwyiP8Oa6QD5VlyTTuc0whl7yzYCZhRocY5RWC6jPKWk_MDyRXe_tK6-YoZDCbbs-zGocMgSWx1Si7JM5NujZ_q5SJnYoQtNmtskvP8KqT0rKigQ11d-OWcswFOj9ffeRVPNTGoI6JWNKlBw=w607-h124-no" style="border: 1px solid grey;" />
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;div id="article-content"&gt;
+What makes us happy?What makes us happy?What makes us happy?&lt;br /&gt;
+What makes us happy?What makes us happy?What makes us happy?&lt;br /&gt;
+&lt;/div&gt;
+&lt;div id="file-list" style="text-align: right;"&gt;
+  &lt;div class="attach-file"&gt;
+    &lt;a href="#" title="filename" class="download"&gt;TEST.png&lt;/a&gt;
+    &lt;a href="#" title="filekey"&gt;Del&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>#article-content {
+  font-size: 0.9em;
+  color: #333;
+}
+.attach-file {
+  font-size: 11px;
+  line-height: 1.3;
+}</strong>
+</pre>
+
+<p>
+
+<img alt="article content attach file after" src="https://lh3.googleusercontent.com/zH6PYgy-DaM6LSYERcqFBc_7eUjfuzjEU6epCClgIk6ys6ptpdXVQxxI4sj059BnHmDOCmCweePrHihaDxYcPDivCN8OZcod37i5YINc-KaPStr7_yaoKuGW4Nuramf2unMsMHORMPyNqNddwiNfoaDoH4CZb_2kuV88euLr9irmYuVENYzlfClP8auXjuVMdUS1vrs7xYohBb99tNCaiFvIcOUFHW0qe96kMJhtxKc3aJVxm6gA29wLTm_LE6A20FgxBpInqEko2NPujGcZd_YNOHKmOkAVQ5HLRq87HIpRsQL4aBFcW-7pEXEmiJgoGyQmYD5iTIrun9V15VPWZ7E1SxZ-EiTuFGFFDsdePE8saw5uPpsFo5dOsfbjXMvOiRMDNQMYoujeRy9v-r8iC75QhX_nH5QzlQSlKNAhczoL5KvGUa7tAy8gE9TOzKxdE3PD4KJBtE3eOwPiQ0DAgdIOqrDCTiGVqCQDockST8nzCF7qryIqkT0GmCQvQIS6stjb1UFomhs3FbY1Y7JigZ9ekUMDnReXGHi0c-1mtQHR0L30OvBdMK-b91LLcwSDbQAwvLVqIGr3qJF1QvV7BA3vhpZCx-nmhVKE5Es=w607-h115-no" style="border: 1px solid grey;"/>
+</p>
+
+<h3>Styling Comment writer, Comment creation date, Modify and Del links, Comment body</h3>
+
+<p>
+[Before]<br />
+<img alt="writer creation date modify del links comment body styling before" src="https://lh3.googleusercontent.com/O8HB0Ud85bOmvLpPD0RgkKvR7zueSjxdq4VhLo774lnWdp611RgLyZMoNaGwdTCrDpgftRDJnN5ucJAKkpfPzJd8yUyUWVHVtFQVyI8CrwrNY2EHF8dHckVrMYatUNiMi4xSyolnKnODRbkfZYz0zckw0fLQzELW2vCJVj6GMbHbTDTFDE4_70j7GdbD_HgUtR8fIS0UVzNr25sLtF4oLLrfL0iVTbc7w9n9bC-yreYI7582f_0FxNM81N7b2e6vAdFsFBQXgw_ui6YWaRZ2oQ8LhcfgGcG_ziyScwgb1JuTNjBzw3Bq1g8zVMuq9gNtTEV40DSRgrJv-AQhR0Y2uc5sixCBuvUnt2paxg-ALe1xTPEPhgL7wWvJ2LAxayfmnM5eHM0rk-1pCMumj05o8gmFoYM24nTB1bj_QP6uDWVSGVgIRqgvZlIZQImIThlUpF-xmedTTGra4mRE6cEpp8Zq18Eycleynsux5LH25bscJj6gbH0Rqmmv1z6oFAxd2MI0jzV-XOB23VLWbsO8t-pSJgV7qCiRCWbw5cvwhC4JtgqmQMwe68qgi5wNh65nkC-QljJA2N2W5XLboZuLgbSHWwiIc4seYF-1BZU=w436-h71-no" style="border: 1px solid grey;"/>
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;span class="writer"&gt;xman&lt;/span&gt;
+&lt;span class="date"&gt;2011.12.11 12:14:32&lt;/span&gt;
+&lt;span class="modify-del"&gt;
+&lt;a href="javascript:modifyCommentToggle('5')"&gt;Modify&lt;/a&gt;
+ | &lt;a href="javascript:deleteComment('5')"&gt;Del&lt;/a&gt;
+&lt;/span&gt;
+&lt;p id="comment5"&gt;What makes us happy?&lt;/p&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+.comments {
+  border-top: 1px solid #ebebeb;
+}
+.comments &gt; span.writer {
+  display: block;
+  float: left;
+  margin: 3px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+}
+.comments &gt; span.date {
+  display: block;
+  float: left;
+  margin: 3px;
+  padding: 0;
+  font-size: 12px;
+  color: #555;
+}
+.comments &gt; span.modify-del {
+  display: block;
+  float: right;
+  margin: 3px;
+  padding: 0;
+  font-size: 12px;
+  color: #555;
+}
+.comments a {
+  color: #555;
+  text-decoration: none;
+  font-size: 11px;
+}
+.comments a:hover {
+  color: #555;
+  text-decoration: underline;
+}
+.comments &gt; p {
+  clear: both;
+  margin: 0;
+  padding: 0 3px 3px 3px;
+  color: #555;
+  font-size: 11px;
+}
+</pre>
+
+<p>
+[After]<br />
+<img alt="comment creation writer hit styling after" src="https://lh3.googleusercontent.com/AkBwuD5uEfriCuz2Q7gF7TZX352T5i9rt9ojODX4Qs8I2AsXNp6E7ENIKI3VP0msxHZz-yl1IIdO7LcNFDem3zOx-nn8SRogUCCrJEyMhT0rhrww-BmE2VzWtkBXaUUGQtdvGXSvx7YEjsT0rME-P0X1MuqMPqXjB6Kp3kLrxhlln04AR71_gU9lAr_2zV_zgznjALNowBu7gNoxGhjcrnnadQxJYvPcoWdjY2x9JUmMFgIzjrHriUFIp2YQLe6YeSlogQpQH8Yzg936JeH3TwH0BnxpG7GA2jWZ5vK94_d5NuzQjwBGDokzW74reFUYG4symq1KW0M8BaJyyfoluz5nX_JVB8b1vH7xZAi_rNwPAEm1E3kfwGrFLgVSR5-DcrNAmw_eqVntVWGmu2KsuW49ZIX6QIvXoMHI1FkVAXMTONDKFChjYVxCB63ODv4gwusPRNsDCAVFsnkh7fNk0Rft_p0viV_bkx2Glxt1_--9AhuxC1ZLWtusIfLq6QOPzV_At_MnyCrilv7CV183aYhEqdO9-KQDczIZymaRz14HLkOFcc7-tw9JPCf64PUj2YwNLI5mwRMbmOkjiMcUrTUrrN8tSu74qWQeukc=w598-h61-no" style="border: 2px solid grey" />
+</p>
+
+<h3>Styling Comment modify form</h3>
+
+<p>
+[Before]<br />
+<img alt="Comment modify link click" src="https://lh3.googleusercontent.com/bWanhB4w0NWVNYY0upxLO-xIJqelszVJgeY1Ofuvs18rzUJahSv1uGNEsGD3A1fOHkISMJbeFJ5yZ6aLSt3a8YgP4D22f-SK4gE9BFiQP3uuccogRy_1dYo-6slrlirHnTCQKKRDFOtYNMabZ8H_eZS9IYhHjG_g6V8dmg6cV8JqvipIDn8N-_AtKHaO-nwg4obIpGDDNXOdYzOAtNTH-bNv4vb7DN6_aEKpE2EEKg-3SLFGWRgWM3OkkKu-pU9VWWk1cCCw1DS0UCBlX7zN5-nhs4AGIyaobHo1BksE2zvjVhR_nHP50zJs5a8ByDdloZwRiVryfh8lHvCCK4thP2aZDJR2bTcbgxVz-9v0RHTQMRZHChrJLGtCihGV-VXTeu2PjOj6ouJUHqz1TG2jPftSar-su28n12fgt_28NIByfij7y6_j4CbOxmLst1VfZYxtySaoOHDUvt2Q9p_Cfbvz70eE7p_woB5E6qNMtpAu5L9ZDOVILoIyhbSC-rBw7O1TMgv3XuMPjruk-U3u3FVarZ_Xuz46DoX7T4DC9fiSa6L_RS1nAQsQOf3Bj2fagkcMWeUHTrzJKxKalSCYAu0YaoKimEQNV0EY_2M=w447-h173-no" style="border: 1px solid grey;"/>
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;form id="modifyCommentForm5" class="comment-form" action="updateComment.jsp" method="post" style="display: none;"&gt;
+&lt;input type="hidden" name="commentNo" value="5" /&gt;
+&lt;input type="hidden" name="boardCd" value="smalltalk" /&gt;
+&lt;input type="hidden" name="articleNo" value="12" /&gt;
+&lt;input type="hidden" name="curPage" value="1" /&gt;
+&lt;input type="hidden" name="searchWord" value="happy" /&gt;
+&lt;div style="text-align: right;"&gt;
+  &lt;a href="javascript:document.forms.modifyCommentForm5.submit()"&gt;Submit&lt;/a&gt;
+  | &lt;a href="javascript:modifyCommentToggle('5')"&gt;Cancel&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;textarea class="comment-textarea" name="memo" rows="7" cols="50"&gt;What makes us happy?.&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>.comment-form {
+  clear: both; 
+  padding: 0.22em 2.22em 0.22em 3.22em; 
+}
+.comment-textarea {
+  border: 1px solid silver;
+  padding: 3px;
+  width: 99%;
+  color:#555;
+  background-color: #eee;
+  font-size: 11px; 
+}</strong>
+</pre>
+
+<p>
+[After]<br />
+<img alt="comment modify form after" src="https://lh3.googleusercontent.com/ydjO6o-BSWtpC89SqsoHrSrfikutKFecxO0X-kJ0ThHU1FkVnwaPwKRhHKhaffL_Q-rFFixS3VJCJ7KxjlrmnM3INofuIo2Gs717GwYb7mTxA37oqTgqfVA4pZG2X0nIF5_A2SwIrKxyiUxi_TPL5fSeD2sOwG2_u4f4qSp7-HfWbtdhqObzgHnB_plkQ-R8CLdPvJwv64cussfo58OsfZgD3RXgqJKt9oHtyJO8SlV83K6VSe1aVfJEnzhVr23ieG8Wo8e8VJicRctDq8cU3csPStiONSpMg5oG5WSPdE9aPnt0jWLATplDiJfMLmfVkLrL39wwoidrBQ3CfHmMrZ46F3Mid-NjuB8OhzB1GFAbBMCsXDFxsRKOBrJTy9acDCjCFG9-9yPdscesEopy_sQBfhkPX1K6skFKOT85YEb4pfq4hRbJHoqTD8kkvSYax1vN-7U23SDl9TtVicNUMqjvinvQiSVJzMY5uqLWOvTWCtV75_AIEu_jP4trNAKceh6yUX91aYBPuvJhD8XjaSbf7oc-6pUdFaeGw-idqmPmcrhPyknbI3x8jYKbQGyFs8SdlstrFlT5XTPEsOViqKaPMRK0pm580LQfYvw=w566-h150-no" style="border: 1px solid grey;" />
+</p>
+
+<h3>Styling New comment form</h3>
+
+<p>
+[Before]<br />
+<img alt="New Comment form before" src="https://lh3.googleusercontent.com/0YEEM85H9EK757mqWKslmBozaY3I1wahQn-Sf5_wTXWA1uonmr7kKLwQ_5-BLzEVWlyomCa9MVl0z2Bkx_oir6WgrLMZTmFlD_LCbtVKco8VF2aEg1-qUE2u3ZbA6-FWTqJ3r2tPPduyoYgWI1KWaEqXCHAxtpPQcEXQkH617dYnu03NbJfEwpRRw7qjMJGQOPsV__ac39CjmAo8vNPwBy-t22_gkoHkJLVWHU5E1dYRUQMAYcMJUmXx3iE-HgvTHNeXsNBbaTdIXB1pg-yyZdqteqREUN-O_IZg_o0XSCA34PKPRpQ28lKUWEt5ywZdcNX2QQcIZVCxlkv42tGop7HALwBd0ymotbE2utivw7YPPwZMyTtjRgAucZuvxao6T2t8ydO3mHg6TBGumnh1cwcEgaaMbEM9YQKwm7aVCiobpiZcV2pD4Mv1G35Theokbm3eWcJc_w13pKbG58sjAQq0or2DPOWJO-RL3VwE03UXFc0JFjk-tYLP67CGF1e2sTp9kHcCfOtAsooE9oXavz1YYxWxaslIO-KslNQo_xgYKG9IB_YBi_OXQRBQUrPtl00ktmwv0n90JY6rzrfBD1NKb1MhUjEGT427K9U=w605-h155-no" style="border: 1px solid grey;" />
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;form id="addCommentForm" style="margin: 10px 0;" action="addComment.jsp" method="post"&gt;
+  &lt;div id="addComment"&gt;
+    &lt;textarea style="addComment-ta" name="memo" rows="7" cols="50"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div style="text-align: right;"&gt;
+    &lt;input type="submit" value="Submit" /&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>#addComment {
+  margin-bottom: 5px;
+  padding: 0.22em;
+  border: 1px solid #eee;
+  background-color: #fafbf7;
+}
+#addComment textarea {
+  width: 99%;
+  padding: 3px;
+  border: 0;
+  color: #555;
+}</strong>
+</pre>
+
+<p>
+[After]<br />
+<img alt="New Comment form after" src="https://lh3.googleusercontent.com/5dcSs5QvA9MewmsiVUHZRStpvcjA98IqVu3MB_8qQWdu2Ube3gxHq1nO6zCcgwlTbyTGe1D0R-UAflO1FgebkHXm4lYQA4-yzbBg7rCGcY2tAG7aWB4ZfXtY2mtMPbk5qrrOK6OPTSKKMmBTtgTYsI_o87iQgP5_wd-WlVzF0a1i6tyUJ7f7SpAUXHTZWmIkMI7s_REd614lL5KUeNaxmnoWEBf2MNA1VWlmlhFnggixZmJAUP2oR8Yl0V1NdKfsJrsw-bukzgArPfZ3BeyEbVbMs1FLAEBcMOZXCxaT5KzDk65reA7cwp1q9giLK5qUr0gfknZGVTFyhckzl2SCoBbPjzbEDMbceYbCWcffJeTOl4GZRljc8w9F-1tnW5_REDQKqtvzdf2M1vnkGM3hq4eje6_VeWICcMS0bzggbRqFG4ad_h1YxLSkcymTAIMRIdOjadr9G5boyTFGF3i3dsszlbzYsqhyYWHqFUoWoXtXh_6Ags7tgxlPKwuTTxJOsgTl1-QwaEzpin0uo8PMd85K6l5_Z4wC_69P0hVrIJdL9dcqAUiPO1g0pniFoFidEawmEg3klX45dko5kThTmZE833Np3EU8oMV2tDs=w601-h168-no" style="border: 1px solid grey;" />
+</p>
+
+<h3>Styling Next Article and Prev Article</h3>
+
+<p>
+[Before]<br />
+<img alt="Next and Prev article before" src="https://lh3.googleusercontent.com/lKPRzdqrJnUBuNKrZ0yBuFpVpJ5vYnReUB6aTACILtQ8fUjhZ0gZQs9FSOLSfMtRIQELK-Nzcjop0kT9dVajTuIREzMllhFsEyGnG77rZZLu-X9RJx7vGV7ZqL_LXd-ShXtuurFFntTO56CMzNHIA7h1KBlrG2dE4TluYmopiCPzpH7dGRZHuAmaka1vc4myglyqCAanWXX09ybPL6eoCEqnOqekqzWOdC1YYEKIz9h84LArpDIbxJnZiWtwNIMnGeCKJBNfMpv7PFdbGWv0ALKLFTwzk_hLJ9LYw-9n0YKePLGuG6Y_Dap4Puq3BUCRWXMqOHS9gYyrwDZ-ILspzxh7JeQQmQegk3LiXU7Gfsk-Z3IRD49QaCfnEDp5lV8gtoIm1Wggfywekjh2CUSIJiD6Jy1eqb65t6yXbJc0q7nh3HL8cMpeDjgv5CLP8nae4XVrDbH0L4Pf1tNZOxCowsMQo2_YSjGxRF8J568k-VNEJOHAu4GtHzbmjG4nu-UmStRvhjUXJPW8C0eDexNpRlMUruAvkZUo4OsEYfV9LBSIPf4L_2MCkAIopF_EczoF7IjTKMTRgBia4Af3Z56KEcXGMV0cVEyoerD6jmM=w594-h70-no" style="border: 1px solid grey;" />
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;div id="next-prev"&gt;
+  &lt;p&gt;Next Article : &lt;a href="#"&gt;What makes us happy?&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Prev Article : &lt;a href="#"&gt;What makes us happy?&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>#next-prev {
+  margin: 7px 0;
+  border-top: 1px solid #e1e1e1;
+}
+#next-prev &gt; p {
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 12px;
+  color: #333;
+}
+#next-prev &gt; p &gt; a {
+  color: #333;
+  text-decoration: none;
+}
+#next-prev &gt; p &gt; a:hover {
+  color: #333;
+  text-decoration: underline;
+}</strong>
+</pre>
+
+<p>
+[After]<br />
+<img alt="Next and Prev Article after" src="https://lh3.googleusercontent.com/O4SBv3X6q4rDm0OITHIKunz6UHIfzqA3YA0wSBvB1-mrN28To1-jqggl0Q9zijyY5LaU0NTvpSYxyI1GitkZiSxFh9bnY93ul-mKevVDu7VG65RzcxWjmOouKKIB668HkQkSNzCHzseD3w4JtHfLcdNu0_Wxdh2mPjwIL3g3HsEpnpjF5-qldxIGeshsHOK50odx3ZBG_0jP-OwP4F3vE9xA8PWrge7QHZ_ofScyJoCp_gwI9sn8qNRBfppT1wtOl1DS8mkr-OO3ym9cYtlsaim4yeMnmKzRomMesXKe4yO3HBBAim5Orli5Q9pRjcZR-Vuj4_5mfkwXhxMNvQ8wARXbdFTCX8lfaTl7Hj5UZld4WMCwMQ9UxT5FHt0-mEmfkODYfmO20pvqbrGD3dmCDTum-mA3p3At_doXG1IbdmoVPWit-g_VH_TD4OMKl8CL3IhAjq91S1SZHCAz4jwbAhEWYRE2VqTzxeiLy9tQnpj8CZkn67I_atjBJtxZeGoGUDGrWi_8AFKK7irj8JE9Ar0-KrMc_EGVBbOMP6c-o0nbw6YiLnGs8s5CwMpD-YFI3xhvsluGG7jr3eiAlEL-Mub2WGV-lqc5fWzFoWQ=w601-h72-no" style="border: 1px solid grey;" />
+</p>
+
+<h3>Positioning Modify, Del, Next Article, Prev Article, List, New Butons</h3>
+
+<p>
+[Before]<br />
+<img alt="Buttons positioning before" src="https://lh3.googleusercontent.com/Y0Del6TIF3mucBopWPuEeA3qGwXy59mxVflX35wvGT9JLtCn8cbMpeOhuvWXmxyRaPm5ecTSq5Oi3jKFUy3y_TnsuEj-fheM_J2afVG1rPKhC9kl60YAoi3kGGouXtfXwutXxhr_Zp0G_p2yAmdElOMNrv-44cYp-nxOthAfG2P7FM_oZ0zgz0vPS1sOdWBP5UF5a-HDeUzHZers4MRJgJVzGTIm-fKmp65hs841sDzOVIVtSU8M1SjKOp91LRRVEnAv9ZSOkFQJgDkR1vMiDrU81qq7bcRAzFJsVIijT3qK0-1d0OGgK0Y6n8nVTrrQED3Tt4C-5cqHjbA-a8aIhmeh2FODibeKYFSQxhuL6Mzigtk8fqZdjYoq_sexbqCWU6nVxmqloAqa2-XZhaFVLa4kEROP0jABrap6u4OhFFMvLcIPT4epRw86fvGgmRtGe62zAbj48AjfVmERY-0BCCQZ0WyTo-qUGFM6-dawyzEScSNng_n-afj6WWxW0zOxwkUVAyau-kNY1r0ZPlzxRqJKNwEGhJ190KR_Wd8zSdc6eQUyA_Cvk8FUGsHSa_LZffjc6W-qKSr7CkQR40nHfyUqXmRvNuU7yXiTjWM=w339-h66-no" style="border: 1px solid grey;" />
+</p>
+
+<p>
+The following code is in two places in view.html.
+</p>
+
+<h6 class="src">[HTML]</h6>
+<pre class="prettyprint">
+&lt;div class="view-menu" ..&gt;
+  &lt;div class="fl"&gt;
+    &lt;input type="button" value="Modify" /&gt;
+    &lt;input type="button" value="Del" /&gt;
+  &lt;/div&gt;
+  &lt;div class="fr"&gt;
+    &lt;input type="button" value="Next Article" /&gt;
+    &lt;input type="button" value="Prev Article" /&gt;
+    &lt;input type="button" value="List" /&gt;
+    &lt;input type="button" value="New" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h6 class="src">[CSS]</h6>
+<pre class="prettyprint">
+<strong>#view-menu {
+  height: 22px;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}</strong>
+</pre>
+
+<p>
+[After]<br />
+<img alt="Buttons positioning after" src="https://lh3.googleusercontent.com/j_2vLoyk4qptzexfZsUxrDPzVNj9uotdh35pk54PmN8td91aiYv1tHQaYtukoAgM3QYCxt698WrCEtiv3eW7NWwvOgOViOgWF6vAooIHXcssYN6QN-Cx9VgrbdTKE3sUgBq3wuAVZ24y_4g_GjgZuZgOEtlUxASQDLsbZmjEvZgelOBoiPbIOEBc_KrQZE3DVOFoGZcIQT-f_9ivwYgouexJJvd3e5Ocf9MGj257rvmlSqIJxIYJ8KTN4Zl8vnoU8r1t8XJHn54B-D1v_fAFusz5pKoQKWrhVZ-yKzntfR3yVDlkWP8WH7-ORLcWLFbixJzMCKlXfajopGHlckRgY8erOuZbI1HYIhmNdmO76dH3MJG3QdDjKLdir0aBB22pDN6zJOK2KnolczcWFOai4OrIbOnCzNLfj95E4lj8VdivzyfH6tobQg6zLAEOivsTkf1IqKHN4xWL1VN8J8dmygGVpWA2cPbMOeDSpdWf2fO8e3HqPTCvOs_ZutLR6OKltrYrdNFp_EKTHGYgY9-frRuA9af5P4L7FhRE1HIPydrlRy-1r9DaUuYQOJOQlS764oxcgS4it1BiXnTNBhMsM_WkAsISmSPsSs5IrzU=w600-h38-no" style="border: 1px solid grey;" />
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
+</ul>
+</article>
+
+</body>
+</html>

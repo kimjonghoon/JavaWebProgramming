@@ -10,7 +10,7 @@
 <h2>객체 (Object)</h2>
 
 <p>
-OOP는 먼저 객체를 이해해야 한다.
+<em>OOP</em>는 먼저 <em>객체</em>를 이해해야 한다.
 현실 세계에서 객체의 예를 보자. 
 당신 앞에 있는 컵, 당신이 지금 사용하고 있는 컴퓨터, 당신 자신이 현실 세계의 객체다.
 현실 객체는 다음과 같은 3가지 특징을 가진다.
@@ -19,35 +19,35 @@ OOP는 먼저 객체를 이해해야 한다.
 <h3>1. 속성</h3>
 
 <p>
-모든 객체는 속성을 가진다.
+모든 객체는 <em>속성</em>을 가진다.
 당신의 속성은 이름, 핸드폰 번호, 허리 둘레 등이 될 수 있다.
 </p>
 
 <h3>2. 행위</h3>
 
 <p>
-당신은 달린다, 걷는다와 같은 행위를 한다.
+당신은 달린다, 걷는다와 같은 <em>행위</em>를 한다.
 </p>
 
 <h3>3. 유일성</h3>
 
 <p>
 객체는 유일하다.
-당신은 유일무이하다.
+당신은 <em>유일무이</em>하다.
 </p>
 
 <h3>소프트웨어 객체</h3>
 
 <p>
-소프트웨어 객체 개념은 현실 세계의 객체와 비슷하다.
-<em>객체는 데이터와 그 데이터를 조작하는 함수로 구성된 '독립된 단위'다.</em>
-현실 세계 객체의 속성은 데이터로, 행위는 함수로 매핑된다.
+<em>소프트웨어 객체</em> 개념은 현실 세계의 객체와 비슷하다.
+<i>객체는 데이터와 그 데이터를 조작하는 함수로 구성된 '독립된 단위'다.
+현실 세계 객체의 속성은 데이터로, 행위는 함수로 매핑된다.</i>
 </p>
 
 <h2>클래스 (Class)</h2>
 
 <p>
-클래스는 객체의 주조 금형에 해당한다.
+<em>클래스</em>는 객체의 주조 금형에 해당한다.
 (금형에 쉿물을 부으면 제품이 만들어 지는데, 제품 하나 하나가 객체라고 생각하면 된다.)
 자바에서 객체를 생성하려면 먼저 클래스를 만들어야 한다.
 </p>
@@ -77,20 +77,19 @@ OOP는 먼저 객체를 이해해야 한다.
 	void absent() {
 		totalAbsenceDays = totalAbsenceDays + 1;
 	}
-
 }
 </pre>
 
 <dl class="note">
 <dt>class Student {..}</dt>
 <dd>
-class 키워드 다음에 클래스 이름이 온다.
+<em>class 키워드</em> 다음에 클래스 이름이 온다.
 소스 파일 이름은 클래스 이름과 같게 한다.
 </dd>
 <dt>String name;</dt>
 <dd>
 
-자바 객체는 자신의 상태를 필드에 저장한다.
+자바 객체는 자신의 상태를 <em>필드</em>에 저장한다.
 상태는 OOP의 속성이라는 개념보다 넓은 개념이다.
 
 <table class="table-in-article">
@@ -104,7 +103,7 @@ class 키워드 다음에 클래스 이름이 온다.
 </tr>
 </table>
 
-String 클래스는 자바 API에 속한다.
+<em>String</em> 클래스는 <em>자바 API</em>에 속한다.
 String 클래스는 문자열을 표현할 때 사용된다.
 
 </dd>
@@ -123,15 +122,15 @@ String 클래스는 문자열을 표현할 때 사용된다.
 </tr>
 </table>
 
-int는 정수를 위한 데이터 타입이다.
+<em>int</em>는 정수를 위한 데이터 타입이다.
 
 </dd>
 
-<dt>void absent() {..}</dt>
+<dt><em>void</em> absent() {..}</dt>
 <dd>
 absent()가 반환하는 값이 없다면 absent() 앞에 void를 붙여야 한다.
 absent()가 반환하는 값이 있다면 absent() 앞에 반환하는 값의 데이터 타입을 붙여야 한다.
-자바에선, absent()를 함수가 아닌 메소드라 부른다.
+자바에선, absent()를 함수가 아닌 <em>메소드</em>라 부른다.
 </dd>
 </dl>
 
@@ -167,7 +166,6 @@ class Student {
 		System.out.println(tom.totalAbsenceDays);
 		System.out.println(will.totalAbsenceDays);
 	}</strong>
-	
 }
 </pre>
 
@@ -183,23 +181,23 @@ C:\&gt;
 </pre>
 
 <p>
-java Student를 명령 프롬프트에서 실행하면 새로운 JVM이 실행되고 Student 클래스의 메인 메소드가 실행된다.
+java Student를 명령 프롬프트에서 실행하면 새로운 <em>JVM</em>이 실행되고 Student 클래스의 <em>메인 메소드</em>가 실행된다.
 JVM이 실행될 때, 클래스 로더는 프로그램을 구성하는 자바 클래스 파일(Student, String, System)을 메모리에 적재한다.
-클래스 로더는 자바 API와 관련된 클래스(String, System)의 위치는 이미 알고 있다.
+<em>클래스 로더</em>는 자바 API와 관련된 클래스(String, System)의 위치는 이미 알고 있다.
 Student 클래스의 경우 우리가 클래스로더에게 그 위치를 알려주어야 할 때가 있다.
-Student 클래스가 없는 디렉터리에서 Student 클래스를 실행하려면 java의 cp 옵션을 사용하여 Student 클래스의 위치를 알려주어야 한다.
+Student 클래스가 없는 디렉터리에서 Student 클래스를 실행하려면 java의 <em>cp</em> 옵션을 사용하여 Student 클래스의 위치를 알려주어야 한다.
 </p>
 
 <dl class="note">
 <dt>public static void main (String[] args) {..}</dt>
 <dd>
-메인 메소드는 자바 프로그램의 시작점이다.
+메인 메소드는 자바 <em>프로그램의 시작점</em>이다.
 시작하는 클래스에 메인 메소드를 만들어야 한다.
 </dd>
 <dt>Student tom = null;</dt>
 <dd>
-이 문장은 학생 객체를 참조하게 될 레퍼런스 변수를 선언하고 null로 초기화한다.
-레퍼런스 변수는 객체를 접근할 때 사용하는 참조 값을 저장한다.
+이 문장은 학생 객체를 참조하게 될 레퍼런스 변수를 선언하고 <em>null</em>로 초기화한다.
+<em>레퍼런스 변수</em>는 객체를 접근할 때 사용하는 참조 값을 저장한다.
 레퍼런스 변수는 객체 그 자체를 저장하지 않는다.
 만약 레퍼런스 변수가 어떤 객체도 가리키지 않도록 하려면 null를 할당한다.
 null도 값이기에, Student tom;과 Student tom = null;은 완전히 다르다.
@@ -222,7 +220,7 @@ null도 값이기에, Student tom;과 Student tom = null;은 완전히 다르다
 </dd>
 <dt>tom = new Student();</dt>
 <dd>
-이 문장은 Student 타입 변수 tom에 생성한 학생 객체의 참조 값을 할당한다.
+이 문장은 <em>Student 타입 변수</em> tom에 생성한 학생 객체의 참조 값을 할당한다.
 new Student();는 학생 객체를 힙 메모리 공간에 생성하고, 생성된 학생 객체를 조작하기 위해 필요한 참조 값을 반환한다.
 </dd>
 <dt>tom.name = "Thomas Edison";</dt>
@@ -280,7 +278,7 @@ java.io.PrintStream@de6ced
 </pre>
 
 <p>
-System.out.println()와 System.out.print()의 유일한 차이는 System.out.println()은 출력 후 라인을 바꾼다는 데 있다. 
+<em>System.out.println()</em>와 <em>System.out.print()</em>의 유일한 차이는 System.out.println()은 출력 후 라인을 바꾼다는 데 있다. 
 </p>
 
 </article>

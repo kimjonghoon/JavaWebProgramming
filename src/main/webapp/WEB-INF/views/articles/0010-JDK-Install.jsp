@@ -17,12 +17,6 @@
 <img src="${staticUrl }/images/java-latest.png" alt="java latest version"/>
 </p>
 
-<div class="explain">
-<b>Note:</b>
-자바 9부터 32 비트 윈도 시스템은 지원하지 않는다.<br />
-32 비트 시스템은 자바 8 최신 버전을 설치한다.
-</div>
-
 <p>
 공식 사이트에서 x64 Installer를 내려받는다.
 내려받은 파일을 실행하고, Next 버튼을 계속 클릭하면 JDK를 설치한다.
@@ -173,7 +167,7 @@ Hello World!
 <article>
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="${javaUrl}/Features">자바의 특징</a></li>
+    <li>다음 : <a href="${javaUrl}/features">자바의 특징</a></li>
   </ul>
 </div>
 </article>
