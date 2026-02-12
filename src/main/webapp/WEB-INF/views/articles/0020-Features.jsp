@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <article>
 
@@ -39,4 +40,10 @@ JDK는 JRE와 자바 프로그램 개발에 필요한 도구 프로그램으로 
 	<li>상속</li>
 	<li>다형성</li>
 </ul>
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/object-and-class"/>">객체와 클래스</a></li>
+    <li>이전 : <a href="<c:url value="/"/>">Java 설치</a></li>
+  </ul>
+</div>
 </article>

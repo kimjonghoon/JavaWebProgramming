@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>JDBC - Select</title>
-<meta name="Keywords" content="java,JDBC" />
-<meta name="Description" content="Select 문을 실행하는 JDBC 코드를 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -133,6 +119,3 @@ getInt(1)와 같이 아규먼트로 컬럼의 인덱스를 주면 해당 컬럼�
 </dl>
 
 </article>
-
-</body>
-</html>

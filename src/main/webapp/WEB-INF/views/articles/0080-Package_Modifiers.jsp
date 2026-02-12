@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>패키지와 접근자</title>
-<meta name="Keywords" content="패키지,Packages,src,bin,패키지 네이밍 룰,Package Naming Rule,-d,FQCN,-classpath,jar,cvf,접근자,Access Modifiers,public,package private,protected,private,멤버,member,캡슐화,Encapsulation,이클립스,Eclipse,워크스페이스,workspace" />
-<meta name="Description" content="패키지와 접근자에 대해 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -638,6 +624,3 @@ console 뷰가 생기면서 Hello World !가 출력된다.
 </ol>
 
 </article>
-
-</body>
-</html>

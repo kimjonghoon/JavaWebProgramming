@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>상속</title>
-<meta name="Keywords" content="상속,Inheritance,@Override,StringBuilder,extends,메소드 오버라이딩,Method overriding,toString(),생성자,Constructor,this,super,디폴트 생성자,default constructor,메소드 오버로딩,Method overloading,final,추상 클래스,Abstract class,추상 메소드,Abstract method,인터페이스,Interface" />
-<meta name="Description" content="상속에 대해 설명합니다." />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 	
@@ -800,6 +786,3 @@ b.drive();
 </ol>
 
 </article>
-
-</body>
-</html>

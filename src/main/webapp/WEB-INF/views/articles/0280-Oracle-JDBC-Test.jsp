@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Oracle JDBC 테스트</title>
-<meta name="Keywords" content="Oracle,오라클,Oracle JDBC dirver,오라클 JDBC 드라이버,ojdbc6.jar,GetEmp.java,set classpath,JDBC Test Failure Checklist,JDBC 테스트 실패시 체크리스트,GetEmp.java in Eclipse,이클립스에서 GetEmp.java 테스트,JDBCTEST.bat" />
-<meta name="Description" content="오라클 JDBC 테스트 방법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -229,6 +215,3 @@ Package Explorer 뷰에서 GetEmp.java 를 마우스로 선택한 후 오른쪽 
 </p>
 
 </article>
-
-</body>
-</html>

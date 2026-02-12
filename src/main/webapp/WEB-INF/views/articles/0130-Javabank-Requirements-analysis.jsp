@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>자바은행 - 요구사항 분석</title>
-<meta name="Keywords" content="요구사항 분석,Requirements analysis,시나리오,Scenario,클래스 다이어그램,Class Diagram,is a,has a" />
-<meta name="Description" content="첫 번째 자바 순수 예제인 자바은행의 요구사항 분석에 관한 글입니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -105,6 +91,3 @@ Transaction, Bank, Account 클래스에서 미루어 짐작 가능한 게터<sup
 </ul>
 
 </article>
-
-</body>
-</html>

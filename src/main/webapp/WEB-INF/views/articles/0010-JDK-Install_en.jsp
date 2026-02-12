@@ -120,7 +120,7 @@ To obtain the correct value, use the Windows Explorer.<br />
 </tr>
 <tr>
 	<td>Variable value:</td>
-	<td><input type="text" name="user-variable-value" value="C:\Program Files\Java\jdk-17.0.2" style="width: 90%;" /></td> </tr>
+	<td><input type="text" name="user-variable-value" value="C:\Program Files\Java\jdk-25.0.2" style="width: 90%;" /></td> </tr>
 </table>
 <div class="environment-variables-ok-cancel-buttons">
 	<input type="button" value="OK" />
@@ -165,7 +165,7 @@ you are able to conveniently run the executables (javac.exe, java.exe, jar.exe, 
 Without moving to the directory where the executable program is located, such as:<br />
 <b>C:\Users&gt;javac Test.java</b><br />
 If you do not set the Path variable, you need to move to the directory where the executable program is located, such as:<br />
-<b>C:\Program Files\Java\jdk-17.0.2\bin&gt;javac C:\Users\Test.java</b><br />
+<b>C:\Program Files\Java\jdk-25.0.2\bin&gt;javac C:\Users\Test.java</b><br />
 To confirm the Path, run <b>echo %Path%</b> in command prompt.<br />
 </dd>
 <dt>
@@ -219,5 +219,11 @@ C:\Program Files&gt;java -cp C:\Users\John Test<br /><br />
 <c:url var="javaUrl" value="/java"/>
 Until <a href="${javaUrl}/Package_Modifiers">Package and Modifiers</a>, it is better to use a simple editor such as <a href="https://www.editplus.com/">editPlus</a> and <a href="https://notepad-plus-plus.org">Notepad++</a>. After you finish the Package and Modifiers, use <a href="https://www.eclipse.org">Eclipse</a>.<br />
 </p>
+
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/features"/>">Java Features</a></li>
+  </ul>
+</div>
 
 </article>

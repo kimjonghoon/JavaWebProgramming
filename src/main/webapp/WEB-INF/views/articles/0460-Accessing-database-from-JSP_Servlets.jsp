@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>데이터베이스 연동</title>
-<meta name="Keywords" content="Java,자바,JDBC,Connection pooling,커넥션 풀링" />
-<meta name="Description" content="자바 웹 애플리케이션이 데이터베이스와 연동되게 하는 방법을 다룹니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -359,6 +345,3 @@ Save As.. 메뉴를 사용하여 getEmp4.jsp를 만든다.
 getEmp4.jsp는 과제로 남긴다.
 </p>
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Logging</title>
-<meta name="Keywords" content="Log4j 2,log4j2.xml,Logger,LogManager,Logger,Appender,Layout,Log Level,FATAL,ERROR,WARN,INFO,DEBUG,TRACE,Commons Logging,commons-logging.properties,Log,LogFactory,slf4j,Logger,LoggerFactory,logback,logback.xml" />
-<meta name="Description" content="This article describes log4j2, logback, slf4j, commons-logging" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 	
@@ -488,6 +474,3 @@ Check if the log has accumulated in the javabank.log in the project root directo
 </ul>
 
 </article>
-
-</body>
-</html>

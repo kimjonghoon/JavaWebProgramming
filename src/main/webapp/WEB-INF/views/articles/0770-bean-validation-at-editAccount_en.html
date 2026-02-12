@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<article>
+
+<h2>Bean Validation - Edit Account</h2>
+
+<h6 class="src">UsersController.java</h6>
+<pre class="prettyprint">
+RequestMapping(value="/editAccount",method=RequestMethod.POST)
+public String editAccount(<strong>@Valid</strong> User user, 
+    <strong>BindingResult bindingResult</strong>, Principal principal) {
+    
+  <strong>if (bindingResult.hasErrors()) {</strong>
+    <strong>return "users/editAccount";</strong>
+  <strong>}</strong>
+  
+  //user.setEmail(principal.getName());
+  
+  int check = userService.editAccount(user);
+  
+  if (check != 1) {
+    throw new RuntimeException(WebContants.EDIT_ACCOUNT_FAIL);
+  }
+  
+  return "redirect:/users/changePasswd";
+}
+</pre>
+
+<h6 class="src">editAccount.jsp</h6>
+<pre class="prettyprint">
+<strong>&lt;%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %&gt;</strong>
+
+<strong>&lt;sf:form</strong> id="editAccountForm" action="editAccount" method="post" 
+      <strong>modelAttribute="user"</strong> onsubmit="return check();"&gt;
+<strong>&lt;sf:errors path="*" cssClass="error" /&gt;</strong>
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;td&gt;Full Name&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:input path="name" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="name" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Mobile&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:input path="mobile" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="mobile" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Password&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:password path="passwd" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="passwd" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan="2"&gt;&lt;input type="submit" value="Submit" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+<strong>&lt;/sf:form&gt;</strong>
+</pre>
+
+<h3>Test</h3>
+
+<p>
+After logging in, remove all existing values from the account modification form page and click the Submit button.
+</p>
+
+<p>
+<img alt="modify account test 1" src="https://lh3.googleusercontent.com/fNMbzaoKIUWHB7OCiRe4J0kEB_4d1tD7a3hunE5XbVeOiRkY2VYwoA5Hkr5SnzDghjdIa1VWjvnhg67QcynkCoJ3Hr2CaKrP1i6ndTVOXyivJRtT_wenqY98QWr8fvUokcFsEvOr5ZPCpFph87a7dOHyR-kRp58yFqRR9w0-FSDhdIaKrykqim6xXRVXld5qW5kqkYI0vMP579GvGLthQNfq8m9pjrYTayvIAG-oP1j4-SjlV4A-bt9AEf10N5nfi-c4_fQBohwxOAhACXOAiihdo_CIbXMfe4e5CymK9Yw1tn4nGOCHJgojFFZDqWtRsBWGWmgTwY8o_dAw7Tdggu8UUH9ylSgyTfiTkDaOI03JNAOGdWaA-YZvj0mE_y-yujxXXmI5m7gUPfFn9GRs0XKtybQW_V3QUOI_ir__D1MpdObO2tN9zURjK1AtrjrqYdYM59e211D83moP_1-PxRC5SAxb2Gz7QohH51WN3d7B7jZkE3L_PGkZdh_Tf7hY6h1Kq0QwM-2Kqbm8-Y8DhyowwlMyWOUbbuHkgDh4Y93nIMr-EDG_9UNIQVwaIb7EnPAtA_tc0wP5TX0eLtozqjIYjM-_m2I2lGUu2oU=w541-h195-no" />
+</p>
+
+<p>
+<img alt="modify account test 2" src="https://lh3.googleusercontent.com/V1wB9uzW0Wm0kqAIz1ePqBT2ib515kaoyxLaIipoRUra6saZJQ-T-IcU2ORfrGPFW5uw51P2wEskuGXuNOh2jsGdUTyNuTEd-st9Xw1tB7yHq3VP3SLg-E4bS6P7836a2trkzN3o4OYlON6iyZYwoCuDins8gFZToWyNZ6upLPSxoAQZSD6v4Gktjdschvbyks6QlQz17Lq27Io_niZFkaOLJrjyZ5CvlscWplsPBmTxGUkRxrXk9bzW671Y99aJ6QukB21223a0WJplTOPuqqOUfDBq5x8BRwFODNOaU30u99ScZOYEZj2_IsOnNB6YneJDfFC3GQ-bXIli9Nl5fjzPtyZ_pW-OhaSL12FrnpWIamEKpffqjO9xsIaDjK4fqCulbQ5q3K1nEwOIMJdHdxx1Wz1Jv7HHvftmQARBitIr8J_x0IjXRrcriuTeLkMT4TWgk0bhp539ReozVq3RiDX5z6ckRVcobvwpoFMZ2i1FpzN-oKmOJ5Xy-LVwPRE3HjWWlMwpUrIh6oj77w9gK09BFRYVpCxZyjO-CjjRvXIb3VlSoWZt83bE8pVh6wM-Bmcro_oTxIrPaS4Yqv_8oJEmprnATQHsTzOSBJw=w550-h322-no" />
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://hibernate.org/validator/documentation/getting-started/">Getting started with Hibernate Validator</a></li>
+  <li><a href="http://forum.spring.io/forum/spring-projects/web/80192-validation-empty-int-field">Validation - Empty int field</a></li>
+  <li><a href="http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work">http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work</a></li>
+  <li><a href="http://stackoverflow.com/questions/6227547/spring-3-validation-not-working">http://stackoverflow.com/questions/6227547/spring-3-validation-not-working</a></li>
+  <li><a href="http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found">http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found</a></li>
+  <li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/pdf/">spring-framework-reference.pdf</a></li>
+  <li><a href="http://mybatis.github.io/mybatis-3/getting-started.html">MyBatis Getting started</a></li>
+</ul>
+</article>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>게시판 기본 개념</title>
-<meta name="Keywords" content="Java,자바,board-schema.sql,board-data.sql,PL/SQL,Splitting a list page,목록 페이지 분리,Oracle rank(),paging algorithm,페이징 처리 알고리즙,search,검색" />
-<meta name="Description" content="게시판 기본 개념에 대해 학습합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -2442,6 +2428,3 @@ list.jsp에서 검색폼의 method 속성을 method="post" 에서 method="get"�
 	<li><a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">https://en.wikipedia.org/wiki/Create,_read,_update_and_delete</a>
 </ul>
 </article>
-
-</body>
-</html>

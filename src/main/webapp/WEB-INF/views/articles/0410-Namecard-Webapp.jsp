@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>명함관리 웹 애플리케이션</title>
-<meta name="Keywords" content="java,자바,namecard,명함관리,WEB-INF,WEB-INF/classes,WEB-INF/lib,web.xml,namecard.xml,eclipse,java perspective" />
-<meta name="Description" content="명함관리 순수 자바 애플리케이션을 자바 웹 애플리케이션으로 바꾸는 방법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -564,6 +550,3 @@ http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 	<li><a href="http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder">http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder</a></li>
 </ul>
 </article>
-
-</body>
-</html>

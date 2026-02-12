@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>JDBC 소개</title>
-<meta name="Keywords" content="Java,JDBC(Java Database Connectivity),관계형 데이터베이스,Relational Database,RDBMS,SQL(Structured Query Language),E.F. Codd,오라클,Oracle,DB2,Microsoft SQL Server" />
-<meta name="Description" content="JDBC를 소개하는 글입니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 	
@@ -57,6 +43,3 @@ SQL를 이용하여 테이블을 생성하고 테이블에 레코드를 조회, 
 </dl>
 
 </article>
-
-</body>
-</html>

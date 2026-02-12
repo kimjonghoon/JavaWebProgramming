@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>JSP</title>
-<meta name="Keywords" content="Java,JSP,Directives,page directive,include directive,taglib directive,Scripting,Declarations,Expressions,Scriptlets,Actions,jsp:useBean,jsp:setProperty,jsp:getProperty,jsp:param,jsp:include,jsp:forward,Implicit Objects,out,request,response,pageContext,session,application,config,page,exception" />
-<meta name="Description" content="This article describes JSP" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1719,6 +1705,3 @@ response.sendRedirect("upload.html");
 </pre>
 
 </article>
-
-</body>
-</html>

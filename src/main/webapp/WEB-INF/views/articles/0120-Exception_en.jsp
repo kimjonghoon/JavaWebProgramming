@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Exception</title>
-<meta name="Keywords" content="Exception,try,catch,finally,Exception mechanism,ArithmeticException,NullPointerException,NegativeArraySizeException,ArrayIndexOutOfBoundExceptin,throws,throw,ClassNotFoundException,Class.forName(),Custom Exception" />
-<meta name="Description" content="This article describes Java exceptions" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1245,6 +1231,3 @@ Create and apply the appropriate custom exception class on the above code.
 </ul>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>오라클 설치</title>
-<meta name="Keywords" content="Oracle,오라클,Oracle 11g XE,Oracle Express Edition,Ubuntu,우분투,Windows,윈도" />
-<meta name="Description" content="오라클 설치 방법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -62,6 +48,3 @@ SQL&gt;
 <div th:replace="~{articles/commons/oracle-11g-xe-install-on-ubuntu :: content}"></div>
 
 </article>
-
-</body>
-</html>

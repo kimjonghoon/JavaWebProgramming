@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>톰캣 설치</title>
-<meta name="Keywords" content="java,자바,Tomcat,톰캣,CATALINA_HOME/webapps/ROOT,webapps,8080,ROOT,server.xml,CATALINA_HOME/conf/server.xml" />
-<meta name="Description" content="톰캣 설치 방법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -96,6 +82,3 @@ http://localhost:8080/manager 주소를 방문하면, 관리자 이름과 비밀
 </p>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>서블릿</title>
-<meta name="Keywords" content="Java,자바,Servlet,서블릿,basic structure of servlet,서블릿의 기본 구조,GenericServlet,HttpServlet,ServletConfig,init(),service(),destroy(),ServletConext,RequestDispatcher,ServletRequest,HttpServletRequest,ServletResponse,HttpServletResponse,HttpSession,Cookie,Servlet examples,getParameter(),getParameterValues(),getParameterNames(),RequestDispatcher,ServletContext Initialization Parameters,초기화 파라미터,Listener,리슨너,custom connection pool,사용자 정의 커넥션 풀,Filter,필터,MultipartRequest,commons-fileupload,Session,쿠키,세션" />
-<meta name="Description" content="서블릿 문법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -2572,6 +2558,3 @@ MIME(Multipurpose Internet Mail Extensions)<br />
 	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>모델 2</title>
-<meta name="Keywords" content="Java,자바,Model 2,모델 2,board program,게시판,Value Object(VO),Data Transfer Object(DTO)" />
-<meta name="Description" content="모델 2의 개념을 설명하고 모델 1 게시판을 모델 2로 변경하는 실습을 합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1252,6 +1238,3 @@ reply.jsp는 필요 없으니 삭제한다.
 </p>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Basic Concepts of BBS</title>
-<meta name="Keywords" content="Java,board-schema.sql,board-data.sql,PL/SQL,Splitting a list page,Oracle rank(),paging algorithm,search," />
-<meta name="Description" content="This article describes basic concepts of bulletin board system" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1794,6 +1780,3 @@ The code above is executed first before passing keywords as arguments to the sen
   <li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding">https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding</a></li>
 </ul>
 </article>
-
-</body>
-</html>

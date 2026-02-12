@@ -1,0 +1,212 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<article>
+
+<h1>#header, #footer, #content styling</h1>
+
+<p>
+Add the following to #header in index.html.
+</p>
+
+<pre class="prettyprint">
+&lt;h1&gt;&lt;a href="/"&gt;&lt;img src="images/ci.gif" alt="java-school" /&gt;&lt;/a&gt;&lt;/h1&gt;
+</pre>
+
+<p>
+Remove the rest of #header and #footer styles except for the background color in /*** Just for Looks ***/.
+</p>
+
+<pre class="prettyprint">
+#header, #footer {
+  background: #999;
+}
+</pre>
+
+<p>
+<img alt="header 1" src="https://lh3.googleusercontent.com/ycRVhzLc95luYa84rElkcjTLF3hk4M1daae50kYbB-W09rUQUoo_V_jb1-NxS4Kh_fo16jw4gvbbHXZdUwGiet7ZSXykZWJUw2SHM_D3b7O-m0LWu78RZLs_yHmE1j9zM3rSXwLcEnTdKSSEV89nFaeyIRPlJ6S7h3U828mZ2tiX-hDASOlecySVM9md7yydmXDgMQ_-ovgw3BMYFF1Ul6B6S1u8mAcFDhJs61QUJrqxk3HYVlHfUOSf3QMCgjj4sX-RKVv-WlEE1JY122hgOLkv1NeQnK2J0XKJMhQH9tKxYfxp7I23y0Own6hSf9RI5-2GfZiqe8WPyXyX60f8bcByUoTcVbA14MrimM-2Od1o5ThskgOCPDyOTvynaoOiP2rlNBHJfFHt3mdr9fpEgeX4AahFUafpACYbqfFUtxcJ5p0u0JwlVwHESsc6S1kYZREuYol0O-plzsCHiSaeaxlKB82JGeCflhVbOVhO1NdEqklWK8i2GGf-TIHo1Wk2UCfAxOrfLXy7lYNpEazG0w2-hop-wu2yPUxP8nam4-pZGwd8QM_DDW9Hi9D9CgY4x5VHtiFVlGW-CUJSHX-UECdoTTadReRANKe5ZGI=w592-h355-no" />
+</p>
+
+<h3>#header</h3>
+
+<p>
+Since the h1 element has a default margin, the #header moves down by the margin value. For delicate design, remove the default margin and padding of h1 in the #header.
+</p>
+
+<p>
+Add the following to /*** The Essential Code ***/ to move h1 down 9px in #header.
+</p>
+
+<pre class="prettyprint">
+<strong>#header h1 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 9px;
+}</strong>
+</pre>
+
+<p>
+<img alt="header 2" src="https://lh3.googleusercontent.com/i10EkfFmD4Ch8Zqf6FXWDlVW7pw1eeMaGXTncVGnz_r2F1WGfAki2i--njq2CNqLCw-d8ZLRj5YQvhVYDiFOqorwRYo173kcGIh7jvoWJPREjrPHzFdlq32ps8qVR9hhS5VPnYUQtVkmPbfOPZhUe-A0KFAQuWz5xRdQ549U9n5-eMkV5rQ0XPB6bXguh97v2WprKEqAy6cWomxcAtz7L9vx9cc9QgfplZUn8VRUqsJxw8GVJRT6bUWqdAIu1AEjUdbYJ0QxVnPxANfWR-7AcPNX5BFvjojydnA0L9M3TdRPIfLOYlfk57sChJso3VPVPhq6jyLRFdignTe215kIFmv8fuWqJlpRl3y6hm6bSBQTl33BlFAPuJmtMGMTEO4JLzWkmfS6PmBzS-kn5qnnTNXA8UwElROxl6dq-GIdK_W0_s6FCgPSGOgYwfAWY-_z8tQmP_9Ks_nVAd4CIshrPGBml9REe8YetMWfrijn4dLTm_eCujvE9ew1cHWtmu3cdPrjCblFw7ePHz7d-6ZDOfBR2SljIMFA9hTUL5n3v0IhWU1xojCE-3sKsVHntaFRMVcd5wKRo0Q1daYDRr203o1F5iwjNqStV82JCjg=w592-h330-no" />
+</p>
+
+<h2>#footer</h2>
+
+<p>
+Add the following to the #footer in index.html.
+</p>
+
+<pre class="prettyprint">
+<strong>&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Email Collection Ban&lt;/a&gt;&lt;/li&gt;
+  &lt;li id="company-info"&gt;Phone : 1234-5678, FAX : 1234-5678&lt;br /&gt;
+  johndoe@gmail.org&lt;br /&gt;
+  Copyright java-school.net All Rights Reserved.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Map&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</strong>
+</pre>
+
+<p>
+Modify #footer in /*** The Essential Code ***/ as shown below.
+</p>
+
+<pre class="prettyprint">
+#footer {
+  clear: both;
+  height: 70px;
+  <strong>font-size: 11px;
+  color: #8d8d8d;
+  letter-spacing: -1px;
+  border-top: 1px solid #DAEAAA;
+  position: relative;
+  top: 7px;</strong>	
+}
+</pre>
+
+<p>
+Remove #header, #footer in /*** Just for Looks ***/.
+</p>
+
+<p>
+<img alt="footer 1" src="https://lh3.googleusercontent.com/C18c71I9GUkdCOEUHCMwVv8bbQ46tgpFscAJjNdpownHyY-rAw_nfs1DgBrwLetCKyhIXHTig0VspgSi7CefBPWhxUkpg5S5lIvHKpEp9A3f5sAbgqlWwVatK10rGrE4RLd9yFo-QN8p6kqnQY3n-kbSZfxoEYMII0hjH8K5tJQw64UyRGI1QmmeJrj2WtvwW7zu-H_EJtmpA0zWQMsfo6mNYhG8WBGo3F-jUFCVoqi54piEYhIS3cI0d-ituoQgC1TEv3iLjWOVhzyp9YfsZFo80-oLOJuVNlbBK264R4fek-j_XVNaNeHhe-Nag7-M9aznSVfZqJYpKrKpjRRS8mlmdnBmxTwcQ6UZ5ygIYc2TPd7lqYzStzbB53fhMC-kPM4p60C8AizwT59kJfWqr26UkCfC2wRFNbmYUvHFVMLR5VjRbisbh_44JA8Od6HVyxz3LsadVW4TI82VeEbfAnW-x7T3-f7rlH1O_lsuMuDQA-5upD_jdJYl1K4JAkmPNz8xS57wwWCBXMBgXXLvP09rY-DHu1QChydAJXHP7uccuSKPEOAzqdj4t34MFPt6ScbLCnsVOAgLKxQ8Gb5z4owxg6ZB8iQdYDBeWPM=w592-h371-no" />
+</p>
+
+<p>
+Add the following to /*** The Essential Code ***/ to arrange #footer menu items horizontally. 
+</p>
+
+<pre class="prettyprint">
+<strong>#footer &gt; ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#footer &gt; ul &gt; li {
+  float: left;
+}</strong> 
+</pre>
+
+<p>
+<img alt="footer 2" src="https://lh3.googleusercontent.com/SYHL9sv8QvaASFu0Fc2vd22Cu4GZtneuv5UNuKJeRnep8zyLTyyMAATn5WwZs92KDHyxrY-ivvQuz-m6RPMINFr519iY5T7cc6zPUe4ggxpSXJDXPJQAjpg9N5KfDaOpRjxOie232Z6aF8-AGp7FqgLrgBf3P3nIkDAg8poplzPL8t9JYvXvL2bpc456K_HLpIQOd6lffi4MJHTHmQB8qy-h3yObBT1-zKGXcHJRqG0aBI2ud6pnfBK1QEHqkZgCwzSEtze3UD7HseFmj-BJsbfhS7iZnB9AYDsKRCUAv6HrHFYNk0oT4QC4cKaIY3IJelyGHWuKGGqyHjIAjEobGqbb0eNs03DLW_tvoU_K4E4ratt1tCEcTF-wcHqmjkKv2ZcxF3SaX6qAnSnGX-SuWJ1rCSNxgSH8IYhgwZKHOSf4daIM7S2jNXBcZQTpLK_G4eZTzDEcbe9Mp2apbvPo8TIduioXAFSKIpMJatztDtRUggKeIHgVzwU_74AamAECuhtSg2Ejaxz3rQaNj6NxwqCf-8nS_Z6Zu1kA0V_ZLvlOG8hX-eD-n_uqyPp-vCPCUwyAzoabnyGfuG2IFaQLzNSldoLWIkJ8k6tDJ_E=w592-h311-no" />
+</p>
+
+<p>
+Finish styling #footer as shown below.
+</p>
+
+<pre class="prettyprint">
+#footer &gt; ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;<strong>
+  position: relative;
+  left: 8px;</strong>
+}
+#footer &gt; ul &gt; li {
+  float: left;
+  <strong>padding: 6px 12px 6px 8px;
+  background: url('../images/circle.gif') no-repeat 0 50%;</strong>
+}<strong>
+#footer &gt; ul &gt; li &gt; a {
+  color: #8D8D8D;
+  text-decoration: none;
+}
+#footer &gt; ul &gt; li &gt; a:hover {
+  text-decoration: underline;
+}
+#footer &gt; ul &gt; li#company-info {
+  margin-left: 350px;
+  letter-spacing: 0;
+  background: none;
+}</strong>
+</pre>
+
+<p>
+<img alt="footer final" src="https://lh3.googleusercontent.com/QaZ2z4SaixxiFiS0qqcZPsGzE1qnjtBP_L3s874HBUMzr5yMlofYdxf-IkanLQDySA-QlOqUH2Ak8eIAMOL-n_3MWzuf9ffZTK72H6tDUrYhi1T_-WBv4AuGAljiT2z0ViObpY7xu27kfyr9WsR6a72mioFsYAqv0WipLPAneAekR2pO3bZugeXGuwHaeFbeb4islM6tUT31oNAaH23wDQ9lKcwox1Gpb5yBSwW52BTGNCpUsgSa8ghtgo5YEhMXZdfkTCNCVmZqx5yVgfMHjL7Yes-O_bPqNtGhXyOx015UPdcx7Skwed8O86OMSNyDKz0WhtY7h7xOxJHRdWMXIngVa4I-_YU6UQ3EWKGQ9ICDHcxqg8wIIyEuqhqr4oXx_Ny1sLQ3Rf1dzzT7poDV8mtXl4P3XWXC81lCuesqi02wgyF8FmjwJCAOkpeGruZ2ElBz7giYPuozjp_I8sFf12z0FYX_NyAaoyrKPDZnD6bUakORsUueO-7ujQS6MFFdc6W4pksSJp9MLoSQI5adU3svDmSvlGmBQLwFlwTOoh4ebns32_oS1CxR-VZE8eQcR7k0CxzCFnbcL7en89ZPT7vuhBx_8JNUVoZVV30=w1002-h316-no" />
+</p>
+
+<h2>#content</h2>
+
+<p>
+Increase #content the left and right margins of #content by 5px to make the gap between #content and #sidebar and #content and #extra.
+</p>
+
+<pre class="prettyprint">
+#content {
+  margin-left: <strong>180px;</strong>
+  margin-right: <strong>210px;</strong>
+}
+</pre>
+
+<p>
+The size of #content box is 1000px. The #content's width is 610px because the sum of left and right margins is 390px (180 + 210). With borders set to 1px on the left and right, #content's width will be 608px.
+</p>
+
+<p>
+Modify #container and #extra as shown below. 
+</p>
+
+<pre class="prettyprint">
+#container {
+  float: left;
+  width: 100%;
+  <strong>border-top: 1px solid #DAEAAA;</strong>
+}
+</pre>
+
+<pre class="prettyprint">
+#extra {
+  float: left;
+  width: 205px;
+  margin-left: -205px;
+  <strong>margin-bottom: 20px;
+  position: relative;
+  top: 7px;</strong>
+}
+</pre>
+
+<p>
+Change the height of #content from 100px to 300px in the /*** Just for Looks ***/ for testing.
+</p>
+
+<pre class="prettyprint">
+#content {
+  font-size: large;
+  text-align: center;
+  background: #DDD;
+  <strong>height: 300px;</strong>
+}
+</pre>
+
+<p>
+<img alt="content 1" src="https://lh3.googleusercontent.com/Kgzm8dNzlBQMtXx-ydLKqRpYoOXgpvZEiAG66zn4RqafD_j0ep_a_IAp8PuT7MGp02XtGC70WvbPUo7meEcRQyW8QbqaJeC-U7b_WK9WiJjXxO3O7OcxK8fasDAHcFteWrGY_S_hA_ekYWQrDDQ0XHJJFn0kvcLqNp7q6rm2-s0cvy6m5mdvTUF44l5rVKt_FJYWRMcjNnOkb8C6GqaZrNHBqqwyxm0aScwtSJBlfxoR4dG6PDnR4T0ZOn9YaEq4KTNCFP12znkAaiWEKPdtUJycZuIl1HomSYmpCejperge2lzzB5b7UOkhhHhtEqDA-ni2WU9NyYWAKQtpNos6G90hrqp7L0acIfWBxJ7S9xrd86k0UMdXwDuNPo6OhsxYdEvE_Bzl7X5zySs9JjXxRqEY586om0YN-sSOiFPkWLwSKCmBo2WM9ek6TLhk8a8YdozisKXmG1_C5IYsBkiRM9173rZkeAfUS_5ZVTiFMkdJ_L8hQykmXFTitdDnQw0MfyMfdVEVP-56b8EM4eeUCQ61QUATOhIDziuE9CqcnrvYdGgLqIaaBMgJbgl2N3fQlTjk_JQbjvTXjQcS_7GgXAFI1LllnmSpYFSZy-Q=w1002-h480-no" />
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
+</ul>
+</article>

@@ -30,7 +30,7 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 </p>
 
 <p>
-<img src="${staticUrl}/images/windows10-system.png" alt="System" />
+<img src="${staticUrl}/images/windows-system.png" alt="System" />
 </p>
 
 <p>
@@ -88,14 +88,28 @@ JDK는 C:\Program Files\Java\jdk-xxx (xxx는 버전)에 설치된다.
 사용자 변수 Path 값은 시스템 변수 Path에 추가된다. 윈도 운영 체제는 실행 프로그램을 시스템 변수 Path에 추가된 디렉터리에서 찾는다. Path에 JDK의 bin 디렉터리를 추가하면, 어느 디렉터리에서나 JDK의 bin에 있는 윈도 실행 프로그램(javac.exe, java.exe, jar.exe 등)을 실행할 수 있다. Path에 JDK의 bin 디렉터리를 추가하지 않았다면, 컴파일할 때 javac.exe 윈도 실행 프로그램이 있는 경로로 이동하여 실행해야 한다.
 </p>
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Program Files\Java\jdk-17.0.2\bin&gt;javac C:\Users\javaschool\Test.java
+<pre class="screen">C:\Program Files\Java\jdk-25.0.2\bin&gt;javac C:\Users\javaschool\Test.java
 </pre>
 <p>
-명령 프롬프트에서 echo %PATH%를 실행하면 설정된 Path를 확인할 수 있다.
+시스템 변수 Path를 확인하려면, 명령 프롬프트를 관리자 권한으로 실행하고 echo %PATH%를 실행한다.<br />
+<img src="${staticUrl }/images/run-comand-prompt-by-admin.png" alt="Run Command Prompt by Admin"/><br />
 </p>
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users\javaschool&gt;echo %PATH%
-C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\javaschool\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-17.0.2\bin;
+<pre class="screen">C:\Windows\System32> echo %PATH%
+C:\oraclexe\app\oracle\product\11.2.0\server\bin;
+C:\Program Files\Common Files\Oracle\Java\javapath;
+C:\WINDOWS\system32;
+C:\WINDOWS;
+C:\WINDOWS\System32\Wbem;
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\;
+C:\WINDOWS\System32\OpenSSH\;
+C:\Program Files\Git\cmd;
+C:\Program Files\GitHub CLI\;
+C:\Program Files\dotnet\;
+C:\Users\kim00\AppData\Local\Microsoft\WindowsApps;
+C:\Program Files\Vim\vim91;
+C:\Program Files\Java\jdk-25.0.2\bin;
+C:\apache-maven-3.9.9\bin
 </pre>
 <p>
 출력된 경로를 보면 세미콜론(;)으로 디렉터리를 구분하고 있음을 알 수 있다. 윈도 시스템에선 세미콜론을 환경 변수 구분자로 사용한다.
@@ -162,9 +176,6 @@ Hello World!
 패키지와 접근자를 학습한 후에 <a href="https://www.eclipse.org">이클립스</a>를 사용한다.
 </p>
 
-</article>
-
-<article>
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="${javaUrl}/features">자바의 특징</a></li>

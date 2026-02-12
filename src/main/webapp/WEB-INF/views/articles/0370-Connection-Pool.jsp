@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>커넥션 풀</title>
-<meta name="Keywords" content="jdbc,JDBC,Connection Pool,커넥션 풀.Log.java,DBConnectionPool.java,DBConnectionPoolManager.java,ConnectionManager.java,OracleConnectionManager.java,oracle.properties,GetEmp.java,DBCP,BasicDataSourceExample.java" />
-<meta name="Description" content="커넥션 풀링 코드와 커넥션 풀 라이브러리인 DBCP를 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1034,6 +1020,3 @@ public class GetEmp {
 </ul>
 
 </article>
-
-</body>
-</html>

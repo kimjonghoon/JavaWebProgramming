@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>JSP</title>
-<meta name="Keywords" content="Java,자바,JSP,Directives,지시어,page directive,페이지 지시어,include directive,인클루드 지시어,taglib directive,태그라이브러리 지시어,Scripting,스크립팅,Declarations,선언,Expressions,표현식,Scriptlets,스크립틀렛,Actions,JSP 액션,jsp:useBean,jsp:setProperty,jsp:getProperty,jsp:param,jsp:include,jsp:forward,Implicit Objects,내재 객체,out,request,response,pageContext,session,application,config,page,exception" />
-<meta name="Description" content="JSP 문법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1676,6 +1662,3 @@ response.sendRedirect("upload.html");
 	<li>JSTL에서는 다음과 같이 접근할 수 있다:<pre class="prettyprint no-border">	&lt;c:out value="${requestScope['jakarta.servlet.error.message']}" /&gt;</pre></li>
 </ol>
 </article>
-
-</body>
-</html>

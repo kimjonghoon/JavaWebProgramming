@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>JDBC - Transaction</title>
-<meta name="Keywords" content="java,JDBC,transaction,setAutoCommit,commit,rollback,PreparedStatement" />
-<meta name="Description" content="JDBC 코드에서 어떻게 트랜잭션을 다루는지 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -171,6 +157,3 @@ ACCOUNT 테이블의 BALANCE 컬럼은 0에서 3000까지의 수만 저장될 �
 </p>
 
 </article>
-
-</body>
-</html>

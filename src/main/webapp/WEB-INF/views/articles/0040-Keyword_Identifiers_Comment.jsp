@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>키워드, 식별자, 주석</title>
-<meta name="Keywords" content="키워드,keyword,식별자,identifiers,주석,comment,자바 네이밍 룰,Java Naming Conventions,주석" />
-<meta name="Description" content="키워드 식별자 주석에 대해 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 			
@@ -115,6 +101,3 @@ javadoc.exe 프로그램을 이용하면 이 주석으로부터 HTML 형태의 �
 </p>
 
 </article>
-
-</body>
-</html>

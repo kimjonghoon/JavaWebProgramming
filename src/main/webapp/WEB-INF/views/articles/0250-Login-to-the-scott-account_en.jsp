@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>SCOTT account</title>
-<meta name="Keywords" content="Oracle 11g XE,SCOTT account,scott.sql,SQL * Plus,SYSTEM account,sqlplus,show user,alter user,NULL,Oracle Data Types,NUMBER(PRECISION,SCALE),DATE,VARCHAR2(Number),emp,dept,salgrade" />
-<meta name="Description" content="This article describes how to practice SQL in a SCOTT account" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -350,6 +336,3 @@ SQL&gt;<strong>@/u01/app/oracle/product/11.2.0/xe/rdbms/admin/utlsampl.sql</stro
 </pre>
 
 </article>
-
-</body>
-</html>

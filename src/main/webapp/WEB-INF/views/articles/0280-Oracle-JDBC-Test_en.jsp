@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Oracle JDBC Test</title>
-<meta name="Keywords" content="Oracle,Oracle JDBC dirver,ojdbc6.jar,GetEmp.java,set classpath,JDBC Test Failure Checklist,Test GetEmp.java in Eclipse,JDBCTEST.bat" />
-<meta name="Description" content="This article describes Oracle JDBC Test" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -215,6 +201,3 @@ Click the right button and execute as below.
 </p>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>웹 애플리케이션이란?</title>
-<meta name="Keywords" content="Java,자바,web application components,웹 애플리케이션 요소,WEB-INF,WEB-INF/classes,WEB-INF/lib,Tomcat class Loader,web.xml,packing,팩킹,jar cvf" />
-<meta name="Description" content="자바 웹 애플리케이션에 대해 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -205,6 +191,3 @@ C:\apache-tomcat-9.0.87\webapps\test&gt;<strong>jar -cvf test.war .</strong>
 	<li><a href="http://stackoverflow.com/questions/809775/what-does-the-servlet-load-on-startup-value-of-0-zero-signify">http://stackoverflow.com/questions/809775/what-does-the-servlet-load-on-startup-value-of-0-zero-signify</a></li>
 </ul>
 </article>
-
-</body>
-</html>

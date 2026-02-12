@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>웹 애플리케이션 작성 실습</title>
-<meta name="Keywords" content="Java,자바,WEB-INF,WEB-INF/clases,WEB-INF/lib,tomcat context file,톰캣 컨텍스트 파일,properties of context,톰캣 컨텍스트 속성,ROOT.xml" />
-<meta name="Description" content="웹 애플리케이션 작성하는 방법을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -123,6 +109,3 @@ http://localhost:포트번호/로 접근할 수 있는 웹 애플리케이션이
 	<li><a href="http://tomcat.apache.org/tomcat-7.0-doc/config/context.html">http://tomcat.apache.org/tomcat-7.0-doc/config/context.html</a></li>
 </ul>
 </article>
-
-</body>
-</html>

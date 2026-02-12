@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Namecard Web Application</title>
-<meta name="Keywords" content="java,namecard,WEB-INF,WEB-INF/classes,WEB-INF/lib,web.xml,namecard.xml,eclipse,java perspective" />
-<meta name="Description" content="This article explains how to convert pure java application to java web application" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -559,6 +545,3 @@ Visit http://localhost:8080/namecard/list.jsp for testing.
 </ul>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>자바 I/O</title>
-<meta name="Keywords" content="자바 I/O,Java I/O,스트림,Stream,근원지,source,목적지,destination,바이트 스트림,byte stream,문자 스트림,character stream,InputStream,OutputStream,FileInputStream,FileOutputStream,Reader,Writer,BufferedReader,BufferedWriter,InputStreamReader,OutputStreamWriter,Serializable,ObjectOutputStream,ObjectInputStream,File,FileReader,StringTokenizer,FileWriter,BufferedWriter," />
-<meta name="Description" content="자바 I/O 관련 API 사용법에 대해 다룹니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -1396,6 +1382,3 @@ public class BankUi {
 </pre>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>로깅</title>
-<meta name="Keywords" content="로깅 프레임워크,Log4j 2,log4j2.xml,Logger,LogManager,Logger,Appender,Layout,Log Level,FATAL,ERROR,WARN,INFO,DEBUG,TRACE,Commons Logging,commons-logging.properties,Log,LogFactory,slf4j,Logger,LoggerFactory,logback,logback.xml" />
-<meta name="Description" content="대표적인 로깅 프레임워크인 log4j2, logback, slf4j, commons-logging을 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 	
@@ -468,6 +454,3 @@ LogTest4.java를 다시 실행한다.<br />
 </ul>
 
 </article>
-
-</body>
-</html>

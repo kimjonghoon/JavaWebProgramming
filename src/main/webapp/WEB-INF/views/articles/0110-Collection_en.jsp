@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Collection</title>
-<meta name="Keywords" content="Collection,List,Set,SortedSet,Map,SortedMap,HashSet,TreeSet,ArrayList,LinkedList,HashMap,TreeMap,Vector,Properties,Generic,Enumeration,hasMoreElements(),nextElement(),Iterator,hasNext(),next(),remove(),Wrapper classes,Boolean,Byte,Character,Short,Integer,Long,Float,Double" />
-<meta name="Description" content="This article describes Java Collection" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -715,6 +701,3 @@ Java provides AutoBoxing and Auto Unboxing for ease of development. You may have
 </ul>
 
 </article>
-
-</body>
-</html>

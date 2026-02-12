@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Operators, if, switch, loops</title>
-<meta name="Keywords" content="Arithmetic Operators,Equality and Relational Operators,Conditional Operators,Assignment Operators,+ operator,if,else,switch,case,break,default,for,while,do ~ while,continue,return," />
-<meta name="Description" content="This article describes Java Operators and if and switch, for, while, do ~ while statements" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -489,6 +475,3 @@ if ((user.signIn &amp;&amp; user.id.equals("Superman")) || (user.signIn &amp;&am
 </ul>
 
 </article>
-
-</body>
-</html>

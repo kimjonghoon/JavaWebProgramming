@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>연산자, if, switch, 반복문</title>
-<meta name="Keywords" content="산술 연산자,Arithmetic Operators,관계 연산자,Equality and Relational Operators,조건 연산자,Conditional Operators,대입 연산자,Assignment Operators,+ 연산자,+ operator,if,else,switch,case,break,default,for,while,do ~ while,continue,return" />
-<meta name="Description" content="자바 연산자와 if, switch, for, while, do ~ while 문에 대해 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 			
@@ -478,6 +464,3 @@ if ((user.signIn &amp;&amp; user.id.equals("Superman")) || (user.signIn &amp;&am
 </ul>
 
 </article>
-
-</body>
-</html>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Creating a new web application</title>
-<meta name="Keywords" content="Java,WEB-INF,WEB-INF/clases,WEB-INF/lib,tomcat context file,properties of context,ROOT.xml" />
-<meta name="Description" content="This article describes how to create a new web application" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -150,6 +136,3 @@ If there is a problem with the ROOT.xml file, then the previous ROOT web applica
 </ul>
 
 </article>
-
-</body>
-</html>

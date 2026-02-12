@@ -1,0 +1,169 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
+<article>
+
+<h1>Bean Validation - Sign Up</h1>
+
+<h2>Sign Up</h2>
+
+<p>
+Add Hibernate Validator dependency to pom.xml.
+</p>
+
+<h6 class="src">pom.xml</h6>
+<pre class="prettyprint">
+&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-validator&lt;/artifactId&gt;
+  &lt;version&gt;6.2.5.Final&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+
+<p>
+Bean validation need <em>&lt;mvc:annotation-driven /&gt;</em> in spring-bbs-servlet.xml.
+</p>
+
+<p>
+Declare constraints rules on the User class that is bound to the sign-up form.
+</p>
+
+<h6 class="src">User.java</h6>
+<pre class="prettyprint">
+<strong>import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
+
+@Size(min=5, message="It is not an email.")
+@Email(message="It is not an email.")</strong>
+private String email;
+<strong>
+@Size(min=4, message="Your password must be at least 4 characters long.")</strong>
+private String passwd;
+<strong>
+@Size(min=2, message="The full name must exceed two characters.")</strong>
+private String name;
+<strong>
+@Size(min=6, max=20, message="It is not a mobile phone number.")</strong>
+private String mobile;
+</pre>
+
+<p>
+The sign-up form handler must create an empty object with no content and pass it to the view. Creating an empty object and giving it to the view is a spec and should be followed.
+</p>
+
+<h6 class="src">UsersController.java</h6>
+<pre class="prettyprint">
+@RequestMapping(value="/signUp", method=RequestMethod.GET)
+public String signUp(<strong>Model model</strong>) {
+  <strong>model.addAttribute("user", new User());</strong>
+  return "users/signUp";
+}
+</pre>
+
+<p>
+The subscription handler must have a parameter of type BindingResult after the @Valid annotated parameter. Otherwise, an HTTP 400 error will occur.
+</p>
+
+<h6 class="src">UsersController.java</h6>
+<pre class="prettyprint">import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
+
+@RequestMapping(value="/signUp", method=RequestMethod.POST)
+public String signUp(<strong>@Valid</strong> User user, <strong>BindingResult bindingResult</strong>) {
+  <strong>//A bean that fails validation is stored in the BindingResult and the BindingResult is passed to the view.</strong>
+  <strong>if (bindingResult.hasErrors()) {</strong>
+    <strong>return "users/signUp";</strong>
+  <strong>}</strong>
+  
+  //...omit...
+}
+</pre>
+
+<p>
+Modify signUp.jsp as shown below.(&lt;sf:errors &gt; is a Spring's form tag that displays validation errors to the user)
+</p>
+
+<h6 class="src">signUp.jsp</h6>
+<pre class="prettyprint"><strong>&lt;%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %&gt;</strong>
+
+<strong>&lt;sf:form</strong> id="signUpForm" action="signUp" method="post" <strong>modelAttribute="user"</strong>
+      onsubmit="return check();"&gt;
+<strong>&lt;sf:errors path="*" cssClass="error" /&gt;</strong>
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;td style="width: 200px;"&gt;Full Name&lt;/td&gt;
+  &lt;td style="width: 390px"&gt;
+    <strong>&lt;sf:input path="name" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="name" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Password&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:password path="passwd" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="passwd" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan="2" style="text-align: center;font-weight: bold;"&gt;
+    Do not input email account password!
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Confirm&lt;/td&gt;
+  &lt;td&gt;&lt;input type="password" name="confirm" /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Email&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:input path="email" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="email" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;Mobile&lt;/td&gt;
+  &lt;td&gt;
+    <strong>&lt;sf:input path="mobile" /&gt;&lt;br /&gt;</strong>
+    <strong>&lt;sf:errors path="mobile" cssClass="error" /&gt;</strong>
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;div style="text-align: center;padding-bottom: 15px;"&gt;
+  &lt;input type="submit" value="Submit" /&gt;
+&lt;/div&gt;
+<strong>&lt;/sf:form&gt;</strong>
+</pre>
+
+<p>
+Add the following to the stylesheet.
+</p>
+
+<pre class="prettyprint">
+.error {
+  color: red;
+}
+</pre>
+
+<h3>Test Screen</h3>
+
+<p>
+<img alt="Sign Up" src="https://lh3.googleusercontent.com/x9fu3nCqMzHBBm2cgastO0tuXZgi4jRNHVMAA8qa5r2soXtjxhMpVfgvk7C_LhCyOwXuoDxC6wcLkZCkUGtxUW3VCEPJrgHda-kK8lmMi2t9-q_DXRDmSohIHRUrPtIFb-cLEPUL2a6wzEiWUl87aXvUrbNAp6RpNeoBJjyjMcDXCBAk0WFEx63RCD93VYBZDpt5QyytIX7Mz-mXQq8XCKpaWcQs_APtYIdjEb3psN9OY7fS_haRV737cKCqC96pQcG74AuvbqmomZ2wIH8G5l5ud-DmO7i4-fmhA1Fl96ZaW4kgavILn_hpFW8gLICEI9p7BwDG5zQJbemzXwmpi15sU50bnrYsC1pIJjUv7vkuDh1y0S1LtKvJfJGU8AKvViBWpKcGUkW-40jV8cpf1TP2n_ylX2VqL3UqvBGCe6KAd9G_LjMLzmjsKEnpSOcFVELcpnoOfa0wZdwp0SsvDcZTLBWJkoR-V-As7v-mvnSBisIF0g8ZYSGZAzY7JNtAgm0S8tQd1RLyzwE1Su7crfTn0zXhGvhEhbxobSIPvxy2IXARZGEH3Rd4QJxARyjfzzAUYMH7812P2HPuHSwRtXtlvNvZwF3O7rQpmII=w513-h258-no" />
+</p>
+
+<p>
+<img alt="Bean validaion failed" src="https://lh3.googleusercontent.com/pUTL1EQtTUYOMD9Hyu4UjAKWMogymyC_9sLcGez97htYKPiMgiYlyq0i43yw2XIu8Mq6EZs54FbO8ZBnbmGxIAJY7O90JbHrI58tK6Ob-iG693Us2-R7pXvBchI5PFXpy8RChnWIft7x87YOt9cASPT8FC239j0TOgQ64WTswd6NyuiTDvM5YSnj4CnuyXZaJwnul4UrYNKLmycS1iIF-pXYXYU5WUyV3DeqiIQ5dx85ZKKlrx01lxP0GLA59YGKdb3bpoOeNvMvhcEXeE9g1T_5w1Xpnl2NhuNOL84Ob9DvA8t1mnP6gLN6psz9x2x7shQtdU5z1iiawGvswxLBbk9YkuyWvmasuYgA_gcOFADZCpmFGcetlYf_uqhYnotq1Megw_vuPxebmFDgCQlhXKp5i1eS7ox7aY6ZC5Z2vIlyWi7stbkowWQ6zA8ojDRw4ZYFSl8MuWfORDTr8kSLiYNuoPXjO7RVr3lU_Hg79uSFEMytpU1mrx4OkbdJyOSmXFUKEvfxevVh4PcjsPjKlNHmRI3Ne8WmKFyZ1KPKE4UKhnpZzNsd0bxMPecCdd23mohQQJWwhaLRhCw1-5lyV6mGqv8bFvrmGlGJtUQ=w516-h389-no" />
+</p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://hibernate.org/validator/documentation/getting-started/">Getting started with Hibernate Validator</a></li>
+  <li><a href="http://forum.spring.io/forum/spring-projects/web/80192-validation-empty-int-field">Validation - Empty int field</a></li>
+  <li><a href="http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work">http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work</a></li>
+  <li><a href="http://stackoverflow.com/questions/6227547/spring-3-validation-not-working">http://stackoverflow.com/questions/6227547/spring-3-validation-not-working</a></li>
+  <li><a href="http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found">http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found</a></li>
+  <li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/pdf/">spring-framework-reference.pdf</a></li>
+  <li><a href="http://mybatis.github.io/mybatis-3/getting-started.html">MyBatis Getting started</a></li>
+</ul>
+</article>

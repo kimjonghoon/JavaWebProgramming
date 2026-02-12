@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Servlet</title>
-<meta name="Keywords" content="Java,Servlet,basic structure of servlet,GenericServlet,HttpServlet,ServletConfig,init(),service(),destroy(),ServletConext,RequestDispatcher,ServletRequest,HttpServletRequest,ServletResponse,HttpServletResponse,HttpSession,Cookie,Servlet examples,getParameter(),getParameterValues(),getParameterNames(),RequestDispatcher,ServletContext Initialization Parameters,Listener,custom connection pool,Filter,MultipartRequest,commons-fileupload,Session," />
-<meta name="Description" content="This article describes Servlet" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -2580,6 +2566,3 @@ The <a href="JSP">JSP</a> chapter covers session examples.
 	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
 </article>
-
-</body>
-</html>

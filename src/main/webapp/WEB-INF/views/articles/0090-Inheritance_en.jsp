@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Inheritance</title>
-<meta name="Keywords" content="Inheritance,@Override,StringBuilder,extends,Method overriding,toString(),Constructor,this,super,default constructor,Method overloading,final,Abstract class,Abstract method,Interface" />
-<meta name="Description" content="This article describes Java Inheritance" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 	
@@ -861,6 +847,3 @@ As you can see in inheritance, You can assign a subclass type reference to a sup
 </p>
 
 </article>
-
-</body>
-</html>
