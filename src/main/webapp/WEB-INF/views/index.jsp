@@ -44,10 +44,10 @@ $(document).ready(function() {
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="./articles/0010-JDK-Install.jsp" />
+		<jsp:include page="./articles/0010-jdk-install.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="./articles/0010-JDK-Install_en.jsp" />
+		<jsp:include page="./articles/0010-jdk-install_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->
