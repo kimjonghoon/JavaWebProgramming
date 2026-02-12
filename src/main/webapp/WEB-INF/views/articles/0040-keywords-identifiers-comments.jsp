@@ -99,5 +99,10 @@ public class Account {
 줄 수와 상관없이 /** 부터 */ 표시 전까지의 모든 문자를 주석으로 처리
 javadoc.exe 프로그램을 이용하면 이 주석으로부터 HTML 형태의 도움말 문서를 생성할 수 있다.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/datatype"/>">데이터 타입과 타입 캐스팅</a></li>
+    <li>이전 : <a href="<c:url value="/java/object-and-class"/>">객체와 클래스</a></li>
+  </ul>
+</div>
 </article>

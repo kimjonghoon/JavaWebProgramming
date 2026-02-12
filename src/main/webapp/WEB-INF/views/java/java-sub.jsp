@@ -14,7 +14,7 @@
 	    <li><a href="${javaUrl}/object-and-class">객체와 클래스</a></li>
 	
 	    <li class="sub-heading">자바 기초</li>
-	    <li><a href="${javaUrl}/keyword-identifiers-comment">키워드,식별자,주석</a></li>
+	    <li><a href="${javaUrl}/keywords-identifiers-comments">키워드,식별자,주석</a></li>
 	    <li><a href="${javaUrl}/dataType">데이터 타입과 타입 캐스팅</a></li>
 	    <li><a href="${javaUrl}/arrays">배열</a></li>
 	    <li><a href="${javaUrl}/operators-if-loops">연산자 switch if 반복문</a></li>
@@ -42,33 +42,33 @@
 	<c:otherwise>
 	<ul>
 		<li class="sub-heading">Java Introduction</li>
-		<li><a href="${javaUrl}/Features">Java Features</a></li>
-		<li><a href="${javaUrl}/Class-Object">Object and Class</a></li>
+		<li><a href="${javaUrl}/features">Java Features</a></li>
+		<li><a href="${javaUrl}/object-and-class">Object and Class</a></li>
 		
 		<li class="sub-heading">Java Basic</li>
-		<li><a href="${javaUrl}/Keyword_Identifiers_Comment">Identifiers</a></li>
-		<li><a href="${javaUrl}/DataType_Casting">Data Type</a></li>
-		<li><a href="${javaUrl}/Arrays">Arrays</a></li>
-		<li><a href="${javaUrl}/Operators_if_loops">Operators if switch loops</a></li>
-		<li><a href="${javaUrl}/Package_Modifiers">Package and Modifiers</a></li>
-		<li><a href="${javaUrl}/Inheritance">Inheritance</a></li>
-		<li><a href="${javaUrl}/Static">static keyword</a></li>
-		<li><a href="${javaUrl}/Collection">Collection</a></li>
-		<li><a href="${javaUrl}/Exception">Exception</a></li>
+		<li><a href="${javaUrl}/keywords-identifiers-comments">Identifiers</a></li>
+		<li><a href="${javaUrl}/datatype">Data Type</a></li>
+		<li><a href="${javaUrl}/arrays">Arrays</a></li>
+		<li><a href="${javaUrl}/operators_if_loops">Operators if switch loops</a></li>
+		<li><a href="${javaUrl}/package-modifiers">Package and Modifiers</a></li>
+		<li><a href="${javaUrl}/inheritance">Inheritance</a></li>
+		<li><a href="${javaUrl}/static">static keyword</a></li>
+		<li><a href="${javaUrl}/collection">Collection</a></li>
+		<li><a href="${javaUrl}/exception">Exception</a></li>
 		
 		<li class="sub-heading">Example: Java Bank</li>
-		<li><a href="${javaUrl}/Javabank-Requirements-analysis">Requirements Analysis</a></li>
-		<li><a href="${javaUrl}/Javabank-Design">Application Design</a></li>
-		<li><a href="${javaUrl}/Javabank-Inheritance">Inheritance</a></li>
-		<li><a href="${javaUrl}/Javabank-Abstract-class">Abstract Class</a></li>
-		<li><a href="${javaUrl}/Javabank-Interface">Interface</a></li>
+		<li><a href="${javaUrl}/javabank-requirements-analysis">Requirements Analysis</a></li>
+		<li><a href="${javaUrl}/javabank-design">Application Design</a></li>
+		<li><a href="${javaUrl}/javabank-inheritance">Inheritance</a></li>
+		<li><a href="${javaUrl}/javabank-abstract-class">Abstract Class</a></li>
+		<li><a href="${javaUrl}/javabank-interface">Interface</a></li>
 		
 		<li class="sub-heading">Thread I/O Network</li>
-		<li><a href="${javaUrl}/Thread">Thread</a></li>
-		<li><a href="${javaUrl}/Stream">Java I/O</a></li>
-		<li><a href="${javaUrl}/Logging">Logging</a></li>
-		<li><a href="${javaUrl}/Socket">Socket</a></li>
-		<li><a href="${javaUrl}/RMI">RMI</a></li>
+		<li><a href="${javaUrl}/thread">Thread</a></li>
+		<li><a href="${javaUrl}/stream">Java I/O</a></li>
+		<li><a href="${javaUrl}/logging">Logging</a></li>
+		<li><a href="${javaUrl}/socket">Socket</a></li>
+		<li><a href="${javaUrl}/rmi">RMI</a></li>
 	</ul>		
 	</c:otherwise>
 </c:choose>

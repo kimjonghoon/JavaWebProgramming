@@ -281,13 +281,10 @@ java.io.PrintStream@de6ced
 <em>System.out.println()</em>와 <em>System.out.print()</em>의 유일한 차이는 System.out.println()은 출력 후 라인을 바꾼다는 데 있다. 
 </p>
 
-</article>
-
-<article>
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="${javaUrl}/keyword-identifiers-comment">키워드, 식별자, 주석</a></li>
-    <li>이전 : <a href="${javaUrl}/object-and-class">객체와 클래스</a></li>
+    <li>다음 : <a href="<c:url value="/java/keywords-identifiers-comments"/>">키워드, 식별자, 주석</a></li>
+    <li>이전 : <a href="<c:url value="/java/features"/>">자바의 특징</a></li>
   </ul>
 </div>
 </article>

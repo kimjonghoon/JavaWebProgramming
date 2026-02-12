@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Keyword, Identifiers, Comments</title>
-<meta name="Keywords" content="java,keyword,identifiers,comment,Java Naming Conventions" />
-<meta name="Description" content="This article describes Keywords and identifiers and comments" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 			
@@ -130,7 +116,10 @@ The compiler ignores everything between /* and */.
 The compiler ignores everything between /** and */.<br />
 You can generate Java documentation using the JDK's Javadoc with these comments.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/datatype"/>">Data Type</a></li>
+    <li>Prev : <a href="<c:url value="/java/object-and-class"/>">Object and Class</a></li>
+  </ul>
+</div>
 </article>
-</body>
-</html>
