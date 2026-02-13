@@ -108,7 +108,6 @@ public class Test {
 		}
 		fis.close();
 	}
-
 }
 </pre>
 
@@ -157,9 +156,7 @@ public class Test {
 		}
 		fis.close();
 		<strong>fos.close();</strong>
-		
 	}
-
 }
 </pre>
 
@@ -285,7 +282,6 @@ public class Test2 {
 		fr.close();
 		fw.close();
 	}
-
 }
 </pre>
 
@@ -599,7 +595,6 @@ public class Address <strong>implements Serializable</strong> {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
 }
 </pre>
 
@@ -730,7 +725,6 @@ public class BankUi{
 		String input = <strong>br.readLine();</strong>
 		System.out.println("입력: " + input);
 	}
-
 }
 </pre>
 
@@ -800,14 +794,12 @@ public class BankUi {
             }
             System.out.println();
         } while (!menu.equals("q"));
-
     }
 
     public static void main(String[] args) {
         BankUi ui = new BankUi();
         ui.startWork();
     }
-	
 }
 </pre>
 

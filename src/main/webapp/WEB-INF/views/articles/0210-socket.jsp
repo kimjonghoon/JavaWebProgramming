@@ -99,7 +99,6 @@ public class Client {
 		<strong>Socket socket = new Socket("localhost", 3000);</strong>
 		//TODO
 	}
-
 }
 </pre>
 
@@ -131,7 +130,6 @@ public class Client {
 		pw.println("Socket Connected[Port:" + socket.getPort() + "]");
 		pw.flush();</strong>
 	}
-
 }
 </pre>
 
@@ -260,7 +258,6 @@ public class Server {
 			}
 		}
 	}//Echo inner class end</strong>
-
 }
 </pre>
 
@@ -332,7 +329,6 @@ public class Server {
 			<strong>echos.remove(this);</strong>
 		}
 	}//Echo inner class end
-     
 }
 </pre>
 
@@ -425,7 +421,6 @@ public class Server {
 	public static void main(String[] args) {
 		new Server().startServer();
 	}</strong>
-		
 }
 </pre>
 
@@ -464,9 +459,7 @@ public class Client {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		<strong>Socket socket = new Socket("localhost", 3000);</strong>
 		//TODO
-		
 	}
-
 }
 </pre>
 
@@ -492,7 +485,6 @@ public class Client {
 		<strong>BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));</strong>
 		//TODO
 	}
-
 }
 </pre>
 
@@ -525,9 +517,7 @@ public class Client {
 		PrintWriter pw = new PrintWriter(osw);
 		</strong>
 		//TODO		
-		
 	}
-
 }
 </pre>
 
@@ -566,7 +556,6 @@ public class Client {
 		</strong>
 		//TODO		
 	}
-
 }
 </pre>
 
@@ -623,7 +612,6 @@ public class Client {
 				isCommandLineInputWaiting = true;
 				continue;
 			}
-			
 		}
 		</strong>
 	}
@@ -671,8 +659,7 @@ public class Client <strong>extends Thread</strong> {
 	@Override
 	public void run() {
 		//TODO
-	}
-	</strong>
+	}</strong>
 }
 </pre>
 
@@ -709,8 +696,7 @@ public class Client extends Thread {
 	<strong>
 	public static void main(String[] args) throws IOException {
 		new Client();
-	}
-	</strong>
+	}</strong>
 }
 </pre>
 
@@ -749,14 +735,12 @@ public class Client extends Thread {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-		</strong>
+		}</strong>
 	}
 	
 	public static void main(String[] args) throws IOException {
 		new Client();
 	}
-	
 }
 </pre>
 
@@ -810,7 +794,6 @@ public class Client extends Thread {
 	public static void main(String[] args) throws IOException {
 		new Client();
 	}
-	
 }
 </pre>
 
@@ -879,7 +862,6 @@ public class Client extends Thread {
 	public static void main(String[] args) throws IOException {
 		<strong>new Client().chatStart();</strong>
 	}
-	
 }
 </pre>
 
@@ -936,13 +918,14 @@ public void run() {
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://www.hanb.co.kr/book/look.html?isbn=89-7914-377-X">IT CookBook, 자바 5.0 프로그래밍: 차근차근 배우는 자바 AtoZ -한빛미디어</a></li>
 	<li><a href="http://mastmanban.tistory.com/350">윈도우 7 방화벽에서 포트 열기</a></li>
 </ul>
+
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="<c:url value="/java/RMI"/>">RMI</a></li>
+    <li>다음 : <a href="<c:url value="/java/rmi"/>">RMI</a></li>
     <li>이전 : <a href="<c:url value="/java/logging"/>">Logging</a></li>
   </ul>
 </div>
+
 </article>

@@ -101,7 +101,6 @@ public class User {
         
         System.out.println("총 회원수 : " + <strong>User.total</strong>);
     }
-
 }
 </pre>
 
@@ -134,9 +133,7 @@ public class CookTable {
     }
     
     <strong>private</strong> CookTable() {}
-    
     //..중간 생략..
-  
 }
 </pre>
 
@@ -180,7 +177,6 @@ public class A {
     public A() {
         System.out.println("A() 생성자 실행");//4,9,14
     }
-        
 }
 </pre>
 
@@ -213,7 +209,6 @@ public class B {
         new B();//7
         new B(1);//12
     }
-        
 }
 </pre>
 
@@ -239,8 +234,8 @@ B(int) 생성자 실행
 </ul>
 <div id="next-prev">
   <ul>
-    <li>Next : <a href="<c:url value="/java/collection"/>">컬렉션</a></li>
-    <li>Prev : <a href="<c:url value="/java/inheritance"/>">상속</a></li>
+    <li>다음 : <a href="<c:url value="/java/collection"/>">컬렉션</a></li>
+    <li>이전 : <a href="<c:url value="/java/inheritance"/>">상속</a></li>
   </ul>
 </div>
 </article>

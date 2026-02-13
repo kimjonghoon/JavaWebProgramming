@@ -499,8 +499,8 @@ public class DateExample {
 </ul>
 <div id="next-prev">
   <ul>
-    <li>Next : <a href="<c:url value="/java/javabank-requirements-analysis"/>">Javabank - Requirements Analysis</a></li>
-    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Javabank - Inheritance</a></li>
+    <li>Next : <a href="<c:url value="/java/javabank-requirements-analysis"/>">Java bank - Requirements Analysis</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Java bank - Inheritance</a></li>
   </ul>
 </div>
 </article>

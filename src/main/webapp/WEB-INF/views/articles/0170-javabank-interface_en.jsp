@@ -94,7 +94,6 @@ public class MyBank <strong>implements Bank</strong> {
     } else {
       accounts.add(new NormalAccount(accountNo, name, balance));
     }
-            
   }
 
   <strong>@Override</strong>    
@@ -105,7 +104,6 @@ public class MyBank <strong>implements Bank</strong> {
         return accounts.get(i);
       }
     }
-
     return null;
   }
 
@@ -118,7 +116,6 @@ public class MyBank <strong>implements Bank</strong> {
         matched.add(accounts.get(i));
       }
     }
-        
     return matched;
   }
 
@@ -138,8 +135,8 @@ Modify the main() of the test class.
 </pre>
 <div id="next-prev">
   <ul>
-    <li>Next : <a href="<c:url value="/java/javabank-abstract-class"/>">Javabank - Abstract class</a></li>
-    <li>Prev : <a href="<c:url value="/java/javabank-design"/>">Application Design</a></li>
+    <li>Next : <a href="<c:url value="/java/javabank-abstract-class"/>">Java bank - Abstract class</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-design"/>">Java bank - Application Design</a></li>
   </ul>
 </div>
 </article>

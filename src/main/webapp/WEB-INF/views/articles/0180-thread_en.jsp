@@ -274,7 +274,7 @@ The cause of this problem is that the thread proceeds, as shown below.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/u2lGWJho1Cv2tbO7JP28enAwzAuPunQ7pU_y1hGsVnYroCHdmOSnLDy_fqBIqKnC6EAYbN6kAJPGr8P5o6h5pgX-AYKGTpY-jyXFAnDh0Om_cWBwD5ig1VpwSMAa59B1CGDagCAU8C5Dp2LsZBIUW9RcqQ2vqi9buQOgl6pKYFg4K7iJ-zFrUMiJBYYOcYar2CWWe2rLxtASSOSteok14Uw-KD2TMoczmJqFqfsvOxBNCvuZMjQG2QwPF1vwfDAiQ_Brr38KrMB28ymnWkSqEopAGoR0o0nPWiKnFZ88wIBntPwX1ueFCvD3UXtYxLaFfcNGicEs9x_MQBzS5bZzru-zDzo0vW9x80RK0bs3HIVXPumanqUFiDOsRoPUd-duncwHLoWL_0VEQsjO_sUbTKyOAdTrytuIepezcEeTVr2Vvci80OGAeE4tChtJUdjFsxvvUh6Fh_baY403ayCwBwfYmpXszzFo8kXLgKT5lL75OgDmBjNg8oglrfCxbyZFgu1GIO7h5wKb3gTjR30MfSTgSU4jy1dDCfqNh8ej9CGPqyfsVLIN663W8VOOuNPgWT39KbCH-XS5hUE5PRXlvYPuE5mCjDzug58dXq5buCjsNZrUIyH93W0_aD8hwaFO4sfwLLhJYzQlMplIKwcTT_7ukQRlYa8cLQTIOQ6jv_a2VqrQHfH6Skc=w609-h496-no" alt="This figure shows a case where the second thread enters the logic of comparing the withdrawal amount and the balance before the first thread corrects the balance." />
+<img src="<c:url value="/resources/images/critical-section-problem-en.png"/>" alt="This figure shows a case where the second thread enters the logic of comparing the withdrawal amount and the balance before the first thread corrects the balance." />
 </p>
 
 <p>
@@ -294,15 +294,15 @@ As shown in the figure below, the second thread will not be able to enter the me
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/lRlx2TRC_vZ2LbjvtfjmRIz7UIZyB3OZv2I5uBUp9foDcN4q8avdxEEI8HZvUUlLMAak524woIEy7DyGaFdA2LpwrjoibNDc__tVrHhzxr8Iex5_2oEsaihQbEPbyIVW7yRjLsqCHXuwCd9258fMVZbtgUGaCXU_G9WUgn9kvSIB-4w0GoyEjW7-K-s-jDbDy2skehZvkEPMK27l-cxIWO1wCDgTMRTcEcKmv0cOEbqrumRchy90lhtiIOLEskJ3ER2k1a_Gcoqyytf9Hgrci4RTNFx5KVS5tD6GmnvDPL-cyrHCRWCo2_kFOpvkz15zgwmXxnYJ8bbQOT5mzxxrJZAF1BgKl3HKfKAa1aDoH_KsctbMvawNuPAwG9VXYGb4JznZn7_54ngHMHIDkkdZl-GNjJdqtJguBnCPzLFLJh_NXL8mNP6QmJcEKqrBYYvE5JkrUFOD2QuMWxiV5P7afhl5Wet5CB4E5zQKT6p1wuQDMAyYB1Sci7L_yZyRiepg86S5pH5dogE872PnF2Scb3jF0n3rjmHgNIuYmT9DKozcujdtDSyU-vADTJIt7nnJACeuYQyLcH-tKGPgh4h4ATJoOTa5k5-QksFAwJjq5EZWGry2aZEKLsG8lvpz9_c_susT0qWo96BLLNoqGmUZs_e3hO8TDQmB4_Nb4uV0HaHQeeD2RhJOt9w=w609-h496-no" alt="The figure shows that the first thread has entered the critical area and the second thread is proceeding just before the critical area." />
+<img src="<c:url value="/resources/images/critical-section-sync-1-en.png"/>" alt="The figure shows that the first thread has entered the critical area and the second thread is proceeding just before the critical area." />
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/ADS46RpdDYKobkT3GyfBzu4pSP2XIVVmw-nfVHOnJxrCDus7ht7ruD5Chc4Gk0hD09HtnZkeQrUHa0qxo6zPSXtlw3aVgK4cmbqPqK3VTovTCl7qBNwM2SDFsikGG4Z7rgwBz9538vRCRW-WCtN0yzOcNYFzgvVz51hAYVMOOlScFMoVO4Z5mrEmSMtVbOXBaqUjILxq9_f-sG6yyMVL4yf8yjYH64xi7qAVOsgUh-e-F6jtybbhDgJAHlJuC5WixN5ent5COogH5OZW_RGakwXaJD4DBa_rnNAoQ6VBXv49MvwYKkm6021XEMaMEYpa46HMck34EeouT-TAdFcHkst-LpyyQiXWHSNuzIDykt6P2IjFbfV0VheMeDdfmHSmaVYLit6ig2BLTCzNSurwnxFa4-AmCFfWrR4UbTo32JwzjlN6jMNmpxEVflI6QHaEEc1uXGdk37rA7fZtVW3LAF2-Qoly2r52W4luWv9XRz2uijU4g8i0pjDuVx4oAy4RXqOee5OwRdCIT8iV5JnGWqfg4OztHbFIAVIuCLJdScMXc-diYwmV5l1GUmwZMnuVAXDS8Lm2hhliC-d22MowSp2jF2N_3oHiVsUcX-sShLzT0R0jK6nQP7ncJaDhOVY2AEpDc0TnlQs5yDTmEDLrXGm0MSApKdjU2rL5qf2unMpAQxtx8q1uzyk=w609-h496-no" alt="This figure shows that the first thread is almost passing through the critical area and the second thread is not yet in the critical area." />
+<img src="<c:url value="/resources/images/critical-section-sync-2-en.png"/>" alt="This figure shows that the first thread is almost passing through the critical area and the second thread is not yet in the critical area." />
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/9OFqWE8e7_vRD9r76qcgYA_3Vnroeal-o95j8nZqm_2xZxw54Ew8afPsWxfwt-dO4UxNEVTJYAFu4itJrFj77HpTaXStsECJxzKOunKlIAcKWZxZ5SFTaKWWVJEnbNgsbDcX81XadlotK310O4CJoTRj3sST9jlB9LgPeCc6N7qcCMcEwL0woFTwjTU9DKafsgkiZDXzBYumOg9j7nM7rXpr1YBKlevDbo2IiFZWcf1owG5ITb2SEv9NL9gUN3pIlesgfby7bnXH9Y7yhsm0jCscoLQJPr2n-ilxzhmDavBzdpoGSIYb0YMxE7nKah85e00kHUNaU_lG4vNVonq6Ad6-pJwqQQ6kMCW-8LTSMlWDj1zBbI8h7WzvbwWY5zLxfehvLz3oa2z_QkESy4xQhPz2jnkMdkObZsCDPtJhz9zr1ZecNbJXQNmNvSssh5VkT0BHx2COjix5JkU_130-cZJ-PTHCsgBXLR4iAqyWqOzL3mbUN2LPlBcDcGWsl_DNsvxcQwD5iOVM8XT7swEuPynMSSsdGOEsItkDRvXOj0ozKSHbYsz_66ukuAEJC9hJel_iSjAyzxfI9AhyrMfgJhqrtqdg6706GWnTBy4rL2BzmzRPd1-4WC9noRZyzjg3AcTH57mPmuQDpaU9ClPZplBzMCkbd1YAgN23RuSTAmURthj3dOZ6IbU=w609-h496-no" alt="This figure shows that the first thread has just passed the critical area and the second thread is not yet in the critical area." />
+<img src="<c:url value="/resources/images/critical-section-sync-3-en.png"/>" alt="This figure shows that the first thread has just passed the critical area and the second thread is not yet in the critical area." />
 </p>
 
 <p>
@@ -310,7 +310,7 @@ When the first thread goes out of the method, the waiting thread enters the meth
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/WFUvgcsy3IOcHiEi1iQpgy1qW0tS-EGgfj80oK25Mhu00cEB1KvXH1gXEWXXtXFt1ofTK92yaQAHi_tmjV1Xy1WLitm7eF8fyuLJXd9a620QY1oRQqdtiLXFtn70GT9xUdegBUjny4WyTBTEUYTzkQ3PUzGCpuppWP5kSqDFdB1f_kHzdLJ9PnnN-MdF4vhj4wssG7uMKmGcnP4CxXSeYiWq0pz8YzhMvuETav_ev9A8_brV2ZuH8_HEkgt8nYguixd0Huh4o_fA_oCBFv0ILmEunPy85GWBCLywfrQXLN10NM07pMDpmtS7iTu9VRfDL2VnA2jRQ_mnEKkBhVL_ResGC2p7Xqg_wnUxfAxq8Fg4SWwuoMFeQ0RLOrwE5SoXBz275j9mNj1JAr-OUWuyHW57x9MDorpgv0J6tBHNy4VoyHkd9OYpDFyGWtkPfx1RPUcE-aCyEwn_zv8N1FAW2XL4jzcm-0rmN1MRb1WqHk4ukj78j0X9rZD5wt5e5XZhbuVSrD-Dk07NC83kM5M5f_UHSzXanqcQ1iApFBidy5kSq1L_AeC2z60-VUaPPRFsanbSdmqoQG_KyfwmE5Gax9D42svm2TXPEyymo9QoLSPYCyumXCK9mZHQ2SW1pH0DT4CHit-aSHU5wM0W1wJfNB9VIvOV_oM3iw-aHu7TejT2T5MrHEAdHws=w609-h496-no" alt="This figure shows that the first thread has passed the critical area and the second thread has just entered the critical area." />
+<img src="<c:url value="/resources/images/critical-section-sync-4-en.png"/>" alt="This figure shows that the first thread has passed the critical area and the second thread has just entered the critical area." />
 </p>
 
 <p>
@@ -351,8 +351,8 @@ The Vector is thread-safe, but the ArrayList is not. All methods of Vector are s
 </p>
 <div id="next-prev">
   <ul>
-    <li>Next : <a href="<c:url value="/java/io"/>">Java IO</a></li>
-    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Javabank - Inheritance</a></li>
+    <li>Next : <a href="<c:url value="/java/io"/>">Java I/O</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Java bank - Inheritance</a></li>
   </ul>
 </div>
 </article>

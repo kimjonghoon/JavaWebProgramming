@@ -12,7 +12,7 @@
 </p>
 
 <p>
-<img alt="Using Eclipse Code Assistance 1" src="https://lh3.googleusercontent.com/-k8W3Fdv4UsY/VWKmyB_TZaI/AAAAAAAACJM/Fth5yxSkTR8/s590/create-exception-with-eclipse.png" style="display: block;">
+<img alt="Using Eclipse Code Assistance 1" src="<c:url value="/resources/images/create-exception-with-eclipse.png"/>" style="display: block;">
 
 <p>
 메소드 바디에서 마우스 오른쪽 버튼을 클릭하여 컨텍스트 메뉴가 나타나게 한다.<br />
@@ -20,7 +20,7 @@ Source 와 Generate Constructors from SuperClass 메뉴를 차례로 선택하�
 </p>
 
 <p>
-<img alt="Using Eclipse Code Assistance 2" src="https://lh3.googleusercontent.com/-cghmWWIl6n0/VWKjEDyc0dI/AAAAAAAACIA/EkwIZL_GRmE/s720/source-Generate-Constructors-form-SuperClass.png"  style="display: block;">
+<img alt="Using Eclipse Code Assistance 2" src="<c:url value="/resources/images/source-generate-constructors-from-superclass.png"/>"  style="display: block;">
 </p>
 
 <h6 class="src">InsufficientBalanceException.java</h6>
@@ -43,7 +43,6 @@ public class InsufficientBalanceException extends RuntimeException {
   public InsufficientBalanceException(Throwable cause) {
     super(cause);
   }
-
 }
 </pre>
 
@@ -71,7 +70,6 @@ public class DuplicateAccountException extends RuntimeException {
   public DuplicateAccountException(Throwable cause) {
     super(cause);
   }
-
 }
 </pre>
 
@@ -88,7 +86,6 @@ public class InsufficientBalanceException extends RuntimeException {
   public InsufficientBalanceException(String message) {
     super(message);
   }
-
 }
 </pre>
 
@@ -100,7 +97,6 @@ public class DuplicateAccountException extends RuntimeException {
   public DuplicateAccountException(String message) {
     super(message);
   }
-
 }
 </pre>
 
@@ -145,7 +141,6 @@ public class DuplicateAccountException extends RuntimeException {
   <strong>public String getKind():</strong>
 
   //.. 중간 생략 ..
-  
 }
 </pre>
 
@@ -189,7 +184,6 @@ public class NormalAccount extends Account {
   <strong>public String getKind() {</strong>
     <strong>return KIND;</strong>
   <strong>}</strong>
-        
 }
 </pre>
 
@@ -230,7 +224,6 @@ public class MinusAccount extends Account {
   <strong>public String getKind() {</strong>
     <strong>return KIND;</strong>
   <strong>}</strong>
-
 }
 </pre>
 
@@ -273,16 +266,10 @@ public class MinusAccount extends Account {
       accounts.add(new NormalAccount(accountNo, name, balance));
     }
   }
-    
   //.. 중간 생략 ..  
-
 }
 </pre>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li>New 알기쉬운 자바2(개정판) 저자: 김철회 출판사: 정보문화사</li> 
-</ul>
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/javabank-interface"/>">자바은행 - 인터페이스 적용</a></li>

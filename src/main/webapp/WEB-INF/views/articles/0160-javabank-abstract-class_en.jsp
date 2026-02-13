@@ -12,7 +12,7 @@ We will use this when withdrawing more than the balance.
 </p>
 
 <p>
-<img alt="Custom Exception 1" src="https://lh3.googleusercontent.com/RHaayx8aOaZZh4w-c2PbLBDtz3rF3yuzgnk5bqEea0ESShr0MpPwf_6TK-5TgJNbptz7JsbvzyEmc7PWG2CATUPddqQ9MdJJg5wEL74BroGVs6Ep7V-hDXDp65OlrMQUYV9xwbkNn2nbZMwFoGQAy9hUcqa3QfJtd52TDoGs8BgadnXmg_U0Tz0Sc6JVsUu7jSJkRJUxGt5Svb-PB4WAnmyE9MoCWcsROrMu1YOOHY7yybBwjTdskuw__EtBdIN1jtP0EVgofNjFldXCV17t3ovHYXxWxqlUI6q95YvEXR7UIslVgH0ASFnw7tdhD6odpdkYbU9HLPfoNrJ6PzkYOR8HagrGLCQjSK5I1aDwfPtxyMeT7FMuQNqWSyeHKGQdXCHreOC2KwCG7cHXTyV3k0qkduvplfXFXTBE07RMBgiOUZV7WCuMxRiqFqSEHFqMGIF-dyYVEkqPbgEPH7X45spA18QJeO2nRjVQ9enb4tY467m3jIbRNSM6pwchTwGpB4xaQltBMyt6oVJXD5AFTzh5SBFr5bgecC4PU35vvmKPl2rh1o1HovnvorpCFoZZrivbWN2Fd1LVhrl1kS2IIHwFox18U9wuRVhYSyUS4dkHt3-FkjT4=w543-h241-no" />
+<img alt="Custom Exception 1" src="<c:url value="/resources/images/create-exception-with-eclipse.png"/>" />
 </p>
 
 <p>
@@ -21,7 +21,7 @@ Select the "Source and Generate Constructors from SuperClass ..." to create cons
 </p>
 
 <p>
-<img alt="Custom Exception 2" src="https://lh3.googleusercontent.com/JODCdLiA47Ku4j9jumvMmOmqZ5vvdoW9hYKj4e-V8oSVfyKhlF2_d_18F7hznO7SHp9jypXZjZo9U0X1rGjWZD7vLQH50fASeTxb8iviVOy2V4Ahd2lmm4Wxfenhd9VT3t8SKHUqDhKQ6zT9fEugqS7GBQSf4RZRmUESW7Ro7FvJuNLRobpHZxxiNDfuM6SUqwbNC2OyVrgK7wTqOyVpzGaMHaVBs-ffvUogCQqOB_pwnt4O2DFyX3lE1St7lINaaUudbe3xE24qtRuc-xHR3x_NIH3MfNmUbEUwWjizo53C_p7NIT5n0r8Nt5U2_KFy7hT978w3_JLU6Z_iE9WJFL8j0zthHRFu6ccIXkYUMsFxqk15vfcIDfItktHDmyEQ5H6h9UPY3UztWojBQTXkwv-q1ov2VYVfEgrX8Okx2w2dk9z2A4EMomETf6m8AGJY-WmLezwajTYhzi4cH8s8M1hlLI0PifzgvIWHLObpI0Dfbdxp0IhNRA_xtamIwdoWXY0n18T9c2fKmK0S88uKDbgySh9VGQgAsNK6jfeuf1Leird4ajQhAcGN851Eiz5THbLjNIuPTscmTw9H3u4YuF3CucoHupg9c-HnUKtrgjtS-cGojX0s=w495-h704-no" />
+<img alt="Custom Exception 2" src="<c:url value="/resources/images/source-generate-constructors-from-superclass.png"/>" />
 </p>
 
 <h6 class="src">InsufficientBalanceException.java</h6>

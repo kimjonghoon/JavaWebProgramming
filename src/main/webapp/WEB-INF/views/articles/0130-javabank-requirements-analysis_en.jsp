@@ -29,7 +29,7 @@ Nouns become classes or variables. Verbs become methods.
 </p>
 
 <p>
-<img src="https://lh4.googleusercontent.com/-7_W2KsCUQSU/VX_qK5Qp9gI/AAAAAAAACLM/5EQN6xP4NXo/w814-h526-no/bank-classdiagram2.png" alt="JavaBank Class Diagram" />
+<img src="<c:url value="/resources/images/bank-classdiagram-en.png"/>" alt="JavaBank Class Diagram" />
 </p>
 
 <p>

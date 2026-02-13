@@ -72,7 +72,6 @@ public class LogTest1 {
 		LogTest1 test = new LogTest1();
 		test.someMethod();
 	}
-  
 }
 </pre>
 
@@ -153,7 +152,6 @@ public class LogTest2 {
 		test.xxx();
 		test.yyy();
 	}
-
 }
 </pre>
 
@@ -258,7 +256,6 @@ public class LogTest3 {
 		test.xxx();
 		test.yyy();
 	}
-  
 }
 </pre>
 
@@ -291,7 +288,6 @@ public class LogTest4 {
 		int balance = 10000;
 		logger.info("amount: {}, balance: {}", amount, balance);
 	}
-
 }
 </pre>
 
@@ -340,9 +336,7 @@ public abstract class Account implements Serializable {
 		<strong>logger.debug("AccountNo:{} Amount:{} DEPOSIT/WITHDRAW:{} NORMAL/MINUS:{}", 
 			accountNo, amount, DEPOSIT, getKind());</strong>
 	}
-	
 	//..중간 생략..
-
 }
 </pre>
 
@@ -455,7 +449,7 @@ LogTest4.java를 다시 실행한다.<br />
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/socket"/>">소켓</a></li>
-    <li>이전 : <a href="<c:url value="/java/io"/>">자바 IO</a></li>
+    <li>이전 : <a href="<c:url value="/java/io"/>">자바 I/O</a></li>
   </ul>
 </div>
 </article>

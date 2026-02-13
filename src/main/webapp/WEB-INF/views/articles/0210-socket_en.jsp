@@ -921,10 +921,12 @@ public void run() {
   }
 }
 </pre>
+
 <div id="next-prev">
   <ul>
     <li>Next : <a href="<c:url value="/java/rmi"/>">RMI</a></li>
     <li>Prev : <a href="<c:url value="/java/logging"/>">Logging</a></li>
   </ul>
 </div>
+
 </article>

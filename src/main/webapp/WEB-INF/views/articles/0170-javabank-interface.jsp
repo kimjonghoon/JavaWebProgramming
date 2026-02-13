@@ -40,7 +40,6 @@ public interface Bank {
     
   //모든 계좌를 반환한다.
   public List&lt;Account&gt; getAccounts();
-  
 }
 </pre>
 
@@ -100,7 +99,6 @@ public class MyBank <strong>implements Bank</strong> {
         return accounts.get(i);
       }
     }
-        
     return null;
   }
     
@@ -113,7 +111,6 @@ public class MyBank <strong>implements Bank</strong> {
         matched.add(accounts.get(i));
       }
     }
-        
     return matched;
   }
     
@@ -121,7 +118,6 @@ public class MyBank <strong>implements Bank</strong> {
   public List&lt;Account&gt; getAccounts() {
     return accounts;
   }
-
 }
 </pre>
 
@@ -133,16 +129,10 @@ public class MyBank <strong>implements Bank</strong> {
 <pre class="prettyprint">Bank bank = <strong>new MyBank();</strong>
 </pre>
 
-
-<span id="refer">참고</span>
-<ul id="references">
-	<li>New 알기쉬운 자바2(개정판) 저자: 김철회 출판사: 정보문화사</li> 
-</ul>
-
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/thread"/>">스레드</a></li>
-    <li>이전 : <a href="<c:url value="/java/javabank-abstract-class"/>">자바은행 - 추상클래스 적용</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-abstract-class"/>">자바은행 - 추상 클래스 적용</a></li>
   </ul>
 </div>
 

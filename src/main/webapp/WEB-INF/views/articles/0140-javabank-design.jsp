@@ -92,7 +92,6 @@ public class Transaction {
 
     return sb.toString();
   }
-        
 }
 </pre>
 
@@ -213,7 +212,6 @@ public class Account {
 
     return sb.toString();
   }
-
 }
 </pre>
 
@@ -288,9 +286,7 @@ public class Bank {
   public int getTotalAccount() {
     return totalAccount;
   }
-        
 }	
-
 </pre>
 
 <p>
@@ -366,7 +362,6 @@ public class Test {
       System.out.println(account);
     }
   }
-
 }
 </pre>
 
@@ -453,7 +448,6 @@ public class DateExample {
     System.out.println("4-1: " + DateFormatUtils.ISO_DATETIME_FORMAT.format(date));
     System.out.println("4-2: " + DateFormatUtils.ISO_DATETIME_TIME_ZONE_FORMAT.format(date));
   }
-
 }
 </pre>
 
@@ -475,7 +469,6 @@ public class DateExample {
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://www.infopub.co.kr/bookinfo/bookinfo.asp?sku=05000195">New 알기쉬운 Java 2 J2SE 1.4</a></li>
 	<li><a href="http://www.joda.org/joda-time/">http://www.joda.org/joda-time/</a></li>
 	<li><a href="http://www.joda.org/joda-time/userguide.html">joda-Time userguide</a></li>
 	<li><a href="https://commons.apache.org/proper/commons-lang/">Apache Commons Lang</a></li>
@@ -483,7 +476,7 @@ public class DateExample {
 </ul>
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속적용</a></li>
+    <li>다음 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속 적용</a></li>
     <li>이전 : <a href="<c:url value="/java/javabank-requirements-analysis"/>">자바은행 - 구현</a></li>
   </ul>
 </div>

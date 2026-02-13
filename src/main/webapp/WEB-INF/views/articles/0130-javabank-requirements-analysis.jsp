@@ -32,9 +32,9 @@
 <p>
 시나리오로부터 클래스와 필드, 메소드를 추출해 내어야 한다.
 시나리오에서 명사는 클래스나 필드로, 동사는 메소드가 된다.
-<img src="https://lh3.googleusercontent.com/-Dgg4barA3Sk/VX_qKuvc-LI/AAAAAAAACLI/9r_JG99thNs/w617-h526-no/bank-classdiagram.png" alt="자바은행 클래스다이어그램 추상화 단계" style="display: block;" />
+<img src="<c:url value="/resources/images/bank-classdiagram.png"/>" alt="자바은행 클래스다이어그램 추상화 단계" style="display: block;" />
 분석/설계 단계에서의 산출물은 아래와 같은 클래스 다이어그램이다.
-<img src="https://lh4.googleusercontent.com/-7_W2KsCUQSU/VX_qK5Qp9gI/AAAAAAAACLM/5EQN6xP4NXo/w814-h526-no/bank-classdiagram2.png" alt="자바은행 클래스다이어그램" style="display: block;" />
+<img src="<c:url value="/resources/images/bank-classdiagram-en.png"/>" alt="자바은행 클래스다이어그램" style="display: block;" />
 </p>
 
 <p>
@@ -85,10 +85,6 @@ Transaction, Bank, Account 클래스에서 미루어 짐작 가능한 게터<sup
 하지만 간단한 프로그램은 클래스 다이어그램만으로 충분하다.<br />
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.infopub.co.kr/bookinfo/bookinfo.asp?sku=05000195">New 알기쉬운 Java 2 J2SE 1.4</a></li>
-</ul>
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/javabank-design"/>">자바은행 - 구현</a></li>

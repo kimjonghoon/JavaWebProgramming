@@ -148,7 +148,6 @@ public class Account {
                 
     return sb.toString();
   }
-
 }
 </pre>
 
@@ -212,7 +211,6 @@ public class MinusAccount <strong>extends Account</strong> {
     transaction.setKind(Account.WITHDRAW);
     transactions.add(transaction);
   }
-        
 }
 </pre>
 
@@ -281,14 +279,12 @@ public class Bank {
         matched.add(accounts.get(i));
       }
     }
-        
     return matched;
   }
     
   public List&lt;Account&gt; getAccounts() {
     return accounts;
   }
-  
 }
 </pre>
 
@@ -324,7 +320,6 @@ public class Test {
     <strong>System.out.println(ACCOUNTS_HEADING);</strong>
     <strong>System.out.println(minus);</strong>
   }
-
 }
 </pre>
 
@@ -341,13 +336,10 @@ public class Test {
   <li>잔액부족 - InsufficientBalanceException</li>
 </ul>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li>New 알기쉬운 자바2(개정판) 저자: 김철회 출판사: 정보문화사</li> 
-</ul>
+
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="<c:url value="/java/javabank-abstract-class"/>">자바은행 - 추상클래스 적용</a></li>
+    <li>다음 : <a href="<c:url value="/java/javabank-abstract-class"/>">자바은행 - 추상 클래스 적용</a></li>
     <li>이전 : <a href="<c:url value="/java/javabank-design"/>">자바은행 - 구현</a></li>
   </ul>
 </div>

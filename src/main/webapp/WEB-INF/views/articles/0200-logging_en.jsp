@@ -358,7 +358,6 @@ public abstract class Account implements Serializable {
     <strong>logger.debug("AccountNo:{} Amount:{} DEPOSIT/WITHDRAW:{} NORMAL/MINUS:{}", 
       accountNo, amount, DEPOSIT, getKind());</strong>
   }
-	
   //..Omit code..
 }
 </pre>

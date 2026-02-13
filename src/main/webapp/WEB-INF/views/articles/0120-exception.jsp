@@ -73,7 +73,7 @@ finally 블록은 여러 개를 겹쳐 사용할 수 없다.
 
 <p>
 method1는 method2를 호출하고 method2는 method3를 호출한다고 가정한다.<br />
-<img src="https://lh3.googleusercontent.com/K3UACunLKTLY7LVG-8at3eGtxnlN40lsoUY2zCQFR6unJVRHyyQCvVrEXsazAZWJFPt6JostjTrZAS_EtdpwFIHcuNNEBlgNj0ky8pK6NE9cV5jnTjFiVQJbnwpx9N9I_MXraOdHCLnHa2tc5gdtY1cyJPGEeBVDd-PpxHU7SzubLrmPlRvrxLOPgUtnwqf3aUfDwFON-WFCkw1gYfxQ7cyZFrn9sEfwZi9cvm1EbT0yy6ruf153sohkL65YPGgGJOyNc_hShiBsYqQ8ZRnpGGMDx1k37HssWwAEomhJlp1D1odAuX1q3p2ocgcxTYSBuG5o63KNyWntjRvhgfXtOfUbHBxmWmEdSpJzL-2xJsiOAVWvkcTXzZEg9nyIJvY4kPmKnAWGQKqItDZdxIH0yFEo6bLSoXpYnMp6eKI8C0DgMSmDr71DPOjhpGtcabfZIei0xquRXu_fzIQCZLl2xxEILZQih7pxxzUSlh0qMzKFzCL8zdDk4TrjXAuJMMDUQtMtSYRGSqITQOINH3qFRSfWAoAgaDxg9eBVd8Pz8hbs4YGHDB5ofMvm4Z86DyBNfPdiaDXv1QE-w-NsXIleTYSqV08TazMF2KSyNCTUXA=w600-h256-no" alt="예외 매커니즘" /><br />
+<img src="<c:url value="/resources/images/exception-mechanism.png"/>" alt="예외 매커니즘" /><br />
 method3에서 예외가 발생했고 method3에서 catch 블록으로 예외를 잡지 않는다면 예외 객체는 method3를 호출한 method2로 전달된다.<br />
 method2에서도 해당 예외 객체를 잡는 catch 블록이 없다면 method2를 호출한 method1로 예외 객체가 전달된다.<br />
 이런 식으로 예외 객체가 JVM까지 전달되면 프로그램은 종료된다.<br />
@@ -86,7 +86,7 @@ catch 블록에 잡힌 예외 객체는 다른 곳으로 전달되지 않는다.
 
 <p>
 아래 그림은 예외 클래스 계층의 일부분을 보여준다.<br />
-<img src="https://lh3.googleusercontent.com/HxTwf_0OFEqI2B4LioJ7KjbK62ZvI0mvx0hLYD3bXci_m96ndspOwWfakVdQda37udd0efrC0hM7uW-kUMng1czT7OLGPNypLtk8ca__F6g3MQ7ar6mBNJJxaxRrhquT4or1ySOSzXusufwujhBXLR_yRy07qfepRNEf_r1D8UxhcMy9GvoMCKZEnH1CFY-bKKFWpFVxTL1vgHZDnv1PRza7udnRrDWLiZxhjwFswPaox-gMzJcMfwn5zLEPAsq5ru1Y1Kr1rsWJMtUr5wkgyICMbStXtiNzmL_jwoF8hftuGAVCJ_o3LNT7VyQKb57PGnSComNIDD5qMLBR277f14AtMNTLHDEwWiwTKpy4CXjnS7RqNRbnjvLLNkKPeRkI2iqI2uk4VulyUhooTR6Fsw6wuzMUJW-8gJxbh6qn4eTtT5DxYQ2vOzGRvUHVu7phWVCDpHGycXAJVX0ZHa9MeqzPG552pQHM0T7gJzJIIxK_45O6J9QlX1YeRaEiSIEX4eY01WMFzmhzHZQgQ99giaeoglCan7BsKbFcTFuxvDdiR2Slv62sw_ElrW6NU2MhVojYBKdIHNqIrjnws78T1MRHKU6VPGRmuKn8gmS9NEhSR6QWykjSer0L=w390-h141-no" alt="Exception API" style="width: 100%;" /><br />
+<img src="<c:url value="/resources/images/exception-api.png"/>" alt="Exception API" style="width: 100%;" /><br />
 </p>
 
 <h3>자주 발생하는 예외</h3>
@@ -213,7 +213,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -280,7 +279,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");	
   }
-
 }
 </pre>
 
@@ -323,7 +321,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -368,7 +365,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -412,7 +408,6 @@ public class Test {
 	
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -458,7 +453,6 @@ public class Test {
 		
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -509,7 +503,6 @@ public class Test {
 		
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -562,7 +555,6 @@ public class Test {
 		
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -605,10 +597,8 @@ public class Test {
     } finally {
       System.out.println("finally 블록 실행");
     }
-		
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -650,7 +640,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 <pre class="prettyprint no-border">Class.forName("<em>문자열</em>");</pre>
@@ -707,7 +696,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -745,7 +733,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -784,7 +771,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -814,7 +800,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -849,7 +834,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -887,7 +871,6 @@ public class Test {
     <strong>method1();</strong>
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -916,7 +899,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -954,7 +936,6 @@ public class Test {
     method1();
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -1010,7 +991,6 @@ public class Test {
     }
     System.out.println("정상 종료");
   }</strong>
-
 }
 </pre>
 
@@ -1066,7 +1046,6 @@ public class Test {
     }
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -1102,7 +1081,6 @@ public class Test {
 
     System.out.println("정상 종료");
   }
-
 }
 </pre>
 
@@ -1171,7 +1149,6 @@ public class InsufficientBalanceException extends Exception {
   public InsufficientBalanceException(Throwable cause) {
     super(cause);
   }
-
 }
 </pre>
 
@@ -1242,11 +1219,8 @@ public class Test {
       displayHowToUse();
       return;
     }
-
     System.out.println("잔액 " + balance);
-
   } //main method end
-
 }
 </pre>
 

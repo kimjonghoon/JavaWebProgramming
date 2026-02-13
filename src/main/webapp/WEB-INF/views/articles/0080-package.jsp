@@ -47,7 +47,7 @@ public class Account {
 예제를 실행하기전에 아래 그림과 같은 디렉토리 구조를 갖도록 하고 Account.java소스 파일도 
 아래처럼 C:/javaApp/bank/src/javabank 디렉토리에 생성한다.<br />
 
-<img src="https://lh3.googleusercontent.com/4_-RQhRJVbX-mfA27Smf9-SVmX-CLh74XRwPg8IAVLHXXZCt1vTt044Hz_s9r8Vw6CHLrJIFc9qcGJRhGE-8fqm6g5LiNAljfaWbmmL_bPUy2Axd7vs2z-Iv_r-mLINKqsfLHNhMDFAglKtS2cW22kSuyCsskuFElwiT8dTVa-WKOFSyN-7plO-GnHPa05iq2z0VKT2LaHIdMTQEkK2hyjN4LRy6ovwQxUU5AQMscqKNOZOLdBdPMDcnBGtKLPHMOROC6TMyvPs_MZnATk_vMcOnv8WA75ZDfV6o_dHiuEiCPr3DctXOvm44sSLugpAmdwwf3L0mCAwtJssFlTop5utU6vrzRGk9-8TNT4WqQgVSLHJGcYotfnwLMR7YmYJqHX_fBxk9TgEHTFfmNpt4DBad_oOYFY8DBpQhHuDIjWm_3xMgSnrZJF4JtVtDeS0cBDGVtPJnKIzZwjFBlvrf8z0oHYTPR0r7IZ4pYWUufM93eYMlWXVKSv9az-P65jUsmAAVMhRXMovLHa78pv1qVX1Ot8YlevPAJWVWRR15Jm8AV8CfVr3-jGiIlr9fliQp0ypjnvP3xyHadi_xnj19cULMfBeSx_ibecqIZfui44RgBTow7xagSMkp=w191-h129-no" alt="패키지 예제 디렉토리 구조" style="display: block;width: 191px;" />
+<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="패키지 예제 디렉토리 구조" style="display: block;" />
 
 bin디렉토리는 바이트 코드가 위치할 디렉토리이다.
 src디렉토리는 자바 소스 파일이 위치할 디렉토리인데 만약 클래스에 패키지가 선언되어 있다면 src에 패키지명으로 
@@ -62,7 +62,7 @@ src디렉토리는 자바 소스 파일이 위치할 디렉토리인데 만약 �
 패키지가 적용된 자바 소스 파일을 파일 시스템에서 제대로 관리하려면 어떻게 해야 할까?<br />
 만일 Log라는 클래스에 net.java_school.commons 이라는 패키지가 적용됬다면 src디렉토리 
 아래 .(도트)마다 서브 디렉토리를 만들고 마지막 서브 디렉토리 commons에 Log.java 소스를 위치시키면 된다.<br />
-<img src="https://lh3.googleusercontent.com/7IxYec5B9PFcSJVO1G8eUifIy909zozlxz08Ce4H9xpqYsDV2jVF479yxzGipLpcZXuRuAfrOpYET4cTT5tF4ap-bmf99tt8PjwuUl_EI6QwaBqb3zCL2b6n2Cn_S_ZuA6hiIFk_8-rUtCB0LuzcR4RuhL44MvMMK0zzUnWgvx9y_wioOK12oYM9zyH_TFBjY86oO_8fPkV9Mefpj5fylAkHGQgRfPpYpeIs6B7SRJomJ5w2UAsuw2zLZ66nnEe7PyYvrndOl9-qKpuqR5EAz0UuDV_SXrzm3pIiEnTbUvclFwvi_wivpyuNJS6Csi03LTSsxShi2mYWTxSgXjOaQMXaW3andFo-VJaBMSAWwesI0gQ3_cnwf-ba7kAnQ_Ymj5PqC77RctAkyyakg-3FSEyw5zwZbURKHvFQSci0lH2qKQowfYmXW5sesn4RYis-KzTMv7HA91gP9gE7VIQDgtb41c1wWXgtZBcdijdJuexmXTeZ1ljDtNC-59NXpziXgfpuqeG5lNNwu16zg3xa3POQC38Qge7G1Bn_x2LdYMS-_MW0ds05ymhEzBhDfXc8UB3XK_p6fJLsMJLwfoOp-nJPSab00049_tDB3ZErJg=w184-h125-no" alt="javaApp-Log.java" style="width: 184px;display: block;" /><br />
+<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="javaApp-Log.java" style="display: block;" />
 </dd>
 </dl>
 
@@ -94,7 +94,7 @@ Account.class 파일은 javabank 서브 디렉토리에 있다.<br />
 Accont.java를 컴파일할 때 -d 옵션으로 C:/javaApp/bank/bin 디렉토리를 지정하게 되면
 C:\javaApp\bank\bin 디렉토리에는 패키지로 설정한 이름과 같은 서브 디렉토리(javabank)가 생기고 
 그 안에 바이트 코드(Account.class)가 생성된다.<br />
-<img alt="Account.class and Account.java" src="https://lh3.googleusercontent.com/NpXsGCGj5ogeggXJVFF5zZNKI7Rkv2P4E_W5FVeJxQQJZF5T4R5MyBfARrsy_zLVA0oj8uGvzA_lRF8yJNR0Dfa51qnx80v6aS_ULWEy7BXYfXPcygH2S_Y9ISwBqU1rGpoUZYdtpK2XFO4DOA5kw-vJ6nyCUDaAEiD-D1kJS-bcix4gZYjQnguCfo-4gXb_gN62pUeLAr_nnAWmd1e3g5LsGFR3VsaIoqT2hjkeWtFAhGhkMHTtp6CYJCxFcBEUakSGs8qmp6ytDHx_80suxB05Iiwp66Z_EYwI5rQeF-uDkr1R1tIMI9WR2QZKJgQ0zq_wYyqpYp3ne5cOioX5z6hDHOdu4ETpAJ6yV4ft_DXRHVbEG3YfHVHBHOTD9kQ17GoWWEUvtMYYJjW0qto_ipQh7cZLkVr-Y8cZXCOpkGm5wINT7AS9aB2TASNo5Dv0vFVAPQzigBM9PoJFeqZXoy9EbAtbIAPswfXk-euQfqANIH0b06_PQDqOjjf9PrfQRYp7ecxWXF3lLHAlhRj6eaFWKc91G-rbWJjr_SoLUrWdS5awwg0otIaL0gAlJlbRxK6ltAjqkFU3PsqYNauzLWmyoQx6hI4PRCkPXsUqQA=w206-h151-no" style="width: 206px;display: block;" />
+<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" style="display: block;" />
 </p>
 
 
@@ -151,7 +151,7 @@ C:\Program Files&gt;java -classpath ../javaApp/bank/bin javabank.Account
 제대로 사용되고 있는지 모두 검사하기 때문이다.<br />
 위 설명에 대한 예를 만들어 보자.<br />
 새로운 클래스는 아래와 같은 디렉토리 구조를 가지도록 하겠다.<br />
-<img alt="Log.class and Log.java" src="https://lh3.googleusercontent.com/oEjNKV3440WaNbNmZWjW4cWu23RJXLQREn3srfSuLw-BqVEiXuEGdujYuo0cEZ6eNpKElsnOKrGQeSViazfgCCmCB-ZRBB4X7FDAieiDnq1lfAmYGXjS1bMYb0MGJl5qXRSajBWqN9V79sdv-UpEJigd9xEfRoqO1lDetWRXTNpBeXdqWddY1QiJESGurHsSNZbrfxtzYG5wT2JUIhOtzoj5l8sgeag0qCCQiyxM3Nq9SBy3HteOu7BNuTksCS2WWy5ZksXe0X6h2TVNypkX9dNdHxFiGDdKpl24eKAf6_cSokauzHX_uJCKjx9yNIYV1418PI8U6cn0EXdRPACeLYvyK9r9e0vEoyKIBz39Ba_IZRYAr_n_JN9h4OPUGf61WBz5OLxDaFK_g7M5yVefEfVQkPCZqW18AsanYFSdTyuPLkCPihlZNhGTbaEp44WlspkDJlrZdEAdn3Mzc4H6vAU-OaCeXgAXtfzkUq_riVzXJKU-lkEKM2P7JmgeCkjgHpbhBIT1p3aM4tgO_eJ6vKZG0_IXIOoR5149mnUUpssywElYZo_iG4zhweQI9NeqNc1TpE9dHi1jwMfQpeA5jijFIJce4KhD9z7D1EZ7zw=w223-h226-no" style="width: 223px;display: block;" />
+<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="display: block;" />
 </p>
 
 
@@ -320,7 +320,7 @@ public class BankSystem {
 아래 그림은 javabank 패키지에 있는 클래스가 모두 클래스 선언에 public으로 접근자가 지정되어 있는 경우다.
 (그림에서 +는 public을 의미한다.)
 
-<img src="https://lh3.googleusercontent.com/TcK55UcRN3Yw7Hr8dBshFezFW3hMC_lUQ3wcmIqbFHjReVuTDnwDDUnH7mtMT5LprUKupH4o-0fZmiy2B4w1eARwa5HqWWvKOg0WZt0AYc4-Jn2usu6pF8n0GERUsBWMGMvgIjygJt8MNJFuI9TaAJYdc-SVa1GftAcofXbvhhR5nkyN6NZhHulQelFamknan658fGd-R8Dj_46t6MnD3DwmSl7olhv_fkwrYUNkHMLfru65JpESL1R468UWb3mZ0V_0dtNftcGCfkSk8Ixtql17tCiaOwaxcniW4hQynPHbZ6w6WYPpZkLgpGh-YK3MBO0RWtQs7z4ISx85Tf83RQF8XOKpWxz2-48dqEqZ-6F4m6EwLtY3ocXlhHmGzvIa5GOmu58x2pTpVGRUh6AAzRf2YKWOA0rqsSQGjL4xafSksgRMUVFwmL5vyFW2snRe8fx8_ROH4eFxuIfCwmdxtDC2XtijPhREHAymN3hm5D03qdzbDgRTyDzusrxS4Mf_qnX7fixVM-lviHTyZhbI_dFygAKp1ohsXgpZrxsJwUGalSTdGIEwuegyzp64dBcVoawb3gx4Osi1rW9G4WzpZYNRBzdnZwcrO4uZRXIE6B0e9LQ7apHN-duL=w1615-h869-no" alt="PUBLIC 접근자 그림" style="width: 100%;display: block;" />
+<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="PUBLIC 접근자 그림" style="display: block;" />
 
 (Bank, Customer는 아직 없지만 Account와 같이 javabank란 이름의 패키지로 만들었다고 가정하자.)
 Bank, Customer, Account는 어떤 패키지에 속한 클래스라도 참조할 수 있다.
@@ -346,7 +346,7 @@ public class BankSystem {
 
 <p>
 이제는 Bank, Customer, Account의 클래스 선언에 package private 접근자로 설정된 경우를 가정해 보자.
-<img src="https://lh3.googleusercontent.com/oJLK2Q9DcK_eTLOSGMXUnYUHYKbomwYicpeVfoqmtNkaf2UmGD5ThO1wrJxdLXofryHdpus0da9tQixu6aEeUyQ14cuU9TclwhkCCRqyYrHmAwSol3ptPZLf5oyHJEYCZDFl5ZEtOpM0i5ctZGXlDCVO8SQglr89udzzaJaqTF_Lj4CrKODgLVceqjx2jo3jNTBQL8Q-6DCjdpZ5qLpqCWPYY3OxOaN_LsJlhflVGg15BU1Z8eQPsu3yhs1IAdRtVgb51oK4YioCDe7Uoc6-Qp0ABwAdzQP0XK3E8WDLHhG7VyueiL_cu0hWM2tFGteQHS3TtXzpC0Ro9bD1g8m_-k7j_3O4E01jRQ_5Wu0p3KMjut5h3ipHQvSYaAeIXswEy75ZmuaH5tm9o78zRHmjPyqGktlsPcIQgrK9tk-CvLOqEVdzJ0faKFw6PITE89jV6P0ErhPClaRFsdkwlDy1gC0sPchdEi7PZWzC64J-RcSFAoL6KhdPOwN8VZQg_p4LgdWgUneHYV5CTzjzEsmO6SuBjb5qPATsK079hQSBngrxqBj-y1Nc61X65hHjb4h9lNjN3d72-oIrBP6r9pbD-Av1A2lNVTyvAIKwzIJIsZXO2gn5ZEAZMFdt=w1615-h886-no" alt="package private 접근자 그림" style="width: 100%;display: block;" />
+<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private 접근자 그림" style="display: block;" />
 이 경우 다른 패키지에 있는 BankSystem클래스에서는 Bank, Customer, Account를 사용할 수 없다.
 그림처럼 보이지 않는다고 생각하면 된다.
 BankSystem에서 Bank, Customer, Account클래스를 참조하려 하면 컴파일 에러가 난다.
@@ -390,7 +390,7 @@ protected는 package private 접근자보다 접근 허용범위가 더 넓다.
 일단 package private 접근자처럼 같은 패키지에서 접근할 수 있다.
 여기에 추가하여, 부모와 패키지가 다른 자식 클래스에서 부모 클래스의 protected 멤버에 접근할 수 있다.
 그림에서 #은 protected를 의미한다.
-<img src="https://lh3.googleusercontent.com/5vvQLh3ZOtQRYdIKPKlVx3yxAbEZp2zaQRttuz92uxNh5QyAmRMxb03KruDpvBPN2_CxojEtYpOzrTQf4WPv9gPfdf1QT5uAl56Fl94LJwUEfxYliMlaFl8X1u22biynmo3qCkk5zqR--ugX7lL1zgZKHyEfQGn6CJ9DFE6cbAf5e8EAzryXlQydlwb9jVmAC8zitbg0JcKc6eUt0feIZO_bxM5H4ZRm2iLTlFdT00L6q-15pSBEvXHAjl9xVcPAfWBAP65aJUedrce__y6KFOJ1zuP6GhQUDEMXycTxpP3aR0idH9YGpD-g23pA_jiQsulvKEe3mixzGIdgaYU9AeEpjwo0dmoHnQDiDUwgrYn_ArA5KU_LNhPoVrb0K_BymbLvEnt11kc_Y_Uj7x-DDP212HBZz4ua3hMgSzp3jTxQ8NuJ348zXuMPCv5H581EvIkTc1ChQ81yoDMzp6U6TLTkpAv9D-4lp2I9VSktzVfIhDaHxoxdo6UAmtCEkIS1hSBTBT4t6pyH6QaXt6oj1zlicFurbAmlDFeRc4S0ElnNDf1HqB_z2SFUprhKNJhk1KLNPe1s41Fwaa2t6-0YSywJ_uloN1rOVr76xPqmm-4LIe6j1hlkZ-Yq=w1203-h729-no" alt="Protected 접근자 예 그림" style="width: 100%;display: block;" /> 
+<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected 접근자 예 그림" style="display: block;" /> 
 </p>
 
 <h2>캡슐화 : 객체의 자료에 접근하려면 메소드를 통해야만 접근하도록 한다.</h2>
@@ -468,7 +468,7 @@ public class User {
 C:/eclipse/eclipse.exe를 더블클릭하면 이클립스가 실행된다.
 실행되면 먼저 이클립스는 워크스페이스(workspace)를 어디로 할 지를 묻는다.
 
-<img src="https://lh6.googleusercontent.com/-KuW40dO62II/TjJ6CM4LOrI/AAAAAAAAAX0/yXp6FWCapbM/workspace_launcher.gif" alt="workspace launcher" style="display: block;" />
+<img src="<c:url value="/resources/images/workspace-launcher.png"/>" alt="workspace launcher" style="display: block;" />
 
 워크스페이스(workspace)는 작업장이다.
 이클립스에서 워크스페이스는 하나 이상의 프로젝트들을 담는 그룻이다.
@@ -478,13 +478,13 @@ C:/eclipse/eclipse.exe를 더블클릭하면 이클립스가 실행된다.
 여기서는 워크스페이스를 C:/javawork 로 지정했다.
 지정을 하고 OK 버튼을 클릭하면 다음과 같은 환영메시지를 볼 수 있다.
 
-<img src="https://lh5.googleusercontent.com/-Ewvv_Kxiuis/TjJ6B5bj7FI/AAAAAAAAAXs/fulrpOzQ58I/welcome.gif" alt="welcome" style="display: block;" />
+<img src="<c:url value="/resources/images/welcome.png"/>" alt="welcome" style="display: block;" />
 
 환영 페이지에서 보이는 메뉴로
 이클립스 소개, 튜토리얼, 샘플, 새로운 릴리즈에 추가된 내용을 볼 수 있다.
 환영 페이지를 닫으면 아래와 같은 워크벤치(WorkBench)가 나타난다.
 
-<img src="https://lh5.googleusercontent.com/-lHZAcz_vsOU/TjJ6Byjr2BI/AAAAAAAAAXw/6Gk1YbZ1ytk/workbench.gif" alt="workbench" style="display: block;" />
+<img src="<c:url value="/resources/images/workbench.png"/>" alt="workbench" style="display: block;" />
 </p>
 
 <h3>이클립스 용어</h3>
@@ -553,31 +553,31 @@ Javadoc 주석를 보여준다.
 자바 프로젝트를  생성하려면 메뉴바에서 File &gt; New &gt; Java Project 선택하거나 
 또는 아래 그림과 같은 툴바에서 가장 왼쪽을 클릭한다.
 
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="width: 73px;display: block;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="width: 73px;display: block;" />
 
 프로젝트 이름을 HelloWorld 로 지정한다.
 그 외 설정은 특별히 지정하지 않아도 된다. 
 이클립스는 소스는 src, 컴파일된 바이너리 파일은 bin 디렉토리에 저장하여 관리한다.
 입력 후 Finish 클릭하면 HelloWorld 프로젝트가 생성되고 Package Explorer 에 표시된다
 
-<img src="https://lh4.googleusercontent.com/-8Tx99HODIdg/TjJ6A_ribLI/AAAAAAAAAXc/5xSvGBauvwc/s576/project_wizard.gif" alt="project wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/project-wizard.png"/>" alt="project wizard" style="display: block;" />
 
 아래 툴바 메뉴에서 두번째를 클릭한다. 
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="display: block;width: 73px;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="display: block;width: 73px;" />
 
 패키지 이름에 net.java_school.example 라고 입력하고 Finish 를 클릭한다.
 이제 Package Explorer 뷰에서 패키지가 보이게 된다.
 
-<img src="https://lh4.googleusercontent.com/-B5K99iKod5g/TjJ6AgcfJsI/AAAAAAAAAXY/yJU3KnGQQIU/package_wizard.gif" alt="package wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/package-wizard.png"/>" alt="package wizard" style="display: block;" />
 
 마우스로 Package Explorer 에서 net.java_school.example 패키지를 선택한 상태에서 아래 툴바 메뉴 중 오른쪽 마지막 버튼을 클릭한다.
 
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="display: block;width: 73px;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="display: block;width: 73px;" />
 
 클래스 이름으로 HelloWorld 라고 입력한다.
 메인 메소드가 필요하므로 public static void main(String[] args)에 체크한다.
 
-<img src="https://lh5.googleusercontent.com/-zy_swhmGj48/TjJ6AklwKJI/AAAAAAAAAXQ/-GWHhhwRugA/class_wizard.gif" alt="class wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/class-wizard.png"/>" alt="class wizard" style="display: block;" />
 
 Finish 를 클릭한 후 에디터에서 main 메소드를 아래와 같이 구현한다.
 </p>
@@ -602,11 +602,11 @@ public class HelloWorld {
 실행하려면 Package Explorer 에서 HelloWorld 클래스를 선택한 상태에서 오른쪽 마우스를 클릭하고
 컨텍스트 메뉴를 띄운 후 아래 그림처럼 선택한다.
 
-<img src="https://lh4.googleusercontent.com/-GQgOXNx6En4/TjJ6BuiXmTI/AAAAAAAAAXk/k3fGHc_rrYs/run.gif" alt="run" style="display: block;" />
+<img src="<c:url value="/resources/images/java-app-run.png"/>" alt="run" style="display: block;" />
 
 console 뷰가 생기면서 Hello World !가 출력된다.
 
-<img src="https://lh5.googleusercontent.com/-xC4-RE1ObLk/TjJ6Atp4agI/AAAAAAAAAXU/9fcwiLYVlH4/console_view.gif" alt="console view" style="display: block;" />
+<img src="<c:url value="/resources/images/console-view.png"/>" alt="console view" style="display: block;" />
 
 </p>
 
@@ -620,7 +620,7 @@ console 뷰가 생기면서 Hello World !가 출력된다.
 	classpath에 지정해 주지 않는다.</li>
 	<li>javac나 java의 classpath 옵션은 cp 옵션으로 대신할 수 있다.</li>
 	<li>Log 클래스에 대한 설명은 따로 하지 않는다. Log 클래스의 out 메소드는 static 메소드로 static 키워드에 대한 설명은
-	<a href="Static">static</a>에서 다룬다.</li>
+	<a href="static">static 키워드</a>에서 다룬다.</li>
 </ol>
 
 <div id="next-prev">

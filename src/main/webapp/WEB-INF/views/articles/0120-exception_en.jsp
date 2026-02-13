@@ -81,7 +81,7 @@ Assume that method1 calls method2 and method2 calls method3, as shown below.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/K3UACunLKTLY7LVG-8at3eGtxnlN40lsoUY2zCQFR6unJVRHyyQCvVrEXsazAZWJFPt6JostjTrZAS_EtdpwFIHcuNNEBlgNj0ky8pK6NE9cV5jnTjFiVQJbnwpx9N9I_MXraOdHCLnHa2tc5gdtY1cyJPGEeBVDd-PpxHU7SzubLrmPlRvrxLOPgUtnwqf3aUfDwFON-WFCkw1gYfxQ7cyZFrn9sEfwZi9cvm1EbT0yy6ruf153sohkL65YPGgGJOyNc_hShiBsYqQ8ZRnpGGMDx1k37HssWwAEomhJlp1D1odAuX1q3p2ocgcxTYSBuG5o63KNyWntjRvhgfXtOfUbHBxmWmEdSpJzL-2xJsiOAVWvkcTXzZEg9nyIJvY4kPmKnAWGQKqItDZdxIH0yFEo6bLSoXpYnMp6eKI8C0DgMSmDr71DPOjhpGtcabfZIei0xquRXu_fzIQCZLl2xxEILZQih7pxxzUSlh0qMzKFzCL8zdDk4TrjXAuJMMDUQtMtSYRGSqITQOINH3qFRSfWAoAgaDxg9eBVd8Pz8hbs4YGHDB5ofMvm4Z86DyBNfPdiaDXv1QE-w-NsXIleTYSqV08TazMF2KSyNCTUXA=w600-h256-no" alt="Exception Mechanism" /><br />
+<img src="<c:url value="/resources/images/exception-mechanism.png"/>" alt="Exception Mechanism" style="display: block;" />
 </p>
 
 <p>
@@ -103,7 +103,7 @@ When an exception reaches JVM, JVM terminates that program. Such termination is 
 <h3>Exception class hierarchy</h3>
 
 <p>
-<img src="https://lh3.googleusercontent.com/HxTwf_0OFEqI2B4LioJ7KjbK62ZvI0mvx0hLYD3bXci_m96ndspOwWfakVdQda37udd0efrC0hM7uW-kUMng1czT7OLGPNypLtk8ca__F6g3MQ7ar6mBNJJxaxRrhquT4or1ySOSzXusufwujhBXLR_yRy07qfepRNEf_r1D8UxhcMy9GvoMCKZEnH1CFY-bKKFWpFVxTL1vgHZDnv1PRza7udnRrDWLiZxhjwFswPaox-gMzJcMfwn5zLEPAsq5ru1Y1Kr1rsWJMtUr5wkgyICMbStXtiNzmL_jwoF8hftuGAVCJ_o3LNT7VyQKb57PGnSComNIDD5qMLBR277f14AtMNTLHDEwWiwTKpy4CXjnS7RqNRbnjvLLNkKPeRkI2iqI2uk4VulyUhooTR6Fsw6wuzMUJW-8gJxbh6qn4eTtT5DxYQ2vOzGRvUHVu7phWVCDpHGycXAJVX0ZHa9MeqzPG552pQHM0T7gJzJIIxK_45O6J9QlX1YeRaEiSIEX4eY01WMFzmhzHZQgQ99giaeoglCan7BsKbFcTFuxvDdiR2Slv62sw_ElrW6NU2MhVojYBKdIHNqIrjnws78T1MRHKU6VPGRmuKn8gmS9NEhSR6QWykjSer0L=w390-h141-no" alt="Exception API" />
+<img src="<c:url value="/resources/images/exception-api.png"/>" alt="Exception API" />
 </p>
 
 <h3>Frequent Exceptions</h3>
@@ -259,7 +259,7 @@ The following figure shows memory spaces accumulated on the stack according to m
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/8iA5BeJpk2GpLPnk6FUiNMxWn7HR0B7LOTwqO61iKdVFhrfTCnPqeoSxuKrgbLdbuf21bIJh-r4V4aK7iE3xsPe8u2m2Q-N6tHgybdn4FmmHsq_nEJj1oV2Z69f6G6GJJS8S6d3FQHOvFf2m19cFjV4OlPxxH_ywgts_udnVPfi7Wc3aiGU9IsaigZ-ST2A1CYjFFX742DfSx4x6AWqDl4FCVmiAsIkVtLDCmX5VhEg5v-S1-khEhCU3IyO9Hcwxmoli-XnaLWeWpcFjr4EjTZESVhyukN-9RF4kfQ2YOungmv6VKqpO4EiNihCQsetAKmf7RAM2vMOsI3c6F-rSRGVlb7NSBENxpmYQuSrk6cVuc3dqo0EDNf9tLXxsJWx3J4yKVAPcyyjIItmfYyRwdCk2grl3XtT6pTg5ZdnAclNBQVfn8mNhA70OD3vUd8yIbslHDsYM0Lqm4H9fpU12O5OjjmJkagBdNSpm4MAakH6UVXu200j3LLDW4ZnKQyt6okCyB9Emozwjlk7nMuK5TvtPyWR_GcL3fnMJpR4cZVjEwBIuv9H-J3Yh_tJQ1xKimyv1TND2SMVcEy-mjDI_ACKCTPcOcIo7eUh2XGw3ErxJ1kcbqkNzeNr4JMi4Qk34yWn0PyRnmSqip1hLyXhGG7uzvIflmgB45EPe-II53fn60vMQ6QI4Bvv-Pwxs=w1231-h771-no?authuser=0" alt="source stack printStackTrace output" />
+<img src="<c:url value="/resources/images/exception-print-stack-trace.png"/>" alt="source stack printStackTrace output" />
 </p>
 
 <p>	
@@ -292,7 +292,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");	
   }
-
 }
 </pre>
 
@@ -334,7 +333,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -376,7 +374,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -416,10 +413,8 @@ public class Test {
     <strong>} catch (ArithmeticException e) {
       System.out.println(e.getMessage());
     }</strong>
-	
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -459,10 +454,8 @@ public class Test {
     } <strong>finally</strong> {
       System.out.println("Executing a finally block");
     }
-		
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -509,10 +502,8 @@ public class Test {
     } finally {
       System.out.println("Executing a finally block");
     }
-		
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -565,10 +556,8 @@ public class Test {
     } finally {
       System.out.println("Executing a finally block");
     }
-	
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -604,10 +593,8 @@ public class Test {
     } finally {
       System.out.println("Executing a finally block");
     }
-		
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -645,7 +632,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -703,7 +689,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -740,7 +725,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -778,7 +762,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -807,7 +790,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -841,7 +823,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -877,7 +858,6 @@ public class Test {
     <strong>method1();</strong>
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -906,7 +886,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -944,7 +923,6 @@ public class Test {
     method1();
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -997,7 +975,6 @@ public class Test {
     }
     System.out.println("Normal Termination");
   }</strong>
-
 }
 </pre>
 
@@ -1058,7 +1035,6 @@ public class Test {
     }
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -1093,7 +1069,6 @@ public class Test {
     }
     System.out.println("Normal Termination");
   }
-
 }
 </pre>
 
@@ -1161,7 +1136,6 @@ public class InsufficientBalanceException extends Exception {
   public InsufficientBalanceException(Throwable cause) {
     super(cause);
   }
-
 }
 </pre>
 

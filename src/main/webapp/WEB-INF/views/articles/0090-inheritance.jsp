@@ -70,7 +70,6 @@ public class Employee {
 		
 		return sb.toString();
 	}
-	
 }
 </pre>
 
@@ -129,7 +128,6 @@ public class Manager {
 		
 		return sb.toString();
 	}
-	
 }
 </pre>
 
@@ -200,7 +198,6 @@ public class Manager <strong>extends</strong> Employee {
 		
 		return sb.toString();
 	}
-	
 }
 </pre>
 
@@ -375,7 +372,7 @@ public Manager(String name, String position, String telephone, String manageJob)
 </p>
 
 <div style="float: left;width: 300px;">
-	<img src="https://lh3.googleusercontent.com/ChRXGhB1ac9Tn3jz_wnW2ArW44esVkahxjX7ocSNa2EUaeNGNfsi6dxK5SVkQqLZaHi4cifZoRPo6Gu1UXbCY1lp8hFNJY4nUhV7b7S_sVVHBXg2YdZcoMmm4C78XxbTpNI9-Exnr82X9HKLl6pb77odMnBVZS3HMU4fimIaFsfhJrCTAakHRgPpzi4Bj8HHJUZxSPY7Dy5-i73Xkl65IeaAYcVVZhMA-hLfDD1LCMQi0HBFms6vKUsj4mgEeCz5cxqu5NKCCo906RqDu24E9od-6Hf76VIlV33DmGl145JSQHSEMdHpf2UjD3nzqAtt_SUGdb0Qkn4sCaabHf2-9WOB8hihBrQNvf_SQv1f-_Gv2tV7aszgCl8bNsxWh6mFFrqQ5ajZCBiMpgZt-d4Byq_TCJOBm5_6SUEtBDp-Oev8EpCarr47X5ZXmWlIcoNO5OvbG4fVl7WVJHlgFTQYEOjs8IWsLVAKOWJQg3APQ20KemkvNDBETEOXp-3S6oWzDyegad8BVztC728TTKSpUZsOkN5YUiUn9eRTkU9KqNdEaR3oOW0MI44mBCQ6ljkDLFo20gVkY1hFeJXgsB3wuJK3VxKaKuURUrzhvkqXHPgG2F9ZJOsZZkYd=w280-h194-no" alt="다형성 그림" />
+	<img src="<c:url value="/resources/images/polymorphism.png"/>" alt="다형성 그림" />
 </div>
 
 <pre class="prettyprint no-border">
@@ -420,7 +417,7 @@ System.out.println(jang);
 println() 메소드 내부에서 이 레퍼런스가 가리키는 객체의 toString() 메소드를 호출한다.
 실제로 힙 메모리에 생성된 객체는 관리자 객체이므로 관리자 클래스에서 오버라이딩한 toString() 메소드가 호출된다.
 아래 그림에서 Manager, Employee, Object 타입 레퍼런스 모두 (2)와 (3) 메소드를 보지 못한다. 따라서 (1) 메소드가 호출된다.
-<img src="https://lh5.googleusercontent.com/-srKMgjnwSHg/UzqSHOCBfeI/AAAAAAAABoM/5GeaD937isI/w1040-h768-no/Manager-Object.png" alt="Manager객체 그림" width="100%" />
+<img src="<c:url value="/resources/images/manager-object.png"/>" alt="Manager객체 그림"/>
 </p>
 
 <dl class="note">
@@ -493,9 +490,7 @@ public abstract class AbstractEmployee {
 	}
 	
 	<strong>//추상메소드
-	public abstract void doWork();
-	</strong>
-	
+	public abstract void doWork();</strong>
 }
 </pre>
 
@@ -545,8 +540,7 @@ public class Employee extends AbstractEmployee {
 	<strong>
 	public void doWork() {
 		System.out.println("일한다");
-	}
-	</strong>	
+	}</strong>	
 }
 </pre>
 
@@ -632,7 +626,6 @@ public class Driver <strong>extends Employee</strong> {
 	public void transport() {
 		System.out.println(this.getName() + " 물건을 운송한다");
 	}
-	
 }
 </pre>
 
@@ -658,7 +651,6 @@ public class Transportor {
 	public void transport() {
 		System.out.println("물건을 운송한다");
 	}
-	
 }
 </pre>
 
@@ -676,7 +668,6 @@ public interface Drivable {
 	public void drive();
 	
 	public void transport();
-
 }
 </pre>
 
@@ -715,7 +706,6 @@ public class Driver extends Employee implements Drivable {
 	public void transport() {
 		System.out.println(this.getName() + " 물건을 운송한다");
 	}
-	
 }
 </pre>
 
@@ -743,7 +733,6 @@ public class Transportor implements Drivable {
 	public void transport() {
 		System.out.println("물건을 운송하다");
 	}
-	
 }
 </pre>
 

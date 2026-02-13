@@ -424,7 +424,7 @@ You can experience polymorphism by assigning a subclass type reference to a supe
 
 <div>
 <div style="float: left;width: 300px;">
-	<img src="https://lh3.googleusercontent.com/ZfOxKrlh2ZiCf1BgiINr49yzmknMUiktiGXljDk8dp5EBlmI-M7V15swfwyAYu9K0aH0W3ENkfHNfhxlvHuWg3M4WImdp5-Sg745mqzTW70Yx_SfJ22gxbaihKVPqcsWFE2nVY80a6z26xfSWnVA8pQYflcIKkug5taZpJ4Kcp6yzHyg-knHUXws3GBVhIvEpK5GLdqa_H-MgOOuoUPci7I-02N59ZWtc6yGH_kFSippiYR-_uiwrl4-Y3aFUPMcFqd03dMZqZGVJjl-oH-lQNkXXP5XVP1_-WIb2crWvJgYgnZTbN5wffwHJVhVK6jYvFJwL2KFDwhP-uVGpPlYBx-soQqSUXeT56FGbPHPvzY8LHq2I7QEQYUwMMzrM8LViXR2I2Z18Eg91E3DVuLQUS7bmALGXi-Q_R6WJe-io6szn3Xz1Z1OFd9rxWpCd42RK7NvqzbAHSygytETY2Vj5Cun5uej8glBA6KQgizaEd_a_HVCpvAlTbEHHsLzsnPSFOW_X_BEHZFlRaJ_VvzpFVCuiMY6bQOvkpjqkDOor4cpS8ZeeIjOFZjoFi_DIDMr8zt852alJW5xXMlO06XsVwjb5eD1E4NIGRMPUPr95i8KSJI9G-Hh=w280-h194-no" alt="Polymorphism" />
+	<img src="<c:url value="/resources/images/polymorphism-en.png"/>" alt="Polymorphism" />
 </div>
 <div style="float: left;">
 <p>
@@ -485,7 +485,7 @@ In the last line, <strong>System.out.println(king)</strong>, the variable king h
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/SLLiSuKJ0r4l_ZWFW719zO_J2VZ4ANQgkyvSqTPAN7RI3UAxc3H17Pht9TELt4PrdVMPQmdn2YRjJz9uOPeuHOp0ec5i-6RBLc2wKuKcq4jtaZVyUIzeMdFXe05RvN8ypw38t4hB_0hR-USDlO4hTFH1P5jasjMqg7fy0gEWLhGPir1aMwt7wS0YEgiuZLTdHT1y0W38lxlvACGayt2XYhvcIqP_wKfwJBoTkjNjO18h1F9O1sOYR6nKdcRxxMaBF0mKgbVu4srqN4Lr8smrlKhEc5Mq4uo_yzRb9PkiufGvNm9Ze9gLq8INw-7v01FVym77MfFjgt6bXAN7luiDtoQ7BWFUsBUgaayu-kU9DvNclDx1RNBn1cuRtLaCV0VQKwu0hhVIOa74YFCVVewyTeiGC26urQ6AABCWTiR3cuukEPB6iOPRb8walvd5NSqxX7HYSqqCtB6gY2aRtb6zrVetZwWPbR_p0sTMxjmZENl85KIrQu-VGfMoXhJVZ3KKDXA2Y4KDNyNdKQTbFQFGhPjGOsrO38LD713kF3JQhcw7fzjbXChpjCTd05vW5o3kxo8BiTY_FciU08m9tHze3XjbXx_4qkkcdaQbCPfSr5SbtWBoeDic=w1040-h768-no" alt="Manager Object"/>
+<img src="<c:url value="/resources/images/manager-object-en.png"/>" alt="Manager Object"/>
 </p>
 
 <h3>Method Overloading</h3>
@@ -572,8 +572,7 @@ public abstract class AbstractEmployee {
   }
 	
   <strong>//Abstract method
-  public abstract void doWork();
-  </strong>
+  public abstract void doWork();</strong>
 }
 </pre>
 

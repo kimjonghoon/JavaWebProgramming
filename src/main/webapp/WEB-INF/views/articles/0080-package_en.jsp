@@ -56,7 +56,7 @@ Create the Account.java source file in the C:\javaApp\bank\src\javabank director
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/4_-RQhRJVbX-mfA27Smf9-SVmX-CLh74XRwPg8IAVLHXXZCt1vTt044Hz_s9r8Vw6CHLrJIFc9qcGJRhGE-8fqm6g5LiNAljfaWbmmL_bPUy2Axd7vs2z-Iv_r-mLINKqsfLHNhMDFAglKtS2cW22kSuyCsskuFElwiT8dTVa-WKOFSyN-7plO-GnHPa05iq2z0VKT2LaHIdMTQEkK2hyjN4LRy6ovwQxUU5AQMscqKNOZOLdBdPMDcnBGtKLPHMOROC6TMyvPs_MZnATk_vMcOnv8WA75ZDfV6o_dHiuEiCPr3DctXOvm44sSLugpAmdwwf3L0mCAwtJssFlTop5utU6vrzRGk9-8TNT4WqQgVSLHJGcYotfnwLMR7YmYJqHX_fBxk9TgEHTFfmNpt4DBad_oOYFY8DBpQhHuDIjWm_3xMgSnrZJF4JtVtDeS0cBDGVtPJnKIzZwjFBlvrf8z0oHYTPR0r7IZ4pYWUufM93eYMlWXVKSv9az-P65jUsmAAVMhRXMovLHa78pv1qVX1Ot8YlevPAJWVWRR15Jm8AV8CfVr3-jGiIlr9fliQp0ypjnvP3xyHadi_xnj19cULMfBeSx_ibecqIZfui44RgBTow7xagSMkp=w191-h129-no" alt="package example directory" style="width: 191px;display: block;" />
+<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="package example directory"/>
 </p>
 
 <p>
@@ -77,7 +77,7 @@ If you want, the Log class belongs to the package named net.java_school.commons,
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/7IxYec5B9PFcSJVO1G8eUifIy909zozlxz08Ce4H9xpqYsDV2jVF479yxzGipLpcZXuRuAfrOpYET4cTT5tF4ap-bmf99tt8PjwuUl_EI6QwaBqb3zCL2b6n2Cn_S_ZuA6hiIFk_8-rUtCB0LuzcR4RuhL44MvMMK0zzUnWgvx9y_wioOK12oYM9zyH_TFBjY86oO_8fPkV9Mefpj5fylAkHGQgRfPpYpeIs6B7SRJomJ5w2UAsuw2zLZ66nnEe7PyYvrndOl9-qKpuqR5EAz0UuDV_SXrzm3pIiEnTbUvclFwvi_wivpyuNJS6Csi03LTSsxShi2mYWTxSgXjOaQMXaW3andFo-VJaBMSAWwesI0gQ3_cnwf-ba7kAnQ_Ymj5PqC77RctAkyyakg-3FSEyw5zwZbURKHvFQSci0lH2qKQowfYmXW5sesn4RYis-KzTMv7HA91gP9gE7VIQDgtb41c1wWXgtZBcdijdJuexmXTeZ1ljDtNC-59NXpziXgfpuqeG5lNNwu16zg3xa3POQC38Qge7G1Bn_x2LdYMS-_MW0ds05ymhEzBhDfXc8UB3XK_p6fJLsMJLwfoOp-nJPSab00049_tDB3ZErJg=w184-h125-no" alt="javaApp-Log.java" style="width: 184px;display: block;" />
+<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="Log.java"/>
 </p>
 
 <p>
@@ -113,7 +113,7 @@ Suppose you specify the C:\javaApp\bank\bin directory with the -d option when co
 </p>
 
 <p>
-<img alt="Account.class and Account.java" src="https://lh3.googleusercontent.com/NpXsGCGj5ogeggXJVFF5zZNKI7Rkv2P4E_W5FVeJxQQJZF5T4R5MyBfARrsy_zLVA0oj8uGvzA_lRF8yJNR0Dfa51qnx80v6aS_ULWEy7BXYfXPcygH2S_Y9ISwBqU1rGpoUZYdtpK2XFO4DOA5kw-vJ6nyCUDaAEiD-D1kJS-bcix4gZYjQnguCfo-4gXb_gN62pUeLAr_nnAWmd1e3g5LsGFR3VsaIoqT2hjkeWtFAhGhkMHTtp6CYJCxFcBEUakSGs8qmp6ytDHx_80suxB05Iiwp66Z_EYwI5rQeF-uDkr1R1tIMI9WR2QZKJgQ0zq_wYyqpYp3ne5cOioX5z6hDHOdu4ETpAJ6yV4ft_DXRHVbEG3YfHVHBHOTD9kQ17GoWWEUvtMYYJjW0qto_ipQh7cZLkVr-Y8cZXCOpkGm5wINT7AS9aB2TASNo5Dv0vFVAPQzigBM9PoJFeqZXoy9EbAtbIAPswfXk-euQfqANIH0b06_PQDqOjjf9PrfQRYp7ecxWXF3lLHAlhRj6eaFWKc91G-rbWJjr_SoLUrWdS5awwg0otIaL0gAlJlbRxK6ltAjqkFU3PsqYNauzLWmyoQx6hI4PRCkPXsUqQA=w206-h151-no" style="width: 206px;display: block;" />
+<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" />
 </p>
 
 <p>
@@ -220,7 +220,7 @@ C:\javaApp\commons\bin Log.java
 </pre>
 
 <p>
-<img alt="Log.class and Log.java" src="https://lh3.googleusercontent.com/oEjNKV3440WaNbNmZWjW4cWu23RJXLQREn3srfSuLw-BqVEiXuEGdujYuo0cEZ6eNpKElsnOKrGQeSViazfgCCmCB-ZRBB4X7FDAieiDnq1lfAmYGXjS1bMYb0MGJl5qXRSajBWqN9V79sdv-UpEJigd9xEfRoqO1lDetWRXTNpBeXdqWddY1QiJESGurHsSNZbrfxtzYG5wT2JUIhOtzoj5l8sgeag0qCCQiyxM3Nq9SBy3HteOu7BNuTksCS2WWy5ZksXe0X6h2TVNypkX9dNdHxFiGDdKpl24eKAf6_cSokauzHX_uJCKjx9yNIYV1418PI8U6cn0EXdRPACeLYvyK9r9e0vEoyKIBz39Ba_IZRYAr_n_JN9h4OPUGf61WBz5OLxDaFK_g7M5yVefEfVQkPCZqW18AsanYFSdTyuPLkCPihlZNhGTbaEp44WlspkDJlrZdEAdn3Mzc4H6vAU-OaCeXgAXtfzkUq_riVzXJKU-lkEKM2P7JmgeCkjgHpbhBIT1p3aM4tgO_eJ6vKZG0_IXIOoR5149mnUUpssywElYZo_iG4zhweQI9NeqNc1TpE9dHi1jwMfQpeA5jijFIJce4KhD9z7D1EZ7zw=w223-h226-no" style="width: 223px;display: block;" />
+<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="width: 223px;display: block;" />
 </p>
 
 <p>
@@ -368,7 +368,7 @@ Suppose you have created a Bank, Customer with the public access modifier in the
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/TcK55UcRN3Yw7Hr8dBshFezFW3hMC_lUQ3wcmIqbFHjReVuTDnwDDUnH7mtMT5LprUKupH4o-0fZmiy2B4w1eARwa5HqWWvKOg0WZt0AYc4-Jn2usu6pF8n0GERUsBWMGMvgIjygJt8MNJFuI9TaAJYdc-SVa1GftAcofXbvhhR5nkyN6NZhHulQelFamknan658fGd-R8Dj_46t6MnD3DwmSl7olhv_fkwrYUNkHMLfru65JpESL1R468UWb3mZ0V_0dtNftcGCfkSk8Ixtql17tCiaOwaxcniW4hQynPHbZ6w6WYPpZkLgpGh-YK3MBO0RWtQs7z4ISx85Tf83RQF8XOKpWxz2-48dqEqZ-6F4m6EwLtY3ocXlhHmGzvIa5GOmu58x2pTpVGRUh6AAzRf2YKWOA0rqsSQGjL4xafSksgRMUVFwmL5vyFW2snRe8fx8_ROH4eFxuIfCwmdxtDC2XtijPhREHAymN3hm5D03qdzbDgRTyDzusrxS4Mf_qnX7fixVM-lviHTyZhbI_dFygAKp1ohsXgpZrxsJwUGalSTdGIEwuegyzp64dBcVoawb3gx4Osi1rW9G4WzpZYNRBzdnZwcrO4uZRXIE6B0e9LQ7apHN-duL=w1615-h869-no" alt="public access modifier figure " style="width: 590px;display: block;" />
+<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="public access modifier figure " style="width: 590px;display: block;" />
 </p>
 
 <p>
@@ -392,7 +392,7 @@ Suppose you have changed the public to the package-private access modifier in Ba
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/oJLK2Q9DcK_eTLOSGMXUnYUHYKbomwYicpeVfoqmtNkaf2UmGD5ThO1wrJxdLXofryHdpus0da9tQixu6aEeUyQ14cuU9TclwhkCCRqyYrHmAwSol3ptPZLf5oyHJEYCZDFl5ZEtOpM0i5ctZGXlDCVO8SQglr89udzzaJaqTF_Lj4CrKODgLVceqjx2jo3jNTBQL8Q-6DCjdpZ5qLpqCWPYY3OxOaN_LsJlhflVGg15BU1Z8eQPsu3yhs1IAdRtVgb51oK4YioCDe7Uoc6-Qp0ABwAdzQP0XK3E8WDLHhG7VyueiL_cu0hWM2tFGteQHS3TtXzpC0Ro9bD1g8m_-k7j_3O4E01jRQ_5Wu0p3KMjut5h3ipHQvSYaAeIXswEy75ZmuaH5tm9o78zRHmjPyqGktlsPcIQgrK9tk-CvLOqEVdzJ0faKFw6PITE89jV6P0ErhPClaRFsdkwlDy1gC0sPchdEi7PZWzC64J-RcSFAoL6KhdPOwN8VZQg_p4LgdWgUneHYV5CTzjzEsmO6SuBjb5qPATsK079hQSBngrxqBj-y1Nc61X65hHjb4h9lNjN3d72-oIrBP6r9pbD-Av1A2lNVTyvAIKwzIJIsZXO2gn5ZEAZMFdt=w1615-h886-no" alt="package private diagram" style="width: 590px;display: block;" /><br />
+<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private diagram" style="width: 590px;display: block;" /><br />
 </p>
 
 <p>
@@ -423,7 +423,7 @@ In the figure below, # means protected.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/5vvQLh3ZOtQRYdIKPKlVx3yxAbEZp2zaQRttuz92uxNh5QyAmRMxb03KruDpvBPN2_CxojEtYpOzrTQf4WPv9gPfdf1QT5uAl56Fl94LJwUEfxYliMlaFl8X1u22biynmo3qCkk5zqR--ugX7lL1zgZKHyEfQGn6CJ9DFE6cbAf5e8EAzryXlQydlwb9jVmAC8zitbg0JcKc6eUt0feIZO_bxM5H4ZRm2iLTlFdT00L6q-15pSBEvXHAjl9xVcPAfWBAP65aJUedrce__y6KFOJ1zuP6GhQUDEMXycTxpP3aR0idH9YGpD-g23pA_jiQsulvKEe3mixzGIdgaYU9AeEpjwo0dmoHnQDiDUwgrYn_ArA5KU_LNhPoVrb0K_BymbLvEnt11kc_Y_Uj7x-DDP212HBZz4ua3hMgSzp3jTxQ8NuJ348zXuMPCv5H581EvIkTc1ChQ81yoDMzp6U6TLTkpAv9D-4lp2I9VSktzVfIhDaHxoxdo6UAmtCEkIS1hSBTBT4t6pyH6QaXt6oj1zlicFurbAmlDFeRc4S0ElnNDf1HqB_z2SFUprhKNJhk1KLNPe1s41Fwaa2t6-0YSywJ_uloN1rOVr76xPqmm-4LIe6j1hlkZ-Yq=w1203-h729-no" alt="Protected access modifier figure" style="width: 590px;display: block;" />
+<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected access modifier figure" style="width: 590px;display: block;" />
 </p>
 
 <h4>package-private</h4>
@@ -514,7 +514,7 @@ Eclipse asks you where to specify your workspace.
 </p>
 
 <p>
-<img src="https://lh6.googleusercontent.com/-KuW40dO62II/TjJ6CM4LOrI/AAAAAAAAAX0/yXp6FWCapbM/workspace_launcher.gif" alt="workspace launcher" style="display: block;" />
+<img src="<c:url value="/resources/images/workspace-launcher.png"/>" alt="workspace launcher"/>
 </p>
 
 <p>
@@ -528,7 +528,7 @@ You can see the following welcome message.
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-Ewvv_Kxiuis/TjJ6B5bj7FI/AAAAAAAAAXs/fulrpOzQ58I/welcome.gif" alt="welcome" style="display: block;" />
+<img src="<c:url value="/resources/images/welcome.png"/>" alt="welcome"/>
 </p>
 
 <p>
@@ -541,7 +541,7 @@ The following workbench appears.
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-lHZAcz_vsOU/TjJ6Byjr2BI/AAAAAAAAAXw/6Gk1YbZ1ytk/workbench.gif" alt="workbench" style="display: block;" />
+<img src="<c:url value="/resources/images/workbench.png"/>" alt="workbench"/>
 </p>
 
 <h3>Eclipse Terminology</h3>
@@ -607,7 +607,7 @@ Select File - New - Java Project from the menu bar or click the leftmost button 
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="width: 73px;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="width: 73px;" />
 </p>
 
 <p>
@@ -618,7 +618,7 @@ Click Finish, and the HelloWorld project will be created and displayed in the Pa
 </p>
 
 <p>
-<img src="https://lh4.googleusercontent.com/-8Tx99HODIdg/TjJ6A_ribLI/AAAAAAAAAXc/5xSvGBauvwc/s576/project_wizard.gif" alt="project wizard" />
+<img src="<c:url value="/resources/images/project-wizard.png"/>" alt="project wizard" />
 </p>
 
 <p>
@@ -626,7 +626,7 @@ Click second on the toolbar menu below.
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="width: 73px;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="width: 73px;" />
 </p>
 
 <p>
@@ -635,7 +635,7 @@ You will see the package in the Package Explorer view.
 </p>
 
 <p>
-<img src="https://lh4.googleusercontent.com/-B5K99iKod5g/TjJ6AgcfJsI/AAAAAAAAAXY/yJU3KnGQQIU/package_wizard.gif" alt="package wizard" />
+<img src="<c:url value="/resources/images/package-wizard.png"/>" alt="package wizard" />
 </p>
 
 <p>
@@ -643,7 +643,7 @@ Select the net.java_school.example package with the mouse and click the last but
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-5W4KIyzc7G8/TjJ6Bg9McGI/AAAAAAAAAXo/p2kJo0YJEv4/toolbar.gif" alt="toolbar" style="width: 73px;" />
+<img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="width: 73px;" />
 </p>
 
 <p>
@@ -652,7 +652,7 @@ Check the public static void main (String [] args) checkbox.
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-zy_swhmGj48/TjJ6AklwKJI/AAAAAAAAAXQ/-GWHhhwRugA/class_wizard.gif" alt="class wizard" />
+<img src="<c:url value="/resources/images/class-wizard.png"/>" alt="class wizard" />
 </p>
 
 <p>
@@ -679,7 +679,7 @@ To run the bytecode, right-click the HelloWorld class in the Package Explorer, o
 </p>
 
 <p>
-<img src="https://lh4.googleusercontent.com/-GQgOXNx6En4/TjJ6BuiXmTI/AAAAAAAAAXk/k3fGHc_rrYs/run.gif" alt="run" />
+<img src="<c:url value="/resources/images/java-app-run.png"/>" alt="run" />
 </p>
 
 <p>
@@ -687,7 +687,7 @@ The Console View prints Hello World!.
 </p>
 
 <p>
-<img src="https://lh5.googleusercontent.com/-xC4-RE1ObLk/TjJ6Atp4agI/AAAAAAAAAXU/9fcwiLYVlH4/console_view.gif" alt="console view" />
+<img src="<c:url value="/resources/images/console-view.png"/>" alt="console view" />
 </p>
 
 <div id="next-prev">
