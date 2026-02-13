@@ -79,5 +79,10 @@ Because a bank has multiple accounts, Bank and Account objects have a "has a" re
 <p>
 In Java, you can implement Composition and Aggregation by declaring variables that store the part objects' references in the body object.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/javabank-design"/>">Javabank - Application Design</a></li>
+    <li>Prev : <a href="<c:url value="/java/exception"/>">Exception</a></li>
+  </ul>
+</div>
 </article>

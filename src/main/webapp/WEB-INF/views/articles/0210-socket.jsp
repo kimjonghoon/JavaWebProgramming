@@ -939,5 +939,10 @@ public void run() {
 	<li><a href="http://www.hanb.co.kr/book/look.html?isbn=89-7914-377-X">IT CookBook, 자바 5.0 프로그래밍: 차근차근 배우는 자바 AtoZ -한빛미디어</a></li>
 	<li><a href="http://mastmanban.tistory.com/350">윈도우 7 방화벽에서 포트 열기</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/RMI"/>">RMI</a></li>
+    <li>이전 : <a href="<c:url value="/java/logging"/>">Logging</a></li>
+  </ul>
+</div>
 </article>

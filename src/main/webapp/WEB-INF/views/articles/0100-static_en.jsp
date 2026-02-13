@@ -225,5 +225,10 @@ B(int) has executed.
     <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html">http://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html</a></li>
     <li><a href="http://www.guru99.com/java-stack-heap.html">http://www.guru99.com/java-stack-heap.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/collection"/>">Collection</a></li>
+    <li>Prev : <a href="<c:url value="/java/inheritance"/>">Inheritance</a></li>
+  </ul>
+</div>
 </article>

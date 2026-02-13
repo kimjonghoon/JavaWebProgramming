@@ -339,5 +339,10 @@ public <strong>synchronized</strong> void deposit(double amount) {
 컬렉션에서 Vector는 '스레드 안전' 한데 ArrayList는 그렇지 않다고 했다.
 Vector의 모든 메소드는 synchronize가 적용되어 있다.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/io"/>">자바 IO</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속적용</a></li>
+  </ul>
+</div>
 </article>

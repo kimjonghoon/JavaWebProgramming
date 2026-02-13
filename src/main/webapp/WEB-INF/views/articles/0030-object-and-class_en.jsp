@@ -269,13 +269,10 @@ standard output method
 The only difference between System.out.print() and System.out.println() is that System.out.print() does not change the line after the output.
 </p>
 
-</article>
-
-<article>
 <div id="next-prev">
   <ul>
-    <li>Next : <a href="${javaUrl}/keyword-identifiers-comment">Keyword, Identifiers, Comment</a></li>
-    <li>Prev : <a href="${javaUrl}/object-and-class">Object and Class</a></li>
+    <li>Next : <a href="<c:url value="/java/identifiers"/>">Keyword, Identifiers, Comment</a></li>
+    <li>Prev : <a href="<c:url value="/java/object-and-class"/>">Object and Class</a></li>
   </ul>
 </div>
 </article>

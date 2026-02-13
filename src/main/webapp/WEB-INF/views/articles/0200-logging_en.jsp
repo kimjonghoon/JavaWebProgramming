@@ -472,5 +472,10 @@ Check if the log has accumulated in the javabank.log in the project root directo
 	<li><a href="http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html">http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html</a></li>
 	<li><a href="http://logback.qos.ch/manual/configuration.html">http://logback.qos.ch/manual/configuration.html</a></li> 
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/socket"/>">Socket</a></li>
+    <li>Prev : <a href="<c:url value="/java/io"/>">Java IO</a></li>
+  </ul>
+</div>
 </article>

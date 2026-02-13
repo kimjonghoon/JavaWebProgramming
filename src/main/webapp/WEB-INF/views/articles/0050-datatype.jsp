@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>데이터 타입과 타입 캐스팅</title>
-<meta name="Keywords" content="리터럴,Literal,변수,Variable,자바 데이터 타입,Java Data Type,원시 데이터 타입,Primitive Data Types,boolean,char,byte,short,int,long,float,double,참조 데이터 타입,Reference Data Types,타입 캐스팅,Type Casting,업-캐스팅,Up-Casting,사칙연산에서 업-캐스팅,Up-Casting in arithmetic,다운 캐스팅,Down-Casting" />
-<meta name="Description" content="자바 데이터 타입과 타입 캐스팅에 대해 설명합니다" />
-<link rel="stylesheet" href="../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -379,8 +365,10 @@ y는 double 타입으로 자동 캐스팅된다.
 	<li><a href="http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals">http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Literal_%28computer_programming%29">http://en.wikipedia.org/wiki/Literal_%28computer_programming%29</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/arrays"/>">배열</a></li>
+    <li>이전 : <a href="<c:url value="/java/identifiers"/>">식별자</a></li>
+  </ul>
+</div>
 </article>
-
-</body>
-</html>

@@ -217,5 +217,10 @@ Place the bytecodes of Hello and Client on the client machine and the bytecodes 
 <ul id="references">
 	<li><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html">http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/jdbc/intro"/>">JDBC Introduction</a></li>
+    <li>Prev : <a href="<c:url value="/java/socket"/>">Socket</a></li>
+  </ul>
+</div>
 </article>

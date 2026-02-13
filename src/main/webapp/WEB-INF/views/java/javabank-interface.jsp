@@ -14,30 +14,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
 <link rel="stylesheet" href="<c:url value="/resources/css/windows.css"/>" type="text/css" />
 <script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
-<script>
-$(document).ready(function() {
-	//title
-	$('title').empty();
-	const title = $('#content > article > h1').first().html();
-	$('title').append(title);
-	//Keywords
-	const keywordsArr = $('#content > article em').map(function() {
-		return $(this).text();
-	}).get();
-	const keywords = keywordsArr.join(',');
-	$("meta[name='Keywords']").attr("content", keywords);
-	//Description
-	const description = $('#content > article i').first().html();
-	$("meta[name='Description']").attr("content", description);
-
-	$('pre.prettyprint').html(function() {
-		return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
-	});
-	$('pre.prettyprint').dblclick(function() {
-		selectRange(this);
-	});
-})
-</script>
+<script src="<c:url value="/resources/js/article-commons.js"/>"></script>
 </head>
 <body>
 <div id="wrap">
@@ -56,10 +33,10 @@ $(document).ready(function() {
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../articles/0040-keywords-identifiers-comments.jsp" />
+		<jsp:include page="../articles/0170-javabank-interface.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../articles/0040-keywords-identifiers-comments_en.jsp" />
+		<jsp:include page="../articles/0170-javabank-interface_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->

@@ -452,5 +452,10 @@ LogTest4.java를 다시 실행한다.<br />
 	<li><a href="http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html">http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html</a></li>
 	<li><a href="http://logback.qos.ch/manual/configuration.html">http://logback.qos.ch/manual/configuration.html</a></li> 
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/socket"/>">소켓</a></li>
+    <li>이전 : <a href="<c:url value="/java/io"/>">자바 IO</a></li>
+  </ul>
+</div>
 </article>

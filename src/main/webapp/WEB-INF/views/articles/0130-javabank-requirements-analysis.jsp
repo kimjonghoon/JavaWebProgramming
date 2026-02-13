@@ -89,5 +89,10 @@ Transaction, Bank, Account 클래스에서 미루어 짐작 가능한 게터<sup
 <ul id="references">
 	<li><a href="http://www.infopub.co.kr/bookinfo/bookinfo.asp?sku=05000195">New 알기쉬운 Java 2 J2SE 1.4</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/javabank-design"/>">자바은행 - 구현</a></li>
+    <li>이전 : <a href="<c:url value="/java/exception"/>">예외</a></li>
+  </ul>
+</div>
 </article>

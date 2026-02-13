@@ -349,5 +349,10 @@ public <strong>synchronized</strong> void deposit(double amount) {
 <p>
 The Vector is thread-safe, but the ArrayList is not. All methods of Vector are synchronized.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/io"/>">Java IO</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Javabank - Inheritance</a></li>
+  </ul>
+</div>
 </article>

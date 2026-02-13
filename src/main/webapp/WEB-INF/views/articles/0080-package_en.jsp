@@ -690,4 +690,11 @@ The Console View prints Hello World!.
 <img src="https://lh5.googleusercontent.com/-xC4-RE1ObLk/TjJ6Atp4agI/AAAAAAAAAXU/9fcwiLYVlH4/console_view.gif" alt="console view" />
 </p>
 
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/inheritance"/>">Inheritance</a></li>
+    <li>Prev : <a href="<c:url value="/java/operators"/>">Operators</a></li>
+  </ul>
+</div>
+
 </article>

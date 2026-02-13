@@ -784,5 +784,10 @@ b.drive();
 	static이 붙은 변수는 인스턴스 변수가 아니며, static이 붙은 메소드는 객체 행위를 정의하는 메소드가 아니다.
 	static에 관한 자세한 내용은 다음 장에서 다룬다.</li>
 </ol>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/static"/>">static 키워드</a></li>
+    <li>이전 : <a href="<c:url value="/java/package"/>">패키지</a></li>
+  </ul>
+</div>
 </article>

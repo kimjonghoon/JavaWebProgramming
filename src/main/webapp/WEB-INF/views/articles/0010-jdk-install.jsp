@@ -178,7 +178,7 @@ Hello World!
 
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="${javaUrl}/features">자바의 특징</a></li>
+    <li>다음 : <a href="<c:url value="/java/features"/>">자바의 특징</a></li>
   </ul>
 </div>
 </article>

@@ -699,5 +699,10 @@ Java provides AutoBoxing and Auto Unboxing for ease of development. You may have
 <ul id="references">
 	<li><a href="http://java.sun.com/developer/onlineTraining/collections/Collection.html">http://java.sun.com/developer/onlineTraining/collections/Collection.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/exception"/>">Exception</a></li>
+    <li>Prev : <a href="<c:url value="/java/static"/>">static keyword</a></li>
+  </ul>
+</div>
 </article>

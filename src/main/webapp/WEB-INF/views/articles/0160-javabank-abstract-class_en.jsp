@@ -274,5 +274,10 @@ Modify the Bank class as below.
   //.. Omitted ..  
 }
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/javabank-interface"/>">Javabank - Interface</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Javabank - Inheritance</a></li>
+  </ul>
+</div>
 </article>

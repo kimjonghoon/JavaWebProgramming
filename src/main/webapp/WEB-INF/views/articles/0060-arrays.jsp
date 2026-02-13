@@ -8,7 +8,7 @@
 
 <p>
 배열은 같은 타입의 값을 여러개 담을 수 있다.<br />
-<img src="https://lh3.googleusercontent.com/FqtFaeRokroTk-T2RIW4CwDGqWTCyQ7pKjH-_VrViLOSSkl7gVZXayyfXjQwmaxyDuXSLqhSTxXEyrf54_s0RtwTdIaCHwRFi8ATWv3d_xFPHfVSqgftz1SdbS1Tsfdb6O5PDtK9h3xq68synD554BSPE-4HEkjR4-NWCMdrXM7LaYu7rT7V9m0Vh6dvtsZjp7fBq3yYrFF732RrpvREXsE0N-NqoFvDo5aqlXGR6zg283k27Rhslq--_ZDvIQw7pyc52rs0kZpUebCEjgApHx644dpb3a6LLLaKQ5rJx-Mm53d_ySKxgKxGrWpDn5BC5tNh4Q7SU_CR8-TcXPWzXMnmWpieYQImkmksgtJVd74Zxm7aVj4aoLc57fAcm8eSf8UmatSe5p7_ZQ6LjREGM4486OFwMooLdeRjLu68U2JgNdSycmVaaqsubjn4HIei8UwEl2ooqgbT7HAKaIrhvMN8op-vZAdbZUyRREhWQcqa0g4iZwQA427snTMmdgCMomlNxLu68_jgVHyqo36mRo-uQPibG1VtLxtW3x9dRxYz0uKex6n9c7hW-RzZohi4WtxvMh0qjUZa7c-RF04HOVFFORiZEfDNrnP2RWJlXuz8_flRG89_TQ2S=w913-h585-no" alt="변수상자가 여러개 이어져서 붙어있는 그림" style="width: 100%;" /><br />
+<img src="<c:url value="/resources/images/variable-and-array.png"/>" alt="변수상자가 여러개 이어져서 붙어있는 그림" style="width: 100%;" /><br />
 배열의 각 항목을 요소라 한다.
 요소는 0부터 순서대로 매겨지는 인덱스를 가진다.
 요소에 접근하기 위해선, 인덱스와 꺽쇠를 사용한다. 예를 들어, arr[4].
@@ -94,5 +94,10 @@ C:\javaApp&gt;javac ArrayTest.java
 C:\javaApp&gt;java ArrayTest 2018 12 31
 2018년 12월 31일
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/operators"/>">연산자</a></li>
+    <li>이전 : <a href="<c:url value="/java/datatype"/>">데이터 타입</a></li>
+  </ul>
+</div>
 </article>

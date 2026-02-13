@@ -623,4 +623,11 @@ console 뷰가 생기면서 Hello World !가 출력된다.
 	<a href="Static">static</a>에서 다룬다.</li>
 </ol>
 
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/inheritance"/>">상속</a></li>
+    <li>이전 : <a href="<c:url value="/java/operators"/>">연산자</a></li>
+  </ul>
+</div>
+
 </article>

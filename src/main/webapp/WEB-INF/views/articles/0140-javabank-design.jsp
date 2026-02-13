@@ -481,5 +481,10 @@ public class DateExample {
 	<li><a href="https://commons.apache.org/proper/commons-lang/">Apache Commons Lang</a></li>
 	<li><a href="http://examples.javacodegeeks.com/core-java/apache/commons/lang3/date-andtime-format/">Date and Time format examples using Apache Commons Lang</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속적용</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-requirements-analysis"/>">자바은행 - 구현</a></li>
+  </ul>
+</div>
 </article>

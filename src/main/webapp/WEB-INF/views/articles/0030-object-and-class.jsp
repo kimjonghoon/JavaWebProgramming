@@ -283,8 +283,9 @@ java.io.PrintStream@de6ced
 
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="<c:url value="/java/keywords-identifiers-comments"/>">키워드, 식별자, 주석</a></li>
+    <li>다음 : <a href="<c:url value="/java/identifiers"/>">식별자</a></li>
     <li>이전 : <a href="<c:url value="/java/features"/>">자바의 특징</a></li>
   </ul>
 </div>
+
 </article>

@@ -1,20 +1,6 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Data Type and Type Casting</title>
-<meta name="Keywords" content="Literal,Variable,Java Data Type,Primitive Data Types,boolean,char,byte,short,int,long,float,double,Reference Data Types,Type Casting,Up-Casting,Up-Casting in arithmetic,Down-Casting" />
-<meta name="Description" content="This article describes Java Data Type and Type Casting" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../static/css/prettify.css" type="text/css" />
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/commons.js"></script>
-<script src="../../static/js/prettify.js"></script>
-<script src="../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
 
@@ -378,8 +364,10 @@ If you cast x to a double type, JVM automatically cast y to a double type.
 	<li><a href="http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals">http://stackoverflow.com/questions/4331200/what-do-f-and-d-mean-at-the-end-of-numeric-literals</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Literal_%28computer_programming%29">http://en.wikipedia.org/wiki/Literal_%28computer_programming%29</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/arrays"/>">Arrays</a></li>
+    <li>Prev : <a href="<c:url value="/java/identifiers"/>">Identifiers</a></li>
+  </ul>
+</div>
 </article>
-
-</body>
-</html>

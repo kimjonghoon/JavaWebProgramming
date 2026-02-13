@@ -1271,5 +1271,10 @@ public class BankUi {
   }
 }
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/logging"/>">Logging</a></li>
+    <li>Prev : <a href="<c:url value="/java/thread"/>">Thread</a></li>
+  </ul>
+</div>
 </article>

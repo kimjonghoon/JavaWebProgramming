@@ -1062,7 +1062,7 @@ File[] files = dir.listFiles();
 FileReader fr = null;
 BufferedReader br = null;
 
-for (File file : files) {
+for (File file : files) {Java
     if (file.isFile()) {
 
         String fileName = file.getName();
@@ -1380,5 +1380,10 @@ public class BankUi {
 	
 }
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/logging"/>">로깅</a></li>
+    <li>이전 : <a href="<c:url value="/java/thread"/>">스레드</a></li>
+  </ul>
+</div>
 </article>

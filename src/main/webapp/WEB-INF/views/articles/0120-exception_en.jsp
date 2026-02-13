@@ -1229,5 +1229,10 @@ Create and apply the appropriate custom exception class on the above code.
 <ul id="references">
 	<li><a href="http://java.sun.com/docs/books/tutorial/essential/exceptions/definition.html">http://java.sun.com/docs/books/tutorial/essential/exceptions/definition.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/javabank-requirements-analysis"/>">Javabank - Requirements Analysis</a></li>
+    <li>Prev : <a href="<c:url value="/java/collection"/>">Collection</a></li>
+  </ul>
+</div>
 </article>

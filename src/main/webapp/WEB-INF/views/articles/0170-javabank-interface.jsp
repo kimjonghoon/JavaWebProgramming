@@ -139,4 +139,11 @@ public class MyBank <strong>implements Bank</strong> {
 	<li>New 알기쉬운 자바2(개정판) 저자: 김철회 출판사: 정보문화사</li> 
 </ul>
 
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/thread"/>">스레드</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-abstract-class"/>">자바은행 - 추상클래스 적용</a></li>
+  </ul>
+</div>
+
 </article>

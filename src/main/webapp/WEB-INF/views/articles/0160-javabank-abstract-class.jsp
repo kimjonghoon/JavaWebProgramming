@@ -283,5 +283,10 @@ public class MinusAccount extends Account {
 <ul id="references">
 	<li>New 알기쉬운 자바2(개정판) 저자: 김철회 출판사: 정보문화사</li> 
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/javabank-interface"/>">자바은행 - 인터페이스 적용</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속 적용</a></li>
+  </ul>
+</div>
 </article>

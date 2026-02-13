@@ -242,5 +242,10 @@ example.hello.Server &amp;
 <ul id="references">
 	<li><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html">http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/jdbc/intro"/>">JDBC 소개</a></li>
+    <li>이전 : <a href="<c:url value="/java/socket"/>">소켓</a></li>
+  </ul>
+</div>
 </article>

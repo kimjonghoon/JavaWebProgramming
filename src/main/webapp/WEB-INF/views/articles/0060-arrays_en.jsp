@@ -8,7 +8,7 @@
 
 <p>
 An array is a container object that holds values of a same type.<br />
-<img src="https://lh3.googleusercontent.com/-iLIT7b27vBo/Vvy0K3Fs5eI/AAAAAAAACto/WJw-WrH8EtENW0RZRVweV-vjoMqqXb4DACCo/s913-Ic42/variable-array.png" alt="variable and array" /><br />
+<img src="<c:url value="/resources/images/variable-and-array-en.png"/>" alt="variable and array" /><br />
 Each item in the array is called an element.<br />
 Each element has a numeric index, starting with 0.<br />
 To access an element, use an index and square brackets, e.g., arr[4].<br />
@@ -241,5 +241,10 @@ output all elements of args
 Self-pity
 D.H. Lawrence
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/operators"/>">Operators</a></li>
+    <li>Prev : <a href="<c:url value="/java/datatype"/>">DataType</a></li>
+  </ul>
+</div>
 </article>

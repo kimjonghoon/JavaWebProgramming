@@ -136,5 +136,10 @@ Modify the main() of the test class.
 <h6 class="src">Test.java</h6>
 <pre class="prettyprint no-border">Bank bank = <strong>new MyBank();</strong>
 </pre>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/javabank-abstract-class"/>">Javabank - Abstract class</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-design"/>">Application Design</a></li>
+  </ul>
+</div>
 </article>

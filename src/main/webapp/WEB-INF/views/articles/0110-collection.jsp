@@ -913,5 +913,10 @@ a.equals(c) true
 <ul id="references">
 	<li><a href="http://java.sun.com/developer/onlineTraining/collections/Collection.html">http://java.sun.com/developer/onlineTraining/collections/Collection.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/exception"/>">예외</a></li>
+    <li>이전 : <a href="<c:url value="/java/static"/>">static 키워드</a></li>
+  </ul>
+</div>
 </article>

@@ -845,5 +845,10 @@ b.drive();
 <p>
 As you can see in inheritance, You can assign a subclass type reference to a superclass type variable. Likewise, you can assign a class --implements the interface-- type reference to the interface type variables.
 </p>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/static"/>">static keyword</a></li>
+    <li>Prev : <a href="<c:url value="/java/package"/>">Package</a></li>
+  </ul>
+</div>
 </article>

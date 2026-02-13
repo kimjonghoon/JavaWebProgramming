@@ -1254,5 +1254,10 @@ public class Test {
 <ul id="references">
 	<li><a href="http://java.sun.com/docs/books/tutorial/essential/exceptions/definition.html">http://java.sun.com/docs/books/tutorial/essential/exceptions/definition.html</a></li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/javabank-requirements-analysis"/>">자바은행 - 요구사항 분석</a></li>
+    <li>이전 : <a href="<c:url value="/java/collection"/>">컬렉션</a></li>
+  </ul>
+</div>
 </article>

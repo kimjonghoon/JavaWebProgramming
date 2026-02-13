@@ -3,22 +3,20 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
+			
+<h1>연산자, switch, if, 반복문</h1>
 
-<h1>Operators, if, switch, loops</h1>
+<h2>연산자</h2>
 
-<h2>Operators</h2>
+연산자는 변수에 값을 대입하거나 변수와 변수의 값을 비교하거나 변수의 값을 변경하기 위해 사용되는 기호를 말한다.
 
-<p>
-An Operators is a symbol that the compiler to perform manipulations such as assign a value to a variable or change a value of a variable or compare two values.
-</p>
-
-<h3>Arithmetic Operators</h3>
+<h3>산술 연산자</h3>
 
 <table>
 <tr>
-	<th style="width: 10%;">Operator</th>
-	<th style="width: 10%;">Example</th>
-	<th>Return value</th>
+	<th style="width: 10%;">연산자</th>
+	<th style="width: 10%;">예</th>
+	<th>반환값</th>
 </tr>
 <tr>
 	<td>+</td>
@@ -50,14 +48,14 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 	<td>++5 + 2</td>
 	<td>
 	8<br />
-	(++ returns the value after incrementing.)
+	(++은 값을 1증가한 후 반환한다.)
 	</td>
 </tr>
 <tr>
 	<td>5++ + 2</td>
 	<td>
 	7<br />
-	(++ returns the value before incrementing.)
+	(++은 값을 증가하기 전에 반환한다.)
 	</td>
 </tr>
 <tr>
@@ -65,25 +63,25 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 	<td>--5 + 2</td>
 	<td>
 	6<br />
-	(-- returns the value after decrementing.)
+	(--은 값을 1감소한 후 반환한다.)
 	</td>
 </tr>
 <tr>
 	<td>5-- + 2</td>
 	<td>
 	7<br />
-	(-- returns the value before decrementing.)
+	(--은 값을 감소하기 전에 반환한다.)
 	</td>
 </tr>
 </table>
 
-<h3>Equality and Relational Operators</h3>
+<h3>관계 연산자</h3>
 
 <table>
 <tr>
-	<th style="width: 10%;">Operator</th>
-	<th style="width: 10%;">Example</th>
-	<th>Return value</th>
+	<th style="width: 10%;">연산자</th>
+	<th style="width: 10%;">예</th>
+	<th>반환값</th>
 </tr>
 <tr>
 	<td>&gt;</td>
@@ -117,13 +115,13 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 </tr>
 </table>
 
-<h3>Conditional Operators</h3>
+<h3>조건 연산자</h3>
 
 <table>
 <tr>
-	<th style="width: 10%;">Operator</th>
-	<th style="width: 60%;">Example</th>
-	<th>Return value</th>
+	<th style="width: 10%;">연산자</th>
+	<th style="width: 60%;">예</th>
+	<th>반환값</th>
 </tr>
 <tr>
 	<td>&amp;&amp;</td>
@@ -131,7 +129,7 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 		int year = 2016;<br />
 		year &gt;= 1901 &amp;&amp; year &lt;= 2000;
 	</td>
-	<td>false</td>
+	<td >false</td>
 </tr>
 <tr>
 	<td>||</td>
@@ -139,32 +137,32 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 		int age = 6;<br />
 		age &lt; 6 || age &gt;= 65;
 	</td>
-	<td>false</td>
+	<td >false	</td>
 </tr>
 <tr>
 	<td>?</td>
 	<td>
 		int a = 5;<br />
 		int b = 2;<br />
-		return a &gt; b ? a : b;<br />
+		return a &gt; b ? a : b;
 	</td>
 	<td>5</td>
 </tr>
 </table>
 
 
-<h3>Assignment Operators</h3>
+<h3>대입 연산자</h3>
 
 <table>
 <tr>
-	<th style="width: 10%;">Operator</th>
-	<th style="width: 10%;">Example</th>
-	<th>Description</th>
+	<th style="width: 10%;">연산자</th>
+	<th style="width: 10%;">예</th>
+	<th>설명</th>
 </tr>
 <tr>
 	<td>=</td>
 	<td>a = 9;</td>
-	<td>Assign 9 to a</td>
+	<td>a에 9를 할당</td>
 </tr>
 <tr>
 	<td>+=</td>
@@ -193,16 +191,14 @@ An Operators is a symbol that the compiler to perform manipulations such as assi
 </tr>
 </table>
 
-<h3>+ operator when operand is a string</h3>
+<h3>피연산자가 문자열일때 + 연산자</h3>
 
-<p>
-when operand is a string, + operator performs string concatenation.
-</p>
+피연산자가 문자열일때 + 연산자는 문자열을 합치는 기능을 수행한다.
 
 <table>
 <tr>
-	<th style="width: 190px;">Example</th>
-	<th>Return value</th>
+	<th style="width: 190px;">예</th>
+	<th>반환값</th>
 </tr>
 <tr>
 	<td>1988 + ": Hi";</td>
@@ -210,48 +206,50 @@ when operand is a string, + operator performs string concatenation.
 </tr>
 </table>
 
-<h2>if, switch, loops</h2>
 
-<h3>if</h3>
+<h2>if문, switch문, 반복문</h2>
+
+<h3>if문</h3>
 
 <pre class="prettyprint">
 int year = 2001;
 if (year &gt;= 2001 &amp;&amp; year &lt;= 2100) {
-  System.out.println("21st century");
+  System.out.println("21세기");
 }
 </pre>
 
 <pre class="cmd">
-21st century
-</pre>
+21세기
+</pre>	
 
 <pre class="prettyprint">
 int age = 65;
 if (age &lt; 6 &amp;&amp; age &gt;= 65) {
-  System.out.println("Free");
+  System.out.println("무료");
 } else {
-  System.out.println("Not Free");
+  System.out.println("유료");
 }
 </pre>
 
 <pre class="cmd">
-Free
+무료
 </pre>
 
 <pre class="prettyprint">
 int age = 65;
 if (age &gt;= 65) {
-  System.out.println("Free");
+  System.out.println("무료");
 } else if (age &lt; 6) {
-  System.out.println("Free");
+  System.out.println("무료");
 } else {
-  System.out.println("NOT Free");
+  System.out.println("유료");
 }
 </pre>
 	
 <pre class="cmd">
-Free
+무료
 </pre>
+
 
 <h3>switch</h3>
 
@@ -291,7 +289,6 @@ System.out.println(sum);
 </pre>
 
 <h3>while</h3>
-
 <pre class="prettyprint">
 int sum = 0;
 int i = 1;
@@ -322,26 +319,25 @@ System.out.println(sum);
 55
 </pre>
 
+
 <dl class="note">
 <dt>break;</dt>
 <dd>
-Breaks out of the inner loop
+자신을 감싸고 있는 반복문을 빠져나온다.<br />
 </dd>
 <dt>continue;</dt>
 <dd>
-Skips rest of loop's body and makes program flow goto the boolean expression that controls the loop. 
+자신을 감싸고 있는 반복문의 조건식으로 분기한다.<br /> 
 </dd>
 <dt>return;</dt>
 <dd>
-Terminates the method and makes program flow goto the line which call the method.
-A <strong>return;</strong> is only available at void method.<br />
+메소드를 종료하고 프로그램의 흐름을 메소드를 호출한 곳으로 되돌린다.<br />
+<strong>return;</strong> 문은 void 메소드에서만 사용할 수 있다.<br />
 </dd>
-<dt>
-for (<strong>int i = 0</strong>; i &lt; 10; i++) { }
-</dt>
+<dt>for (int i = 0; i &lt; 10; i++) </dt>
 <dd>
-In Java, you can declare the variable in the initial expression as the above.<br />
-Variable i is valid in {} of for statement.<br />
+자바에서는 for 문의 초기식에 변수를 선언할 수 있다.<br />
+초기식에서 선언된 변수는 for문의 {} 안에서만 유효하다.<br />
 </dd>
 </dl>
 
@@ -366,9 +362,10 @@ public class OperatorsTest {
 		System.out.println("c * d = " + (c * d)); //c * d = 12
 		System.out.println("e / b = " + (e / b)); //e / b = 2
 		System.out.println("e % b = " + (e % b)); //e % b = 1
-				
+		
 		/*
-		++e and e++ are extremely differ in the operator precedence. 
+		++ 또는 --가 피연산자가 앞에 붙을때와 뒤에 붙을 때 
+		연산자 우선순의는 극과 극으로 차이가 난다. 
 		*/
 		 
 		System.out.println("e++ = " + e++); //e++ = 5
@@ -377,7 +374,7 @@ public class OperatorsTest {
 		System.out.println("e-- = " + e--); //e-- = 7
 		System.out.println("--e = " + --e); //--e = 5
 		
-		e++; //e++ equals ++e when it show alone.
+		e++; //단독으로 사용하면 ++e와 같다.
 		System.out.println("e = " + e); //e = 6
 		++e;
 		System.out.println("e = " + e); //e = 7
@@ -385,9 +382,8 @@ public class OperatorsTest {
 }
 </pre>
 
-<p>
-Add the below to the source.
-</p>
+
+예제에 다음 부분을 추가하고 테스트한다.
 
 <pre class="prettyprint">
 System.out.println("a &gt; b " + (a &gt; b));
@@ -407,9 +403,7 @@ a == b false
 a != b true
 </pre>
 
-<p>
-Add the below to the source.
-</p>
+예제에 다음 코드를 추가하고 테스트한다.
 
 <pre class="prettyprint">
 int yr = 2000;
@@ -419,7 +413,7 @@ msg = yr &gt;= 2001 &amp;&amp; yr &lt;= 2100 &amp;&amp; msg.length() &gt; 0 ? yr
 System.out.println(msg);
 
 msg = null;
-msg = yr &gt;= 2001 &amp; yr &lt;= 2100 &amp; msg.length() &gt; 0 ? yr+" is 21C" : yr +" is not 21C";
+msg = yr &gt;= 2001 &amp; yr &lt;= 2100 &amp; msg.length() &gt; 0 ? yr+" is 21C" : yr +" is not 21C";//익셉션 발생!
 System.out.println(msg);
 </pre>
 
@@ -429,21 +423,16 @@ Exception in thread "main" java.lang.NullPointerException
 	at Test.main(Test.java:46)
 </pre>
 
-<p>
-<em>&amp; msg.length() &gt; 0</em> occurs an exception.<br />
-Unlike &amp;&amp;, &amp; checks a following boolean expression, 
-even if the previous boolean expression is false.<br /> 
-Comments lines that occur exception.
-</p>
+<em>&amp; msg.length() &gt; 0</em>는 예외를 발생시킨다.<br />
+&amp;는 &amp;&amp;와 달리 먼저 검사한 부울 식이 false라도 이어지는 부울 식을 검사한다.<br />
+아래와 같이 주석처리한다.
 
 <pre class="prettyprint">
 //msg = yr &gt;= 2001 &amp; yr &lt;= 2100 &amp; msg.length() &gt; 0 ? yr+" is 21C" : yr +" is not 21C";
 //System.out.println(msg);
 </pre>
 
-<p>
-Add the below to the source.
-</p>
+예제에 다음을 추가하고 테스트한다.
 
 <pre class="prettyprint">
 class User {
@@ -454,24 +443,31 @@ class User {
 
 User user = new User();
 
-//Check whether login user's id is the "Superman" or authority is an "ADMIN".
+//로그인한 유저의 아이디가 Superman 이거나 권한이 ADMIN인지 검사
 if ((user.signIn &amp;&amp; user.id.equals("Superman")) || (user.signIn &amp;&amp; user.authority.equals("ADMIN"))) {
-	System.out.println("1st TEST: Superman OR ADMIN");
+	System.out.println("첫번째 테스트: Superman OR ADMIN");
 }
 
 user.authority = "USER";
 if ((user.signIn &amp;&amp; user.id.equals("Superman")) || (user.signIn &amp;&amp; user.authority.equals("ADMIN"))) {
-	System.out.println("2nd TEST: Superman OR ADMIN");
+	System.out.println("두번째 테스트: Superman OR ADMIN");
 }
 </pre>
 
 <pre class="cmd">
-1st TEST: Superman OR ADMIN
+첫번째 테스트: Superman OR ADMIN
 </pre>
 
-<span id="refer">References</span>
+<span id="refer">참고</span>
 <ul id="references">
 	<li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html">Using Strings in switch Statements - http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html</a></li>
 </ul>
+
+<div id="next-prev">
+  <ul>
+    <li>다음 : <a href="<c:url value="/java/package"/>">패키지</a></li>
+    <li>이전 : <a href="<c:url value="/java/arrays"/>">배열</a></li>
+  </ul>
+</div>
 
 </article>

@@ -342,5 +342,10 @@ Create the following custom exceptions and apply them to the example.
 	<li>InsufficientBalanceException</li>
 	<li>DuplicateAccountException</li>
 </ul>
-
+<div id="next-prev">
+  <ul>
+    <li>Next : <a href="<c:url value="/java/javabank-abstract-class"/>">Javabank - Abstract class</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-design"/>">Javabank - Design</a></li>
+  </ul>
+</div>
 </article>
