@@ -49,14 +49,14 @@ NamecardDDL.java 를 만든다. 모든 코드는 메인 메소드에 구현하�
 Class.forName() 메소드를 이용해서 오라클 JDBC 드라이버의 시작 클래스를 메모리에 로딩한다.<br />
 forName() 메소드의 아규먼트인 문자열 oracle.jdbc.driver.OracleDriver 는 GetEmp.java 에서 참고한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-n6rE9zhYBQ8/VYFYSc8N-KI/AAAAAAAACSE/fNrbmt8rNM0q9QWnxw2RG9CCtFsVmR-sQCCo/s590/load-oracle-jdbc-driver-01.gif" alt="JDBC 드라이버 로딩" /><br />
+<img src="<c:url value="/resources/images/load-oracle-jdbc-driver-01.png"/>" alt="JDBC 드라이버 로딩" style="width: 100%;" /><br />
 
 Class 클래스의 forName() 메소드는 ClassNotFoundException 을 핸들링 해주어야 하는 메소드이기 때문에 위와 같이 컴파일 에러가
 보인다.<br />
 이클립스의 코드 어시스트 도움을 받아서 (도움을 받을려면 마우스로 컴파일 에러가 발생하는 코드에 위치시키면 된다)
 그림과 같이 두번째 해결책을 선택하여 try ~ catch 문이 삽입되도록 한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-sHbmlQZnRZI/VYFYS179a0I/AAAAAAAACSU/9QTapUDaiI46N8X0GK5oacIbtwh00FhegCCo/s590/load-oracle-jdbc-driver-02.gif" alt="JDBC 드라이버 로딩 ClassNotFoundException 익셉션 핸들링" /><br />
+<img src="<c:url value="/resources/images/load-oracle-jdbc-driver-02.png"/>" alt="JDBC 드라이버 로딩 ClassNotFoundException 익셉션 핸들링" style="width: 100%;" /><br />
 </p>
 
 <h3>2. Connection 맺기</h3>
@@ -64,30 +64,30 @@ Class 클래스의 forName() 메소드는 ClassNotFoundException 을 핸들링 �
 <p>
 커넥션은 DriverManager 클래스의 getConnection(,,) 메소드를 이용한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-02QVTXr0ILA/VYFYRCr35dI/AAAAAAAACRo/A10c9ajp8_0_OLo8taIVpCmGTJ_3wl9VQCCo/s590/get-connection-03.gif" alt="커넥션 맺기" /><br />
+<img src="<c:url value="/resources/images/get-connection-03.png"/>" alt="커넥션 맺기" style="width: 100%;" /><br />
 
 Connection 과 DriverManager 는 JDBC 관련 인터페이스와 클래스로 java.sql 패키지에 있다.<br />
 위 그림과 같은 컴파일 에러는 코드 어시스트에서 첫번째 해결책을 선택하여 import 문장을 추가하도록 한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-mhsOdT8Q6VI/VYFYRoMD5gI/AAAAAAAACR8/VoQsZdFPEI4pVjaNQhnOmEJOmnC3CWxEgCCo/s590/get-connection-04.gif" alt="커넥션 맺기 import java.sql.*; 추가" /><br />
+<img src="<c:url value="/resources/images/get-connection-04.png"/>" alt="커넥션 맺기 import java.sql.*; 추가" style="width: 100%;" /><br />
 
 DriverManager.getConnection(,,) 메소드의 첫번째 아규먼트는 url 값이다.<br />
 이 값 역시 GetEmp.java 소스를 참고한다.<br />
 두번째 아규먼트는 사용자 계정이고 세번째 아규먼트는 계정 비밀번호이다.<br />
 scott 계정에 테이블과 시퀀스를 만들기로 했으므로 두번째와 세번째 아규먼트는 각각 scott과 tiger이다.<br />
 
-<img src="https://lh3.googleusercontent.com/--dKwIKV2V1U/VYFYR0SAMII/AAAAAAAACRw/zJl9RLyfRY8qgPvbDPFwkyx1X9dHHtu5gCCo/s930/get-connection-05.png" alt="커넥션 맺기 DriverManager.getConnection(String,String,String) 메소드 완성 " style="width: 850px;" /><br />
+<img src="<c:url value="/resources/images/get-connection-05.png"/>" alt="커넥션 맺기 DriverManager.getConnection(String,String,String) 메소드 완성 " style="width: 100%;" /><br />
 
 DriverManager.getConnection(,,) 메소드는 SQLException 익셉션을 핸들링 해주어야 한다.<br />
 위 그림처럼 코드 어시스트의 두번째 해결책을 선택해서 try ~ catch 문으로 익셉션을 핸들링 하도록 한다.<br />
  
-<img src="https://lh3.googleusercontent.com/-uBOvG8UyKzM/VYFYR3LBcVI/AAAAAAAACSQ/nKCTqh0ldfgRVeoDGZNkyzS20PfcsDtTQCCo/s590/get-connection-06.gif" alt="커넥션 맺기 SQLException 익셉션 핸들링 " /><br />
+<img src="<c:url value="/resources/images/get-connection-06.png"/>" alt="커넥션 맺기 SQLException 익셉션 핸들링" style="width: 100%;" /><br />
 
 이후부터 나오는 메소드는 SQLException 익셉션을 핸들링 해주어야 하므로 이후부터는 코드는 try 블록에 구현한다.<br />
 그리고 Connection 타입의 con 변수 선언은 try 블록 밖에 두어야 한다.<br />
 왜냐하면 finally 블록에서 con.close(); 코드로 자원 반납 할 때 finally 블록도 con이 해석될 수 있는 영역이어야 하기 때문이다.<br />
 
-<img src="https://lh3.googleusercontent.com/-RZuwZr7HGvk/VYFYSH9QfVI/AAAAAAAACSA/9lSKf6Xh3pMqIE5Cz6XIN1VlLGHq_7B_QCCo/s590/get-connection-07.gif" alt="커넥션 맺기 con 변수 선언을 try 블록밖으로" /><br />
+<img src="<c:url value="/resources/images/get-connection-07.png"/>" alt="커넥션 맺기 con 변수 선언을 try 블록밖으로" style="width: 100%;" /><br />
 </p>
 
 <h3>3. Statement 얻기</h3>
@@ -97,7 +97,7 @@ Statement 타입의 stmt 변수 선언 역시 나중에 자원 반납을 위한 
 Statement 가 해석되지 않는 타입이라는 컴파일 에러를 만나면 코드 어시스트 도움을 받아<br />
 import java.sql.Statement; 문이 삽입되도록 한다.<br />
 
-<img src="https://lh3.googleusercontent.com/--gpG2olXCOo/VYFYROuMdZI/AAAAAAAACRg/tVY0Z8JkzugUT4bfwm2WQNzGPN3pWVNaQCCo/s590/createStatement-08.gif" alt="Statement 얻기, stmt 변수 선언을 try 블록밖으로, import java.sql.Statement; 추가" /><br />
+<img src="<c:url value="/resources/images/createStatement-08.png"/>" alt="Statement 얻기, stmt 변수 선언을 try 블록밖으로, import java.sql.Statement; 추가" style="width: 100%;" /><br />
 </p>
 
 <h3>4. SQL 실행</h3>
@@ -169,14 +169,14 @@ try {
 finally 블록을 만들고 finally 블록안에 자원 반납 코드를 삽입한다.<br />
 생성되는 순서의 역순으로 자원을 반납해야 하므로 stmt.close(); 가 먼저 나와야 한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-jpoxCcT--4o/VYFYTaKNRII/AAAAAAAACSY/lNqcqLejT2E4NucAhB2rJG6Bw3MwlXqSgCCo/s553/stmt-close-11.gif" alt="자원 반납 코드 SQLException 관련 컴파일 에러" /><br />
+<img src="<c:url value="/resources/images/stmt-close-11.png"/>" alt="자원 반납 코드 SQLException 관련 컴파일 에러" style="width: 100%;" /><br />
 
 Statement의 close() 메소드는 SQLException 익셉션을 핸들링 해주어야 하는 메소드이므로 위처럼 처럼 컴파일 에러가 발생한다.<br />
 이때는 코드 어시스트 도움을 받아서 try ~ catch 블록이 삽입되도록 한다.<br />
 Connection의 close() 메소드도 마찬가지로 SQLException 익셉션을 핸들링 해주어야 하는 메소드이므로
 con.close(); 역시 try ~ catch 블록안에 위치하도록 코드 어시스트의 도움을 받는다.<br />
 
-<img src="https://lh3.googleusercontent.com/-xcPqDZqis0I/VYFYRAYVryI/AAAAAAAACRk/cQB0K_kHNBk99Ea1FwgExxvMRynu7jGaACCo/s550/close-12.gif" alt="자원 반납 코드 완성" /><br />
+<img src="<c:url value="/resources/images/close-12.png"/>" alt="자원 반납 코드 완성" style="width: 100%;" /><br />
 
 자원반납은 JDBC 코드에서 가장 중요하다. 꼭 잊지 말고 빠지지 않게 해야 한다.<br />
 NamecardDDL.java 를 실행한다.<br />

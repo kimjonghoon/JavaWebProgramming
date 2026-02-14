@@ -182,22 +182,22 @@ Eclipse does not refer to the classpath environment variable.
 To run GetEmp in Eclipse, Eclipse manages your code on a project-by-project basis, so you need to create a project once.
 Create the project as shown below, and create GetEmp.java belongs to a package called net.java_school.jdbc.
 Select the project with the mouse.<br />
-<img src="https://lh3.googleusercontent.com/mIZx7XrRIQvkpQAk7OBcHKXPv_A96Ki5haeoJilYA4MuKaMQpX9DAOE5gjj8hUXkMbHiPzELUdBfR9W74MkqYPqs6yKnRgY8AmOfL3sAvaFjTWbkTpaJKaP_EpsRdtmJS78S0n5TTJTybQhs3CcPz6XsWGtkGC0f0j8xWDeC9CxdgnxK3aBz3xGM1L5Ro0cWneP1ALU3ntGdEz2FvYh5icdX5nthntgq_zFPVD9uQ-EUAedFh8CIE4s5y-iV7ldDWOsY8tRLqAqNPiitqMbohN_FkDrh5zRzy2pRKj-9AciYMKdAgfe_nYIROPvaxqnR9PCjsrXSgVQYf19D5bTcawv9ptYAxtmQXYRn-QmZWG0Pw_zVSPqOvG0jl0wwqm50yRo7vjQc_qormcykXfItdPwZFkGEZc85M7JZs9xXZsgryfyROrxB6z5eOWvKy22De2cgcTdrc6KlP0XGJK0kX5TwEDS003y5Lk5ZRzQlgJdx-WLS47mKb02stDOmLFrHQcdJw94t_iDQWw_YUCBN-EvLlfsnwyj_Au5j9VfQA7obP-QsK28dDmo9if8dUGMA68fT9YBUuEZ6vGCZUXw4np7KzplBkEN6Wgh-_GJEgxuMSwuqh8J5NMnDsDOx4WILwmDRxcctywtWnXTwUkReIyTVixzC4epb9dxzbkRsujPKHy1UE3kJKt8=w556-h459-no" alt="GetEmp.java on the jdbc project" /><br />
+<img src="<c:url value="/resources/images/getemp-project-select.png"/>" alt="GetEmp.java on the jdbc project" style="width: 100%;" /><br />
 
 Click the right button and select the menu like below.<br />
-<img src="https://lh3.googleusercontent.com/iG0nk0VgUi0nyIcqon3Ddw9QAqd81Q5OHvQ_50Z5_IOgldi6rgrb40C5i5LmV71VwcQMWevoCTer0XMQbJkGy6NRF0CIIYdnqtRwmuuJDbS4_35PHJ8mQLwpIMAtd0asxTnMoa6lxUc2Vj5SNKX05ZGHf7WLNPYtpHduPeZyAcfGEOYAaW6M9zixLGbVMpW9YZz2JvOfIQPckR7cBf7qbRU5NolbBGoT1VCa4U2tQyR0gg84fRGb2jz7bOhVxrehrFxV883JLPL7ixuSA1jlI75r7kcZiaZzMpQKQlu2YxGvDGxKl3ESrVggv-kmFjZJtsvOfrtl5qdUjpYzA-97fOvTGz_M0y3FIoo3OV02F35ohdWJqJzd8pJp0zTVtnuYUJ3iKnuh2f-eFbO4IrqeUMvXIOxXND7Hzgj62aKApBy5MezgN260egeFx-woMnzZmZvdLkZwo6lFOXoSGhEDIhwBuPN2htWVgJjyvtXDJDW9w9E40c2wT8KCGY4vIhnLkO0LCpzvJxa1c1rbeMH06enZpxO4W5e893_2gOWx5LY7EOVU0TIgHIKqhOU_ijbincUpBhioHrq5t9nzUHd4IxuafIaFKneItgG1l3zcAJ0MQlfmago6_Zh1XfQAUZiwhbXBXpFKKMgbNO0ekFDFrMSwfAgpEvD__Edcu94ioiO4bgCaRnc1v7k=w556-h584-no" alt="jdbc project selection - mouse right click - Build Path - Configure Build Path selection" /><br />
+<img src="<c:url value="/resources/images/getemp-configure-build-path.png"/>" alt="jdbc project selection - mouse right click - Build Path - Configure Build Path selection" style="width: 100%;" /><br />
 
 Select the Libraries tab and click the Add External JARs button.<br />
-<img src="https://lh3.googleusercontent.com/-E1VTR2trMK8/VYFQ2_dIhZI/AAAAAAAACQk/hwKGjkeAwwMREV5cpZgrWbfQ9gnQXPwHQCCo/s664/GetEmp-Libraries-Tab-select.png" alt="Libraries tab - Add External Lib..." /><br />
+<img src="<c:url value="/resources/images/getemp-libraries-tab-select.png"/>" alt="Libraries tab - Add External Lib..." style="width: 100%;" /><br />
 
 Add the Oracle JDBC driver file.<br />
-<img src="https://lh3.googleusercontent.com/-sLvd5XnBjnk/VYFQ4PRqyKI/AAAAAAAACRA/bZ_DKxXzoH8ITcwIrsIoC79wrpVSyuGKgCCo/s665/GetEmp-ojdbc6-select.png" alt="Add ojdbc6.jar" /><br />
+<img src="<c:url value="/resources/images/getemp-ojdbc6-select.png"/>" alt="Add ojdbc6.jar" style="width: 100%;" /><br />
 
-<img src="https://lh3.googleusercontent.com/-KRcL7vQtO8k/VYFQ2weuFQI/AAAAAAAACQ0/DsMp_n3rB_YzusPSx1mCrRM7UD7Nb7wiQCCo/s830/GetEmp-Oracle-JDBC-Driver-Classpath.png" alt="Confirm ojdbc6.jar" /><br />
+<img src="<c:url value="/resources/images/getemp-oracle-jdbc-driver-classpath.png"/>" alt="Confirm ojdbc6.jar" style="width: 100%;" /><br />
 
 In the Package Explorer view, select GetEmp.java with the mouse.
 Click the right button and execute as below.
-<img src="https://lh3.googleusercontent.com/-Rfh4TDU6QJg/VYFQ4GMN9hI/AAAAAAAACQ8/be58ONtH7aM8ynlDO1kom5k7ZndWtvOrQCCo/s657/GetEmp-Run.png" alt="How to run GetEmp.java in Eclipse" /><br />
+<img src="<c:url value="/resources/images/getemp-run.png"/>" alt="How to run GetEmp.java in Eclipse" style="width: 100%;" /><br />
 </p>
 
 <div id="next-prev">

@@ -358,7 +358,8 @@ public interface BankDao {
 Add the logging library and the Oracle JDBC driver to your classpath.
 Download the latest distribution from <a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a>.
 Uncompress and add the slf4j-api-1.7.xx.jar and slf4j-simple-1.7.xx.jar files and the Oracle JDBC driver to the classpath.
-If you are working in Eclipse, see the following figure.<img alt="" src="https://lh3.googleusercontent.com/am8h6S3vNyr0SPt6nc7OfQvRrG8HZtIEAQBqg9J39WJ9uGvnES6ScEn7ZXS3c5T0nTW5qT_4svFTpx65ERMc_DoUlUBj5d2IOQqmEv7tqG0ilOioTg9T_CA-CDCWK_D8xDbJootz4ELWi6E79ICZIFlYJjlsToqeTV8mvRfA5L3K9SmccBIt95kpg4ZpBYipd0LJG2yebKQbSPqiUunGMmqpp6twnWAMDYFEyPCH_hhXVO5bPuVz9vPYKw4r-a5GOFN0gCeuPWv-sSALAziA7x8y_fxfixDViPaexHx-1lkojMDCSdIWXYVX3x9DG33lv8ErksKi7lJwclDFXL9Z3j53LNi-VUvegrCqLguny7zljEAGkXows4bsha2kWejyhXIPzl2cAiZQMVzWiWGHOTncV5TgKZo300o4wvbL-733Uohfx0pGsB0aJI2m2CJw-6KsbnT2vMgcuDHSgrOFPjM4O0kbX5-4ghqzGA4-lq24bspaSWulZxHk6FPyXi-8pgKXNrifuvIckC2552rLG_yWXrHwCd8vgU3FGqzgcBUZCcdA6CVy5DQ9Hn9ezCLpnVimILxeT8yVjGvgGP58yGP7_5VhwltjMlVDcqizAD3N5NoUMeKC=w829-h566-no" /><br />
+If you are working in Eclipse, see the following figure.
+<img alt="JavaBank Build Path" src="<c:url value="/resources/images/jdbc-javabank-build-path.png"/>" style="width: 100%;" /><br />
 </p>
 
 <p>

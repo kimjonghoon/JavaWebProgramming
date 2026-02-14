@@ -359,7 +359,7 @@ public interface BankDao {
 <a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a>에서 최신 배포본을 내려받는다.<br />
 압축을 풀고 slf4j-api-1.7.xx.jar 와 slf4j-simple-1.7.xx.jar 파일과 오라클 JDBC 드라이버를 클래스 패스에 추가한다.<br />
 이클립스에서 작업한다면 다음 그림을 참조한다.<br />
-<img alt="" src="https://lh3.googleusercontent.com/am8h6S3vNyr0SPt6nc7OfQvRrG8HZtIEAQBqg9J39WJ9uGvnES6ScEn7ZXS3c5T0nTW5qT_4svFTpx65ERMc_DoUlUBj5d2IOQqmEv7tqG0ilOioTg9T_CA-CDCWK_D8xDbJootz4ELWi6E79ICZIFlYJjlsToqeTV8mvRfA5L3K9SmccBIt95kpg4ZpBYipd0LJG2yebKQbSPqiUunGMmqpp6twnWAMDYFEyPCH_hhXVO5bPuVz9vPYKw4r-a5GOFN0gCeuPWv-sSALAziA7x8y_fxfixDViPaexHx-1lkojMDCSdIWXYVX3x9DG33lv8ErksKi7lJwclDFXL9Z3j53LNi-VUvegrCqLguny7zljEAGkXows4bsha2kWejyhXIPzl2cAiZQMVzWiWGHOTncV5TgKZo300o4wvbL-733Uohfx0pGsB0aJI2m2CJw-6KsbnT2vMgcuDHSgrOFPjM4O0kbX5-4ghqzGA4-lq24bspaSWulZxHk6FPyXi-8pgKXNrifuvIckC2552rLG_yWXrHwCd8vgU3FGqzgcBUZCcdA6CVy5DQ9Hn9ezCLpnVimILxeT8yVjGvgGP58yGP7_5VhwltjMlVDcqizAD3N5NoUMeKC=w829-h566-no" /><br />
+<img alt="자바은행 빌드 패스" src="<c:url value="/resources/images/jdbc-javabank-build-path.png"/>" style="width: 100%;"/><br />
 </p>
 
 <p>

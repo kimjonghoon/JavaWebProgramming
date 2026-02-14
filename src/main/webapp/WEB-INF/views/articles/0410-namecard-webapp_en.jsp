@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>Namecard Web Application</h1>
+<h1>Namecard Web App</h1>
 
 <p>
 This chapter describes the difference between pure Java applications and web applications by converting the JDBC Namecard example into a web application.
@@ -68,7 +68,7 @@ Create a namecard.xml file in the CATALINA_HOME/conf/Catalina/localhost director
 <h3>Test 1</h3>
 
 <p>
-Copy the namecard and NamecardDao bytecode that you have practiced in <a th:href="@{/jdbc/Namecard}">Namecard</a> into WEB-INF/classes.
+Copy the namecard and NamecardDao bytecode that you have practiced in <a href="<c:url value="/jdbc/Namecard"/>">Namecard</a> into WEB-INF/classes.
 </p>
 
 <pre style="line-height: 1em;border: 2px dotted grey;padding: 1em;">
@@ -163,21 +163,21 @@ Visit http://localhost:8080/namecard/list.jsp for testing.
 <p>
 Test 3 shows you how to manage your sources in Eclipse.
 Run Eclipse and select your workspace as C:/www.<br />
-<img src="https://lh3.googleusercontent.com/btpJvaUygHoJPDtyXJOSFkmHzlrlsw9i2jFRyOhAVzJSSRyMo5HnfeVbsdafpsN25m830_d7T3y1QNAQ5HmE_cwkUVAmiNjb2045QW7JkJngHS8TUMSlJ3IKwUKf8_sHxmsgMVQUnn1CDhLpLexdq1slmjqWnYwAdZuN4ndpeP5f9Rey_nEDBMpBEXYgSLgPKZ7lCn6Xjez-Ex0LrMtXK0PDnt8ST-8i9lyWftxqB9uf6UeNfpmBprW14S-NriXFo5RB9I9OSfBj0EB8ArzMZA3Ru25ClTr0GfV8Bb--Or3mkgiZz2C-pamakVmjEQ2OgzKdH0Wyrlbj0C-ojVGntxZhcZs7gTrFu1C6ig18_nFi3bvGYCzxr19l_N5omRYd-SSEqvX_POgSqSxsOwOAVoY5YNm9p36_2caGUbgghqCuKBYID3I37QSemd6T1_woZTSg1mrwwVhdbxN4gy8W8xWSWD5_Doyvojh20c0ILQSSwws3qVdAOiFig1Y7q4OSSAm4m733kDQpFcdrp6xfhZiEOXZ-PUeMGhXCTPlGteqG7PZ5U_u8r7xIo7AgQ1PIWKj7QZvIFpuH1mRVBFKww52tphEsMvtQpPagQZ_R6gzZ7ALWxDzd2bbeT7psFu3N76uL1BvSHIDggapDz57qoKCR0CsL_vYlIr4XTa4cdXLRWGJghOKtSd8RxgSeTODyLYxUqw5DWj1eFDDww0PHByU=w590-h240-no?authuser=0" alt="select workspace as C:\www" /><br />
+<img src="<c:url value="/resources/images/workspace-c-www-en.png"/>" alt="select workspace as C:\www" /><br />
 
 In the Java perspective, select File - New - Java Project.<br />
 Create a Java project named namecard.<br />
 (Most books and sites illustrate how to create a Dynamic Web Project of the Java EE perspective. But, to focus on Servlets and JSPs rather than Eclipse, this way is better)<br />
 
 
-<img src="https://lh3.googleusercontent.com/68JEtC-Wm1n6OYYknk0UwXdxTapzsKVyeFvmWyw79htefW7T00Qda88Y6TCY36XQwiZCz1g7MDgGsXRbaQTIlfQwM-nKadtvs3UwJVpiMOumajtGqLeiw9wjO2TktUyWiTWKdXK32TsgrbgpRsmgHCgLrw17dvilwuAzGFHWforbbnlXL3gIOhQzCjqgia5b97bAhoE7KbyfqyBwMNJCIs6UyVs0N86eufrAWzb_9py1wThtrDkuBhVOMXFpDvaiqe4C5fXGxf1JgDAoQp5tJ_GXgmx8o-KP-13-YaYhVfKtN06VadtG2hynWZ9enIvMmOXdVRuL5Wu4V0ykxh66QtY4sh30WoHanm6BlkdYbuwJfsr4gKxLg_xNXhwQI5uAXABlEz4CKsOnyy9Su4u3WUa7HmCdRKemp1lOGN7D8bzTTbk6OW_Zwgu8nDmSo7mKK0IMmV62mUVZlSv8i49xW1oQCMjFNIG2pX5CBE-tkOQBaZDcyx8RHL1HBC6hUXqbEQ9wnVI6oJpTpO9vDcWMC7BHm6zSVHnedxa9nZG_UaO-WOSlEMM732OaZktJ29sc41cMOhkDMcU9ddC9ATiw1EYMtq1q5uJ3aHqauI2bXntnswk_ThPMbjrj=w685-h240-no" alt="Create a Java Project with the Java perspective selected." /><br />
+<img src="<c:url value="/resources/images/java-perspective-file-new-java-project.png"/>" alt="Create a Java Project with the Java perspective selected." /><br />
 
 We are writing a web application, not a pure Java application, so do not use the directories src and bin that Eclipse sets by default.
 With the mouse selected for the project, right-click.
 Select Build Path, Configure Build Path.
 In the Source tab, specify WEB-INF/src as the Source folder and WEB-INF/classes as the Output folder.<br />
 
-<img src="https://lh3.googleusercontent.com/VcF6aMGyO4Z-Aqc-JgDO8vODfaZ63g8bufIonqmO1fBblWUFAZXf3AZqtwowQ5tzC3d0R_X8kfByNWFYYSwBFZTYWHyN34dncehx-clRf7C1cIZoRO7IyDhwyJuPYfrCOnfl5bDDkv2pSgCKWxUx0B0vn6Ly1Ti0BuwFy8D-U6TEERJiTAx5qY5OIUZ0UdxC1_Fb7oV16GG0iSkjMLlJnocG40YlqX8QnLqOMzFFHUaFlsQoC09gPR-h3kdKGdr2R5Y-xh8oo9Hmuxt8UDfw4FCguVH0gnzh6ezkh7273GGWllcjDWHFhsOQzSVT4aw6eaVT7IMJHgx-blKsYqNzi-6qycye6dp7tX1lCk0cVsQ0QUArLA6As_OdQI9OzSl6yobpwriziq8GpmfxQsUXKVEA7agLj1XB-BoRV1bNytwshy_uvJnm2kc4dESgHWXdzx6zcHUmNeGTZHYNPBq_IFeQXtZ2tgB8WsRFG4qGmzCZFA3lWsvZxLUtxCujYnXb378XBGXUqk8yK1uVh_vELe758FxGASC0xbXBtdaoJVR8u2MJQLQLS1gQLQAl1RcO0-59f7B1_RXXbhIU0pZtxPDce0kN5fIR-EI-kz_gpSRC0decpXALTgH2=w675-h534-no" alt="the Source Folder and Output Folder for Namecard Web Application" /><br />
+<img src="<c:url value="/resources/images/namecard-webapp-src-bin.png"/>" alt="the Source Folder and Output Folder for Namecard Web Application" /><br />
 
 Visit http://localhost:8080/namecard/list.jsp for testing.
 If the test succeeds, create a JSP file in C:/www/namecard to register the namecard.
@@ -185,7 +185,7 @@ First, change the Eclipse JSP template charset to UTF-8.
 In Eclipse, select Windows - Preferences - Web - JSP Files. 
 And then, select UTF-8 in the Encoding box, and click Apply.<br />
 
-<img src="https://lh3.googleusercontent.com/O649zlhlNZV5-RfPOCLl_PiHnPusHSsVj5P9Yt35EjOOPUvljDRmpszK0wgTt58qlX2tyMWCkOm0wez-MNTWcQQSgYNqxjbeXPRbr6SBEscMosfXGJBq1mjHWDG-GhgMWZKRKhGNymeTySlAFDhtnKzVs9dXwG_3N_l-QmpZwVQWPrqyOF_GEpL5h3DVIwecxvM6CIe4yHb1Jxk_M1XLedmX1eyMt2FVpml1WZwPJ89dvXPpRW6LeGW1IRcZGUC_Z0p0knUU0tu8cDYHdbmvspMoABK32w024jxWMrMYIsY6xWE860lIbl_kf81nYzsmq371jgjQmumD0n_Ttw22XP08TwBgRvIGdW-1RByW-ws_9S2eYarKFu2k9BmSQd73i1hccoeqYYNf-Q87yc4DGyhJSbo0PYqU3eXShif9YyyHmW8X2xs438OJlCeK32O1tDKkuujkfQCa0-qQV57WR0j3XcGh3CpDn01VGcDwzyB9ideiUhCcV97goVoTY7znG1ycrzf-RU3Ykfnr6LlO7SMDx7Qj1qe4F7CypG7YCc46LVRGna2RM9RVH7tdUZB6wp-v7E9wiOXxDvy5p6Rn0EHSsrvAc7bAHTyPo5lwf75wOnH2NPOH4bob=w625-h535-no" alt="JSP charset to  UTF-8 " /><br />
+<img src="<c:url value="/resources/images/eclipse-jsp-files-encoding.png"/>" alt="JSP charset to  UTF-8 " /><br />
 
 The highlighted part of the write.jsp source below is what you need to type directly.
 </p>
@@ -495,9 +495,7 @@ public ArrayList&lt;Namecard&gt; selectByKeyword(String keyword) {
   } finally {
     close(rs,pstmt,con);
   }
-	
   return matched;
-
 }
 </pre>
 

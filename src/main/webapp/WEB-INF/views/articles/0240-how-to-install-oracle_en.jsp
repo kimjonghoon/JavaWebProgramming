@@ -31,8 +31,8 @@ Unzip the downloaded file. Run setup.exe in the subdirectory Disk1 to run the in
 On Windows, you cannot change the port used by Oracle XDB during the Oracle installation process. After installation, change the port used by XDB as follows:
 </p>
 
-<pre class="prettyprint">
-C:\Users&gt; sqlplus
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">C:\Users&gt; sqlplus
 Enter user-name: system
 Enter password:
 Connected.

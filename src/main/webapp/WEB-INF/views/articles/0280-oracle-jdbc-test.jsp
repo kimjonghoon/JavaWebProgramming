@@ -197,21 +197,21 @@ pause
 이클립스에서 프로젝트 단위로 코드를 관리하므로 일단 프로젝트를 만들어야 한다.<br />
 아래 그림은 jdbc라는 프로젝트를 만들고, net.java_school.jdbc라는 패키지에 속하도록 GetEmp.java 파일을 생성한 경우이다.<br />
 마우스로 프로젝트를 선택한다.<br />
-<img src="https://lh3.googleusercontent.com/mIZx7XrRIQvkpQAk7OBcHKXPv_A96Ki5haeoJilYA4MuKaMQpX9DAOE5gjj8hUXkMbHiPzELUdBfR9W74MkqYPqs6yKnRgY8AmOfL3sAvaFjTWbkTpaJKaP_EpsRdtmJS78S0n5TTJTybQhs3CcPz6XsWGtkGC0f0j8xWDeC9CxdgnxK3aBz3xGM1L5Ro0cWneP1ALU3ntGdEz2FvYh5icdX5nthntgq_zFPVD9uQ-EUAedFh8CIE4s5y-iV7ldDWOsY8tRLqAqNPiitqMbohN_FkDrh5zRzy2pRKj-9AciYMKdAgfe_nYIROPvaxqnR9PCjsrXSgVQYf19D5bTcawv9ptYAxtmQXYRn-QmZWG0Pw_zVSPqOvG0jl0wwqm50yRo7vjQc_qormcykXfItdPwZFkGEZc85M7JZs9xXZsgryfyROrxB6z5eOWvKy22De2cgcTdrc6KlP0XGJK0kX5TwEDS003y5Lk5ZRzQlgJdx-WLS47mKb02stDOmLFrHQcdJw94t_iDQWw_YUCBN-EvLlfsnwyj_Au5j9VfQA7obP-QsK28dDmo9if8dUGMA68fT9YBUuEZ6vGCZUXw4np7KzplBkEN6Wgh-_GJEgxuMSwuqh8J5NMnDsDOx4WILwmDRxcctywtWnXTwUkReIyTVixzC4epb9dxzbkRsujPKHy1UE3kJKt8=w556-h459-no" alt="GetEmp.java 소스는 jdbc프로젝트에 위치한다." /><br />
+<img src="<c:url value="/resources/images/getemp-project-select.png"/>" alt="GetEmp.java 소스는 jdbc프로젝트에 위치한다." style="width: 100%;" /><br />
 
 오른쪽 버튼을 클릭하여 아래와 같이 메뉴를 선택한다.<br />
-<img src="https://lh3.googleusercontent.com/iG0nk0VgUi0nyIcqon3Ddw9QAqd81Q5OHvQ_50Z5_IOgldi6rgrb40C5i5LmV71VwcQMWevoCTer0XMQbJkGy6NRF0CIIYdnqtRwmuuJDbS4_35PHJ8mQLwpIMAtd0asxTnMoa6lxUc2Vj5SNKX05ZGHf7WLNPYtpHduPeZyAcfGEOYAaW6M9zixLGbVMpW9YZz2JvOfIQPckR7cBf7qbRU5NolbBGoT1VCa4U2tQyR0gg84fRGb2jz7bOhVxrehrFxV883JLPL7ixuSA1jlI75r7kcZiaZzMpQKQlu2YxGvDGxKl3ESrVggv-kmFjZJtsvOfrtl5qdUjpYzA-97fOvTGz_M0y3FIoo3OV02F35ohdWJqJzd8pJp0zTVtnuYUJ3iKnuh2f-eFbO4IrqeUMvXIOxXND7Hzgj62aKApBy5MezgN260egeFx-woMnzZmZvdLkZwo6lFOXoSGhEDIhwBuPN2htWVgJjyvtXDJDW9w9E40c2wT8KCGY4vIhnLkO0LCpzvJxa1c1rbeMH06enZpxO4W5e893_2gOWx5LY7EOVU0TIgHIKqhOU_ijbincUpBhioHrq5t9nzUHd4IxuafIaFKneItgG1l3zcAJ0MQlfmago6_Zh1XfQAUZiwhbXBXpFKKMgbNO0ekFDFrMSwfAgpEvD__Edcu94ioiO4bgCaRnc1v7k=w556-h584-no" alt="프로젝트 - 오른쪽 마우스 버튼 - Build Path - Configure Build Path 선택" /><br />
+<img src="<c:url value="/resources/images/getemp-configure-build-path.png"/>" alt="프로젝트 - 오른쪽 마우스 버튼 - Build Path - Configure Build Path 선택" style="width: 100%;" /><br />
 
 Libraries탭을 선택한 후 Add External JARs..버튼을 클릭하여 오라클 JDBC드라이버 파일을 추가한다.<br />
-<img src="https://lh3.googleusercontent.com/-E1VTR2trMK8/VYFQ2_dIhZI/AAAAAAAACQk/hwKGjkeAwwMREV5cpZgrWbfQ9gnQXPwHQCCo/s664/GetEmp-Libraries-Tab-select.png" alt="Libraries 탭을 선택하고 Add External Lib를 선택한다." /><br />
+<img src="<c:url value="/resources/images/getemp-libraries-tab-select.png"/>" alt="Libraries 탭을 선택하고 Add External Lib를 선택한다." style="width: 100%;" /><br />
 
 오라클 JDBC 드라이버 파일을 찾아서 추가한다.<br />
-<img src="https://lh3.googleusercontent.com/-sLvd5XnBjnk/VYFQ4PRqyKI/AAAAAAAACRA/bZ_DKxXzoH8ITcwIrsIoC79wrpVSyuGKgCCo/s665/GetEmp-ojdbc6-select.png" alt="오라클 JDBC드라이버 파일중 ojdbc6.jar를 선택한다." /><br />
+<img src="<c:url value="/resources/images/getemp-ojdbc6-select.png"/>" alt="오라클 JDBC드라이버 파일중 ojdbc6.jar를 선택한다." style="width: 100%;" /><br />
 
-<img src="https://lh3.googleusercontent.com/-KRcL7vQtO8k/VYFQ2weuFQI/AAAAAAAACQ0/DsMp_n3rB_YzusPSx1mCrRM7UD7Nb7wiQCCo/s830/GetEmp-Oracle-JDBC-Driver-Classpath.png" alt="ojdbc6.jar가 프로젝트 클래스 패스에 추가확인" /><br />
+<img src="<c:url value="/resources/images/getemp-oracle-jdbc-driver-classpath.png"/>" alt="ojdbc6.jar가 프로젝트 클래스 패스에 추가확인" style="width: 100%;" /><br />
 
 Package Explorer 뷰에서 GetEmp.java 를 마우스로 선택한 후 오른쪽 버튼을 클릭하여 아래처럼 실행한다.<br />
-<img src="https://lh3.googleusercontent.com/-Rfh4TDU6QJg/VYFQ4GMN9hI/AAAAAAAACQ8/be58ONtH7aM8ynlDO1kom5k7ZndWtvOrQCCo/s657/GetEmp-Run.png" alt="GetEmp.java를 이클립스에서 실행하는 화면" /><br />
+<img src="<c:url value="/resources/images/getemp-run.png"/>" alt="GetEmp.java를 이클립스에서 실행하는 화면" style="width: 100%;" /><br />
 </p>
 
 <div id="next-prev">

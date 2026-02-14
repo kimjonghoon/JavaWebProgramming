@@ -27,7 +27,7 @@
 	</c:when>
 	<c:otherwise>
 	<ul>
-	    <li><a href="<c:url value="/jdbc/intro"/>">JDBC intro</a></li>
+	    <li><a href="<c:url value="/jdbc/intro"/>">JDBC introduction</a></li>
 	    <li><a href="<c:url value="/jdbc/oracle-install"/>">Oracle Install</a></li>
 	    <li><a href="<c:url value="/jdbc/scott-account"/>">SCOTT Account</a></li>
 	    <li><a href="<c:url value="/jdbc/sql-basics"/>">SQL Basics</a></li>

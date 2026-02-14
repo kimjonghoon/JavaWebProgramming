@@ -74,7 +74,7 @@ web-app 엘리먼트 안에 있는 모든 내용을 지운다.<br />
 <h3>첫 번째 테스트</h3>
 
 <p>
-<a th:href="@{/jdbc/Namecard}">명함관리</a>에서 실습했던 명함관리 Namecard 와 NamecardDao 바이트코드를 WEB-INF/classes 에 복사한다.<br />
+<a href="<c:url value="/jdbc/namecard"/>">명함관리</a>에서 실습했던 명함관리 Namecard 와 NamecardDao 바이트코드를 WEB-INF/classes 에 복사한다.<br />
 </p>
 
 <pre lang="en" style="line-height: 1em;border: 2px dotted grey;padding: 1em;">
@@ -173,11 +173,11 @@ http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 이클립스를 실행한다.<br />
 워크스페이스를 C:/www로 선택한다.<br />
 
-<img src="https://lh3.googleusercontent.com/IoaMi9al6ZcGZguDVCb-9S7Oi3eTZpYEHVQ7trbpvUO5w_yozu-i3fI-I5W6hFBoGDlil0WRkIIFTgobOaZU1YZl-h1HNd5pBNJywLkkyOji7JIo6qWwnzFbvPMR4ksE0JLPvv9ntuAc55HqbBiVj_DTC_7Bo40HgNxQmg26fe_yePgMuvwy8bX2pkVhz_D3uuJlgGPEe8VDw4H6DVX6DrbzQbENBxX3q_a7-9QzglK2R2MYWUrVKPlG_5S3NhZ6GCN0mBIRqEtqxdDD59pNN5U7Nl031ASP2JQdmjbS_N75NGNFkZG5M9Bn6l7AVW_1c-4_ps6MceG4Gd5dFyJOR1dCSEtdnYXnXUx4dZdDq0Mi-twQyryDNVqt6FQ0Z1vG1SUDPxiwMiQ2megfbWTQpxvO-dHmQE0T5mic3CMDSFFQvUpSIzhZJmMDY6SCwDeWYzWWFdH0sthdCXcdtUOl-pK2KN6stYThqIUEo3msZhS1YkyO_4DY5OmYnwgOOp8yFkxVTS1A0vPUd3JNpBm2p1TNjC1XhEx6f-iW7RC9I73Y2nicoUbHr-hBITmef57xxnFVckXjw-QsHEbPwsOrEkf39OIbdeTpDbQUZPkSiRoltLDoD_llpGLX=w590-h240-no" alt="워크스페이스를 C:/www로 선택한다." /><br />
+<img src="<c:url value="/resources/images/workspace-c-www.png"/>" alt="워크스페이스를 C:/www로 선택한다." /><br />
 
 퍼스펙티브가 java<sup><a href="#comments">3</a></sup> 인 상태에서 File - New - Java Project 메뉴를 차례로 선택하여 새로운 자바 프로젝트를 namecard란 이름으로 만든다.<br />
 
-<img src="https://lh3.googleusercontent.com/68JEtC-Wm1n6OYYknk0UwXdxTapzsKVyeFvmWyw79htefW7T00Qda88Y6TCY36XQwiZCz1g7MDgGsXRbaQTIlfQwM-nKadtvs3UwJVpiMOumajtGqLeiw9wjO2TktUyWiTWKdXK32TsgrbgpRsmgHCgLrw17dvilwuAzGFHWforbbnlXL3gIOhQzCjqgia5b97bAhoE7KbyfqyBwMNJCIs6UyVs0N86eufrAWzb_9py1wThtrDkuBhVOMXFpDvaiqe4C5fXGxf1JgDAoQp5tJ_GXgmx8o-KP-13-YaYhVfKtN06VadtG2hynWZ9enIvMmOXdVRuL5Wu4V0ykxh66QtY4sh30WoHanm6BlkdYbuwJfsr4gKxLg_xNXhwQI5uAXABlEz4CKsOnyy9Su4u3WUa7HmCdRKemp1lOGN7D8bzTTbk6OW_Zwgu8nDmSo7mKK0IMmV62mUVZlSv8i49xW1oQCMjFNIG2pX5CBE-tkOQBaZDcyx8RHL1HBC6hUXqbEQ9wnVI6oJpTpO9vDcWMC7BHm6zSVHnedxa9nZG_UaO-WOSlEMM732OaZktJ29sc41cMOhkDMcU9ddC9ATiw1EYMtq1q5uJ3aHqauI2bXntnswk_ThPMbjrj=w685-h240-no" alt="Java 퍼스펙티브가 선택된 상태에서 Java Project 를 만든다." /><br />
+<img src="<c:url value="/resources/images/java-perspective-file-new-java-project.png"/>" alt="Java 퍼스펙티브가 선택된 상태에서 Java Project 를 만든다." /><br />
 
 우리는 순수 자바 애플리케이션 아닌 웹 애플리케이션을 작성하고 있으므로 이클립스가 디폴트로 셋팅해준 src와 bin를 그대로 사용해서는 안 된다.<br />
 프로젝트에 마우스를 선택한 상태에서 마우스 오른쪽 버튼을 클릭한다.<br />
@@ -185,7 +185,7 @@ Build Path - Configure Build Path..를 선택한다.<br />
 Source탭에서 Source folder 는 WEB-INF/src 를 선택한다.<br />
 Default output folder 는 WEB-INF/classes 를 선택해야 한다.<br />
 
-<img src="https://lh3.googleusercontent.com/VcF6aMGyO4Z-Aqc-JgDO8vODfaZ63g8bufIonqmO1fBblWUFAZXf3AZqtwowQ5tzC3d0R_X8kfByNWFYYSwBFZTYWHyN34dncehx-clRf7C1cIZoRO7IyDhwyJuPYfrCOnfl5bDDkv2pSgCKWxUx0B0vn6Ly1Ti0BuwFy8D-U6TEERJiTAx5qY5OIUZ0UdxC1_Fb7oV16GG0iSkjMLlJnocG40YlqX8QnLqOMzFFHUaFlsQoC09gPR-h3kdKGdr2R5Y-xh8oo9Hmuxt8UDfw4FCguVH0gnzh6ezkh7273GGWllcjDWHFhsOQzSVT4aw6eaVT7IMJHgx-blKsYqNzi-6qycye6dp7tX1lCk0cVsQ0QUArLA6As_OdQI9OzSl6yobpwriziq8GpmfxQsUXKVEA7agLj1XB-BoRV1bNytwshy_uvJnm2kc4dESgHWXdzx6zcHUmNeGTZHYNPBq_IFeQXtZ2tgB8WsRFG4qGmzCZFA3lWsvZxLUtxCujYnXb378XBGXUqk8yK1uVh_vELe758FxGASC0xbXBtdaoJVR8u2MJQLQLS1gQLQAl1RcO0-59f7B1_RXXbhIU0pZtxPDce0kN5fIR-EI-kz_gpSRC0decpXALTgH2=w675-h534-no" alt="명함관리 웹 APP 이클립스 소스 폴더와 Output 폴더 설정" /><br />
+<img src="<c:url value="/resources/images/namecard-webapp-src-bin.png"/>" alt="명함관리 웹 APP 이클립스 소스 폴더와 Output 폴더 설정" /><br />
 
 이제 이클립스에서 소스를 수정하면 따로 컴파일하지 않아도 바이트 코드가 WEB-INF/classes에 생긴다.<br />
 http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
@@ -193,7 +193,7 @@ http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 먼저 이클립스의 JSP 템플릿의 캐릭터셋을 EUC-KR 에서 UTF-8로 변경한다.<br />
 이클립스에서 Windows - Preferences - Web - JSP Files 선택하고 인코딩 박스에서 UTF-8를 선택하고 Apply 클릭한다.<br />
 
-<img src="https://lh3.googleusercontent.com/O649zlhlNZV5-RfPOCLl_PiHnPusHSsVj5P9Yt35EjOOPUvljDRmpszK0wgTt58qlX2tyMWCkOm0wez-MNTWcQQSgYNqxjbeXPRbr6SBEscMosfXGJBq1mjHWDG-GhgMWZKRKhGNymeTySlAFDhtnKzVs9dXwG_3N_l-QmpZwVQWPrqyOF_GEpL5h3DVIwecxvM6CIe4yHb1Jxk_M1XLedmX1eyMt2FVpml1WZwPJ89dvXPpRW6LeGW1IRcZGUC_Z0p0knUU0tu8cDYHdbmvspMoABK32w024jxWMrMYIsY6xWE860lIbl_kf81nYzsmq371jgjQmumD0n_Ttw22XP08TwBgRvIGdW-1RByW-ws_9S2eYarKFu2k9BmSQd73i1hccoeqYYNf-Q87yc4DGyhJSbo0PYqU3eXShif9YyyHmW8X2xs438OJlCeK32O1tDKkuujkfQCa0-qQV57WR0j3XcGh3CpDn01VGcDwzyB9ideiUhCcV97goVoTY7znG1ycrzf-RU3Ykfnr6LlO7SMDx7Qj1qe4F7CypG7YCc46LVRGna2RM9RVH7tdUZB6wp-v7E9wiOXxDvy5p6Rn0EHSsrvAc7bAHTyPo5lwf75wOnH2NPOH4bob=w625-h535-no" alt="JSP 파일인코딩 UTF-8로 " /><br />
+<img src="<c:url value="/resources/images/eclipse-jsp-files-encoding.png"/>" alt="JSP 파일인코딩 UTF-8로 " /><br />
 
 아래 write.jsp 소스에서 강조된 부분이 여러분이 직접 입력해야 하는 부분이다.<br />
 </p>

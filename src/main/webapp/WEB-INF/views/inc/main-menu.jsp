@@ -5,7 +5,7 @@
 <ul id="nav">
     <li><a href="<c:url value="/java/features"/>">Java</a></li>
     <li><a href="<c:url value="/jdbc/intro"/>">JDBC</a></li>
-    <li><a href="<c:url value="/jsp/how-to-install-tomcat"/>">JSP</a></li>
+    <li><a href="<c:url value="/jsp/tomcat-install"/>">JSP</a></li>
     <li><a href="<c:url value="/css-layout/div-element-arrangement"/>">CSS Layout</a></li>
     <li><a href="<c:url value="/jsp-pjt/dynamic-web-project-set-Up"/>">JSP Project</a></li>
     <li><a href="<c:url value="/spring/building-java-projects-with-maven"/>">Spring</a></li>
