@@ -4,12 +4,11 @@
 
 <article>
 
-<h1>Packages and Access Modifiers</h1>
-
-<h2>Packages</h2>
+<h1>Package</h1>
 
 <p>
-Java provides a package to manage classes with similar features and similar nature. All Java APIs belong to a specific package (usually a package with names beginning with java).
+Java provides a package to manage classes with similar features and similar nature. 
+All Java APIs belong to a specific package (usually a package with names beginning with java).
 </p>
 
 <p>

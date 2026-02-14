@@ -340,7 +340,7 @@ Vector의 모든 메소드는 synchronize가 적용되어 있다.
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/io"/>">자바 I/O</a></li>
-    <li>이전 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속적용</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-interface"/>">자바은행 - 인터페이스 적용</a></li>
   </ul>
 </div>
 

@@ -4,9 +4,7 @@
 
 <article>
 
-<h1>Operators, if, switch, loops</h1>
-
-<h2>Operators</h2>
+<h1>Operators</h1>
 
 <p>
 An Operators is a symbol that the compiler to perform manipulations such as assign a value to a variable or change a value of a variable or compare two values.

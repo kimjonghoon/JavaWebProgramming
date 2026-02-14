@@ -42,4 +42,11 @@ SQL를 이용하여 테이블을 생성하고 테이블에 레코드를 조회, 
 </dd>
 </dl>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/oracle-install"/>">오라클 설치</a></li>
+		<li>이전 : <a href="<c:url value="/java/rmi"/>">RMI</a></li>
+	</ul>
+</div>
+
 </article>

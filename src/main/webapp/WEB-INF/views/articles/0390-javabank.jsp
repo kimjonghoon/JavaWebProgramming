@@ -835,4 +835,11 @@ public class BankUi {
 <a href="https://github.com/kimjonghoon/JavaBank">https://github.com/kimjonghoon/JavaBank</a>
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/tomcat-install"/>">톰캣 설치</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/namecard"/>">명함관리</a></li>
+	</ul>
+</div>
+
 </article>

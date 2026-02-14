@@ -101,4 +101,11 @@ conn.close();
 You have to return the resources order in the reverse order of the generated.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/jdbc-examples"/>">JDBC Examples</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/jdbc-test-on-oracle"/>">JDBC Test on Oracle</a></li>
+	</ul>
+</div>
+
 </article>

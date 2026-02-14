@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>패키지와 접근자</h1>
+<h1>패키지</h1>
 
 <p class="floatstop">
 패키지는 말 그대로 꾸러미이다.

@@ -338,4 +338,11 @@ SQL&gt;<strong>@/u01/app/oracle/product/11.2.0/xe/rdbms/admin/utlsampl.sql</stro
 		<b>/u01/app/oracle/product/11.2.0/xe/rdbms/admin/utlsampl.sql</b></li>
 </ol>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/sql-basics"/>">SQL 기본</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/oracle-install"/>">오라클 설치</a></li>
+	</ul>
+</div>
+
 </article>

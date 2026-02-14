@@ -37,4 +37,11 @@ With SQL, you can do the following.
 </dd>
 </dl>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/oracle-install"/>">Oracle Install</a></li>
+		<li>Prev : <a href="<c:url value="/java/rmi"/>">RMI</a></li>
+	</ul>
+</div>
+
 </article>

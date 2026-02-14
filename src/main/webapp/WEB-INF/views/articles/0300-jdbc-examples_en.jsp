@@ -219,4 +219,274 @@ Statement's executeUpdate() method is used to execute DDL statements such as cre
 </dd>
 </dl>
 
+<h1>JDBC - Insert</h1>
+
+<p>
+This chapter demonstrates how to insert records into the NAMECARD table using JDBC.
+Our goal is to execute the following insert statement.
+</p>
+
+<pre class="prettyprint">
+INSERT INTO NAMECARD VALUES
+(
+  SEQ_NAMECARD_NO.NEXTVAL,
+  'Alison',
+  '011-0000-0000',
+  'alison@ggmail.org',
+  'Google Inc'
+);
+</pre>
+
+<p>
+Complete the main() of NamecardInsert.java by referring to the following JDBC programming order.
+</p>
+
+<ol>
+	<li>Loading a JDBC Driver</li>
+	<li>Getting a Connection</li>
+	<li>Execute SQL</li>
+	<li>[If the SQL statement is a select statement, use a ResultSet to process the data.]</li>
+	<li>Returning Resources</li>
+</ol>
+
+<h6 class="src">NamecardInsert.java</h6>
+<pre class="prettyprint">
+package net.java_school.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class NamecardInsert {
+  <strong>static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+  static final String USER = "scott";
+  static final String PASS = "tiger";</strong>
+	
+  public static void main(String[] args) {
+    try {
+      Class.forName("oracle.jdbc.driver.OracleDriver");
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+		
+    Connection con = null;
+    Statement stmt = null;
+    <strong>String sql = "INSERT INTO NAMECARD VALUES " +
+      "(SEQ_NAMECARD_NO.NEXTVAL," +
+      "'Alison'," +
+      "'011-0000-0000'," +
+      "'alison@ggmail.org'," +
+      "'Google Inc')";</strong>
+
+    try {
+      con = DriverManager.getConnection(<strong>URL, USER, PASS</strong>);
+      stmt = con.createStatement();
+      stmt.executeUpdate(sql);
+    } catch (SQLException e) {
+      e.printStackTrace();
+      <strong>System.out.println(sql);</strong>
+    } finally {
+      try {
+        stmt.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      try {
+        con.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+}
+</pre>
+
+<p>
+Run NamecardInsert class and confirm via SQL*PLUS that the data exists.
+</p>
+
+<h1>JDBC - Select</h1>
+
+<p>
+This chapter demonstrates the JDBC example of retrieving records from the NAMECARD table.
+Our goal is to run the following SQL using JDBC.
+</p>
+
+<pre>
+SELECT NO,NAME,MOBILE,EMAIL,COMPANY 
+FROM NAMECARD
+ORDER BY NO DESC
+</pre>
+
+<p>
+Complete the main() of NamecardSelect.java by referring the JDBC programming procedure below.
+</p>
+
+<ol>
+	<li>Loading a JDBC Driver</li>
+	<li>Getting a Connection</li>
+	<li>Execute SQL</li>
+	<li>[If the SQL statement is a select statement, use ResultSet to process the data.]</li>
+	<li>Returning Resources</li>
+</ol>
+
+<h6 class="src">NamecardSelect.java</h6>
+<pre class="prettyprint">
+package net.java_school.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class NamecardSelect {
+  static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+  static final String USER = "scott";
+  static final String PASS = "tiger";
+	
+  public static void main(String[] args) {
+    try {
+      Class.forName("oracle.jdbc.driver.OracleDriver");
+    } catch (ClassNotFoundException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+
+    Connection con = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+		
+    String sql = "SELECT NO,NAME,MOBILE,EMAIL,COMPANY " +
+      "FROM NAMECARD " +
+      "ORDER BY NO DESC";
+
+    try {
+      con = DriverManager.getConnection(URL, USER, PASS);
+      stmt = con.createStatement();
+      rs = stmt.executeQuery(sql);
+
+      while (rs.next()) {
+        int no = rs.getInt("no");
+        String name = rs.getString("name");
+        String mobile = rs.getString("mobile");
+        String email = rs.getString("email");
+        String company = rs.getString("company");
+        System.out.println(no + "|" + name + "|" + mobile + "|" + email + "|" + company);
+      }
+			
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(sql);
+    } finally {
+      try {
+        rs.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      try {
+        stmt.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      try {
+        con.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+}
+</pre>
+
+<dl class="note">
+<dt>ResultSet getXXX() method</dt>
+<dd>
+The getXXX() is not a name. XXX means a data type of Java. If the column's data type is NUMBER, you can use getXXX() methods whose XXX part is Int, Long, Double,.. one of the Java data types.
+If you pass an index of the column as an argument value like getInt(1), you will get the first column value as a Java int type. You can pass the column name as an argument value like our example. Of course, performance is faster to pass indexes, but giving column names is better for maintenance.
+</dd>
+</dl>
+
+<h1>JDBC - Update</h1>
+
+<p>
+This tutorial describles how to use JDBC to execute an UPDATE statement.
+Our goal is to execute the following SQL statement.
+</p>
+
+<pre class="prettyprint">
+UPDATE NAMECARD SET EMAIL ='alison@ggmail.org' WHERE NO = 1
+</pre>
+
+<p>
+Refer to the JDBC programming order to complete the main() of UpdateNamecard.java.
+
+<ol>
+	<li>Loading a JDBC Driver</li>
+	<li>Getting a Connection</li>
+	<li>Execute SQL</li>
+	<li>[If the SQL statement is a select statement, use a ResultSet to process the data.]</li>
+	<li>Returning Resources</li>
+</ol>
+
+<h6 class="src">NamecardUpdate.java</h6>
+<pre class="prettyprint">
+package net.java_school.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class NamecardUpdate {
+  static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+  static final String USER = "scott";
+  static final String PASS = "tiger";
+	
+  public static void main(String[] args) {
+    try {
+      Class.forName("oracle.jdbc.driver.OracleDriver");
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+
+    Connection con = null;
+    Statement stmt = null;
+		
+    String sql = "UPDATE NAMECARD " +
+      "SET EMAIL ='alison@ggmail.org' " +
+      "WHERE NO = 1";
+		
+    try {
+      con = DriverManager.getConnection(URL, USER, PASS);
+      stmt = con.createStatement();
+      stmt.executeUpdate(sql);
+    } catch (SQLException e) {
+      e.printStackTrace();
+      System.out.println(sql);
+    } finally {
+      try {
+        stmt.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+      try {
+        con.close();
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+}
+</pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/preparedstatement"/>">PreparedStatement</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/jdbc-guide"/>">JDBC Guide</a></li>
+	</ul>
+</div>
+
 </article>

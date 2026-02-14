@@ -416,8 +416,14 @@ public class NamecardUi {
   public static void main(String[] args) {
     new NamecardUi().showMenu();
   }
-
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/javabank"/>">Java Bank</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/connection-pool"/>">Connection Pool</a></li>
+	</ul>
+</div>
 
 </article>

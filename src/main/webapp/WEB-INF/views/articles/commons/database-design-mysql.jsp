@@ -1,22 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-<title>Database Design for MySql</title>
-<meta name="Keywords" content="database design for mysql" />
-<meta name="Description" content="database design for mysql" />
-<link rel="stylesheet" href="../../../static/css/english.css" type="text/css" />
-<link rel="stylesheet" href="../../../static/css/screen.css" type="text/css" />
-<link rel="stylesheet" href="../../../static/css/print.css" type="text/css" />
-<link rel="stylesheet" href="../../../static/css/prettify.css" type="text/css" />
-<script src="../../../static/js/jquery.js"></script>
-<script src="../../../static/js/commons.js"></script>
-<script src="../../../static/js/prettify.js"></script>
-<script src="../../../static/js/javaschool-prettify.js"></script>
-</head>
-
-<body>
-
-<th:block th:fragment="content">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
 <pre class="prettyprint">
 mysql --user=root --password mysql
@@ -98,6 +81,3 @@ commit;
 exit;
 </pre>
 
-</th:block>
-</body>
-</html>

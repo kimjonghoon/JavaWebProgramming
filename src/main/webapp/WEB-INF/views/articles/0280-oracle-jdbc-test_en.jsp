@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>Oracle JDBC Test</h1>
+<h1>JDBC Test on Oracle</h1>
 
 <h3>Adding Oracle JDBC driver to your classpath</h3>
 
@@ -199,5 +199,12 @@ In the Package Explorer view, select GetEmp.java with the mouse.
 Click the right button and execute as below.
 <img src="https://lh3.googleusercontent.com/-Rfh4TDU6QJg/VYFQ4GMN9hI/AAAAAAAACQ8/be58ONtH7aM8ynlDO1kom5k7ZndWtvOrQCCo/s657/GetEmp-Run.png" alt="How to run GetEmp.java in Eclipse" /><br />
 </p>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/jdbc-guide"/>">JDBC Guide</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/sql-basics"/>">SQL Basics</a></li>
+	</ul>
+</div>
 
 </article>

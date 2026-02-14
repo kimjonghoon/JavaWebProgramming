@@ -4,15 +4,7 @@
 
 <article>
 			
-<h1>Keywords, Identifiers, Comments</h1>
-
-<h3>Keywords</h3>
-
-<p>
-In a computer language, keywords are reserved words for particular uses.
-</p>
-
-<h2>Identifiers</h2>
+<h1>Identifiers</h1>
 
 <p>
 The names of classes, variables, and methods are collectively called identifiers.
@@ -26,7 +18,7 @@ Java identifiers must adhere to the following rules:
 	<li>Begin with an alphabet character</li>
 	<li>White space is not permitted</li>
 	<li>Special characters are not allowed except the $ and the _</li>
-	<li>Java keyword is not permitted</li>
+	<li>Java keyword is not permitted (In a computer language, keywords are reserved words for particular uses)</li>
 </ol>
 
 <p>
@@ -116,10 +108,12 @@ The compiler ignores everything between /* and */.
 The compiler ignores everything between /** and */.<br />
 You can generate Java documentation using the JDK's Javadoc with these comments.
 </p>
+
 <div id="next-prev">
   <ul>
     <li>Next : <a href="<c:url value="/java/datatype"/>">Data Type</a></li>
     <li>Prev : <a href="<c:url value="/java/object-and-class"/>">Object and Class</a></li>
   </ul>
 </div>
+
 </article>

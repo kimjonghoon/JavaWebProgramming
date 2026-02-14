@@ -924,7 +924,7 @@ public void run() {
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/rmi"/>">RMI</a></li>
-    <li>이전 : <a href="<c:url value="/java/logging"/>">Logging</a></li>
+    <li>이전 : <a href="<c:url value="/java/logging"/>">로킹</a></li>
   </ul>
 </div>
 

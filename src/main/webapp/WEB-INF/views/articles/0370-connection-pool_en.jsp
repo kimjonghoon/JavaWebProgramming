@@ -1004,4 +1004,11 @@ public class GetEmp {
 	<li><a href="http://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html">http://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html</a></li>
 </ul>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/namecard"/>">Name Cards</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/transaction"/>">JDBC - Transaction</a></li>
+	</ul>
+</div>
+
 </article>

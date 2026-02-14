@@ -118,4 +118,11 @@ PreparedStatement 대신에 Statement을 꼭 써야 하는 경우는 거의 없�
 때문에 이제부터는 PreparedStatement만을 사용하도록 하자.<br />
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/join"/>">JDBC - 조인</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/jdbc-examples"/>">JDBC 실습</a></li>
+	</ul>
+</div>
+
 </article>

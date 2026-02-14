@@ -100,4 +100,11 @@ public class JoinTable {
 }
 </pre>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/transaction"/>">JDBC - 트랜잭션</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/preparedstatement"/>">PreparedStatement</a></li>
+	</ul>
+</div>
+
 </article>

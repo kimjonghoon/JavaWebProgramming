@@ -44,6 +44,13 @@ PL/SQL procedure successfully completed.
 SQL&gt;
 </pre>
 
-<div th:replace="~{articles/commons/oracle-11g-xe-install-on-ubuntu_en :: content}"></div>
+<%@ include file="./commons/oracle-11g-xe-install-on-ubuntu_en.jsp" %>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/scott-account"/>">SCOTT Account</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/intro"/>">JDBC Introduction</a></li>
+	</ul>
+</div>
 
 </article>

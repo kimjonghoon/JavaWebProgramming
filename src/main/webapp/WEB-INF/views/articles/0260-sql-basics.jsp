@@ -4,30 +4,32 @@
 
 <article>
 
-<h1>Select</h1>
+<h1>SQL 기본</h1>
+
+<h2>SELECT</h2>
 
 <p>
-SQL also has a standard.<br />
-In this section, we will practice SELECT statements with standard SQL.<br />
-The SELECT has the following order.
+SQL도 역시 표준이 존재한다.
+여기서는 오라클을 사용하지만 표준 SQL 위주로 실습한다.
+SELECT 문장은 순서가 중요하다.
 </p>
 
 <pre class="prettyprint">
-SELECT column, column ...
-FROM table name
-WHERE condition
-GROUP BY statement
-UNION/UNION ALL/INTERSECT/MINUS
-ORDER BY statement
+SELECT 칼럼,칼럼...
+FROM 테이블명 
+WHERE 조건 
+GROUP BY 구문 
+UNION/UNION ALL/INTERSECT/MINUS 구문 
+ORDER BY 구문
 </pre>
 
 <p>
-For Oracle, you must write up to <b>FROM table_name</b>.
+오라클의 경우, SELECT <em>column1,column2,..</em> FROM <em>table_name</em>까지는 작성해야 한다.<br />
 </p>
 
 <p>
-All examples below use tables from the SCOTT account.<br />
-If you do not have a SCOTT account, refer to the following to create tables. 
+아래 모든 예제는 SCOTT 계정의 테이블이 대상이다.
+SCOTT 계정이 없다면 다음을 참조하여 실습 환경을 만든다.
 </p>
 
 <h6 class="src">Oracle</h6>
@@ -129,7 +131,7 @@ INSERT INTO SALGRADE VALUES (5,3001,9999);
 COMMIT;
 </pre>
 
-<h3>All the records on the employee table</h3>
+<h3>사원 테이블의 모든 레코드 조회</h3>
 
 <pre class="prettyprint">
 SELECT * 
@@ -142,7 +144,8 @@ FROM EMP
 </pre>
 
 <p>
-The above two SQL statements show the same result. After the select keyword, * means all the columns in order.
+위 두 쿼리문은 같은 레코드를 가져온다.
+select 다음에  * 사용하면 <em>테이블을 구성하는 순서대로 칼럼 모두</em>를 의미한다.
 </p>
 
 <pre>
@@ -164,7 +167,7 @@ The above two SQL statements show the same result. After the select keyword, * m
       7934 MILLER     CLERK	      7782 82/01/23	  1300			  10
 </pre>
 
-<h3>employee's name and hire date</h3>
+<h3>사원 이름과 입사일 조회</h3>
 
 <pre class="prettyprint">
 SELECT ENAME,HIREDATE
@@ -190,11 +193,11 @@ FORD	   81/12/03
 MILLER	   82/01/23
 </pre>
 
-<h3>Department number and employee's name</h3>
+<h3>부서 번호와 사원 이름을 조회</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,ENAME 
-FROM EMP
+FROM EMP;
 </pre>
 
 <pre>
@@ -216,12 +219,15 @@ FROM EMP
 	10 MILLER
 </pre>
 
-<h3>Jobs List</h3>
+<p>
+칼럼을 선택하여 조회할 수 있고 칼럼의 순서를 바꾸어 조회할 수 있다. 
+</p>
+
+<h3>직책(Job) 목록</h3>
 
 <pre class="prettyprint">
 SELECT DISTINCT JOB
-FROM
-EMP
+FROM EMP;
 </pre>
 
 <pre>
@@ -235,15 +241,14 @@ ANALYST
 </pre>
 
 <p>
-DISTINCT makes duplicate records to be shown only once in query results.
+DISTINCT는 검색 결과에서 중복된 레코드는 한 번만 보여주어야 할 때 사용한다.
 </p>
 
-<h3>Total number of employees</h3>
+<h3>총 사원수</h3>
 
 <pre class="prettyprint">
 SELECT COUNT(EMPNO)
-FROM
-EMP
+FROM EMP;
 </pre>
 
 <pre>
@@ -253,13 +258,13 @@ COUNT(EMPNO)
 </pre>
 
 <p>
-COUNT returns the number of records retrieved as one of the group functions.
-COUNT (column name) returns the number of non-NULL records for which that column is not NULL, and COUNT (*) returns the total number of them.
+COUNT는 그룹함수로 검색된 레코드의 수를 반환한다.
+COUNT(칼럼명)은 NULL이 아닌 레코드의 수를, COUNT(*)은 NULL을 포함한 레코드의 수를 반환한다. 
 </p>
 
-<h2>WHERE conditions</h2>
+<h2>WHERE 조건</h2>
 
-<h3>Employees working in a department with department number 10</h3>
+<h3>부서 번호가 10인 부서에 근무하는 사원</h3>
 
 <pre class="prettyprint">
 SELECT * 
@@ -275,7 +280,7 @@ WHERE DEPTNO = 10;
       7934 MILLER     CLERK	      7782 82/01/23	  1300			  10
 </pre>
 
-<h3>Employees receiving more than 2500</h3>
+<h3>급여가 2500이상 되는 사원</h3>
 
 <pre class="prettyprint">
 SELECT *
@@ -294,11 +299,12 @@ WHERE SAL &gt;= 2500;
 </pre>
 
 <p>
-When you add the WEREE conditions to the query, you can fetch records matching the WHERE conditions.
-You can use =, &gt;, &gt;=, &lt;=, &lt; in the WHERE conditions.
+WHERE 절이 추가되었다.
+이제 WHERE 다음에 나오는 조건에 부합하는 레코드는 배제된다.
+위 쿼리문은 WHERE 조건에  =,&gt;,&gt;=,&lt;=,&lt; 비교 연산자를 사용한 예이다.
 </p>
 
-<h3>Employee whose name is KING</h3>
+<h3>이름이 'KING'인 사원</h3>
 
 <pre class="prettyprint">
 SELECT *
@@ -313,17 +319,19 @@ WHERE ENAME = 'KING';
 </pre>
 
 <p>
-SQL statements are case-insensitive. However, the data in the column is, of course, case-sensitive.
+쿼리문은 대소문자를 가리지 않는다.
+하지만 칼럼에 들어가는 데이터는 당연히 대소문자를 가린다. 
+KING라고 저장되어 있는데 king로는 검색되지 않는다.
 </p>
 
 <dl class="note">
-<dt>MySQL is case-sensitive</dt>
+<dt>MySQL은 대소문자를 구별한다.</dt>
 <dd>
-Unlike Oracle, table and column names in MySQL are case-sensitive.
+오라클과 달리, MySQL의 테이블과 칼럼 이름은 대소문자를 구별한다.
 </dd>
 </dl>
 
-<h3>Employee number and name of employees whose name begins with S</h3>
+<h3>사원 이름이 'S'로 시작하는 사원의 사원 번호와 이름</h3>   
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME
@@ -338,7 +346,7 @@ WHERE ENAME LIKE 'S%';
       7788 SCOTT
 </pre>
 
-<h3>Employee number and name of the employees whose name includes T</h3>
+<h3>사원 이름에 T가 포함된 사원의 사원 번호와 이름</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME
@@ -356,23 +364,23 @@ WHERE ENAME LIKE '%T%';
 </pre>
 
 <p>
-LIKE is used in searches with % and _.
+LIKE는  % 와 _문자와 함께 검색할 때 사용된다.
 </p>
 
 <dl class="note">
-<dt>SQL*PLUS Tips</dt>
+<dt>SQL*PLUS 사용법</dt>
 <dd>
-Here's how to edit the SQL statement in the command buffer. <br />
-This is useful when you run an incorrect SQL statement. <br />
-<strong>ed</strong><br />
-When you run ed in SQL*PLUS, the system's default editor runs and displays the buffer.
-In Windows, Notepad runs.
-After modifying the contents and closing it in Notepad, execute / to run the SQL statement in the buffer.<br />
-<strong>/</strong>
+명령 버퍼에 있는 SQL문을 편집하는 방법을 소개한다.
+SQL문을 잘못 입력했을 때 유용하다.
+<strong style="display: block;">ed</strong>
+SQL*PLUS 에서 ed 명령어를 실행하면 버퍼에 있는 내용을 시스템의 디폴트 편집기가 실행되면서 보여준다.
+윈도우의 경우 메모장이 실행되면서 버퍼에 저장된 SQL문를 보여주게 된다.
+메모장에 있는 내용을 수정하고 닫은 다음에 / 명령으로 버퍼의 SQL문을 실행할 수 있다.
+<strong style="display: block;">/</strong>
 </dd>
 </dl>
 
-<h3>Employee number, name, and commission of the employees who earn 300, 500, or 1400 commissions</h3>
+<h3>커미션이 300, 500, 1400인 사원의 사원 번호, 이름, 커미션</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,COMM
@@ -403,11 +411,11 @@ WHERE COMM IN (300,500,1400);
 </pre>
 
 <p>
-Both are SQL statements that show the same result.
-The first SQL statement used the logical operator, OR, and the second used IN.
+둘 다 같은 결과를 보여준다.
+첫번째 쿼리문은 논리 연산자 OR를 사용했고 두번째는 IN을 사용했다.
 </p>
 
-<h3>Employee number, name, and salary of employees whose salary is between 1200 and 3500</h3>
+<h3>급여가 1200에서 3500 사이인 사원의 사원 번호, 이름, 급여</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,SAL
@@ -431,10 +439,11 @@ WHERE SAL BETWEEN 1200 AND 3500;
 </pre>
 
 <p>
-SAL BETWEEN 1200 AND 3500 is mathematically 1200 &lt; = SAL &lt; = 3500.
+위 쿼리는 BETWEEN ~ AND ~ 사용법을 보여준다.
+<em>SAL BETWEEN 1200 AND 3500</em>은 수학적으로 1200 &lt;= SAL &lt;= 3500이다.
 </p>
 
-<h3>Employee name, employee number, job, department number of the employees whose job title is manager and department number is 30</h3>
+<h3>직급이 매니저이고 부서 번호가 30번인 부서에 근무하는 사원의 이름, 사원 번호, 직급, 부서 번호</h3>
 
 <pre class="prettyprint">
 SELECT ENAME,EMPNO,JOB,DEPTNO
@@ -448,7 +457,7 @@ ENAME		EMPNO JOB	    DEPTNO
 BLAKE		 7698 MANAGER		30
 </pre>
 
-<h3>Employee number, name, and department number of an employees whose department number is not 30</h3>
+<h3>부서 번호가 30인 부서에 근무하지 않는 사원의 사원 번호, 이름, 부서 번호</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,DEPTNO
@@ -469,7 +478,7 @@ WHERE NOT DEPTNO = 30;
       7934 MILLER	      10
 </pre>
 
-<h3>Employee number, name, and commission of the employees whose commission are not 300, 500, or 1400</h3>
+<h3>커미션이 300, 500, 1400이 모두 아닌 사원의 사원 번호, 이름, 커미션</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,COMM
@@ -483,7 +492,7 @@ WHERE COMM NOT IN (300,500,1400);
       7844 TURNER	       0
 </pre>
 
-<h3>Employee number and name of the employees whose name does not contain an S</h3>
+<h3>이름에 'S'가 포함되지 않는 사원의 사원 번호, 이름</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME
@@ -505,7 +514,7 @@ WHERE ENAME NOT LIKE '%S%';
       7934 MILLER
 </pre>
 
-<h3>Employee number, name, and salary of employees whose salary is less than 1200 or exceeds 3700</h3>
+<h3>급여가 1200 미만이거나 3700을 초과하는 사원의 사원 번호, 이름, 급여</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,SAL
@@ -522,10 +531,10 @@ WHERE SAL NOT BETWEEN 1200 AND 3700;
       7900 JAMES	     950
 </pre>
 
-<h3>Employee name and job of the employees without their manager</h3>
+<h3>매니저가 NULL인 사원의 이름과 직급</h3>
 
 <p>
-To check if a column is NULL, use the IS NULL and IS NOT NULL statements. 
+칼럼이 NULL인지 판단하기 위해선, IS NULL, IS NOT NULL 문장을 사용한다. 
 </p>
 
 <pre class="prettyprint">
@@ -540,11 +549,11 @@ ENAME	   JOB
 KING	   PRESIDENT
 </pre>
 
-<h2>GROUP BY</h2>
+<h2>GROUP BY 구문</h2>
 
 <pre class="prettyprint">
 SELECT DEPTNO,AVG(SAL)
-FROM EMP
+FROM EMP;
 </pre>
 
 <pre>
@@ -555,13 +564,12 @@ ORA-00937: not a single-group group function
 </pre>
 
 <p>
-The above SQL statement intents to find the salary average by DEPTNO.<br />
-At this time, DEPTNO is a column for grouping.<br />
-A group function is used together with a column for grouping.<br />
-You should specify that column after GROUP BY.
+부서별 평균 급여가 위 쿼리문의 의도다.
+이때 그룹화의 기준이 되는 칼럼은 DEPTNO다.
+그룹함수와 그룹화의 기준이 되는 칼럼이 함께 쓰일 때는 이 칼럼을 GROUP BY로 명시해 주어야 에러를 피할 수 있다.
 </p>
 
-<h3>Average salary by department number</h3>
+<h3>부서별 평균 급여</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,AVG(SAL)
@@ -577,7 +585,7 @@ GROUP BY DEPTNO;
 	10 2916.66667
 </pre>
 
-<h3>Total number of employees and employees receiving commissions by department number</h3>
+<h3>부서별 총 사원 수와 커미션을 받는 사원들의 총수</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,COUNT(*),COUNT(COMM)
@@ -593,7 +601,7 @@ GROUP BY DEPTNO;
 	10	    3		0
 </pre>
 
-<h3>Maximum salary and minimum salary by department number</h3>
+<h3>부서별 최대 급여와 최소 급여</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,MAX(SAL),MIN(SAL)
@@ -610,10 +618,10 @@ GROUP BY DEPTNO;
 </pre>
 
 <p>
-HAVING is used to extract data from the GROUP BY clause.
+HAVING은 GROUP BY 절에서 생성된 결과 값 중 원하는 조건에 부합하는 자료만 추출하기 위해 사용한다.
 </p>
 
-<h3>Average salary by department number for those with a salary of 2000 or higher</h3>
+<h3>부서별로 평균 급여 (단, 평균 급여가 2000 미만인 부서는 제외)</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,AVG(SAL)
@@ -623,14 +631,18 @@ GROUP BY DEPTNO;
 </pre>
 
 <pre>
-GROUP BY DEPTNO;  2    3  WHERE AVG(SAL) &gt;= 2000
+GROUP BY DEPTNO;  2    3  WHERE AVG(SAL) >= 2000
       *
 ERROR at line 3:
 ORA-00934: group function is not allowed here
 </pre>
 
 <p>
-You can not use a WHERE conditional statement when giving a condition using the GROUP BY clause. Therefore, the above query generates an error. Use the HAVING clause instead of the WHERE clause. Note that in the HAVING clause only has the group functions and the columns for grouping.
+GROUP BY 구문을 사용하면서 이 결과에 조건을 줄 때 WHERE 조건문을 사용할 수 없다.
+따라서 위 쿼리는 에러를 발생한다.
+GROUP BY 구문을 사용하면서 조건을 주기 위해서는 대신 HAVING 구문을 사용한다.
+HAVING 구문에서는 그룹화의 기준이 되는 칼럼과 그룹함수만이 사용 할 수 있다는 점에 주의한다.
+위 쿼리문에서 그룹화의 기준이 되는 칼럼이 DEPTNO이므로, DEPTNO는 HAVING 구문에 사용할 수 있다.
 </p>
 
 <pre class="prettyprint">
@@ -647,7 +659,7 @@ HAVING AVG(SAL) &gt;= 2000;
 	10 2916.66667
 </pre>
 
-<h3>Salary averages by department number only for employees whose salary is 1000 or higher (only records with an average of 2000 or higher)</h3>
+<h3>급여가 1000 이상인 사원을 대상으로 부서별 평균 급여(단, 평균 급여가 2000 이만인 부서는 제외)</h3>
 
 <pre class="prettyprint">
 SELECT DEPTNO,AVG(SAL)
@@ -665,21 +677,22 @@ HAVING AVG(SAL) &gt;= 2000;
 </pre>
 
 <p>
-The WHERE clause retrieves records matching specific conditions from a table.
-The HAVING clause retrieves records matching specific conditions from the query result of the GROUP BY clause.
+WHERE 절은 테이블에서 데이터를 가져올 때 그 테이블에서 특정 조건에 부합하는 레코드만을 가져올 때 사용하고,
+HAVING 절은 GROUP BY 구문을 사용하여 구한 레코드 중에서 원하는 조건에 맞는 레코드만을 가져올 때 사용한다.
 </p>
 
-<h2>ORDER BY</h2>
+<h2>ORDER BY 구문</h2>
 
 <p>
-You can use the ORDER BY clause to sort the SELECT statement's result based on a column or columns.<br />
-The usage is as follows.<br />
-ORDER BY ColumnName ASC; or ORDER BY ColumnName DESC;<br />
-ASC: Ascending order (You can omit it)<br />
-DESC: Descending order<br />
+SELECT 문장을 사용하여 레코드를 검색할 때 임의의 칼럼을 기준으로 정렬을 해야 할 필요가 발생한다.
+이런 경우 사용하는 구문이 ORDER BY 이다.
+사용형식은 아래와 같다.
+<strong style="display: block;">ORDER BY 정렬의 기준이 되는 칼럼 ASC 또는 DESC;</strong>
+여기서 ASC는 오름차순을 의미한다. ASC는 생략할 수 있다.
+DESC는 내림차순을 의미한다.
 </p>
 
-<h3>Fetch employee number, name, and salary in descending order of their salary (For same salary employees, sort by name in ascending order)</h3>
+<h3>사원 번호, 이름, 급여를 급여가 높은 순으로 정렬(단, 급여가 같을 경우 이름 철자가 빠른 사원이 먼저 나오도록 한다)</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,SAL
@@ -706,19 +719,20 @@ ORDER BY SAL DESC,ENAME ASC;
       7369 SMITH	     800
 </pre>
 
-<h2>Join</h2>
+<h2>조인</h2>
 
 <p>
-Joins means query data from two or more tables.<br />
-Join requires N-1 join conditions when joining N tables.<br />
-Join without any join condition is called Cartesian product.
+조인은 2개 이상의 테이블에서 데이터를 조회할 때 사용한다.
+조인조건은 테이블 N개를 조인할 때 N-1 개의 조인 조건이 필요하다.
+사용형식은 다음과 같다.
+<strong style="display: block">SELECT 테이블1.칼럼,테이블2.칼럼,....FROM 테이블1,테이블2,...</strong>
 </p>
 
-<h3>Cartesian product</h3>
+<h3>카테시안 곱</h3>
 
 <pre class="prettyprint">
 SELECT EMP.ENAME,DEPT.DNAME
-FROM EMP,DEPT
+FROM EMP,DEPT;
 </pre>
 
 <pre>
@@ -783,18 +797,13 @@ MILLER	   OPERATIONS
 </pre>
 
 <p>
-Cartesian product of EMP and DEPT tables generate 48 rows by multiplying 12 records existing in the EMP table and 4 in the DEPT table.
+조인의 조건이 없는 단순 조인이다. 
+앞으로 나오는 조인 예제는 이러한 단순 조인 결과를 머릿속에 그리면서 실습해야 한다.
+총 56개의 행은 EMP 테이블에 존재하는 14개의 레코드와 DEPT 테이블에 존재하는 4개의 레코드의 곱으로 생성된다.
+조회 대상이 되는 각 테이블의 칼럼이 명백히 어느 테이블의 칼럼인지가 확실하다면 EMP.ENAME을 ENAME처럼 테이블 이름을 생략할 수 있다.
 </p>
 
-<p>
-You better write the join condition while considering the Cartesian product as above.
-</p>
-
-<p>
-If the column name is distinct from other columns in the join tables, you can omit the table name in the column list. In the above example, you can use ENAME instead of EMP.ENAME.
-</p>
-
-<h3>Employee name and department name</h3>
+<h3>사원 이름과 부서 이름</h3>
 
 <pre class="prettyprint">
 SELECT ENAME,DNAME
@@ -822,7 +831,8 @@ MILLER	   ACCOUNTING
 </pre>
 
 <p>
-You can give the table name alias in the FROM clause.
+테이블에 별칭을 사용할 수 있다.
+이로써 복잡한 조인문이 간단해 질 수 있다.
 </p>
 
 <pre class="prettyprint">
@@ -850,10 +860,10 @@ FORD	   RESEARCH
 MILLER	   ACCOUNTING
 </pre>
 
-<h3>Employee name and their manager name</h3>
+<h3>사원 이름과 사원의 관리자 이름</h3>
 
 <p>
-You can obtain the same result by using an INNER JOIN.
+같은 테이블을 조인할 수 있다. 
 </p>
 
 <pre class="prettyprint">
@@ -879,7 +889,7 @@ JONES	   KING
 SMITH	   FORD
 </pre>
 
-<h3>Employee name, salary, and salary grade</h3>
+<h3>이름, 급여, 급여 등급</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,E.SAL,S.GRADE
@@ -906,6 +916,11 @@ FORD		 3000	       4
 KING		 5000	       5
 </pre>
 
+<p>
+WHERE 조건에 조인조건을 = 이외의 비교 연산자를 사용한 조인문이다.
+이 SQL문을 BETWEEN ~ AND 문으로 변경하면 아래와 같다.
+</p>
+
 <pre class="prettyprint">
 SELECT E.ENAME,E.SAL,S.GRADE
 FROM EMP E,SALGRADE S
@@ -931,10 +946,10 @@ FORD		 3000	       4
 KING		 5000	       5
 </pre>
 
-<h3>Employee name, department name, and salary grade</h3>
+<h3>이름, 부서 이름, 급여 등급</h3>
 
 <pre class="prettyprint">
-SELECT E.ENAME, D.DNAME, S.GRADE
+SELECT E.ENAME,D.DNAME,S.GRADE
 FROM EMP E,DEPT D,SALGRADE S
 WHERE E.DEPTNO = D.DEPTNO
 AND E.SAL BETWEEN S.LOSAL AND S.HISAL;
@@ -959,7 +974,7 @@ FORD	   RESEARCH		   4
 MILLER	   ACCOUNTING		   2
 </pre>
 
-<h3>Employee name and their manager name</h3>
+<h3>사원 이름과 사원의 관리자 이름</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,M.ENAME
@@ -986,7 +1001,9 @@ SMITH	   FORD
 </pre>
 
 <p>
-The above results are missing the president's record. There is no employee whose employee number is NULL, so the president's record does not match the join condition. Nevertheless, if you want to see the president's records, use the following query: 
+결과에 회장(PRESIDENT)에 대한 레코드가 배제됐다.
+회장은 매니저가 없으므로 MGR 칼럼이 NULL이고 사원 번호가 NULL인 사원은 없기 때문에 조인조건에 만족하지 않는다.
+그럼에도 불구하고 결과에 회장 레코드를 보여야 한다면 아래처럼 질의해야 한다.
 </p>
 
 <pre class="prettyprint">
@@ -1014,19 +1031,14 @@ KING
 </pre>
 
 <p>
-This join is called an OUTER join.<br />
+위와 같은 조인을 외부<sup>OUTER</sup>조인이라 한다.
+A LEFT JOIN B는 조인 조건에 만족하지 못하더라도 왼쪽 테이블 A의 행을 나타내고 싶을 때 사용한다.
 </p>
 
-<h3>A LEFT JOIN B</h3>
-
-<p>
-Even if the rows do not satisfy the join condition, it includes those rows of the left table, A.
-</p>
-
-<h3>Employee name, department name (Even if there are no employees in the department with department number 40, the result must include department 40)</h3>
+<h3>이름, 부서 이름(단, 사원 테이블에 부서 번호가 40에 속한 사원이 없지만 부서 번호 40인 부서 이름도 출력되도록 한다)</h3>
 
 <pre class="prettyprint">
-SELECT E.ENAME, D.DNAME
+SELECT E.ENAME,D.DNAME
 FROM DEPT D LEFT JOIN EMP E ON D.DEPTNO = E.DEPTNO;
 </pre>
 
@@ -1050,11 +1062,10 @@ MILLER	   ACCOUNTING
 	   OPERATIONS
 </pre>
 
-
-<h3>Employee name, department number, department name</h3>
+<h3>이름, 부서 번호, 부서 이름</h3>
 
 <pre class="prettyprint">
-SELECT ENAME, E.DEPTNO, DNAME
+SELECT ENAME,E.DEPTNO,DNAME
 FROM EMP E,DEPT D
 WHERE E.DEPTNO = D.DEPTNO;
 </pre>
@@ -1079,7 +1090,7 @@ MILLER		   10 ACCOUNTING
 </pre>
 
 <pre class="prettyprint">
-SELECT ENAME, E.DEPTNO, DNAME
+SELECT ENAME,E.DEPTNO,DNAME
 FROM EMP E INNER JOIN DEPT D ON E.DEPTNO = D.DEPTNO;
 </pre>
 
@@ -1103,13 +1114,13 @@ MILLER		   10 ACCOUNTING
 </pre>
 
 <p>
-The above two queries retrieve the same result. 
+위 두 쿼리는 결과는 같다. 
 </p>
 
-<h3>Employee name, job, department number, and department location of the employees with department number 30</h3>
+<h3>부서 번호가 30인 부서에 근무하는 사원의 이름, 직급, 부서 번호, 부서 위치</h3>
 
 <pre class="prettyprint">
-SELECT ENAME, JOB, E.DEPTNO, LOC
+SELECT ENAME,JOB,E.DEPTNO,LOC
 FROM EMP E,DEPT D
 WHERE E.DEPTNO = D.DEPTNO AND D.DEPTNO = 30;
 </pre>
@@ -1142,7 +1153,7 @@ TURNER	   SALESMAN	     30 CHICAGO
 JAMES	   CLERK	     30 CHICAGO
 </pre>
 
-<h3>Employee name, commission, department name, and department location of the employees receiving the commission</h3>
+<h3>커미션을 받는 사원의 이름, 커미션, 부서 이름, 부서 위치</h3>
 
 <pre class="prettyprint">
 SELECT ENAME,COMM,DNAME,LOC
@@ -1203,7 +1214,7 @@ WARD		  500 SALES	     CHICAGO
 MARTIN		 1400 SALES	     CHICAGO
 </pre>
 
-<h3>Employee name, job, department number, department name of the employees who work at DALLAS</h3>
+<h3>DALLAS에 근무하는 사원의 이름, 직급, 부서 번호, 부서 이름</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,E.JOB,D.DEPTNO,D.DNAME
@@ -1238,7 +1249,7 @@ ADAMS	   CLERK	     20 RESEARCH
 FORD	   ANALYST	     20 RESEARCH
 </pre>
 
-<h3>Employee name and department name of the employee whose name contains A</h3>
+<h3>이름에 'A'가 들어가는 사원의 이름, 부서 이름</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,D.DNAME
@@ -1277,7 +1288,7 @@ ADAMS	   RESEARCH
 JAMES	   SALES
 </pre>
 
-<h3>Employee name, job, salary, salary grade</h3>
+<h3>이름, 직급, 급여, 급여 등급</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,E.JOB,E.SAL,S.GRADE
@@ -1304,7 +1315,7 @@ FORD	   ANALYST	   3000 	 4
 KING	   PRESIDENT	   5000 	 5
 </pre>
 
-<h3>Employee name and department number of the employee who works with ALLEN</h3>
+<h3>ALLEN과 같은 부서에 근무하는 사원의 이름, 부서 번호</h3>
 
 <pre class="prettyprint">
 SELECT C.ENAME,C.DEPTNO
@@ -1343,13 +1354,13 @@ TURNER		   30
 WARD		   30
 </pre>
 
-<h2>Subqueries</h2>
+<h2>서브쿼리</h2>
 
 <p>
-A subquery is another SELECT enclosed in parentheses() in a SELECT and passes the result of a subquery to the main query.
+서브 쿼리는 SELECT 문 안에서 ()로 둘러싸인 SELECT 문을 말하며 쿼리문의 결과를 메인 쿼리로 전달하기 위해 사용된다.
 </p>
 
-<h3>Name of the department to which JONES belongs</h3>
+<h3>이름이 'JONES'인 사원이 일하는 부서 이름</h3>
 
 <pre class="prettyprint">
 SELECT DNAME 
@@ -1364,11 +1375,10 @@ RESEARCH
 </pre>
 
 <p>
-The query that asks for the department number is a subquery.
-This subquery is called a single-row subquery because it obtains only one result.
+부서 번호를 알아내기 위한 쿼리가 서브 쿼리로 사용되고, 이 서브쿼리는 단 하나의 결과값을 얻기 때문에 단일 행 서브 쿼리라 한다.
 </p>
 
-<h3>Employee name and department name of employees in a department with department number 10</h3>
+<h3>부서 번호가 10인 부서에서 근무하는 사원의 이름과 부서 이름</h3>
 
 <pre class="prettyprint">
 SELECT E.ENAME,D.DNAME
@@ -1404,7 +1414,7 @@ KING	   ACCOUNTING
 MILLER	   ACCOUNTING
 </pre>
 
-<h3>Employee number, name, and salary of employees who receive more than average salary</h3>
+<h3>평균 급여보다 더 많은 급여를 받은 사원의 사원 번호, 이름, 급여</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME,SAL
@@ -1425,7 +1435,7 @@ ORDER BY SAL DESC;
       7782 CLARK	    2450
 </pre>
 
-<h3>Employee number and employee name of the employee with the highest salary among the employees to which belong department 10</h3>
+<h3>부서 번호가 10인 부서에 근무하는 사원 중에서 최대 급여를 받는 사원과 동일한 급여를 받는 사원의 사원 번호와 이름</h3>
 
 <pre class="prettyprint">
 SELECT EMPNO,ENAME
@@ -1440,5 +1450,125 @@ WHERE SAL = (SELECT MAX(SAL)
 ---------- ----------
       7839 KING
 </pre>
+
+<h2>INSERT</h2>
+
+<h3>사용형식</h3>
+
+<pre>
+INSERT INTO 테이블명 [(컬럼1, 컬럼2, ...)] VALUES (값1, 값2, ...);
+</pre>
+
+<p>
+SQL*PLUS로 scott계정에 접속한 후 다음을 실행한다.<br />
+</p>
+
+<pre class="prettyprint">
+--EMP 테이블에 새로운 사원 정보 추가(홍길동)
+INSERT INTO EMP (EMPNO,ENAME,JOB,MGR,HIREDATE,SAL,COMM,DEPTNO) 
+VALUES (1562,'홍길동','SALESMAN',7698,SYSDATE,2000,1000,30);
+</pre>
+
+<p>
+새로운 사원 데이터를 인서트하고 있다.<br />
+테이블명 다음에 나오는 컬럼 리스트가 구조에 맞게 순서대로 모두 선택되야 하는 경우는 생략 가능하다.<br />
+NUMBER 형의 컬럼 값에는 ''를 생략할 수 있다.<br />
+SYSDATE 는 오라클에서 시스템이 저장하는 현재 날짜 데이터를 구할 때 사용한다.<br />
+</p>
+
+<pre class="prettyprint">
+--EMP 테이블에 새로운 사원 정보 추가(임꺽정)
+INSERT INTO EMP 
+VALUES (1500,'임꺽정','SALESMAN',7698,SYSDATE,1800,1200,30);
+</pre>
+
+<p>
+사원번호는 기본키로 설정되어 있다.<br />
+따라서 사원번호가 같은 사원은 테이블에 존재할 수 없다.<br />
+</p>
+
+<pre class="prettyprint">
+--EMP 테이블에 새로운 사원 정보 추가(장길산)
+INSERT INTO EMP (EMPNO,ENAME,JOB,MGR,HIREDATE,SAL,DEPTNO)
+VALUES (1697,'장길산','MANAGER',7839,SYSDATE,3000,30);
+</pre>
+
+<p>
+컬럼리스트에 COMM 이 빠졌고 VALUES 에도 해당 컬럼에 대한 값이 없다.<br />
+이러면 COMM 컬럼값은 NULL이 된다.<br />
+위 인서트 문은 컬럼에 NULL을 입력하는 방법을 보여준다.  
+</p>
+
+<h2>UPDATE</h2>
+
+<h3>사용형식</h3>
+
+<pre class="prettyprint">
+UPDATE 테이블 
+SET 컬럼1='값1', 컬럼2='값2', ...
+[WHERE 조건]
+</pre>
+
+<p>
+<strong>SET</strong> : UPDATE 구문과 함께 사용되며, 해당 테이블의 특정 컬럼에 값을 변경시키고자 할 때 사용한다.<br />
+변경시키고자 하는 컬럼 다음에 = 으로 값을 대응시킨다.<br /> 
+<strong>컬럼1</strong> : 변경될 컬럼명<br />
+<strong>값1</strong> : 변경될 컬럼에 대응되는 실제 변경값이다.<br />
+이 때 사용되는 값으로는 숫자나 문자와 같은 실제값일 수도 있고, 연산 가능한 컬럼과 연산자가 결함된 형태일 수도 있다.<br />
+즉, 변경할 컬럼의 데이터 형식이 NUMBER 형인 경우에 덧셉 연산자와 같은 연산자가 결합된 산술식의 형태가 있을 수 있다.<br />
+[WHERE 조건]: 조건을 주어 원하는 컬럼의 값을 변경할 때 사용한다.<br />
+UPDATE 문에서 WhERE 조건을 생략하면 해당 테이블에 존재하는 모든 레코드가 지정된 값으로 변경된다.<br />
+</p>
+
+<h3>사원테이블에서 임꺽정의 월급여를 2800 으로 변경</h3>
+
+<pre class="prettyprint">
+UPDATE EMP 
+SET SAL=2800
+WHERE ENAME='임꺽정';
+</pre>
+
+<h3>사원테이블에서 홍길동의 월급여를 300 만큼 인상하고 COMM은 500으로 변경</h3>
+
+<pre class="prettyprint">
+UPDATE EMP 
+SET SAL=SAL + 300,COMM=500
+WHERE ENAME='홍길동';
+</pre>
+
+<p>
+지금까지의 INSERT 문과 UPDATE 문을 영구적인 데이터로 관리하기 위해서는 COMMIT;를 실행해야 한다.
+</p>
+
+<pre class="prettyprint">
+COMMIT;
+</pre>
+
+<h2>DELETE</h2>
+
+<h3>사용형식</h3>
+
+<pre class="prettyprint">
+DELETE FROM 테이블명 
+[Where 조건]
+</pre>
+
+<p>
+DELETE 문에서 WHERE 조건을 주지 않으면 테이블에 있는 모든 레코드를 삭제된다.
+</p>
+
+<h3>사원테이블에서 홍길동,임꺽정,장길산을 삭제</h3>
+
+<pre class="prettyprint">
+DELETE FROM EMP 
+WHERE ENAME IN ('홍길동','임꺽정','장길산');
+</pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/jdbc-test-on-oracle"/>">오라클 JDBC 테스트</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/scott-account"/>">SCOTT 계정</a></li>
+	</ul>
+</div>
 
 </article>

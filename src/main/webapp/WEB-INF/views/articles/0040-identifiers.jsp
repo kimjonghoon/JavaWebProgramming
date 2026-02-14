@@ -4,15 +4,7 @@
 
 <article>
 			
-<h1>키워드, 식별자, 주석</h1>
-
-<h2 class="floatstop">키워드</h2>
-
-<p>
-키워드는 프로그래밍 언어에서 특별한 용도를 위해 미리 예약해 놓은 단어를 말한다.
-</p>
-
-<h2>식별자</h2>
+<h1>식별자</h1>
 
 <p>
 자바에서 식별자(Identifier)는 클래스, 변수, 상수, 메소드, 패키지 이름을 말한다.
@@ -24,7 +16,7 @@
 	<li>공백이 없어야 한다.</li>
 	<li>특수문자는 _와 $만 가능하다.</li>
 	<li>숫자로 시작해선 안 된다.</li>
-	<li>키워드는 사용할 수 없다.</li>
+	<li>키워드는 사용할 수 없다.(<em>키워드</em>는 프로그래밍 언어에서 특별한 용도를 위해 미리 예약해 놓은 단어를 말한다)</li>
 </ol>
 
 <p>
@@ -99,10 +91,12 @@ public class Account {
 줄 수와 상관없이 /** 부터 */ 표시 전까지의 모든 문자를 주석으로 처리
 javadoc.exe 프로그램을 이용하면 이 주석으로부터 HTML 형태의 도움말 문서를 생성할 수 있다.
 </p>
+
 <div id="next-prev">
   <ul>
-    <li>다음 : <a href="<c:url value="/java/datatype"/>">데이터 타입과 타입 캐스팅</a></li>
+    <li>다음 : <a href="<c:url value="/java/datatype"/>">데이터 타입</a></li>
     <li>이전 : <a href="<c:url value="/java/object-and-class"/>">객체와 클래스</a></li>
   </ul>
 </div>
+
 </article>

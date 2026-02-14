@@ -1019,4 +1019,11 @@ public class GetEmp {
 	<li><a href="http://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html">http://commons.apache.org/proper/commons-dbcp/apidocs/org/apache/commons/dbcp2/BasicDataSource.html</a></li>
 </ul>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/namecard"/>">명함관리</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/transaction"/>">JDBC - 트랜잭션</a></li>
+	</ul>
+</div>
+
 </article>

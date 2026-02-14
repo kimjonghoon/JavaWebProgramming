@@ -214,4 +214,11 @@ Package Explorer 뷰에서 GetEmp.java 를 마우스로 선택한 후 오른쪽 
 <img src="https://lh3.googleusercontent.com/-Rfh4TDU6QJg/VYFQ4GMN9hI/AAAAAAAACQ8/be58ONtH7aM8ynlDO1kom5k7ZndWtvOrQCCo/s657/GetEmp-Run.png" alt="GetEmp.java를 이클립스에서 실행하는 화면" /><br />
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/jdbc-guide"/>">JDBC 프로그래밍 방법</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/sql-basics"/>">SQL 기본</a></li>
+	</ul>
+</div>
+
 </article>

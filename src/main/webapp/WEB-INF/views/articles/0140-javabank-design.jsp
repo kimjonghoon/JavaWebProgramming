@@ -477,7 +477,7 @@ public class DateExample {
 <div id="next-prev">
   <ul>
     <li>다음 : <a href="<c:url value="/java/javabank-inheritance"/>">자바은행 - 상속 적용</a></li>
-    <li>이전 : <a href="<c:url value="/java/javabank-requirements-analysis"/>">자바은행 - 구현</a></li>
+    <li>이전 : <a href="<c:url value="/java/javabank-requirements-analysis"/>">자바은행 - 요구사항 분석</a></li>
   </ul>
 </div>
 </article>

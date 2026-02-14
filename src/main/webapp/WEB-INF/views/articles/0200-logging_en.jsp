@@ -474,7 +474,7 @@ Check if the log has accumulated in the javabank.log in the project root directo
 <div id="next-prev">
   <ul>
     <li>Next : <a href="<c:url value="/java/socket"/>">Socket</a></li>
-    <li>Prev : <a href="<c:url value="/java/io"/>">Java IO</a></li>
+    <li>Prev : <a href="<c:url value="/java/io"/>">Java I/O</a></li>
   </ul>
 </div>
 </article>

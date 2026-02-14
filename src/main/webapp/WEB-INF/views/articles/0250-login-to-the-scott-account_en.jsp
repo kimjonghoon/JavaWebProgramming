@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>SCOTT account</h1>
+<h1>SCOTT Account</h1>
 
 <p>
 Oracle 11g XE does not have the Scott account.<br />
@@ -334,5 +334,12 @@ Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 
 SQL&gt;<strong>@/u01/app/oracle/product/11.2.0/xe/rdbms/admin/utlsampl.sql</strong>
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/sql-basics"/>">SQL Basics</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/oracle-install"/>">Oracle Install</a></li>
+	</ul>
+</div>
 
 </article>

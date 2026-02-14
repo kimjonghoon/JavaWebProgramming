@@ -117,4 +117,11 @@ conn.close();
 자원 반환 순서는 생성한 순서의 반대로 반환한다.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/jdbc-examples"/>">JDBC 실습</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/jdbc-test-on-oracle"/>">오라클 JDBC 테스트</a></li>
+	</ul>
+</div>
+
 </article>

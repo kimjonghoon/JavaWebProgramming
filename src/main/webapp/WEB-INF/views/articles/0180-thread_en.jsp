@@ -352,7 +352,7 @@ The Vector is thread-safe, but the ArrayList is not. All methods of Vector are s
 <div id="next-prev">
   <ul>
     <li>Next : <a href="<c:url value="/java/io"/>">Java I/O</a></li>
-    <li>Prev : <a href="<c:url value="/java/javabank-inheritance"/>">Java bank - Inheritance</a></li>
+    <li>Prev : <a href="<c:url value="/java/javabank-interface"/>">Java bank - Interface</a></li>
   </ul>
 </div>
 </article>

@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>Data Type and Type Casting</h1>
+<h1>Data Type</h1>
 
 <h2>Literals</h2>
 

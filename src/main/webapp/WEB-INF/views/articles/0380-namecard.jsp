@@ -402,7 +402,14 @@ public class NamecardUi {
 	public static void main(String[] args) {
 		new NamecardUi().showMenu();
 	}
-
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/javabank"/>">자바은행</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/connection-pool"/>">커넥션 풀</a></li>
+	</ul>
+</div>
+
 </article>

@@ -99,8 +99,14 @@ public class JoinTable {
       }
     }
   }
-
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/transaction"/>">JDBC - Transaction</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/preparedstatement"/>">PreparedStatement</a></li>
+	</ul>
+</div>
 
 </article>

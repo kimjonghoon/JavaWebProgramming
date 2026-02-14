@@ -122,4 +122,11 @@ The XXX part of the setXXX() method means Java data type.
 The first parameter to the setXXX() method is the order in which question marks appear. The second parameter of the setXXX() method is the value to replace the question mark.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jdbc/join"/>">JDBC - Join</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/jdbc-examples"/>">JDBC Examples</a></li>
+	</ul>
+</div>
+
 </article>

@@ -32,7 +32,8 @@ JDBC를 배우려면 데이터베이스를 선택해 설치해야 한다.
 설치 후 XDB의 8080 포트를 9090으로 바꾸는 방법은 다음과 같다.
 </p> 
 
-<pre class="prettyprint">
+<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
+<pre class="screen">
 C:\Users&gt; sqlplus
 Enter user-name: system
 Enter password:
@@ -45,6 +46,13 @@ PL/SQL procedure successfully completed.
 SQL&gt;
 </pre>
 
-<div th:replace="~{articles/commons/oracle-11g-xe-install-on-ubuntu :: content}"></div>
+<%@ include file="./commons/oracle-11g-xe-install-on-ubuntu.jsp" %>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/scott-account"/>">SCOTT 계정</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/intro"/>">JDBC 소개</a></li>
+	</ul>
+</div>
 
 </article>

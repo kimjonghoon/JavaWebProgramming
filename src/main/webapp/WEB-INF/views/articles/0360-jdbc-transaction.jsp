@@ -156,4 +156,11 @@ ACCOUNT 테이블의 BALANCE 컬럼은 0에서 3000까지의 수만 저장될 �
 그 결과 catch블록에서 롤백이 실행된다.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jdbc/connection-pool"/>">커넥션 풀</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/join"/>">JDBC - 조인</a></li>
+	</ul>
+</div>
+
 </article>
