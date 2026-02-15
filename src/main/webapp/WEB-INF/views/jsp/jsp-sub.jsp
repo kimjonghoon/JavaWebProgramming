@@ -20,8 +20,15 @@
 	    <li><a href="<c:url value="/jsp/thread-bbs"/>">계층형 게시판</a></li>
 	    <li><a href="<c:url value="/jsp/model-1-bbs"/>">모델 1 게시판</a></li>
 	    <li><a href="<c:url value="/jsp/datasource"/>">데이터소스</a></li>
-	    <li><a href="<c:url value="/jsp/model-2-bbs"/>">모델 2 게시판</a></li>	    
-	</ul>	    	
+	    <li><a href="<c:url value="/jsp/model-2-bbs"/>">모델 2 게시판</a></li>
+	    <li class="sub-heading">JSP 프로젝트</li>
+	    <li><a href="<c:url value="/jsp/dynamic-web-project"/>">다이나믹 웹 프로젝트</a></li>
+		<li><a href="<c:url value="/jsp/prototype"/>">프로토타입</a></li>
+		<li><a href="<c:url value="/jsp/database-design"/>">데이터베이스 설계</a></li>
+		<li><a href="<c:url value="/jsp/javabeans"/>">자바빈즈</a></li>
+		<li><a href="<c:url value="/jsp/implementation"/>">구현</a></li>
+		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">모델 2로 변경</a></li>			    	    
+	</ul>
 	</c:when>
 	<c:otherwise>
 	<ul>
@@ -36,7 +43,14 @@
 	    <li><a href="<c:url value="/jsp/thread-bbs"/>">Thread Board</a></li>
 	    <li><a href="<c:url value="/jsp/model-1-bbs"/>">Model 1 Board</a></li>
 	    <li><a href="<c:url value="/jsp/datasource"/>">DataSource</a></li>
-	    <li><a href="<c:url value="/jsp/model-2-bbs"/>">Model 2 Board</a></li>	    
+	    <li><a href="<c:url value="/jsp/model-2-bbs"/>">Model 2 Board</a></li>
+	    <li class="sub-heading">JSP Project</li>
+		<li><a href="<c:url value="/jsp/dynamic-web-project"/>">Dynamic Web Project</a></li>
+		<li><a href="<c:url value="/jsp/prototype"/>">Prototype</a></li>
+		<li><a href="<c:url value="/jsp/database-design"/>">Database Design</a></li>
+		<li><a href="<c:url value="/jsp/javabeans"/>">Java Beans</a></li>
+		<li><a href="<c:url value="/jsp/implementation"/>">Implementation</a></li>
+		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">Migrate to Model 2</a></li>					    	    
 	</ul>
 	</c:otherwise>
 </c:choose>

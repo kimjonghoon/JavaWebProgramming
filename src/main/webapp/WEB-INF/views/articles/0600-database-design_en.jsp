@@ -28,7 +28,7 @@ USER is "SYS"
 Execute the following while connected.
 </p>
 
-<div th:replace="~{articles/commons/database-design :: content}"></div>
+<%@ include file="commons/database-design.jsp" %>
 
 <h2>DataSource</h2>
 

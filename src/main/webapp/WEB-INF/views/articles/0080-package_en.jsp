@@ -494,7 +494,7 @@ public class User {
 }
 </pre>
 
-<h2>Eclipse</h2>
+<h2 id="Install-Eclipse">Eclipse</h2>
 
 <p>
 All subsequent chapter examples will use Eclipse.<br />

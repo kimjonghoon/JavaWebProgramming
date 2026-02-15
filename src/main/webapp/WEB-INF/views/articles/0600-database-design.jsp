@@ -28,7 +28,7 @@ USER은 "SYS"입니다
 접속한 상태에서 다음을 실행한다.
 </p>
 
-<div th:replace="~{articles/commons/database-design :: content}"></div>
+<%@ include file="commons/database-design.jsp" %>
 
 <h2>DataSource 설정</h2>
 

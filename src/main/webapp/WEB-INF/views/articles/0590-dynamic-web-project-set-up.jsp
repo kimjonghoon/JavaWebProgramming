@@ -8,7 +8,7 @@
 
 <p style="padding-left: 1em;">
 이클립스(Eclipse IDE for Java EE Developers)와 톰캣이 설치되어 있어야 합니다.<br />
-<a th:href="@{/java/Package_Modifiers#Install-Eclipse}">이클립스 설치</a>와 <a th:href="@{/jsp/How-to-install-Tomcat}">톰캣 설치</a>를 참조하세요. 
+<a href="<c:url value="/java/package#Install-Eclipse"/>">이클립스 설치</a>와 <a href="<c:url value="/jsp/tomcat-install"/>">톰캣 설치</a>를 참조하세요. 
 </p>
 
 <p>
@@ -17,39 +17,39 @@
 </p>
  
 <p>
-<img src="https://lh5.googleusercontent.com/-42TkBNkWZyw/Tuv7qhWj1eI/AAAAAAAAA4Y/4N0ZYhVmrx4/s590/new_dynamic_webProject.png" alt="1. New - Dynamic Web Project 를 선택한다." /><br />
-<img src="https://lh3.googleusercontent.com/-hbGGtu9EfEI/TutjP9fITlI/AAAAAAAAA4E/fbwQJmVZPv0/s523/dynamic_webproject.png" alt="2. Dynamic Web Proejct 를 이용해서 새로운 프로젝트를 생성한다. " /><br />
+<img src="<c:url value="/resources/images/new-dynamic-web-project.png"/>" alt="1. New - Dynamic Web Project 를 선택한다." /><br />
+<img src="<c:url value="/resources/images/dynamic-web-project.png"/>" alt="2. Dynamic Web Proejct 를 이용해서 새로운 프로젝트를 생성한다. " /><br />
 
 프로젝트 이름을 JSPProject라 하겠다.<br />
 이클립스와 톰캣을 연동하지 않을 것이니, 프로젝트 이름 외 설정은 수정하지 않고 디폴트 값을 그대로 사용한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-HVViyq64maY/Tuti18TkZ-I/AAAAAAAAA3U/KQ337OflcXs/s640/JSPProject.PNG" alt="3. 이클립스에서 Dynamic WebProject 를 선택해서 새로운 프로젝트를 생성하는데 프로젝트명은 JSPProject로 한다." /><br />
+<img src="<c:url value="/resources/images/jspproject.png"/>" alt="3. 이클립스에서 Dynamic WebProject 를 선택해서 새로운 프로젝트를 생성하는데 프로젝트명은 JSPProject로 한다." /><br />
 
-<img src="https://lh3.googleusercontent.com/-17rYJE8t9no/Tuti3epuNmI/AAAAAAAAA3s/6AMamqkjZP8/s520/WebContent.PNG" alt="4. Dynamic WebProject 로 프로젝트를 생성할 때 웹컨텐츠를 두는 기본 폴더는 WebContent 이다." /><br />
+<img src="<c:url value="/resources/images/webcontent.png"/>" alt="4. Dynamic WebProject 로 프로젝트를 생성할 때 웹컨텐츠를 두는 기본 폴더는 WebContent 이다." /><br />
 
 프로젝트가 만들어진 후 Build Path를 변경해야 한다.<br />
 아래 그림처럼 <strong>Build Path, Configure Build Path...</strong> 를 차례로 선택한다.<br />
 
-<img src="https://lh6.googleusercontent.com/-Fs1hxINvL_8/Tuti0tC0wKI/AAAAAAAAA3A/aL_2Z1ixVhI/s590/build_path.png" alt="5. 개발을 편하게 하기 위해서 Dynamic WebProject의 기본 output 폴더인 build 를 WEB-INF/classes 로 바꾸기 위해 Build Path  를 선택한다." /><br />
+<img src="<c:url value="/resources/images/build-path.png"/>" alt="5. 개발을 편하게 하기 위해서 Dynamic WebProject의 기본 output 폴더인 build 를 WEB-INF/classes 로 바꾸기 위해 Build Path  를 선택한다." /><br />
 
 이어지는 화면에서 Source 탭을 선택한다.<br />
 
-<img src="https://lh5.googleusercontent.com/-XbccQsDk2Gs/TuwAO6p5hrI/AAAAAAAAA48/g0SMlArOHMI/s741/source_tab_select.PNG" alt="source tab를 선택한다." width="590px" /><br />
+<img src="<c:url value="/resources/images/source-tab-select.png"/>" alt="source tab를 선택한다." width="590px" /><br />
 
 화면 하단 Default output folder: 의 오른쪽의 Browse... 버튼을 클릭하면 Folder Selection 화면이 나타난다. 
 Create New Folder... 버튼을 클릭하여 WEB-INF/classes 폴더를 생성하고, WEB-INF/classes 폴더가 Default output 폴더가 되도록 설정한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-Axdwie02Mps/Tuti1e4eG-I/AAAAAAAAA3Q/VkIWy9KCG9s/s552/classes.png" alt="Build Path를 선택해서 나오는 설정화면에서 source 탭을 클릭한다. 아래 Default output Folder 옆의 Browser 를 클릭한 다음 Create New Folder 를 클릭하여 WEB-INF아래 classes 폴더를 만들고 이 폴더를 선택한다." /><br />
+<img src="<c:url value="/resources/images/classes.png"/>" alt="Build Path를 선택해서 나오는 설정화면에서 source 탭을 클릭한다. 아래 Default output Folder 옆의 Browser 를 클릭한 다음 Create New Folder 를 클릭하여 WEB-INF아래 classes 폴더를 만들고 이 폴더를 선택한다." /><br />
 
 Default output 폴더가 <strong>JSPProject/WebContent/WEB-INF/classes</strong> 인지 확인한다.<br />
 
-<img src="https://lh3.googleusercontent.com/-F2nBQYXkPL4/Tuti0jkBddI/AAAAAAAAA28/iestW7xEr2Q/s733/build_path_result.PNG" width="590px;" alt="변경하려는 Build Path, JSPProject/WebContent/WEB-INF/classes 를 확인하는 설정 화면이다." /><br />
+<img src="<c:url value="/resources/images/build-path-result.png"/>" width="590px;" alt="변경하려는 Build Path, JSPProject/WebContent/WEB-INF/classes 를 확인하는 설정 화면이다." /><br />
 
 참고로, JSPProject/build 폴더가 원래 Default output 폴더다.<br />
 Default output 폴더를 /WEB-INF/classes로 바꾸었으니 더는 build 폴더는 필요 없다.<br />
 설정이 끝난 후 탐색기에서 본 JSPProject 프로젝트의 디렉터리는 다음과 같다.<br />
 
-<img src="https://lh3.googleusercontent.com/-QYsQsax98ok/VYT2B2wxsvI/AAAAAAAAChY/-vFh-YbAOgA/s258/JSPProject-directory.png" alt="4. 이클립스에서 워크스페이스를 C:/www 로, 프로젝트명을 JSPProject 로 해서 프로젝트를 생성했을 때 디렉토리 구조를 보이는 화면" style="width: 258px;" /><br />
+<img src="<c:url value="/resources/images/jspproject-directory.png"/>" alt="4. 이클립스에서 워크스페이스를 C:/www 로, 프로젝트명을 JSPProject 로 해서 프로젝트를 생성했을 때 디렉토리 구조를 보이는 화면" style="width: 258px;" /><br />
 </p>
 
 <h2>JSPProject 웹 애플리케이션을 톰캣에 등록</h2>
@@ -105,7 +105,7 @@ CATALINA_HOME/webapps 에 있는 ROOT 애플리케이션의 web.xml 파일을 �
 도큐먼트 베이스에 test.html 파일을 만든다.<br />
 아래 그림처럼 WebContent 를 선택한 상태에서 마우스 오른쪽 버튼을 클릭한 후, New -- HTML File 를 차례로 선택한다.<br />
  
-<img src="https://lh5.googleusercontent.com/-5QI9P39l5IQ/Tuti2gJ7hcI/AAAAAAAAA3o/Ic0IBV-nWUw/s590/test_html.png" alt="웹 애플리케이션이 톰캣에 등록한 후에 테스트하기 위해서 웹 애플리케이션의 루트 디렉토리에 test.html 이라는 파일을 만드는 화면이다." /><br />
+<img src="<c:url value="/resources/images/test-html.png"/>" alt="웹 애플리케이션이 톰캣에 등록한 후에 테스트하기 위해서 웹 애플리케이션의 루트 디렉토리에 test.html 이라는 파일을 만드는 화면이다." /><br />
 
 http://localhost:8080/test.html를 방문해서 톰캣이 웹 애플리케이션을 서비스하는지 확인한다.
 </p>
@@ -120,5 +120,12 @@ http://localhost:8080/test.html를 방문해서 톰캣이 웹 애플리케이션
 	<strong title="GET 방식으로 한글 데이터를 전달하기 위해서">URIEncoding="UTF-8"</strong>
 	redirectPort="8443" /&gt;
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/prototype"/>">프로토타입</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/model-2-bbs"/>">모델 2 게시판</a></li>
+	</ul>
+</div>
 
 </article>

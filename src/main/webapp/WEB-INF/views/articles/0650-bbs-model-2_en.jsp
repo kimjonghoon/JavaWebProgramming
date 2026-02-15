@@ -13,7 +13,7 @@ To modify our project with Model 2, you first need to know about EL and JSTL.
 <h3>EL</h3>
 
 <p>
-EL is an expression made for easy access to data available in JSP. JSP Spec includes EL. EL provides easier access to JavaBean's property values. ${user.email} is equivalent to calling the getEmail() method of the User object. You don't need to know precisely in which scope the User object is. User objects in ${user.email} are retrieved in the following order: pageScope, requestScope, sessionScope, applicationScope.
+EL is an expression made for easy access to data available in JSP. JSP Spec includes EL. EL provides easier access to JavaBean's property values. &#36;{user.email} is equivalent to calling the getEmail() method of the User object. You don't need to know precisely in which scope the User object is. User objects in &#36;{user.email} are retrieved in the following order: pageScope, requestScope, sessionScope, applicationScope.
 </p>
 
 <p>The following are implicit objects available in EL.</p>
@@ -33,7 +33,7 @@ EL is an expression made for easy access to data available in JSP. JSP Spec incl
 </ul>
 
 <p>
-You can use an implicit object like ${param.searchWord} to access the value of the searchWord parameter. The ${param.searchWord} prints nothing instead of null, even if there is no searchWord parameter.
+You can use an implicit object like &#36;{param.searchWord} to access the value of the searchWord parameter. The &#36;{param.searchWord} prints nothing instead of null, even if there is no searchWord parameter.
 </p>
 
 <p>
@@ -81,23 +81,23 @@ a.add(7);a.add(8);a.add(9);a.add(10);
 &lt;body&gt;
 &lt;h1&gt;if statement&lt;/h1&gt;
 
-&lt;c:if test="${empty b }"&gt;
+&lt;c:if test="&#36;{empty b }"&gt;
   &lt;h4&gt;b list is empty.&lt;/h4&gt;
 &lt;/c:if&gt;
 
-&lt;c:if test="${not empty c }"&gt;
+&lt;c:if test="&#36;{not empty c }"&gt;
   &lt;h4&gt;c is not null and is not "".&lt;/h4&gt;
 &lt;/c:if&gt;
 
 &lt;c:choose&gt;
-  &lt;c:when test="${empty a }"&gt;
+  &lt;c:when test="&#36;{empty a }"&gt;
     &lt;h4&gt;List is empty.&lt;/h4&gt;
   &lt;/c:when&gt;
 &lt;/c:choose&gt;
 
 &lt;h1&gt;if ~ else statement&lt;/h1&gt;
 &lt;c:choose&gt;
-  &lt;c:when test="${empty a }"&gt;
+  &lt;c:when test="&#36;{empty a }"&gt;
     &lt;h4&gt;List is empty.&lt;/h4&gt;
   &lt;/c:when&gt;
   &lt;c:otherwise&gt;
@@ -106,15 +106,15 @@ a.add(7);a.add(8);a.add(9);a.add(10);
 &lt;/c:choose&gt;
 
 &lt;h1&gt;for statement&lt;/h1&gt;
-&lt;c:forEach var="i" begin="${firstPage }" end="${lastPage }"&gt;
-  [${i }]
+&lt;c:forEach var="i" begin="&#36;{firstPage }" end="&#36;{lastPage }"&gt;
+  [&#36;{i }]
 &lt;/c:forEach&gt;
 
 &lt;h1&gt;for statement&lt;/h1&gt;
 &lt;table&gt;
-&lt;c:forEach var="i" items="${a }" varStatus="status"&gt;
+&lt;c:forEach var="i" items="&#36;{a }" varStatus="status"&gt;
   &lt;tr&gt;
-    &lt;td&gt;${status.index }&lt;/td&gt;&lt;td&gt;${i }&lt;/td&gt;
+    &lt;td&gt;&#36;{status.index }&lt;/td&gt;&lt;td&gt;&#36;{i }&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/c:forEach&gt;
 &lt;/table&gt;
@@ -152,7 +152,7 @@ Use EL and JSTL to modify JSPs and change all .jsp to .do, except for the jsp us
 &lt;h1 style="float: left;width: 150px;"&gt;&lt;a href="/"&gt;&lt;img src="/images/ci.gif" alt="java-school" /&gt;&lt;/a&gt;&lt;/h1&gt;
 &lt;div id="memberMenu" style="float: right;position: relative;top: 7px;"&gt;
 <strong>&lt;c:choose&gt;
-  &lt;c:when test="${empty user}"&gt;</strong>
+  &lt;c:when test="&#36;{empty user}"&gt;</strong>
     &lt;input type="button" value="Login" onclick="location.href='/users/login<strong>.do</strong>'" /&gt;
     &lt;input type="button" value="SignUp" onclick="location.href='/users/signUp<strong>.do</strong>'" /&gt;
   <strong>&lt;/c:when&gt;
@@ -241,40 +241,40 @@ function goWrite() {
   &lt;th style="width: 60px;"&gt;HIT&lt;/th&gt;
 &lt;/tr&gt;
 &lt;!-- List itmes --&gt;
-<strong>&lt;c:forEach var="article" items="${list }" varStatus="status"&gt;</strong>
+<strong>&lt;c:forEach var="article" items="&#36;{list }" varStatus="status"&gt;</strong>
 &lt;tr&gt;
-  &lt;td style="text-align: center;"&gt;<strong>${listItemNo - status.index }</strong>&lt;/td&gt;
+  &lt;td style="text-align: center;"&gt;<strong>&#36;{listItemNo - status.index }</strong>&lt;/td&gt;
   &lt;td&gt;
-    &lt;a href="javascript:goView('<strong>${article.articeNo }</strong>')"&gt;<strong>${article.title }</strong>&lt;/a&gt;
-    <strong>&lt;c:if test="${article.attachFileNum &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goView('<strong>&#36;{article.articeNo }</strong>')"&gt;<strong>&#36;{article.title }</strong>&lt;/a&gt;
+    <strong>&lt;c:if test="&#36;{article.attachFileNum &gt; 0 }"&gt;</strong>
     &lt;img src="../images/attach.png" alt="Attach File" style="vertical-align: middle;" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    <strong>&lt;c:if test="${article.commentNum &gt; 0 }"&gt;</strong>
-    &lt;span class="bbs-strong"&gt;[<strong>${article.commentNum }</strong>]&lt;/span&gt;
+    <strong>&lt;c:if test="&#36;{article.commentNum &gt; 0 }"&gt;</strong>
+    &lt;span class="bbs-strong"&gt;[<strong>&#36;{article.commentNum }</strong>]&lt;/span&gt;
     <strong>&lt;/c:if&gt;</strong>
   &lt;/td&gt;
-  &lt;td style="text-align: center;"&gt;<strong>${article.regdate }</strong>&lt;/td&gt;
-  &lt;td style="text-align: center;"&gt;<strong>${article.hit }</strong>&lt;/td&gt;
+  &lt;td style="text-align: center;"&gt;<strong>&#36;{article.regdate }</strong>&lt;/td&gt;
+  &lt;td style="text-align: center;"&gt;<strong>&#36;{article.hit }</strong>&lt;/td&gt;
 &lt;/tr&gt;
 <strong>&lt;/c:forEach&gt;</strong>
 &lt;!-- List items end --&gt;
 &lt;/table&gt;
 &lt;div id="paging"&gt;
-  <strong>&lt;c:if test="${prevPage &gt; 0 }"&gt;</strong>
-    &lt;a href="javascript:goList('<strong>${prevPage }</strong>')"&gt;[Prev]&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{prevPage &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goList('<strong>&#36;{prevPage }</strong>')"&gt;[Prev]&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
-  <strong>&lt;c:forEach var="i" begin="${firstPage }" end="${lastPage }"&gt;</strong>
+  <strong>&lt;c:forEach var="i" begin="&#36;{firstPage }" end="&#36;{lastPage }"&gt;</strong>
     <strong>&lt;c:choose&gt;
-      &lt;c:when test="${param.page == i }"&gt;</strong>
-      &lt;span class="bbs-strong"&gt;<strong>${i }</strong>&lt;/span&gt;
+      &lt;c:when test="&#36;{param.page == i }"&gt;</strong>
+      &lt;span class="bbs-strong"&gt;<strong>&#36;{i }</strong>&lt;/span&gt;
       <strong>&lt;/c:when&gt;
       &lt;c:otherwise&gt;</strong>
-      &lt;a href="javascript:goList('<strong>${i }</strong>')"&gt;<strong>${i }</strong>&lt;/a&gt;
+      &lt;a href="javascript:goList('<strong>&#36;{i }</strong>')"&gt;<strong>&#36;{i }</strong>&lt;/a&gt;
       <strong>&lt;/c:otherwise&gt;
     &lt;/c:choose&gt;
   &lt;/c:forEach&gt;</strong>
-  <strong>&lt;c:if test="${nextPage &gt; 0 }"&gt;</strong>
-    &lt;a href="javascript:goList('<strong>${nextPage }</strong>')"&gt;[Next]&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{nextPage &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goList('<strong>&#36;{nextPage }</strong>')"&gt;[Next]&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 &lt;/div&gt;
 &lt;div id="list-menu"&gt;
@@ -282,7 +282,7 @@ function goWrite() {
 &lt;/div&gt;
 &lt;form action="list<strong>.do</strong>" method="get"&gt;
   &lt;input type="hidden" name="page" value="1" /&gt;
-  &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
+  &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
   &lt;div id="search"&gt;
   &lt;input type="text" name="searchWord" size="15" maxlength="30" /&gt;
   &lt;input type="submit" value="Search" /&gt;
@@ -308,20 +308,20 @@ function goWrite() {
 
 &lt;div id="form-group" style="display: none"&gt;
   &lt;form id="listForm" action="list<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
     &lt;input type="hidden" name="page" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="viewForm" action="view<strong>.do</strong>" method="get"&gt;
     &lt;input type="hidden" name="articleNo" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="writeForm" action="write_form<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
 &lt;/div&gt;
 
@@ -354,7 +354,7 @@ You need to create an action class building the following data and passing them 
 &lt;meta charset="UTF-8" /&gt;
 &lt;meta name="Keywords" content="Board detailed view" /&gt;
 &lt;meta name="Description" content="Board detailed view" /&gt;
-&lt;title&gt;<strong>${boardNm }</strong>&lt;/title&gt;
+&lt;title&gt;<strong>&#36;{boardNm }</strong>&lt;/title&gt;
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 &lt;script&gt;
 function modifyCommentToggle(articleNo) {
@@ -435,50 +435,50 @@ function deleteComment(commentNo) {
   &lt;div id="container"&gt;
     &lt;div id="content"&gt;
 &lt;!-- content begin --&gt;
-&lt;div id="content-categories"&gt;<strong>${boardNm }</strong>&lt;/div&gt;
+&lt;div id="content-categories"&gt;<strong>&#36;{boardNm }</strong>&lt;/div&gt;
 &lt;div class="view-menu" style="margin-top: 15px;margin-bottom: 5px;"&gt;
-  <strong>&lt;c:if test="${user.email == email }"&gt;</strong>
+  <strong>&lt;c:if test="&#36;{user.email == email }"&gt;</strong>
   &lt;div class="fl"&gt;
     &lt;input type="button" value="Modify" onclick="goModify()" /&gt;
     &lt;input type="button" value="Del" onclick="goDelete()"/&gt;
   &lt;/div&gt;
   <strong>&lt;/c:if&gt;</strong>
   &lt;div class="fr"&gt;
-    <strong>&lt;c:if test="${nextArticle != null }"&gt;</strong>
-    &lt;input type="button" value="Next Article" onclick="goView('<strong>${nextArticle.articleNo }</strong>')" /&gt;
+    <strong>&lt;c:if test="&#36;{nextArticle != null }"&gt;</strong>
+    &lt;input type="button" value="Next Article" onclick="goView('<strong>&#36;{nextArticle.articleNo }</strong>')" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    <strong>&lt;c:if test="${prevArticle != null }"&gt;</strong>
-    &lt;input type="button" value="Prev Article" onclick="goView('<strong>${prevArticle.articleNo }</strong>')" /&gt;
+    <strong>&lt;c:if test="&#36;{prevArticle != null }"&gt;</strong>
+    &lt;input type="button" value="Prev Article" onclick="goView('<strong>&#36;{prevArticle.articleNo }</strong>')" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    &lt;input type="button" value="List" onclick="goList('<strong>${param.page }</strong>')" /&gt;
+    &lt;input type="button" value="List" onclick="goList('<strong>&#36;{param.page }</strong>')" /&gt;
     &lt;input type="button" value="New" onclick="goWrite()" /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;table class="bbs-table"&gt;
 &lt;tr&gt;
   &lt;th style="width: 47px;text-align: left;vertical-align: top;font-size: 1em;"&gt;TITLE&lt;/th&gt;
-  &lt;th style="text-align: left;color: #555;font-size: 1em;"&gt;<strong>${title }</strong>&lt;/th&gt;
+  &lt;th style="text-align: left;color: #555;font-size: 1em;"&gt;<strong>&#36;{title }</strong>&lt;/th&gt;
 &lt;/tr&gt; 
 &lt;/table&gt;
 &lt;div id="detail"&gt;
-  &lt;div id="date-writer-hit"&gt;edited <strong>${regdate }</strong> by <strong>${name }</strong> hit <strong>${hit }</strong>&lt;/div&gt;
-  &lt;div id="article-content"&gt;<strong>${content }</strong>&lt;/div&gt;
+  &lt;div id="date-writer-hit"&gt;edited <strong>&#36;{regdate }</strong> by <strong>&#36;{name }</strong> hit <strong>&#36;{hit }</strong>&lt;/div&gt;
+  &lt;div id="article-content"&gt;<strong>&#36;{content }</strong>&lt;/div&gt;
   &lt;div id="file-list" style="text-align: right"&gt;
-  <strong>&lt;c:forEach var="file" items="${attachFileList }" varStatus="status"&gt;</strong>
+  <strong>&lt;c:forEach var="file" items="&#36;{attachFileList }" varStatus="status"&gt;</strong>
     &lt;div id="attach-file"&gt;
-      &lt;a href="<strong>${uploadPath }${file.filename }</strong>"&gt;<strong>${file.filename }</strong>&lt;/a&gt;
-      <strong>&lt;c:if test="${user.email == file.email }"&gt;</strong>
-      &lt;a href="javascript:deleteAttachFile('<strong>${file.attachFileNo }</strong>')"&gt;x&lt;/a&gt;
+      &lt;a href="<strong>&#36;{uploadPath }&#36;{file.filename }</strong>"&gt;<strong>&#36;{file.filename }</strong>&lt;/a&gt;
+      <strong>&lt;c:if test="&#36;{user.email == file.email }"&gt;</strong>
+      &lt;a href="javascript:deleteAttachFile('<strong>&#36;{file.attachFileNo }</strong>')"&gt;x&lt;/a&gt;
       <strong>&lt;/c:if&gt;</strong>
     &lt;/div&gt;
   <strong>&lt;/c:forEach&gt;</strong>
   &lt;/p&gt;
 &lt;/div&gt;
 &lt;form id="addCommentForm" action="addComment<strong>.do</strong>" method="post"&gt;
-  &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>"/&gt;
-  &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-  &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-  &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;       
+  &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>"/&gt;
+  &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+  &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+  &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;       
   &lt;div id="addComment"&gt;
     &lt;textarea name="memo" rows="7" cols="50"&gt;&lt;/textarea&gt;
   &lt;/div&gt;
@@ -486,56 +486,56 @@ function deleteComment(commentNo) {
     &lt;input type="submit" value="Add comment" /&gt;
   &lt;/div&gt;
 &lt;/form&gt;
-<strong>&lt;c:forEach var="comment" items="${commentList }" varStatus="status"&gt;</strong>
+<strong>&lt;c:forEach var="comment" items="&#36;{commentList }" varStatus="status"&gt;</strong>
 &lt;div class="comments"&gt;
-  &lt;span class="writer"&gt;<strong>${comment.name }</strong>&lt;/span&gt;
-  &lt;span class="date"&gt;<strong>${comment.regdate }</strong>&lt;/span&gt;
-  <strong>&lt;c:if test="${user.email == comment.email }"&gt;</strong>
+  &lt;span class="writer"&gt;<strong>&#36;{comment.name }</strong>&lt;/span&gt;
+  &lt;span class="date"&gt;<strong>&#36;{comment.regdate }</strong>&lt;/span&gt;
+  <strong>&lt;c:if test="&#36;{user.email == comment.email }"&gt;</strong>
   &lt;span class="modify-del"&gt;
-    &lt;a href="javascript:modifyCommentToggle('<strong>${comment.commentNo }</strong>')"&gt;Modify&lt;/a&gt;
-     | &lt;a href="javascript:deleteComment('<strong>${comment.commentNo }</strong>')"&gt;Del&lt;/a&gt;
+    &lt;a href="javascript:modifyCommentToggle('<strong>&#36;{comment.commentNo }</strong>')"&gt;Modify&lt;/a&gt;
+     | &lt;a href="javascript:deleteComment('<strong>&#36;{comment.commentNo }</strong>')"&gt;Del&lt;/a&gt;
   &lt;/span&gt;
   <strong>&lt;/c:if&gt;</strong>
-  &lt;p id="comment<strong>${comment.commentNo }</strong>"&gt;<strong>${comment.memo }</strong>&lt;/p&gt;
-  &lt;form id="modifyCommentForm<strong>${comment.commentNo }</strong>" class="comment-form" action="updateComment<strong>.do</strong>" method="post" style="display: none;"&gt;
-  &lt;input type="hidden" name="commentNo" value="<strong>${comment.commentNo }</strong>" /&gt;
-  &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-  &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-  &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-  &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+  &lt;p id="comment<strong>&#36;{comment.commentNo }</strong>"&gt;<strong>&#36;{comment.memo }</strong>&lt;/p&gt;
+  &lt;form id="modifyCommentForm<strong>&#36;{comment.commentNo }</strong>" class="comment-form" action="updateComment<strong>.do</strong>" method="post" style="display: none;"&gt;
+  &lt;input type="hidden" name="commentNo" value="<strong>&#36;{comment.commentNo }</strong>" /&gt;
+  &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+  &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+  &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+  &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;div class="fr"&gt;
-    &lt;a href="javascript:document.forms.modifyCommentForm<strong>${comment.commentNo }</strong>.submit()"&gt;Submit&lt;/a&gt;
-    | &lt;a href="javascript:modifyCommentToggle('<strong>${comment.commentNo }</strong>')"&gt;Cancel&lt;/a&gt;
+    &lt;a href="javascript:document.forms.modifyCommentForm<strong>&#36;{comment.commentNo }</strong>.submit()"&gt;Submit&lt;/a&gt;
+    | &lt;a href="javascript:modifyCommentToggle('<strong>&#36;{comment.commentNo }</strong>')"&gt;Cancel&lt;/a&gt;
   &lt;/div&gt;
   &lt;div&gt;
-    &lt;textarea class="comment-textarea" name="memo" rows="7" cols="50"&gt;<strong>${comment.memo }</strong>&lt;/textarea&gt;
+    &lt;textarea class="comment-textarea" name="memo" rows="7" cols="50"&gt;<strong>&#36;{comment.memo }</strong>&lt;/textarea&gt;
   &lt;/div&gt;
   &lt;/form&gt;
 &lt;/div&gt;
 <strong>&lt;/c:forEach&gt;</strong>
 &lt;div id="next-prev"&gt;
-  <strong>&lt;c:if test="${nextArticle != null }"&gt;</strong>
-  &lt;p&gt;Next Article : &lt;a href="javascript:goView('<strong>${nextArticle.articleNo }</strong>')"&gt;<strong>${nextArticle.title }</strong>&lt;/a&gt;&lt;/p&gt;
+  <strong>&lt;c:if test="&#36;{nextArticle != null }"&gt;</strong>
+  &lt;p&gt;Next Article : &lt;a href="javascript:goView('<strong>&#36;{nextArticle.articleNo }</strong>')"&gt;<strong>&#36;{nextArticle.title }</strong>&lt;/a&gt;&lt;/p&gt;
   <strong>&lt;/c:if&gt;</strong>
-  <strong>&lt;c:if test="${prevArticle != null }"&gt;</strong>
-  &lt;p&gt;Prev Article : &lt;a href="javascript:goView('<strong>${prevArticle.articleNo }</strong>')"&gt;<strong>${prevArticle.title }</strong>&lt;/a&gt;&lt;/p&gt;
+  <strong>&lt;c:if test="&#36;{prevArticle != null }"&gt;</strong>
+  &lt;p&gt;Prev Article : &lt;a href="javascript:goView('<strong>&#36;{prevArticle.articleNo }</strong>')"&gt;<strong>&#36;{prevArticle.title }</strong>&lt;/a&gt;&lt;/p&gt;
   <strong>&lt;/c:if&gt;</strong>
 &lt;/div&gt;
 &lt;div class="view-menu"&gt;
-  <strong>&lt;c:if test="${user.email == email }"&gt;</strong>
+  <strong>&lt;c:if test="&#36;{user.email == email }"&gt;</strong>
   &lt;div class="fl"&gt;
     &lt;input type="button" value="Modify" onclick="goModify()" /&gt;
     &lt;input type="button" value="Del" onclick="goDelete()"/&gt;
   &lt;/div&gt;
   <strong>&lt;/c:if&gt;</strong>
   &lt;div class="fr"&gt;
-    <strong>&lt;c:if test="${nextArticle != null }"&gt;</strong>
-    &lt;input type="button" value="Next Article" onclick="goView('<strong>${nextArticle.articleNo }</strong>')" /&gt;
+    <strong>&lt;c:if test="&#36;{nextArticle != null }"&gt;</strong>
+    &lt;input type="button" value="Next Article" onclick="goView('<strong>&#36;{nextArticle.articleNo }</strong>')" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    <strong>&lt;c:if test="${prevArticle != null }"&gt;</strong>
-    &lt;input type="button" value="Prev Article" onclick="goView('<strong>${prevArticle.articleNo }</strong>')" /&gt;
+    <strong>&lt;c:if test="&#36;{prevArticle != null }"&gt;</strong>
+    &lt;input type="button" value="Prev Article" onclick="goView('<strong>&#36;{prevArticle.articleNo }</strong>')" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    &lt;input type="button" value="List" onclick="goList('<strong>${param.page }</strong>')" /&gt;
+    &lt;input type="button" value="List" onclick="goList('<strong>&#36;{param.page }</strong>')" /&gt;
     &lt;input type="button" value="New" onclick="goWrite()" /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -547,48 +547,48 @@ function deleteComment(commentNo) {
   &lt;th style="width: 84px;"&gt;DATE&lt;/th&gt;
   &lt;th style="width: 60px;"&gt;HIT&lt;/th&gt;
 &lt;/tr&gt;
-<strong>&lt;c:forEach var="article" items="${list }" varStatus="status"&gt;</strong>
+<strong>&lt;c:forEach var="article" items="&#36;{list }" varStatus="status"&gt;</strong>
 &lt;tr&gt;
   &lt;td style="text-align: center;"&gt;
   <strong>&lt;c:choose&gt;</strong>
-    <strong>&lt;c:when test="${param.articleNo == article.articleNo }"&gt;</strong>
+    <strong>&lt;c:when test="&#36;{param.articleNo == article.articleNo }"&gt;</strong>
     &lt;img src="../images/arrow.gif" alt="You are reading this" /&gt;
     <strong>&lt;/c:when&gt;</strong>
     <strong>&lt;c:otherwise&gt;</strong>
-    <strong>${listItemNo - status.index }</strong>
+    <strong>&#36;{listItemNo - status.index }</strong>
     <strong>&lt;/c:otherwise&gt;</strong>
   <strong>&lt;/c:choose&gt;</strong>
   &lt;/td&gt;
   &lt;td&gt;
-    &lt;a href="javascript:goView('<strong>${article.articleNo }</strong>')"&gt;<strong>${article.title }</strong>&lt;/a&gt;
-    <strong>&lt;c:if test="${article.attachFileNum &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goView('<strong>&#36;{article.articleNo }</strong>')"&gt;<strong>&#36;{article.title }</strong>&lt;/a&gt;
+    <strong>&lt;c:if test="&#36;{article.attachFileNum &gt; 0 }"&gt;</strong>
     &lt;img src="/images/attach.png" alt="Attach File" style="vertical-align: middle;" /&gt;
     <strong>&lt;/c:if&gt;</strong>
-    <strong>&lt;c:if test="${article.commentNum &gt; 0 }"&gt;</strong>
-    &lt;span class="bbs-strong"&gt;[<strong>${article.commentNum }</strong>]&lt;/span&gt;
+    <strong>&lt;c:if test="&#36;{article.commentNum &gt; 0 }"&gt;</strong>
+    &lt;span class="bbs-strong"&gt;[<strong>&#36;{article.commentNum }</strong>]&lt;/span&gt;
     <strong>&lt;/c:if&gt;</strong>
   &lt;/td&gt;
-  &lt;td style="text-align: center;"&gt;<strong>${article.regdate }</strong>&lt;/td&gt;
-  &lt;td style="text-align: center;"&gt;<strong>${article.hit }</strong>&lt;/td&gt;
+  &lt;td style="text-align: center;"&gt;<strong>&#36;{article.regdate }</strong>&lt;/td&gt;
+  &lt;td style="text-align: center;"&gt;<strong>&#36;{article.hit }</strong>&lt;/td&gt;
 &lt;/tr&gt;
 <strong>&lt;/c:forEach&gt;</strong>
 &lt;/table&gt;
 &lt;div id="paging"&gt;
-  <strong>&lt;c:if test="${prevPage &gt; 0 }"&gt;</strong>
-    &lt;a href="javascript:goList('<strong>${prevPage }</strong>')"&gt;[Prev]&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{prevPage &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goList('<strong>&#36;{prevPage }</strong>')"&gt;[Prev]&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
-  <strong>&lt;c:forEach var="i" begin="${firstPage }" end="${lastPage }"&gt;</strong>
+  <strong>&lt;c:forEach var="i" begin="&#36;{firstPage }" end="&#36;{lastPage }"&gt;</strong>
     <strong>&lt;c:choose&gt;</strong>
-      <strong>&lt;c:when test="${param.page == i }"&gt;</strong>
-        &lt;span class="bbs-strong"&gt;<strong>${i }</strong>&lt;/span&gt;
+      <strong>&lt;c:when test="&#36;{param.page == i }"&gt;</strong>
+        &lt;span class="bbs-strong"&gt;<strong>&#36;{i }</strong>&lt;/span&gt;
       <strong>&lt;/c:when&gt;</strong>
       <strong>&lt;c:otherwise&gt;</strong>
-        &lt;a href="javascript:goList('<strong>${i }</strong>')"&gt;<strong>${i }</strong>&lt;/a&gt;
+        &lt;a href="javascript:goList('<strong>&#36;{i }</strong>')"&gt;<strong>&#36;{i }</strong>&lt;/a&gt;
       <strong>&lt;/c:otherwise&gt;
     &lt;/c:choose&gt;</strong>  
   <strong>&lt;/c:forEach&gt;</strong>
-  <strong>&lt;c:if test="${nextPage &gt; 0 }"&gt;</strong>
-    &lt;a href="javascript:goList('<strong>${nextPage }</strong>')"&gt;[Next]&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{nextPage &gt; 0 }"&gt;</strong>
+    &lt;a href="javascript:goList('<strong>&#36;{nextPage }</strong>')"&gt;[Next]&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 &lt;/div&gt;
 &lt;div id="list-menu"&gt;
@@ -596,7 +596,7 @@ function deleteComment(commentNo) {
 &lt;/div&gt;
 &lt;form action="list<strong>.do</strong>" method="get"&gt;
   &lt;input type="hidden" name="page" value="1" /&gt;
-  &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
+  &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
   &lt;div id="search"&gt;
     &lt;input type="text" name="searchWord" size="15" maxlength="30" /&gt;
     &lt;input type="submit" value="Search" /&gt;
@@ -622,47 +622,47 @@ function deleteComment(commentNo) {
 
 &lt;div id="form-group" style="display: none"&gt;
   &lt;form id="listForm" action="list<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
     &lt;input type="hidden" name="page" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="viewForm" action="view<strong>.do</strong>" method="get"&gt;
     &lt;input type="hidden" name="articleNo" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="writeForm" action="write_form<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="modifyForm" action="modify_form<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="delForm" action="del<strong>.do</strong>" method="post"&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="deleteCommentForm" action="deleteComment<strong>.do</strong>" method="post"&gt;
     &lt;input type="hidden" name="commentNo" /&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;   
   &lt;form id="deleteAttachFileForm" action="deleteAttachFile<strong>.do</strong>" method="post"&gt;
     &lt;input type="hidden" name="attachFileNo" /&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;       
 &lt;/div&gt;
 
@@ -709,7 +709,7 @@ Change the file name of the write_form.jsp to write.jsp and modify it like below
 &lt;meta charset="UTF-8" /&gt;
 &lt;meta name="Keywords" content="New article form" /&gt;
 &lt;meta name="Description" content="New article form" /&gt;
-&lt;title&gt;<strong>${boardNm }</strong>&lt;/title&gt;
+&lt;title&gt;<strong>&#36;{boardNm }</strong>&lt;/title&gt;
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 &lt;script&gt;
 function goList() {
@@ -737,10 +737,10 @@ function goView() {
   &lt;div id="container"&gt;
     &lt;div id="content"&gt;
 &lt;!-- content begin --&gt;
-&lt;div id="content-categories"&gt;<strong>${boardNm }</strong>&lt;/div&gt;
+&lt;div id="content-categories"&gt;<strong>&#36;{boardNm }</strong>&lt;/div&gt;
 &lt;h3&gt;New article&lt;/h3&gt;
 &lt;form id="writeForm" action="write<strong>.do</strong>" method="post" enctype="multipart/form-data"&gt;
-&lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
+&lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
 &lt;table id="write-form" class="bbs-table"&gt;
 &lt;tr&gt;
   &lt;td&gt;Title&lt;/td&gt;
@@ -759,7 +759,7 @@ function goView() {
 &lt;div style="text-align: center;padding-bottom: 15px;"&gt;
   &lt;input type="submit" value="Submit" /&gt;
   &lt;input type="button" value="List" onclick="goList()" /&gt;
-  <strong>&lt;c:if test="${not empty param.articleNo }"&gt;</strong>
+  <strong>&lt;c:if test="&#36;{not empty param.articleNo }"&gt;</strong>
   &lt;input type="button" value="Detailed view" onclick="goView()" /&gt;
   <strong>&lt;/c:if&gt;</strong>
 &lt;/div&gt;
@@ -784,15 +784,15 @@ function goView() {
 
 &lt;div id="form-group" style="display: none"&gt;
   &lt;form id="viewForm" action="view<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
   &lt;form id="listForm" action="list<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;   
 &lt;/div&gt;
 
@@ -818,7 +818,7 @@ Change the name of modify_form.jsp to modify.jsp and modify it like below.
 &lt;meta charset="UTF-8" /&gt;
 &lt;meta name="Keywords" content="Modify form page" /&gt;
 &lt;meta name="Description" content="Modify form page" /&gt;
-&lt;title&gt;<strong>${boardNm }</strong>&lt;/title&gt;
+&lt;title&gt;<strong>&#36;{boardNm }</strong>&lt;/title&gt;
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css"  /&gt;
 &lt;script&gt;
 function check() {
@@ -847,21 +847,21 @@ function goView() {
   &lt;div id="container"&gt;
     &lt;div id="content"&gt;
 &lt;!-- content begin --&gt;
-&lt;div id="content-categories"&gt;<strong>${boardNm }</strong>&lt;/div&gt;
+&lt;div id="content-categories"&gt;<strong>&#36;{boardNm }</strong>&lt;/div&gt;
 &lt;h3&gt;Modify&lt;/h3&gt;
 &lt;form id="modifyForm" action="modify<strong>.do</strong>" method="post" enctype="multipart/form-data" onsubmit="return check();"&gt;
-&lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-&lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-&lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-&lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+&lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+&lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+&lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+&lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
 &lt;table id="write-form" class="bbs-table"&gt;
 &lt;tr&gt;
   &lt;td&gt;Title&lt;/td&gt;
-  &lt;td&gt;&lt;input type="text" name="title" style="width: 90%;" value="<strong>${title }</strong>" /&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;input type="text" name="title" style="width: 90%;" value="<strong>&#36;{title }</strong>" /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td colspan="2"&gt;
-    &lt;textarea name="content" rows="17" cols="50"&gt;<strong>${content }</strong>&lt;/textarea&gt;
+    &lt;textarea name="content" rows="17" cols="50"&gt;<strong>&#36;{content }</strong>&lt;/textarea&gt;
   &lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -894,10 +894,10 @@ function goView() {
 
 &lt;div id="form-group" style="display: none"&gt;
   &lt;form id="viewForm" action="view<strong>.do</strong>" method="get"&gt;
-    &lt;input type="hidden" name="articleNo" value="<strong>${param.articleNo }</strong>" /&gt;
-    &lt;input type="hidden" name="boardCd" value="<strong>${param.boardCd }</strong>" /&gt;
-    &lt;input type="hidden" name="page" value="<strong>${param.page }</strong>" /&gt;
-    &lt;input type="hidden" name="searchWord" value="<strong>${param.searchWord }</strong>" /&gt;
+    &lt;input type="hidden" name="articleNo" value="<strong>&#36;{param.articleNo }</strong>" /&gt;
+    &lt;input type="hidden" name="boardCd" value="<strong>&#36;{param.boardCd }</strong>" /&gt;
+    &lt;input type="hidden" name="page" value="<strong>&#36;{param.page }</strong>" /&gt;
+    &lt;input type="hidden" name="searchWord" value="<strong>&#36;{param.searchWord }</strong>" /&gt;
   &lt;/form&gt;
 &lt;/div&gt;
 
@@ -924,7 +924,7 @@ Let's work with membership-related views.
 &lt;h1&gt;&lt;Membership&lt;/h1&gt;
 &lt;ul&gt;
   &lt;c:choose&gt;
-    &lt;c:when test="${empty check}"&gt;
+    &lt;c:when test="&#36;{empty check}"&gt;
       &lt;li&gt;&lt;a href="/users/login"&gt;Login&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="/users/signUp"&gt;SignUp&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href="#"&gt;Forgot ID&lt;/a&gt;&lt;/li&gt;
@@ -978,12 +978,12 @@ function check() {
 &lt;!-- content begin --&gt;
 &lt;div id="content-categories"&gt;Membership&lt;/div&gt;
 &lt;h2&gt;Login&lt;/h2&gt;
-<strong>&lt;c:if test="${not empty param.msg }"&gt;
+<strong>&lt;c:if test="&#36;{not empty param.msg }"&gt;
 &lt;p style="color: red;"&gt;Login Failed!&lt;/p&gt;
 &lt;/c:if&gt;</strong>      
 &lt;form id="loginForm" action="<strong>login.do</strong>" method="post" onsubmit="return check()"&gt;
 &lt;p style="margin: 0; padding: 0;"&gt;
-&lt;input type="hidden" name="url" value="<strong>${param.url }</strong>" /&gt;
+&lt;input type="hidden" name="url" value="<strong>&#36;{param.url }</strong>" /&gt;
 &lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -1216,11 +1216,11 @@ You can edit your account information except your password. &lt;a href="changePa
 &lt;table&gt;
 &lt;tr&gt;
   &lt;td&gt;Full Name&lt;/td&gt;
-  &lt;td&gt;&lt;input type="text" name="name" value="<strong>${user.name }</strong>" /&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;input type="text" name="name" value="<strong>&#36;{user.name }</strong>" /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td&gt;Mobile&lt;/td&gt;
-  &lt;td&gt;&lt;input type="text" name="mobile" value="<strong>${user.mobile }</strong>" /&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;input type="text" name="mobile" value="<strong>&#36;{user.mobile }</strong>" /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
   &lt;td&gt;Password&lt;/td&gt;
@@ -1297,8 +1297,8 @@ function check() {
 &lt;!-- content begin --&gt;        
 &lt;h3&gt;Change password&lt;/h3&gt;
 &lt;p&gt;
-<strong>${user.name }</strong>&lt;br /&gt;
-<strong>${user.mobile }</strong>&lt;br /&gt;
+<strong>&#36;{user.name }</strong>&lt;br /&gt;
+<strong>&#36;{user.mobile }</strong>&lt;br /&gt;
 &lt;/p&gt;
 &lt;form id="changePasswordForm" action="changePasswd<strong>.do</strong>" method="post" onsubmit="return check()"&gt;
 &lt;table&gt;
