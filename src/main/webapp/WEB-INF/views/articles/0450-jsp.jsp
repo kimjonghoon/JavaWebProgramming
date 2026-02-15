@@ -1661,4 +1661,12 @@ response.sendRedirect("upload.html");
 	<li>HTTP 상태코드 404는 찾을 수 없음을, 403는 금지됨을, 500은 내부 서버 오류를 의미한다.</li>
 	<li>JSTL에서는 다음과 같이 접근할 수 있다:<pre class="prettyprint no-border">	&lt;c:out value="${requestScope['jakarta.servlet.error.message']}" /&gt;</pre></li>
 </ol>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/using-jdbc"/>">데이터베이스 연동</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/servlets"/>">서블릿</a></li>
+	</ul>
+</div>
+
 </article>

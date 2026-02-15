@@ -1632,4 +1632,12 @@ public class BoardDeleter extends HttpServlet {
 	}
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/model-1-bbs"/>">모델 1 게시판</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/bbs-basics"/>">게시판 기본</a></li>
+	</ul>
+</div>
+
 </article>

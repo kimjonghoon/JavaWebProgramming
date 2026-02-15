@@ -1237,4 +1237,11 @@ public class ReplyAction implements Action {
 reply.jsp는 필요 없으니 삭제한다.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/css-layout/div-element-arrangement"/>">주요 엘리먼트 배치</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/datasource"/>">데이터소스</a></li>
+	</ul>
+</div>
+
 </article>

@@ -2427,4 +2427,12 @@ list.jsp에서 검색폼의 method 속성을 method="post" 에서 method="get"�
 	<li><a href="http://wiki.apache.org/tomcat/FAQ/CharacterEncoding">http://wiki.apache.org/tomcat/FAQ/CharacterEncoding</a></li>
 	<li><a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">https://en.wikipedia.org/wiki/Create,_read,_update_and_delete</a>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/thread-bbs"/>">계층형 게시판</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/using-jdbc"/>">데이터베이스 연동</a></li>
+	</ul>
+</div>
+
 </article>

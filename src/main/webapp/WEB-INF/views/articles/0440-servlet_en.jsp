@@ -2565,4 +2565,12 @@ The <a href="JSP">JSP</a> chapter covers session examples.
 	<li><a href="http://www.albumbang.com/board/board_view.jsp?board_name=free&no=292">http://www.albumbang.com/board/board_view.jsp?board_name=free&amp;no=292</a></li>
 	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/jsp-basics"/>">JSP</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/web-application"/>">Web Application?</a></li>
+	</ul>
+</div>
+
 </article>

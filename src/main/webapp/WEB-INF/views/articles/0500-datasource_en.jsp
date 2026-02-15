@@ -155,4 +155,12 @@ public class BoardDao {
 <ul id="references">
   <li><a href="http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html">http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/model-2-bbs"/>">Model 2 Board</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/model-1-bbs"/>">Model 1 Board</a></li>
+	</ul>
+</div>
+
 </article>

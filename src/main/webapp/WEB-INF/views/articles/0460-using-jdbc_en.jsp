@@ -4,28 +4,28 @@
 
 <article>
 
-<h1>데이터베이스 연동</h1>
+<h1>Accessing database from JSP &amp; Servlets</h1>
 
 <p>
-아래 나오는 모든 예제는 이클립스를 사용하여 ROOT 애플리케이션의 도큐먼트 베이스에 작성한다.<br />
-<a href="Namecard-Webapp.php#3rd-Test">명함관리 웹 애플리케이션의 3번째 테스트</a>를 참고하여 이클립스에 ROOT 애플리케이션을 위한 작업환경을 구축한다.
+All of the examples below are written in the document base of the ROOT application using Eclipse.
+Build a working environment for your ROOT application in Eclipse with reference to <a href="Namecard-Webapp.php#3rd-Test">Namecard web application 3rd Test</a>.
 </p>
 
-<h2>ROOT 애플리케이션의 빌드 패스에 서블릿 API 추가</h2>
+<h2>Add Servlet API to BuildPath of ROOT application</h2>
 
 <p>
-이클립스에서 이전에 실습했던 GetEmpServlet 서블릿을 연다.<br />
-많은 컴파일 에러를 발생한다.<br />
-에러 원인은 ROOT 애플리케이션의 빌드 패스에 서블릿 API를 추가하지 않았기 때문이다.<br />
-아래 화면처럼 Libraries 탭을 선택하고, Add External JARs..버튼을 클릭하여 CATALINA_HOME/lib에서 서블릿 API를 찾아 추가한다.<br />
-<img src="https://lh3.googleusercontent.com/P9Bme_jBrFYL8k3VN-Kzx38shbriZdHuHxC6cevfcChQbNsumwi4izmhZnpwy_SRyKYMc8OzgwjlAqCVPtqZ7xzZ9NDNZwTWVsu5AxRz16eWOdKyfbTV8MFUIf8-5_MDbjyO1-mxgUz9wc6gdrqKsBGXi26NijhHKU16V6MB-pu8eraPbXbMe8MQCZmJzEyWKixj00cMaQYxyy3mygyB2dj76LiYIKibFkDwcJY3NFx7q5W7hDxCHpKexgGd_FMwh8SSMjLrSUyC4TejCqZjiiUiBHsO_lbcscidIyYMs9st972RA7osjY9RZ0Y_VY8ZK8ZDvo5DiKOOMWTSE24h_JPGtT6fbyYGYDsUVf5MH3Z7LkVir2quhmNt0YrhZv_UF9sJEBfTpvHoTiSSZyrUA5EQ-zT1947ObJ1Y_qH44Q0DGxaetNZilNgXd1McFF5PjN2slR5O2-jRGCgU1stPGkdOG23q5K5FcI4EJwZGRKVTC8Pm9t7LcddMfnkGThI_n96tUUsWYRXZ7a0TW-o9g0xGG9yMRFbY-Z-dt-Sz9qvWs-F1mtwD-6JyPaTg8e1AW-z4xTOwxYc53B3luxhS2uQnc0g5_vyx_CHCu1RicR-Mz3T5KkbulJSg=w801-h470-no" alt="서블릿 API를 ROOT애플리케이션의 빌드패스에 추가" style="display: block;width: 100%;"/>
+In Eclipse, open the GetEmpServlet servlet, which you had previously practiced. 
+You will encounter numerous compilation errors. 
+The reason for the error is that you did not add the servlet API to the ROOT application's BuildPath. 
+Select the Libraries tab as shown below and click the Add External JARs .. button to find and add the Servlet API in CATALINA_HOME/lib.
+<img src="https://lh3.googleusercontent.com/P9Bme_jBrFYL8k3VN-Kzx38shbriZdHuHxC6cevfcChQbNsumwi4izmhZnpwy_SRyKYMc8OzgwjlAqCVPtqZ7xzZ9NDNZwTWVsu5AxRz16eWOdKyfbTV8MFUIf8-5_MDbjyO1-mxgUz9wc6gdrqKsBGXi26NijhHKU16V6MB-pu8eraPbXbMe8MQCZmJzEyWKixj00cMaQYxyy3mygyB2dj76LiYIKibFkDwcJY3NFx7q5W7hDxCHpKexgGd_FMwh8SSMjLrSUyC4TejCqZjiiUiBHsO_lbcscidIyYMs9st972RA7osjY9RZ0Y_VY8ZK8ZDvo5DiKOOMWTSE24h_JPGtT6fbyYGYDsUVf5MH3Z7LkVir2quhmNt0YrhZv_UF9sJEBfTpvHoTiSSZyrUA5EQ-zT1947ObJ1Y_qH44Q0DGxaetNZilNgXd1McFF5PjN2slR5O2-jRGCgU1stPGkdOG23q5K5FcI4EJwZGRKVTC8Pm9t7LcddMfnkGThI_n96tUUsWYRXZ7a0TW-o9g0xGG9yMRFbY-Z-dt-Sz9qvWs-F1mtwD-6JyPaTg8e1AW-z4xTOwxYc53B3luxhS2uQnc0g5_vyx_CHCu1RicR-Mz3T5KkbulJSg=w801-h470-no" alt="Add Servlet API to BuildPath of ROOT application" style="display: block;width: 100%;"/>
 </p>
 
-<h2>첫 번째 JSP</h2>
+<h2>First JSP example</h2>
 
 <p>
-getEmp1.jsp 파일을 ROOT 애플리케이션의 도큐먼트 베이스에 아래와 같이 만든다.<br />
-(이 JSP는 <a href="Servlet#GetEmpServlet">GetEmpServlet 서블릿</a>의 JSP 버전이다)
+Create getEmp1.jsp in the ROOT application's document base as shown below.
+(This JSP is a JSP version of the <a href="Servlet#GetEmpServlet">GetEmpServlet servlet</a>)
 </p>
 
 <h6 class="src">getEmp1.jsp</h6>
@@ -37,7 +37,7 @@ getEmp1.jsp 파일을 ROOT 애플리케이션의 도큐먼트 베이스에 아�
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta charset="UTF-8"&gt;
-&lt;title&gt;첫 번째 예제&lt;/title&gt;
+&lt;title&gt;First JSP Example&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;%
@@ -111,25 +111,26 @@ try {
 </pre>
 
 <p>
-JSP 파일이므로 톰캣을 재실행할 필요는 없다.<br />
-http://localhost:8080/getEmp1.jsp를 방문하여 테스트한다.
+You do not need to rerun Tomcat because it is a JSP file.
+Visit http://localhost:8080/getEmp1.jsp and test it.
 </p>
 
-<h2>두 번째 JSP 예제</h2>
+<h2>Second JSP example</h2>
 
-<h3>사용자 정의 커넥션 풀링 사용하기</h3>
+<h3>Connection pooling</h3>
 
 <p>
-JDBC에서 커넥션 객체를 획득하는 데에 시간이 많이 걸린다.<br />
-이에 대한 해결책으로 커넥션 풀링이 있다.<br />
-커넥션 풀링은 커넥션을 미리 여러 개 만들어 벡터와 같은 컬렉션에 저장해 두고 필요할 때마다 꺼내 쓰겠다는 아이디어다.
+It takes a long time to acquire a connection object in JDBC.
+Connection pooling is the solution.
+Connection pooling is the idea of creating multiple connections in advance, storing them in collections like vectors, and popping them out whenever you need them.
 </p>
 
 <p>
-getEmp1.jsp가 커넥션 풀을 통해서 커넥션을 얻도록 수정해 보자.<br /> 
-우리는 이미 서블릿 장 실습에서 ROOT 애플리케이션에 커넥션 풀링을 추가했다.<br />
-(다음 주소 참조: <a href="Servlet#Custom-ConnectionPool">사용자 정의 커넥션 풀 사용하기</a>)<br />
-getEmp1.jsp를 열고 Save As...메뉴를 사용하여 getEmp2.jsp를 생성한 후 아래와 같이 수정한다.<br />
+The next exercise is to modify getEmp1.jsp to get a connection through the connection pool.
+We have already added connection pooling to the ROOT application in the servlet chapter lab.
+(See: <a href="Servlet#Custom-ConnectionPool">Using Custom Connection Pool</a>)
+Open getEmp1.jsp.
+Use the Save As... menu to create getEmp2.jsp and modify it as shown below.
 </p>
 
 <h6 class="src">getEmp2.jsp</h6>
@@ -144,7 +145,7 @@ getEmp1.jsp를 열고 Save As...메뉴를 사용하여 getEmp2.jsp를 생성한 
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta charset="UTF-8"&gt;
-&lt;title&gt;두 번째 JSP 예제&lt;/title&gt;
+&lt;title&gt;Second JSP example&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;%
@@ -205,32 +206,27 @@ try {
 </pre>
 
 <p>
-두 번째 JSP는 jsp:useBean 액션을 사용하여 OracleConnectionManager 객체 레퍼런스를 획득한다.<br />
-두 번째 JSP는 커넥션이 필요할 때마다 OracleConnectionManager의 getConnection() 메소드를 호출하면 커넥션을 획득할 수 있다.<br />
-이 사용자 정의 커넥션 풀을 사용할 때는, 커넥션을 사용한 후 close() 메소드를 사용하지 말고 OracleConnectionManager의 freeConnection() 메소드를 사용해서 커넥션을 풀에 복귀시켜야 한다는 점에 주의한다.<br />
-만일 close()를 사용하면 사용자 정의 커넥션 풀은 동작하기 않게 된다.
+The second JSP uses the jsp: useBean action to obtain the OracleConnectionManager object reference.
+The second JSP can obtain a connection by calling the getConnection() method of the OracleConnectionManager whenever a connection is needed.
+One thing to keep in mind when using this custom connection pool is that you must use the freeConnection() method of the OracleConnectionManager instead of using the close() method of Connection after using the connection.
+If you use the close() of Connection, this custom connection pool will not work.
 </p>
 
-<h2>세 번째 JSP 예제</h2>
+<h2>Third JSP Example</h2>
 
-<h3>사용자 정의 로그 파일 사용하기</h3>
-
-<p>
-이제까지 우리는 로그 메시지를 출력하기 위해서 System.out.println()를 사용했다.<br />
-윈도 시스템에 톰캣을 인스톨러로 설치한 경우 System.out.println()은 CATALINA_HOME/logs 디렉터리의 stdout_로 시작하는 파일에 메시지를 기록한다.<br />
-</p>
+<h3>Using custom log file</h3>
 
 <p>
-개발할 때나 운영할 때 좀 더 좋은 환경을 제공하기 위해서, 로그 메시지는 프로그래머나 운영자가 원하는 파일에 출력될 필요가 있다.<br />
-</p>
+So far we have used System.out.println() to print a log message.
+If you install Tomcat with the installer on a Windows system, System.out.println() will print a message to the file starting with stdout_ in the CATALINA_HOME/logs directory.
 
-<p>
-로깅과 관련해서 오픈 소스가 많이 나와 있다.<br />
-하지만 우리는 로깅에 대한 기본 개념을 이해해야 하므로 사용자 정의 로그 파일인 Log.java를 사용하겠다.<br />
-</p>
+To provide a better environment for development and operation, log messages need to be output to the file that the programmer or operator wants.
 
-<p>
-getEmp2.jsp 파일을 열고 Save As...메뉴을 사용해서 getEmp3.jsp 파일을 생성한 후 다음과 같이 수정한다.<br />
+There is a lot of open source about logging.
+However, we need to understand the basic concepts of logging, so let's use a custom log file, Log.java.
+
+Open the getEmp2.jsp file.
+Use the Save As ... menu to create the getEmp3.jsp file and modify it as follows:
 </p>
 
 <h6 class="src">getEmp3.jsp</h6>
@@ -245,7 +241,7 @@ getEmp2.jsp 파일을 열고 Save As...메뉴을 사용해서 getEmp3.jsp 파일
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta charset="UTF-8"&gt;
-&lt;title&gt;세 번째 JSP 예제&lt;/title&gt;
+&lt;title&gt;Third JSP Example&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;%
@@ -308,13 +304,13 @@ try {
 </pre>
 
 <p>
-로그 메시지를 확인하기 위해선 catch 블록이 실행되야 한다.
-getemp3.jsp에서 쿼리문을 String sql = "<strong>select * fromemp</strong>"로 수정한다.
-http://localhost:8080/getemp3.jsp를 방문한다.
-Log.java이 지정한 파일에서 로그 메시지를 확인한다.
+The catch block must be executed to check the log message.
+In getemp3.jsp, modify the query to String sql = "<strong> select * fromemp </strong>".
+Visit http://localhost:8080/getemp3.jsp.
+Check the log message in the file specified in Log.java.
 </p>
 
-<pre class="prettyprint">
+<pre class="code">
 Thu Jun 12 14:30:51 KST 2014 : Oracle Error Code : 923
 Thu Jun 12 14:30:51 KST 2014 : sql : select * fromemp
 Thu Jun 12 14:30:52 KST 2014 : Error Source:getEmp3.jsp : SQLException
@@ -322,26 +318,34 @@ Thu Jun 12 14:30:52 KST 2014 : SQLState : 42000
 Thu Jun 12 14:30:52 KST 2014 : Message : ORA-00923: FROM keyword not found where expected
 </pre>
 
-<h2>네 번째 JSP 예제</h2>
+<h2>Fourth JSP example</h2>
 
 <p>
-GetEmpServlet 서블릿에서는 init() 메소드에서 JDBC 드라이버를 로딩했다.
-"서블릿" 절에서 봤듯이 init() 메소드는 서블릿이 인스턴스가 된 후 서블릿 컨테이너에 의해 단 한번 자동으로 호출된다.
-JSP에도 서블릿의 init()에 해당하는 메소드가 있다.
+The GetEmpServlet servlet loaded the JDBC driver in the init() method.
+In the lesson entitled "Servlet",  you read that the init() method is called once by the servlet container after the servlet is instantiated.
+In JSP, there is a method corresponding to the init() of Servlet.
 
-그런 메소드가 JDBC 드라이버를 로딩한다면 JSP 성능은 향상된다.
+if our JSP load the JDBC driver in sort of init() method, it will improve performance.
 
-서블릿의 init()에 해당하는 JSP 메소드는 다음 주소에서 찾을 수 있다.
+The JSP method corresponding to the init() of Servlet can be found at:
 <a href="http://docs.oracle.com/javaee/7/api/javax/servlet/jsp/JspPage.html#jspInit()">http://docs.oracle.com/javaee/7/api/javax/servlet/jsp/JspPage.html#jspInit()</a>
 </p>
 
 <p>
-getEmp3.jsp를 연다.
-Save As.. 메뉴를 사용하여 getEmp4.jsp를 만든다.
-서블릿의 init()에 해당하는 JSP 메소드가 JDBC 드라이버를 로딩하도록 getEmp4.jsp를 수정한다.
+Open getEmp3.jsp.
+Use the Save As .. menu to create getEmp4.jsp.
+Modify getEmp4.jsp so that the JSP method corresponding to the init() of the servlet loads the JDBC driver.
 </p>
 
 <p>
-getEmp4.jsp는 과제로 남긴다.
+getEmp4.jsp is your challenge.
 </p>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/bbs-basics"/>">Board Basics</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/jsp-basics"/>">JSP</a></li>
+	</ul>
+</div>
+
 </article>

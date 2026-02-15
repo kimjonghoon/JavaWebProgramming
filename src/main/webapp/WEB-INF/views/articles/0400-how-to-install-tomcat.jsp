@@ -81,4 +81,11 @@ http://localhost:8080/manager 주소를 방문하면, 관리자 이름과 비밀
 작업 중인 웹 애플리케이션 설정을 변경했다면, 톰캣 웹 애플리케이션 매니저를 통해 해당 애플리케이션을 다시 로드하면 변경된 설정이 적용된다.<br />
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/namecard-webapp"/>">명함관리 웹 애플리케이션</a></li>
+		<li>이전 : <a href="<c:url value="/jdbc/javabank"/>">자바은행</a></li>
+	</ul>
+</div>
+
 </article>

@@ -2557,4 +2557,12 @@ MIME(Multipurpose Internet Mail Extensions)<br />
 	<li><a href="http://www.albumbang.com/board/board_view.jsp?board_name=free&no=292">http://www.albumbang.com/board/board_view.jsp?board_name=free&amp;no=292</a></li>
 	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/jsp-basics"/>">JSP</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/web-application"/>">웹 애플리케이션이란?</a></li>
+	</ul>
+</div>
+
 </article>

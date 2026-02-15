@@ -1779,4 +1779,12 @@ The code above is executed first before passing keywords as arguments to the sen
   <li><a href="https://docs.oracle.com/cd/B28359_01/server.111/b28286/pseudocolumns009.htm#SQLRF00255">https://docs.oracle.com/cd/B28359_01/server.111/b28286/pseudocolumns009.htm#SQLRF00255</a></li>
   <li><a href="https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding">https://cwiki.apache.org/confluence/display/TOMCAT/Character+Encoding</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/thread-bbs"/>">Thread BBS</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/using-jdbc"/>">Using JDBC</a></li>
+	</ul>
+</div>
+
 </article>

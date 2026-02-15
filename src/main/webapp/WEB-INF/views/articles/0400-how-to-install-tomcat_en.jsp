@@ -9,7 +9,7 @@
 <p>
 On Windows systems, download the Windows zip file from the following address:<br />
 <a href="http://tomcat.apache.org/download-11.cgi">http://tomcat.apache.org/download-11.cgi</a><br />
-<img src="../../../static/images/tomcat-binary-distributions-windows-zip.png" alt="tomcat binary distributions windows zip" style="width: 465px;" />
+<img src="<c:url value="/resources/images/tomcat-binary-distributions-windows-zip.png"/>" alt="tomcat binary distributions windows zip" style="width: 465px;" />
 </p>
 
 <p>
@@ -29,7 +29,7 @@ Visit http://localhost:8080.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/pw/AP1GczMeqNO-yMdoVkMcU0GPoULnlNl9tyh3DMV39n0Jb7juuHJaBLlrYe09OXkHPvUHJHoW5zbo_0My0c0_Yt4r-bA0dzZXJzd2PthazUhnC8Ia_gevZjziYtivhPDFSs7bF-2UrePBDGdEe4HlW-H4x0OExW9biNPjzDEy39WsMRg8rco86G69I7ZtUjWxsXjthN0Aq4ELUyVEGsdpjBD8bD7Hzmg0oUTEeQOXoUGC5rcFYWxF6W-wk0OY10YxNBJ2z8-1FafsrIh7y0zWu6qgy109PpQjUQQIiEN-r6j3mjjUfckOnVlbxGBM1bse0MURkokYq8yn9HRUxD84makkDY0osIXG8SvOmIfZhSO3IAfHEGHmd3AQMHc-f539IhJCot9lW_jzfIn0R8o-rgqEqE6w6d_UJoSMkS3jBzWzlHTaNl63dmNB7uz_Tc8fdj5ZaLqC2JwVcfrIkHJtDwwjQwZcO20SsNc9OpayibSoR_3zrRtJhp6WibNqBwI93xISl6V-1SASo_pPZOzLJn4x373KCYNuZfIoKKCmcda3LGJCCUjK0rP0rTaCBpQNQFp6JqMa-VxpZZy9QyHSzw9-EAybQZqCMFsl_MMhXpyWJr18Scey-AL27MliRX9TM1MonyEcQ9vZsF2A8nutUOze-QaQ7Pp2N9IQuL2uQSLMpkR-EtXH1kjDqtsHF_liuc-A-6DeiEshDxxI1795I2NzE8U5gNsc181NPCh8fviL_ryTP5RmYq2rkW6BQcvNYk8RvwtQeontsqWQYByjW9Ta3tnTqfNkCdiDILeNTWoPiO78-3gnwZEQKAGhsr2uYrN4NpF4ZgRdrc_jZeaWlFBafnlhxmO97czMxxsMy5bu2CoEkZhYluDFtlFjbNdAdsMQdXdVlAiWLYpEtTkRltx2iEhPRsY=w519-h268-s-no?authuser=0" alt="Tomcat default ROOT App" />
+<img src="<c:url value="/resources/images/tomcat-default-root.png"/>" alt="Tomcat default ROOT App" />
 </p>
 
 <p>
@@ -72,11 +72,18 @@ Visit http://localhost:8080/manager<br />
 </p>
 
 <p>
-<img alt="login to tomcat web application manager" src="../../../static/images/login-to-tomcat-manager-app.png" th:src="@{/static/images/login-to-tomcat-manager-app.png}" style="width: 321px;" />
+<img alt="login to tomcat web application manager" src="<c:url value="/resources/images/login-to-tomcat-manager-app.png"/>" style="width: 321px;" />
 </p>
 
 <p>
-<img alt="tomcat web application manager" src="../../../static/images/tomcat-manager-application.png" th:src="@{/static/images/tomcat-manager-application.png}" />
+<img alt="tomcat web application manager" src="<c:url value="/resources/images/tomcat-manager-application.png"/>" />
 </p>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/namecard-webapp"/>">Namecard Web Application</a></li>
+		<li>Prev : <a href="<c:url value="/jdbc/javabank"/>">Java Bank</a></li>
+	</ul>
+</div>
 
 </article>

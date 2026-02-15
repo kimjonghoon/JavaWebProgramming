@@ -279,7 +279,7 @@ The prefix distinguishes the tag libraries within a JSP page.
 
 <p>
 This book does not explain how to create a tag library.
-But the JSP Standard Tag Library (JSTL) included in the JSP specification is covered in the chapter: <a th:href="@{/jsp-pjt}">JSP Project</a>.
+But the JSP Standard Tag Library (JSTL) included in the JSP specification is covered in the chapter: JSP Project.
 </p>
 
 <h2 id="Scripting">3. Scripting</h2>
@@ -1703,5 +1703,12 @@ while (iter.hasNext()) {
 response.sendRedirect("upload.html");
 %&gt;
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/using-jdbc"/>">Using JDBC</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/servlets"/>">Servlets</a></li>
+	</ul>
+</div>
 
 </article>

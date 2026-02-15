@@ -1183,4 +1183,11 @@ public class ReplyAction implements Action {
 The reply.jsp file is needed no longer, so delete it.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/css-layout/div-element-arrangement"/>">Positioning div elements for layout</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/datasource"/>">DataSource</a></li>
+	</ul>
+</div>
+
 </article>

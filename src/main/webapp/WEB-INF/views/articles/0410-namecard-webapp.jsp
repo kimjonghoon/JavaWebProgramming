@@ -549,4 +549,12 @@ http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 <ul id="references">
 	<li><a href="http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder">http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/web-application"/>">웹 애플리케이션이란?</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/tomcat-install"/>">톰캣 설치</a></li>
+	</ul>
+</div>
+
 </article>

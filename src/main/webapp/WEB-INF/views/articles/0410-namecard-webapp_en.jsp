@@ -542,4 +542,11 @@ Visit http://localhost:8080/namecard/list.jsp for testing.
   <li><a href="http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder">http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder</a></li>
 </ul>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/web-application"/>">Web Application?</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/tomcat-install"/>">Tomcat Install</a></li>
+	</ul>
+</div>
+
 </article>

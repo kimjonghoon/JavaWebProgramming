@@ -1291,4 +1291,11 @@ response.sendRedirect("list.jsp?curPage=" + curPage + "&amp;keyword=" + keyword)
 %&gt;
 </pre>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/datasource"/>">DataSource</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/thread-bbs"/>">Thread Board</a></li>
+	</ul>
+</div>
+
 </article>

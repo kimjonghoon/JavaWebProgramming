@@ -1209,4 +1209,11 @@ response.sendRedirect("list.jsp?curPage=" + curPage + "&amp;keyword=" + keyword)
 %&gt;
 </pre>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/datasource"/>">데이터소스</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/thread-bbs"/>">계층형 게시판</a></li>
+	</ul>
+</div>
+
 </article>

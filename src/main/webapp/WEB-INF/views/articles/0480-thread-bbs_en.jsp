@@ -1570,7 +1570,14 @@ public class BoardDeleter extends HttpServlet {
       resp.sendRedirect(path + "/board/list.jsp?curPage=" + curPage + "&amp;keyword=" + keyword);
     }
   }
-
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/model-1-bbs"/>">Model 1 Board</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/bbs-basics"/>">Board Basics</a></li>
+	</ul>
+</div>
+
 </article>

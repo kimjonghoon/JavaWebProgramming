@@ -7,7 +7,7 @@
 <h1>데이터소스</h1>
 
 <p>
-<a th:href="@{/jdbc/Connection-Pool}">Connection Pooling</a>에서 사용자 정의 커넥션 풀에 대해 공부했다.
+<a href="<c:url value="/jdbc/connection-pool"/>">커넥션 풀</a>에서 사용자 정의 커넥션 풀에 대해 공부했다.
 선 마이크로시스템즈는 JDBC 1.4 버전에 데이터 소스<sup>DataSource</sup> 인터페이스를 추가했다. 
 또한, 서블릿 스펙을, 서블릿 컨테이너가 javax.sql.DataSource 구현체를 제공하도록, 변경했다.
 톰캣에서 제공하는 데이터소스를 사용하기 위한 설정을 알아본 후, 게시판을 데이터소스를 사용하도록 수정한다.
@@ -163,4 +163,12 @@ public class BoardDao {
 <ul id="references">
 	<li><a href="http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html">http://tomcat.apache.org/tomcat-6.0-doc/jndi-resources-howto.html</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/model-2-bbs"/>">모델 2 게시판</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/model-1-bbs"/>">모델 1 게시판</a></li>
+	</ul>
+</div>
+
 </article>
