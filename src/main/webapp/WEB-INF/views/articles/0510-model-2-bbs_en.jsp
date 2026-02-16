@@ -1185,7 +1185,7 @@ The reply.jsp file is needed no longer, so delete it.
 
 <div id="next-prev">
 	<ul>
-		<li>Next : <a href="<c:url value="/css-layout/div-element-arrangement"/>">Positioning div elements for layout</a></li>
+		<li>Next : <a href="<c:url value="/jsp/dynamic-web-project"/>">Dynamic Web Project</a></li>
 		<li>Prev : <a href="<c:url value="/jsp/datasource"/>">DataSource</a></li>
 	</ul>
 </div>

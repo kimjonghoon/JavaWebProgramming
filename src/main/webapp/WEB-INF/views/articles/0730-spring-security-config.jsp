@@ -41,17 +41,17 @@
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-web</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-taglibs</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-config</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 
@@ -273,12 +273,12 @@ login.jsp, header.jsp를 수정한다.
 
 <h6 class="src">/WEB-INF/views/users/login.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;c:if test="${not empty param.error }"&gt;</strong>
-  <strong>&lt;h2&gt;${SPRING_SECURITY_LAST_EXCEPTION.message }&lt;/h2&gt;</strong>
+<strong>&lt;c:if test="\${not empty param.error }"&gt;</strong>
+  <strong>&lt;h2&gt;\${SPRING_SECURITY_LAST_EXCEPTION.message }&lt;/h2&gt;</strong>
 <strong>&lt;/c:if&gt;</strong>
 <strong>&lt;c:url var="loginUrl" value="/login" /&gt;</strong>
-&lt;form id="loginForm" <strong>action="${loginUrl }" method="post"</strong>&gt;
-<strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+&lt;form id="loginForm" <strong>action="\${loginUrl }" method="post"</strong>&gt;
+<strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>
 &lt;table&gt;
 &lt;tr&gt;
   &lt;td style="width: 200px;"&gt;Email&lt;/td&gt;
@@ -292,7 +292,7 @@ login.jsp, header.jsp를 수정한다.
 </pre>
 
 <p>
-<strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+<strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>
 코드가 없다면, 로그인 화면으로 이동하여 로그인을 시도하면 빈 화면을 만나게 된다.
 로그에 어떤 에러 메시지도 없다.
 원인은 스프링 시큐리티 4의 CSRF 방지 기능이 작동하고 있기 때문이다.
@@ -312,7 +312,7 @@ login.jsp, header.jsp를 수정한다.
   &lt;security:authentication property="principal.username" var="<strong>check</strong>" /&gt;
 <strong>&lt;/security:authorize&gt;</strong>
 &lt;c:choose&gt;
-  &lt;c:when test="${empty <strong>check</strong>}"&gt;
+  &lt;c:when test="&#36;{empty <strong>check</strong>}"&gt;
     &lt;input type="button" value="로그인" onclick="location.href='/users/login'" /&gt;
     &lt;input type="button" value="회원가입" onclick="location.href='/users/signUp'" /&gt;
   &lt;/c:when&gt;
@@ -324,7 +324,7 @@ login.jsp, header.jsp를 수정한다.
 &lt;/div&gt;
 
 <strong>&lt;form id="logoutForm" action="/logout" method="post" style="display:none"&gt;</strong>
-  <strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+  <strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>
 <strong>&lt;/form&gt;</strong>
 <strong>&lt;script type="text/javascript" src="/resources/js/jquery.js"&gt;&lt;/script&gt;</strong>
 
@@ -371,11 +371,11 @@ login.jsp, header.jsp를 수정한다.
 <h6 class="src">UserMapper.xml</h6>
 <pre class="prettyprint">
 &lt;insert id="insertAuthority"&gt;
-  INSERT INTO authorities VALUES (#{email}, #{authority})
+  INSERT INTO authorities VALUES (\#{email}, \#{authority})
 &lt;/insert&gt;
 
 &lt;delete id="deleteAuthority"&gt;
-  DELETE FROM authorities WHERE email = #{email}  
+  DELETE FROM authorities WHERE email = \#{email}  
 &lt;/delete&gt;
 </pre>
 
@@ -545,18 +545,18 @@ public String addComment(Integer articleNo,
 </pre>
 
 <p>
-첨부 파일의 경우 <em class="path">&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</em>이 아닌 쿼리 스프링으로 CSRF 토큰을 전달해야 한다.<br />
-write.jsp와 modify.jsp 파일을 열고 <em class="path">&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</em>이 있다면 지우고, 아래와 같이 폼의 action 속성을 수정한다.
+첨부 파일의 경우 <em class="path">&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</em>이 아닌 쿼리 스프링으로 CSRF 토큰을 전달해야 한다.<br />
+write.jsp와 modify.jsp 파일을 열고 <em class="path">&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</em>이 있다면 지우고, 아래와 같이 폼의 action 속성을 수정한다.
 </p>
  
 <h6 class="src">write.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="write?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="write?<strong>\${_csrf.parameterName}=\${_csrf.token}</strong>" method="post" ...
 </pre>
 
 <h6 class="src">modify.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="modify?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="modify?<strong>\${_csrf.parameterName}=\${_csrf.token}</strong>" method="post" ...
 </pre>
 
 <p>
@@ -591,4 +591,221 @@ write.jsp와 modify.jsp 파일을 열고 <em class="path">&lt;input type="hidden
   <li><a href="http://www.hanb.co.kr/book/look.html?isbn=978-89-7914-887-9#binfo5">예제로 쉽게 배우는 스프링 프레임워크 3.0(한빛미디어) - 사카타 코이치</a></li>
   <li><a href="http://www.jpub.kr/">Spring in Action(Jpub) - 크레이그 월즈</a></li>
 </ul>
+
+<h1>메소드 보안</h1>
+
+<p>
+BoardService.java와 UserService.java에 메소드 보안을 적용하겠다.<br />
+다음 소스에는 import org.springframework.security.access.prepost.PreAuthorize; 임포트 문이 필요하다.
+</p>
+
+<h6 class="src">UserService.java</h6>
+<pre class="prettyprint">
+//회원가입
+public int addUser(User user);
+
+//회원권한 추가
+public void addAuthority(String email, String authority);
+
+//로그인
+public User login(String email, String passwd);
+
+//내 정보 수정
+@PreAuthorize("#user.email == principal.username or hasRole('ROLE_ADMIN')")
+public int editAccount(User user);
+
+//비밀번호 변경
+@PreAuthorize("#email == principal.username or hasRole('ROLE_ADMIN')")
+public int changePasswd(String currentPasswd, String newPasswd, String email);
+
+//탈퇴
+@PreAuthorize("#user.email == principal.username or hasRole('ROLE_ADMIN')")
+public void bye(User user);
+
+//회원찾기
+@PreAuthorize("#email == principal.username or hasRole('ROLE_ADMIN')")
+public User getUser(String email);
+</pre>
+
+<h6 class="src">BoardService.java</h6>
+<pre class="prettyprint">
+//목록
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;Article&gt; getArticleList(String boardCd, String searchWord);
+
+//총 레코드 수
+public int getTotalRecord(String boardCd, String searchWord);
+
+//글쓰기
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public int addArticle(Article article);
+
+//첨부파일 추가
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void addAttachFile(AttachFile attachFile);
+
+//글수정
+@PreAuthorize("#article.email == principal.username or hasRole('ROLE_ADMIN')")
+public void modifyArticle(Article article);
+
+//글삭제
+@PreAuthorize("#article.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeArticle(Article article);
+
+//조회수 증가
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void increaseHit(int articleNo);
+
+//상세보기
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getArticle(int articleNo);
+
+//다음글
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getNextArticle(int articleNo, 
+		String boardCd, String searchWord);
+
+//이전글
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getPrevArticle(int articleNo, 
+		String boardCd, String searchWord);
+
+//첨부파일 리스트
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;AttachFile&gt; getAttachFileList(int articleNo);
+
+//첨부파일 삭제
+@PreAuthorize("#attachFile.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeAttachFile(AttachFile attachFile);
+
+//게시판 이름
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public String getBoardNm(String boardCd);
+
+//댓글 쓰기
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void addComment(Comment comment);
+
+//댓글 수정
+@PreAuthorize("#comment.email == principal.username or hasRole('ROLE_ADMIN')")
+public void modifyComment(Comment comment);
+
+//댓글 삭제
+@PreAuthorize("#comment.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeComment(Comment comment);
+
+//댓글 리스트
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;Comment&gt; getCommentList(int articleNo);
+
+//첨부파일 찾기
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public AttachFile getAttachFile(int attachFileNo);
+
+//댓글 찾기
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Comment getComment(int commentNo);
+</pre>
+
+<h3>테스트</h3>
+<p>
+빌드하고 http://localhost:8080/users/login을 방문하여 im@gmail.org/1111로 로그인한다.<br />
+게시판 목록에서 hong@gmail.org 메일을 쓰는 홍길동이 작성한 게시글을 클릭한다. 
+수정 버튼을 클릭하여 글수정 화면으로 이동한다.
+글수정 화면에서 수정 후 전송을 클릭한다.
+메소드 보안이 잘 작동한다면 noAuthority.jsp로 이동한다.
+</p>
+
+<h1>뷰 계층 보안</h1>
+
+<p>
+게시글 보기 화면에서 글 소유자가 아닌 사용자가 아래 그림에서 박스로 강조된 메뉴를 봐서는 안 된다.<br />
+<img alt="Before applying spring security at viewlayer" src="https://lh3.googleusercontent.com/Wdf7wwF1RPB-tPcmTFuvxe5fYdhLwQih-Q9t5EaNF0E15wBaM7BKUNruYCczilLV5D3QavWUib_m-5z8_BXLzlyqaJiajQr2MZqVuxmUqx3dLUSZi8zK7DVNgvuU_AzgBuWsfkNhPNBICZXTds6BbSnWDikQuKmIelTsDirLauhuaOturKv-Rm4DetWAfPArPWfTJYU_NUg09p1cLU7MLZ5aVr6zsbueS0EE_vuYSaJKlK6fPJOmmdBQl1qoEao40dhNqI9i_Q9OTdBY7yLPxjY_uY3X9j9eRuSt-sMyhbbrddaDjLtHrkKIqBRTtI_DBrpIGapyA2GAbEPSIpFSlX801M0SQiTFQVVUzit8RfJzPjPxETLTrmpw1eYeYxjb_30eiJwtg0h_Fw7HKNR0DqnKL0bZ0XDASEzb1rpwKV1U0tIQtId-y722cxPoyO6c-woxf4fBJ6GZ8digUNsHq653W9q8rnQpkdd-i1zPoHGRfJmqmHqZUO07Uj5pqmqXUHvEAjNeG8HpJol6_ANrDa-dOFogUQrYM0KDFzOm33m01Cc8URNO98jJGsfizhb9q4G4TRfnuwbajvGW8eyxmd_Cdwb_xZoC5k_afY4=w612-h507-no">
+</p>
+
+<h6 class="src">/WEB-INF/views/bbs/view.jsp</h6>
+<pre class="prettyprint">
+&lt;!-- 중간 생략 --&gt;
+
+<strong>&lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;</strong>
+
+&lt;!-- 중간 생략 --&gt;
+
+&lt;div class="view-menu" .. &gt;
+  <strong>&lt;security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+  &lt;div class="fl"&gt;
+    &lt;input type="button" value="수정" onclick="goModify();" /&gt;
+    &lt;input type="button" value="삭제" onclick="goDelete()" /&gt;
+  &lt;/div&gt;
+  <strong>&lt;/security:authorize&gt;</strong>
+
+&lt;!-- 중간 생략 --&gt;
+
+&lt;div id="detail"&gt;
+  &lt;div id="date-writer-hit"&gt;edited ${regdate } by ${name } hit ${hit }&lt;/div&gt;
+  &lt;div id="article-content"&gt;${content }&lt;/div&gt;
+  &lt;div id="file-list" style="text-align: right;"&gt;
+    &lt;div id="file-list" style="text-align: right;"&gt;
+    &lt;c:forEach var="file" items="${attachFileList }" varStatus="status"&gt;
+      &lt;div class="attach-file"&gt;      
+        &lt;a href="javascript:download('${file.filename }')"&gt;${file.filename }&lt;/a&gt;
+        <strong>&lt;security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+          &lt;a href="javascript:deleteAttachFile('${file.attachFileNo }')"&gt;삭제&lt;/a&gt;
+        <strong>&lt;/security:authorize&gt;</strong>
+      &lt;/div&gt;
+    &lt;/c:forEach&gt;  
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--  댓글 반복 시작 --&gt;
+&lt;c:forEach var="comment" items="${commentList }" varStatus="status"&gt;  
+&lt;div class="comments"&gt;
+  &lt;span class="writer"&gt;${comment.name }&lt;/span&gt;
+  &lt;span class="date"&gt;${comment.regdate }&lt;/span&gt;
+  <strong>&lt;security:authorize access="#comment.email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+  &lt;span class="modify-del"&gt;
+    &lt;a href="javascript:updateComment('${comment.commentNo }')"&gt;수정&lt;/a&gt; |
+    &lt;a href="javascript:deleteComment('${comment.commentNo }')"&gt;삭제&lt;/a&gt;
+  &lt;/span&gt;
+  <strong>&lt;/security:authorize&gt;</strong>
+
+&lt;!-- 중간 생략 --&gt;
+</pre>
+
+<p>
+이미 수정한 header.jsp 파일 역시 스프링 시큐리티 태그를 사용하여 뷰가 선별적으로 랜더링된다.<br />
+</p>
+
+<h6 class="src">/WEB-INF/views/inc/header.jsp</h6>
+<pre class="prettyprint">
+&lt;!-- 중간 생략 --&gt;
+
+<strong>&lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;</strong>
+
+&lt;!-- 중간 생략 --&gt;
+
+<strong>&lt;security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"&gt;
+  &lt;security:authentication property="principal.username" var="<strong>check</strong>" /&gt;
+&lt;/security:authorize&gt;</strong>
+
+&lt;!-- 중간 생략 --&gt;
+</pre>
+
+<span id="refer">참고</span>
+<ul id="references">
+  <li><a href="http://dhappy.net/?p=260">Error creating bean with name 'sqlSessionFactory' 구글 검색(spring-mybatis 1.1.1로 교체)</a></li>
+  <li><a href="http://stackoverflow.com/questions/10421588/spring-security-not-working-what-am-i-doing-wrong">시큐리티가 작동하지 않을 때는 web.xml 파일에 스프링 시큐리티에 대한 설정을 검사해야 한다.</a></li>
+  <li><a href="http://static.springsource.org/spring-security/site/faq/faq.html#faq-method-security-in-web-context">컨트롤러보다는 서비스에 시큐리티 적용 권고</a></li>
+  <li><a href="http://stackoverflow.com/questions/3087548/can-spring-security-use-preauthorize-on-spring-controllers-methods">컨트롤러에 시큐리티 적용-테스트 실패</a></li>
+  <li><a href="http://www.hanb.co.kr/book/look.html?isbn=978-89-7914-887-9#binfo5">예제로 쉽게 배우는 스프링 프레임워크 3.0(한빛미디어) - 사카타 코이치</a></li>
+  <li><a href="http://www.jpub.kr/">Spring in Action(Jpub) - 크레이그 월즈</a></li>
+</ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/spring/bean-validation"/>">빈 검증</a></li>
+		<li>이전 : <a href="<c:url value="/spring/spring-mvc"/>">스프링 MVC</a></li>
+	</ul>
+</div>
+
 </article>

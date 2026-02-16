@@ -3232,4 +3232,11 @@ public class DeleteAttachFileAction implements Action {
 모델 2 게시판 소스: <a href="https://github.com/kimjonghoon/model2">https://github.com/kimjonghoon/model2</a>
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/spring/building-java-projects"/>">순수 자바 개발</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/implementation"/>">구현</a></li>
+	</ul>
+</div>
+
 </article>

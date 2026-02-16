@@ -48,7 +48,6 @@ public class ControllerServlet extends HttpServlet {
 		out.println(command);
 		out.close();
 	}
-	
 }
 </pre>
 
@@ -186,7 +185,6 @@ public class ControllerServlet extends HttpServlet {
 		out.println(command);
 		out.close();
 	}
-	
 }
 </pre>
 
@@ -567,8 +565,7 @@ public class ListAction {
 <strong>
 		vo.setList(list);
 
-		request.setAttribute("listVo", vo);
-</strong>		
+		request.setAttribute("listVo", vo);</strong>		
 	}
 }
 </pre>
@@ -678,9 +675,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ListAction <strong>implements Action</strong> {
 	<strong>@Override</strong>
 	public void execute(HttpServletRequest request) {
-	
 		//이하 코드는 이전과 같다.
-	
 	}
 }
 </pre>
@@ -817,7 +812,6 @@ public class WriteAction implements Action{
 		BoardService service= new BoardService();
 		service.write(article);
 	}
-
 }
 </pre>
 
@@ -839,7 +833,6 @@ view = "/board/view.jsp";
 </pre>
 
 <p>
-
 ViewAction.java 액션 클래스를 작성한다.
 이 액션은 상세보기 로직을 담당한다.
 </p>
@@ -856,11 +849,8 @@ public class ViewAction implements Action {
 	public void execute(HttpServletRequest request) {
 		int no = Integer.parseInt(request.getParameter("no"));
 		BoardService service = new BoardService();
-		
 		Article article = service.getArticle(no);
-		
 		request.setAttribute("article", article);
-		
 	}
 }
 </pre>
@@ -946,7 +936,6 @@ public class ModifyFormAction implements Action {
 		Article article = service.getArticle(no);
 		request.setAttribute("article", article);
 	}
-
 }
 </pre>
 
@@ -1046,7 +1035,6 @@ public class ModifyAction implements Action {
 
 		BoardService service= new BoardService();
 		service.modify(article);
-		
 	}
 }
 </pre>
@@ -1091,7 +1079,6 @@ public class DeleteAction implements Action {
 		BoardService service= new BoardService();	
 		service.delete(no);
 	}
-
 }
 </pre>
 
@@ -1142,7 +1129,6 @@ public class ReplyFormAction implements Action {
 		article.setContent(content);
 		request.setAttribute("article", article);
 	}
-
 }
 </pre>
 
@@ -1228,7 +1214,6 @@ public class ReplyAction implements Action {
 		BoardService service= new BoardService();
 		service.reply(article);
 	}
-
 }
 </pre>
 
@@ -1239,7 +1224,7 @@ reply.jsp는 필요 없으니 삭제한다.
 
 <div id="next-prev">
 	<ul>
-		<li>다음 : <a href="<c:url value="/css-layout/div-element-arrangement"/>">주요 엘리먼트 배치</a></li>
+		<li>다음 : <a href="<c:url value="/jsp/dynamic-web-project"/>">다이나믹 웹 프로젝트</a></li>
 		<li>이전 : <a href="<c:url value="/jsp/datasource"/>">데이터소스</a></li>
 	</ul>
 </div>

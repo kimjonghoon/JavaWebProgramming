@@ -4465,4 +4465,11 @@ Open the welcome.jsp file and use the Save As editor menu to create a bye_confir
 The loginCheck.jsp is a file you must include in JSPs that authenticated users can only view. In the bulletin board program, the pages corresponding to the screen are list.jsp, view.jsp, write.jsp, and modify.jsp files. I didn't include loginCheck.jsp in modify.jsp. The reason is that this file needs more logic since it should determine if the logged-in user is the owner of the post. This file is the only exception among the screen pages, so I implemented all necessary logic within the file. EditAccount.jsp, changePasswd.jsp, and bye.jsp among the member module have to include the loginCheck.jsp file.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/database-design"/>">Database Design</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/dynamic-web-project"/>">Dynamic Web Project</a></li>
+	</ul>
+</div>
+
 </article>

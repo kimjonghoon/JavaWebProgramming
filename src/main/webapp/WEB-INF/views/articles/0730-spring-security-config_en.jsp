@@ -28,17 +28,17 @@ Modify pom.xml as shown below.
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-web</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-taglibs</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
   &lt;artifactId&gt;<strong>spring-security-config</strong>&lt;/artifactId&gt;
-  &lt;version&gt;${spring.security.version}&lt;/version&gt;
+  &lt;version&gt;\${spring.security.version}&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 
@@ -253,12 +253,12 @@ Modify login.jsp as follows.
 
 <h6 class="src">/WEB-INF/views/users/login.jsp</h6>
 <pre class="prettyprint">
-<strong>&lt;c:if test="${not empty param.error }"&gt;</strong>
-  <strong>&lt;h2&gt;${SPRING_SECURITY_LAST_EXCEPTION.message }&lt;/h2&gt;</strong>
+<strong>&lt;c:if test="\${not empty param.error }"&gt;</strong>
+  <strong>&lt;h2&gt;\${SPRING_SECURITY_LAST_EXCEPTION.message }&lt;/h2&gt;</strong>
 <strong>&lt;/c:if&gt;</strong>
 <strong>&lt;c:url var="loginUrl" value="/login" /&gt;</strong>
-&lt;form id="loginForm" <strong>action="${loginUrl }" method="post"</strong>&gt;
-<strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+&lt;form id="loginForm" <strong>action="\${loginUrl }" method="post"</strong>&gt;
+<strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>
 &lt;table&gt;
 &lt;tr&gt;
   &lt;td style="width: 200px;"&gt;Email&lt;/td&gt;
@@ -272,7 +272,7 @@ Modify login.jsp as follows.
 </pre>
 
 <p>
-If you try to log in without <strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>, you will see a blank screen. Because Spring Security 's CSRF prevention works.
+If you try to log in without <strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>, you will see a blank screen. Because Spring Security 's CSRF prevention works.
 </p>
 
 <p>
@@ -294,7 +294,7 @@ Modify header.jsp as follows.
   &lt;security:authentication property="principal.username" var="<strong>check</strong>" /&gt;
 <strong>&lt;/security:authorize&gt;</strong>
 &lt;c:choose&gt;
-  &lt;c:when test="${empty <strong>check</strong>}"&gt;
+  &lt;c:when test="&#36;{empty <strong>check</strong>}"&gt;
     &lt;input type="button" value="Login" onclick="location.href='/users/login'" /&gt;
     &lt;input type="button" value="SignUp" onclick="location.href='/users/signUp'" /&gt;
   &lt;/c:when&gt;
@@ -305,7 +305,7 @@ Modify header.jsp as follows.
 &lt;/c:choose&gt;
 &lt;/div&gt;
 <strong>&lt;form id="logoutForm" action="/logout" method="post" style="display:none"&gt;</strong>
-  <strong>&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt;</strong>
+  <strong>&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt;</strong>
 <strong>&lt;/form&gt;</strong>
 <strong>&lt;script type="text/javascript" src="/resources/js/jquery.js"&gt;&lt;/script&gt;</strong>
 
@@ -344,11 +344,11 @@ Insufficient privileges.
 <h6 class="src">UserMapper.xml</h6>
 <pre class="prettyprint">
 &lt;insert id="insertAuthority"&gt;
-  INSERT INTO authorities VALUES (#{email}, #{authority})
+  INSERT INTO authorities VALUES (\#{email}, \#{authority})
 &lt;/insert&gt;
 
 &lt;delete id="deleteAuthority"&gt;
-  DELETE FROM authorities WHERE email = #{email}  
+  DELETE FROM authorities WHERE email = \#{email}  
 &lt;/delete&gt;
 </pre>
 
@@ -516,21 +516,21 @@ public String addComment(Integer articleNo,
 </pre>
 
 <p>
-You must add a CSRF token to the request as a query string for requests to upload files. (&lt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt; does not work. this is true even if you are using Spring form tags)
+You must add a CSRF token to the request as a query string for requests to upload files. (&lt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt; does not work. this is true even if you are using Spring form tags)
 </p>
 
 <p>
-Open the write.jsp and modify.jsp and remove &gt;input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /&gt; and modify the form's action like below.
+Open the write.jsp and modify.jsp and remove &gt;input type="hidden" name="\${_csrf.parameterName}" value="\${_csrf.token}" /&gt; and modify the form's action like below.
 </p>
  
 <h6 class="src">write.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="write?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="write?<strong>\${_csrf.parameterName}=\${_csrf.token}</strong>" method="post" ...
 </pre>
 
 <h6 class="src">modify.jsp</h6>
 <pre class="prettyprint">
-&lt;sf:form action="modify?<strong>${_csrf.parameterName}=${_csrf.token}</strong>" method="post" ...
+&lt;sf:form action="modify?<strong>\${_csrf.parameterName}=\${_csrf.token}</strong>" method="post" ...
 </pre>
 
 <h3>Test</h3>
@@ -557,4 +557,204 @@ Spring Security denied your access because the account has only normal user priv
   <li><a href="http://static.springsource.org/spring-security/site/faq/faq.html#faq-method-security-in-web-context">https://docs.spring.io/spring-security/site/faq/faq.html#faq-method-security-in-web-context</a></li>
   <li><a href="http://stackoverflow.com/questions/3087548/can-spring-security-use-preauthorize-on-spring-controllers-methods">Can Spring Security use @PreAuthorize on Spring controllers methods?</a></li>
 </ul>
+
+<h1>Method Security</h1>
+
+<p>
+Spring recommends you apply method security to the service layer.
+</p>
+
+<p>
+Modify UserService.java as shown below.
+</p>
+
+<h6 class="src">UserService.java</h6>
+<pre class="prettyprint">
+import org.springframework.security.access.prepost.PreAuthorize;
+
+public int addUser(User user);
+
+public void addAuthority(String email, String authority);
+
+public User login(String email, String passwd);
+
+@PreAuthorize("#user.email == principal.username or hasRole('ROLE_ADMIN')")
+public int editAccount(User user);
+
+@PreAuthorize("#email == principal.username or hasRole('ROLE_ADMIN')")
+public int changePasswd(String currentPasswd, String newPasswd, String email);
+
+@PreAuthorize("#user.email == principal.username or hasRole('ROLE_ADMIN')")
+public void bye(User user);
+
+@PreAuthorize("#email == principal.username or hasRole('ROLE_ADMIN')")
+public User getUser(String email);
+</pre>
+
+<p>
+Modify BoardService.java as shown below.
+</p>
+
+<h6 class="src">BoardService.java</h6>
+<pre class="prettyprint">
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;Article&gt; getArticleList(String boardCd, String searchWord);
+
+public int getTotalRecord(String boardCd, String searchWord);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public int addArticle(Article article);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void addAttachFile(AttachFile attachFile);
+
+@PreAuthorize("#article.email == principal.username or hasRole('ROLE_ADMIN')")
+public void modifyArticle(Article article);
+
+@PreAuthorize("#article.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeArticle(Article article);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void increaseHit(int articleNo);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getArticle(int articleNo);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getNextArticle(int articleNo, 
+		String boardCd, String searchWord);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Article getPrevArticle(int articleNo, 
+		String boardCd, String searchWord);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;AttachFile&gt; getAttachFileList(int articleNo);
+
+@PreAuthorize("#attachFile.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeAttachFile(AttachFile attachFile);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public String getBoardNm(String boardCd);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public void addComment(Comment comment);
+
+@PreAuthorize("#comment.email == principal.username or hasRole('ROLE_ADMIN')")
+public void modifyComment(Comment comment);
+
+@PreAuthorize("#comment.email == principal.username or hasRole('ROLE_ADMIN')")
+public void removeComment(Comment comment);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public List&lt;Comment&gt; getCommentList(int articleNo);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public AttachFile getAttachFile(int attachFileNo);
+
+@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+public Comment getComment(int commentNo);
+</pre>
+
+<h3>Test</h3>
+
+<p>
+After build, visit http://localhost:8080/users/login.<br />
+Log in as username: jane@gmail.org, password: 1111.<br />
+On the bulletin board list, click on a post written by john@gmail.org.<br />
+Click Modify button to go to the modify form page.<br />
+On the Modify form screen, edit the content and click the Submit button.<br />
+If method security works well, you will see noAuthority.jsp.
+</p>
+
+<h1>View Layer Security</h1>
+
+<p>
+You should not see the menu highlighted below unless you are the post owner on the detail view page, 
+</p>
+
+<p>
+<img alt="Before applying spring security at viewlayer" src="https://lh3.googleusercontent.com/fTxyuI6expIWKMmeyz1WWpQXiTcnOt6qbKjrVwx2XsaYNNrUlzLZ9nD_8Arcu2a69cCo7SVd9VU-y8NJ3n1NU0MIcmU8UgxBHzLstSSB-alJOcJ7QylpMkma-BQkwKSh7AK6iXy9X4mEo4AtzDH-fOyijf-KqRqaOEVfgCaW-ith6nYWoZnPQJHLsNSvvZ0c1zkDRn5UrXoELROC6Nw9AWmcic_-LSwisQeHj7IYhp_AvtjoA-4YBglzNDCGwhJlnaLFCJ8kP9wNAHPIMzkP8Lq5Daij7leqmkkoQ-bz2NzPQ_DZFOJfL9Q7Jf549vM6ODuYvXMXgDC1Cdi_MOG-i-oR7Fg9rVwAMtvpAmHqlLkmA14ylkGzr01cUPDGhMgoXqiTcMSKtOOf0sa8EElR97Oo4KqDWQsfxZx7og1_piIzWIl8Xlq6ONj4sOl9SKL0j83Zbp3SPKbCinfDMn2HoPfS3FxZdY4h9B81KcSDvNoVZ50n4tCd0qmiYQ3ECa-VMlFaHBChlfWkLVGsXNWidSFnKBFjktSw_PC-F0-_kHqeE7Lv8b99mDxnUpm7oChGTO7khx4gZLXUyyCz_EbBqo2Pum5UcS3rqlJtnvE=w609-h443-no">
+</p>
+
+<h6 class="src">/WEB-INF/views/bbs/view.jsp</h6>
+<pre class="prettyprint">
+&lt;!-- omit --&gt;
+
+<strong>&lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;</strong>
+
+&lt;!-- omit --&gt;
+
+&lt;div class="view-menu" .. &gt;
+  <strong>&lt;security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+  &lt;div class="fl"&gt;
+    &lt;input type="button" value="Modify" onclick="goModify();" /&gt;
+    &lt;input type="button" value="Del" onclick="goDelete()" /&gt;
+  &lt;/div&gt;
+  <strong>&lt;/security:authorize&gt;</strong>
+
+&lt;!-- omit --&gt;
+
+&lt;div id="detail"&gt;
+  &lt;div id="date-writer-hit"&gt;edited ${regdate } by ${name } hit ${hit }&lt;/div&gt;
+  &lt;div id="article-content"&gt;${content }&lt;/div&gt;
+  &lt;div id="file-list" style="text-align: right;"&gt;
+    &lt;div id="file-list" style="text-align: right;"&gt;
+    &lt;c:forEach var="file" items="${attachFileList }" varStatus="status"&gt;
+      &lt;div class="attach-file"&gt;      
+        &lt;a href="javascript:download('${file.filename }')"&gt;${file.filename }&lt;/a&gt;
+        <strong>&lt;security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+          &lt;a href="javascript:deleteAttachFile('${file.attachFileNo }')"&gt;Del&lt;/a&gt;
+        <strong>&lt;/security:authorize&gt;</strong>
+      &lt;/div&gt;
+    &lt;/c:forEach&gt;  
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;c:forEach var="comment" items="${commentList }" varStatus="status"&gt;  
+&lt;div class="comments"&gt;
+  &lt;span class="writer"&gt;${comment.name }&lt;/span&gt;
+  &lt;span class="date"&gt;${comment.regdate }&lt;/span&gt;
+  <strong>&lt;security:authorize access="#comment.email == principal.username or hasRole('ROLE_ADMIN')"&gt;</strong>
+  &lt;span class="modify-del"&gt;
+    &lt;a href="javascript:updateComment('${comment.commentNo }')"&gt;Modify&lt;/a&gt; |
+    &lt;a href="javascript:deleteComment('${comment.commentNo }')"&gt;Del&lt;/a&gt;
+  &lt;/span&gt;
+  <strong>&lt;/security:authorize&gt;</strong>
+
+&lt;!-- omit --&gt;
+</pre>
+
+<p>
+You can render the header.jsp selectively using Spring Security tags.
+</p>
+
+<h6 class="src">/WEB-INF/views/inc/header.jsp</h6>
+<pre class="prettyprint">
+&lt;!-- omit --&gt;
+
+<strong>&lt;%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %&gt;</strong>
+
+&lt;!-- omit --&gt;
+
+<strong>&lt;security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"&gt;
+  &lt;security:authentication property="principal.username" var="<strong>check</strong>" /&gt;
+&lt;/security:authorize&gt;</strong>
+
+&lt;!-- omit --&gt;
+</pre>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://stackoverflow.com/questions/10421588/spring-security-not-working-what-am-i-doing-wrong">Spring Security not working. What am I doing wrong?</a></li>
+  <li><a href="http://static.springsource.org/spring-security/site/faq/faq.html#faq-method-security-in-web-context">https://docs.spring.io/spring-security/site/faq/faq.html#faq-method-security-in-web-context</a></li>
+</ul>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/spring/bean-validation"/>">Bean Validation</a></li>
+		<li>Prev : <a href="<c:url value="/spring/spring-mvc"/>">Spring MVC</a></li>
+	</ul>
+</div>
+
 </article>

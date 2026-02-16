@@ -141,4 +141,11 @@ test.jsp 파일을 도큐멘트베이스(C:/www/JSPProject/WebContent)에 생성
 1를 본다면 성공이다.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/javabeans"/>">자바빈즈</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/prototype"/>">프로토타입</a></li>
+	</ul>
+</div>
+
 </article>

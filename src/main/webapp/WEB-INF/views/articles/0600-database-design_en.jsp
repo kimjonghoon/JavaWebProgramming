@@ -137,4 +137,11 @@ try {
 Restart Tomcat to visit http://localhost:8080/test.jsp to check if "1" is displayed.
 </p>
 
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/javabeans"/>">Java Beans</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/prototype"/>">Prototype</a></li>
+	</ul>
+</div>
+
 </article>

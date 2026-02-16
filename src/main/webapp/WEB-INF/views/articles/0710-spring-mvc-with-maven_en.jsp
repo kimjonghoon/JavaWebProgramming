@@ -101,12 +101,12 @@ Modify pom.xml like below.
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
@@ -539,9 +539,9 @@ Modify the content of the body element as below.
 </p>
 
 <pre class="prettyprint">&lt;div id="wordcard"&gt;
-&lt;h1&gt;<strong>${wordCard.word }</strong>&lt;/h1&gt;
+&lt;h1&gt;<strong>\${wordCard.word }</strong>&lt;/h1&gt;
 &lt;p&gt;
-<strong>${wordCard.definitions }</strong>
+<strong>\${wordCard.definitions }</strong>
 &lt;/p&gt;
 &lt;/div&gt;
 </pre>
@@ -594,7 +594,7 @@ Add Spring JDBC, Oracle JDBC driver, Apache DBCP, and MyBatis with mybatis-sprin
 <pre class="prettyprint"><strong>&lt;dependency&gt;</strong>
   <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
   <strong>&lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+  <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
 <strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
@@ -736,7 +736,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Insert;
 
 public interface PhotoMapper {
-  @Insert("INSERT INTO photo VALUES (seq_photo.nextval, #{content})")
+  @Insert("INSERT INTO photo VALUES (seq_photo.nextval, \#{content})")
   public void insert(@Param("content") String content);
 }
 </pre>
@@ -1002,7 +1002,7 @@ src/main/resources/net/java_school/mybatis/PhotoMapper.xml
 &lt;mapper namespace="net.java_school.mybatis.PhotoMapper"&gt;
 
   &lt;insert id="insert"&gt;
-    INSERT INTO photo VALUES (seq_photo.nextval, #{content})
+    INSERT INTO photo VALUES (seq_photo.nextval, \#{content})
   &lt;/insert&gt;
 	
 &lt;/mapper&gt;
@@ -1126,7 +1126,7 @@ public interface PhotoMapper {
 &lt;mapper namespace="net.java_school.mybatis.PhotoMapper"&gt;
 
   &lt;insert id="insert"&gt;
-    NSERT INTO photo VALUES (seq_photo.nextval, #{content})
+    NSERT INTO photo VALUES (seq_photo.nextval, \#{content})
   &lt;/insert&gt;
 
   <strong>&lt;select id="selectCountOfPhotos" resultType="int"&gt;</strong>
@@ -1145,7 +1145,7 @@ public interface PhotoMapper {
         <strong>ORDER BY no DESC</strong>
       <strong>) A</strong>
     <strong>)</strong>
-    <strong>WHERE R BETWEEN #{start} AND #{end}</strong>
+    <strong>WHERE R BETWEEN \#{start} AND \#{end}</strong>
   <strong>&lt;/select&gt;</strong>
 	
 &lt;/mapper&gt;
@@ -1331,39 +1331,39 @@ Use the JSTL code to set the passed data in the view.
 
 <h6 class="src">index.jsp</h6>
 <pre class="prettyprint">&lt;div id="photos"&gt;
-  <strong>&lt;c:forEach var="photo" items="${photos }" varStatus="status"&gt;</strong>
-  &lt;img width="640" alt="p_<strong>${photo.no }</strong>" src="<strong>${photo.content }</strong>" /&gt;
+  <strong>&lt;c:forEach var="photo" items="\${photos }" varStatus="status"&gt;</strong>
+  &lt;img width="640" alt="p_<strong>\${photo.no }</strong>" src="<strong>\${photo.content }</strong>" /&gt;
   <strong>&lt;/c:forEach&gt;</strong>
 &lt;/div&gt;
 
 &lt;div id="paging"&gt;
-  <strong>&lt;c:if test="${param.page &gt; 1 }"&gt;</strong>
-  &lt;a href="?page=<strong>${param.page - 1 }</strong>" title="<strong>${param.page - 1}</strong>"&gt;◁ Back&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{param.page &gt; 1 }"&gt;</strong>
+  &lt;a href="?page=<strong>\${param.page - 1 }</strong>" title="<strong>\${param.page - 1}</strong>"&gt;◁ Back&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:if test="${prevBlock &gt; 0}"&gt;</strong>
+  <strong>&lt;c:if test="&#36;{prevBlock &gt; 0}"&gt;</strong>
   &lt;a href="?page=1" title="1"&gt;1&lt;/a&gt;
-  &lt;a href="?page=<strong>${prevBlock }</strong>" title="<strong>${prevBlock }</strong>"&gt;...&lt;/a&gt;
+  &lt;a href="?page=<strong>\${prevBlock }</strong>" title="<strong>\${prevBlock }</strong>"&gt;...&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="status"&gt;</strong>
+  <strong>&lt;c:forEach var="i" begin="\${firstPage }" end="\${lastPage }" varStatus="status"&gt;</strong>
   <strong>&lt;c:choose&gt;</strong>
-    <strong>&lt;c:when test="${param.page == i}"&gt;</strong>
-    &lt;strong&gt;<strong>${i }</strong>&lt;/strong&gt;
+    <strong>&lt;c:when test="\${param.page == i}"&gt;</strong>
+    &lt;strong&gt;<strong>\${i }</strong>&lt;/strong&gt;
     <strong>&lt;/c:when&gt;</strong>
     <strong>&lt;c:otherwise&gt;</strong>
-    &lt;a href="?page=<strong>${i }</strong>" title="<strong>${i }</strong>"&gt;<strong>${i }</strong>&lt;/a&gt;
+    &lt;a href="?page=<strong>\${i }</strong>" title="<strong>\${i }</strong>"&gt;<strong>\${i }</strong>&lt;/a&gt;
     <strong>&lt;/c:otherwise&gt;</strong>
   <strong>&lt;/c:choose&gt;</strong>
   <strong>&lt;/c:forEach&gt;</strong>
 
-  <strong>&lt;c:if test="${nextBlock &gt; 0 }"&gt;</strong>
-  &lt;a href="?page=<strong>${nextBlock }</strong>" title="<strong>${nextBlock }</strong>"&gt;...&lt;/a&gt;
-  &lt;a href="?page=<strong>${finalPage }</strong>" title="<strong>${finalPage }</strong>"&gt;${finalPage }&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{nextBlock &gt; 0 }"&gt;</strong>
+  &lt;a href="?page=<strong>\${nextBlock }</strong>" title="<strong>\${nextBlock }</strong>"&gt;...&lt;/a&gt;
+  &lt;a href="?page=<strong>\${finalPage }</strong>" title="<strong>\${finalPage }</strong>"&gt;\${finalPage }&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:if test="${param.page &lt; finalPage }"&gt;</strong>
-  &lt;a href="?page=<strong>${param.page + 1 }</strong>" title="<strong>${param.page + 1 }</strong>"&gt;Next▷ &lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{param.page &lt; finalPage }"&gt;</strong>
+  &lt;a href="?page=<strong>\${param.page + 1 }</strong>" title="<strong>\${param.page + 1 }</strong>"&gt;Next▷ &lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
   &lt;form id="addForm" method="post"&gt;
@@ -1560,4 +1560,12 @@ If the pom.xml file changes, you need to synchronize pom.xml with Eclipse.
   <li><a href="https://github.com/spring-projects/spring-mvc-showcase/blob/master/pom.xml">https://github.com/spring-projects/spring-mvc-showcase/blob/master/pom.xml</a></li>
   <li><a href="http://stackoverflow.com/questions/793983/jsp-el-expression-is-not-evaluated">https://stackoverflow.com/questions/793983/jsp-el-expression-is-not-evaluated</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/spring/spring-security"/>">Spring Security</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/building-java-projects"/>">Building Java Projects</a></li>
+	</ul>
+</div>
+
 </article>

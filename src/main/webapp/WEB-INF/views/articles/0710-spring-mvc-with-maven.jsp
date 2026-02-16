@@ -88,12 +88,12 @@ pom.xml 수정
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
@@ -163,7 +163,6 @@ pom.xml 수정
   &lt;/build&gt;
 &lt;/project&gt;
 </pre>
-
 <p>
 web.xml 수정
 </p>
@@ -555,9 +554,9 @@ body 엘리먼트 내용을 아래처럼 수정한다.
 </p>
 
 <pre class="prettyprint">&lt;div id="wordcard"&gt;
-&lt;h1&gt;<strong>${wordCard.word }</strong>&lt;/h1&gt;
+&lt;h1&gt;<strong>\${wordCard.word }</strong>&lt;/h1&gt;
 &lt;p&gt;
-<strong>${wordCard.definitions }</strong>
+<strong>\${wordCard.definitions }</strong>
 &lt;/p&gt;
 &lt;/div&gt;
 </pre>
@@ -613,7 +612,7 @@ mybatis-spring과 함께 스프링 JDBC, 오라클 JDBC 드라이버, 아파치 
 <pre class="prettyprint"><strong>&lt;dependency&gt;</strong>
   <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
   <strong>&lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+  <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
 <strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
@@ -755,7 +754,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Insert;
 
 public interface PhotoMapper {
-  @Insert("INSERT INTO photo VALUES (seq_photo.nextval, #{content})")
+  @Insert("INSERT INTO photo VALUES (seq_photo.nextval, \#{content})")
   public void insert(@Param("content") String content);
 }
 </pre>
@@ -955,9 +954,6 @@ SQL*PLUS로 인서트가 되었는지 확인
 </pre>
 
 <p>
-</p>
-
-<p>
 log4j2.xml라는 이름으로 log4j 2 설정 파일을 src/main/resources/ 디렉터리에 생성한다.<br />
 src/main/resources 디렉터리는 메이븐 기본 디렉터리이니 없으면 생성한다.
 </p>
@@ -1034,7 +1030,7 @@ src/main/resources/net/java_school/mybatis/PhotoMapper.xml
 &lt;mapper namespace="net.java_school.mybatis.PhotoMapper"&gt;
 
   &lt;insert id="insert"&gt;
-    INSERT INTO photo VALUES (seq_photo.nextval, #{content})
+    INSERT INTO photo VALUES (seq_photo.nextval, \#{content})
   &lt;/insert&gt;
 	
 &lt;/mapper&gt;
@@ -1163,7 +1159,7 @@ public interface PhotoMapper {
 &lt;mapper namespace="net.java_school.mybatis.PhotoMapper"&gt;
 
   &lt;insert id="insert"&gt;
-    NSERT INTO photo VALUES (seq_photo.nextval, #{content})
+    NSERT INTO photo VALUES (seq_photo.nextval, \#{content})
   &lt;/insert&gt;
 
   <strong>&lt;select id="selectCountOfPhotos" resultType="int"&gt;</strong>
@@ -1182,7 +1178,7 @@ public interface PhotoMapper {
         <strong>ORDER BY no DESC</strong>
       <strong>) A</strong>
     <strong>)</strong>
-    <strong>WHERE R BETWEEN #{start} AND #{end}</strong>
+    <strong>WHERE R BETWEEN \#{start} AND \#{end}</strong>
   <strong>&lt;/select&gt;</strong>
 	
 &lt;/mapper&gt;
@@ -1380,39 +1376,39 @@ JSTL 코드를 사용하여 전달된 데이터와 페이지  분할 기능에 �
 
 <h6 class="src">index.jsp</h6>
 <pre class="prettyprint">&lt;div id="photos"&gt;
-  <strong>&lt;c:forEach var="photo" items="${photos }" varStatus="status"&gt;</strong>
-  &lt;img width="640" alt="p_<strong>${photo.no }</strong>" src="<strong>${photo.content }</strong>" /&gt;
+  <strong>&lt;c:forEach var="photo" items="\${photos }" varStatus="status"&gt;</strong>
+  &lt;img width="640" alt="p_<strong>\${photo.no }</strong>" src="<strong>\${photo.content }</strong>" /&gt;
   <strong>&lt;/c:forEach&gt;</strong>
 &lt;/div&gt;
 
 &lt;div id="paging"&gt;
-  <strong>&lt;c:if test="${param.page &gt; 1 }"&gt;</strong>
-  &lt;a href="?page=<strong>${param.page - 1 }</strong>" title="<strong>${param.page - 1}</strong>"&gt;◁ Back&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{param.page &gt; 1 }"&gt;</strong>
+  &lt;a href="?page=<strong>\${param.page - 1 }</strong>" title="<strong>\${param.page - 1}</strong>"&gt;&lt; Back&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:if test="${prevBlock &gt; 0}"&gt;</strong>
+  <strong>&lt;c:if test="&#36;{prevBlock &gt; 0}"&gt;</strong>
   &lt;a href="?page=1" title="1"&gt;1&lt;/a&gt;
-  &lt;a href="?page=<strong>${prevBlock }</strong>" title="<strong>${prevBlock }</strong>"&gt;...&lt;/a&gt;
+  &lt;a href="?page=<strong>\${prevBlock }</strong>" title="<strong>\${prevBlock }</strong>"&gt;...&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:forEach var="i" begin="${firstPage }" end="${lastPage }" varStatus="status"&gt;</strong>
+  <strong>&lt;c:forEach var="i" begin="\${firstPage }" end="\${lastPage }" varStatus="status"&gt;</strong>
   <strong>&lt;c:choose&gt;</strong>
-    <strong>&lt;c:when test="${param.page == i}"&gt;</strong>
-    &lt;strong&gt;<strong>${i }</strong>&lt;/strong&gt;
+    <strong>&lt;c:when test="\${param.page == i}"&gt;</strong>
+    &lt;strong&gt;<strong>\${i }</strong>&lt;/strong&gt;
     <strong>&lt;/c:when&gt;</strong>
     <strong>&lt;c:otherwise&gt;</strong>
-    &lt;a href="?page=<strong>${i }</strong>" title="<strong>${i }</strong>"&gt;<strong>${i }</strong>&lt;/a&gt;
+    &lt;a href="?page=<strong>\${i }</strong>" title="<strong>\${i }</strong>"&gt;<strong>\${i }</strong>&lt;/a&gt;
     <strong>&lt;/c:otherwise&gt;</strong>
   <strong>&lt;/c:choose&gt;</strong>
   <strong>&lt;/c:forEach&gt;</strong>
 
-  <strong>&lt;c:if test="${nextBlock &gt; 0 }"&gt;</strong>
-  &lt;a href="?page=<strong>${nextBlock }</strong>" title="<strong>${nextBlock }</strong>"&gt;...&lt;/a&gt;
-  &lt;a href="?page=<strong>${finalPage }</strong>" title="<strong>${finalPage }</strong>"&gt;${finalPage }&lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{nextBlock &gt; 0 }"&gt;</strong>
+  &lt;a href="?page=<strong>\${nextBlock }</strong>" title="<strong>\${nextBlock }</strong>"&gt;...&lt;/a&gt;
+  &lt;a href="?page=<strong>\${finalPage }</strong>" title="<strong>\${finalPage }</strong>"&gt;\${finalPage }&lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
-  <strong>&lt;c:if test="${param.page &lt; finalPage }"&gt;</strong>
-  &lt;a href="?page=<strong>${param.page + 1 }</strong>" title="<strong>${param.page + 1 }</strong>"&gt;Next▷ &lt;/a&gt;
+  <strong>&lt;c:if test="&#36;{param.page &lt; finalPage }"&gt;</strong>
+  &lt;a href="?page=<strong>\${param.page + 1 }</strong>" title="<strong>\${param.page + 1 }</strong>"&gt;Next&gt; &lt;/a&gt;
   <strong>&lt;/c:if&gt;</strong>
 
   &lt;form id="addForm" method="post"&gt;
@@ -1602,4 +1598,12 @@ Import를 사용하여 spring-bbs 프로젝트를 이클립스로 불러온다.<
   <li><a href="https://github.com/spring-projects/spring-mvc-showcase/blob/master/pom.xml">스프링 웹 애플리케이션을 위한 pom.xml 참조</a></li>
   <li><a href="http://stackoverflow.com/questions/793983/jsp-el-expression-is-not-evaluated">메이븐의 만들어준 web.xml 파일을 쓰면 EL이 해석되지 않는 경우</a></li>
 </ul>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/spring/spring-security"/>">스프링 시큐리티</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/building-java-projects"/>">순수 자바</a></li>
+	</ul>
+</div>
+
 </article>

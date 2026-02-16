@@ -7,7 +7,7 @@
 <h1>DataSource</h1>
 
 <p>
-You learned about custom connection pools in the <a th:href="@{/jdbc/Connection-Pool}">Connection Pooling</a> section. Java Programmer needed a standard for connection pooling, so Sun Microsystems created a DataSource interface that all connection pools must implement. The servlet specification also changed so that servlet containers must provide a javax.sql.DataSource implementation. This section describes Tomcat's DataSource configuration and then how to modify the bulletin board source to use the dataSource.
+You learned about custom connection pools in the <a href="<c:url value="/jdbc/connection-pool"/>">Connection Pooling</a> section. Java Programmer needed a standard for connection pooling, so Sun Microsystems created a DataSource interface that all connection pools must implement. The servlet specification also changed so that servlet containers must provide a javax.sql.DataSource implementation. This section describes Tomcat's DataSource configuration and then how to modify the bulletin board source to use the dataSource.
 </p>
 
 <h2>Tomcat's DataSource configuration</h2>

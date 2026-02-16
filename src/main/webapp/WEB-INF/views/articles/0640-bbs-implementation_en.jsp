@@ -1372,4 +1372,12 @@ searchWord = java.net.URLEncoder.encode(searchWord, "UTF-8");
 response.sendRedirect("list.jsp?boardCd=" + boardCd + "&amp;curPage=" + curPage + "&amp;searchWord=" + searchWord);</strong>
 %&gt;
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/migrate-to-model-2"/>">Migrate to Model 2</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/javabeans"/>">Java Beans</a></li>
+	</ul>
+</div>
+
 </article>

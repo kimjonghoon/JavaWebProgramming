@@ -102,7 +102,7 @@ public class LogTest {
 
 <span id="refer">References</span>
 <ul id="references">
-	<li><a th:href="@{/java/Logging}">http://www.java-school.net/java/Logging.php</a></li>
+	<li><a href="<c:url value="/java/logging"/>">Logging</a></li>
 	<li><a href="http://seosh81.info/?tag=common-logging">http://seosh81.info/?tag=common-logging</a></li>
 	<li><a href="http://www.hanb.co.kr/network/view.html?bi_id=668">http://www.hanb.co.kr/network/view.html?bi_id=668</a></li>
 </ul>

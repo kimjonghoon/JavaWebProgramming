@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Handling select items</title>
+<script>
+function chooseLang() {
+	var form = document.getElementById("testForm");
+	var lang = form.programLanguage.value;
+
+	switch (lang) {
+	case "java":
+		form.step.options[0] = new Option("Java Introduction", "javaIntro");
+		form.step.options[1] = new Option("Class and Object", "ClassObject");
+		form.step.options[2] = new Option("Java DataType", "JavadataType");
+		break;
+	case "javascript":
+		form.step.options[0] = new Option("JavaScript Introduction",
+				"javascriptIntro");
+		form.step.options[1] = new Option("JavaScript DataType",
+				"JavascriptDataType");
+		form.step.options[2] = new Option("JavaScript Objects",
+				"JavascriptObjects");
+		break;
+	default:
+		form.step.options.length = 0;
+	}
+}
+</script>
+</head>
+<body>
+<form id="testForm" action="sel.html">
+	<select name="programLanguage" onchange="chooseLang()">
+		<option value="">--Select Language</option>
+		<option value="java">Java</option>
+		<option value="javascript">JavaScript</option>
+	</select> <select name="step">
+	</select> <input type="submit" value="Test" />
+</form>
+</body>
+</html>

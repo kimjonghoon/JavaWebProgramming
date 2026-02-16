@@ -49,7 +49,7 @@ public class SignUpFailException extends RuntimeException {
 </pre>
 
 <p>
-Let's use Apache's commons-logging and log4j 2 for logging. See: <a th:href="@{/java/Logging#log4j-2}">Log4j 2</a>
+Let's use Apache's commons-logging and log4j 2 for logging. See: <a href="<c:url value="/java/Logging#log4j-2"/>">Log4j 2</a>
 </p>
 
 <p>
@@ -1671,4 +1671,12 @@ public class BoardService {
   }    
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/jsp/implementation"/>">Implementation</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/database-design"/>">Database Design</a></li>
+	</ul>
+</div>
+
 </article>

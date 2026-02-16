@@ -71,4 +71,12 @@ if (i) {
   alert('i: ' + "false");
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/javascript/objects"/>">Objects</a></li>
+		<li>Prev : <a href="<c:url value="/javascript/intro"/>">Introduction</a></li>
+	</ul>
+</div>
+
 </article>

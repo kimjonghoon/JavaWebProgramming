@@ -55,7 +55,7 @@ public class SignUpFailException extends RuntimeException {
 <p>
 로깅을 위해, Log4j 2와 아파치의 commons-logging를 사용하겠다.<br />
 이에 대한 자세한 설명은 다음 링크에서 참조할 수 있다:<br />
-<a th:href="@{/java/Logging#log4j-2}">Log4j 2</a>
+<a href="<c:url value="/java/Logging#log4j-2"/>">Log4j 2</a>
 </p>
 
 <p>
@@ -1702,4 +1702,12 @@ public class BoardService {
     }    
 }
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/implementation"/>">구현</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/database-design"/>">데이터베이스 설계</a></li>
+	</ul>
+</div>
+
 </article>

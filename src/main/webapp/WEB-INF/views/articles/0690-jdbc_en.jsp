@@ -517,7 +517,7 @@ ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applica
 </pre>
 
 <p>
-Let's try to transfer from account 101 to account 505 in a situation where account 101 exist, but account 505 does not exist. You will see that the balance of account 101 decreases by the amount of the transfer. The <a th:href="@{/spring/transaction}">Spring Transaction</a> section will cover this issue.
+Let's try to transfer from account 101 to account 505 in a situation where account 101 exist, but account 505 does not exist. You will see that the balance of account 101 decreases by the amount of the transfer. The <a href="<c:url value="/spring/transaction"/>">Spring Transaction</a> section will cover this issue.
 </p>
 
 <h3>JavaConfig configuration</h3>

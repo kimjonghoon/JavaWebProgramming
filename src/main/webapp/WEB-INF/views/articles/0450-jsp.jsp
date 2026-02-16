@@ -299,7 +299,6 @@ prefix는 JSP안에서 사용한 태그 라이브러리를 구별하는데 쓰�
 
 <p>
 태그 라이브러리를 만드는 방법은 다루지 않겠다.
-하지만, JSP 스펙에 포함된 JSTL(JavaServer Pages Standard Tag Library)은 <a th:href="@{/jsp-pjt}">JSP Project</a>에서 다룬다.  
 </p>
 
 <h2 id="Scripting">3. 스크립팅(Scripting)</h2>

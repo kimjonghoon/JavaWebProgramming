@@ -4766,5 +4766,12 @@ modify.jsp만 빠진 이유는 로그인뿐 아니라 글 소유자인지 검사
 <p>
 이로써 프로토타입을 완성했다.
 </p>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/database-design"/>">데이터베이스 설계</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/dynamic-web-project"/>">다이나믹 웹 프로젝트</a></li>
+	</ul>
+</div>
     
 </article>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>JavaScript Test</title>
+<script>
+function check() {
+	var form = document.getElementById("signUpForm");
+	var id = form.id.value;
+	id = trim(id);
+	if (id.length == 0) {
+		alert("Invalid ID.");
+		return false;
+	}
+	var pass = form.passwd.value;
+	pass = trim(pass);
+	if (pass.length == 0) {
+		alert("Invalid Password.");
+		return false;
+	}
+	var name = form.name.value;
+	name = trim(name);
+	if (name.length == 0) {
+		alert("Invalid Name.");
+		return false;
+	}
+	var email = form.email.value;
+	var chk = emailCheck(email);
+	if (chk == false) {
+		alert("Invalid email.");
+		return false;
+	}
+	var mobile = form.mobile.value;
+	mobile = trim(mobile);
+	if (mobile.length == 0) {
+		alert("Invalid mobile number.");
+		return false;
+	}
+	chk = beAllowStr(mobile,"0123456789-");
+	if (chk == false) {
+		alert("Invalid mobile number");
+		return false;
+	}
+	
+	return true;
+}
+
+function trim(str) {
+	for (var i = str.length - 1; i >= 0; i--) {
+		if (str[i] == " ") {
+			str = str.substring(0, i);
+		} else {
+			break;
+		}
+	}
+	for (var i = 0; i < str.length; i++) {
+		if (str[i] == " ") {
+			str = str.substring(i+1, str.length);
+		}	
+	}
+	return str;
+}
+
+function beAllowStr(str, allowStr) {
+	for (var i = 0;i < str.length; i++) {
+		var ch = str.charAt(i);
+		if (allowStr.indexOf(ch) < 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function emailCheck(email) {
+	if (beAllowStr(email,"1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_") == false) {
+		return false;
+	}
+	var golbang = 0;
+	var dot = 0;
+	if (email.length < 5) {
+		return false;
+	}
+	if (email.indexOf("@") == -1) {
+		return false;
+	}
+	if (email.indexOf(".") == -1) {
+		return false;
+	}
+	if (email.indexOf(" ") != -1) {
+		return false;
+	}
+	for (var i = 0;i < email.length; i++) {
+		if (email.charAt(i) == "@") {
+			golbang++;
+		}
+		if (email.charAt(i) == ".") {
+			dot++;
+		}
+	}
+	if (golbang != 1 || dot > 3) {
+		return false;
+	}
+	if (email.indexOf("@") > email.indexOf(".")) {
+		return false;
+	}
+	if (email.indexOf("@") == 0  || email.indexOf(".") == email.length - 1) {
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<h1>Sign Up</h1>
+<form id="signUpForm" name="signUpForm" action="signUp.php" method="post" onsubmit="return check();">
+ID : <input type="text" name="id" value="heist" /><br />
+Password : <input type="password" name="passwd" value="1440" /><br />
+Name: <input type="text" name="name" value="John Doe"  /><br />
+Email : <input type="text" name="email" /><br />
+Mobile : <input type="text" name="mobile" /><br />
+<input type="submit" value="Submit" />
+<input type="reset" value="Reset" />
+</form>
+</body>
+</html>

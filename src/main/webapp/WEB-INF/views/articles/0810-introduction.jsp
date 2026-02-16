@@ -176,7 +176,7 @@ ID: &lt;input type="text" name="id" value="heist" /&gt;&lt;br /&gt;
 </pre>
 
 <p>
-<a th:href="@{/examples/signUp.html}">signUp.html 예제 실행</a><br />
+<a href="<c:url value="/examples/signUp.html"/>">signUp.html 예제 실행</a><br />
 
 옛 방식의 자바스크립트 코드이다.<br />
 이메일이 유효한지 검사하는 함수는 정규 표현식을 이용하는 게 바람직하다.<br />
@@ -184,7 +184,7 @@ ID: &lt;input type="text" name="id" value="heist" /&gt;&lt;br /&gt;
 emailCheck()와 trim() 함수를 정규 표현식을 사용하도록 수정한다.<br />
 </p>
  
-<pre class="prettyprint" style="white-space: pre-wrap" th:inline="none">
+<pre class="prettyprint" style="white-space: pre-wrap">
 function emailCheck(email) { 
 	var re = /^(([^&lt;&gt;()[\]\\.,;:\s@\"]+(\.[^&lt;&gt;()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
@@ -207,7 +207,7 @@ function mobileCheck(mobile) {
 <p>
 위의 3개의 함수를 이용하여 유효성 검사를 하도록 회원가입 폼 페이지, signUp2.html를 작성한다.<br />
 
-<a th:href="@{/examples/signUp2.html}">signUp2.html 예제 실행</a><br />
+<a href="<c:url value="/examples/signUp2.html"/>">signUp2.html 예제 실행</a><br />
 
 signUp.html과 signUp2.html에서 모바일 유효성 검사 기준에 차이가 있다.<br />
 signUp.html에서는 숫자와 -(대시)만으로 이루어진 문자열을 유효한 모바일 번호라고 판단했다.<br />
@@ -283,7 +283,7 @@ body 엘리먼트의 onload 이벤트는 문서의 모든 요소가 다운로드
 </pre>
 
 <p>
-<a th:href="@{/examples/signUp3.html}">예제 실행</a><br />
+<a href="<c:url value="/examples/signUp3.html"/>">예제 실행</a><br />
 </p>
 
 <h3>5. 웹페이지 내용 추가</h3>
@@ -296,5 +296,126 @@ body 엘리먼트의 onload 이벤트는 문서의 모든 요소가 다운로드
 <span id="refer">참고</span>
 <ul id="references">
 	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
-</ul>						
+</ul>
+
+<h1>자바와 다른 점</h1>
+
+<p>
+자바를 바탕으로 자바와 다른 자바스크립트의 특징을 살펴본다.<br />
+</p>
+
+<ol>
+	<li>변수 선언 시 변수 앞에 var를 붙인다.</li>
+	<li>기본 데이터 타입 중 숫자는 부동 소수이며 나눗셈의 결과는 부동 소수가 된다.</li>
+	<li>switch 문에서 switch()의 괄호 안에 문자가 들어가도 된다. (자바 7부터 된다.)</li>
+	<li>일반적인 배열(인덱스를 사용하여 요소를 접근)을 만드는 법</li>
+	<li>연관 배열은 key:value 의 배열로 인덱스로 요소에 접근할 수 없다. 자바에는 연관 배열이 없다.</li>
+	<li>for in 반복문</li>
+	<li>자바스크립트는 함수를 함수의 아규먼트로 전달할 수 있다.</li>
+</ol>
+
+<p>
+1,2는 이미 보았다.<br />
+</p>
+
+<h3>3. switch("문자열")</h3>
+<pre class="prettyprint script-result-display">
+var str = "A";
+
+switch (str) {
+case "A":
+	alert("A");
+	break;
+case "B":
+	alert("B");
+	break;
+case "C":
+	alert("C");
+	break;
+case "D":
+	alert("D");
+	break;
+default:
+	alert("F");
+}
+</pre>
+
+<h3>4. 배열 만들기</h3>
+
+<h4>[] 사용</h4>
+
+<p>
+[]을 사용하여 만든 배열은 인덱스를 사용하여 요소에 접근할 수 있다.
+</p>
+
+<pre class="prettyprint script-result-display">
+var arr = [1, 2, 3, 4, 5];
+var sum = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+	sum = sum + arr[i];
+}
+alert('배열요소 합:' + sum);
+</pre>
+
+<h4>Array 객체 이용</h4>
+
+<p>
+Array 객체를 이용하여 만든 배열 역시 인덱스를 사용하여 요소에 접근할 수 있다.
+</p>
+
+<pre class="prettyprint script-result-display">
+var arr = new Array(1, 2, 3, 4, 5);
+var sum = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+	sum = sum + arr[i];
+}
+alert('배열요소 합:' + sum);
+</pre>
+
+<h3>5. 연관 배열</h3>
+
+<p>
+연관 배열은 key:value의 배열로 {}를 사용하여 만든다.<br />
+연관 배열은 인덱스를 사용할 수 없다.<br />
+</p>
+
+<pre class="prettyprint script-result-display">
+var person = {"name":"홍길동", "job":"의적"};
+alert(person.name);
+alert(person["name"]);
+alert(person.job);
+alert(person["job"]);
+</pre>
+
+<h3>6. for in 반복문으로 연관 배열의 모든 요소에 접근할 수 있다.</h3>
+<pre class="prettyprint script-result-display">
+var person = {"name":"임꺽정", "job":"의적"};
+var result = "";
+for(var property in person) {
+	result += person[property];
+}
+alert(result);
+</pre>
+
+<h3>7. 자바스크립트는 함수를 함수의 아규먼트로 전달할 수 있다.</h3>
+<pre class="prettyprint script-result-display">
+function x(a, y) {
+    var ret = y(a);
+    alert(ret);
+}
+
+function z(a) {
+    return a * a
+}
+
+x(2, z);
+</pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/javascript/datatype"/>">데이터 타입</a></li>
+		<li>이전 : <a href="<c:url value="/spring/bean-validation"/>">빈 검증</a></li>
+	</ul>
+</div>
+						
 </article>

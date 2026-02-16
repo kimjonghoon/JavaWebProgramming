@@ -516,7 +516,7 @@ ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applica
 101계좌는 존재하나 505계좌는 존재하는 않는다고 가정한다.
 101계좌에서 505계좌로 이체 테스트를 한다.
 이체 후 101계좌는 이체 금액만큼 잔액이 줄어든다.
-(이 문제는 <a th:href="@{/spring/transaction}">트랜잭션</a>에서 다룬다)
+(이 문제는 <a href="<c:url value="/spring/transaction"/>">트랜잭션</a>에서 다룬다)
 </p>
 
 <h3>JavaConfig 설정</h3>

@@ -16,7 +16,7 @@
   <li><a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>에서 최신 바이너리 파일을 다운로드한다.</li>
   <li>압축을 풀고 생성된 디렉터리를 원하는 곳에 옮긴다.(예, C:\Program Files\apache-maven-3.8.7)</li>
   <li>메이븐 bin 디렉터리를 Path에 추가한다.</li>
-  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a th:href="@{/java/JDK-Install}">JDK 설치</a> 문서 참조)</li>
+  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a href="<c:url value="/java/JDK-Install"/>">JDK 설치</a> 문서 참조)</li>
 </ol>
 
 <p>
@@ -472,4 +472,1509 @@ spring-context가 의존하는 spring-aop, spring-beans, spring-core, spring-exp
 <ul id="references">
   <li><a href="http://spring.io/guides/gs/maven/">Building Java Projects with Maven</a></li>
 </ul>
+
+<h1>스프링 DI</h1>
+
+<h2>메이븐 아키타입 생성</h2>
+
+<p>
+화면에서 ↵는 다른 입력없이 엔터키만 누르라는 표시다.
+엔터키만 누르면 디폴트 값이 선택된다.
+</p>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd">
+<span class="prompt-selection">mvn archetype:generate</span>
+
+Choose a number or apply filter 
+    (format: [groupId:]artifactId, case sensitive contains): 2005: ↵
+
+Choose org.apache.maven.archetypes:maven-archetype-quickstart version: 
+1: 1.0-alpha-1
+2: 1.0-alpha-2
+3: 1.0-alpha-3
+4: 1.0-alpha-4
+5: 1.0
+6: 1.1
+7: 1.3
+8: 1.4
+Choose a number: 8: ↵
+Define value for property 'groupId': : <span class="prompt-selection">net.java_school</span>
+Define value for property 'artifactId': : <span class="prompt-selection">bank</span>
+Define value for property 'version':  1.0-SNAPSHOT: : ↵
+Define value for property 'package':  net.java_school: : ↵
+Confirm properties configuration:
+groupId: net.java_school
+artifactId: bank
+version: 1.0-SNAPSHOT
+package: net.java_school
+ Y: : ↵
+</pre>
+
+<p>
+Choose a number or apply filter 에서 엔터키만 누르면 maven-archetype-quickstart 아키타입이 선택된다.<br />
+Choose org.apache.maven.archetypes:maven-archetype-quickstart version: 에서도 엔터키만 눌러 가장 최신 버전을 선택한다.<br />
+화면에서 번호나 버전이 다를 수 있지만 상관없다.
+</p>
+
+<h2>테이블 생성 및 소스 코드 복사</h2>
+
+<p>
+<a href="../jdbc/JavaBank">자바은행</a> 예제 테이블을 그대로 사용한다.<br />
+만약 테이블이 없다면 scott 계정으로 접속한 다음 테이블을 생성한다.
+</p>
+
+<pre class="prettyprint">
+create table bankaccount (
+  accountno varchar2(50),
+  owner varchar2(20) not null,
+  balance number,
+  kind varchar2(10),
+  constraint PK_BANKACCOUNT primary key(accountno),
+  constraint CK_BANKACCOUNT_NORMAL 
+    CHECK (balance &gt;= CASE WHEN kind='NORMAL' THEN 0 END),
+  constraint CK_BANKACCOUNT_KIND CHECK (kind in ('NORMAL', 'MINUS'))
+);  
+create table transaction (
+  transactiondate timestamp,
+  kind varchar2(10),
+  amount number,
+  balance number,
+  accountno varchar2(50),
+  constraint FK_TRANSACTION FOREIGN KEY(accountno)
+    REFERENCES bankaccount(accountno)
+);
+</pre>
+
+<p>
+입금이나 출금시 거래 테이블에 데이터를 인서트하는 트리거를 생성한다. 
+</p>
+
+<pre class="prettyprint">
+create or replace trigger bank_trigger
+after insert or update of balance on bankaccount
+for each row
+begin
+  if :new.balance &gt; :old.balance then
+    insert into transaction 
+    values 
+    (
+      systimestamp,
+      'DEPOSIT',
+      :new.balance - :old.balance,
+      :new.balance,
+      :old.accountno
+    );
+  end if;
+  if :new.balance &lt; :old.balance then
+    insert into transaction 
+    values 
+    (
+      systimestamp,
+      'WITHDRAW',
+      :old.balance - :new.balance,
+      :new.balance,
+      :old.accountno
+    );
+  end if;
+end;
+/
+</pre>
+
+<p>
+<a href="https://github.com/kimjonghoon/JavaBank">https://github.com/kimjonghoon/JavaBank</a> 자바 소스를 복사하여 프로젝트 루트 디렉터리 아래에 붙여넣는다.
+</p>
+
+<pre lang="en">src
+└── main
+    └── java
+        └── net
+            └── java_school
+                └── bank
+                    ├── Account.java
+                    ├── Bank.java
+                    ├── BankDao.java
+                    ├── BankUi.java
+                    ├── MyBank.java
+                    ├── MyBankDao.java
+                    └── Transaction.java
+</pre>
+
+<p>
+pom.xml 편집
+</p>
+
+<h6 class="src">pom.xml</h6>
+<pre class="prettyprint">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                        http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;net.java_school&lt;/groupId&gt;
+  &lt;artifactId&gt;bank&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;bank&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+  &lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
+    <strong>&lt;spring.version&gt;6.2.8&lt;/spring.version&gt;</strong>
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.11&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    <strong>&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api --&gt;</strong>
+    <strong>&lt;dependency&gt;</strong>
+      <strong>&lt;groupId&gt;org.slf4j&lt;/groupId&gt;</strong>
+      <strong>&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</strong>
+      <strong>&lt;version&gt;2.0.6&lt;/version&gt;</strong>
+    <strong>&lt;/dependency&gt;</strong>
+    <strong>&lt;!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic --&gt;</strong>
+    <strong>&lt;dependency&gt;</strong>
+      <strong>&lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</strong>
+      <strong>&lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</strong>
+      <strong>&lt;version&gt;1.4.5&lt;/version&gt;</strong>
+    <strong>&lt;/dependency&gt;</strong>
+    <strong>&lt;dependency&gt;</strong>
+      <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
+      <strong>&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</strong>
+      <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
+    <strong>&lt;/dependency&gt;</strong>
+    <strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 --&gt;</strong>
+    <strong>&lt;dependency&gt;</strong>
+      <strong>&lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;</strong>
+      <strong>&lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;</strong>
+      <strong>&lt;version&gt;11.2.0.4&lt;/version&gt;</strong>
+    <strong>&lt;/dependency&gt;</strong>
+  <strong>&lt;/dependencies&gt;</strong>
+
+  &lt;build&gt;
+    &lt;finalName&gt;bank&lt;/finalName&gt;
+    &lt;pluginManagement&gt;
+      &lt;plugins&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.0.2&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.8.0&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+          &lt;version&gt;2.22.1&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+          &lt;version&gt;3.2.2&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;
+          &lt;version&gt;2.5.2&lt;/version&gt;
+        &lt;/plugin&gt;
+        &lt;plugin&gt;
+          &lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;
+          &lt;version&gt;2.8.2&lt;/version&gt;
+        &lt;/plugin&gt;
+      &lt;/plugins&gt;
+    &lt;/pluginManagement&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</pre>
+
+<p>
+빌드
+</p>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd"><span class="prompt-selection">mvn clean compile</span>
+</pre>
+
+<p>
+실행
+</p>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd"><span class="prompt-selection">mvn exec:java -Dexec.mainClass=net.java_school.bank.BankUi</span></pre>
+
+<h3>자바은행 예제를 스프링 예제로 변경</h3>
+
+<p>
+자바 소스에서 다음 부분을 수정한다.
+</p>
+
+<h6 class="src">Bank.java</h6>
+<pre class="prettyprint">
+public void setDao(BankDao dao);//추가
+</pre>
+
+<h6 class="src">ShinahanBank.java</h6>
+<pre class="prettyprint">
+//private BankDao dao = new MyBankDao();
+
+private BankDao dao;//추가
+
+public void setDao(BankDao dao) {
+  this.dao = dao;
+}
+</pre>
+
+<h6 class="src">BankUi.java</h6>
+<pre class="prettyprint">
+//..중간 생략..
+
+import java.io.PrintStream;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+//..중간 생략..
+
+//private Bank bank = new MyBank();
+private Bank bank;
+
+public void setBank(Bank bank) {
+  this.bank = bank;
+}
+
+private PrintStream stream;
+
+public void setStream(PrintStream stream) {
+  this.stream = stream;
+}
+
+/* 
+코드에서 System.out.println()을 stream.println(),
+System.out.println()을 stream.println()으로 수정한다.
+*/
+
+//..중간 생략..
+
+public static void main(String[] args) {
+  ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+  BankUi ui = ctx.getBean(BankUi.class);
+  ui.startWork();
+  ctx.close();
+}
+
+</pre>
+
+<p>
+src/main/resources 폴더를 만들고, <a href="../java/Logging">로깅</a>의 logback.xml 파일을 복사해 resource 폴더에 붙여넣는다.<br /> 
+다음 applicationContext.xml 파일도 resource 폴더에 생성한다.
+</p>
+
+<h6 class="src">applicationContext.xml</h6>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;
+
+    &lt;bean id="bankUi" class="net.java_school.bank.BankUi"&gt;
+        &lt;property name="stream" value="\#{T(System).out}" /&gt;
+        &lt;property name="bank" ref="myBank" /&gt;
+    &lt;/bean&gt;
+    
+    &lt;bean id="myBank" class="net.java_school.bank.MyBank"&gt;
+        &lt;property name="dao" ref="myBankDao" /&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id="myBankDao" class="net.java_school.bank.MyBankDao"&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</pre>
+
+<pre lang="en">src
+└── main
+    └── resources
+        ├── logback.xml
+        └── applicationContext.xml
+</pre>
+
+<p>
+컴파일
+</p>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd"><span class="prompt-selection">mvn clean compile</span>
+</pre>
+
+<p>
+실행
+</p>
+
+<div class="cmd-header">&nbsp;</div>
+<pre class="cmd"><span class="prompt-selection">mvn exec:java -Dexec.mainClass=net.java_school.bank.BankUi</span>
+</pre>
+
+<h2>이클립스 작업환경 구축</h2>
+
+<p>
+이클립스를 시작한다.(워크스페이스는 어디든 상관없다)<br />
+Project Explorer 뷰에서 마우스 오른쪽 버튼을 사용하여 컨텍스트 메뉴를 보이게 한다.<br />
+Import 메뉴를 사용해 자바은행 예제를 이클립스로 임포트한다.<br />
+<img alt="컨텍스트 메뉴에서 Import" src="https://lh3.googleusercontent.com/-VjWpQCEiqes/VYYV3b2GPFI/AAAAAAAACh0/-KoRbgI8nn0/s590/maven-project-import.png"><br />
+<img alt="이클립스에서 메이븐 프로젝트 Import" src="https://lh3.googleusercontent.com/-uDuAOI41Aj4/VYYV3Pmo4qI/AAAAAAAAChw/m4HA61kOVbE/s610/eclipse-with-maven.png"><br />
+이클립스와 pom.xml을 동기화한다.<br />
+Package Explorer에서 프로젝트를 선택한 상태에서 마우스 오른쪽 버튼으로 컨텍스트 메뉴를 연다.<br />
+Maven, Update Project Configuration을 차례로 선택한다.<br />
+<br />
+이후 진행하면서 pom.xml이 바뀌면 같은 방법으로 이클립스와 동기화한다.
+</p>
+
+<h2>JavaConfig</h2>
+
+<p>
+스프링이 발전하면서 빈 설정을 XML 파일이 아닌 자바 클래스로도 할 수 있게 되었다.<br />
+빈 설정 클래스는 @Configuration과 @Bean 어노테이션을 사용해 작성한다.<br />
+빈 설정 클래스에서 @Bean 어노테이션이 붙은 메소드 이름이 빈 객체가 된다.
+</p>
+
+<p>
+applicationContext.xml 파일과 같은 내용의 빈 설정 클래스를 작성한다.
+</p>
+
+<h6 class="src">BankConfig.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class BankConfig {
+	
+  @Bean
+  public BankDao myBankDao() {
+    return new MyBankDao();
+  }
+	
+  @Bean
+  public Bank myBank() {
+    Bank bank = new MyBank();
+    bank.setDao(myBankDao());
+    return bank;
+  }
+	
+  @Bean
+  public BankUi bankUi() {
+    BankUi ui = new BankUi();
+    ui.setBank(myBank());
+    ui.setStream(System.out);
+    return ui;
+  }
+}
+</pre>
+
+<p>
+BankUi 클래스의 메인 메소드를 다음과 같이 수정한다.
+</p>
+
+<h6 class="src">BankUi.java</h6>
+<pre class="prettyprint">
+//import문 추가
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+//..중간 생략..
+
+public static void main(String[] args) {
+  //ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+  AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class);
+  BankUi ui = ctx.getBean(BankUi.class);
+  ui.startWork();
+  ctx.close();
+}
+</pre>
+
+<p>
+최종 소스: <a href="https://github.com/kimjonghoon/di">https://github.com/kimjonghoon/di</a>
+</p>
+
+<span id="refer">참고</span>
+<ul id="references">
+	<li><a href="../jdbc/JavaBank">자바은행</a></li>
+	<li><a href="../java/Logging">로깅</a></li>
+</ul>
+
+<h1>스프링 AOP</h1>
+
+<p>
+자바 은행에서 로깅을 스프링 AOP로 구현해 보자.
+아래 의존성을 pom.xml에 추가한다. 
+</p>
+
+<pre class="prettyprint">
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;
+  &lt;version&gt;${spring.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+  &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+  &lt;version&gt;1.9.19&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+
+<p>
+TestLogger.java를 아래와 같이 작성한다.
+</p>
+
+<h6 class="src">TestLogger.java</h6>
+<pre class="prettyprint">
+package net.java_school.commons;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Aspect
+public class TestLogger {
+  Logger logger = LoggerFactory.getLogger(this.getClass());
+  
+  @AfterReturning("execution(* net.java_school.bank.BankDao.deposit(..))")
+  public void depositLog(JoinPoint point) {
+    Object[] a = point.getArgs();
+    String accountNo = (String) a[0];
+    Long amount = (Long) a[1];
+    String methodName = point.getSignature().getName();
+    logger.debug("{}|{}|{}", methodName, accountNo, amount);
+  }
+  
+  @AfterReturning("execution(* withdraw(..)) &amp;&amp; args(accountNo, amount)")
+  public void withdrawLog(String accountNo, double amount) {
+    logger.debug("WITHDRAW|{}|{}", accountNo, amount);
+  }
+  
+}
+</pre>
+
+<p>
+자바 소스에서 로그 관련 코드를 제거한다.
+</p>
+
+<h6 class="src">MyBankDao.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyBankDao implements BankDao {
+  static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+  static final String USER = "scott";
+  static final String PASSWORD = "tiger";
+  
+  //중간 생략..
+  
+  @Override
+  public void deposit(String accountNo, double amount) {
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    
+    String sql = "UPDATE bankaccount " +
+        "SET balance = balance + ? " +
+        "WHERE accountNo = ?";
+    
+    try {
+      con = getConnection();
+      pstmt = con.prepareStatement(sql);
+      pstmt.setLong(1, amount);
+      pstmt.setString(2, accountNo);
+      pstmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      close(null, pstmt, con);
+    }
+    
+  }
+
+  @Override
+  public void withdraw(String accountNo, double amount) {
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    
+    String sql = "UPDATE bankaccount " +
+        "SET balance = balance - ? " +
+        "WHERE accountNo = ?";
+    
+    try {
+      con = getConnection();
+      pstmt = con.prepareStatement(sql);
+      pstmt.setLong(1, amount);
+      pstmt.setString(2, accountNo);
+      pstmt.executeUpdate();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      close(null, pstmt, con);
+    }
+    
+  }
+  
+  //중간 생략..
+  
+}  
+</pre>
+
+<h3>XML 설정</h3>
+
+<h6 class="src">applicationContext.xml</h6>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  <strong>xmlns:aop="http://www.springframework.org/schema/aop"</strong> 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    <strong>http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop.xsd</strong>"&gt;
+  <strong>
+  &lt;aop:aspectj-autoproxy /&gt;
+
+  &lt;bean id="testLogger" class="net.java_school.commons.TestLogger" /&gt;
+    </strong>
+  
+  &lt;bean id="bankUi" class="net.java_school.bank.BankUi"&gt;
+    &lt;property name="stream" value="\#{T(System).out}" /&gt;
+    &lt;property name="bank" ref="myBank" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="myBank" class="net.java_school.bank.MyBank"&gt;
+    &lt;property name="dao" ref="myBankDao" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="myBankDao" class="net.java_school.bank.MyBankDao"&gt;
+  &lt;/bean&gt;
+    
+&lt;/beans&gt;
+</pre>
+
+<p>
+테스트하기 전에 BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+
+<h3>JavaConfig 설정</h3>
+
+<h6 class="src">BankConfig.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+<strong>import net.java_school.commons.TestLogger;</strong>
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+<strong>import org.springframework.context.annotation.EnableAspectJAutoProxy;</strong>
+
+@Configuration
+<strong>@EnableAspectJAutoProxy</strong>
+public class BankConfig {
+  
+  <strong>@Bean
+  public TestLogger testLogger() {
+    return new TestLogger();
+  }</strong>
+
+  @Bean
+  public BankDao myBankDao() {
+    return new MyBankDao();
+  }
+
+  @Bean
+  public Bank myBank() {
+    Bank bank = new MyBank();
+    bank.setDao(myBankDao());
+    return bank;
+  }
+
+  @Bean
+  public BankUi bankUi() {
+    BankUi ui = new BankUi();
+    ui.setBank(myBank());
+    ui.setStream(System.out);
+    return ui;
+  }
+  
+}  
+</pre>
+
+<p>
+테스트하기 전에,
+applicationContext.xml 설정을 모두 주석 처리한다.
+BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+//ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+
+<h3>최종 소스</h3>
+
+<p>
+<a href="https://github.com/kimjonghoon/aop">https://github.com/kimjonghoon/aop</a>
+</p>
+
+<span id="refer">참고</span>
+<ul id="references">
+  <li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html</a></li>
+<!--
+   <li><a href="http://www.eclipse.org/aspectj/downloads.php">http://www.eclipse.org/aspectj/downloads.php</a></li>
+  <li><a href="http://stackoverflow.com/questions/21058778/why-is-my-webapplication-noclassdeffounderror-org-aspectj-lang-reflect-ajtypesy">의존성 설정 힌트</a></li>
+  <li><a href="http://mvnrepository.com/artifact/org.springframework/spring-aspects/4.1.4.RELEASE">http://mvnrepository.com/artifact/org.springframework/spring-aspects/4.1.4.RELEASE</a></li>
+   <li><a href="http://mvnrepository.com/artifact/log4j/log4j">http://mvnrepository.com/artifact/log4j/log4j</a></li>
+  <li><a href="http://stackoverflow.com/questions/15746676/logging-with-aop-in-spring">http://stackoverflow.com/questions/15746676/logging-with-aop-in-spring</a></li>
+  <li><a href="http://www.hanb.co.kr/book/look.html?isbn=978-89-7914-887-9#binfo5">예제로 쉽게 배우는 스프링 프레임워크 3.0(한빛미디어) - 사카타 코이치</a></li>
+  <li><a href="http://www.jpub.kr/">Spring in Action(Jpub) - 크레이그 월즈</a></li>
+  <li><a href="http://static.springsource.org/spring/docs/current/spring-framework-reference/pdf/">http://static.springsource.org/spring/docs/current/spring-framework-reference/pdf/</a></li>
+  <li><a href="http://commons.apache.org/logging/">http://commons.apache.org/logging/</a></li>
+  <li><a href="http://www.eclipse.org/aspectj/downloads.php">http://www.eclipse.org/aspectj/downloads.php</a></li>
+  <li><a href="http://sourceforge.net/projects/aopalliance/files/aopalliance/1.0/">http://sourceforge.net/projects/aopalliance/files/aopalliance/1.0/</a></li>
+  <li><a href="http://logging.apache.org/log4j/1.2/download.html">http://logging.apache.org/log4j/1.2/download.html</a></li>
+-->
+</ul>
+
+<h1>스프링 JDBC</h1>
+
+<p>
+자바 은행에서 사용한 JDBC 코드를 스프링 JDBC로 바꾸어 보자.
+다음 의존성을 추가한다.
+</p>
+
+<pre class="prettyprint">
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+  &lt;version&gt;${spring.version}&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+
+<p>
+MyBankDao 클래스가 NamedParameterJdbcDaoSupport 클래스를 상속하도록 선언한다.
+생성자와 getConnection(), close(rs,pstmt,con) 메소드는 제거한다.
+</p>
+
+<h6 class="src">MyBankDao.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
+
+public class MyBankDao <strong>extends NamedParameterJdbcDaoSupport</strong> implements BankDao {
+
+  //필드 URL, USER, PASSWORD 삭제
+  //생성자와 getConnection(), close(rs,pstmt,con) 메소드 삭제
+  
+  //..중간 생략..
+
+}
+</pre>
+
+<h6 class="src">기존 insertAccount() 메소드</h6>
+<pre class="code">
+@Override
+public void insertAccount(String accountNo, String name, String kind) {
+  
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  
+  String sql = "INSERT INTO bankaccount VALUES (?, ?, 0, ?)";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, accountNo);
+    pstmt.setString(2, name);
+    pstmt.setString(3, kind);
+    pstmt.executeUpdate();
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(null, pstmt, con);
+  }
+  
+}
+</pre>
+
+<h6 class="src">수정 후 insertAccount() 메소드</h6>
+<pre class="prettyprint">
+private static final String INSERT_ACCOUNT = 
+    "INSERT INTO " +
+    "bankaccount (accountno, owner, balance, kind) " +
+    "VALUES (:accountNo, :name, 0, :kind)";
+   
+@Override
+public void insertAccount(String accountNo, String name, String kind) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("accountNo", accountNo);
+  params.put("name", name);
+  params.put("kind", kind);
+  
+  getNamedParameterJdbcTemplate().update(INSERT_ACCOUNT, params);    
+}
+</pre>
+
+<h6 class="src">기존 selectOneAccount() 메소드</h6>
+<pre class="code">
+@Override
+public Account selectOneAccount(String accountNo) {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  ResultSet rs = null;
+  
+  Account account = null;
+  
+  String sql = "SELECT accountNo,owner,balance,kind " +
+      "FROM bankaccount " +
+      "WHERE accountNo = ?";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, accountNo);
+    rs = pstmt.executeQuery();
+    
+    if (rs.next()) {
+      account = new Account();
+      account.setAccountNo(rs.getString("accountNo"));
+      account.setName(rs.getString("owner"));
+      account.setBalance(rs.getDouble("balance"));
+      account.setKind(rs.getString("kind"));
+      
+      return account;
+      
+    }
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(rs, pstmt, con);
+  }
+  return null;
+}
+</pre>
+
+<h6 class="src">수정 후 selectOneAccount() 메소드</h6>
+<pre class="prettyprint">
+private static final String SELECT_ONE_ACCOUNT = 
+    "SELECT accountno,owner,balance,kind " +
+    "FROM bankaccount " +
+    "WHERE accountno = :accountNo";
+
+@Override
+public Account selectOneAccount(String accountNo) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("accountNo", accountNo);
+  
+  return getNamedParameterJdbcTemplate().queryForObject(
+    SELECT_ONE_ACCOUNT,
+    params,
+    new RowMapper&lt;Account&gt;() {
+      public Account mapRow(ResultSet rs,int rowNum) throws SQLException {
+        Account account = new Account();
+        account.setAccountNo(rs.getString("accountNo"));
+        account.setName(rs.getString("owner"));
+        account.setBalance(rs.getDouble("balance"));
+        account.setKind(rs.getString("kind"));
+        
+        return account;
+      }
+    }
+  );
+}
+</pre>
+
+<h6 class="src">기존 selectAccountsByName() 메소드</h6>
+<pre class="code">
+@Override
+public List&lt;Account&gt; selectAccountsByName(String name) {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  ResultSet rs = null;
+  
+  List&lt;Account&gt; matched = new ArrayList&lt;Account&gt;();
+  Account account = null;
+  
+  String sql = "SELECT accountNo,owner,balance,kind " +
+      "FROM bankaccount " +
+      "WHERE owner = ? " +
+      "ORDER By accountNo DESC";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, name);
+    rs = pstmt.executeQuery();
+    
+    while (rs.next()) {
+      account = new Account();
+      account.setAccountNo(rs.getString("accountNo"));
+      account.setName(rs.getString("owner"));
+      account.setBalance(rs.getDouble("balance"));
+      account.setKind(rs.getString("kind"));
+      matched.add(account);
+    }
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(rs, pstmt, con);
+  }
+
+  return matched;
+}
+</pre>
+
+<h6 class="src">수정 후 selectAccountsByName() 메소드</h6>
+<pre class="prettyprint">
+private static final String SELECT_ACCOUNTS_BY_NAME = 
+    "SELECT accountno,owner,balance,kind " +
+    "FROM bankaccount " +
+    "WHERE owner = :name";
+
+@Override
+public List&lt;Account&gt; selectAccountsByName(String name) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("name", name);
+  RowMapper&lt;Account&gt; rowMapper = new AccountRowMapper();
+  
+  return getNamedParameterJdbcTemplate().query(SELECT_ACCOUNTS_BY_NAME,params,rowMapper);
+}
+
+protected class AccountRowMapper implements RowMapper&lt;Account&gt; {
+
+  public Account mapRow(ResultSet rs,int rowNum) throws SQLException {
+
+    String accountNo = rs.getString("accountNo");
+    String name = rs.getString("owner");
+    double balance = rs.getDouble("balance");
+    String kind = rs.getString("kind");
+    
+    Account account = new Account();
+    account.setAccountNo(accountNo);
+    account.setName(name);
+    account.setBalance(balance);
+    account.setKind(kind);
+    
+    return account;
+  }
+}
+</pre>
+
+<h6 class="src">기존 selectAllAccounts() 메소드</h6>
+<pre class="code">
+@Override
+public List&lt;Account&gt; selectAllAccounts() {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  ResultSet rs = null;
+  
+  List&lt;Account&gt; all = new ArrayList&lt;Account&gt;();
+  Account account = null;
+  
+  String sql = "SELECT accountNo,owner,balance,kind " +
+      "FROM bankaccount " +
+      "ORDER By accountNo DESC";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    rs = pstmt.executeQuery();
+    
+    while (rs.next()) {
+      account = new Account();
+      account.setAccountNo(rs.getString("accountNo"));
+      account.setName(rs.getString("owner"));
+      account.setBalance(rs.getDouble("balance"));
+      account.setKind(rs.getString("kind"));
+      all.add(account);
+    }
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(rs, pstmt, con);
+  }
+
+  return all;
+
+}
+</pre>
+
+<h6 class="src">수정 후 selectAllAccounts() 메소드</h6>
+<pre class="prettyprint">
+private static final String SELECT_ALL_ACCOUNTS = 
+    "SELECT accountNo,owner,balance,kind " +
+    "FROM bankaccount " +
+    "ORDER BY accountNo DESC";
+
+@Override
+public List&lt;Account&gt; selectAllAccounts() {
+  RowMapper&lt;Account&gt; rowMapper = new AccountRowMapper();
+  return getJdbcTemplate().query(SELECT_ALL_ACCOUNTS,rowMapper);
+}
+</pre>
+
+<h6 class="src">기존 deposit() 메소드</h6>
+<pre class="code">
+@Override
+public void deposit(String accountNo, double amount) {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  
+  String sql = "UPDATE bankaccount " +
+      "SET balance = balance + ? " +
+      "WHERE accountNo = ?";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setLong(1, amount);
+    pstmt.setString(2, accountNo);
+    pstmt.executeUpdate();
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(null, pstmt, con);
+  }
+  
+}
+</pre>
+
+<h6 class="src">수정 후 deposit() 메소드</h6>
+<pre class="prettyprint">
+private static final String DEPOSIT = 
+    "UPDATE bankaccount " +
+    "SET balance = balance + :amount " +
+    "WHERE accountno = :accountNo";
+
+@Override
+public void deposit(String accountNo, double amount) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("amount", amount);
+  params.put("accountNo", accountNo);
+  
+  getNamedParameterJdbcTemplate().update(DEPOSIT, params);
+}
+</pre>
+
+<h6 class="src">기존 withdraw() 메소드</h6>
+<pre class="code">
+@Override
+public void withdraw(String accountNo, double amount) {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  
+  String sql = "UPDATE bankaccount " +
+      "SET balance = balance - ? " +
+      "WHERE accountNo = ?";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setLong(1, amount);
+    pstmt.setString(2, accountNo);
+    pstmt.executeUpdate();
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(null, pstmt, con);
+  }
+}
+</pre>
+
+<h6 class="src">수정 후 withdraw() 메소드</h6>
+<pre class="prettyprint">
+private static final String WITHDRAW = 
+    "UPDATE bankaccount " +
+    "SET balance = balance - :amount " +
+    "WHERE accountno = :accountNo";
+
+@Override
+public void withdraw(String accountNo, double amount) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("amount", amount);
+  params.put("accountNo", accountNo);
+  
+  getNamedParameterJdbcTemplate().update(WITHDRAW, params);    
+}
+</pre>
+
+<h6 class="src">기존 selectAllTransactions() 메소드</h6>
+<pre class="code">
+@Override
+public List&lt;Transaction&gt; selectAllTransactions(String accountNo) {
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  ResultSet rs = null;
+  
+  List&lt;Transaction&gt; all = new ArrayList&lt;Transaction&gt;();
+  Transaction transaction = null;
+  
+  String sql = "SELECT transactionDate,kind,amount,balance " +
+      "FROM transaction " +
+      "WHERE accountNo = ? " +
+      "ORDER By transactionDate ASC";
+  
+  try {
+    con = getConnection();
+    pstmt = con.prepareStatement(sql);
+    pstmt.setString(1, accountNo);
+    rs = pstmt.executeQuery();
+    
+    while (rs.next()) {
+      transaction = new Transaction();
+      String date = Account.DATE_FORMAT.format(rs.getTimestamp("transactionDate"));
+      String time = Account.TIME_FORMAT.format(rs.getTimestamp("transactionDate"));
+      transaction.setTransactionDate(date);
+      transaction.setTransactionTime(time);
+      transaction.setKind(rs.getString("kind"));
+      transaction.setAmount(rs.getDouble("amount"));
+      transaction.setBalance(rs.getDouble("balance"));
+      all.add(transaction);
+    }
+  } catch (SQLException e) {
+    e.printStackTrace();
+  } finally {
+    close(rs, pstmt, con);
+  }
+
+  return all;
+
+}
+</pre>
+
+<h6 class="src">수정 후 selectAllTransactions() 메소드</h6>
+<pre class="prettyprint">
+private static final String SELECT_ALL_TRANSACTIONS = 
+    "SELECT transactionDate,kind,amount,balance " +
+    "FROM transaction " +
+    "WHERE accountno = :accountNo " +
+    "ORDER By transactionDate ASC";
+
+@Override
+public List&lt;Transaction&gt; selectAllTransactions(String accountNo) {
+  RowMapper&lt;Transaction&gt; rowMapper = new TransactionRowMapper();
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("accountNo", accountNo);
+
+  return getNamedParameterJdbcTemplate().query(SELECT_ALL_TRANSACTIONS,params,rowMapper);
+}
+
+protected class TransactionRowMapper implements RowMapper&lt;Transaction&gt; {
+
+  public Transaction mapRow(ResultSet rs,int rowNum) throws SQLException {
+
+    String date = Account.DATE_FORMAT.format(rs.getTimestamp("transactionDate"));
+    String time = Account.TIME_FORMAT.format(rs.getTimestamp("transactionDate"));
+    String kind = rs.getString("kind");
+    double amount = rs.getDouble("amount");
+    double balance = rs.getDouble("balance");
+
+    Transaction transaction = new Transaction();
+    transaction.setTransactionDate(date);
+    transaction.setTransactionTime(time);
+    transaction.setKind(kind);
+    transaction.setAmount(amount);
+    transaction.setBalance(balance);
+    
+    return transaction;
+  }
+}
+</pre>
+
+<h3>XML 설정</h3>
+
+<p>
+applicationContext.xml에 강조된 부분을 추가한다.
+</p>
+
+<h6 class="src">applicationContext.xml</h6>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:aop="http://www.springframework.org/schema/aop" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd"&gt;
+
+  &lt;aop:aspectj-autoproxy /&gt;
+
+  &lt;bean id="testLogger" class="net.java_school.commons.TestLogger" /&gt;
+
+  &lt;bean id="bankUi" class="net.java_school.bank.BankUi"&gt;
+    &lt;property name="stream" value="\#{T(System).out}" /&gt;
+    &lt;property name="bank" ref="myBank" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="myBank" class="net.java_school.bank.MyBank"&gt;
+    &lt;property name="dao" ref="myBankDao" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="myBankDao" class="net.java_school.bank.MyBankDao"&gt;
+    <strong>&lt;property name="dataSource" ref="dataSource" /&gt;</strong>
+  &lt;/bean&gt;
+  <strong>
+  &lt;bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"&gt;
+    &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
+    &lt;property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" /&gt;
+    &lt;property name="username" value="scott" /&gt;
+    &lt;property name="password" value="tiger" /&gt;
+  &lt;/bean&gt;
+  </strong>
+&lt;/beans&gt;
+</pre>
+
+<h3>테스트</h3>
+
+<p>
+테스트하기 전에 BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+<p>
+101계좌는 존재하나 505계좌는 존재하는 않는다고 가정한다.
+101계좌에서 505계좌로 이체 테스트를 한다.
+이체 후 101계좌는 이체 금액만큼 잔액이 줄어든다.
+(이 문제는 <a href="<c:url value="/spring/transaction"/>">트랜잭션</a>에서 다룬다)
+</p>
+
+<h3>JavaConfig 설정</h3>
+
+<h6 class="src">BankConfig.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import javax.sql.DataSource;
+
+import net.java_school.commons.TestLogger;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+@Configuration
+@EnableAspectJAutoProxy
+public class BankConfig {
+
+  @Bean
+  public TestLogger testLogger() {
+    return new TestLogger();
+  }
+  <strong>
+  @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+        dataSource.setUrl("jdbc:oracle:thin:@127.0.0.1:1521:XE");
+        dataSource.setUsername("scott");
+        dataSource.setPassword("tiger");
+        return dataSource;
+    }
+  </strong>
+    @Bean
+    public BankDao myBankDao() {
+        MyBankDao bankDao = new MyBankDao();
+        <strong>bankDao.setDataSource(dataSource());</strong>
+        return bankDao;
+    }
+
+  @Bean
+  public Bank myBank() {
+    Bank bank = new MyBank();
+    bank.setDao(myBankDao());
+    return bank;
+  }
+
+  @Bean
+  public BankUi bankUi() {
+    BankUi ui = new BankUi();
+    ui.setBank(myBank());
+    ui.setStream(System.out);
+    return ui;
+  }
+  
+}
+</pre>
+
+<p>
+테스트하기 전에,
+applicationContext.xml 설정을 모두 주석 처리한다.
+BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+//ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+<h3>최종 소스</h3>
+
+<p>
+<a href="https://github.com/kimjonghoon/jdbc">https://github.com/kimjonghoon/jdbc</a>
+</p>
+
+<h1>스프링 트랜잭션</h1>
+
+<h6 class="src">applicationContext.xml</h6>
+<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:aop="http://www.springframework.org/schema/aop" 
+  <strong>xmlns:tx="http://www.springframework.org/schema/tx"</strong>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        <strong>http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd</strong>"&gt;
+  <strong>
+  &lt;bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&gt;
+    &lt;property name="dataSource" ref="dataSource" /&gt;
+  &lt;/bean&gt;
+
+  &lt;tx:annotation-driven transaction-manager="transactionManager" /&gt;
+  </strong>
+  &lt;aop:aspectj-autoproxy /&gt;
+
+  &lt;bean id="testLogger" class="net.java_school.commons.TestLogger" /&gt;
+
+  &lt;bean id="bankUi" class="net.java_school.bank.BankUi"&gt;
+    &lt;property name="stream" value="\#{T(System).out}" /&gt;
+    &lt;property name="bank" ref="bank" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="bank" class="net.java_school.bank.MyBank"&gt;
+    &lt;property name="dao" ref="bankDao" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="bankDao" class="net.java_school.bank.MyBankDao"&gt;
+    &lt;property name="dataSource" ref="dataSource" /&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"&gt;
+    &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
+    &lt;property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE" /&gt;
+    &lt;property name="username" value="scott" /&gt;
+    &lt;property name="password" value="tiger" /&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+</pre>
+
+<p>
+지금까지 입금과 출금 메소드는 void를 반환하도록 설계했기에 입금이나 출금이 성공 또는 실패했는지를 알 수 없었다.
+입금과 출금시 dao가 정수값을 리턴하도록 자바 클래스를 수정한다.
+</p>
+
+<h6 class="src">BankDao.java</h6>
+<pre class="prettyprint">
+//입금
+public <strong>int</strong> deposit(String accountNo, double amount);
+
+//출금
+public <strong>int</strong> withdraw(String accountNo, double amount);
+</pre>
+
+
+<h6 class="src">MyBankDao.java</h6>
+<pre class="prettyprint">
+@Override
+public <strong>int</strong> deposit(String accountNo, double amount) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("amount", amount);
+  params.put("accountNo", accountNo);
+  
+  <strong>return</strong> getNamedParameterJdbcTemplate().update(DEPOSIT, params);
+}
+
+@Override
+public <strong>int</strong> withdraw(String accountNo, double amount) {
+  Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+  params.put("amount", amount);
+  params.put("accountNo", accountNo);
+  
+  <strong>return</strong> getNamedParameterJdbcTemplate().update(WITHDRAW, params);    
+}
+</pre>
+
+<p>
+다음과 같이 어노테이션을 사용해 트랜잭션을 설정한다.
+</p>
+
+<h6 class="src">MyBank.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import java.util.List;
+
+<strong>import org.springframework.transaction.annotation.Transactional;</strong>
+
+public class MyBank implements Bank {
+  
+  //..중간 생략..
+  
+  @Override
+  <strong>@Transactional</strong>
+  public void transfer(String from, String to, double amount) {
+    <strong>
+    try {
+      int check = dao.withdraw(from, amount);
+      if (check &lt; 1) throw new RuntimeException("출금 실패");
+      check = dao.deposit(to, amount);
+      if (check &lt; 1) throw new RuntimeException("입금 실패");
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    </strong>
+  }
+
+  //..중간 생략..
+}
+</pre>
+
+<p>
+테스트하기 전에 BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+//AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+<p>
+컴파일하고 실행한 후,
+101 계좌에서 505 계좌(존재하는 않는 계좌)로 이체를 시도한다.
+테스트에 성공했다면(즉, 이체가 취소되었다면), MyBank 클래스에서 transfer() 메소드 위에 있는 @Transactional을 제거하고 다시 이체를 시도한다.
+</p>
+
+<h3>JavaConfig 설정</h3>
+
+<h6 class="src">BankConfig.java</h6>
+<pre class="prettyprint">
+package net.java_school.bank;
+
+import javax.sql.DataSource;
+
+import net.java_school.commons.TestLogger;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+<strong>import org.springframework.jdbc.datasource.DataSourceTransactionManager;</strong>
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+<strong>import org.springframework.transaction.PlatformTransactionManager;</strong>
+<strong>import org.springframework.transaction.annotation.EnableTransactionManagement;</strong>
+
+@Configuration
+@EnableAspectJAutoProxy
+<strong>@EnableTransactionManagement</strong>
+public class BankConfig {
+
+  @Bean
+  public TestLogger testLogger() {
+    return new TestLogger();
+  }
+
+  @Bean
+  public DataSource dataSource() {
+    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+    dataSource.setUrl("jdbc:oracle:thin:@127.0.0.1:1521:XE");
+    dataSource.setUsername("scott");
+    dataSource.setPassword("tiger");
+    return dataSource;
+  }
+  <strong>
+  @Bean
+  public PlatformTransactionManager transactionManager() {
+    return new DataSourceTransactionManager(dataSource());
+  }
+  </strong>
+  @Bean
+  public BankDao bankDao() {
+    MyBankDao bankDao = new MyBankDao();
+    bankDao.setDataSource(dataSource());
+    return bankDao;
+  }
+
+  @Bean
+  public Bank bank() {
+    Bank bank = new MyBank();
+    bank.setDao(bankDao());
+    return bank;
+  }
+
+  @Bean
+  public BankUi bankUi() {
+    BankUi ui = new BankUi();
+    ui.setBank(bank());
+    ui.setStream(System.out);
+    return ui;
+  }
+}
+</pre>
+
+<p>
+테스트하기 전에, applicationContext.xml 설정을 모두 주석 처리한다.
+BankUi.java의 메인 메소드를 아래를 참조해 수정한다.
+</p>
+
+<pre class="prettyprint">
+//ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml"); //XML
+AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(BankConfig.class); //JavaConfig
+</pre>
+
+<p>
+최종 소스: <a href="https://github.com/kimjonghoon/transaction">https://github.com/kimjonghoon/transaction</a>
+</p>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/spring/spring-mvc"/>">스프링 MVC</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/migrate-to-model-2"/>">모델 2로 변경</a></li>
+	</ul>
+</div>
+
 </article>

@@ -157,7 +157,7 @@ Mobile: &lt;input type="text" name="mobile" /&gt;&lt;br /&gt;
 </pre>
 
 <p>
-<a th:href="@{/examples/signUp.html}">Run the example</a><br />
+<a href="<c:url value="/examples/signUp.html"/>">Run the example</a><br />
 The above code is old-fashioned.
 It is desirable to use regular expressions to check whether an email is valid.
 </p>
@@ -166,7 +166,7 @@ It is desirable to use regular expressions to check whether an email is valid.
 Modify the emailCheck() and trim() functions to use regular expressions.
 </p>
  
-<pre class="prettyprint" style="white-space: pre-wrap" th:inline="none">
+<pre class="prettyprint" style="white-space: pre-wrap">
 function emailCheck(email) { 
   var re = /^(([^&lt;&gt;()[\]\\.,;:\s@\"]+(\.[^&lt;&gt;()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
@@ -193,7 +193,7 @@ Create signUp2.html using the above three functions to validate user input value
 </p>
 
 <p>
-<a th:href="@{/examples/signUp2.html}">Run the example</a>
+<a href="<c:url value="/examples/signUp2.html"/>">Run the example</a>
 </p>
 
 <p>
@@ -282,7 +282,7 @@ Add the onload attribute to the body element. The onload event of the body eleme
 </pre>
 
 <p>
-<a th:href="@{/examples/signUp3.html}">Run the example</a>
+<a href="<c:url value="/examples/signUp3.html"/>">Run the example</a>
 </p>
 
 <h3>Adding content</h3>
@@ -298,5 +298,101 @@ Facebook comments are an excellent example of adding content to a web page using
 <span id="refer">References</span>
 <ul id="references">
 	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
-</ul>						
+</ul>
+
+<h1>Difference between JavaScript and Java</h1>
+
+<ul>
+	<li>When declaring a variable, prefix the variable name with var.</li>
+	<li>Numbers of primitive data types are floating-point.</li>
+	<li>How to create an array</li>
+	<li>for in statement</li>
+	<li>JavaScript can pass a function to another function as an argument. (Since Java 8, Java can also give a lambda expression as an argument)</li>
+</ul>
+
+<p>
+We have already confirmed 1 and 2.
+</p>
+
+<h3>How to create an array</h3>
+
+<h4>[]</h4>
+
+<p>
+Arrays created using [] provide indexes.
+</p>
+
+<pre class="prettyprint script-result-display">
+var arr = [1, 2, 3, 4, 5];
+var sum = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+  sum = sum + arr[i];
+}
+alert('SUM:' + sum);
+</pre>
+
+<h4>Array object</h4>
+
+<p>
+Arrays created using Array object provide indexes.
+</p>
+
+<pre class="prettyprint script-result-display">
+var arr = new Array(1, 2, 3, 4, 5);
+var sum = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+  sum = sum + arr[i];
+}
+alert('SUM:' + sum);
+</pre>
+
+<h4>Associative array</h4>
+
+<p>
+Associative arrays have the form {key:value} and do not provide indexes. Java has no Associative arrays.
+</p>
+
+<pre class="prettyprint script-result-display">
+var person = {"name":"El Draque", "job":"pirate"};
+alert(person.name);
+alert(person["name"]);
+alert(person.job);
+alert(person["job"]);
+</pre>
+
+<h3>for in statement</h3>
+
+<p>
+You can access all elements of associative arrays with the for-in statement.
+</p>
+
+<pre class="prettyprint script-result-display">
+var person = {"name":"Barbadosed", "job":"pirate"};
+var result = "";
+for(var property in person) {
+  result += person[property];
+}
+alert(result);
+</pre>
+
+<h3>JavaScript can pass functions an arguments to other functions</h3>
+
+<pre class="prettyprint script-result-display">
+function x(a, y) {
+  var ret = y(a);
+  alert(ret);
+}
+function z(a) {
+  return a * a
+}
+x(2, z);
+</pre>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/javascript/datatype"/>">Data Type</a></li>
+		<li>Prev : <a href="<c:url value="/spring/bean-validation"/>">Bean Validation</a></li>
+	</ul>
+</div>
+						
 </article>

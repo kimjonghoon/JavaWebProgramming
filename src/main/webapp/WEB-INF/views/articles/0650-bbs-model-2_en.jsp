@@ -3141,4 +3141,12 @@ If a view has business logic, it's not good code.
 <p>
 Final Source: <a href="https://github.com/kimjonghoon/model2">https://github.com/kimjonghoon/model2</a>
 </p>
+
+<div id="next-prev">
+	<ul>
+		<li>Next : <a href="<c:url value="/spring/building-java-projects"/>">Building Java Projects</a></li>
+		<li>Prev : <a href="<c:url value="/jsp/implementation"/>">Implementation</a></li>
+	</ul>
+</div>
+
 </article>

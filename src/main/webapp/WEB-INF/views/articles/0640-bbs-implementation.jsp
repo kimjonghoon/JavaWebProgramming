@@ -1554,4 +1554,12 @@ searchWord = java.net.URLEncoder.encode(searchWord, "UTF-8");
 response.sendRedirect("list.jsp?boardCd=" + boardCd + "&amp;curPage=" + curPage + "&amp;searchWord=" + searchWord);</strong>
 %&gt;
 </pre>
+
+<div id="next-prev">
+	<ul>
+		<li>다음 : <a href="<c:url value="/jsp/migrate-to-model-2"/>">모델 2로 변경</a></li>
+		<li>이전 : <a href="<c:url value="/jsp/javabeans"/>">자바빈즈</a></li>
+	</ul>
+</div>
+
 </article>
