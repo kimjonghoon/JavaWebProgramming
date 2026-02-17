@@ -1155,7 +1155,7 @@ WHERE R BETWEEN 1 and 10;
 페이지 이동 링크 수를 제한하기 위해서는 페이지를 그룹화한다.<sup><a href="comments">1</a></sup><br />
 그룹당 페이지 수를 5로 정했다면, 다시 말해 페이지 이동 링크 수를 5개 보이도록 제한한다면 [1] [2] [3] [4] [5] 링크는 1 그룹에 속하고, [6] [7] [8] [9] [10]는 2 그룹에 속한다.<br />
 
-<img src="https://lh3.googleusercontent.com/FXPWNbRTNCFAKKQvdhx_gHfXYnnhydUo9n3aZIGfn4J2a2R9ZZ3pkeZk-cT0ltIy9hfuD1jvs2Lms34pDMWrbFVAKVR1JQPBkeQ2uh1JmCFae7KzI6uLFJrjXCHKviRF8HRMWkvWsR-ky5ZGQVcmy1ej1tTN0lMws9PMSe_ReQSIMPGI2_a7Z_1lS5mAG47r08PYXQ8Bv05ay78TEqsGm2j6IWdOb08IpSw9PkZx6rTMxNlDyNFR3-FgtHlYj_QiIJkxeTxPJyT6sJxyVkSPbPKTiFwYIhPjNxMTbXVzqBoYcjeN0DS0oUxhPDFv3kNBicd-Zhb6RQiygpypvD3YUqWL4vJGoG5wF42nOqGMkWmHYdJFmy-RVBxcppVcU6Tbyynih9-xEuQVgI2AqtIb0iMO_Sq_PhRyvuyPeZB4qeh2HlEDurKcTuFZRyTaqHiuHPxb_swEbOvJeEa33fSPloOB1Lf95M_M_4YnQGArWLmqaaUsqPu6eEi1ITZCAoRVmpDkCy172-Bzs156ZlYABV8GZAzVfI81B7ZYGjBnCMo8ivJQ3B-fojVT0yHlxR4HFBQQO9n9e_giBZCRlLzcMIpEfOEwWoWuRcykxq8_3vCGGLYg87B9n-Lm=w366-h405-no" alt="페이지 링크 그룹화" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-1.png"/>" alt="페이지 링크 그룹화" style="width: 450px;" />
 
 페이지 그룹 단위를 pagePerBlock라고 하고 curPage 페이지가 속한 페이지 그룹 번호를 block이라는 변수에 저장한다면, block은 다음 코드로 구할 수 있다.
 </p>
@@ -1363,7 +1363,7 @@ for (int i = firstPage; i &lt;= lastPage; i++) {
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/O4BfadiwdvkIXhDzcE07Yh0tKmI_QbdrBcUfTKkPVpsAVbpQbny6RZ1r8sgKM2ufSYmoEBc0KRVMADG3LWwt0Nzvgz0MijqDubzKALm8L9yWdIEq93r3LChAhe7IcaL0sih-LVfOhP59uTRHqNptAHw-DUcBrv3H9qFEV12i1puPRYd3tRTcRX85vcIeZUAG-9POt8WbsdeddaPFE8hbZ2MeuMvBURnf0zToM0xNl6qJcNlKDNekhKEg3nxzeuW5ss9-xS350iI79IFGkMwmmETEsoD9j8Tuk0hipznUDnh48qFiYBj7ZynewNBdH81UtLvDIXMza60l_TYjTcmSzFg5e2gatO-g3Hv4vpw1IJkKAfsEY_3Oh7FJkmlaNWrRrejgqoJFRFH-gEp-5r9noDuEgodeVf8l76A_i3ClXoZMaUUeA5D-aM6K0qnginP_yhH94mFqg0xnxOMN7esZNBWyLCLE9DgSYGaQAOEAM4hs36j_-Z7unjlmJtN64fw442nDVf0FFw8hc-fXg6xpZtWi398pLpopmwyMdGU7X9CUiytL8_FKgpTrjojRzypsuK4jSsb7NZolwVN7F_cXrVJ4uErAkVr-WtiJJVNjV9_QNlOGG_nVUrft=w363-h393-no" alt="페이지 링크 그룹화" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-2.png"/>" alt="페이지 링크 그룹화" style="width: 450px;" />
 
 현재 페이지가 속한 페이지 그룹(block)을 구해서 해당 페이지 그룹에 속한 페이지만 보여주는 데 성공했다.<br />
 하지만 다른 페이지 그룹으로 이동할 수 있는 방법이 없다.<br />
@@ -1610,15 +1610,15 @@ if(block &lt; totalBlock) {
 <p>
 다음은 list.jsp를 수정한 후 테스트한 화면이다.<br />
 인접한 페이지 그룹으로 이동할 수 있는 [이전], [다음] 링크를 확인할 수 있다.<br />
-<img src="https://lh3.googleusercontent.com/773_oKC31BqlW57cvk-g_hhloOceaPDegrXKqOPmCgq6ZGUil1WOlbX1J0eluf6_xdv0cjy9EYOCv7dgi-PEMY370D3QU72Wg9bi8lzoLVrtheBNFj4LGXbVzyiHQvXRZvxzvDO-Mbl-IvTwcMDOau6GHZfq69Nks-UW6QbuhSuO9HoOpoC26Sif0t6U2EJ3Kf8OQO22vqza5mWvbCogaFsL-ukT0J99nudeZOSPjNL_l6F2ZXn05SxwyvUyd0zOfE9bb9tTe__D11pozYvzc9RZmRTI8P3JjYqUmZHApx8_d9VDrChHlKl2vhIZX5WlG_I74Kx4WtmRAywDe0ngn_6b98-LAez7cCxWoipUI-C9DgtH1578RnArJ9T2Pd3NmaXmD8-no20BL3Z6QqFBIV9WBEL5Gb9YwdF3Ta-JMOyqeM-GZ_tGJv3ORxn3DVaClOnEjeN_dOrGfUB0MYEXwyMH1u5xWIjuCpySJAxnrwPY9HZylg2XqUqN3HD8eG34NhyYCnHRY8yfH2EzAXaEV_1Xfk1fGCn-8pkSb93Ga4v2TIcsgyoTW4vJ5A0DfRJKI5_DiOmaKp2olyq0B-Jxkq9VebtApEmzusD8z64R2qG5oT54vPBw7zd1=w364-h400-no" alt="페이지 그룹화" style="display: block;" />
-<img src="https://lh3.googleusercontent.com/-n5HJ5Sg5j-OgZpVxOjF2DO0Vn3Skc3Q3OFuP6CBTR7DeSESgZykT65cJCc6ASbvW0ts92o6r0Db9R98bNPodzmQatYQMJ2okhHJAzTDwXqjt2_TM27mMyuj0Q-3JabIlJZcNgDvXNyBb4-QJId1NsmyNyQShXX-bfjqfzekIo4EID1jll4yAiqTqoHc1UPwSKjKOvlO9sbpn1dmFDud3Id6vuenzjRXhim3YJrN6o5jAROxRTokK-Rx2EDe0Rt9-XiiYw6tl6U07MRoOVBFiMkPIMSNccFajvsFSVA5HBV6gT1vC2V6jALlODLq3mAUCxV1ffevHoSD2GrhNlykDa0BSsBnLeAaSplJAvjpg4rJU40OcVFE-qVpTmq2AH6BkqaFd51uokxVp9M6jVPx7Ic-FZyyoJXVIseQ5f1YXrSjFcjPx3HYFz88zm_FL6oAWNpK0buYDCzb_aKxs0AkJ0YXEOqBg8jKxpfYYFnpQfmrvOdJTaCYNChcrN8viuswvMlZN1wm457CymW2dR3THYGzzJfAVNI-86q4QdBKAFwWbQaS9ppyTqjjeQ7pnBrZUYwQ6QoerMf224bcvJOIvjzWK0LFhXlSrOVE6Tp62Ai-1sPfXXwQ_hIM=w452-h398-no" alt="페이지 그룹화" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-3.png"/>" alt="페이지 그룹화" style="width: 450px;" />
+<img src="<c:url value="/resources/images/bbs-paging-4.png"/>" alt="페이지 그룹화" style="width: 450px;" />
 </p>
 
 <p>
 이상이 없어 보이지만 여전히 버그가 있다.<br />
 총 레코드가 101개가 되도록 레코드를 추가한 후, [다음] 링크를 이용하여 마지막 블록으로 이동한다.<br />
 
-<img src="https://lh3.googleusercontent.com/EBXs_L02SWxwuhPluoaHojxlXeKbMqBbYsgz6dUbUPv0J8Z0dM2AP5AOCUFlwWOXLqs9aFX9T_xlnICB3HWlx2XYeIM0X2-cGBSaWcmVlrtwF_YQ4kOiBTTeJmsm9sEcX6REF_AyxJ10ttiQfa_dHJddZFfpD37Sjf4sOrzX5IpHRZAdwp_lnBzm9QUok5U1ChJb8kJ-GojhBEBKlcHNqgcn_0UK0jLnn8KU3BX0FUAauFrBwxCzi7_66IDD8-bHc0D2AD4q_JMiU3FOrYWJIUMEvrltI4SrpfkZISHUEzziS6JzN9iEE6XPuLSjikSR_TSoIrCXVN0QiFvsz16RB2zd5IO7iWrjOitsYslgFYkdo_6zUQQ-pi9PA1tOJF0AeOc5zh2bQDwIEzDNKkolLMc-R0lT3KEMhbnM-z-EUjYbwQlNSixiUYFgIN4USBA4bKxYIz4fpDUF9XN88UsVc4U4bhzN7quTWkCznncYskBTexTag-ZuC3FWLwCPd5SX6glY2wJhv09X5eBtXpgaAFqTnk2Iu9y8aCqW_p5iAEFRrtsny-s4oTisyA5_l3LKo8ht-g5oAU1XkxIwYRBVFS_DDbVxAuxceMCoLKYyrrzvIexhwpo_Q6eN=w452-h174-no" alt="페이지 그룹화" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-5.png"/>" alt="페이지 그룹화" style="width: 450px;" />
 
 마지막 블록에 불필요한 페이지 링크([12] [13] [14] [15])가 생성되었다.<br />
 레코드가 101개일 때 numPerPage가 10이면 totalPage는 11이다.<br />

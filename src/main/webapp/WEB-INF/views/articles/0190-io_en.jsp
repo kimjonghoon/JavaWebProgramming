@@ -159,9 +159,6 @@ The methods of FileInputStream and FileOutputStream used in the example are thos
 <h2>Character Stream</h2>
 
 <p>
-<!-- 
-<img src="https://lh4.googleusercontent.com/-6xNIYh4BAfo/UrREJcHeK7I/AAAAAAAABhs/2U_pBrm-C-Q/w590-h555-no/CharacterStream.jpg" alt="Character Stream" />
--->
 Reader and Writer are the character input and output classes' top-level classes. Reader and Writer are all abstract classes, and the unit of input and output data in the method is a character.
 </p>
 

@@ -47,7 +47,7 @@ public class Account {
 예제를 실행하기전에 아래 그림과 같은 디렉토리 구조를 갖도록 하고 Account.java소스 파일도 
 아래처럼 C:/javaApp/bank/src/javabank 디렉토리에 생성한다.<br />
 
-<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="패키지 예제 디렉토리 구조" style="display: block;" />
+<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="패키지 예제 디렉토리 구조" style="width:240px;display: block;" />
 
 bin디렉토리는 바이트 코드가 위치할 디렉토리이다.
 src디렉토리는 자바 소스 파일이 위치할 디렉토리인데 만약 클래스에 패키지가 선언되어 있다면 src에 패키지명으로 
@@ -62,7 +62,7 @@ src디렉토리는 자바 소스 파일이 위치할 디렉토리인데 만약 �
 패키지가 적용된 자바 소스 파일을 파일 시스템에서 제대로 관리하려면 어떻게 해야 할까?<br />
 만일 Log라는 클래스에 net.java_school.commons 이라는 패키지가 적용됬다면 src디렉토리 
 아래 .(도트)마다 서브 디렉토리를 만들고 마지막 서브 디렉토리 commons에 Log.java 소스를 위치시키면 된다.<br />
-<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="javaApp-Log.java" style="display: block;" />
+<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="javaApp-Log.java" style="width: 291px;display: block;" />
 </dd>
 </dl>
 
@@ -94,7 +94,7 @@ Account.class 파일은 javabank 서브 디렉토리에 있다.<br />
 Accont.java를 컴파일할 때 -d 옵션으로 C:/javaApp/bank/bin 디렉토리를 지정하게 되면
 C:\javaApp\bank\bin 디렉토리에는 패키지로 설정한 이름과 같은 서브 디렉토리(javabank)가 생기고 
 그 안에 바이트 코드(Account.class)가 생성된다.<br />
-<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" style="display: block;" />
+<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" style="width: 291px;display: block;" />
 </p>
 
 
@@ -151,7 +151,7 @@ C:\Program Files&gt;java -classpath ../javaApp/bank/bin javabank.Account
 제대로 사용되고 있는지 모두 검사하기 때문이다.<br />
 위 설명에 대한 예를 만들어 보자.<br />
 새로운 클래스는 아래와 같은 디렉토리 구조를 가지도록 하겠다.<br />
-<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="display: block;" />
+<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="width: 320px;display: block;" />
 </p>
 
 
@@ -320,7 +320,7 @@ public class BankSystem {
 아래 그림은 javabank 패키지에 있는 클래스가 모두 클래스 선언에 public으로 접근자가 지정되어 있는 경우다.
 (그림에서 +는 public을 의미한다.)
 
-<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="PUBLIC 접근자 그림" style="display: block;" />
+<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="PUBLIC 접근자 그림"/>
 
 (Bank, Customer는 아직 없지만 Account와 같이 javabank란 이름의 패키지로 만들었다고 가정하자.)
 Bank, Customer, Account는 어떤 패키지에 속한 클래스라도 참조할 수 있다.
@@ -346,7 +346,7 @@ public class BankSystem {
 
 <p>
 이제는 Bank, Customer, Account의 클래스 선언에 package private 접근자로 설정된 경우를 가정해 보자.
-<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private 접근자 그림" style="display: block;" />
+<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private 접근자 그림"/>
 이 경우 다른 패키지에 있는 BankSystem클래스에서는 Bank, Customer, Account를 사용할 수 없다.
 그림처럼 보이지 않는다고 생각하면 된다.
 BankSystem에서 Bank, Customer, Account클래스를 참조하려 하면 컴파일 에러가 난다.
@@ -390,7 +390,7 @@ protected는 package private 접근자보다 접근 허용범위가 더 넓다.
 일단 package private 접근자처럼 같은 패키지에서 접근할 수 있다.
 여기에 추가하여, 부모와 패키지가 다른 자식 클래스에서 부모 클래스의 protected 멤버에 접근할 수 있다.
 그림에서 #은 protected를 의미한다.
-<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected 접근자 예 그림" style="display: block;" /> 
+<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected 접근자 예 그림"/> 
 </p>
 
 <h2>캡슐화 : 객체의 자료에 접근하려면 메소드를 통해야만 접근하도록 한다.</h2>
@@ -468,7 +468,7 @@ public class User {
 C:/eclipse/eclipse.exe를 더블클릭하면 이클립스가 실행된다.
 실행되면 먼저 이클립스는 워크스페이스(workspace)를 어디로 할 지를 묻는다.
 
-<img src="<c:url value="/resources/images/workspace-launcher.png"/>" alt="workspace launcher" style="display: block;" />
+<img src="<c:url value="/resources/images/workspace-launcher.png"/>" alt="workspace launcher"/>
 
 워크스페이스(workspace)는 작업장이다.
 이클립스에서 워크스페이스는 하나 이상의 프로젝트들을 담는 그룻이다.
@@ -478,13 +478,13 @@ C:/eclipse/eclipse.exe를 더블클릭하면 이클립스가 실행된다.
 여기서는 워크스페이스를 C:/javawork 로 지정했다.
 지정을 하고 OK 버튼을 클릭하면 다음과 같은 환영메시지를 볼 수 있다.
 
-<img src="<c:url value="/resources/images/welcome.png"/>" alt="welcome" style="display: block;" />
+<img src="<c:url value="/resources/images/welcome.png"/>" alt="welcome"/>
 
 환영 페이지에서 보이는 메뉴로
 이클립스 소개, 튜토리얼, 샘플, 새로운 릴리즈에 추가된 내용을 볼 수 있다.
 환영 페이지를 닫으면 아래와 같은 워크벤치(WorkBench)가 나타난다.
 
-<img src="<c:url value="/resources/images/workbench.png"/>" alt="workbench" style="display: block;" />
+<img src="<c:url value="/resources/images/workbench.png"/>" alt="workbench"/>
 </p>
 
 <h3>이클립스 용어</h3>
@@ -560,7 +560,7 @@ Javadoc 주석를 보여준다.
 이클립스는 소스는 src, 컴파일된 바이너리 파일은 bin 디렉토리에 저장하여 관리한다.
 입력 후 Finish 클릭하면 HelloWorld 프로젝트가 생성되고 Package Explorer 에 표시된다
 
-<img src="<c:url value="/resources/images/project-wizard.png"/>" alt="project wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/project-wizard.png"/>" alt="project wizard"/>
 
 아래 툴바 메뉴에서 두번째를 클릭한다. 
 <img src="<c:url value="/resources/images/toolbar.png"/>" alt="toolbar" style="display: block;width: 73px;" />
@@ -568,7 +568,7 @@ Javadoc 주석를 보여준다.
 패키지 이름에 net.java_school.example 라고 입력하고 Finish 를 클릭한다.
 이제 Package Explorer 뷰에서 패키지가 보이게 된다.
 
-<img src="<c:url value="/resources/images/package-wizard.png"/>" alt="package wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/package-wizard.png"/>" alt="package wizard"/>
 
 마우스로 Package Explorer 에서 net.java_school.example 패키지를 선택한 상태에서 아래 툴바 메뉴 중 오른쪽 마지막 버튼을 클릭한다.
 
@@ -577,7 +577,7 @@ Javadoc 주석를 보여준다.
 클래스 이름으로 HelloWorld 라고 입력한다.
 메인 메소드가 필요하므로 public static void main(String[] args)에 체크한다.
 
-<img src="<c:url value="/resources/images/class-wizard.png"/>" alt="class wizard" style="display: block;" />
+<img src="<c:url value="/resources/images/class-wizard.png"/>" alt="class wizard"/>
 
 Finish 를 클릭한 후 에디터에서 main 메소드를 아래와 같이 구현한다.
 </p>
@@ -591,7 +591,6 @@ public class HelloWorld {
    public static void main(String[] args) {
       <strong>System.out.println("Hello World !");</strong>
    }
-
 }
 </pre>
 
@@ -602,11 +601,11 @@ public class HelloWorld {
 실행하려면 Package Explorer 에서 HelloWorld 클래스를 선택한 상태에서 오른쪽 마우스를 클릭하고
 컨텍스트 메뉴를 띄운 후 아래 그림처럼 선택한다.
 
-<img src="<c:url value="/resources/images/java-app-run.png"/>" alt="run" style="display: block;" />
+<img src="<c:url value="/resources/images/java-app-run.png"/>" alt="run"/>
 
 console 뷰가 생기면서 Hello World !가 출력된다.
 
-<img src="<c:url value="/resources/images/console-view.png"/>" alt="console view" style="display: block;" />
+<img src="<c:url value="/resources/images/console-view.png"/>" alt="console view"/>
 
 </p>
 

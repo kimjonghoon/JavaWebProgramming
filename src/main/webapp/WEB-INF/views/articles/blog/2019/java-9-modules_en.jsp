@@ -980,7 +980,7 @@ module main.app {
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/CbAUTlrRZbucK1xF4Yr9YqW6Zjx8zywXw3VoUIjJDt641lTFR4fbu42hxzj-xirWDKJhlgwVgOEgrtPsxi7rvm6BAsI4i7xiqaITXuaGkrvmEfvQyt83EwlIPapv8ZBhvldpNDG3OoaBhKe85xdK-wBmGADdUWI7WtP6YY5pI2-4pR-67ACm0KwdS9EBduJ6it1cS2t6jmFilvrH0BggBgIZylgSceyfllZEW8MbrJkxv7fO1OZZjPv2t_FDu-RBiHVdfEZS8JZLrVFqAotc49O4kuIxJ0cqEhmGuRqZNSF1GEAnTqJo8Ey2aCsweyakI2dvSN0e07sAHyl28gv0OpTLui0CundFFZo3OtPCxAsDioZalM73r0QY7jJuHU5ftZstnQt1skEQiyDoSkXSoM0Cz-41I51n60xuxMjg9sMopMk2dwS4xOA91GZUBXcEt4nxmdnsVObYi888JXGUAXooa4jXgFLaSVxcQn-X7LKuuNDwIjWwXjK_NJZC-Yzz3XTMtIbALOr4b_SOXd0WEdhPfSVd5CKli3ZNSdI2M3cYQ4RTVYBIo6zXIO-UcErOezxnIOwoOh15gRK0431ByjoS4ws43DASCwguKbR8Xs772J8S0HOsa-w0ItrplQH04pCcJ4iE86wnZO3JaPw1nYwiV6B5A5iMVQYzFIQDTqPzSSFQoX2uX2AQXNX2=w1813-h668-no" alt="java modules 1" />
+<img src="<c:url value="/resources/images/java-modules-1.png"/>" alt="java modules 1" />
 </p>
 
 <p>
@@ -1152,7 +1152,7 @@ Note that the module providing the implementation<sup>Provider</sup> does not ex
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/am5o5bfYEZLwAe7F6NkvjzL41WJ8gPs9Y3M1meeZZEmQw5bEGBqCydzb314fF-4yzh4QK0x2YZAqL7SpuWMd7QPPUVmuiv9qHoOALBWT2PWCcqzb71K2_Oyyx-bZsKBf1tfjwR-HxBz-9eITjmaaFeH56UO4SFi4pzjuFU9zYYAEaLukUiY5NGrP2r5UsywOlsH2xlpD-2qYxitH2tNzZaDhScFL3ClxpYtAhQCBuZ_a4f8in8r2PWKfHYl_ElKCJxaXDYF7NnJBjAnQs3zzWFJ1ECkn7PjM5QII2ab_8jy9CfGx_clnfu0b5r1QK9xy30UYtS0sjlYt_1uBILRF_xsD4b7tV5VxaKF50CWV-OZEo1ZIVLDfgUBNaJC1g6za8Y-Xr3nZ34Rmo-BnGwgliATTKcpeOCe5pNCaKmMQaQ7GDtG4Q9zjzxCEyxZubEXUjFQut7k2u_TfVHBCFP2nJKIydmGsHt51sG2vvaWUQrCG1KQb0tC4BltMgEs2nYVddf51OHkIXjAVVkb1Ggf7gM4HWOI89tTVmQb3yOeniAATG-YmUVGY7l-aUYHAZGw09EpHrDznO6FG5jKMLk7XWPgZgbvltwmmR5wz4cBvxUDNZednm_lU1r22m-38GQpXG7I8Lz-jlBky3j4LAjTIGWIswSpbR4B1V7TpsHlrSuZoVDnT9o3WB9QWLWQPGg=w1897-h834-no" alt="java modules 2" />
+<img src="<c:url value="/resources/images/java-modules-2.png"/>" alt="java modules 2" />
 </p>
 
 <pre class="prettyprint">package net.java_school.test;
@@ -1391,7 +1391,7 @@ module main.app {
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/iud-JqLIuK4XqwL_dZYzCHShuHGph_hhVsmc5MEg_nBYFK0bXfRSb9LfEjoIUzgyuL7-uv78vELnGqkTxG_vdbl20FUyEVolZkBYpfKl-mtOc0GwsLfAeUtkrP7JXS_r5AE8eEJOWZFoaHKFj2aJ4VkW_3Ax5YDRQ0xLxyG5ZIaFwnXwRIMuHLOff_tP5CIZFYIKSAzbMxtGGIUspR5jePuitDWxd3CV2uIlYInmJS39IUPcHYfNEBEc8OIKfHEwOj8ft7VWbeGLd8hPdVDVN3p967WOKaevoobXFiE1tXv_39IeDlwz0UncyD9OYvYr3gz1LoKKuKCn_8KxP6jU1xYJqYLw4VXSfzoI1yy7VVMDLi6e28mptddG2K2N07pSFdNYP9cP4TPD8fg98C1Q9T0zWJ-SwnhqvN_D_6pinGXkV-oB0WdBXX4d3gMPiuCzVRVwos_wkscHQsbetlh0Q7dyewT9uguz_ujq6eFqr5CdR3AZNCi2n35LcFURxTlQsQNpdfMh6CFOiEzCPMAtICV3vB_0xLCcOqWiP1Pp2uQeO5A1qRi5cKOo2vniRKquaVcIwNjPna9hTIAbebmiU3JzzpdM0DC3uNjCuBpIaO59huuynbNXLGkqxTsgG7z32UI6wp-pSuQuM8eeOvO-emA22T0m7LREpj3Ex7a1VNByQrZXMI4ue067kHRqCw=w1620-h911-no" alt="java modules 3" />
+<img src="<c:url value="/resources/images/java-modules-3.png"/>" alt="java modules 3" />
 </p>
 
 <p>

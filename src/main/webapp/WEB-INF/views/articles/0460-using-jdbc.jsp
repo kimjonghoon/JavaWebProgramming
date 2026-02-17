@@ -18,7 +18,7 @@
 많은 컴파일 에러를 발생한다.<br />
 에러 원인은 ROOT 애플리케이션의 빌드 패스에 서블릿 API를 추가하지 않았기 때문이다.<br />
 아래 화면처럼 Libraries 탭을 선택하고, Add External JARs..버튼을 클릭하여 CATALINA_HOME/lib에서 서블릿 API를 찾아 추가한다.<br />
-<img src="https://lh3.googleusercontent.com/P9Bme_jBrFYL8k3VN-Kzx38shbriZdHuHxC6cevfcChQbNsumwi4izmhZnpwy_SRyKYMc8OzgwjlAqCVPtqZ7xzZ9NDNZwTWVsu5AxRz16eWOdKyfbTV8MFUIf8-5_MDbjyO1-mxgUz9wc6gdrqKsBGXi26NijhHKU16V6MB-pu8eraPbXbMe8MQCZmJzEyWKixj00cMaQYxyy3mygyB2dj76LiYIKibFkDwcJY3NFx7q5W7hDxCHpKexgGd_FMwh8SSMjLrSUyC4TejCqZjiiUiBHsO_lbcscidIyYMs9st972RA7osjY9RZ0Y_VY8ZK8ZDvo5DiKOOMWTSE24h_JPGtT6fbyYGYDsUVf5MH3Z7LkVir2quhmNt0YrhZv_UF9sJEBfTpvHoTiSSZyrUA5EQ-zT1947ObJ1Y_qH44Q0DGxaetNZilNgXd1McFF5PjN2slR5O2-jRGCgU1stPGkdOG23q5K5FcI4EJwZGRKVTC8Pm9t7LcddMfnkGThI_n96tUUsWYRXZ7a0TW-o9g0xGG9yMRFbY-Z-dt-Sz9qvWs-F1mtwD-6JyPaTg8e1AW-z4xTOwxYc53B3luxhS2uQnc0g5_vyx_CHCu1RicR-Mz3T5KkbulJSg=w801-h470-no" alt="서블릿 API를 ROOT애플리케이션의 빌드패스에 추가" style="display: block;width: 100%;"/>
+<img src="<c:url value="/resources/images/java-build-path-servlet-api.png"/>" alt="서블릿 API를 ROOT애플리케이션의 빌드패스에 추가" style="display: block;width: 100%;"/>
 </p>
 
 <h2>첫 번째 JSP</h2>

@@ -43,7 +43,7 @@ Add <strong>SessionLocaleResolver</strong> and <strong>LocalChangeInterceptor</s
 
 <pre class="prettyprint">
 &lt;bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"&gt;
-    &lt;property name="defaultLocale" value="en" /&gt;
+  &lt;property name="defaultLocale" value="en" /&gt;
 &lt;/bean&gt;
 &lt;mvc:interceptors&gt;
   &lt;bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"&gt;

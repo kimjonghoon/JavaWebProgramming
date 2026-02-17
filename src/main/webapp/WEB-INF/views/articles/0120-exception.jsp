@@ -246,7 +246,7 @@ JVM은 아래처럼 예외가 발생한 스택을 위에서부터 차례로 출�
 
 <p>
 다음 그림에서 메소드 실행 순서에 따라 스택에 쌓이는 메모리 공간과 JVM이 예외의 원인을 추적하여 출력하는 메시지를 비교하라.<br />
-<img src="https://lh3.googleusercontent.com/Zkfzaq1ePEAuyq17cz0KZV71KvUbfgR2YZWdWseLdmihP9D9fRfAujOLkJ0HVIaoysl3H1p0PnKxF2arL_eb3iupvpcMSPJAZnr4z9EeQWAQihUMZ9Ptq3_onymFOiKTdAuRjeTltLzDkNp3L7YpJUepp-fnW4A_yYXykB7o0O8Xha-_L-9ZLD6H1VzcUOaT3W0ZUl6gNir4XlnuUGkWcJ6Rd6myU4CIS645w7mudZKLd5096RXsyzgwFzoXjc-Vi-5HZ0nrF3v33kLG9PmY54ikwTCOay0qd0psl5VwW9hj2AnXPb5BDbNLjhdznevGSwSlFy1Tye-NGrmhsSjGdM8tsx9EybLR7-EENKeRDnS35afy-4LBT_tMG7JSURasgJvrCm2T4JQSQyHxDmw6aIM-xBpUvqifuVYr40ICr7fVLlTPAdJ0TA77kkCy6I3356PI4zD_-enTGhSitObl1rUj7-gL0Jy0l3WPKuKUrU1c_Du86kOsaZRSQztnFSeVKHdKlyefM8Fh-oRqYjuNiMM7J3ghs-DnFvOopjWV65LtrsSpV88FMdIDBeK9yOKJ5-rLr74UYzhqK7L--ufAhEtU7bZpYjnWuQhYeVNnuZkuf-050G-xRp8jr07BlZg7eCLpaQYQGpTUUqM7QbmQc6dJgYQ8Te7ntmDgvzenJGhF68nVSORBBpERpnPo=w1053-h683-no?authuser=0" alt="source stack printStackTrace" /><br />
+<img src="<c:url value="/resources/images/exception-stack-printstacktrace.png"/>" alt="source stack printStackTrace" /><br />
 </p>
 
 <p>

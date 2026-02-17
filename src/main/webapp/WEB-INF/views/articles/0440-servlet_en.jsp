@@ -27,7 +27,7 @@ The basic structure of Servlet consists of:
 
 <P>
 As shown in the figure below, GenericServlet implements the jakarta.servlet.ServletConfig interface.<br />
-<img src="https://lh3.googleusercontent.com/9IeGxc54vtjXg7SZtRqTESFpYFI6hbHBfx3-qaC9_yYdi7nNWGFLTeU8-bsaMmxAMNxmFjYft3QoJ_kAIkAH_vJej5nvX3IFQImNYjkBWmo8UEgo8VXNEKHN2qSJJ8udkzP8DeH1oYG4-Cc9r1UE8XcavlPJOmB4eQcrTipIZNFqeSYwyWCI6oGhum_NW2sR2TvzQYVzS8NEQi8I8J42esbVLBQnOCjegriVNy3AJqmwlvIkXqG9IXRA1zsAcQnUDpjs7x6ThOPvr00-mSp11qHNZ5aQLGhBf4nbaM6I9fALeMf984mcpHSMVwhx6aS5DZiwLooxcyRxmYPvTEG1FzBepUuBm8O5XNNBe_p_50ZdwUcSFW0qBdfTCvNdAnhfSf5DA0VIehZsv-0uHt-QqeDk1wNvGI8g-NB66O4iz5Ywm1M1BZ7qaGNUonHZBVaaeMWfHVQB94wj6NxOhJCGmXuBfn99WEe82GBF4zn9bjOaedAAR2-Pz2lw3J0BZbEzix6VIKyHzzD1Egq1I_6uW1mkb40Aiqa-xX4cudg6rfXTeW007lcK7TD1TqKaxDrQMfjxzV-0f4Fscsb7aznqLYP21cFlk0IEbQklRwfjMVnS_S1q8llGoA1h=w495-h921-no" alt="Servlets Framework" /><br />
+<img src="<c:url value="/resources/images/servlets-framework.png"/>" alt="Servlets Framework" />
 The figure does not show all properties and methods of GenericServlet and HttpServlet.
 </p>
 

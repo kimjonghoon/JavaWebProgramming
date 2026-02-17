@@ -49,7 +49,7 @@ float이 적용된 엘리먼트 다음의 정상적인 엘리먼트는 float이 
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-GBiNZVxG4K0/VYIyh1EqcJI/AAAAAAAACXc/uGg9ENEr320/s789/A-float%25253Aleft-B.png" alt="A float:left" />
+<img src="<c:url value="/resources/images/a-float-left-b.png"/>" alt="A float:left" />
 </p>
 
 <h3>clear 프로퍼티</h3>
@@ -82,7 +82,7 @@ A에 float: left, B에 float: right 프로퍼티 적용한다.
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-JwgR1omC9cM/VYIykC0huYI/AAAAAAAACYQ/4FgkuPnTW00/s789/a-float-left-b-float-right.png" alt="A float:left,B float:right" />
+<img src="<c:url value="/resources/images/a-float-left-b-float-right.png"/>" alt="A float:left,B float:right" />
 </p>
 
 <p>
@@ -109,7 +109,7 @@ C에 clear: left; 를 추가한다.
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-El9vX54a-po/VYIyjeyMSkI/AAAAAAAACX4/5wuSIN7BFRM/s789/a-float-left-b-float-right-c-clear-left.png" alt="A float:left,B float:right,C clear:left" />
+<img src="<c:url value="/resources/images/a-float-left-b-float-right-c-clear-left.png"/>" alt="A float:left,B float:right,C clear:left" />
 </p>
 
 <p>
@@ -136,7 +136,7 @@ C의 clear 프로퍼티를 clear: right; 로 수정한다.
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-3dIp3C9coOM/VYIykEsPWWI/AAAAAAAACYM/ObzhAYQ7yns/s789/a-float-left-b-float-right-c-clear-right.png" alt="A float:left,B float:right,C clear:right" />
+<img src="<c:url value="/resources/images/a-float-left-b-float-right-c-clear-right.png"/>" alt="A float:left,B float:right,C clear:right" />
 </p>
 
 <p>
@@ -163,7 +163,7 @@ C의 clear 프로퍼티를 clear: both; 로 수정한다.
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/-TVJbd4acXvE/VYIyjCCYaPI/AAAAAAAACXw/n_JPIsP5oJI/s790/a-float-left-b-float-right-c-clear-both.png" alt="A float:left,B float:right,C clear:both" />
+<img src="<c:url value="/resources/images/a-float-left-b-float-right-c-clear-both.png"/>" alt="A float:left,B float:right,C clear:both" />
 </p>
 
 <h3>음수 마진</h3>
@@ -184,7 +184,7 @@ C의 clear 프로퍼티를 clear: both; 로 수정한다.
 </pre>
 
 <div style="margin: 0 auto;width: 268px;border-left: 4px red dotted;border-right: 4px red dotted;">
-<img src="https://lh3.googleusercontent.com/-cewqRIDShsE/VYIyhgdKhKI/AAAAAAAACXI/OfaLfR_ODc8/s268/A-B.png" alt="A float:left,B float:left" />
+<img src="<c:url value="/resources/images/a-b.png"/>" alt="A float:left,B float:left" />
 </div>
 
 <p>

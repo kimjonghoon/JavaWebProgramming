@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <article>
 <div class="last-modified">Last Modified 2022.1.18</div>
 
@@ -329,16 +330,16 @@ As you might expect, are you allowed to pass in Box&lt;Integer&gt; or Box&lt;Dou
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/u__lmjkU1jvaw0f6r55mnnIso_z-NCFNQeWxI_MkSurqypsyNr-IiMorp10Tww8JDJn7gxmKH1qyoCviYcZeJbKvytXi4Ia133FgITkW5hQtvEfUvWZxugPK0Jr3cAMZvmcsk9DaUjYFS7CYbMDoQg0NummdQSO5NA1SNwxH2QTPJzVkx6cQLgCpjlnsucjSnnmAJHsdMScCQ9eDe4vReAJiYXFCmZyD_A-SXiPqnpXracCDYMa6cy4z59fcOk-DZrtD-CDGWUwKuWvhVOrRks4FSzM57DBstecbAm0bHjnONIAElbT6qmMU9fNZs29bcOUw55stXRgA06jfOM0I0kAs4MbN60NQy-StsU7FDeQB4qoAkYxl9A_o5wfRaUK9SP85b-af5iYqtH8KknPFzq9DtTbR49tJpyXnUp1g4jpumELo0B7XqXzXOD6TXAtdOm44eXBzyiZaAHyoAgVM8Rrizh0Vzw6QFML-SEL_qS6pBsmZPqaffMfXUeYf73mCgAEYMQ6vEUlcW2cezbo-bNNIUkEUVfADRA9jMZBiWoDKYTIw9YpBjzGiSTcPxV7VxfUpyLdUC26ahR61tT8Xa8F84sUy9KNj1i2vJo_pv48ocFmwN8Ud-BBDM49LHyFmnlcZ5RH9i0ptu6scwRRpyMp-pg65fh5Cca8v5Oveo-KDUTP1f5XeuQgjhhIb=w553-h430-no?authuser=0" alt="Number and Integer" />
+<img src="<c:url value="/resources/images/number-integer.png"/>" alt="Number and Integer" style="width: 400px;" />
 </p>
 
-<p style="text-align: center;">
-<img src="https://lh3.googleusercontent.com/Wa6ncjpOJRoB1ESsXZys0ZF6tNilJ9EtMLVApiIqSJJ2Q0XOC4n5WmF3DotUYOLYKSyyp_KZJC6qkMwjGLZEqmnITFfcD9aV7iCiUAJ9nuIvImkv8fGb3aBL0rKt-EXDTr8f8tU04Vfao5Rg4tr_wgVnmkNxHfDu33nHUX6TcQSc9e3Yvwja5YDdigVmbgE-zh5QG8cgtfvd3liRo_DhDKiPK4BQj5HGFMlRWwYN6hcce-KZiLtAYd-4N_am7Ki6yjGU6K-W7zVyREczVydrsnGJwq2rocjBxxv323mB9qX9ixezPTN5kIViC21VybBv8pc79-6e2lQYayggrAJ_atGwqWE4L31VI3sxehFFqQg7_yLG4eHis-_VqXaApsPIq6U2ow1Dz1I9fAurW9sHtT2G-s_2R4w_qz-SwveTENzZLGtdY6xAOmfp_mBUmRM7ZEptOStMUOsDOeMR9PxRfPoqH0CGNETFdLK0S3cHZwCUGX6wSqvHDRRsFW2fj772JXyB-rf7Rs15MgWfny_NuZEW5Ne9fRjCjnIaA0zaLi2pFQlv3u-l4_RP9xVN4JA5aroS7YK4vxoLPh4VoXMjAlAUGwyYNe5GVc7nWbHhsAtC_1-X4bZjxDcbiImca7wON1rmlg2tBFSDIcMdd47LpoL14dN3eO0l0WKQqEFqQ1EiRJDhBXB7T3vcCd77=w544-h401-no?authuser=0" alt="Box&lt;Number&gt; and Box&lt;Integer&gt;" />
+<p>
+<img src="<c:url value="/resources/images/box-number-box-integer.png"/>" alt="Box&lt;Number&gt; and Box&lt;Integer&gt;" style="width: 400px;" />
 Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number.
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/Waxnpa4pYLT12p-WwEUDjHfBwosqRUKJ4nYd2bvObMRl9RI5DVvk2Gncj0iGN7eej2w0kKUB49zMTtMt_CTWbYvuc0HE6x43IHAUXJW_5JBIIeJd1241NtFljoJ6UFJKWNmEly_N-a_-GB2RRiwu05NFhQz9DUj65_IVF5ZZ_tWqfdGDeShW5JppUk-ULejZrfSpKhH61oRcRrgA41RtyHa9e2NYthtloh0V1W_lMZ5Keb3B54Wb-M9pv79677JUgLKwAsbkuyvdv2Er3_kyM52WKFD2k1VM5jKFXiNi5Nim90laXMu0jkWjzu_VFPbgRY2N7DXFEDVAlhxVTGNRPROUCf46iowSHw5OmYyPv3XEgyFa5sWdMhykZgPOLOFnS2sNofpzthuWp7G1q3OwEeXvWY9X5bbhtA28J_A97w4TX9viTkLwg7TkjT0Gq4dtwy-irOzsTKmCvlXgKlrUqQi6BdCebflkuqocI7JAsSgugGGLxdBBE9l9Qfxcue1UrD4DQo5mqn3mDXHpkMbHfP4Kua9F9-ykBwp3sQdC1STSLO4rxfl_4dNUByOuogpQAD1Ty0TAq2xm2A1sRJYCGhaecVmvRIyGYNP1SBVrySBS6fiBFGKA0eketoSHGBzKC6X4NfxqBSHGJafJ7qdM0N8dfcK1fCbtMcPyjEdkuoF_Jd9-P5Ydallyt_tb=w588-h375-no?authuser=0" alt="Object and Box&lt;Number&gt; and Box&lt;Integer&gt;" />
+<img src="<c:url value="/resources/images/object-box-number-box-integer.png"/>" alt="Object and Box&lt;Number&gt; and Box&lt;Integer&gt;" />
 </p>
 
 <p class="note">
@@ -350,7 +351,7 @@ Using the Collections classes as an example, ArrayList&lt;E&gt; implements List&
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/VcqPjlaD4NxIjMuwfh6H9aNDReokvqtSwI0JMzDNS2aZfRgGGPuqWIvpw4-NkBfh8tH8dpGh_b-WcMDKJyHXaWttnlZUzDbO6Clms31w04O6TX598TeEHofr6a6mTCoGDNQms_NzTNqboR1mfzdc4aDfvkEhjfk2eoA4HC3Hcl5RPIvBfcydZhcTnugwlIlju-8RFci1GfLSq5k2YKsyLnTZxIR4qGcg7-mNFTZ0iuAzIcmNk4MTOrsXRlXwW8QOyGRsAaW-cY0guplC3IMAnM9teDlsgQf-fjMO12b20zUd0nQ15hU6PCJEgV96-vxGZWEZEaKbvZ7gD_rckecm24SxHlJ3TkXgOoeF3tm6D-ykETwpVeQ-RbS8w-BmY8rwm92r0Wyp6ua7rd4Hv6GfxtgrRaLjDayXH8JNjcLljERx_tSkmNdPc5G45M4Nv_kDRQGYWSclJWPN9LsAJk9fRGZGN0145HKLx5hMFGMjXUNEk3ZJqzg6uW7NIgDn8perJ0uB7VUgm4NgP8qIdoFDQqgnt56tcT5gHtfgMRkx_CgOXM_ZwwtTleHG0lvKRKsVgVSnOUK9gx2Q93OrcLKMfwyKQg_VMdx0Aot7ErrnFyVE0CsuOgyqw9J0PCp8OjwtC7op0qDVVY_6C1ff9NyoY5JxUEW7g7aAbJgQ-TVJebpIfVXu0mAvjmHoXCYU=w546-h420-no?authuser=0" alt="4" />
+<img src="<c:url value="/resources/images/collection-string-list-string-arraylist-string.png"/>" alt="4" />
 </p>
 
 <h3>Type Inference</h3>
@@ -633,7 +634,7 @@ Although Integer is a subtype of Number, List&lt;Integer&gt; is not a subtype of
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/ZsYjp1PDQQ0PByc1w7T66x98C2zrMvTqi8lW6q7-8lIOwDNU5zYRmNmHfSm_P3T6SZsJ_zZwqg1vsNznRk6PsH3jBgDJX5FV8txRsBxzJ6k3D1xADButb3TgwpqrcR3X0_VDPsYgQ6fcKDr1ulEAZ2hVvXCMvKwm2_CK3X1p9upyIuzOXBSUvGX_Y6Z0QVca2sboUSjjSNs2RllVJEwaGtrFwmnNd2PmNfottAfbdGNKKxEO-9TWgLMU4qekBcxh3IX9C30srAykqcGmkA59irL0LMBaHmbjuGwfNuVd_hJ8n89Hek3oGplXl1w9dFBKnlT8zbUZl7Lxt6e07qzUju_FglqhUTOMVb8fEs9p7WHyreab9sJ2udeuxCY_P1Swhot9Ea5PmGEF4Uk9Hx_GcQZYythjHO8bBPaErtaGrNV5q-uA0xR5aMpjkjN4KubqxT0csPRxDmBO8_xxUz2d5zG4PEOnnmNwOTRZAT8IFuSco6Y0no5aiDi-oj_BgCHGQ-t_X9Uati4-lDNm9ycKuYzft65OPFET2_Oa6830UiWwaRPJY-1uix8384wtlOlhCwjkmpynVFiBUpj2sVnouldGAEeJ-N68pZnVyfupCYtMFHlCRH1-FRfGDM-NUonSoHWVPAalJJccGb3iqZWvq9opOKuqvskQrb9G_VLzs-L8LsptXciJaXcs1HJ5=w570-h191-no?authuser=0" alt="Generic listParent" />
+<img src="<c:url value="/resources/images/generics-listparent.png"/>" alt="Generic listParent" />
 </p>
 
 <h3>Type Erasure</h3>

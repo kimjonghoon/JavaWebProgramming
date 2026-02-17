@@ -8,9 +8,7 @@
 <li><a href="${blogUrl}/2022/testing-book-source-on-windows-10">윈도 10에서 책 소스 테스트</a> - 2022.3.2</li>
 <li><a href="${blogUrl}/2020/java-modules-javabank">자바은행 예제 모듈화</a> - 2020.3.14</li>
 <li><a href="${blogUrl}/2019/comment-with-restful-url">게시판 댓글을 RESTful URL로 수정</a> - 2019.11.4</li>
-<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">이클립스를 사용해 EPUB ebook 만들기</a> - 2019.10.27</li>
 <li><a href="${blogUrl}/2019/restful-url">RESTful URL</a> - 2019.10.22</li>
-<li><a href="${blogUrl}/2019/how-to-make-epub">EPUB ebook 만들기</a> - 2019.10.9</li>
 <li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a> - 2019.10.5</li>
 <li><a href="${blogUrl}/2019/java-9-modules">자바 9 모듈</a> - 2019.9.19</li>
 <li><a href="${blogUrl}/2019/how-to-install-mariadb-on-ubuntu">우분투에 MariaDB 설치</a> - 2019.7.27</li>

@@ -90,8 +90,8 @@ list.jsp에 스프링 태그 라이브러리 지시어를 추가한 후,
 src/java/resources에 내용이 없는
 messages_en.properties와 messages_ko.properties 파일을 생성한다.<br />
 아래 그림처럼 프로퍼티 파일 인코딩을 UTF-8로 변경한다.<br />
-<img src="https://lh3.googleusercontent.com/-UpI9nf8Shxc/VYu4YgZVcsI/AAAAAAAACkw/MYjLW-BHlgA/s640/properties-context-menu-Properties.png" alt="메시지 리소스 파일를 선택하고 컨텍스트 메뉴를 오픈하고 Properties 선택한다. " /><br />
-<img src="https://lh3.googleusercontent.com/-ODBHFIXeOZA/VYu4YqxT3iI/AAAAAAAACks/d_YeGThUX30/s889/properties-UTF-8.png" alt="메시지 리소스 파일의 Text file encoding을 UTF-8로 변경한다." /><br />
+<img src="<c:url value="/resources/images/properties-context-menu-properties.png"/>" alt="메시지 리소스 파일를 선택하고 컨텍스트 메뉴를 오픈하고 Properties 선택한다. " />
+<img src="<c:url value="/resources/images/properties-utf-8.png"/>" alt="메시지 리소스 파일의 Text file encoding을 UTF-8로 변경한다." /><br />
 </p>
 
 <p>
@@ -353,14 +353,9 @@ String boardName = this.getBoardName(boardCd, lang);
 <h2>빈 검증 국제화</h2>
 
 <p>
-다음은 현재 웹 사이트의 상태다.
-로케일을 변경하더라도 빈 검증 에러 메시지는 로케일에 따라 변경되지 않는다.
-<img src="https://lh3.googleusercontent.com/Su6XiYQXugfBuT8GYOq0vIujYVFRP86dh3-f_MIPQfSSgK46TVgqMGyy_Hku3HPjBkwBws3o_7c0N32koMA0_N6CC0O1--eiaknyyIro5Vvk2FJJ9XsNRbNOsYtW7z5bAbQz_qKUB-owYiqX3xY1zSC44nm0y7ePQQ6PA6b3TSuA3ipf6jfj0vAKKXx8AqL9hA-uSjh3ufjB-XZshiffMFv-0Pl_mR4Y4bjhRoWEjFpYleH2ZUd5R4KoVauUEBomvrHvCddXIWN9ZtaaWp2J1YJMPAykZUBGRVhMh10Glj-lW5fjDRcqwwJyTn7bjFsA-lQuu1C0dHkJRhcGJh6ZdkDiEpiTc7yjhxYXN5ROJ8upQRtV7oR5bWMuSOZ3P2_2AjlL65ZlK7VcY8fd64jnzsvIHKXIP2W0DKckQdiGBU5ZgJ-AeiE9KbDglduTKgX7RAGqvvNvMA1uLzaCUhTMWqUrsbX1_QSIuDUfiO65_ivmTjVViMhVY0Ao1EmXWHKxnwUisJznwOzAyXOSE8AU68pDeNqoajTRoKkFaAeVjraYDeBsusaDDWrlF9TWVmXnCqpvVZyM6CtpCcOtSQurN2izwDnikIKOmBl66swDfu3_ZLIWe-M-=w355-h308-no" alt="" style="display: block" />
-<img src="https://lh3.googleusercontent.com/j4BzxsT__MRF-HG8lkHLHEka5EniImnowRUlDzFp4zpXFB8K_7xP3B9VVeSoy_NCh5juvlKY6FWOipKprszpcwPh3POYmbTAWcb9PhaRSz2JcUsuW3Ny3vR7TvQmZUu-n10bEpdGcm-rdz8NiTEFthnLFrINBNoYYpQeQrtOVL3Cp3Y8frgF7iVxKWTEBP5c7zPoI9An3LvWjkgxZakJOfSnnF8w_sighWN1w3ohkTwg24YuBzDuWwUQlFQUQFDSmVLkqdMAgHdbKocUuZPhNteFH8EJyPt56C9ZQuDH4K8OUzO0PQWtEwDYFRKm9dhsgDw2iM4I-kQ31T7r-uc4fuI8wstNh-mbTELkfUTclnndqFf1jdGB_BkGSa6oagwIz5k1Y1za28bHQqS0hyfKtFCVryuvGRZmEPK2l0bAtCOE52ASFESsOESH1975p5WJq3KjIUqx_TcukF3M9CDg2rsmU0BcDQMy2qqSXMkhon2Z7lbio3VAVSqfakI9KvTqx7lCdxZ6Tlp67tzhicD07EVdAXUJahZeN9cq45uIa958UhCrVoaXkd4QLZ67fc5O9djsssqX7TYpNXOKwcUkgWjQ7Pz5_doY26YBhP6M0kF93Wyy7lKV=w512-h318-no" alt="" style="display: block" />
-</p>
-
-<p>
-스프링 설정 파일에 다음 설정을 추가한다.
+빈 검증 메시지에 메시지소스를 사용하려면 추가 설정이 필요하다.<br />
+스프링 설정 파일에 LocalValidatorFactoryBean 빈을 추가한다.<br />
+속성 validationMessageSource의 ref에는 메시지소스의 id 값을 부여한다.<br />
 </p>
 
 <pre class="prettyprint">
@@ -412,8 +407,10 @@ private String mobile;
 
 <p>
 서버를 재시작한 후 내 정보 수정을 다시 방문한다.<br />
-로케일을 영어권으로 선택한 후 입력란을 모두 삭제한 다음 전송 버튼을 누른다.<br />
-<img src="https://lh3.googleusercontent.com/DdTlTjTB213X_CpCWZ2zlSJb_0cXB3urkBCnPHf9MhpHV0qKCy891r_mgEZBkaL235DqDfBEjkUPc46xRNwJIKRbiwp9LVG36slSzpNUqu2SESz1lkW0q-jXSwEtqNDLNSCoXqmpkbLssK4qqO9gZlvUWPSIj65CQ4dv662h8T46XlWs6HivdZ1EWIPu9oeaqakiR6RbO6Am4-mSYSwVU7iwGyVc9YVp3a1kf3FfIKE4WnRez7erOCY7_FIyvO3GabsEXGNNxkEfeutzYHcLVUGwJ6VOylpiyVKK_TQret79qvrVITJm70WvJ4P0mQ8oSAVkHMzF2peWThUxHQeIM4yDRDl9jNF-pKdsYLBFo10p4AV2JU6l9flObcUO9O1TUQYVJ6lyEtG6wkFl37FS3106t-a_Rw4YEvTd8emp6sEoFizu14oY0CFScqi0nv3UiSlfBXXZXHpS3_m1p-EVPnbr2s7nftw6GeZWPIS-uxmeqMSYzilv1KYLEvABOXwxx3tDuLqH10j_-SHbKXx_Pv-7YJPvX15A0CzJib-262Wg_ksVNxl32jh9ga79gWXpCJvLqo9PU-FIJ2rn6KWGWD9hpAXNCgBZqyu7WRS91A=w514-h306-no" style="display: block;" />
+입력란을 모두 비운 채 전송을 누른다.<br />
+<img src="<c:url value="/resources/images/bean-validation-i18n-ko.png"/>" alt="내 정보 수정 빈 검증 에러 메시지 테스트"/>
+로케일을 영어로 변경한 후 입력란을 모두 비운 후 전송 버튼을 누른다.<br />
+<img src="<c:url value="/resources/images/bean-validation-i18n-result.png"/>" alt="로케일 영어로 내 정보 수정 빈 검증 테스트"/>
 </p>
 
 <h2>내용인 긴 본문 국제화</h2>

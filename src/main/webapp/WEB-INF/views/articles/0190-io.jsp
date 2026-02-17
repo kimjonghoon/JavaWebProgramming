@@ -207,9 +207,6 @@ new FileOutputStream("C:/javaApp/test.txt", false);에서 false는 기존 내용
 </p>
 
 <h2>문자 스트림</h2>
-<!-- 
-<img src="https://lh4.googleusercontent.com/-6xNIYh4BAfo/UrREJcHeK7I/AAAAAAAABhs/2U_pBrm-C-Q/w590-h555-no/CharacterStream.jpg" alt="문자 스트림 계층도" />
--->
 
 <p>
 Reader와 Writer는 문자 입출력 클래스의 최상위 클래스이다.

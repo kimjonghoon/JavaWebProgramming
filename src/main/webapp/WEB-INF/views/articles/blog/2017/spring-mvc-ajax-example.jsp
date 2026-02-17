@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2020.2.6</div>
 
@@ -375,9 +377,9 @@ pom.xml이 있는 디렉터리에서 <b>mvn jetty:run</b>을 실행한 후, http
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/EuWzAiyzsRYleoEKFaCa7GpddmHuHdRWcfEPFyI0T1svx0SAZ70eLfFhy5MT_dxshGnZPbwj582Kdl6f-4cV0jdeMFRRWzaRYIiihe5sLA4d1V1B9Pu38hyu88w-bsHe1_7DHScjH-ziouYLv2mTsn3-0iltsbrWqmTE2ukJhubP08ZLGxIyWleqHTIIWrY4T_h3DiAUjpZ5OdyZwiJloCuiFj42yzzNueexcotfov7P3idYe-ihse6teSn8mr1Hfd8mTigORJ6Q_0YtgQsEPGqVU96tMJRl2FmEF4yxjPDVvy2ojIZNmB_CV9MWbrVUwHF25E0Uz4McMleU3nE8QBsbJ-Uu7ArT1mdlgj54rrvvPeTlvW4xpx4HyWmmNlpAJ9XZGSXwLLrRxfKcdsNo_xwCpgoXpz_2P_ytlTjT0axd6yaa39VbIGCMoybxIDqX8U03zAJUzWtNHQGQPuSGdmjE7YiSxjZDLMucujtp_yXvm3cskmQ7s1Ur84lRjBaOnOlQteZEyx6An9y8qPJzPgiJcyB86U09rgRm4ctlvPqp2zscgBDoarIdHEhGryMleIkqmNvWcVbwABrAlUPuKFPN0LPqMwBEEhIIl64=w299-h148-no" alt="Home" /><br />
-<img src="https://lh3.googleusercontent.com/HE-Y8rFMbIWy1GiDOYCcBlv7AwFnQETc5JK5j4ek0lw2zWKtixuI2NobDa6LdZJDBJ1yM9i3d7mAXO2DEnf_-zvVMaza88U7Wrl-ikfpJDEreTKg0hcLXvS1ePfvIeRv2sNxX7ASgoFMOIsmW3bZZwv6JwryAq0sj8jgrtWdhL6Ok56CBr3YhU-P7ZWZaRnjPV3n9bs8o-SNM9GZL2po8MQoOwM8Qj-EV_6xFshKPbsweBhLgYfEyo0TKN5AtbZxJit337bZ12KFwleULYVN3ZjY5dg8F6ZZYvgZB89EdbZ2Bk3fy4g1plsZSDBaIle2MXkXu8PO7Tq0Qs_yC0CJyR6P8Ht1-3KzCap5gdksm6rzD1A6vowVTTRtnqqQeuAeOSApwqzmEEi6iNvT0RHQjPMvTTQ-fVvI39lKXN4S6sN-x-XrjExrA0b6MuKvaMTmGfOCKfdRfJTrMdn9WF4k47YKa8U-wFfE1s5cJ6K3C1JVyzYeW7LhmaZpc3lnQVuwDcPMNMG3nKZG6UcQRjlQp3Gc6EzzLu1HboWKOhtIFgb5NMIJtJHj17sFWKgQYpPKw34SfP2l8sN075zLcbv6mAW-yY3Xjb6sCUa5VH0=w330-h155-no" alt="Java Index" /><br />
-<img src="https://lh3.googleusercontent.com/wwxmRzKcrdSjnWt7XUMKCbXOvVcHnBCpQLEti9ySb9dR3vOX1IPxxuCI26SYMtFSrdHqW5jBHuN8hRPOIPfsKqIAsEa6tsNXwDm1VVZ5EE_13kRa83zTeoPTsCt7nhs5LA7HK4d3br6eIc0uKsyd4anmzZ0t38yIAEj1UUHROzZMWia23jnHABe2Eh5fF1yRZ-UxzBSFSO8scnn-7iu12hHbFK-HHot39U141uPgy9eVqyhX9jLjcrnh1FlqwQkyy13_CpaeD5HsynuN1688Km1HrC0qCrDOP7be9CwGIBLJCkFfk6zw2UgJztBZds62vYCc1PYDVKkbX36mg1hkHQeVmSBljVrdWLjk9wlf7TufeiIXgZmeU7jjTnaZE5BR73By6PQl8kmRiNTj_z0GY5F7M3s7wPBMsf1KNkndR_IqIYZwIy3n5LeXh4umuTYFSr99R86v-hql8TfJvzaq5RBTsawQ6-4dyGxbi4pPu-1pX1KWi0DZkwjjm_LFPScNnhkrNVQyTHKWEwsWV6kOs7kP7PBz-8ZQaeRzKxQaK1FUe2dH-Fy_q-I_qDZPMB6dUt1mH8q1BE_ZvYG4782wvIUIA_maoLBdgUN0tK4=w303-h158-no" alt="JDK Install" /><br />
+<img src="<c:url value="/resources/images/spring-mvc-ajax-example-1.png"/>" alt="Home" style="width: 400px;" />
+<img src="<c:url value="/resources/images/spring-mvc-ajax-example-2.png"/>" alt="Java Index" style="width: 400px;" />
+<img src="<c:url value="/resources/images/spring-mvc-ajax-example-3.png"/>" alt="JDK Install" style="width: 400px;" />
 </p>
 
 </article>

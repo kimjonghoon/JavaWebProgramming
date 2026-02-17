@@ -1110,7 +1110,7 @@ There is also a problem with the page partitioning above. If there are 10000 rec
 <p>
 Suppose you restrict the number of page links to five. Links [1] [2] [3] [4] [5] will belong to group 1, and links [6] [7] [8] [9] [10] will belong to group 2.
 
-<img src="https://lh3.googleusercontent.com/Cbp7bPD4AJmZw_mBKbRTqRIm5QxjwNkeus_Z5Y_40WERLtbMdK_C-vnUT31IMepPG2zj_geFXXxm0apwtK2KpqTjiCi_qptnLX_EkE8AWV56pfVbisRp2iMr6iPydQncSkOh4jd_m1qSDUYwq9cDDbKsKohkClP1q_dMw5_q8YPBez6SIIWnj-NScDhlmtKSD07dM4Gg7BQRS32YYW8sd-dbMC0hi9168t-dTcRDnQCs_wiGcrUjbD1sboIkZRM7okFDN_j6Bg9btSFFcwdbLrWmm5saK94pO3ZET37U86FXW9ejaDXrNHgEZ-JzHefdlrvZ_0hvQk5e6sdDg6wxYpFmfjGuRIeNfJaQWtCabuu8Cp7FS7CGPhR1zMTTyp-SrQsbQSiN_jl0KfVeJ24GITyH-xR8wtophQlc_GnxCc9TX_8q_Xui_M0ol54G8M8pxShhCBsjlmcyf_OUo16LDphoUY7GZ2GPGrFK8aMxlVBqZ0lbzOIjAXTYz6GASk6_cvep8rwE5iEvdmDJ36dCOZLsbWbKVLw0aQhG6redjNG0cCELle9sJXJhrIcSm_fQcmrxN9UHPWXH9ZB1GKy-rYcipiY1YXP92IgbsyOZtneWxqp1nqaSYFJi=w366-h357-no" alt="Divide page links into groups" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-1_en.png"/>" alt="Divide page links into groups" style="width: 450px;" />
 
 If the page group unit is called pagePerBlock and the page group to which curPage belongs is called block, the following code calculates the block's value.
 </p>
@@ -1156,7 +1156,7 @@ for (int i = firstPage; i &lt;= lastPage; i++) {
 </pre>
 
 <p>
-<img src="https://lh3.googleusercontent.com/zk88YMFPxv1fewDNDdm8aCXi5kCG3U9A_ltOAnL-HAc_zX5cO8r9RdfCb2B2_PHGxTxV09e8g7-6Z9dYi3W7aJcggr84XU_jOVz8JQmwkEvvbO-CorNMZCnxBFmzJ4PVanwDAaduRKyMIpaSbLuHCWVLyKOK58GKZMddWQpQFwu-ONRUSj-BtLBO_YlrLAsOXRrQI8uhwr07mAqRa7wOe9PQpp9uyppnoxz35DxbRC1TbH8uGJ__jQQciqWa42cH4IW1cOhJuBYGaNqGDiiCNO7e11fb-nfyw0SZNAlvDUl7NJ5fd9YwezBrKQN2gtgTolM4ez7q5qU2WpQtdjL8_MlIUI-0g675of9FbW0e3rlroBR2seAaEX2xrBqlEjHqn5FDJucQTJRrueZJ2NBgb23AlQg9TzSdMRuotG2-0Jbsg6ydBfBvdKTlTeED7wYQsEtTKoDnrH1ucPGN6nlzEVWTGM_IndnqeUlllG8lULoBa6mvHogFBBKBTRBQXldz3kMBryThmfpPa8sL5WuglVBQAnQOGNBmtqrLIsMZ5pQq1Z6HofvQHQHTvSfzuOyBQ5X-TZ9qVV8W97gbJdYl8KnxlxWDKFEtMswO5iPuBzTEtYDJbJy8e-r8=w363-h340-no" alt="Group page links" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-2_en.png"/>" alt="Group page links" style="width: 450px;" />
 </p>
 
 <p>
@@ -1204,11 +1204,11 @@ if(block &lt; totalBlock) {
 
 
 <p>
-<img src="https://lh3.googleusercontent.com/M2JdgNTMDvNzvdYnHNRUuOceaxUI85ukmUiDjEboGVRgzR8g-vNdtLLzVXeOR6Zl_krJdOv1VZfqQNBIIbfNvhU393Z768pLJkQvozE3-SlQSpXrDuY0dwkZe9hcOww1cb2TpDFOgmaVwsQiybMIt2Sk2fovc8ZP_qA6BojPtNlNQpca_f3ujhhrC8krW-GdiGCfER48_xscK0no64nEfiOF725JvnBPDUZWcEfIBI1ozkUt3iY_U4nykVqPIZyBwzMvxEnEUgbXTkbk-im12niR1XqDcbOJbofVoEP3owXtdgPdVwyJguQ9wX0HUzvnHuXhxvC55ytYMcwfv1eES-YcUsjCZzsnoNNNIJeVxhxaI7-KXO8evOB4j9-In_EpqNjDsWBzYpP_W_3DU9p2TXgUbKAi0Z5vTOg88vnObTFL4_T20ZhtBRzBM0XgNyoZDUZjYpft9smxFnttbM0GP6SvTERLTg3-hAC3h-W0BIuotWCQDocavx4sMn_HrEWvPhXBwmO0CdZzuGxGRU4KMLvKrw4HnXyDXMnxBtLasgQFb5cLvZ-D7r8_-3i6FJs8wZbuAZMdBXXJUjb_VvlndI77bCWfM4HU5p6A8MDSkBjoQI5AUc_jAEKq=w212-h296-no" alt="Group pages" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-3_en.png"/>" alt="Group pages" style="width: 300px;" />
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/OaInFDlgr7ttlx3F6cOYUq58S5DF4jyYvhHGB50HF1sKSLJC2ve0946BJ-jT6u4hC3Qf080c98ajrpDxMyhs2an5qv75iTxR7rv_S47LGuFlcMjIBWqRkKNEKo4WDNzpiBFzeQazJtMuG5ScaRt1BUYx315Gi0YLjrcrzfphvceKKrhA6LwZwbO7W4sCTWYsOVNYAJf_NL5NUM2DKshKCs8---AJ44ia_88Q7BwritlpUwNSax6Fy0VQhSBkm9idmvP2P8pQvc2iNvpMX4zB1nUGs-qwa130SnWQIQnVjaPgEPdK9IXjca-rk9ah-J015hLwcqhgyhoKUJsEl-Ab5aMMZPDvIV1569Mw7YKrfBQGfe1VFBCNbx9EirEXt39RceUwS9XVNnz-lHOMVIl_Y91AAJ19nafRoxZ3zgNqbCsR3EpN4jWheshnF4zOeaAO5-t_Owzqm74O1rB9G3cNDNe7itgDpFxnSsT8gm4c8vbu5a_CF30c47LI7JZCmbWNBDO9s5TjAe9IhY2XRyerC_GwZGxqj2cvLGJOwHDujONcj1vs0SIxt0vypka5J2JJUcLzMt6bukarQcLLGGgHFrAXyAV_HRB_HBEpsLn8jiPu4VUS_MFNZWKi=w212-h287-no" alt="Group pages" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-4_en.png"/>" alt="Group pages" style="width: 300px;" />
 </p>
 
 <p>
@@ -1216,7 +1216,7 @@ There are still bugs. After adding the records so that the total number of recor
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/7t5Cv7nxxsjbNmRAvyMphWR74Jo3bFiDLQsqr6Qb7I-VKgFCfmL-p9_mpng0gru-i9IsaYn4PxsS4I1WCS03rUXih9nA23kBTWd9sS_pKCNxB9W1Po2R5xakx3cFs_KAb33LYMD4f_FW1uG3HHxaiO0jE0tjHvvnsWj8_7S0IwfK_gzU2RKP4IUpBaPb-g6OJz4xGgNXLtCWlyEXSWdA0izg8qfu5OmUYSMH44jqMIJYCV0j0gsRbvhCqphH6vkSzMe-Q3lFYTROpq12KyPqrOYsmd-4rXqsM-jq-6onQodyBFdt_IZBUv3lw8AI39_XE6MvqlGrrBPWRmzux7jSoUulKoU6y3Z2NUzvTyl4ifdmlJT8DNG-NU4RnJ0TCEpGfZCadOA8Be6MFYheVZGl_X021Ld7KRogsE-rOrzq9wJ5Ow8hMKD-3sc0JwqFs0W22JcpRudcq9VwOkD-DRQoyaM3KTisx_gTUVBheloFdkpZFUn85U6TErIRYnSy3PYjws2CyH5CaDO4S9fuJPUERY8HQR3kanRwkT3QQOYqjqDyfB-S2r0QGmACtblUCULJDCU6c2llKlyh4HW4NW-MHLh9TYttHYkIOo_EVnq6Gj8225arir_ai91v=w452-h68-no" alt="Group pages" style="display: block;" />
+<img src="<c:url value="/resources/images/bbs-paging-5_en.png"/>" alt="Group pages" style="width: 550px;" />
 </p>
 
 <p>

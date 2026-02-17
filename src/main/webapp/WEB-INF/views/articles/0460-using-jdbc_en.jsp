@@ -18,7 +18,7 @@ In Eclipse, open the GetEmpServlet servlet, which you had previously practiced.
 You will encounter numerous compilation errors. 
 The reason for the error is that you did not add the servlet API to the ROOT application's BuildPath. 
 Select the Libraries tab as shown below and click the Add External JARs .. button to find and add the Servlet API in CATALINA_HOME/lib.
-<img src="https://lh3.googleusercontent.com/P9Bme_jBrFYL8k3VN-Kzx38shbriZdHuHxC6cevfcChQbNsumwi4izmhZnpwy_SRyKYMc8OzgwjlAqCVPtqZ7xzZ9NDNZwTWVsu5AxRz16eWOdKyfbTV8MFUIf8-5_MDbjyO1-mxgUz9wc6gdrqKsBGXi26NijhHKU16V6MB-pu8eraPbXbMe8MQCZmJzEyWKixj00cMaQYxyy3mygyB2dj76LiYIKibFkDwcJY3NFx7q5W7hDxCHpKexgGd_FMwh8SSMjLrSUyC4TejCqZjiiUiBHsO_lbcscidIyYMs9st972RA7osjY9RZ0Y_VY8ZK8ZDvo5DiKOOMWTSE24h_JPGtT6fbyYGYDsUVf5MH3Z7LkVir2quhmNt0YrhZv_UF9sJEBfTpvHoTiSSZyrUA5EQ-zT1947ObJ1Y_qH44Q0DGxaetNZilNgXd1McFF5PjN2slR5O2-jRGCgU1stPGkdOG23q5K5FcI4EJwZGRKVTC8Pm9t7LcddMfnkGThI_n96tUUsWYRXZ7a0TW-o9g0xGG9yMRFbY-Z-dt-Sz9qvWs-F1mtwD-6JyPaTg8e1AW-z4xTOwxYc53B3luxhS2uQnc0g5_vyx_CHCu1RicR-Mz3T5KkbulJSg=w801-h470-no" alt="Add Servlet API to BuildPath of ROOT application" style="display: block;width: 100%;"/>
+<img src="<c:url value="/resources/images/java-build-path-servlet-api.png"/>" alt="Add Servlet API to BuildPath of ROOT application" style="display: block;width: 100%;"/>
 </p>
 
 <h2>First JSP example</h2>

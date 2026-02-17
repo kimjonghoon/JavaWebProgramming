@@ -55,7 +55,7 @@ Create the Account.java source file in the C:\javaApp\bank\src\javabank director
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="package example directory"/>
+<img src="<c:url value="/resources/images/javabank-src-bin.png"/>" alt="package example directory" style="width: 240px;display: block;"/>
 </p>
 
 <p>
@@ -76,7 +76,7 @@ If you want, the Log class belongs to the package named net.java_school.commons,
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="Log.java"/>
+<img src="<c:url value="/resources/images/app-log-java.png"/>" alt="Log.java" style="width: 291px;display: block;"/>
 </p>
 
 <p>
@@ -112,7 +112,7 @@ Suppose you specify the C:\javaApp\bank\bin directory with the -d option when co
 </p>
 
 <p>
-<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" />
+<img alt="Account.class and Account.java" src="<c:url value="/resources/images/account-class-account-java.png"/>" style="width: 291px;display: block;"/>
 </p>
 
 <p>
@@ -219,7 +219,7 @@ C:\javaApp\commons\bin Log.java
 </pre>
 
 <p>
-<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="width: 223px;display: block;" />
+<img alt="Log.class and Log.java" src="<c:url value="/resources/images/log-class-log-java.png"/>" style="width: 320px;display: block;" />
 </p>
 
 <p>
@@ -367,7 +367,7 @@ Suppose you have created a Bank, Customer with the public access modifier in the
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="public access modifier figure " style="width: 590px;display: block;" />
+<img src="<c:url value="/resources/images/public-access-test.png"/>" alt="public access modifier figure "/>
 </p>
 
 <p>
@@ -391,7 +391,7 @@ Suppose you have changed the public to the package-private access modifier in Ba
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private diagram" style="width: 590px;display: block;" /><br />
+<img src="<c:url value="/resources/images/default-access-test.png"/>" alt="package private diagram" />
 </p>
 
 <p>
@@ -422,7 +422,7 @@ In the figure below, # means protected.
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected access modifier figure" style="width: 590px;display: block;" />
+<img src="<c:url value="/resources/images/protected-access-test.png"/>" alt="Protected access modifier figure"/>
 </p>
 
 <h4>package-private</h4>

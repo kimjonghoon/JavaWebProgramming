@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <article>
 <div class="last-modified">Last Modified 2020.7.1</div>
 
@@ -394,17 +395,17 @@ MyClass&lt;A&gt;와 MyClass&lt;B&gt;의 부모는 Object 클래스다.
 
 <p>
 Number와 Integer는 상속 관계다.<br />
-<img src="https://lh3.googleusercontent.com/u__lmjkU1jvaw0f6r55mnnIso_z-NCFNQeWxI_MkSurqypsyNr-IiMorp10Tww8JDJn7gxmKH1qyoCviYcZeJbKvytXi4Ia133FgITkW5hQtvEfUvWZxugPK0Jr3cAMZvmcsk9DaUjYFS7CYbMDoQg0NummdQSO5NA1SNwxH2QTPJzVkx6cQLgCpjlnsucjSnnmAJHsdMScCQ9eDe4vReAJiYXFCmZyD_A-SXiPqnpXracCDYMa6cy4z59fcOk-DZrtD-CDGWUwKuWvhVOrRks4FSzM57DBstecbAm0bHjnONIAElbT6qmMU9fNZs29bcOUw55stXRgA06jfOM0I0kAs4MbN60NQy-StsU7FDeQB4qoAkYxl9A_o5wfRaUK9SP85b-af5iYqtH8KknPFzq9DtTbR49tJpyXnUp1g4jpumELo0B7XqXzXOD6TXAtdOm44eXBzyiZaAHyoAgVM8Rrizh0Vzw6QFML-SEL_qS6pBsmZPqaffMfXUeYf73mCgAEYMQ6vEUlcW2cezbo-bNNIUkEUVfADRA9jMZBiWoDKYTIw9YpBjzGiSTcPxV7VxfUpyLdUC26ahR61tT8Xa8F84sUy9KNj1i2vJo_pv48ocFmwN8Ud-BBDM49LHyFmnlcZ5RH9i0ptu6scwRRpyMp-pg65fh5Cca8v5Oveo-KDUTP1f5XeuQgjhhIb=w553-h430-no?authuser=0" alt="Number Integer" />
+<img src="<c:url value="/resources/images/number-integer.png"/>" alt="Number and Integer" style="width: 400px;" />
 </p>
 
 <p>
 Number와 Integer가 상속 관계라 하더라도 Box&lt;Number&gt; 와 Box&lt;Integer&gt;는 아무런 관계가 없다.<br />
-<img src="https://lh3.googleusercontent.com/Wa6ncjpOJRoB1ESsXZys0ZF6tNilJ9EtMLVApiIqSJJ2Q0XOC4n5WmF3DotUYOLYKSyyp_KZJC6qkMwjGLZEqmnITFfcD9aV7iCiUAJ9nuIvImkv8fGb3aBL0rKt-EXDTr8f8tU04Vfao5Rg4tr_wgVnmkNxHfDu33nHUX6TcQSc9e3Yvwja5YDdigVmbgE-zh5QG8cgtfvd3liRo_DhDKiPK4BQj5HGFMlRWwYN6hcce-KZiLtAYd-4N_am7Ki6yjGU6K-W7zVyREczVydrsnGJwq2rocjBxxv323mB9qX9ixezPTN5kIViC21VybBv8pc79-6e2lQYayggrAJ_atGwqWE4L31VI3sxehFFqQg7_yLG4eHis-_VqXaApsPIq6U2ow1Dz1I9fAurW9sHtT2G-s_2R4w_qz-SwveTENzZLGtdY6xAOmfp_mBUmRM7ZEptOStMUOsDOeMR9PxRfPoqH0CGNETFdLK0S3cHZwCUGX6wSqvHDRRsFW2fj772JXyB-rf7Rs15MgWfny_NuZEW5Ne9fRjCjnIaA0zaLi2pFQlv3u-l4_RP9xVN4JA5aroS7YK4vxoLPh4VoXMjAlAUGwyYNe5GVc7nWbHhsAtC_1-X4bZjxDcbiImca7wON1rmlg2tBFSDIcMdd47LpoL14dN3eO0l0WKQqEFqQ1EiRJDhBXB7T3vcCd77=w544-h401-no?authuser=0" alt="Box&lt;Number&gt; Box&lt;Integer&gt;" />
+<img src="<c:url value="/resources/images/box-number-box-integer.png"/>" alt="Box&lt;Number&gt; and Box&lt;Integer&gt;" style="width: 400px;" />
 </p>
 
 <p>
 Box&lt;Number&gt; 와 Box&lt;Integer&gt;는 모두 Object를 상속한다.<br />
-<img src="https://lh3.googleusercontent.com/Waxnpa4pYLT12p-WwEUDjHfBwosqRUKJ4nYd2bvObMRl9RI5DVvk2Gncj0iGN7eej2w0kKUB49zMTtMt_CTWbYvuc0HE6x43IHAUXJW_5JBIIeJd1241NtFljoJ6UFJKWNmEly_N-a_-GB2RRiwu05NFhQz9DUj65_IVF5ZZ_tWqfdGDeShW5JppUk-ULejZrfSpKhH61oRcRrgA41RtyHa9e2NYthtloh0V1W_lMZ5Keb3B54Wb-M9pv79677JUgLKwAsbkuyvdv2Er3_kyM52WKFD2k1VM5jKFXiNi5Nim90laXMu0jkWjzu_VFPbgRY2N7DXFEDVAlhxVTGNRPROUCf46iowSHw5OmYyPv3XEgyFa5sWdMhykZgPOLOFnS2sNofpzthuWp7G1q3OwEeXvWY9X5bbhtA28J_A97w4TX9viTkLwg7TkjT0Gq4dtwy-irOzsTKmCvlXgKlrUqQi6BdCebflkuqocI7JAsSgugGGLxdBBE9l9Qfxcue1UrD4DQo5mqn3mDXHpkMbHfP4Kua9F9-ykBwp3sQdC1STSLO4rxfl_4dNUByOuogpQAD1Ty0TAq2xm2A1sRJYCGhaecVmvRIyGYNP1SBVrySBS6fiBFGKA0eketoSHGBzKC6X4NfxqBSHGJafJ7qdM0N8dfcK1fCbtMcPyjEdkuoF_Jd9-P5Ydallyt_tb=w588-h375-no?authuser=0" alt="Object Box&lt;Number&gt; Box&lt;Integer&gt;" />
+<img src="<c:url value="/resources/images/object-box-number-box-integer.png"/>" alt="Object and Box&lt;Number&gt; and Box&lt;Integer&gt;" />
 </p>
 
 <p>
@@ -412,7 +413,7 @@ List&lt;E&gt;는 Collection&lt;E&gt;을 상속한다.
 ArrayList&lt;E&gt;는 List&lt;E&gt;를 구현한다.
 따라서 List&lt;String&gt;은 Collection&lt;String&gt;의 서브 타입이고, ArrayList&lt;String&gt;는 List&lt;String&gt;의 서브 타입이다.
 타입 아규먼트를 변경하지 않으면, 상속 관계는 보존된다.<br />
-<img src="https://lh3.googleusercontent.com/VcqPjlaD4NxIjMuwfh6H9aNDReokvqtSwI0JMzDNS2aZfRgGGPuqWIvpw4-NkBfh8tH8dpGh_b-WcMDKJyHXaWttnlZUzDbO6Clms31w04O6TX598TeEHofr6a6mTCoGDNQms_NzTNqboR1mfzdc4aDfvkEhjfk2eoA4HC3Hcl5RPIvBfcydZhcTnugwlIlju-8RFci1GfLSq5k2YKsyLnTZxIR4qGcg7-mNFTZ0iuAzIcmNk4MTOrsXRlXwW8QOyGRsAaW-cY0guplC3IMAnM9teDlsgQf-fjMO12b20zUd0nQ15hU6PCJEgV96-vxGZWEZEaKbvZ7gD_rckecm24SxHlJ3TkXgOoeF3tm6D-ykETwpVeQ-RbS8w-BmY8rwm92r0Wyp6ua7rd4Hv6GfxtgrRaLjDayXH8JNjcLljERx_tSkmNdPc5G45M4Nv_kDRQGYWSclJWPN9LsAJk9fRGZGN0145HKLx5hMFGMjXUNEk3ZJqzg6uW7NIgDn8perJ0uB7VUgm4NgP8qIdoFDQqgnt56tcT5gHtfgMRkx_CgOXM_ZwwtTleHG0lvKRKsVgVSnOUK9gx2Q93OrcLKMfwyKQg_VMdx0Aot7ErrnFyVE0CsuOgyqw9J0PCp8OjwtC7op0qDVVY_6C1ff9NyoY5JxUEW7g7aAbJgQ-TVJebpIfVXu0mAvjmHoXCYU=w546-h420-no?authuser=0" alt="" />
+<img src="<c:url value="/resources/images/collection-string-list-string-arraylist-string.png"/>" alt="4" />
 </p>
 
 <h3>타입 추론</h3>
@@ -608,7 +609,6 @@ public class WildCardTest {
     List&lt;Integer&gt; li = Arrays.asList(1,2,3);
     System.out.println("sum = " + sumOfList(li));
   }
-
 }
 </pre>
 
@@ -665,7 +665,6 @@ public class PrintListTest {
     printList(li);//컴파일 에러
     printList(ls);//컴파일 에러
   }
-
 }
 </pre>
 
@@ -704,7 +703,6 @@ public class PrintListTest {
     printList(li);
     printList(ls);
   }
-
 }
 </pre>
 
@@ -772,7 +770,6 @@ public class Node&lt;T&gt; {
   public T getData() {
     return data;
   }
-  
 }
 </pre>
 
@@ -794,7 +791,6 @@ public class Node {
   public Object getData() {
     return data;
   }
-  
 }
 </pre>
 
@@ -816,7 +812,6 @@ public class Node&lt;T extends Comparable&lt;T&gt;&gt; {
   public T getData() {
     return data;
   }
-  
 }
 </pre>
 
@@ -838,7 +833,6 @@ public class Node {
   public Comparable getData() {
     return data;
   }
-  
 }
 </pre>
 
@@ -921,7 +915,6 @@ public class Box&lt;T&gt; {
   public T get() {
     return t;
   }
-  
 }
 </pre>
 
@@ -939,7 +932,6 @@ public class IntBox extends Box&lt;Integer&gt; {
   public Integer get() {
     return super.get();
   }
-
 }
 </pre>
 
@@ -953,7 +945,6 @@ public class BridgeTest {
     Box box = ibox;
     box.set("Hello World!");//런타임 에러
   }
-  
 }
 </pre>
 
@@ -984,7 +975,6 @@ public class Box {
   public void get(Object t) {
     return t;
   }
-
 }
 </pre>
 
@@ -1007,7 +997,6 @@ public class IntBox extends Box {
   public Integer get(Integer t) {
     return super.get();
   }
-
 }
 </pre>
 
@@ -1077,7 +1066,6 @@ public class VarargsTest {
     sum(1,2,3);
     sum(1,2,3,4);
   }
-
 }
 </pre>
 
