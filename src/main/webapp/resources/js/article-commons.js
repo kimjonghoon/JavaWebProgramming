@@ -19,4 +19,4 @@ $(document).ready(function() {
 	$('pre.prettyprint').dblclick(function() {
 		selectRange(this);
 	});
-})
+});

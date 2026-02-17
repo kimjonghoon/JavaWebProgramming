@@ -1,4 +1,3 @@
-@CHARSET "UTF-8";
 @media only screen {
 	div.explain {
 		padding: 1em;
@@ -72,6 +71,11 @@
 		padding-right: 9px;
 		font-size: 0.9em;
 		line-height: 1.6;
+	}
+	#content > article img {
+		width: 100%;
+		max-width: 760px;
+		display: block;
 	}
 	#sidebar {
 		float: left;
@@ -243,9 +247,6 @@
 		font-size: 11px;
 		color: #555;
 		text-align: right;
-	}
-	#detail {
-
 	}
 	.comments {
 		border-top: 1px solid #ebebeb;
