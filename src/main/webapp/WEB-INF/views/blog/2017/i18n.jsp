@@ -13,7 +13,7 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <!-- for pretty code begin -->
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
-<script src="<c:url vaue="/resources/js/run_prettify.js"/>"></script>
+<script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
 <!-- for pretty code end -->
 <script>
 $(document).ready(function() {
