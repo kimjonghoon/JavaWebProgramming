@@ -80,5 +80,5 @@ function chooseLang() {
 &lt;/html&gt;
 </pre>
 
-<a th:href="@{/examples/sel.html}">sel.html 예제 실행</a>
+<a href="<c:url value="/examples/sel.html"/>">sel.html 예제 실행</a>
 </article>

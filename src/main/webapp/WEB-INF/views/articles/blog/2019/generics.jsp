@@ -730,13 +730,13 @@ public static void addNumbers(List&lt;<strong>? super Integer</strong>&gt; list)
 }
 </pre>
 
-<h4>와일드카드와 서브 타입</h4>
+<h4>와일드 카드와 서브 타입</h4>
 
 <p>
 Integer가 Number의 서브 타입이라 하더라도, List&lt;Integer&gt;는 List&lt;Number&gt;의 서브 타입이 아니다.
 사실상, 두 타입은 서로 관계가 없다.
 List&lt;Number&gt;와 List&lt;Integer&gt;의 공통 부모는 List&lt;?&gt;이다.<br />
-<img src="https://lh3.googleusercontent.com/ZsYjp1PDQQ0PByc1w7T66x98C2zrMvTqi8lW6q7-8lIOwDNU5zYRmNmHfSm_P3T6SZsJ_zZwqg1vsNznRk6PsH3jBgDJX5FV8txRsBxzJ6k3D1xADButb3TgwpqrcR3X0_VDPsYgQ6fcKDr1ulEAZ2hVvXCMvKwm2_CK3X1p9upyIuzOXBSUvGX_Y6Z0QVca2sboUSjjSNs2RllVJEwaGtrFwmnNd2PmNfottAfbdGNKKxEO-9TWgLMU4qekBcxh3IX9C30srAykqcGmkA59irL0LMBaHmbjuGwfNuVd_hJ8n89Hek3oGplXl1w9dFBKnlT8zbUZl7Lxt6e07qzUju_FglqhUTOMVb8fEs9p7WHyreab9sJ2udeuxCY_P1Swhot9Ea5PmGEF4Uk9Hx_GcQZYythjHO8bBPaErtaGrNV5q-uA0xR5aMpjkjN4KubqxT0csPRxDmBO8_xxUz2d5zG4PEOnnmNwOTRZAT8IFuSco6Y0no5aiDi-oj_BgCHGQ-t_X9Uati4-lDNm9ycKuYzft65OPFET2_Oa6830UiWwaRPJY-1uix8384wtlOlhCwjkmpynVFiBUpj2sVnouldGAEeJ-N68pZnVyfupCYtMFHlCRH1-FRfGDM-NUonSoHWVPAalJJccGb3iqZWvq9opOKuqvskQrb9G_VLzs-L8LsptXciJaXcs1HJ5=w570-h191-no?authuser=0" alt="generics-listParent" /><br />
+<img src="<c:url value="/resources/images/generics-list-parent.png"/>" alt="generics-listParent" /><br />
 </p>
 
 <h3>타입 삭제</h3>

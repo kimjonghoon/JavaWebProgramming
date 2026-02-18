@@ -7,7 +7,7 @@
 <h1>Spring Transaction</h1>
 
 <p>
-This section describes how to troubleshoot the transfer example in the <a th:href="@{/spring/jdbc}">Spring JDBC</a> section.
+This section describes how to troubleshoot the transfer example in the Spring JDBC section.
 </p>
 
 <p>

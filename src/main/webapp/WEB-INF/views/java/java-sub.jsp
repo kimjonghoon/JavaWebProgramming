@@ -13,7 +13,7 @@
 	    <li><a href="<c:url value="/java/features"/>">자바의 특징</a></li>
 	    <li><a href="<c:url value="/java/object-and-class"/>">객체와 클래스</a></li>
 	
-	    <li class="sub-heading"/>"자바 기초</li>
+	    <li class="sub-heading">자바 기초</li>
 	    <li><a href="<c:url value="/java/identifiers"/>">키워드,식별자,주석</a></li>
 	    <li><a href="<c:url value="/java/datatype"/>">데이터 타입</a></li>
 	    <li><a href="<c:url value="/java/arrays"/>">배열</a></li>

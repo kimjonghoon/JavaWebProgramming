@@ -292,7 +292,7 @@ Facebook comments are an excellent example of adding content to a web page using
 </p>
 
 <p>
-<img src="https://lh3.googleusercontent.com/WZdis9p54_NdJqP8v7BtF9Vh67NGI8lc1kETZduEWogDdZLD5iSpuWnUl3ZCJMHmn0lQZEaBHhl9noyxwpPI13B4oIKS1g5EyakctRc4I5ooyhb7NI_fjvMjMKrj9OKjmhZak_W-dsp2_MwxVpJvsxmPFAILGr09duj1kDaxAnJzCPKPFBNXcyEuzHis-k4_4PfM5fTDmeqXIEJMUxEy1-b8WhdjxfsU4rDztwInQfWA1_y2-5urMUvCHTVMPItWmZHwqpy1CaJHrg3Jtq-FCDtizB1bnchwhX_hQsFxQV60CfEGVh-Fc-mJrAcYxUFrjPP2mBBE6fDikRyfBhpGvdWATuPUpi6c1RgQPV-BYmkJwXFeR6mOY0C21W26fpek8NoGUftneoShdX9Biq4E541VB1nJ6WdueSjISsQfVNyfP_RLWlrSMb-9PHq9L-GQnkbNnwjDbYruoMmMb-5FMTVmBUIXZruccbA01m-77Utw8fiIlbAJvjA_i82kAhn3mJjs59X_AUGwfHkwFPez98Z9PFRBXkPDWb0LBa9WJTGlQJ8uW7w1oVkJnLEAQ6WOz6YNyRz2Y_4ZJiZDTQKBz73yNAksAb1arYBvjm0=w636-h161-no" alt="facebook comments">
+<img src="<c:url value="/resources/images/facebook-comments-examples.png"/>" alt="facebook comments">
 </p>
 
 <span id="refer">References</span>

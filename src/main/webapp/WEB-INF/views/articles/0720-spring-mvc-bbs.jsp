@@ -7,10 +7,8 @@
 <h1>스프링 MVC 게시판</h1>
 
 <p>
-<a th:href="@{/spring/spring-mvc-with-maven}">메이븐으로 스프링 MVC 개발</a>에
-이어서, <a th:href="@{/jsp-pjt}">JSP Porject</a>의 게시판 최종 결과물인 모델 2 게시판에
-스프링 MVC를 적용하는 실습을 할 것이다. 모델 2 게시판은 다음을 실행하면 얻을 수 있다. (시스템에 git이
-설치되어 있어야 한다)
+JSP 프로젝트의 최종 결과물에 스프링 MVC를 적용하는 실습을 할 것이다.
+모델 2 게시판은 다음을 실행하면 얻을 수 있다. (시스템에 git이 설치되어 있어야 한다)
 </p>
 
 <div class="cmd-header">&nbsp;</div>

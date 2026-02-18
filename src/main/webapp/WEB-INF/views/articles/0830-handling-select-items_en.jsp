@@ -14,7 +14,6 @@ opts[46] = new Option("Option text", "Option value");
 
 <p>
 Unlike Java, JavaScript arrays automatically expand.
-See <a th:href="@{/javascript/Array}">JavaScript Array</a>.
 </p>
 
 
@@ -26,7 +25,6 @@ opts[46] = null;
 
 <p>
 Unlike Java, JavaScript arrays automatically shrink.
-See <a th:href="@{/javascript/Array}">JavaScript Array</a>.
 </p>
 
 <h3>Removing all items</h3>
@@ -88,7 +86,7 @@ Selecting the top level in the language selection initializes the second selecti
 </p>
 
 <p>
-<a th:href="@{/examples/sel.html}">Run example</a>
+<a href="<c:url value="/examples/sel.html"/>">Run example</a>
 </p>
 
 </article>

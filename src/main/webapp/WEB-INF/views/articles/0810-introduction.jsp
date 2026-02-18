@@ -290,7 +290,7 @@ body 엘리먼트의 onload 이벤트는 문서의 모든 요소가 다운로드
 
 <p>
 페이스북 댓글은 자바스크립트로 웹페이지 내용을 추가하는 좋은 예이다.<br />
-<img src="https://lh3.googleusercontent.com/WZdis9p54_NdJqP8v7BtF9Vh67NGI8lc1kETZduEWogDdZLD5iSpuWnUl3ZCJMHmn0lQZEaBHhl9noyxwpPI13B4oIKS1g5EyakctRc4I5ooyhb7NI_fjvMjMKrj9OKjmhZak_W-dsp2_MwxVpJvsxmPFAILGr09duj1kDaxAnJzCPKPFBNXcyEuzHis-k4_4PfM5fTDmeqXIEJMUxEy1-b8WhdjxfsU4rDztwInQfWA1_y2-5urMUvCHTVMPItWmZHwqpy1CaJHrg3Jtq-FCDtizB1bnchwhX_hQsFxQV60CfEGVh-Fc-mJrAcYxUFrjPP2mBBE6fDikRyfBhpGvdWATuPUpi6c1RgQPV-BYmkJwXFeR6mOY0C21W26fpek8NoGUftneoShdX9Biq4E541VB1nJ6WdueSjISsQfVNyfP_RLWlrSMb-9PHq9L-GQnkbNnwjDbYruoMmMb-5FMTVmBUIXZruccbA01m-77Utw8fiIlbAJvjA_i82kAhn3mJjs59X_AUGwfHkwFPez98Z9PFRBXkPDWb0LBa9WJTGlQJ8uW7w1oVkJnLEAQ6WOz6YNyRz2Y_4ZJiZDTQKBz73yNAksAb1arYBvjm0=w636-h161-no" alt="facebook comments">
+<img src="<c:url value="/resources/images/facebook-comments-examples.png"/>" alt="facebook comments">
 </p>
 
 <span id="refer">참고</span>

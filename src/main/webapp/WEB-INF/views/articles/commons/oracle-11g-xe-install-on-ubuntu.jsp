@@ -77,7 +77,7 @@ sudo nano /sbin/chkconfig
 다음을 복사하여 파일에 붙여넣는다.
 </p>
 
-<pre class="prettyprint" th:inline="none">
+<pre class="prettyprint">
 #!/bin/bash
 # Oracle 11gR2 XE installer chkconfig hack for Ubuntu
 file=/etc/init.d/oracle-xe

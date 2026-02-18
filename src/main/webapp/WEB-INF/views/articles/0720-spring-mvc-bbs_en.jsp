@@ -13,10 +13,6 @@ This section covers changing the Model 2 project to the Spring MVC project.
 <h2>Source</h2>
 
 <p>
-You need the final source of the <a th:href="@{/spring/spring-mvc-with-maven}">Building Spring MVC with Maven</a> section and <a th:href="@{/jsp-pjt}">JSP Porject</a> chapter.
-</p>
-
-<p>
 The source of the JSP Project is also available at the following address:
 </p>
 
@@ -27,7 +23,7 @@ git clone https://github.com/kimjonghoon/model2
 <h2>Database design</h2>
 
 <p>
-The database design remains the same as the Model 2 database design. See Database design. See <a th:href="@{/jsp-pjt/database-design}">Database design</a>.
+The database design remains the same as the Model 2 database design. See Database design. See <a href="<c:url value="/jsp/database-design"/>">Database design</a>.
 </p>
 
 <h2>Copy files</h2>

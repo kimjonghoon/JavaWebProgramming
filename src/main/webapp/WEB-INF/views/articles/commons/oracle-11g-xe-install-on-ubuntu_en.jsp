@@ -79,7 +79,7 @@ Create a /sbin/chkconfig file.
 Copy and Paste the following into the file.
 </p>
 
-<pre class="prettyprint" th:inline="none">
+<pre class="prettyprint">
 #!/bin/bash
 # Oracle 11gR2 XE installer chkconfig hack for Ubuntu
 file=/etc/init.d/oracle-xe
