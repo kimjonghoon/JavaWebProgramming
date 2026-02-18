@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-framework-bom</artifactId>
-			<version>7.0.3</version>
+			<version>7.0.4</version>
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-bom</artifactId>
-			<version>7.0.2</version>
+			<version>7.0.3</version>
 			<type>pom</type>
 			<scope>import</scope>		    
 		</dependency>
@@ -84,7 +84,7 @@
 	<dependency>
 		<groupId>com.oracle.database.jdbc</groupId>
 		<artifactId>ojdbc11</artifactId>
-		<version>23.26.0.0.0</version>
+		<version>23.26.1.0.0</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 	<dependency>
