@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2022.2.8</div>
 
@@ -14,7 +16,7 @@
 <p>
 Go to the root directory, and run the following at a command prompt:<br>
 <strong>mvn jetty:run</strong><br>
-<img alt="thymeleaf layout test screen" src="https://lh3.googleusercontent.com/eqrNfc9FBz2EEkUKUeKQk8TUeEcVVn99on-nxzjXhdwbZLf6t_psFYqnDNvGSp6GvTv1R3gAIFsvQrjTa3PmdyYgPy3ACJY3x_MEkAjbu9MrSRwTXb_FIT_vEb9pidKSAKDu9gE-nbEYJdABYUWQBLX4mdwLPFj3CEJP-iYAyt87VmMMR6PT21-cABhyG16bBP_YSVtubGabDu_jl9Afn1-dVF0yG0-PpaAGxVntyDDHXbcN5Skr9RvMqzoUASuHFxZnU4uFRBTzV6umcVe1xQIr0RlEPbzcNSTECv4w3ELXUAqVeIfOvTASqd0F_rGhYAxC_lpFrjbFb7jQ99l3TWBVL8P3XJDFxIoUijBCXbyyaleMqobLk__6JG2e6e5QdoqEeSC7WXmg0rQ5QLTd081c2yjvbF51YZVB0KYG_f6uF4tVMjmxB1pHNkgJTkkEqGqrDSDkFtLwonAEO2Cz1uYNaXFgzxgu7ROrTucMa_FXxSHQlgWe_80DrMu1I7p1BCB6hjN-6iH6pi-tu18XQPT_w6C8QYeEXAhpKwnDYkWbXfE4A19ZzucA_E-bGB1lfclD76U8OMUKhJshJ6N5Tq1Gz00cvUzTclARKjDz-g4kn4vxb_r7GmUsCE6KRC6-MJihWJG6lxv7z-EYi0aDuX2QqeTybJg=w1007-h790-no" style="width: 100%" />
+<img alt="thymeleaf layout test screen" src="<c:url value="/resources/images/thymeleaf-layout_en.png"/>"/>
 You can test only the highlighted links.
 </p>
 

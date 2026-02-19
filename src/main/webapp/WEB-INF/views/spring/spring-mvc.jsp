@@ -33,10 +33,10 @@
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../articles/0710-spring-mvc-with-maven.jsp" />
+		<jsp:include page="../articles/0710-spring-mvc.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../articles/0710-spring-mvc-with-maven_en.jsp" />
+		<jsp:include page="../articles/0710-spring-mvc_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->

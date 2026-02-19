@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <article>
 <div class="last-modified">Last Modified 2019.4.9</div>
 
@@ -13,7 +15,7 @@
 
 <p>
 루트 디렉터리에서 mvn jetty:run 실행하고, http://localhost:8080 을 방문한다.<br />
-<img alt="thymeleaf layout test screen" src="https://lh3.googleusercontent.com/ONstTt64usqYdNfmETpkKnq83OxNxaFlKRvgXYVfvpgBgbSqTJaSIdz3pXoHbUIAM6KnE9jcoP7kMgqhc2xR4_6uYSFhBlLU63Lso1T4fGMewlCSIwFJ1_cIsfIpv0HITNJobhl_4YPjcC_9y2nHTZK84P5iZcW7XBQ3f4G6aMwDtOEAsd_2tPUUgSYuGyU1bw1YLn-wrnGTeU62OFFrfIphFW5Iu18K3iWSLjXwP0x2Uq3frBxYt4SqEmE1pNwRo88tGueZcGPz8xWoCr3CBdWhosPfF6lRHxSPcTjheesuD_d0AbYg3lOiuKxq20Bt7SaIm9HCvkwIUZWRXSrrdmT2mZjxvmZndXfzAxoNklXyCnZ86B5_nDK6dYqk2ELBly7m8mFt502Vu_dQkJi5KOkDrvI_xq708V1V2MooXkVtOZRvwAjiggy-bS-CzaswZ-3S2IoiOJ7AwpovxFrs8s3dc15gzWj0BA7fX-kVL313xSPGiJBSZYwI_LM0KyTleF-hMTeH_m54rPwbeo6TXLmS_rRqn3rBDIihg8D4ko2uMzmHstux5ezGaqNwJZ5IFtVtlozmrZXCMTBUjgIRDTk3YyV-gndOl5x15Z7RX7Q8BpWdlj1EHJ7iCUeK6P0yCfat5RfxJh_CidmGmlbvF-7KFyc7nd4=w1017-h792-no" style="width: 100%" />
+<img alt="thymeleaf layout test screen" src="<c:url value="/resources/images/thymeleaf-layout.png"/>" style="width: 100%" />
 강조된 링크만 테스트할 수 있다.
 </p>
 

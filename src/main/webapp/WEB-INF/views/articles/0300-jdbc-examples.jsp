@@ -4,7 +4,9 @@
 
 <article>
 
-<h1>JDBC - Create Table</h1>
+<h1>JDBC</h1>
+
+<h2>Create Table</h2>
 
 <p>
 GetEmp.java 파일 테스트가 성공했다면 이제부터 본격적인 JDBC 프로그래밍 예제를 실습하자.<br />
@@ -238,7 +240,7 @@ DML문(INSERT, UPDATE, DELETE)을 실행할 때 사용한다.
 </dd>
 </dl>
 
-<h1>JDBC - Insert</h1>
+<h2>Insert</h2>
 
 <p class="floatstop">
 이번 장에서는 NAMECARD 테이블에 JDBC를 이용해서 데이터를 INSERT 시키는 예제를 구현한다.<br />
@@ -332,7 +334,7 @@ public class NamecardInsert {
 한번 실행하고 난 다음 데이터가 삽입되었는지 SQL*PLUS에서 확인한다.<br />
 </p>
 
-<h1>JDBC - Select</h1>
+<h2>Select</h2>
 
 <p>
 이번 장에서는 NAMECARD 테이블의 레코드를 SELECT 하는 JDBC 예제를 구현한다.<br />
@@ -446,7 +448,7 @@ getInt(1)와 같이 아규먼트로 컬럼의 인덱스를 주면 해당 컬럼�
 </dd>
 </dl>
 
-<h1>JDBC - Update</h1>
+<h2>Update</h2>
 
 <p>
 이번 강좌에서는 JDBC를 이용해서 UPDATE 문을 실행하는 예제를 구현한다.<br />

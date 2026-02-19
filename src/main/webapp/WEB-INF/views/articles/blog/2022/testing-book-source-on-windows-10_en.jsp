@@ -707,7 +707,6 @@ Start Tomcat.
 	<c:url var="jdbcUrl" value="/jdbc"/>
 	<li><a href="${jdbcUrl}/How-to-install-Oracle">Oracle Install</a></li>
 	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
-	<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
 </ul>
 
 </article>

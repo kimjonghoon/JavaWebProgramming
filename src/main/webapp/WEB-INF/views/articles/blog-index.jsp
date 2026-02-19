@@ -28,7 +28,6 @@
 <li><a href="${blogUrl}/2018/ajax-like">좋아요 메뉴를 에이잭스로 구현</a> - 2018.1.11</li>
 <li><a href="${blogUrl}/2017/ajax-fileupload">에이잭스 파일 업로드</a> - 2017.12.2</li>
 <li><a href="${blogUrl}/2017/downloadController">다운로드 컨트롤러</a> - 2017.10.31</li>
-<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a> - 2017.10.31</li>
 <li><a href="${blogUrl}/2017/spring-mvc-apache-tiles">아파치 타일즈</a> - 2017.10.28</li>
 <li><a href="${blogUrl}/2017/i18n">국제화</a> - 2017.10.27</li>
 <li><a href="${blogUrl}/2017/spring-mvc-ajax-example">스프링 MVC에서 동작하는 간단한 에이잭스 예제</a> - 2017.10.22</li>
@@ -41,7 +40,7 @@
 <li><a href="${blogUrl}/2017/thread-board">계층형 게시판</a> - 2017.9.1</li>
 <li><a href="${blogUrl}/2017/basic-board">기본 게시판</a> - 2017.8.31</li>
 <li><a href="${blogUrl}/2017/jetty-maven-plugin">제티 메이븐 플러그인</a> - 2017.8.30</li>
-<li><a href="${blogUrl}/2017/SpringBbs-with-MySql">MySQL를 사용하는 스프링 게시판 프로그램</a> - 2017.7.6</li>
+<li><a href="${blogUrl}/2017/spring-bbs-with-mysql">MySQL를 사용하는 스프링 게시판 프로그램</a> - 2017.7.6</li>
 <li><a href="${blogUrl}/2017/migrating-to-spring-security-4">스프링 시큐리티 4부터 달라진 설정</a> - 2017.7.4</li>
 <li><a href="${blogUrl}/2016/spring-security-access-denied-handling">스프링 시큐리티 - 접근 거부 핸들링</a> - 2016.10.2</li>
 <li><a href="${blogUrl}/2015/spring-security-password-encoder">스트링 시큐리티 - 비밀번호 암호화</a> - 2015.9.10</li>

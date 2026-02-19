@@ -4,7 +4,9 @@
 
 <article>
 
-<h1>JDBC - Create Table</h1>
+<h1>JDBC Examples</h1>
+
+<h2>Create Table</h2>
 
 <p>
 If you have successfully tested the GetEmp.java file, let's practice another JDBC programming example. The prepared example is the business card management program. This chapter will create a table and a sequence using JDBC.
@@ -219,7 +221,7 @@ Statement's executeUpdate() method is used to execute DDL statements such as cre
 </dd>
 </dl>
 
-<h1>JDBC - Insert</h1>
+<h2>Insert</h2>
 
 <p>
 This chapter demonstrates how to insert records into the NAMECARD table using JDBC.
@@ -306,7 +308,7 @@ public class NamecardInsert {
 Run NamecardInsert class and confirm via SQL*PLUS that the data exists.
 </p>
 
-<h1>JDBC - Select</h1>
+<h2>Select</h2>
 
 <p>
 This chapter demonstrates the JDBC example of retrieving records from the NAMECARD table.
@@ -409,7 +411,7 @@ If you pass an index of the column as an argument value like getInt(1), you will
 </dd>
 </dl>
 
-<h1>JDBC - Update</h1>
+<h2>Update</h2>
 
 <p>
 This tutorial describles how to use JDBC to execute an UPDATE statement.

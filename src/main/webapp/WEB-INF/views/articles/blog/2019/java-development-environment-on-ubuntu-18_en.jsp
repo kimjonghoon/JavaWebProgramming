@@ -483,7 +483,6 @@ Search for eclipse, run it, and pin it to the launcher.
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
 	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a></li>
 	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubutnu 18.04</a></li>
 </ul>
  

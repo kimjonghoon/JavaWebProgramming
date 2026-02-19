@@ -6,7 +6,92 @@
 
 <h1>Examples</h1>
 
-<h2>Form Validation</h2>
+<h2>1 Handling select items</h2>
+
+<h3>Adding item</h3>
+
+<pre class="prettyprint">
+opts[46] = new Option("Option text", "Option value");
+</pre>
+
+<p>
+Unlike Java, JavaScript arrays automatically expand.
+</p>
+
+
+<h3>Removing item</h3>
+
+<pre class="prettyprint">
+opts[46] = null;
+</pre>
+
+<p>
+Unlike Java, JavaScript arrays automatically shrink.
+</p>
+
+<h3>Removing all items</h3>
+
+<pre class="prettyprint">
+opts.length = 0;
+</pre>
+
+<p>
+The following is an example of dynamically creating submenus in the second selection box when selecting a main menu in the first selection box.
+</p>
+
+<h6 class="src">sel.html</h6>
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8" /&gt;
+&lt;title&gt;Handling select items&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+function chooseLang() {
+  var form = document.getElementById("testForm");
+  var lang = form.programLanguage.value;
+
+  switch (lang) {
+  case "java":
+    form.step.options[0] = new Option("Java Introduction","javaIntro");
+    form.step.options[1] = new Option("Class and Object","ClassObject");
+    form.step.options[2] = new Option("Java DataType","JavadataType");
+    break;
+  case "javascript":
+    form.step.options[0] = new Option("JavaScript Introduction","javascriptIntro");
+    form.step.options[1] = new Option("JavaScript DataType","JavascriptDataType");
+    form.step.options[2] = new Option("JavaScript Objects","JavascriptObjects");
+    break;
+  default:
+    form.step.options.length = 0;
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form id="testForm" action="sel.html"&gt;
+  &lt;select name="programLanguage" onchange="chooseLang()"&gt;
+    &lt;option value=""&gt;--Select Language&lt;/option&gt;
+    &lt;option value="java"&gt;Java&lt;/option&gt;
+    &lt;option value="javascript"&gt;JavaScript&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select name="step"&gt;
+  &lt;/select&gt;
+  &lt;input type="submit" value="Test" /&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+Selecting the top level in the language selection initializes the second selection box.
+</p>
+
+<p>
+<a href="<c:url value="/examples/sel.html"/>">Run example</a>
+</p>
+
+<h2>2 Form Validation</h2>
 
 <h3>Accessing forms with JavaScript</h3>
 
@@ -309,7 +394,7 @@ Let's separate the JavaScript code from the example.
 <a href="<c:url value="/examples/send2-2.html"/>">Run example</a>
 </p>
 
-<h2>Handling Cookies</h2>
+<h2>3 Handling Cookies</h2>
 
 <p>
 The code below gets all cookies that the current document object can access. 
@@ -473,12 +558,8 @@ if (cookies != null) {
 }
 </pre>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://stackoverflow.com/questions/2144386/javascript-delete-cookie">How to delete a cookie?</a></li>
-</ul>
 
-<h2>Decoupling HTML and JavaScript</h2>
+<h2>4 Decoupling HTML and JavaScript</h2>
 
 <p>
 Using the DOM model to specify event handlers reduces the degree of coupling between HTML and JavaScript.
@@ -515,7 +596,7 @@ This section describes how to remove the handler specified in the HTML attribute
 <h3>Attachment link and Attachment delete link</h3>
 
 <p>
-<img alt="<c:url value="/resources/images/files_en.png"/>" /><br />
+<img src="<c:url value="/resources/images/attachment.png"/>" alt="Attachment link and Attachment delete link" /><br />
 </p>
 
 <p>
@@ -583,7 +664,7 @@ function initPage() {
 <h3>Comment</h3>
 
 <p>
-<img alt="Comments" src="<c:url value="/reources/images/comments_en.png"/>" />
+<img alt="Comments" src="<c:url value="/resources/images/edit-comment_en.png"/>" />
 </p>
 
 <p>
@@ -1295,6 +1376,11 @@ $('#list-menu input').click(function() {
 <p>
 It is up to you to use pure JavaScript or jQuery.
 </p>
+
+<span id="refer">References</span>
+<ul id="references">
+  <li><a href="http://stackoverflow.com/questions/2144386/javascript-delete-cookie">How to delete a cookie?</a></li>
+</ul>
 
 <div id="next-prev">
 	<ul>

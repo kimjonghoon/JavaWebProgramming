@@ -33,10 +33,10 @@
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../articles/0240-how-to-install-oracle.jsp" />
+		<jsp:include page="../articles/0240-oracle-install.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../articles/0240-how-to-install-oracle_en.jsp" />
+		<jsp:include page="../articles/0240-oracle-install_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->

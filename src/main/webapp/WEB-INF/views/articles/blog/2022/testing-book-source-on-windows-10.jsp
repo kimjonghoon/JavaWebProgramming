@@ -710,7 +710,6 @@ pom.xml 파일에서 톰캣 설정은 주석 처리하고 제티 설정은 주�
 	<c:url var="jdbcUrl" value="/jdbc"/>
 	<li><a href="${jdbcUrl}/How-to-install-Oracle">오라클 설치</a></li>
 	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
-	<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">우분투 개발환경</a></li>
 </ul>
 
 </article>

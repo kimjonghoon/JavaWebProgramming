@@ -6,7 +6,85 @@
 
 <h1>예제</h1>
 
-<h2>유효성 검사</h2>
+<h2>1 select 엘리먼트 다루기</h2>
+
+<h3>select 엘리먼트의 항목 처리</h3>
+
+<h4>동적으로 항목 추가</h4>
+
+<pre class="prettyprint">
+opts[opts.length] = new Option("옵션 text", "옵션 value");
+</pre>
+
+<h4>동적으로 항목 제거</h4>
+
+<pre class="prettyprint">
+opts[2] = null;
+</pre>
+
+<p>
+자바와 달리 중간에 생긴 빈 공간은 없어지고 배열이 자동으로 정렬된다.
+</p>
+
+<h4>모든 항목 제거</h4>
+
+<pre class="prettyprint">
+opts.length = 0;
+</pre>
+
+<p>
+다음 예제는 '프로그래밍 언어'를 선택하면 두 번째 선택 상자에서 메뉴가 생성되는 예제이다.
+언어를 선택할 때 최상위 메뉴를 선택하면 두 번째 선택 상자가 초기화되도록 구현했다.
+</p>
+
+<h6 class="src">sel.html</h6>
+<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8" /&gt;
+&lt;title&gt;자바스크립트 select 엘리먼트 다루기&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+function chooseLang() {
+	var form = document.getElementById("testForm");
+	var lang = form.programLanguage.value;
+
+	switch (lang) {
+	case "java":
+		form.step.options[0] = new Option("자바과정에대해","javaIntro");
+		form.step.options[1] = new Option("객체와 클래스","ClassObject");
+		form.step.options[2] = new Option("데이터타입","JavadataType");
+		break;
+	case "javascript":
+		form.step.options[0] = new Option("자바스크립트란","javascriptIntro");
+		form.step.options[1] = new Option("데이터타입","JavascriptDataType");
+		form.step.options[2] = new Option("자바스크립트객체","JavascriptObjects");
+		break;
+	default:
+		form.step.options.length = 0;
+	}
+	
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form id="testForm" action="sel.html"&gt;
+	&lt;select name="programLanguage" onchange="chooseLang()"&gt;
+		&lt;option value=""&gt;--언어를 선택하세요&lt;/option&gt;
+		&lt;option value="java"&gt;자바&lt;/option&gt;
+		&lt;option value="javascript"&gt;자바스크립트&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;select name="step"&gt;
+	&lt;/select&gt;
+	&lt;input type="submit" value="테스트" /&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<a href="<c:url value="/examples/sel.html"/>">sel.html 예제 실행</a>
+
+<h2>2 유효성 검사</h2>
 
 <h3>폼에 접근</h3>
 
@@ -303,7 +381,7 @@ function check() {
 <a href="<c:url value="/examples/send2-2.html"/>">예제 실행</a><br />
 </p>
 
-<h2>쿠키 다루기</h2>
+<h2>3 쿠키 다루기</h2>
 
 <pre class="prettyprint no-border">
 var allCookies = document.cookie
@@ -478,14 +556,8 @@ if (cookies != null) {
 }
 </pre>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://en.wikipedia.org/wiki/HTTP_cookie">http://en.wikipedia.org/wiki/HTTP_cookie</a></li>
-	<li><a href="http://ezbuilder.tistory.com/34">http://ezbuilder.tistory.com/34</a></li>
-	<li><a href="http://stackoverflow.com/questions/2144386/javascript-delete-cookie">http://stackoverflow.com/questions/2144386/javascript-delete-cookie</a></li>
-</ul>
 
-<h2>HTML에서 자바스크립트 분리</h2>
+<h2>4 HTML에서 자바스크립트 분리</h2>
 
 <p>
 이벤트 핸들러를 지정하는 데는 두 가지 방식이 있다.
@@ -1284,8 +1356,9 @@ DOM 처리 자바스크립트 실습에서 title 속성을 자주 사용했는�
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://www.wikibook.co.kr/PublisherApp/homepage/detailView?isbn=9788992939331">jQuery 1.3 작고 강력한 자바스크립트 라이브러리 | 조나단 채퍼 외 | 위키북스</a></li>
-	<li><a href="http://www.hanb.co.kr/book/look.html?isbn=978-89-7914-693-6"> Head First Ajax - 레베카 리오단 지음 | 홍승표, 김은희 역 | 한빛미디어</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/HTTP_cookie">http://en.wikipedia.org/wiki/HTTP_cookie</a></li>
+	<li><a href="http://ezbuilder.tistory.com/34">http://ezbuilder.tistory.com/34</a></li>
+	<li><a href="http://stackoverflow.com/questions/2144386/javascript-delete-cookie">http://stackoverflow.com/questions/2144386/javascript-delete-cookie</a></li>
 </ul>
 
 <div id="next-prev">

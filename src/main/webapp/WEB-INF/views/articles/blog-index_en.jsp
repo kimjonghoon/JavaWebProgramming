@@ -27,7 +27,6 @@
 <li><a href="${blogUrl}/2018/ajax-like">Like using Ajax</a> - <em>2018.1.11</em></li>
 <li><a href="${blogUrl}/2017/ajax-fileupload">FileUpload using Ajax</a> - <em>2017.12.2</em></li>
 <li><a href="${blogUrl}/2017/downloadController">Download Controller</a> - <em>2017.10.31</em></li>
-<li><a href="${blogUrl}/2017/Setting-development-environment-in-Ubuntu">Development in Ubuntu</a> - <em>2017.10.31</em></li>
 <li><a href="${blogUrl}/2017/spring-mvc-apache-tiles">Apache Tiles</a> - <em>2017.10.28</em></li>
 <li><a href="${blogUrl}/2017/i18n">i18n</a> - <em>2017.10.27</em></li>
 <li><a href="${blogUrl}/2017/spring-mvc-ajax-example">Simple Ajax Example on Spring MVC</a> - <em>2017.10.22</em></li>
@@ -40,7 +39,7 @@
 <li><a href="${blogUrl}/2017/thread-board">Thread board</a> - <em>2017.9.1</em></li>
 <li><a href="${blogUrl}/2017/basic-board">Basic board</a> - <em>2017.8.31</em></li>
 <li><a href="${blogUrl}/2017/jetty-maven-plugin">Jetty Maven Plugin</a> - <em>2017.8.30</em></li>
-<li><a href="${blogUrl}/2017/SpringBbs-with-MySql">Spring board program using MySql</a> - <em>2017.7.6</em></li>
+<li><a href="${blogUrl}/2017/spring-bbs-with-mysql">Spring board program using MySql</a> - <em>2017.7.6</em></li>
 <li><a href="${blogUrl}/2017/migrating-to-spring-security-4">Migrating to Spring Security 4</a> - <em>2017.7.4</em></li>
 <li><a href="${blogUrl}/2016/spring-security-access-denied-handling">Spring Security - Access Denied Handling</a> - <em>2016.10.2</em></li>
 <li><a href="${blogUrl}/2015/spring-security-password-encoder">Spring Security - Password Encoder</a> - <em>2015.9.10</em></li>
