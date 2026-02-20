@@ -16,7 +16,7 @@
   <li><a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>에서 최신 바이너리 파일을 다운로드한다.</li>
   <li>압축을 풀고 생성된 디렉터리를 원하는 곳에 옮긴다.(예, C:\Program Files\apache-maven-3.8.7)</li>
   <li>메이븐 bin 디렉터리를 Path에 추가한다.</li>
-  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a href="<c:url value="/java/JDK-Install"/>">JDK 설치</a> 문서 참조)</li>
+  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a href="<c:url value="/"/>">JDK 설치</a> 문서 참조)</li>
 </ol>
 
 <p>
@@ -516,7 +516,7 @@ Choose org.apache.maven.archetypes:maven-archetype-quickstart version: 에서도
 <h3>테이블 생성 및 소스 코드 복사</h3>
 
 <p>
-<a href="../jdbc/JavaBank">자바은행</a> 예제 테이블을 그대로 사용한다.<br />
+<a href="../jdbc/javabank">자바은행</a> 예제 테이블을 그대로 사용한다.<br />
 만약 테이블이 없다면 scott 계정으로 접속한 다음 테이블을 생성한다.
 </p>
 
@@ -766,7 +766,7 @@ public static void main(String[] args) {
 </pre>
 
 <p>
-src/main/resources 폴더를 만들고, <a href="../java/Logging">로깅</a>의 logback.xml 파일을 복사해 resource 폴더에 붙여넣는다.<br /> 
+src/main/resources 폴더를 만들고, <a href="../java/logging">로깅</a>의 logback.xml 파일을 복사해 resource 폴더에 붙여넣는다.<br /> 
 다음 applicationContext.xml 파일도 resource 폴더에 생성한다.
 </p>
 
@@ -1647,10 +1647,10 @@ ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applica
 101계좌는 존재하나 505계좌는 존재하는 않는다고 가정한다.
 101계좌에서 505계좌로 이체 테스트를 한다.
 이체 후 101계좌는 이체 금액만큼 잔액이 줄어든다.
-(이 문제는 <a href="<c:url value="/spring/transaction"/>">트랜잭션</a>에서 다룬다)
+(이 문제는 트랜잭션에서 다룬다)
 </p>
 
-<h3>JavaConfig 설정</h3>
+<h3>Java Config</h3>
 
 <h6 class="src">BankConfig.java</h6>
 <pre class="prettyprint">

@@ -134,13 +134,6 @@ insert into hierarchy_article values (seq_hierarchy_article.nextval, '000100',''
 commit;
 </pre>
 
-<p>
-Install the Oracle JDBC Driver in the local repository.<br />
-<c:url var="springUrl" value="/spring"/>
-See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
-</p>
-
-
 <h3>Test</h3>
 
 <p>
@@ -149,8 +142,7 @@ Go to the root directory and <strong>run mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${jspUrl}/BBS-Model1">Model 1 bulletin board</a></li>
-  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${jspUrl}/model-1-bbs">Model 1 bulletin board</a></li>
 </ul>
 
 </article>

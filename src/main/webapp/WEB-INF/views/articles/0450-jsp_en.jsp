@@ -88,7 +88,7 @@ When you need to show your users the dynamically generated HTML with an intricat
 </p>
 
 <p>
-In the chapter: <a href="Creating-a-new-web-application">Creating a new web application</a>, we changed the application named myapp to the ROOT application.
+In the chapter: <a href="web-application#creating-a-new-web-application">Creating a new web application</a>, we changed the application named myapp to the ROOT application.
 (The DocuementBase for the myapp application is C:/www/myapp)
 I recommend you should practice all the examples below in the ROOT application.
 Write JSP file in C:\www\myapp or its subdirectories with a regular editor, not Eclipse.

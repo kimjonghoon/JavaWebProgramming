@@ -14,7 +14,7 @@
 <p>
 사용자 정의 커넥션 풀 대신 아파치의 DBCP를 사용하는 코드를 소개한다.
 <c:url var="jdbcUrl" value="/jdbc"/>
-DBCP에 대한 자세한 설명은 <a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>를 참조한다. 
+DBCP에 대한 자세한 설명은 <a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>를 참조한다. 
 </p>
 
 <p>
@@ -139,12 +139,6 @@ insert into hierarchy_article values (seq_hierarchy_article.nextval, '000100',''
 commit;
 </pre>
 
-<p>
-<c:url var="springUrl" value="/spring"/>
-<a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
-</p>
-
-
 <h3>테스트</h3>
 
 <p>
@@ -154,11 +148,10 @@ commit;
 <span id="refer">참고</span>
 <ul id="references">
 	<c:url var="javaUrl" value="/java"/>
-	<li><a href="${javaUrl}/Logging#logback">Logback</a>
-	<li><a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>
+	<li><a href="${javaUrl}/logging#logback">Logback</a>
+	<li><a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>
 	<c:url var="jspUrl" value="/jsp"/>
-	<li><a href="${jspUrl}/Model2">모델 2</a></li>
-	<li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
+	<li><a href="${jspUrl}/migrate-to-model-2">모델 2</a></li>
 </ul>
 
 </article>

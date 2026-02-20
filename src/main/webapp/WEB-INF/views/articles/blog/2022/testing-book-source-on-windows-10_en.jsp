@@ -698,14 +698,14 @@ Start Tomcat.
 	<c:url var="homeUrl" value="/"/>
 	<li><a href="${homeUrl}">Java Install</a></li>
 	<c:url var="springUrl" value="/spring"/>
-	<li><a href="${springUrl}/building-java-projects-with-maven">Building Java Projects with Maven</a></li>
+	<li><a href="${springUrl}/building-java-projects">Building Java Projects</a></li>
 	<c:url var="jspUrl" value="/jsp"/>
-	<li><a href="${jspUrl}/How-to-install-Tomcat">Tomcat Install</a></li>
-	<li><a href="${jspUrl}/Creating-a-new-web-application">Creating a new web application</a></li>
+	<li><a href="${jspUrl}/tomcat-install">Tomcat Install</a></li>
+	<li><a href="${jspUrl}/web-application#creating-a-new-web-application">Creating a new web application</a></li>
 	<c:url var="blogUrl" value="/blog"/>
 	<li><a href="${blogUrl}/2017/jetty-maven-plugin">Jetty Maven Plugin</a></li>
 	<c:url var="jdbcUrl" value="/jdbc"/>
-	<li><a href="${jdbcUrl}/How-to-install-Oracle">Oracle Install</a></li>
+	<li><a href="${jdbcUrl}/oracle-install">Oracle Install</a></li>
 	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">Java Development Environment on Ubuntu 18.04</a></li>
 </ul>
 

@@ -14,7 +14,7 @@
 <p>
 실습할 예제는 사용자 정의 커넥션 풀 대신 아파치의 DBCP를 사용하는, MySQL용 답변형 게시판이다.
 <c:url var="jdbcUrl" value="/jdbc"/>
-DBCP에 대한 자세한 설명은 <a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>를 참조한다.
+DBCP에 대한 자세한 설명은 <a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>를 참조한다.
 </p>
 
 <p>
@@ -153,7 +153,7 @@ commit;
 
 <p>
 <c:url var="jspUrl" value="/jsp"/>
-family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="${jspUrl}/Thread-BBS">계층형 게시판</a>을 참조한다.
+family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="${jspUrl}/thread-bbs">계층형 게시판</a>을 참조한다.
 </p>
 
 
@@ -165,11 +165,11 @@ family,parent,depth,indent 컬럼에 대한 자세한 설명은 <a href="${jspUr
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="${jspUrl}/Thread-BBS">계층형 게시판</a></li>
+	<li><a href="${jspUrl}/thread-bbs">계층형 게시판</a></li>
 	<c:url var="javaUrl" value="/java"/>
-	<li><a href="${javaUrl}/Logging#logback">Logback</a>
-	<li><a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>
-	<li><a href="${jspUrl}/Model2">모델 2</a></li>
+	<li><a href="${javaUrl}/logging#logback">Logback</a>
+	<li><a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>
+	<li><a href="${jspUrl}/model-2-bbs">모델 2</a></li>
 </ul>
 
 </article>

@@ -801,17 +801,6 @@ Add the following to #extra.
 
 <img src="<c:url value="/resources/images/layout1-5.png"/>" alt="Example Screeen 5" />
 
-<span id="refer">References</span>
-<ul id="references">
-	<li><a href="http://www.html.net/tutorials/css/">http://www.html.net/tutorials/css/</a></li>
-	<li><a href="http://www.subcide.com/articles/creating-a-css-layout-from-scratch/P1/">http://www.subcide.com/articles/creating-a-css-layout-from-scratch/P1/</a></li>
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-	<li><a href="http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/">http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></li>
-	<li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">http://www.w3.org/QA/2002/04/valid-dtd-list.html</a></li>
-	<li><a href="http://www.ibm.com/developerworks/kr/library/wa-css/">http://www.ibm.com/developerworks/kr/library/wa-css/</a></li>
-	<li><a href="http://www.maxdesign.com.au/articles/css-layouts/">http://www.maxdesign.com.au/articles/css-layouts/</a></li>
-</ul>
-
 <h2>Main menu styling</h2>
 
 <p>
@@ -1014,14 +1003,6 @@ Add a border to #main menu box like below.
 <img src="<c:url value="/resources/images/main-final.png"/>" alt="Example Screeen 8" />
 </p>
 
-<span id="refer">References</span>
-<ul id="references">
-	<li><a href="http://www.css3.info/preview/rounded-border/">http://www.css3.info/preview/rounded-border/</a></li>
-	<li><a href="http://border-radius.com/">http://border-radius.com/</a></li>
-	<li><a href="http://www.the-art-of-web.com/css/border-radius/">http://www.the-art-of-web.com/css/border-radius/</a></li>
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
-
 <h2>Sub menu styling</h2>
 
 <p>
@@ -1143,11 +1124,6 @@ The <strong>a</strong> is an inline element, but it becomes a box element and li
 <p>
 <img alt="Sub menu Final" src="<c:url value="/resources/images/sub-final_en.png"/>" />
 </p>
-
-<span id="refer">References</span>
-<ul id="references">
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h2>#header, #footer, #content styling</h2>
 
@@ -1349,11 +1325,6 @@ Change the height of #content from 100px to 300px in the /*** Just for Looks ***
 <p>
 <img alt="content 1" src="<c:url value="/resources/images/content-01.png"/>" />
 </p>
-
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h2>Board styling - List</h2>
 
@@ -1673,13 +1644,6 @@ Center the text field and button for searching.
 <p>
 <img alt="list design 11" src="<c:url value="/resources/images/bbs-list-11_en.png"/>" />
 </p>
-
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://phrogz.net/css/vertical-align/index.html">http://phrogz.net/css/vertical-align/index.html</a></li>
-  <li><a href="http://www.homejjang.com/09/border_collapse.php">http://www.homejjang.com/09/border_collapse.php</a></li>
-  <li><a href="http://www.w3schools.com/cssref/pr_tab_border-collapse.asp">http://www.w3schools.com/cssref/pr_tab_border-collapse.asp</a></li>
-</ul>
 
 <h2>Board styling - Detailed view</h2>
 
@@ -2141,11 +2105,6 @@ The following code is in two places in view.html.
 [After]<br />
 <img alt="Buttons positioning after" src="<c:url value="/resources/images/bbs-view-buttons-after_en.png"/>" style="border: 1px solid grey;" />
 </p>
-
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h2>Board styling - New Writing and Sign up form</h2>
 
@@ -4465,6 +4424,18 @@ Open the welcome.jsp file and use the Save As editor menu to create a bye_confir
 The loginCheck.jsp is a file you must include in JSPs that authenticated users can only view. In the bulletin board program, the pages corresponding to the screen are list.jsp, view.jsp, write.jsp, and modify.jsp files. I didn't include loginCheck.jsp in modify.jsp. The reason is that this file needs more logic since it should determine if the logged-in user is the owner of the post. This file is the only exception among the screen pages, so I implemented all necessary logic within the file. EditAccount.jsp, changePasswd.jsp, and bye.jsp among the member module have to include the loginCheck.jsp file.
 </p>
 
+<span id="refer">References</span>
+<ul id="references">
+	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
+	<li><a href="http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/">http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></li>
+	<li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">http://www.w3.org/QA/2002/04/valid-dtd-list.html</a></li>
+	<li><a href="http://www.css3.info/preview/rounded-border/">http://www.css3.info/preview/rounded-border/</a></li>
+	<li><a href="http://border-radius.com/">http://border-radius.com/</a></li>
+	<li><a href="http://www.the-art-of-web.com/css/border-radius/">http://www.the-art-of-web.com/css/border-radius/</a></li>
+	<li><a href="http://phrogz.net/css/vertical-align/index.html">http://phrogz.net/css/vertical-align/index.html</a></li>
+	<li><a href="http://www.homejjang.com/09/border_collapse.php">http://www.homejjang.com/09/border_collapse.php</a></li>
+</ul>
+	
 <div id="next-prev">
 	<ul>
 		<li>Next : <a href="<c:url value="/jsp/database-design"/>">Database Design</a></li>

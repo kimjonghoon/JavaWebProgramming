@@ -770,7 +770,7 @@ public static void main(String[] args) {
 </pre>
 
 <p>
-Create src/main/resources folder. (This is also the Maven project directory) Copy logback.xml in <a href="../java/Logging">Logging</a> and paste it into resources folder. Create an applicationContext.xml in the resources folder.
+Create src/main/resources folder. (This is also the Maven project directory) Copy logback.xml in <a href="../java/logging">Logging</a> and paste it into resources folder. Create an applicationContext.xml in the resources folder.
 </p>
 
 <h6 class="src">applicationContext.xml</h6>
@@ -1648,7 +1648,8 @@ ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applica
 </pre>
 
 <p>
-Let's try to transfer from account 101 to account 505 in a situation where account 101 exist, but account 505 does not exist. You will see that the balance of account 101 decreases by the amount of the transfer. The <a href="<c:url value="/spring/transaction"/>">Spring Transaction</a> section will cover this issue.
+Let's try to transfer from account 101 to account 505 in a situation where account 101 exist, but account 505 does not exist. You will see that the balance of account 101 decreases by the amount of the transfer.
+The Transaction section will cover this issue.
 </p>
 
 <h3>JavaConfig configuration</h3>

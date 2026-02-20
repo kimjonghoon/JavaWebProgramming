@@ -12,15 +12,7 @@ This chapter describes the difference between pure Java applications and web app
 
 <h2>Preparations for converting the JDBC Namecard example to a web application</h2>
 
-<h3>1. Copy the Oracle JDBC driver to CATALINA_HOME/lib.</h3>
-
-<p>
-The JDBC driver must be in CATALINA_HOME/lib instead of WEB-INF/lib for your web application.
-Copying the JDBC driver files to to CATALINA_HOME/lib for each web application can cause memory leaks.
-So, there should be no JDBC driver in WEB-INF/lib for your web application.
-</p>
-
-<h3>2. Create directories for the Namecard web application.</h3>
+<h3>1. Create directories for the Namecard web application.</h3>
 
 <p>
 If you set C:/www/namecard to be the top-level directory of your namecard web application, you must create the following subdirectories under C:/www/namecard.
@@ -31,6 +23,8 @@ If you set C:/www/namecard to be the top-level directory of your namecard web ap
 	<li>WEB-INF/classes</li>
 	<li>WEB-INF/lib</li>
 </ul>
+
+<h3>2. Copy the Oracle JDBC driver to WEB-INF/lib.</h3>
 
 <h3>3. Create a web.xml file in the WEB-INF directory.</h3>
 
@@ -158,7 +152,7 @@ javac -d C:/www/namecard/WEB-INF/classes *.java
 Visit http://localhost:8080/namecard/list.jsp for testing.
 </p>
 
-<h3 id="3rd-Test">Test 3</h3>
+<h3 id="third-test">Test 3</h3>
 
 <p>
 Test 3 shows you how to manage your sources in Eclipse.
@@ -536,11 +530,6 @@ if (keyword.equals("")) {
 <p>
 Visit http://localhost:8080/namecard/list.jsp for testing. 
 </p>
-
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder">http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder</a></li>
-</ul>
 
 <div id="next-prev">
 	<ul>

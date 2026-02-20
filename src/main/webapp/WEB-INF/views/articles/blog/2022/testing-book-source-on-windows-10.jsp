@@ -701,14 +701,14 @@ pom.xml 파일에서 톰캣 설정은 주석 처리하고 제티 설정은 주�
 	<c:url var="homeUrl" value="/"/>
 	<li><a href="${homeUrl}">자바 설치</a></li>
 	<c:url var="springUrl" value="/spring"/>
-	<li><a href="${springUrl}/building-java-projects-with-maven">메이븐으로 자바 개발</a></li>
+	<li><a href="${springUrl}/building-java-projects">스프링으로 순수 자바 개발</a></li>
 	<c:url var="jspUrl" value="/jsp"/>
-	<li><a href="${jspUrl}/How-to-install-Tomcat">톰캣 설치</a></li>
-	<li><a href="${jspUrl}/Creating-a-new-web-application">웹 애플리케이션 작성 실습</a></li>
+	<li><a href="${jspUrl}/tomcat-install">톰캣 설치</a></li>
+	<li><a href="${jspUrl}/web-application#creating-a-new-web-application">웹 애플리케이션 작성 실습</a></li>
 	<c:url var="blogUrl" value="/blog"/>
 	<li><a href="${blogUrl}/2017/jetty-maven-plugin">제티 메이븐 플러그인</a></li>
 	<c:url var="jdbcUrl" value="/jdbc"/>
-	<li><a href="${jdbcUrl}/How-to-install-Oracle">오라클 설치</a></li>
+	<li><a href="${jdbcUrl}/oracle-install">오라클 설치</a></li>
 	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
 </ul>
 

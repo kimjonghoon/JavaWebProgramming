@@ -697,7 +697,7 @@ Java provides AutoBoxing and Auto Unboxing for ease of development. You may have
 
 <span id="refer">References</span>
 <ul id="references">
-	<li><a href="http://java.sun.com/developer/onlineTraining/collections/Collection.html">http://java.sun.com/developer/onlineTraining/collections/Collection.html</a></li>
+		<li><a href="https://docs.oracle.com/javase/tutorial/collections/intro/index.html">https://docs.oracle.com/javase/tutorial/collections/intro/index.html</a></li>
 </ul>
 <div id="next-prev">
   <ul>

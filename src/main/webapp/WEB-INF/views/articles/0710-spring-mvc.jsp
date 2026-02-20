@@ -1603,7 +1603,7 @@ C:\www&gt; <span class="prompt-selection">git clone https://github.com/kimjongho
 <h3>데이터베이스 디자인</h3>
 
 <p>
-참조: <a href="https://www.java-school.net/jsp/database-design">https://www.java-school.net/jsp/database-design</a>
+참조: <a href="../jsp/database-design">데이터베이스 설계</a>
 </p>
 
 <h3>CSS 파일과 이미지 복사</h3>

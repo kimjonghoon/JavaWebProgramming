@@ -276,11 +276,4 @@ public String deleteArticle(@PathVariable String boardCd, @PathVariable Integer 
 boardCd와 articleNo가 더는 요청 파라미터로 전달되지 않기에, 이를 고려해 페이지를 수정한다.
 </p>
 
-<span id="related-articles">관련 글</span>
-<ul id="related-articles-ul">
-	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2019/restful-url">1 RESTful URL</a></li>
-	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 이클립스를 사용해 EPUB ebook 만들기</a></li>
-</ul>
-
 </article>

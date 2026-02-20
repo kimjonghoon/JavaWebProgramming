@@ -20,10 +20,6 @@ Go to the root directory, and run the following at a command prompt:<br>
 You can test only the highlighted links.
 </p>
 
-<p>
-Origin: <a href="https://www.boraji.com/spring-mvc-5-hello-world-example-with-thymeleaf-template">Spring MVC 5 - Hello world example with Thymeleaf template</a>
-</p>
-
 <h3>Add dependency</h3>
 
 <pre class="prettyprint">
@@ -145,7 +141,6 @@ public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispat
 <ul id="references">
 	<li><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html</a></li>
 	<li><a href="https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#integrating-thymeleaf-with-spring">https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#integrating-thymeleaf-with-spring</a></li>
-	<li><a href="https://www.boraji.com/spring-mvc-5-hello-world-example-with-thymeleaf-template">Spring MVC 5 - Hello world example with Thymeleaf template</a></li>
 </ul>
 
 </article>

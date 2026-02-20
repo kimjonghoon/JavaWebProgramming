@@ -10,13 +10,13 @@
 <p>
 예제 소스 : <a href="https://github.com/kimjonghoon/model1board">https://github.com/kimjonghoon/model1board</a><br />
 <c:url var="jspUrl" value="/jsp"/>
-(설명은 <a href="${jspUrl}/BBS-Model1">모델 1 게시판</a> 참조)
+(설명은 <a href="${jspUrl}/model-1-bbs">모델 1 게시판</a> 참조)
 </p>
 
 <p>
 <c:url var="blogUrl" value="/blog"/>
 예제에서 사용하는 테이블과 시퀀스는 <a href="${blogUrl}/2017/board-using-oracle-hierarchical-query">오라클 계층형 쿼리(Oracle Hierarchical Query)를 사용하는 게시판</a>과 같다.
-('<a href="${jspUrl}/BBS-Model1">모델 1 게시판</a>'의 테이블과 시퀀스 이름과 다르다.)
+('<a href="${jspUrl}/model-1-bbs">모델 1 게시판</a>'의 테이블과 시퀀스 이름과 다르다.)
 </p>
 
 <pre class="prettyprint">
@@ -136,12 +136,6 @@ insert into hierarchy_article values (seq_hierarchy_article.nextval, '000100',''
 commit;
 </pre>
 
-<p>
-<c:url var="springUrl" value="/spring"/>
-<a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a>를 참조하여 오라클 JDBC 드라이버를 로컬 저장소에 등록시킨다.
-</p>
-
-
 <h3>테스트</h3>
 
 <p>
@@ -150,8 +144,7 @@ commit;
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="${jspUrl}/BBS-Model1">모델 1 게시판</a></li>
-	<li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">오라클 JDBC 드라이버를 로컬 저장소에 설치하기</a></li>
+	<li><a href="${jspUrl}/model-1-bbs">모델 1 게시판</a></li>
 </ul>
 
 </article>

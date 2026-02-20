@@ -7,8 +7,6 @@
 <h1>에이잭스 파일 업로드</h1>
 <p>
 예제 : <a href="https://github.com/kimjonghoon/js-ajax-fileupload">https://github.com/kimjonghoon/js-ajax-fileupload</a><br />
-<c:url var="blogUrl" value="/blog"/>
-(<a href="${blogUrl}/2017/REST-example">Rest example</a> 예제에 파일 업로드/다운로드/삭제 기능을 추가)
 </p>
 
 <h3>테스트</h3>

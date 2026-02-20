@@ -295,11 +295,6 @@ Facebook comments are an excellent example of adding content to a web page using
 <img src="<c:url value="/resources/images/facebook-comments-examples.png"/>" alt="facebook comments">
 </p>
 
-<span id="refer">References</span>
-<ul id="references">
-	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
-</ul>
-
 <h1>Difference between JavaScript and Java</h1>
 
 <ul>
@@ -387,6 +382,11 @@ function z(a) {
 }
 x(2, z);
 </pre>
+
+<span id="refer">References</span>
+<ul id="references">
+	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
+</ul>
 
 <div id="next-prev">
 	<ul>

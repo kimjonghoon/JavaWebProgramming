@@ -180,7 +180,7 @@ ID: &lt;input type="text" name="id" value="heist" /&gt;&lt;br /&gt;
 
 옛 방식의 자바스크립트 코드이다.<br />
 이메일이 유효한지 검사하는 함수는 정규 표현식을 이용하는 게 바람직하다.<br />
-<a href="RegExp">정규 표현식</a>은 곧 다룬다.<br />
+정규 표현식은 곧 다룬다.<br />
 emailCheck()와 trim() 함수를 정규 표현식을 사용하도록 수정한다.<br />
 </p>
  
@@ -293,10 +293,6 @@ body 엘리먼트의 onload 이벤트는 문서의 모든 요소가 다운로드
 <img src="<c:url value="/resources/images/facebook-comments-examples.png"/>" alt="facebook comments">
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
-</ul>
 
 <h1>자바와 다른 점</h1>
 
@@ -410,6 +406,11 @@ function z(a) {
 
 x(2, z);
 </pre>
+
+<span id="refer">참고</span>
+<ul id="references">
+	<li><a href="http://stackoverflow.com/questions/46155/validate-email-address-in-javascript">http://stackoverflow.com/questions/46155/validate-email-address-in-javascript</a></li>
+</ul>
 
 <div id="next-prev">
 	<ul>

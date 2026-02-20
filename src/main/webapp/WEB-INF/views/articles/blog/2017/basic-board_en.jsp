@@ -9,7 +9,7 @@
 <p>
 Source: <a href="https://github.com/kimjonghoon/basic-board">https://github.com/kimjonghoon/basic-board</a><br />
 <c:url var="jspUrl" value="/jsp"/>
-This example covers the basics of the bulletin board. for more information, See <a href="${jspUrl}/BBS-Study">Understanding Bulletin Board Program</a>. 
+This example covers the basics of the bulletin board. for more information, See <a href="${jspUrl}/bbs-basics">Board Basics</a>. 
 </p>
 
 <p>
@@ -132,12 +132,6 @@ insert into article values (seq_article.nextval, '000100','',sysdate);
 commit;
 </pre>
 
-<p>
-Install the Oracle JDBC driver in the local repository.<br />
-<c:url var="springUrl" value="/spring"/>
-See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>. 
-</p>
-
 <h3>Test</h3>
 
 <p>
@@ -146,8 +140,7 @@ Go to the root directory, and run <strong>mvn jetty:run</strong> and visit http:
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${jspUrl}/BBS-Study">Understanding bulletin board program</a></li>
-  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Install the oracle JDBC driver in the local repository</a></li>
+  <li><a href="${jspUrl}/bbs-basics">Board Basics</a></li>
 </ul>
 
 </article>

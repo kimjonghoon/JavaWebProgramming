@@ -607,7 +607,7 @@ public String modify(<strong>@Valid Article article, BindingResult bindingResult
 
 <span id="refer">참고</span>
 <ul id="references">
-  <li><a href="http://hibernate.org/validator/documentation/getting-started/">Getting started with Hibernate Validator</a></li>
+  <li><a href="https://docs.hibernate.org/validator/9.1/reference/en-US/html_single/#validator-gettingstarted">Getting started with Hibernate Validator</a></li>
   <li><a href="http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work">http://stackoverflow.com/questions/14715248/simple-springmvc-3-login-doesnt-work</a></li>
   <li><a href="http://stackoverflow.com/questions/6227547/spring-3-validation-not-working">http://stackoverflow.com/questions/6227547/spring-3-validation-not-working</a></li>
   <li><a href="http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found">http://stackoverflow.com/questions/8909482/spring-mvc-3-ambiguous-mapping-found</a></li>

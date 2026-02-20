@@ -207,8 +207,8 @@ INFO로 셋팅하면, INFO, INFO, WARN, ERROR, FATAL은 기록된다.
 
 <p>
 아래 주소에서 바이너리 배포본을 내려받는다.<br />
-<a href="http://apache.mirror.cdnetworks.com/commons/logging/binaries/">http://apache.mirror.cdnetworks.com/commons/logging/binaries/</a><br /> 
-다운로드하고 압축을 풀면 서브 폴더에 commons-logging-1.2.jar 파일이 생긴다.<br />
+<a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">https://commons.apache.org/proper/commons-logging/download_logging.cgi</a><br /> 
+다운로드하고 압축을 풀면 서브 폴더에 commons-logging-1.3.5 파일이 생긴다.<br />
 이 파일을 클래스 패스에 복사한다.<br /> 
 commons-logging은 자체적으로 로깅을 지원한다기보다는 여러 로깅 API를 표준화된 방법으로 사용할 수 있게 해주는 개념이기 때문에,
 실제 로깅 처리를 위한 별도의 로깅 구현체가 필요하다.<br /> 
@@ -443,7 +443,6 @@ LogTest4.java를 다시 실행한다.<br />
 <span id="refer">참고</span>
 <ul id="references">
 	<li><a href="http://www.slf4j.org/">http://www.slf4j.org/</a></li>
-	<li><a href="http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html">http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html</a></li>
 	<li><a href="http://logback.qos.ch/manual/configuration.html">http://logback.qos.ch/manual/configuration.html</a></li> 
 </ul>
 <div id="next-prev">

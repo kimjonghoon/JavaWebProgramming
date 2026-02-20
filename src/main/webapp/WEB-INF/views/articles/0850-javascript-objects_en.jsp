@@ -335,11 +335,6 @@ if (check) {
 }
 </pre>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">http://www.w3schools.com/jsref/jsref_obj_regexp.asp</a></li>
-  <li><a href="http://regexlib.com">http://regexlib.com</a></li>
-</ul>
 
 <h2>Date</h2>
 
@@ -364,10 +359,6 @@ var newYearsEve = new Date(2018,11,31,23,59,59,59);
 alert("New Year's Eve: " + newYearsEve.toUTCString());
 </pre>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">http://www.w3schools.com/jsref/jsref_obj_date.asp</a></li>
-</ul>
 
 <h2>Array</h2>
 
@@ -487,10 +478,6 @@ The above example has different results for different browsers.
 All JavaScript objects are an associative array.
 </p>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">http://www.w3schools.com/jsref/jsref_obj_array.asp</a></li>
-</ul>
 
 <h2>Math</h2>
 
@@ -537,10 +524,6 @@ while(true) {
 alert("Lotto number: " + lotto.toString());
 </pre>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">http://www.w3schools.com/jsref/jsref_obj_math.asp</a></li>
-</ul>
 
 <h2>Function</h2>
 
@@ -1065,6 +1048,11 @@ alert(ac2.getAccountNo() + ': ' + ac2.getBalance());
   <li><a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">JavaScript Scoping and Hoisting</a></li>
   <li><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript 2017 Language Specification</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects">Introducing JavaScript objects</a></li>
+  <li><a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">http://www.w3schools.com/jsref/jsref_obj_regexp.asp</a></li>
+  <li><a href="http://regexlib.com">http://regexlib.com</a></li>
+  <li><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">http://www.w3schools.com/jsref/jsref_obj_date.asp</a></li>
+  <li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">http://www.w3schools.com/jsref/jsref_obj_array.asp</a></li>
+  <li><a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">http://www.w3schools.com/jsref/jsref_obj_math.asp</a></li>
 </ul>
 
 <div id="next-prev">

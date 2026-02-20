@@ -14,15 +14,7 @@
 
 <h2>명함관리를 웹 애플리케이션으로 바꾸기 위한 준비작업</h2>
 
-<h3>1. 오라클 JDBC 드라이버를 CATALINA_HOME/lib 에 복사한다.</h3>
-
-<p>
-JDBC 드라이버는 특별한 이유<sup><a href="#comments">1</a></sup> 때문에 웹 애플리케이션의 WEB-INF/lib 가 아닌 CATALINA_HOME/lib 에 있어야 한다.<br />
-다시 말해, WEB-INF/lib 에는 JDBC 드라이버가 없어야 한다.<br />
-오라클 JDBC 드라이버인 ojdbc6.jar 파일을 CATALINA_HOME/lib 에 복사한다.<br />
-</p>
-
-<h3>2. 웹 애플리케이션을 위한 디렉토리 구조를 마련한다.</h3>
+<h3>1. 웹 애플리케이션을 위한 디렉토리 구조를 마련한다.</h3>
 
 <p>
 C:/www/namecard 를 명함관리 웹 애플리케이션의 최상위 디렉토리로 정했다면<br />
@@ -34,6 +26,8 @@ C:/www/namecard 아래 다음과 같은 서브 디렉토리를 만들어야 한�
 	<li>WEB-INF/classes</li>
 	<li>WEB-INF/lib</li>
 </ul>
+
+<h3>2. 오라클 JDBC 드라이버를 WEB-INF/lib에 복사</h3>
 
 <h3>3. web.xml 파일을 WEB-INF 디렉토리에 만든다.</h3>
 
@@ -166,7 +160,7 @@ javac -d C:/www/namecard/WEB-INF/classes *.java
 http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 </p>
 
-<h3 id="3rd-Test">세번째 테스트</h3>
+<h3 id="third-test">세번째 테스트</h3>
 
 <p>
 이클립스를 이용해서 작업하는 방법을 설명한다.<br />
@@ -539,16 +533,10 @@ http://localhost:8080/namecard/list.jsp를 방문하여 테스트한다.<br />
 
 <span id="comments">주석</span>
 <ol>
-	<li>각각의 웹 애플리케이션의 WEB-INF/lib 에 JDBC 드라이버 파일을 두면 메모리 누수문제가 일어날 수 있다.</li>
 	<li>만약 NamecardDao 클래스가 커넥션 풀을 이용한다면 커넥션풀관련 클래스를 앞서 컴파일 해야한다.</li>
-	<li>이와는 달리 대부분이 책에서 퍼스펙티브가 Java EE 에서 Dynamic Web Project 로 프로젝트를 생성하는 방법을 설명한다.
+	<li>이와는 달리 대부분이 책에서 퍼스펙티브가 Java EE 에서 Dynamic Web Project로 프로젝트를 생성하는 방법을 설명한다.
 	본 사이트에서 제공하는 기초 과정을 모두 공부한 다음이 아니고, 이클립스보다 서블릿/JSP에 초점을 맞추려면 본 사이트에서 제시한 방법이 더 낫다.</li>
 </ol>
-
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder">http://stackoverflow.com/questions/6981564/why-jdbc-driver-must-been-put-in-tomcat-home-lib-folder</a></li>
-</ul>
 
 <div id="next-prev">
 	<ul>

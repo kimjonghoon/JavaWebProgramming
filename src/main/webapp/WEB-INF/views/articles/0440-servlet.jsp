@@ -1572,7 +1572,7 @@ web.xml에 다음을, context-param 아래에 servlet보다는 위에, 추가한
 
 <h3 id="Custom-ConnectionPool">사용자 정의 커넥션 풀 사용하기</h3>
 <p>
-JDBC 장의 <a href="../jdbc/Connection-Pool">ConnectionPool</a>절 자바 소스를 모두 ROOT 애플리케이션의 WEB-INF/src 디렉터리에 복사한다.<br />
+JDBC 장의 <a href="../jdbc/connection-pool">커넥션 풀</a> 자바 소스를 모두 ROOT 애플리케이션의 WEB-INF/src 디렉터리에 복사한다.<br />
 Log.java 파일을 열고 다음과 같이 수정한다.
 </p>
 
@@ -1581,7 +1581,7 @@ public String logFile = "C:/www/myapp/WEB-INF/myapp.log";
 </pre>
 
 <p>
-<a href="../jdbc/Connection-Pool">ConnectionPool</a>절 orcale.properties 파일을 ROOT 애플리케이션의 WEB-INF 디렉터리에 복사한다.<br />
+<a href="../jdbc/connection-pool">커넥션 풀</a> orcale.properties 파일을 ROOT 애플리케이션의 WEB-INF 디렉터리에 복사한다.<br />
 ConnectionManager.java 파일을 열고 다음과 같이 수정한다.
 </p>
 
@@ -1715,7 +1715,6 @@ public class SessionCounterListener implements HttpSessionListener {
 		totalCount--;
 		System.out.println("세션감수 총세션수:" + totalCount);
 	}
-
 }
 </pre>
 
@@ -1725,7 +1724,7 @@ web.xml에 다음을 추가한다.
 
 <pre class="prettyprint">
 &lt;listener&gt;
-    &lt;listener-class&gt;net.java_school.listener.SessionCounterListener&lt;/listener-class&gt;
+  &lt;listener-class&gt;net.java_school.listener.SessionCounterListener&lt;/listener-class&gt;
 &lt;/listener&gt;
 </pre>
 
@@ -1775,7 +1774,6 @@ public class ChainFilter {
 		this.filters = filters;
 		this.iterator = filters.iterator();
 	}
-	
 }
 </pre>
 
@@ -1786,7 +1784,6 @@ package net.java_school.filter;
 public interface Filter {
 	
 	public void doFilter(ChainFilter chain);
-
 }
 </pre>
 
@@ -1802,7 +1799,6 @@ public class Filter1 implements Filter {
 		chain.doFilter();
 		System.out.println("Run Filter 1 after the server resource runs");
 	}
-
 }
 </pre>
 
@@ -1818,7 +1814,6 @@ public class Filter2 implements Filter {
 		chain.doFilter();
 		System.out.println("Run Filter 2 after the server resource runs");
 	}
-
 }
 </pre>
 
@@ -1840,7 +1835,6 @@ public class Tomcat {
 		chain.setFilters(filters);
 		chain.doFilter();
 	}
-
 }
 </pre>
 
@@ -1872,7 +1866,6 @@ FilterChain 객체는 순서대로 호출되어야 하는 필터의 리스트를
 필터 클래스의 doFilter() 메소드에서 FilterChain의 doFilter() 메소드를 호출하기 전까지가 요청 전에 실행되는 필터링 코드이며
 FilterChain의 doFilter() 메소드 호출 다음이 응답 전에 호출되는 필터링 코드이다.
 </p>
-
 
 <h3>Filter 예제</h3>
 
@@ -1917,7 +1910,6 @@ public class CharsetFilter implements Filter {
 	public void destroy() {
 		//반납할 자원이 있다면 작성한다.
 	}
-
 }
 </pre>
 
@@ -2498,7 +2490,7 @@ resp.addCookie(cookie);
 </pre>
 
 <p>
-쿠키에 대한 실습은 <a href="JSP">JSP</a>에서 다룬다.
+쿠키에 대한 실습은 <a href="jsp-basics">JSP</a>에서 다룬다.
 </p>
 
 <h2>세션</h2>
@@ -2525,7 +2517,7 @@ session.setAttribue("user", user);
 </pre>
 
 <p>
-세션에 대한 실습은 <a href="JSP">JSP</a>에서 다룬다.
+세션에 대한 실습은 <a href="jsp-basics">JSP</a>에서 다룬다.
 </p>
 
 <span id="comments">주석</span>
@@ -2547,7 +2539,6 @@ MIME(Multipurpose Internet Mail Extensions)<br />
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf">https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf</a></li>
 	<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/">https://tomcat.apache.org/tomcat-8.0-doc/servletapi/</a></li>
 	<li><a href="http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html">http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html</a></li>
 	<li><a href="http://www.mkyong.com/servlet/a-simple-httpsessionlistener-example-active-sessions-counter/">http://www.mkyong.com/servlet/a-simple-httpsessionlistener-example-active-sessions-counter/</a></li>
@@ -2555,7 +2546,6 @@ MIME(Multipurpose Internet Mail Extensions)<br />
 	<li><a href="http://commons.apache.org/proper/commons-io/download_io.cgi">http://commons.apache.org/proper/commons-io/download_io.cgi</a></li>
 	<li><a href="http://commons.apache.org/proper/commons-fileupload/using.html">http://commons.apache.org/proper/commons-fileupload/using.html</a></li>
 	<li><a href="http://www.albumbang.com/board/board_view.jsp?board_name=free&no=292">http://www.albumbang.com/board/board_view.jsp?board_name=free&amp;no=292</a></li>
-	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
 
 <div id="next-prev">

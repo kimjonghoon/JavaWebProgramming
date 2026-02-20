@@ -19,10 +19,6 @@
 강조된 링크만 테스트할 수 있다.
 </p>
 
-<p>
-Spring MVC와 Thymeleaf 통합 설정은 <a href="https://www.boraji.com/spring-mvc-5-hello-world-example-with-thymeleaf-template">Spring MVC 5 - Hello world example with Thymeleaf template</a> 을 참조했다.
-</p>
-
 <h3>의존성 추가</h3>
 
 <pre class="prettyprint" lang="en">
@@ -147,7 +143,6 @@ public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispat
 <ul id="references">
 	<li><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html">https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html</a></li>
 	<li><a href="https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#integrating-thymeleaf-with-spring">https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html#integrating-thymeleaf-with-spring</a></li>
-	<li><a href="https://www.boraji.com/spring-mvc-5-hello-world-example-with-thymeleaf-template">Spring MVC 5 - Hello world example with Thymeleaf template</a></li>
 </ul>
 
 </article>

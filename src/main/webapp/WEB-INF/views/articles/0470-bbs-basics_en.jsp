@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>Basic Concepts of BBS</h1>
+<h1>Board Basics</h1>
 
 <p>
 After accessing the Scott account with SQL*PLUS, use the following script to create the table and sequence for the bulletin board.
@@ -216,9 +216,9 @@ We practiced a custom connection pooling example, and its bytecode exists in WEB
 </p>
 
 <ul>
-	<li><a href="Accessing-database-from-JSP_Servlets">A custom connection pooling example</a></li>
+	<li><a href="using-jdbc">A custom connection pooling example</a></li>
 
-	<li><a href="Servlet#Listener">Listener example</a></li>
+	<li><a href="servlets#Listener">Listener example</a></li>
 </ul>
 
 <h2>List and Writing</h2>

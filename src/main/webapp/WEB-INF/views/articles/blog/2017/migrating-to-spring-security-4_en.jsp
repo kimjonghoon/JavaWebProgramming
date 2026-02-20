@@ -209,7 +209,6 @@ Modify the form's action attribute as shown below.
 <ul id="references">
 	<li><a href="http://docs.spring.io/spring-security/site/migrate/current/3-to-4/html5/migrate-3-to-4-xml.html#m3to4-xmlnamespace-defaults">http://docs.spring.io/spring-security/site/migrate/current/3-to-4/html5/migrate-3-to-4-xml.html#m3to4-xmlnamespace-defaults</a></li>
 	<li><a href="http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#nsa-logout-attributes">http://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#nsa-logout-attributes</a></li>
-	<li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec15.html#sec15.1.3">http://www.w3.org/Protocols/rfc2616/rfc2616-sec15.html#sec15.1.3</a></li>	
 </ul>
 
 </article>

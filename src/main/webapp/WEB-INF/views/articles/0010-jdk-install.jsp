@@ -169,7 +169,7 @@ Hello World!
 
 <p>
 <c:url var="javaUrl" value="/java"/>
-<a href="${javaUrl}/Package_Modifiers">패키지와 접근자</a>까지 
+<a href="${javaUrl}/package">패키지</a>까지 
 <a href="http://www.editplus.com/kr/">에디트플러스</a>나 
 <a href="https://notepad-plus-plus.org">Notepad++</a>
 같은 단순한 에디터를 사용하는 게 좋다.<br />

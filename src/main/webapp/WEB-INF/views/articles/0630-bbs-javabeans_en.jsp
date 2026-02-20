@@ -49,7 +49,7 @@ public class SignUpFailException extends RuntimeException {
 </pre>
 
 <p>
-Let's use Apache's commons-logging and log4j 2 for logging. See: <a href="<c:url value="/java/Logging#log4j-2"/>">Log4j 2</a>
+Let's use Apache's commons-logging and log4j 2 for logging. See: <a href="<c:url value="/java/logging#log4j-2"/>">Log4j 2</a>
 </p>
 
 <p>
@@ -57,7 +57,7 @@ Get log4j-api-2.x.x.x.jar and log4-core-2.x.x.x.jar from <a href="http://logging
 </p>
 
 <p>
-Get commons-logging-1.2.jar from <a href="http://apache.mirror.cdnetworks.com/commons/logging/binaries/">http://apache.mirror.cdnetworks.com/commons/logging/binaries/</a>.
+Get commons-logging-1.3.5.jar from <a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">https://commons.apache.org/proper/commons-logging/download_logging.cgi</a>.
 </p>
 
 <p>

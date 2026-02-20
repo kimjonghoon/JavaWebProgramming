@@ -22,8 +22,6 @@
 <li><a href="${blogUrl}/2019/try-with-resources">try with resources</a> - 2019.2.1</li>
 <li><a href="${blogUrl}/2019/static-import">static import</a> - 2019.2.1</li>
 <li><a href="${blogUrl}/2019/nested-classes">Nested Classes</a> - 2019.2.1</li>
-<li><a href="${blogUrl}/2018/gae-comment">Comments using Ojectify</a> - <em>2018.3.30</em></li>
-<li><a href="${blogUrl}/2018/gaefile">Google Cloud Blobstore Example</a> - <em>2018.3.20</em></li>
 <li><a href="${blogUrl}/2018/ajax-like">Like using Ajax</a> - <em>2018.1.11</em></li>
 <li><a href="${blogUrl}/2017/ajax-fileupload">FileUpload using Ajax</a> - <em>2017.12.2</em></li>
 <li><a href="${blogUrl}/2017/downloadController">Download Controller</a> - <em>2017.10.31</em></li>

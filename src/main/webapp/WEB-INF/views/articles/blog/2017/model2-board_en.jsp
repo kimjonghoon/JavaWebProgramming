@@ -10,7 +10,7 @@
 <p>
 Source: <a href="https://github.com/kimjonghoon/model2board">https://github.com/kimjonghoon/model2board</a><br />
 <c:url var="jspUrl" value="/jsp"/>
-For more information about Model 2, See <a href="${jspUrl}/Model2">Model 2</a>. 
+For more information about Model 2, See <a href="${jspUrl}/model-2-bbs">Model 2</a>. 
 </p>
 
 <p>
@@ -134,13 +134,6 @@ insert into hierarchy_article values (seq_hierarchy_article.nextval, '000100',''
 commit;
 </pre>
 
-<p>
-Register the Oracle JDBC driver in the local repository.<br />
-<c:url var="springUrl" value="/spring"/>
-See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC driver in the local repository</a>.
-</p>
-
-
 <h3>Test</h3>
 
 <p>
@@ -149,8 +142,7 @@ Go to the root directory and run <strong>mvn jetty:run</strong> and visit http:/
 
 <span id="refer">References</span>
 <ul id="references">
-  <li><a href="${jspUrl}/Model2">Model 2</a></li>
-  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${jspUrl}/model-2-bbs">Model 2</a></li>
 </ul>
 
 </article>

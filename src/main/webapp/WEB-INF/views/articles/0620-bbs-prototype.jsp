@@ -830,17 +830,6 @@ margin-left: -100%;으로 해도 된다.
 
 <img src="<c:url value="/resources/images/layout1-5.png"/>" alt="예제보기 5" />
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.html.net/tutorials/css/">http://www.html.net/tutorials/css/</a></li>
-	<li><a href="http://www.subcide.com/articles/creating-a-css-layout-from-scratch/P1/">http://www.subcide.com/articles/creating-a-css-layout-from-scratch/P1/</a></li>
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-	<li><a href="http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/">http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></li>
-	<li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">http://www.w3.org/QA/2002/04/valid-dtd-list.html</a></li>
-	<li><a href="http://www.ibm.com/developerworks/kr/library/wa-css/">http://www.ibm.com/developerworks/kr/library/wa-css/</a></li>
-	<li><a href="http://www.maxdesign.com.au/articles/css-layouts/">http://www.maxdesign.com.au/articles/css-layouts/</a></li>
-</ul>
-
 <h1>메인 메뉴 스타일 지정</h1>
 
 <p>
@@ -1048,13 +1037,6 @@ ul#nav li {
 <img src="<c:url value="/resources/images/main-final.png"/>" alt="예제보기 최종" />
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.css3.info/preview/rounded-border/">http://www.css3.info/preview/rounded-border/</a></li>
-	<li><a href="http://border-radius.com/">http://border-radius.com/</a></li>
-	<li><a href="http://www.the-art-of-web.com/css/border-radius/">http://www.the-art-of-web.com/css/border-radius/</a></li>
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h1>서브 메뉴 스타일 지정</h1>
 
@@ -1181,10 +1163,6 @@ a는 인라인(inline) 엘리먼트지만 display: block으로 설정하면 상�
 <img src="<c:url value="/resources/images/sub-final.png"/>" alt="예제보기 최종" />
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h1>#header, #footer, #content 스타일 지정</h1>
 
@@ -1391,10 +1369,6 @@ border를 좌우로 1px 주었다면, #content의 width는 608px이 된다.
 <img src="<c:url value="/resources/images/footer-04.png"/>" alt="예제보기 4"/>
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h1>게시판 목록 스타일 지정</h1>
 
@@ -1731,12 +1705,6 @@ bbs-string 스타일을 댓글 개수와 현재 페이지 번호에 적용한다
 <img alt="게시판 디자인 12" src="<c:url value="/resources/images/bbs-list-12.png"/>" />
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://phrogz.net/css/vertical-align/index.html">http://phrogz.net/css/vertical-align/index.html</a></li>
-	<li><a href="http://www.homejjang.com/09/border_collapse.php">http://www.homejjang.com/09/border_collapse.php</a></li>
-	<li><a href="http://www.w3schools.com/cssref/pr_tab_border-collapse.asp">http://www.w3schools.com/cssref/pr_tab_border-collapse.asp</a></li>
-</ul>
 
 <h1>게시판 상세보기 스타일 지정</h1>
 
@@ -2217,10 +2185,6 @@ HTML에서 아래와 같은 코드가 두 군데가 있다.
 <img alt="게시판 상세보기 수정*삭제*다음 글*이전 글*목록*새 글쓰기 버튼 디자인 결과" src="<c:url value="/resources/images/bbs-view-file.png"/>"/>
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
-</ul>
 
 <h1>게시판 글쓰기와 회원가입 스타일 지정</h1>
 
@@ -4766,6 +4730,18 @@ modify.jsp만 빠진 이유는 로그인뿐 아니라 글 소유자인지 검사
 <p>
 이로써 프로토타입을 완성했다.
 </p>
+<span id="refer">참고</span>
+<ul id="references">
+	<li><a href="http://www.alistapart.com/articles/holygrail/">http://www.alistapart.com/articles/holygrail/</a></li>
+	<li><a href="http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/">http://coding.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></li>
+	<li><a href="http://www.w3.org/QA/2002/04/valid-dtd-list.html">http://www.w3.org/QA/2002/04/valid-dtd-list.html</a></li>
+	<li><a href="http://www.css3.info/preview/rounded-border/">http://www.css3.info/preview/rounded-border/</a></li>
+	<li><a href="http://border-radius.com/">http://border-radius.com/</a></li>
+	<li><a href="http://www.the-art-of-web.com/css/border-radius/">http://www.the-art-of-web.com/css/border-radius/</a></li>
+	<li><a href="http://phrogz.net/css/vertical-align/index.html">http://phrogz.net/css/vertical-align/index.html</a></li>
+	<li><a href="http://www.homejjang.com/09/border_collapse.php">http://www.homejjang.com/09/border_collapse.php</a></li>
+</ul>
+
 
 <div id="next-prev">
 	<ul>

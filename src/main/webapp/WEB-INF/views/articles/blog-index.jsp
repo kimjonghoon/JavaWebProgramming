@@ -23,8 +23,6 @@
 <li><a href="${blogUrl}/2019/try-with-resources">try with resources</a> - 2019.2.1</li>
 <li><a href="${blogUrl}/2019/static-import">정적 임포트 문 </a> - 2019.2.1</li>
 <li><a href="${blogUrl}/2019/nested-classes">내포된 클래스</a> - 2019.2.1</li>
-<li><a href="${blogUrl}/2018/gae-comment">오브젝티파이로 댓글 구현</a> - 2018.3.30</li>
-<li><a href="${blogUrl}/2018/gaefile">구글 클라우드 Blobstore 예제</a> - 2018.3.20</li>
 <li><a href="${blogUrl}/2018/ajax-like">좋아요 메뉴를 에이잭스로 구현</a> - 2018.1.11</li>
 <li><a href="${blogUrl}/2017/ajax-fileupload">에이잭스 파일 업로드</a> - 2017.12.2</li>
 <li><a href="${blogUrl}/2017/downloadController">다운로드 컨트롤러</a> - 2017.10.31</li>

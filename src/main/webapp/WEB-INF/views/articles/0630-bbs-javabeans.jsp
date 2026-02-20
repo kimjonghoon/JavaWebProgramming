@@ -55,13 +55,14 @@ public class SignUpFailException extends RuntimeException {
 <p>
 로깅을 위해, Log4j 2와 아파치의 commons-logging를 사용하겠다.<br />
 이에 대한 자세한 설명은 다음 링크에서 참조할 수 있다:<br />
-<a href="<c:url value="/java/Logging#log4j-2"/>">Log4j 2</a>
+<a href="<c:url value="/java/logging#log4j-2"/>">Log4j 2</a>
 </p>
 
 <p>
 <a href="http://logging.apache.org/log4j/2.x/download.html">http://logging.apache.org/log4j/2.x/download.html</a>에서 파일을 내려받아 압축을 풀어 
 log4j-api-2.x.x.x.jar와 log4-core-2.x.x.x.jar 파일을 얻는다. 
-<a href="http://apache.mirror.cdnetworks.com/commons/logging/binaries/">http://apache.mirror.cdnetworks.com/commons/logging/binaries/</a>에서 commons-logging-1.2.jar 파일을 얻는다.
+<a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">https://commons.apache.org/proper/commons-logging/download_logging.cgi</a>에서 
+commons-logging-1.3.5.jar 파일을 얻는다.
 이들 파일을 WEB-INF/lib 폴더에 복사한다.
 </p>
 

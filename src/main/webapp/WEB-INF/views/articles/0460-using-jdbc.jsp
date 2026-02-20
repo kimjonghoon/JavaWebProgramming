@@ -8,7 +8,7 @@
 
 <p>
 아래 나오는 모든 예제는 이클립스를 사용하여 ROOT 애플리케이션의 도큐먼트 베이스에 작성한다.<br />
-<a href="Namecard-Webapp.php#3rd-Test">명함관리 웹 애플리케이션의 3번째 테스트</a>를 참고하여 이클립스에 ROOT 애플리케이션을 위한 작업환경을 구축한다.
+<a href="namecard-webapp#third-test">명함관리 웹 애플리케이션의 3번째 테스트</a>를 참고하여 이클립스에 ROOT 애플리케이션을 위한 작업환경을 구축한다.
 </p>
 
 <h2>ROOT 애플리케이션의 빌드 패스에 서블릿 API 추가</h2>
@@ -25,7 +25,7 @@
 
 <p>
 getEmp1.jsp 파일을 ROOT 애플리케이션의 도큐먼트 베이스에 아래와 같이 만든다.<br />
-(이 JSP는 <a href="Servlet#GetEmpServlet">GetEmpServlet 서블릿</a>의 JSP 버전이다)
+(이 JSP는 <a href="servlets#GetEmpServlet">GetEmpServlet 서블릿</a>의 JSP 버전이다)
 </p>
 
 <h6 class="src">getEmp1.jsp</h6>
@@ -128,7 +128,7 @@ JDBC에서 커넥션 객체를 획득하는 데에 시간이 많이 걸린다.<b
 <p>
 getEmp1.jsp가 커넥션 풀을 통해서 커넥션을 얻도록 수정해 보자.<br /> 
 우리는 이미 서블릿 장 실습에서 ROOT 애플리케이션에 커넥션 풀링을 추가했다.<br />
-(다음 주소 참조: <a href="Servlet#Custom-ConnectionPool">사용자 정의 커넥션 풀 사용하기</a>)<br />
+(다음 주소 참조: <a href="servlets#Custom-ConnectionPool">사용자 정의 커넥션 풀 사용하기</a>)<br />
 getEmp1.jsp를 열고 Save As...메뉴를 사용하여 getEmp2.jsp를 생성한 후 아래와 같이 수정한다.<br />
 </p>
 

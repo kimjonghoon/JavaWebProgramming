@@ -4,7 +4,7 @@
 
 <article>
 
-<h1>JDBC</h1>
+<h1>JDBC 실습</h1>
 
 <h2>Create Table</h2>
 

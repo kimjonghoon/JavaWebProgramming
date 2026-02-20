@@ -4,11 +4,11 @@
 
 <article>
 
-<h1>Accessing database from JSP &amp; Servlets</h1>
+<h1>Using JDBC</h1>
 
 <p>
 All of the examples below are written in the document base of the ROOT application using Eclipse.
-Build a working environment for your ROOT application in Eclipse with reference to <a href="Namecard-Webapp.php#3rd-Test">Namecard web application 3rd Test</a>.
+Build a working environment for your ROOT application in Eclipse with reference to <a href="namecard-webapp#third-test">Namecard web application 3rd Test</a>.
 </p>
 
 <h2>Add Servlet API to BuildPath of ROOT application</h2>
@@ -25,7 +25,7 @@ Select the Libraries tab as shown below and click the Add External JARs .. butto
 
 <p>
 Create getEmp1.jsp in the ROOT application's document base as shown below.
-(This JSP is a JSP version of the <a href="Servlet#GetEmpServlet">GetEmpServlet servlet</a>)
+(This JSP is a JSP version of the <a href="servlets#GetEmpServlet">GetEmpServlet servlet</a>)
 </p>
 
 <h6 class="src">getEmp1.jsp</h6>
@@ -128,7 +128,7 @@ Connection pooling is the idea of creating multiple connections in advance, stor
 <p>
 The next exercise is to modify getEmp1.jsp to get a connection through the connection pool.
 We have already added connection pooling to the ROOT application in the servlet chapter lab.
-(See: <a href="Servlet#Custom-ConnectionPool">Using Custom Connection Pool</a>)
+(See: <a href="servlets#Custom-ConnectionPool">Using a custom connection pool</a>)
 Open getEmp1.jsp.
 Use the Save As... menu to create getEmp2.jsp and modify it as shown below.
 </p>

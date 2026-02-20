@@ -215,14 +215,14 @@ list.jsp &rarr; write_form.jsp &rarr; BoardWriter.java (insert 실행) &rarr; li
 
 <p>
 ROOT 애플리케이션의 최상위 디렉터리 아래 board 서브 디렉터리를 만들고 이곳에 JSP 파일을 만들겠다.<br />
-<a href="Accessing-database-from-JSP_Servlets">JSP에서 데이터베이스 이용하기</a>를 실습했다면 사용자 정의 커넥션 풀링 바이트 코드가 WEB-INF/classes에 만들어져 있다.<br />
+<a href="using-jdbc">데이터베이스 연동</a>을 실습했다면 사용자 정의 커넥션 풀링 바이트 코드가 WEB-INF/classes에 있다.<br />
 (사용자 정의 커넥션 풀링 바이트 코드가 없다면 아래 게시판을 테스트할 수 없다)
 </p>
 
 <dl class="note">
 <dt>MyServletContextListener.java</dt>
 <dd>
-<a href="Servlet">서블릿</a> 절에서 OracleConnectionManager 객체를 웹 애플리케이션이 시작될 때 서블릿 컨텍스트에 담도록 하는 예제(MyServletContextListener.java)가 있었다.
+<a href="servlets">서블릿</a>에서 OracleConnectionManager 객체를 웹 애플리케이션이 시작될 때 서블릿 컨텍스트에 담도록 하는 예제(MyServletContextListener.java)가 있었다.
 이 리슨너가 ROOT 애플리케이션에서 실행되고 있다.
 </dd>
 </dl>
@@ -2424,7 +2424,6 @@ list.jsp에서 검색폼의 method 속성을 method="post" 에서 method="get"�
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://wiki.apache.org/tomcat/FAQ/CharacterEncoding">http://wiki.apache.org/tomcat/FAQ/CharacterEncoding</a></li>
 	<li><a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">https://en.wikipedia.org/wiki/Create,_read,_update_and_delete</a>
 </ul>
 

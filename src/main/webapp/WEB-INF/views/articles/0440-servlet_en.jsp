@@ -4,9 +4,7 @@
 
 <article>
 
-<h1>Servlet</h1>
-
-<h2>What is a Servlet?</h2>
+<h1>Servlets</h1>
 
 <p>
 Servlet is a Java-based technology for creating programs such as bulletin boards. 
@@ -469,7 +467,7 @@ Cookies are the information stored on the client-side for session maintenance. F
 
 <p>
 Write all the examples below in the ROOT application.
-In the <a href="Creating-a-new-web-application">Creating a new web application</a>, 
+In the <a href="web-application#creating-a-new-web-application">Creating a new web application</a>, 
 we changed the application with the document base C:/www/myapp to the ROOT application.
 Create JSPs in C:/www/myapp and java sources in C:/www/myapp/WEB-INF/src.
 Instead of using Eclipse, use a regular editor such as EditPlus.
@@ -1535,7 +1533,7 @@ Add the following to web.xml, below the context-param, above the servlet declara
 
 <h3 id="Custom-ConnectionPool">Using a custom connection pool</h3>
 <p>
-Add all the java source files from the lession entitled "<a href="../jdbc/Connection-Pool">ConnectionPool</a>" in the JDBC chapter to the ROOT application's WEB-INF/src directory.<br />
+Add all the java source files from the lession entitled "<a href="../jdbc/connection-pool">Connection Pool</a>" in the JDBC chapter to the ROOT application's WEB-INF/src directory.<br />
 Open Log.java and modify it as follows:
 </p>
 
@@ -1544,7 +1542,7 @@ public String logFile = "C:/www/myapp/WEB-INF/myapp.log";
 </pre>
 
 <p>
-Copy the orcale.properties file in the "<a href="../jdbc/Connection-Pool">ConnectionPool</a>" to the ROOT application's WEB-INF directory.<br />
+Copy the orcale.properties file in the "<a href="../jdbc/connection-pool">Connection Pool</a>" to the ROOT application's WEB-INF directory.<br />
 Open ConnectionManager.java and modify it as follows:
 </p>
 
@@ -2517,7 +2515,7 @@ resp.addCookie(cookie);
 </pre>
 
 <p>
-The <a href="JSP">JSP</a> chapter covers cookie examples.
+The <a href="jsp-basics">JSP</a> chapter covers cookie examples.
 </p>
 
 <h2>Session</h2>
@@ -2544,17 +2542,15 @@ session.setAttribue("user", user);
 </pre>
 
 <p>
-The <a href="JSP">JSP</a> chapter covers session examples.
+The <a href="jsp-basics">JSP</a> chapter covers session examples.
 </p>
 
 <span id="refer">References</span>
 <ul id="references">
-	<li><a href="https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf">https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf</a></li>
 	<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/">https://tomcat.apache.org/tomcat-8.0-doc/servletapi/</a></li>
 	<li><a href="https://jcp.org/en/jsr/detail?id=315">https://jcp.org/en/jsr/detail?id=315</a></li>
 	<li><a href="http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html">http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html</a></li>
 	<li><a href="http://www.mkyong.com/servlet/a-simple-httpsessionlistener-example-active-sessions-counter/">http://www.mkyong.com/servlet/a-simple-httpsessionlistener-example-active-sessions-counter/</a></li>
-	<li><a href="https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf">https://java.net/downloads/servlet-spec/Final/servlet-3_1-final.pdf</a></li>
 	<li><a href="https://tomcat.apache.org/tomcat-8.0-doc/servletapi/">https://tomcat.apache.org/tomcat-8.0-doc/servletapi/</a></li>
 	<li><a href="https://jcp.org/en/jsr/detail?id=315">https://jcp.org/en/jsr/detail?id=315</a></li>
 	<li><a href="http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html">http://docs.oracle.com/javaee/7/api/index.html?overview-summary.html</a></li>
@@ -2563,7 +2559,6 @@ The <a href="JSP">JSP</a> chapter covers session examples.
 	<li><a href="http://commons.apache.org/proper/commons-io/download_io.cgi">http://commons.apache.org/proper/commons-io/download_io.cgi</a></li>
 	<li><a href="http://commons.apache.org/proper/commons-fileupload/using.html">http://commons.apache.org/proper/commons-fileupload/using.html</a></li>
 	<li><a href="http://www.albumbang.com/board/board_view.jsp?board_name=free&no=292">http://www.albumbang.com/board/board_view.jsp?board_name=free&amp;no=292</a></li>
-	<li><a href="http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html">http://www.docjar.com/docs/api/javax/servlet/GenericServlet.html</a></li>
 </ul>
 
 <div id="next-prev">

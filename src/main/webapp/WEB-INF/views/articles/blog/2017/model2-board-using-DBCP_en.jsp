@@ -10,7 +10,7 @@
 <p>
 Source: <a href="https://github.com/kimjonghoon/model2board-using-DBCP">https://github.com/kimjonghoon/model2board-using-DBCP</a><br />
 <c:url var="jdbcUrl" value="/jdbc"/>
-For more information about DBCP, See <a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>. 
+For more information about DBCP, See <a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>. 
 </p>
 
 <p>
@@ -135,13 +135,6 @@ insert into hierarchy_article values (seq_hierarchy_article.nextval, '000100',''
 commit;
 </pre>
 
-<p>
-Install the Oracle JDBC Driver in the local repository.<br />
-<c:url var="springUrl" value="/spring"/>
-See <a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a>.
-</p>
-
-
 <h3>Test</h3>
 
 <p>
@@ -151,11 +144,10 @@ Go to the root directory and run <strong>mvn jetty:run</strong> and visit http:/
 <span id="refer">References</span>
 <ul id="references">
 	<c:url var="javaUrl" value="/java"/>
-  <li><a href="${javaUrl}/Logging#logback">Logback</a>
-  <li><a href="${jdbcUrl}/Connection-Pool#DBCP">DBCP</a>
+  <li><a href="${javaUrl}/logging#logback">Logback</a>
+  <li><a href="${jdbcUrl}/connection-pool#DBCP">DBCP</a>
 	<c:url var="jspUrl" value="/jsp"/>
-  <li><a href="${jspUrl}/Model2">Model 2</a></li>
-  <li><a href="${springUrl}/di#Oralce-JDBC-Driver-Dependency">Installing the Oracle JDBC Driver in the local repository</a></li>
+  <li><a href="${jspUrl}/migrate-to-model-2">Model 2</a></li>
 </ul>
 
 </article>

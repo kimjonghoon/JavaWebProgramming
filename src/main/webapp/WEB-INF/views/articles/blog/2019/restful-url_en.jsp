@@ -254,11 +254,4 @@ Modify JSPs by referring to the followings:
 	<li>Remove the boardCd and articleNo in JSPs because these are no longer request parameters.</li>
 </ul>
 
-<span id="related-articles">Related Articles</span>
-<ul id="related-articles-ul">
-	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2019/restful-url">1 RESTful URL</a></li>
-	<li><a href="${blogUrl}/2019/how-to-make-epub-with-eclipse">2 How to make EPUB ebook with Eclipse</a></li>
-</ul>
-
 </article>

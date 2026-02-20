@@ -5,11 +5,11 @@
 <article>
 <div class="last-modified">Last Modified 2020.4.11</div>
 
-<h1>JavaBank 예제 모듈화</h1>
+<h1>자바은행 예제 모듈화</h1>
 
 <p>
 <c:url var="jdbcUrl" value="/jdbc"/>
-이 글은 <a href="${jdbcUrl}/JavaBank">자바 은행</a> 예제를 모듈화하는 과정을 다룬다.<br />
+이 글은 <a href="${jdbcUrl}/javabank">자바은행</a> 예제를 모듈화하는 과정을 다룬다.<br />
 자바 은행 소스에 내려받는다.
 </p>
 
@@ -18,7 +18,7 @@ git clone https://github.com/kimjonghoon/JavaBank
 </pre>
 
 <p>
-<a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">오라클 JDBC 드라이버</a>와 
+<a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">오라클 JDBC 드라이버</a>와 
 <a href="http://www.slf4j.org/download.html">SLF4J</a>의 Maven central 링크를 클릭해서 내려받은 최신 버전의 slf4j-api 와 slf4j-simple 을 lib/ 폴더에 복사한다.
 </p>
 
@@ -382,14 +382,13 @@ java -cp $CP -p jars:out \
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
 	<c:url var="jdbcUrl" value="/jdbc"/>
-	<li><a href="${jdbcUrl}/JavaBank">JDBC 예제 - 자바 은행</a></li>
-	<li><a href="${blogUrl}/2019/java-9-modules">자바 9 모듈</a></li>
-	<li><a href="${blogUrl}/2020/java-modules-javabank">자바 은행 예제 모듈화</a></li>
+	<li><a href="${jdbcUrl}/javabank">JDBC 예제 - 자바 은행</a></li>
+	<li><a href="<c:url value="/blog/2019/java-9-modules"/>">자바 9 모듈</a></li>
 </ul>
 
 <span id="refer">참조</span>
 <ul id="references">
-	<li><a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">Oracle JDBC Driver Download</a></li>
+	<li><a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">Oracle JDBC Driver Download</a></li>
 	<li><a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a></li>
 </ul>
 

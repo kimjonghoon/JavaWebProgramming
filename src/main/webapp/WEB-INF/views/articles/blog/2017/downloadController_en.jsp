@@ -136,9 +136,4 @@ public class DownloadController {
 &lt;/html&gt;
 </pre>
 
-<span id="refer">References</span>
-<ul id="references">
-  <li><a href="http://www.boraji.com/spring-mvc-4-file-download-example">http://www.boraji.com/spring-mvc-4-file-download-example</a></li>
-</ul>
-
 </article>

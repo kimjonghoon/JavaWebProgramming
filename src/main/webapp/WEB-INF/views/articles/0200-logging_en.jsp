@@ -216,11 +216,11 @@ Apache's commons-logging is a framework built to provide developers with a stand
  
 <p>
 Download the commons-logging binary from:<br />
-<a href="http://apache.mirror.cdnetworks.com/commons/logging/binaries/">http://apache.mirror.cdnetworks.com/commons/logging/binaries/</a>
+<a href="https://commons.apache.org/proper/commons-logging/download_logging.cgi">https://commons.apache.org/proper/commons-logging/download_logging.cgi</a>
 </p>
 
 <p>
-After unpacking, copy the commons-logging-1.2.jar file to the classpath.
+After unpacking, copy the commons-logging-1.3.5.jar file to the classpath.
 </p>
 
 <p>
@@ -468,7 +468,6 @@ Check if the log has accumulated in the javabank.log in the project root directo
 <span id="refer">References</span>
 <ul id="references">
 	<li><a href="http://www.slf4j.org/">http://www.slf4j.org/</a></li>
-	<li><a href="http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html">http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html</a></li>
 	<li><a href="http://logback.qos.ch/manual/configuration.html">http://logback.qos.ch/manual/configuration.html</a></li> 
 </ul>
 <div id="next-prev">

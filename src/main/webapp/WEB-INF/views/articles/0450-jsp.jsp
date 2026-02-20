@@ -72,7 +72,7 @@
 <h2 id="JSP">1. JSP란?</h2>
 
 <p>
-우리는 이미 <a href="Creating-a-new-web-application">새로운 웹 애플리케이션 만들기</a>에서 myapp 애플리케이션을 ROOT 애플리케이션으로 변경했다.
+우리는 이미 <a href="web-application#creating-a-new-web-application">웹 애플리케이션 작성 실습</a>에서 myapp 애플리케이션을 ROOT 애플리케이션으로 변경했다.
 (myapp 애플리케이셔의 DocuementBase는 C:/www/myapp이다.)
 아래에 나오는 모든 예제는 서블릿 장과 마찬가지로 ROOT 애플리케이션에서 실습하자. 
 JSP는 C:/www/myapp나 서브 디렉터리에서, 자바 소스는 C:/www/myapp/WEB-INF/src에 자바 패키지 이름의 서브 디렉토리에 생성하자. 

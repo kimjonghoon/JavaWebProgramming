@@ -505,10 +505,4 @@ Name[en]=eclipse.desktop
 eclipse를 검색하여 실행하고 런처에 고정시킨다.
 </p>
 
-<span id="related-articles">관련 글</span>
-<ul id="related-articles-ul">
-	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2019/java-development-environment-on-ubuntu-18">우분투 18.04에 자바 개발 환경 만들기</a></li>
-</ul>
- 
 </article>

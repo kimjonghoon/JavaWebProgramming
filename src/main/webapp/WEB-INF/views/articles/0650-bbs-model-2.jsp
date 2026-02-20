@@ -3234,7 +3234,7 @@ public class DeleteAttachFileAction implements Action {
 
 <div id="next-prev">
 	<ul>
-		<li>다음 : <a href="<c:url value="/spring/building-java-projects"/>">순수 자바 개발</a></li>
+		<li>다음 : <a href="<c:url value="/spring/building-java-projects"/>">순수 자바</a></li>
 		<li>이전 : <a href="<c:url value="/jsp/implementation"/>">구현</a></li>
 	</ul>
 </div>

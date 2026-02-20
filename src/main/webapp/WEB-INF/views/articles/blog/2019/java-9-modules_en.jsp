@@ -13,7 +13,7 @@ You read the following articles before starting.
 </p>
 
 <ul>
-  <li><a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html">Understanding Java 9 Modules</a></li>
+  <li><a href="https://dev.java/learn/modules/intro/">Introduction to Modules in Java</a></li>
   <li><a href="http://openjdk.java.net/projects/jigsaw/quick-start">Project Jigsaw: Module System Quick-Start Guide</a></li>
 </ul>
 
@@ -1020,7 +1020,6 @@ public MySqlConnectionManager() {
     prop.load(inputStream);
 		
     //..Omit..
-			
 </pre>
 
 <h4>Test on Windows</h4>
@@ -1212,7 +1211,6 @@ public class GetEmp {
       System.out.println("Driver Number: " + <b>manager.getDriverNumber()</b>);
 		
     <b>}</b>
-
   }
 }
 </pre>
@@ -1271,7 +1269,6 @@ public class GetEmp {
       <strong>.map(ServiceLoader.Provider::get).findAny().get();</strong>
 				
     //..Omit..
-      
   }
   
   <strong>private static boolean isOracle(Class&lt;?&gt; clazz) {</strong>
@@ -1300,7 +1297,6 @@ public interface ConnectionManageable {
   public void freeConnection(Connection con);
 
   public int getDriverNumber();
-
 }
 </pre>
 
@@ -1449,16 +1445,15 @@ Source: <a href="https://github.com/kimjonghoon/java-module-test">https://github
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
 	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2019/java-9-modules">Java 9 Modules</a></li>
 	<li><a href="${blogUrl}/2020/java-modules-javabank">JavaBank Modularization</a></li>
 </ul>
 
 <span id="refer">References</span>
 <ul id="references">
-	<li><a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html">Understanding Java 9 Modules</a></li>
+	<li><a href="https://dev.java/learn/modules/intro/">Introduction to Modules in Java</a></li>
 	<li><a href="http://openjdk.java.net/projects/jigsaw/quick-start">Project Jigsaw: Module System Quick-Start Guide</a></li>
 	<li><a href="https://dev.mysql.com/downloads/file/?id=509727">MySQL JDBC Driver Download</a></li>
-	<li><a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">Oracle JDBC Driver Download</a></li>
+	<li><a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">Oracle JDBC Driver Download</a></li>
 	<li><a href="https://www.oreilly.com/library/view/java-9-modularity/9781491954157/ch04.html">https://www.oreilly.com/library/view/java-9-modularity/9781491954157/ch04.html</a></li>
 </ul>
 

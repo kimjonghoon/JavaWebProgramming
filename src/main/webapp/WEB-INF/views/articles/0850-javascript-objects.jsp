@@ -64,12 +64,6 @@ alert("18) "+engName<strong>.toUpperCase()</strong>);//자바와 같음
 alert("19) "+engName<strong>.toLowerCase()</strong>);//자바와 같음
 </pre>
 
-<!-- <span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://en.wikipedia.org/wiki/HTTP_cookie">http://en.wikipedia.org/wiki/HTTP_cookie</a></li>
-	<li><a href="http://ezbuilder.tistory.com/34">http://ezbuilder.tistory.com/34</a></li>
-</ul> -->
-
 <h2>정규표현식</h2>
 
 <p>
@@ -302,12 +296,6 @@ if (check) {
 }
 </pre>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">http://www.w3schools.com/jsref/jsref_obj_regexp.asp</a></li>
-	<li><a href="http://regexlib.com">http://regexlib.com</a></li>
-</ul>
-
 <h2>Date</h2>
 
 <p>
@@ -389,11 +377,6 @@ toUTCString
 주의
 getYear 에 대해서 firefox 와 IE 모두 테스트한다.
 -->
-
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">http://www.w3schools.com/jsref/jsref_obj_date.asp</a></li>
-</ul>
 
 <h2>배열</h2>
 
@@ -517,11 +500,6 @@ for (var property in document) {
 결과는 브라우저마다 다르다.<br />
 </p>
 
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">http://www.w3schools.com/jsref/jsref_obj_array.asp</a></li>
-</ul>
-
 <h2>Math</h2>
 
 <pre class="prettyprint script-result-display">
@@ -563,11 +541,6 @@ while(true) {
 
 alert("예상로또번호: " + lotto.toString());
 </pre>
-
-<span id="refer">참고</span>
-<ul id="references">
-	<li><a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">http://www.w3schools.com/jsref/jsref_obj_math.asp</a></li>
-</ul>
 
 <h2>함수</h2>
 
@@ -1087,10 +1060,16 @@ alert(ac2.getAccountNo() + ': ' + ac2.getBalance());
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://www.wikibook.co.kr/PublisherApp/homepage/detailView?isbn=9788992939331">jQuery 1.3 작고 강력한 자바스크립트 라이브러리 - 위키북스</a></li>
 	<li><a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html</a></li>
 	<li><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf</a></li>
-	<li><a href="https://developer.mozilla.org/ko/docs/JavaScript/Introduction_to_Object-Oriented_JavaScript">객체지향 자바스크립트 소개</a></li>
+	<li><a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">JavaScript Scoping and Hoisting</a></li>
+	<li><a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript 2017 Language Specification</a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects">Introducing JavaScript objects</a></li>
+	<li><a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">http://www.w3schools.com/jsref/jsref_obj_regexp.asp</a></li>
+	<li><a href="http://regexlib.com">http://regexlib.com</a></li>
+	<li><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">http://www.w3schools.com/jsref/jsref_obj_date.asp</a></li>
+	<li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">http://www.w3schools.com/jsref/jsref_obj_array.asp</a></li>
+	<li><a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">http://www.w3schools.com/jsref/jsref_obj_math.asp</a></li>
 </ul>
 
 <div id="next-prev">

@@ -41,12 +41,12 @@ A 모듈이 B 모듈을 의존하고 B 모듈이 C 모듈을 의존하고 C 모�
 
 <p>
 <c:url var="jdbcUrl" value="/jdbc"/>
-<a href="${jdbcUrl}/Connection-Pool">커넥션 풀</a> 소스를 모듈화하는 실습을 준비했다.<br />
+<a href="${jdbcUrl}/connection-pool">커넥션 풀</a> 소스를 모듈화하는 실습을 준비했다.<br />
 실습하기 전 아랫글을 읽어 보는 게 좋다.
 </p>
 
 <ul>
-	<li><a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html">Understanding Java 9 Modules</a></li>
+	<li><a href="https://dev.java/learn/modules/intro/">Introduction to Modules in Java</a></li>
 	<li><a href="http://openjdk.java.net/projects/jigsaw/quick-start">Project Jigsaw: Module System Quick-Start Guide</a></li>
 </ul>
 
@@ -187,7 +187,6 @@ public class DBConnectionPool {
 		if (con != null) {
 			checkedOut++;
 		}
-
 		return con;
 	}
 
@@ -205,7 +204,6 @@ public class DBConnectionPool {
 				return null;
 			}
 		}
-
 		return con;
 	}
 
@@ -230,10 +228,8 @@ public class DBConnectionPool {
 			logger.log(Level.SEVERE, sb.toString());
 			return null;
 		}
-
 		return con;
 	}
-
 }
 </pre>
 
@@ -1555,16 +1551,15 @@ main.app 모듈은 소비자<sup>Consumer</sup>다--
 <span id="related-articles">관련 글</span>
 <ul id="related-articles-ul">
 	<c:url var="blogUrl" value="/blog"/>
-	<li><a href="${blogUrl}/2019/java-9-modules">자바 9 모듈</a></li>
 	<li><a href="${blogUrl}/2020/java-modules-javabank">자바은행 예제 모듈화</a></li>
 </ul>
 
 <span id="refer">참조</span>
 <ul id="references">
-	<li><a href="https://www.oracle.com/corporate/features/understanding-java-9-modules.html">Understanding Java 9 Modules</a></li>
+	<li><a href="https://dev.java/learn/modules/intro/">Introduction to Modules in Java</a></li>
 	<li><a href="http://openjdk.java.net/projects/jigsaw/quick-start">Project Jigsaw: Module System Quick-Start Guide</a></li>
 	<li><a href="https://dev.mysql.com/downloads/file/?id=509727">MySQL JDBC Driver Download</a></li>
-	<li><a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">Oracle JDBC Driver Download</a></li>
+	<li><a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">Oracle JDBC Driver Download</a></li>
 	<li><a href="https://www.oreilly.com/library/view/java-9-modularity/9781491954157/ch04.html">https://www.oreilly.com/library/view/java-9-modularity/9781491954157/ch04.html</a></li>
 </ul>
 

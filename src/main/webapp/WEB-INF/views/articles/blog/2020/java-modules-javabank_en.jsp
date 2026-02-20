@@ -25,7 +25,7 @@ Download the followings:
 </p>
 
 <ul>
-	<li>Oracle JDBC Driver from <a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox</a></li>
+	<li>Oracle JDBC Driver from <a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">Oracle JDBC Driver Download</a></li>
 	<li>The latest binary release of slf4j-api and slf4j-simple from <a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a></li>
 </ul>
 
@@ -388,15 +388,14 @@ java -cp $CP -p jars:out \
 
 <span id="related-articles">Related Articles</span>
 <ul id="related-articles-ul">
-	<li><a href="${jdbcUrl}/JavaBank">JavaBank</a></li>
+	<li><a href="${jdbcUrl}/javabank">JavaBank</a></li>
 	<c:url var="blogUrl" value="/blog"/>	
 	<li><a href="${blogUrl}/2019/java-9-modules">Java 9 Modules</a></li>
-	<li><a href="${blogUrl}/2020/java-modules-javabank">Modularization - JavaBank</a></li>
 </ul>
 
 <span id="refer">References</span>
 <ul id="references">
-	<li><a href="https://www.oracle.com/database/technologies/jdbcdriver-ucp-downloads.html#license-lightbox">Oracle JDBC Driver Download</a></li>
+	<li><a href="https://www.oracle.com/kr/database/technologies/appdev/jdbc-downloads.html">Oracle JDBC Driver Download</a></li>
 	<li><a href="http://www.slf4j.org/download.html">http://www.slf4j.org/download.html</a></li>
 </ul>
 
