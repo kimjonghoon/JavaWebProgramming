@@ -69,11 +69,11 @@ MySQL JDBC 드라이버를 그대로 사용할 수 있다.
 </p>
 
 <pre class="prettyprint">
-&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j --&gt;
 &lt;dependency&gt;
-    &lt;groupId&gt;mysql&lt;/groupId&gt;
-    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-    &lt;version&gt;5.1.48&lt;/version&gt;
+  &lt;groupId&gt;com.mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-j&lt;/artifactId&gt;
+  &lt;version&gt;${mysqlJdbcDriverVer }&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 <!--/*

@@ -111,11 +111,12 @@ Add the following to the pom.xml.<%@taglib uri="http://java.sun.com/jsp/jstl/fun
 </p>
 
 <pre class="prettyprint">
-&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;
+&lt;!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j --&gt;
 &lt;dependency&gt;
-  &lt;groupId&gt;mysql&lt;/groupId&gt;
-  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-  &lt;version&gt;8.0.27&lt;/version&gt;
+  &lt;groupId&gt;com.mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-j&lt;/artifactId&gt;
+  &lt;version&gt;${mysqlJdbcDriverVer }&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;
 </pre>
 

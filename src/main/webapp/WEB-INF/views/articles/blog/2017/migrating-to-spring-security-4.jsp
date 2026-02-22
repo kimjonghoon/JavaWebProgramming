@@ -10,9 +10,11 @@
 <h6 class="src">pom.xml</h6>
 <pre class="prettyprint">
 &lt;properties&gt;
-	&lt;spring.version&gt;5.3.2&lt;/spring.version&gt;
-	&lt;spring.security.version&gt;<strong>5.4.2</strong>&lt;/spring.security.version&gt;
-	&lt;jdk.version&gt;11&lt;/jdk.version&gt;
+	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;	
+	&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
+	&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
+	&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;
+	&lt;spring.security.version&gt;<strong>${securityVer }</strong>&lt;/spring.security.version&gt;
 &lt;/properties&gt;
 </pre>
 

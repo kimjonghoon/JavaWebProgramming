@@ -51,11 +51,11 @@ public class CommentsController {
 </p>
 
 <pre class="prettyprint">
-&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
+&lt;!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind --&gt;
 &lt;dependency&gt;
-  &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+  &lt;groupId&gt;tools.jackson.core&lt;/groupId&gt;
   &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-  &lt;version&gt;2.12.0&lt;/version&gt;
+  &lt;version&gt;3.0.4&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 

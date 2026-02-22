@@ -21,8 +21,8 @@ Modify pom.xml as shown below.
   &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
   &lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
   &lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
-  &lt;spring.version&gt;6.2.8&lt;/spring.version&gt;
-  &lt;spring.security.version&gt;<strong>6.5.1</strong>&lt;/spring.security.version&gt;
+  &lt;spring.version&gt;${springVer }&lt;/spring.version&gt;
+  &lt;spring.security.version&gt;<strong>${securityVer }</strong>&lt;/spring.security.version&gt;
 &lt;/properties&gt;
 </pre>
 

@@ -55,19 +55,18 @@ Edit pom.xml as follows.
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"&gt;
 
   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-
   &lt;groupId&gt;net.java_school&lt;/groupId&gt;
   &lt;artifactId&gt;simpleAjaxExampleOnSpringMVC&lt;/artifactId&gt;
   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
   &lt;packaging&gt;war&lt;/packaging&gt;
-
   &lt;name&gt;simpleAjaxExampleOnSpringMVC Maven Webapp&lt;/name&gt;
   &lt;url&gt;http://www.java_school.net&lt;/url&gt;
 
   &lt;properties&gt;
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;jdk.version&gt;11&lt;/jdk.version&gt;
-    &lt;spring.version&gt;5.3.13&lt;/spring.version&gt;
+    &lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
+    &lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
+    &lt;spring.version&gt;${springVer }&lt;/spring.version&gt;
   &lt;/properties&gt;
 
   &lt;dependencies&gt;
@@ -77,35 +76,30 @@ Edit pom.xml as follows.
       &lt;version&gt;4.11&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
-    &lt;!-- Servlet JSP JSTL --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-      &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
-      &lt;version&gt;4.0.1&lt;/version&gt;
+      &lt;groupId&gt;jakarta.servlet&lt;/groupId&gt;
+      &lt;artifactId&gt;jakarta.servlet-api&lt;/artifactId&gt;
+      &lt;version&gt;${servletVer }&lt;/version&gt;
       &lt;scope&gt;provided&lt;/scope&gt;
     &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
-      &lt;artifactId&gt;javax.servlet.jsp-api&lt;/artifactId&gt;
-      &lt;version&gt;2.3.3&lt;/version&gt;
-      &lt;scope&gt;provided&lt;/scope&gt;
+      &lt;groupId&gt;jakarta.servlet.jsp.jstl&lt;/groupId&gt;
+      &lt;artifactId&gt;jakarta.servlet.jsp.jstl-api&lt;/artifactId&gt;
+      &lt;version&gt;${jstlApiVer }&lt;/version&gt;
     &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;jstl&lt;/groupId&gt;
-      &lt;artifactId&gt;jstl&lt;/artifactId&gt;
-      &lt;version&gt;1.2&lt;/version&gt;
+      &lt;groupId&gt;org.glassfish.web&lt;/groupId&gt;
+      &lt;artifactId&gt;jakarta.servlet.jsp.jstl&lt;/artifactId&gt;
+      &lt;version&gt;${jstlVer }&lt;/version&gt;
     &lt;/dependency&gt;
-    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
-      &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;
-      &lt;version&gt;2.13.0&lt;/version&gt;
-    &lt;/dependency&gt;
-    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+      &lt;groupId&gt;tools.jackson.core&lt;/groupId&gt;
       &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
-      &lt;version&gt;2.13.0&lt;/version&gt;
+      &lt;version&gt;${jacksonDatabindVer }&lt;/version&gt;
     &lt;/dependency&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;org.springframework&lt;/groupId&gt;
@@ -134,10 +128,6 @@ Edit pom.xml as follows.
         &lt;plugin&gt;
           &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
           &lt;version&gt;3.8.0&lt;/version&gt;
-          &lt;configuration&gt;
-            &lt;source&gt;${jdk.version}&lt;/source&gt;
-            &lt;target&gt;${jdk.version}&lt;/target&gt;
-          &lt;/configuration&gt;
         &lt;/plugin&gt;
         &lt;plugin&gt;
           &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
@@ -146,9 +136,6 @@ Edit pom.xml as follows.
         &lt;plugin&gt;
           &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
           &lt;version&gt;3.2.2&lt;/version&gt;
-          &lt;configuration&gt;
-            &lt;failOnMissionWebXml&gt;false&lt;/failOnMissionWebXml&gt;
-          &lt;/configuration&gt;
         &lt;/plugin&gt;
         &lt;plugin&gt;
           &lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;
@@ -161,12 +148,11 @@ Edit pom.xml as follows.
         &lt;plugin&gt;
           &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
           &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
-          &lt;version&gt;10.0.7&lt;/version&gt;
+          &lt;version&gt;${jettyMavenPluginVer }&lt;/version&gt;
         &lt;/plugin&gt;
       &lt;/plugins&gt;
     &lt;/pluginManagement&gt;
   &lt;/build&gt;
-
 &lt;/project&gt;
 </pre>
 
@@ -252,7 +238,6 @@ public class BlogController {
       post.setDescription("No such document.");
       post.setContent("No such document.");
     }
-
     return post;
   }
 }
@@ -323,11 +308,11 @@ Edit web.xml as follows.
 <h6 class="src">web.xml</h6>
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+&lt;web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-  version="4.0"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+  version="6.1"
   metadata-complete="true"&gt;
   
   &lt;display-name&gt;Simple Ajax Example On Spring MVC&lt;/display-name&gt;
@@ -360,7 +345,6 @@ Edit web.xml as follows.
     &lt;servlet-name&gt;ajaxexample&lt;/servlet-name&gt;
     &lt;url-pattern&gt;/&lt;/url-pattern&gt;
   &lt;/servlet-mapping&gt;
- 
 &lt;/web-app&gt;
 </pre>
 
@@ -398,7 +382,6 @@ Create ajaxexample-servlet.xml as follows.
       &lt;value&gt;.jsp&lt;/value&gt;
     &lt;/property&gt;
   &lt;/bean&gt;
-    
 &lt;/beans&gt;
 </pre>
 

@@ -23,11 +23,11 @@ You can test only the highlighted links.
 <h3>Add dependency</h3>
 
 <pre class="prettyprint">
-&lt;!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5 --&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6 --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;
-  &lt;artifactId&gt;thymeleaf-spring5&lt;/artifactId&gt;
-  &lt;version&gt;3.0.15.RELEASE&lt;/version&gt;
+  &lt;artifactId&gt;thymeleaf-spring6&lt;/artifactId&gt;
+  &lt;version&gt;${thymeleafSpring6Ver }&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 

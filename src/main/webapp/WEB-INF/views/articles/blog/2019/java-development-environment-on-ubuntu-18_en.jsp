@@ -349,17 +349,6 @@ mvn install:install-file \
 -Dpackaging=jar
 </pre>
 
-<p>
-The following shows how to add Oracle JDBC driver to pom.xml according to the information stored in the local repository.
-</p>
-
-<pre class="prettyprint">&lt;dependency&gt;
-  &lt;groupId&gt;com.oracle&lt;/groupId&gt;
-  &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
-  &lt;version&gt;11.2.0.2.0&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
-
 <h3>Git Install</h3>
 
 <pre class="shell-prompt">sudo apt install git

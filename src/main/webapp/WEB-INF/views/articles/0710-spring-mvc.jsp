@@ -75,7 +75,7 @@ pom.xml 수정
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
-    <strong>&lt;spring.version&gt;6.2.8&lt;/spring.version&gt;</strong>
+    <strong>&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;</strong>
   &lt;/properties&gt;
 
   &lt;dependencies&gt;
@@ -99,20 +99,20 @@ pom.xml 수정
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;jakarta.servlet&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;jakarta.servlet-api&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;6.1.0&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${servletVer }&lt;/version&gt;</strong>
       <strong>&lt;scope&gt;provided&lt;/scope&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>       
     <strong>&lt;!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;jakarta.servlet.jsp.jstl&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;jakarta.servlet.jsp.jstl-api&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;3.0.2&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${jstlApiVer }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.glassfish.web&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;jakarta.servlet.jsp.jstl&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;3.0.1&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${jstlVer }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>    
   &lt;/dependencies&gt;
 
@@ -614,29 +614,29 @@ mybatis-spring과 함께 스프링 JDBC, 오라클 JDBC 드라이버, 아파치 
   <strong>&lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</strong>
   <strong>&lt;version&gt;\${spring.version}&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
-<strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 --&gt;</strong>
+<strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
   <strong>&lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;</strong>
-  <strong>&lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;11.2.0.4&lt;/version&gt;</strong>
+  <strong>&lt;artifactId&gt;ojdbc11&lt;/artifactId&gt;</strong>
+  <strong>&lt;version&gt;${ojdbc11Ver }&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
-<strong>&lt;!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp --&gt;</strong>
+<strong>&lt;!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
-  <strong>&lt;groupId&gt;commons-dbcp&lt;/groupId&gt;</strong>
-  <strong>&lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;1.4&lt;/version&gt;</strong>
+  <strong>&lt;groupId&gt;org.apache.commons&lt;/groupId&gt;</strong>
+  <strong>&lt;artifactId&gt;commons-dbcp2&lt;/artifactId&gt;</strong>
+  <strong>&lt;version&gt;${commonsDbcp2Ver }&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
 <strong>&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
   <strong>&lt;groupId&gt;org.mybatis&lt;/groupId&gt;</strong>
   <strong>&lt;artifactId&gt;mybatis&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;3.5.11&lt;/version&gt;</strong>
+  <strong>&lt;version&gt;${mybatisVer }&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
 <strong>&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&gt;</strong>
 <strong>&lt;dependency&gt;</strong>
   <strong>&lt;groupId&gt;org.mybatis&lt;/groupId&gt;</strong>
   <strong>&lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</strong>
-  <strong>&lt;version&gt;2.1.0&lt;/version&gt;</strong>
+  <strong>&lt;version&gt;${mybatisSpringVer }&lt;/version&gt;</strong>
 <strong>&lt;/dependency&gt;</strong>
 </pre>
 
@@ -931,25 +931,25 @@ SQL*PLUS로 인서트가 되었는지 확인
 &lt;dependency&gt;
   &lt;groupId&gt;commons-logging&lt;/groupId&gt;
   &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
-  &lt;version&gt;1.2&lt;/version&gt;
+  &lt;version&gt;${commonsLoggingVer }&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
   &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
-  &lt;version&gt;2.19.0&lt;/version&gt;
+  &lt;version&gt;${log4jVer }&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
   &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
-  &lt;version&gt;2.19.0&lt;/version&gt;
+  &lt;version&gt;${log4jVer }&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-jcl --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
   &lt;artifactId&gt;log4j-jcl&lt;/artifactId&gt;
-  &lt;version&gt;2.19.0&lt;/version&gt;
+  &lt;version&gt;${log4jVer }&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 
@@ -3855,13 +3855,13 @@ pom.xml에 다음 의존 라이브러리 설정이 필요하다.
 &lt;dependency&gt;
   &lt;groupId&gt;commons-io&lt;/groupId&gt;
   &lt;artifactId&gt;commons-io&lt;/artifactId&gt;
-  &lt;version&gt;2.8.0&lt;/version&gt;
+  &lt;version&gt;2.21.0&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload --&gt;
 &lt;dependency&gt;
   &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
   &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
-  &lt;version&gt;1.4&lt;/version&gt;
+  &lt;version&gt;1.6.0&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 

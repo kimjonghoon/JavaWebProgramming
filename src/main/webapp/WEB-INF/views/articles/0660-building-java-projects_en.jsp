@@ -235,7 +235,7 @@ Here, HelloWorld uses Joda Time’s LocalTime class to get and print the current
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;joda-time&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;joda-time&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;2.12.2&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${jodaTimeVer }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
   &lt;/dependencies&gt;
   
@@ -342,7 +342,7 @@ Maven creates a quick-start directory whose name is the same as the artifactId v
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
-    <strong>&lt;spring.version&gt;6.2.8&lt;/spring.version&gt;</strong>
+    <strong>&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;</strong>
   &lt;/properties&gt;
 
   &lt;dependencies&gt;
@@ -621,7 +621,7 @@ Edit pom.xml as shown below.
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
-    <strong>&lt;spring.version&gt;6.2.8&lt;/spring.version&gt;</strong>
+    <strong>&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;</strong>
   &lt;/properties&gt;
 
   &lt;dependencies&gt;
@@ -635,24 +635,24 @@ Edit pom.xml as shown below.
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.slf4j&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;2.0.6&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${slf4jVer }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;ch.qos.logback&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;logback-classic&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;1.4.5&lt;/version&gt;</strong>
+      <strong>&lt;version&gt;${logbackVer }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;org.springframework&lt;/groupId&gt;</strong>
       <strong>&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</strong>
       <strong>&lt;version&gt;${spring.version}&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
-    <strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6 --&gt;</strong>
+    <strong>&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 --&gt;</strong>
     <strong>&lt;dependency&gt;</strong>
       <strong>&lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;</strong>
-      <strong>&lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;</strong>
-      <strong>&lt;version&gt;11.2.0.4&lt;/version&gt;</strong>
+      <strong>&lt;artifactId&gt;ojdbc11&lt;/artifactId&gt;</strong>
+      <strong>&lt;version&gt;${ojdbc11Ver }&lt;/version&gt;</strong>
     <strong>&lt;/dependency&gt;</strong>
   <strong>&lt;/dependencies&gt;</strong>
 
@@ -924,7 +924,7 @@ Add the following to pom.xml.
 &lt;dependency&gt;
   &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
   &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
-  &lt;version&gt;1.9.19&lt;/version&gt;
+  &lt;version&gt;${aspectjweaverVer }&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 

@@ -14,11 +14,11 @@ Add Hibernate Validator dependency to pom.xml.
 
 <h6 class="src">pom.xml</h6>
 <pre class="prettyprint">
-&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator --&gt;
+&lt;!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator --&gt;
 &lt;dependency&gt;
-  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;groupId&gt;org.hibernate.validator&lt;/groupId&gt;
   &lt;artifactId&gt;hibernate-validator&lt;/artifactId&gt;
-  &lt;version&gt;6.2.5.Final&lt;/version&gt;
+  &lt;version&gt;9.1.0.Final&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
 

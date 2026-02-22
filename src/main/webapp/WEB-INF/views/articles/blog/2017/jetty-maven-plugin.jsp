@@ -83,7 +83,9 @@ pom.xml 파일을 아래와 같이 수정한다.
 	&lt;url&gt;http://maven.apache.org&lt;/url&gt;
 
 	&lt;properties&gt;
-		&lt;jdk.version&gt;11&lt;/jdk.version&gt;
+		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;	
+		&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
+		&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
 	&lt;/properties&gt;
 
 	&lt;dependencies&gt;
@@ -130,7 +132,7 @@ pom.xml 파일을 아래와 같이 수정한다.
 				<strong>&lt;plugin&gt;
 					&lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
 					&lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
-					&lt;version&gt;10.0.0&lt;/version&gt;
+					&lt;version&gt;${jettyMavenPluginVer }&lt;/version&gt;
 				&lt;/plugin&gt;</strong>
 			&lt;/plugins&gt;
 		&lt;/pluginManagement&gt;

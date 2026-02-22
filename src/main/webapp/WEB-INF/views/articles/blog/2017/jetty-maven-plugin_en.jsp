@@ -103,9 +103,7 @@ public class InitParamServlet extends HttpServlet {
     out.println("user: " + user + "&lt;br /&gt;
     out.println("passwd: " + passwd + "&lt;br /&gt;
     out.println("driver: " + driver);
-
   }
-
 }
 </pre>
 
@@ -116,12 +114,12 @@ Modify web.xml as follows.
 <strong class="filename">web.xml</strong>
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-    http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-    version="4.0"
-    metadata-complete="true"&gt;
+&lt;web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+  version="6.1"
+  metadata-complete="true"&gt;
 
   <strong>&lt;servlet&gt;
     &lt;servlet-name&gt;InitParamServlet&lt;/servlet-name&gt;
@@ -183,7 +181,7 @@ Modify pom.xml as follows.
     <strong>&lt;dependency&gt;
       &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
       &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
-      &lt;version&gt;4.0.1&lt;/version&gt;
+      &lt;version&gt;${servletVer }&lt;/version&gt;
       &lt;scope&gt;provided&lt;/scope&gt;
     &lt;/dependency&gt;
     &lt;dependency&gt;
@@ -234,7 +232,7 @@ Modify pom.xml as follows.
 	<strong>&lt;plugin&gt;
           &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
           &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
-          &lt;version&gt;10.0.2&lt;/version&gt;
+          &lt;version&gt;${jettyMavenPluginVer }&lt;/version&gt;
 	&lt;/plugin&gt;</strong>
       &lt;/plugins&gt;
     &lt;/pluginManagement&gt;

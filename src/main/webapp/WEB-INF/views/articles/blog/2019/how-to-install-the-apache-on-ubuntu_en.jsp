@@ -179,65 +179,6 @@ Visit http://127.0.0.1 to see if Tomcat's root application is responding.
 git clone https://github.com/kimjonghoon/spring-thymeleaf
 </pre>
 
-<p>
-Edit pom.xml as follows.
-</p>
-
-<pre class="prettyprint">
-  &lt;build&gt;
-    &lt;finalName&gt;spring-thymeleaf&lt;/finalName&gt;
-    &lt;pluginManagement&gt;
-      &lt;plugins&gt;
-        &lt;plugin&gt;
-          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-          &lt;version&gt;3.8.1&lt;/version&gt;
-          &lt;configuration&gt;
-            &lt;source&gt;${jdk.version}&lt;/source&gt;
-            &lt;target&gt;${jdk.version}&lt;/target&gt;
-            &lt;encoding&gt;UTF-8&lt;/encoding&gt;
-          &lt;/configuration&gt;
-        &lt;/plugin&gt;
-        &lt;plugin&gt;
-          &lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt;
-          &lt;version&gt;3.1.0&lt;/version&gt;
-          &lt;configuration&gt;
-            &lt;filesets&gt;
-              &lt;fileset&gt;
-                &lt;directory&gt;src/main/webapp/WEB-INF/classes&lt;/directory&gt;
-              &lt;/fileset&gt;
-              &lt;fileset&gt;
-                &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
-              &lt;/fileset&gt;
-            &lt;/filesets&gt;
-          &lt;/configuration&gt;
-        &lt;/plugin&gt;
-      &lt;/plugins&gt;
-    &lt;/pluginManagement&gt;
-  &lt;/build&gt;
-	
-  &lt;!-- 
-  &lt;build&gt;
-    &lt;plugins&gt;
-      &lt;plugin&gt;
-        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-        &lt;version&gt;3.8.1&lt;/version&gt;
-        &lt;configuration&gt;
-          &lt;source&gt;${jdk.version}&lt;/source&gt;
-          &lt;target&gt;${jdk.version}&lt;/target&gt;
-          &lt;encoding&gt;UTF-8&lt;/encoding&gt;
-        &lt;/configuration&gt;
-      &lt;/plugin&gt;
-      &lt;plugin&gt;
-        &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
-        &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;10.0.0&lt;/version&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-  &lt;/build&gt;
-  --&gt;
-</pre>
-
 <pre class="shell-prompt">mvn clean compile war:inplace
 </pre>
 
@@ -249,7 +190,7 @@ Edit pom.xml as follows.
 
 <pre class="prettyprint">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;Context
-  docBase="/home/kim/spring-thymeleaf/src/main/webapp"
+  docBase="/home/javaschool/spring-thymeleaf/src/main/webapp"
   reloadable="true"&gt;
 &lt;/Context&gt;
 </pre>

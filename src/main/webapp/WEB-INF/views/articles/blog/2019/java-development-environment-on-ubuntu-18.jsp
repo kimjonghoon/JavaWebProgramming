@@ -365,18 +365,6 @@ mvn install:install-file \
 -Dpackaging=jar
 </pre>
 
-<p>
-다음은 로컬 저장소에 저장된 정보대로 오라클 JDBC 드라이버를 pom.xml에 추가하는 방법을 보여준다.
-</p>
-
-<pre class="prettyprint">
-&lt;dependency&gt;
-    &lt;groupId&gt;com.oracle&lt;/groupId&gt;
-    &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
-    &lt;version&gt;11.2.0.2.0&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
-
 <h3>Git 설치</h3>
 
 <pre class="shell-prompt">
