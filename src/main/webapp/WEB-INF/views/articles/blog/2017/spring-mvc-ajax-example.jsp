@@ -249,21 +249,21 @@ public class BlogController {
 &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"&gt;&lt;/script&gt; 
 &lt;script type="text/javascript"&gt;
 $(document).ready(function() {
-    $('#jdk-install a').click(function() {
-        var url = '/java/jdk-install';
-        $.getJSON(url, function(data) {
-            $('title').empty();
-            $('title').append(data.title);
-            $("meta[name='Keywords']").attr("content", data.keywords);
-            $("meta[name='Description']").attr("content", data.description);
-            $('article').empty();
-            $('article').append(data.content);
-            console.log(data);            
-            console.log($("meta[name='Keywords']").attr("content"));
-            console.log($("meta[name='Description']").attr("content"));
-        });
-        return false;
-    });
+	$('#jdk-install a').click(function() {
+		var url = '/java/jdk-install';
+		$.getJSON(url, function(data) {
+			$('title').empty();
+			$('title').append(data.title);
+			$("meta[name='Keywords']").attr("content", data.keywords);
+			$("meta[name='Description']").attr("content", data.description);
+			$('article').empty();
+			$('article').append(data.content);
+			console.log(data);            
+			console.log($("meta[name='Keywords']").attr("content"));
+			console.log($("meta[name='Description']").attr("content"));
+		});
+		return false;
+	});
 });
 &lt;/script&gt;
 &lt;/head&gt;
@@ -271,7 +271,7 @@ $(document).ready(function() {
 
 &lt;ul&gt;
 	&lt;li id="home"&gt;&lt;a href="/"&gt;홈&lt;/a&gt;&lt;/li&gt;
-    &lt;li id="jdk-install"&gt;&lt;a href="#"&gt;JDK 설치&lt;/a&gt;&lt;/li&gt;
+	&lt;li id="jdk-install"&gt;&lt;a href="#"&gt;JDK 설치&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;article&gt;
@@ -328,16 +328,16 @@ $(document).ready(function() {
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;beans xmlns="http://www.springframework.org/schema/beans" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"
-    xmlns:p="http://www.springframework.org/schema/p"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-		 http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd"&gt;
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd"&gt;
         
 	&lt;mvc:annotation-driven /&gt;
         

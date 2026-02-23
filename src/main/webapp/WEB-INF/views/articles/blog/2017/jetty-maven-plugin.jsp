@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <article>
-<div class="last-modified">Last Modified 2020.2.6</div>
+<div class="last-modified">Last Modified 2026.2.23</div>
 	
 <h1>제티 메이븐 플러그인</h1>
 
@@ -10,7 +10,7 @@
 </p>
 
 <p>
-메이븐 아키타입을 생성한다.
+메이븐 아키타입 생성
 </p>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
@@ -29,44 +29,26 @@ Define value for property 'package':  net.java_school.hello: :
 </div>
 
 <p>
-생성한 메이븐 프로젝트를 Import - Import - Existing Maven Project 선택하여 이클립스에 임포트한다.
+생성한 메이븐 프로젝트를 Import - Import - Existing Maven Project 선택하여 이클립스에 임포트
 </p>
 
 <p>
-web.xml 파일을 열고 아래와 같이 수정한다.
+web.xml 파일 수정
 </p>
 
 <strong class="filename">web.xml</strong>
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!--
- Licensed to the Apache Software Foundation (ASF) under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
---&gt;
-&lt;web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+&lt;web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-  version="3.1"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+  version="6.1"
   metadata-complete="true"&gt;
-  
-&lt;/web-app&gt;
 </pre>
 
 <p>
-pom.xml 파일을 아래와 같이 수정한다.
+pom.xml 파일 수정
 </p>
 
 <strong class="filename">pom.xml</strong>
@@ -84,34 +66,35 @@ pom.xml 파일을 아래와 같이 수정한다.
 
 	&lt;properties&gt;
 		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;	
-		&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
-		&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
+		&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
+		&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
 	&lt;/properties&gt;
 
 	&lt;dependencies&gt;
 		&lt;dependency&gt;
 			&lt;groupId&gt;junit&lt;/groupId&gt;
 			&lt;artifactId&gt;junit&lt;/artifactId&gt;
-			&lt;version&gt;3.8.1&lt;/version&gt;
+			&lt;version&gt;4.11&lt;/version&gt;
 			&lt;scope&gt;test&lt;/scope&gt;
 		&lt;/dependency&gt;
-		&lt;!-- Servlet JSP JSTL --&gt;
+		&lt;!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api --&gt;
 		&lt;dependency&gt;
-			&lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-			&lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
-			&lt;version&gt;4.0.1&lt;/version&gt;
+			&lt;groupId&gt;jakarta.servlet&lt;/groupId&gt;
+			&lt;artifactId&gt;jakarta.servlet-api&lt;/artifactId&gt;
+			&lt;version&gt;${servletVer }&lt;/version&gt;
 			&lt;scope&gt;provided&lt;/scope&gt;
 		&lt;/dependency&gt;
+		&lt;!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api --&gt;
 		&lt;dependency&gt;
-			&lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
-			&lt;artifactId&gt;javax.servlet.jsp-api&lt;/artifactId&gt;
-			&lt;version&gt;2.3.3&lt;/version&gt;
-			&lt;scope&gt;provided&lt;/scope&gt;
+			&lt;groupId&gt;jakarta.servlet.jsp.jstl&lt;/groupId&gt;
+			&lt;artifactId&gt;jakarta.servlet.jsp.jstl-api&lt;/artifactId&gt;
+			&lt;version&gt;${jstlApiVer }&lt;/version&gt;
 		&lt;/dependency&gt;
+		&lt;!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl --&gt;
 		&lt;dependency&gt;
-			&lt;groupId&gt;jstl&lt;/groupId&gt;
-			&lt;artifactId&gt;jstl&lt;/artifactId&gt;
-			&lt;version&gt;1.2&lt;/version&gt;
+			&lt;groupId&gt;org.glassfish.web&lt;/groupId&gt;
+			&lt;artifactId&gt;jakarta.servlet.jsp.jstl&lt;/artifactId&gt;
+			&lt;version&gt;${jstlVer }&lt;/version&gt;
 		&lt;/dependency&gt;
 	&lt;/dependencies&gt;
 
@@ -120,35 +103,51 @@ pom.xml 파일을 아래와 같이 수정한다.
 		&lt;pluginManagement&gt;
 			&lt;plugins&gt;
 				&lt;plugin&gt;
-					&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-					&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-					&lt;version&gt;3.6.2&lt;/version&gt;
-					&lt;configuration&gt;
-						&lt;source&gt;${jdk.version}&lt;/source&gt;
-						&lt;target&gt;${jdk.version}&lt;/target&gt;
-						&lt;encoding&gt;UTF-8&lt;/encoding&gt;
-					&lt;/configuration&gt;
+					&lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt;
+					&lt;version&gt;3.1.0&lt;/version&gt;
 				&lt;/plugin&gt;
-				<strong>&lt;plugin&gt;
-					&lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
-					&lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
-					&lt;version&gt;${jettyMavenPluginVer }&lt;/version&gt;
-				&lt;/plugin&gt;</strong>
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+					&lt;version&gt;3.0.2&lt;/version&gt;
+				&lt;/plugin&gt;
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+					&lt;version&gt;3.8.0&lt;/version&gt;
+				&lt;/plugin&gt;
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
+					&lt;version&gt;2.22.1&lt;/version&gt;
+				&lt;/plugin&gt;
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+					&lt;version&gt;3.2.2&lt;/version&gt;
+				&lt;/plugin&gt;
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;
+					&lt;version&gt;2.5.2&lt;/version&gt;
+				&lt;/plugin&gt;
+				&lt;plugin&gt;
+					&lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;
+					&lt;version&gt;2.8.2&lt;/version&gt;
+				&lt;/plugin&gt;
+				<strong>&lt;plugin&gt;</strong>
+					<strong>&lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;</strong>
+					<strong>&lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;</strong>
+					<strong>&lt;version&gt;${jettyMavenPluginVer }&lt;/version&gt;</strong>
+				<strong>&lt;/plugin&gt;</strong>
 			&lt;/plugins&gt;
 		&lt;/pluginManagement&gt;
 	&lt;/build&gt;
-
 &lt;/project&gt;
 </pre>
 
 <p>
 <a href="https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin">https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin</a>
-에서 가장 최신 jetty-maven-plugin 배포본을 선택하고 의존성이 아닌 플러그인에 추가한다. (위에서 강조한 부분 참조)
+에서 가장 최신 jetty-maven-plugin 배포본을 선택하고 의존성이 아닌 플러그인에 추가 (위에서 강조한 부분)
 </p>
 
-
 <p>
-jetty를 실행한다.
+jetty 실행
 </p>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
@@ -157,22 +156,12 @@ mvn jetty:run
 </pre>
 
 <p>
-http://localhost:8080을 방문하여 <strong>Hello World!</strong>를 보면 성공이다.
-</p>
-
-<p>
-실행에 아무런 문제가 없으나 이클립스에서 보이는 에러는, Project Explorer 뷰에서 프로젝트 선택 - 마우스 오른쪽 버튼 클릭 - Properties - Project Facets을 선택해서
-Java 버전을 1.8로, Dynamic Web Module 버전을 3.1으로 바꾸면, 사라진다.
-(윈도에서는 한 번에 하나씩만 바꿀 수 있다.)
+http://localhost:8080을 방문하여 <strong>Hello World!</strong> 확인
 </p>
 
 <span id="refer">참고</span>
 <ul id="references">
-	<li><a href="http://www.eclipse.org/jetty/documentation/9.3.x/jetty-maven-plugin.html">http://www.eclipse.org/jetty/documentation/9.3.x/jetty-maven-plugin.html</a></li>
 	<li><a href="https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin">https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin</a></li>
-	<li><a href="https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin/9.4.6.v20170531">https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin/9.4.6.v20170531</a></li>
-	<li><a href="https://maven.apache.org/plugins/maven-compiler-plugin/usage.html">https://maven.apache.org/plugins/maven-compiler-plugin/usage.html</a></li>
-	<li><a href="https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html">https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html</a></li>
 </ul>
 
 </article>
