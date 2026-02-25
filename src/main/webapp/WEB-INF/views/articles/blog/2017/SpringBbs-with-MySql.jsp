@@ -146,7 +146,7 @@ securty.xml을 열고 인증 쿼리를 아래를 참조해 수정한다.
 <pre class="prettyprint">
 &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
 	&lt;property name="driverClassName" value="<strong>com.mysql.jdbc.Driver</strong>"/&gt;
-	&lt;property name="url" value="<strong>jdbc:mysql://localhost:3306/javaskool?useUnicode=yes&amp;amp;characterEncoding=UTF-8"</strong> /&gt;
+	&lt;property name="url" value="<strong>jdbc:mysql://localhost:3306/javaskool"</strong> /&gt;
 	&lt;property name="username" value="java"/&gt;
 	&lt;property name="password" value="school"/&gt;
 	&lt;property name="maxActive" value="100"/&gt;

@@ -161,15 +161,15 @@ Modify the datasource configuration as shown below.
 <h6 class="src">applicationContext.xml</h6>
 <pre class="prettyprint">
 &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-  &lt;property name="driverClassName" value="<strong>com.mysql.jdbc.Driver</strong>"/&gt;
-  &lt;property name="url" value="<strong>jdbc:mysql://localhost:3306/javaskool?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false"</strong> /&gt;
-  &lt;property name="username" value="java"/&gt;
-  &lt;property name="password" value="school"/&gt;
-  &lt;property name="maxActive" value="100"/&gt;
-  &lt;property name="maxWait" value="1000"/&gt;
-  &lt;property name="poolPreparedStatements" value="true"/&gt;
-  &lt;property name="defaultAutoCommit" value="true"/&gt;
-  &lt;property name="validationQuery" value="<strong>SELECT 1</strong>" /&gt;
+	&lt;property name="driverClassName" value="<strong>com.mysql.jdbc.Driver</strong>"/&gt;
+	&lt;property name="url" value="<strong>jdbc:mysql://localhost:3306/javaskool"</strong> /&gt;
+	&lt;property name="username" value="java"/&gt;
+	&lt;property name="password" value="school"/&gt;
+	&lt;property name="maxActive" value="100"/&gt;
+	&lt;property name="maxWait" value="1000"/&gt;
+	&lt;property name="poolPreparedStatements" value="true"/&gt;
+	&lt;property name="defaultAutoCommit" value="true"/&gt;
+	&lt;property name="validationQuery" value="<strong>SELECT 1</strong>" /&gt;
 &lt;/bean&gt;
 </pre>
 

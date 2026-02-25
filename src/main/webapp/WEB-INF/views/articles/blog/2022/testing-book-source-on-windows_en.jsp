@@ -3,15 +3,15 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
-<div class="last-modified">Last Modified 2022.3.30</div>
+<div class="last-modified">Last Modified 2026.2.25</div>
 
-<h1>Testing the book source on Windows 10</h1>
+<h1>Testing the book source on Windows</h1>
 
 <h2>Install Java</h2>
 
 <p>
 <a href="https://www.oracle.com/java/technologies/downloads">https://www.oracle.com/java/technologies/downloads</a><br />
-After installing the latest version, 17, add the JDK bin directory to the Path of the system variable.
+After installing the latest version, 25, add the JDK bin directory to the Path of the system variable.
 </p>
 
 <h2>Install Maven</h2>
@@ -48,8 +48,8 @@ Verify.
 <h2>Install Tomcat</h2>
 
 <p>
-<a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a><br />
-Install version 9, not 10.
+<a href="https://tomcat.apache.org/download-11.cgi">https://tomcat.apache.org/download-11.cgi</a><br />
+Install 11.
 </p>
 
 <h2>Install Oracle Database 11gR2 Express Edition</h2>
@@ -122,14 +122,12 @@ create table member (
     name varchar2(20) NOT NULL,
     mobile varchar2(20)
 );
-
 create table board (
     boardcd varchar2(20),
     boardnm varchar2(40) NOT NULL,
     boardnm_ko varchar2(40),
     constraint PK_BOARD PRIMARY KEY(boardcd)
 );
-
 create table article (
     articleno number,
     boardcd varchar2(20),
@@ -141,7 +139,6 @@ create table article (
     constraint PK_ARTICLE PRIMARY KEY(articleno),
     constraint FK_ARTICLE FOREIGN KEY(boardcd) REFERENCES board(boardcd)
 );
-
 create sequence SEQ_ARTICLE
 increment by 1
 start with 1;
@@ -154,7 +151,6 @@ create table comments (
     regdate date, 
     constraint PK_COMMENTS PRIMARY KEY(commentno)
 );
-
 create sequence SEQ_COMMENTS
     increment by 1
     start with 1;
@@ -200,29 +196,11 @@ increment by 1
 start with 1;
 </pre>
 
-<h3>Install the Oracle JDBC driver to the local repository</h3>
-
-<p>
-Manually install the Oracle JDBC driver to the local repository as follows.
-</p>
-
-<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users&gt;cd C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
-
-C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib&gt;mvn install:install-file ^
--Dfile=ojdbc6.jar ^
--DgroupId=com.oracle ^
--DartifactId=ojdbc6 ^
--Dversion=11.2.0.2.0 ^
--Dpackaging=jar
-
-</pre>
-
 <h3>Create ROOT.xml</h3>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users&gt;cd C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\Catalina\localhost
-C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\Catalina\localhost&gt;notepad ROOT.xml
+<pre class="screen">C:\Users&gt;cd C:\Program Files\Apache Software Foundation\Tomcat 11.0\conf\Catalina\localhost
+C:\Program Files\Apache Software Foundation\Tomcat 11.0\conf\Catalina\localhost&gt;notepad ROOT.xml
 </pre>
 
 <p>
@@ -313,7 +291,6 @@ create table member (
     name varchar(20) NOT NULL,
     mobile varchar(20)
 );
-
 create table authorities (
     email VARCHAR(60) NOT NULL,
     authority VARCHAR(20) NOT NULL,
@@ -328,7 +305,6 @@ create table board (
     boardnm_ko varchar(40) NOT NULL,
     constraint PK_BOARD PRIMARY KEY(boardcd)
 );
-
 create table article (
     articleno int NOT NULL AUTO_INCREMENT,
     boardcd varchar(20),
@@ -340,7 +316,6 @@ create table article (
     constraint PK_ARTICLE PRIMARY KEY(articleno),
     constraint FK_ARTICLE FOREIGN KEY(boardcd) REFERENCES board(boardcd)
 );
-
 create table comments (
     commentno int NOT NULL AUTO_INCREMENT,
     articleno int,
@@ -349,7 +324,6 @@ create table comments (
     regdate datetime,
     constraint PK_COMMENTS PRIMARY KEY(commentno)
 );
-
 create table attachfile (
     attachfileno int NOT NULL AUTO_INCREMENT,
     filename varchar(255) NOT NULL,
@@ -361,7 +335,6 @@ create table attachfile (
     creation datetime,
     constraint PK_ATTACHFILE PRIMARY KEY(attachfileno)
 );
-
 create table views (
   no int primary key AUTO_INCREMENT,
   articleNo int,
@@ -378,32 +351,32 @@ commit;
 
 <h6 class="src">src/main/webapp/WEB-INF/applicationContext.xml</h6>
 <pre class="prettyprint">
-  &lt;!-- Oracle datasource--&gt;
+&lt;!-- Oracle datasource--&gt;
 &lt;!--
-  &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
-    &lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /&gt;
-    &lt;property name="username" value="java" /&gt;
-    &lt;property name="password" value="school" /&gt;
-    &lt;property name="maxActive" value="100" /&gt;
-    &lt;property name="maxWait" value="1000" /&gt;
-    &lt;property name="poolPreparedStatements" value="true" /&gt;
-    &lt;property name="defaultAutoCommit" value="true" /&gt;
-    &lt;property name="validationQuery" value=" SELECT 1 FROM DUAL" /&gt;
-  &lt;/bean&gt;
+&lt;bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"&gt;
+  &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
+  &lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /&gt;
+  &lt;property name="username" value="java" /&gt;
+  &lt;property name="password" value="school" /&gt;
+  &lt;property name="maxTotal" value="100" /&gt;
+  &lt;property name="maxWaitMillis" value="1000" /&gt;
+  &lt;property name="poolPreparedStatements" value="true" /&gt;
+  &lt;property name="defaultAutoCommit" value="true" /&gt;
+  &lt;property name="validationQuery" value=" SELECT 1 FROM DUAL" /&gt;
+&lt;/bean&gt;
 --&gt;
-  &lt;!-- MySQL datasource --&gt;
-  &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;property name="driverClassName" value="com.mysql.cj.jdbc.Driver" /&gt;
-    &lt;property name="url" value="jdbc:mysql://localhost:3306/javaskool?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;useSSL=false" /&gt;
-    &lt;property name="username" value="java" /&gt;
-    &lt;property name="password" value="school" /&gt;
-    &lt;property name="maxActive" value="100" /&gt;
-    &lt;property name="maxWait" value="1000" /&gt;
-    &lt;property name="poolPreparedStatements" value="true" /&gt;
-    &lt;property name="defaultAutoCommit" value="true" /&gt;
-    &lt;property name="validationQuery" value="SELECT 1" /&gt;
-  &lt;/bean&gt;
+&lt;!-- MySQL datasource --&gt;
+&lt;bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"&gt;
+  &lt;property name="driverClassName" value="com.mysql.cj.jdbc.Driver" /&gt;
+  &lt;property name="url" value="jdbc:mysql://localhost:3306/javaskool" /&gt;
+  &lt;property name="username" value="java" /&gt;
+  &lt;property name="password" value="school" /&gt;
+  &lt;property name="maxTotal" value="100" /&gt;
+  &lt;property name="maxWaitMillis" value="1000" /&gt;
+  &lt;property name="poolPreparedStatements" value="true" /&gt;
+  &lt;property name="defaultAutoCommit" value="true" /&gt;
+  &lt;property name="validationQuery" value="SELECT 1" /&gt;
+&lt;/bean&gt;
 </pre>
 
 <h6 class="src">src/main/java/net/java_school/controller/AdminController's index()</h6>
@@ -463,9 +436,7 @@ map.put("rowCount", rowCount.toString());
     FROM comments as c left join member as m on c.email = m.email
     WHERE 
 
-
 &lt;-- Omit --&gt;
-
 
         &lt;if test="search != null and search != ''"&gt;
         AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
@@ -487,8 +458,7 @@ map.put("rowCount", rowCount.toString());
         comments c left join member m on c.email = m.email
     WHERE 
 
-.. Omit .. 
-
+-- Omit -- 
 
 &lt;/select&gt;	
 --&gt;   
@@ -505,9 +475,7 @@ map.put("rowCount", rowCount.toString());
     &lt;if test="search != null and search != ''"&gt;
     WHERE
     
-    
 &lt;-- Omit --&gt;
-    
     
     ORDER BY name ASC
     LIMIT ${offset}, ${rowCount}
@@ -520,9 +488,7 @@ map.put("rowCount", rowCount.toString());
     SELECT count(*)
     FROM member
 
-
 -- Omit --
-
 
 &lt;/select&gt;
 --&gt;

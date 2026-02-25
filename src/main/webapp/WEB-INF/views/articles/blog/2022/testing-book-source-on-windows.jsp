@@ -3,15 +3,15 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <article>
-<div class="last-modified">Last Modified 2022.3.30</div>
+<div class="last-modified">Last Modified 2026.2.25</div>
 
-<h1>윈도 10에서 책 예제 테스트</h1>
+<h1>윈도 11에서 책 예제 테스트</h1>
 
 <h2>Java 설치</h2>
 
 <p>
 <a href="https://www.oracle.com/java/technologies/downloads">https://www.oracle.com/java/technologies/downloads</a><br />
-최신 버전, 17을 선택해 설치 후, JDK의 bin 디렉터리를 시스템 변수의 Path에 추가한다.
+최신 LTS 버전, 25을 선택해 설치 후, JDK의 bin 디렉터리를 시스템 변수의 Path에 추가
 </p>
 
 <h2>Maven 설치</h2>
@@ -26,7 +26,7 @@
 <p>
 <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br />
 Next 버튼을 계속 눌러 설치할 수 있으나 원하지 않는 데이터베이스가 설치될 수 있으니 주의해서 설치를 완료한다.<br />
-자신의 이름과 이메일을 git 설정에 추가한다.
+자신의 이름과 이메일을 git 설정에 추가
 </p>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
@@ -35,30 +35,28 @@ git config --global user.email hong@gmail.org
 </pre>
 
 <p>
-설정한 내용을 확인한다.
+설정한 내용 확인
 </p>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
 <pre class="screen">git config --global --list 
 </pre>
 
-<h2>Tomcat 설치</h2>
+<h2>톰캣 설치</h2>
 
 <p>
-<a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a><br />
-버전 9를 설치한다.
-버전 10부터는 톰캣을 사용하는 서블릿 API의 네임스페이스가 변경되었다.
+<a href="https://tomcat.apache.org/download-11.cgi">https://tomcat.apache.org/download-11.cgi</a><br />
+Windows Service Installer를 내려받아 설치
 </p>
 
 <h2>Oracle Database 11gR2 Express Edition 설치</h2>
 
 <p>
-개인 컴퓨터에 설치해 데이터베이스를 공부하는 용도로는 11g XE가 최신 버전보다 낫다.
-</p>
-
-<p>
-https://www.oracle.com/database/technologies/xe-prior-release-downloads.html<br />
-64비트 윈도 시스템이면, --대부분 시스템이 64비트 시스템이다-- Oracle Database 11gR2 Express Edition for Windows x64를 내려받는다. 이 버전을 내려받으려면 오라클 사이트의 계정이 필요하다. 회원가입을 하고 로그인하면 내려받기가 시작된다.
+개인 컴퓨터에 설치해 데이터베이스를 공부하는 용도로는 11g XE가 최신 버전보다 낫다.<br />
+<a href="https://www.oracle.com/database/technologies/xe-prior-release-downloads.html">https://www.oracle.com/database/technologies/xe-prior-release-downloads.html</a><br />
+자신의 시스템이 윈도라면, Oracle Database 11gR2 Express Edition for Windows x64를 내려받는다.
+내려받으려면 오라클 사이트의 계정이 필요하다.
+회원가입을 하고 로그인하면 내려받기가 시작된다.
 </p>
 
 <p>
@@ -125,14 +123,12 @@ create table member (
     name varchar2(20) NOT NULL,
     mobile varchar2(20)
 );
-
 create table board (
     boardcd varchar2(20),
     boardnm varchar2(40) NOT NULL,
     boardnm_ko varchar2(40),
     constraint PK_BOARD PRIMARY KEY(boardcd)
 );
-
 create table article (
     articleno number,
     boardcd varchar2(20),
@@ -144,7 +140,6 @@ create table article (
     constraint PK_ARTICLE PRIMARY KEY(articleno),
     constraint FK_ARTICLE FOREIGN KEY(boardcd) REFERENCES board(boardcd)
 );
-
 create sequence SEQ_ARTICLE
 increment by 1
 start with 1;
@@ -157,11 +152,9 @@ create table comments (
     regdate date, 
     constraint PK_COMMENTS PRIMARY KEY(commentno)
 );
-
 create sequence SEQ_COMMENTS
     increment by 1
     start with 1;
-
 create table attachfile (
     attachfileno number,
     filename varchar2(50) NOT NULL,
@@ -171,7 +164,6 @@ create table attachfile (
     email varchar2(60),
     constraint PK_ATTACHFILE PRIMARY KEY(attachfileno)
 );
-
 create sequence SEQ_ATTACHFILE
 increment by 1
 start with 1;
@@ -197,34 +189,16 @@ create table views (
   constraint PK_VIEWS PRIMARY KEY(no),
   constraint UNIQUE_VIEWS UNIQUE(articleNo, ip, yearMonthDayHour)
 );
-
 create sequence SEQ_VIEWS
 increment by 1
 start with 1;
 </pre>
 
-<h3>로컬 레포지터리에 Oracle JDBC 드라이버 설치</h3>
-
-<p>
-다음과 같이 Oracle JDBC 드라이버를 로컬 저장소에 수동으로 설치한다.
-</p>
-
-<strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users&gt;cd C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
-
-C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib&gt;mvn install:install-file ^
--Dfile=ojdbc6.jar ^
--DgroupId=com.oracle ^
--DartifactId=ojdbc6 ^
--Dversion=11.2.0.2.0 ^
--Dpackaging=jar
-</pre>
-
 <h3>ROOT.xml 파일 생성</h3>
 
 <strong class="screen-header"><b>C:\</b> Command Prompt</strong>
-<pre class="screen">C:\Users&gt;cd C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\Catalina\localhost
-C:\Program Files\Apache Software Foundation\Tomcat 9.0\conf\Catalina\localhost&gt;notepad ROOT.xml
+<pre class="screen">C:\Users&gt;cd C:\Program Files\Apache Software Foundation\Tomcat 11.0\conf\Catalina\localhost
+C:\Program Files\Apache Software Foundation\Tomcat 11.0\conf\Catalina\localhost&gt;notepad ROOT.xml
 </pre>
 
 <p>
@@ -312,22 +286,18 @@ create table member (
     name varchar(20) NOT NULL,
     mobile varchar(20)
 );
-
 create table authorities (
     email VARCHAR(60) NOT NULL,
     authority VARCHAR(20) NOT NULL,
     CONSTRAINT fk_authorities FOREIGN KEY(email) REFERENCES member(email)
 );
-
 CREATE UNIQUE INDEX ix_authorities ON authorities(email,authority); 
-
 create table board (
     boardcd varchar(20),
     boardnm varchar(40) NOT NULL,
     boardnm_ko varchar(40) NOT NULL,
     constraint PK_BOARD PRIMARY KEY(boardcd)
 );
-
 create table article (
     articleno int NOT NULL AUTO_INCREMENT,
     boardcd varchar(20),
@@ -339,7 +309,6 @@ create table article (
     constraint PK_ARTICLE PRIMARY KEY(articleno),
     constraint FK_ARTICLE FOREIGN KEY(boardcd) REFERENCES board(boardcd)
 );
-
 create table comments (
     commentno int NOT NULL AUTO_INCREMENT,
     articleno int,
@@ -348,7 +317,6 @@ create table comments (
     regdate datetime,
     constraint PK_COMMENTS PRIMARY KEY(commentno)
 );
-
 create table attachfile (
     attachfileno int NOT NULL AUTO_INCREMENT,
     filename varchar(255) NOT NULL,
@@ -360,7 +328,6 @@ create table attachfile (
     creation datetime,
     constraint PK_ATTACHFILE PRIMARY KEY(attachfileno)
 );
-
 create table views (
   no int primary key AUTO_INCREMENT,
   articleNo int,
@@ -368,7 +335,6 @@ create table views (
   yearMonthDayHour char(10),
   unique key (articleNo, ip, yearMonthDayHour)
 );
-
 insert into board values ('chat','Chat','자유 게시판');
 commit;
 </pre>
@@ -377,32 +343,32 @@ commit;
 
 <h6 class="src">src/main/webapp/WEB-INF/applicationContext.xml</h6>
 <pre class="prettyprint">
-  &lt;!-- Oracle datasource--&gt;
+&lt;!-- Oracle datasource--&gt;
 &lt;!--
-  &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
-    &lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /&gt;
-    &lt;property name="username" value="java" /&gt;
-    &lt;property name="password" value="school" /&gt;
-    &lt;property name="maxActive" value="100" /&gt;
-    &lt;property name="maxWait" value="1000" /&gt;
-    &lt;property name="poolPreparedStatements" value="true" /&gt;
-    &lt;property name="defaultAutoCommit" value="true" /&gt;
-    &lt;property name="validationQuery" value=" SELECT 1 FROM DUAL" /&gt;
-  &lt;/bean&gt;
+&lt;bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"&gt;
+  &lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /&gt;
+  &lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" /&gt;
+  &lt;property name="username" value="java" /&gt;
+  &lt;property name="password" value="school" /&gt;
+  &lt;property name="maxTotal" value="100" /&gt;
+  &lt;property name="maxWaitMillis" value="1000" /&gt;
+  &lt;property name="poolPreparedStatements" value="true" /&gt;
+  &lt;property name="defaultAutoCommit" value="true" /&gt;
+  &lt;property name="validationQuery" value=" SELECT 1 FROM DUAL" /&gt;
+&lt;/bean&gt;
 --&gt;
-  &lt;!-- MySQL datasource --&gt;
-  &lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;property name="driverClassName" value="com.mysql.cj.jdbc.Driver" /&gt;
-    &lt;property name="url" value="jdbc:mysql://localhost:3306/javaskool?useUnicode=true&amp;amp;characterEncoding=utf8&amp;amp;useSSL=false" /&gt;
-    &lt;property name="username" value="java" /&gt;
-    &lt;property name="password" value="school" /&gt;
-    &lt;property name="maxActive" value="100" /&gt;
-    &lt;property name="maxWait" value="1000" /&gt;
-    &lt;property name="poolPreparedStatements" value="true" /&gt;
-    &lt;property name="defaultAutoCommit" value="true" /&gt;
-    &lt;property name="validationQuery" value="SELECT 1" /&gt;
-  &lt;/bean&gt;
+&lt;!-- MySQL datasource --&gt;
+&lt;bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"&gt;
+  &lt;property name="driverClassName" value="com.mysql.cj.jdbc.Driver" /&gt;
+  &lt;property name="url" value="jdbc:mysql://localhost:3306/javaskool" /&gt;
+  &lt;property name="username" value="java" /&gt;
+  &lt;property name="password" value="school" /&gt;
+  &lt;property name="maxTotal" value="100" /&gt;
+  &lt;property name="maxWaitMillis" value="1000" /&gt;
+  &lt;property name="poolPreparedStatements" value="true" /&gt;
+  &lt;property name="defaultAutoCommit" value="true" /&gt;
+  &lt;property name="validationQuery" value="SELECT 1" /&gt;
+&lt;/bean&gt;
 </pre>
 
 <h6 class="src">src/main/java/net/java_school/controller/AdminController's index()</h6>
@@ -462,9 +428,7 @@ map.put("rowCount", rowCount.toString());
     FROM comments as c left join member as m on c.email = m.email
     WHERE 
 
-
 &lt;-- 중간 생략 --&gt;
-
 
         &lt;if test="search != null and search != ''"&gt;
         AND (title LIKE '%${search}%' OR content LIKE '%${search}%')
@@ -486,8 +450,7 @@ map.put("rowCount", rowCount.toString());
         comments c left join member m on c.email = m.email
     WHERE 
 
-중간 생략
-
+-- 중간 생략 --
 
 &lt;/select&gt;	
 --&gt;   
@@ -504,9 +467,7 @@ map.put("rowCount", rowCount.toString());
     &lt;if test="search != null and search != ''"&gt;
     WHERE
     
-    
 &lt;-- 중간 생략 --&gt;
-    
     
     ORDER BY name ASC
     LIMIT ${offset}, ${rowCount}
@@ -519,9 +480,7 @@ map.put("rowCount", rowCount.toString());
     SELECT count(*)
     FROM member
 
-
-중간 생략
-
+-- 중간 생략 --
 
 &lt;/select&gt;
 --&gt;

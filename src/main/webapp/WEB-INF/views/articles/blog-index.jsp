@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-
 <article>
 <ul>
 <c:url var="blogUrl" value="/blog"/>
-<li><a href="${blogUrl}/2022/testing-book-source-on-windows-10">윈도 10에서 책 소스 테스트</a> - 2022.3.2</li>
+<li><a href="${blogUrl}/2022/testing-book-source-on-windows">윈도 시스템에서 책 소스 테스트</a> - 2022.3.2</li>
 <li><a href="${blogUrl}/2020/java-modules-javabank">자바은행 예제 모듈화</a> - 2020.3.14</li>
 <li><a href="${blogUrl}/2019/comment-with-restful-url">게시판 댓글을 RESTful URL로 수정</a> - 2019.11.4</li>
 <li><a href="${blogUrl}/2019/restful-url">RESTful URL</a> - 2019.10.22</li>

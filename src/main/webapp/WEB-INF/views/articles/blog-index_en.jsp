@@ -4,7 +4,7 @@
 <article>
 <ul>
 <c:url var="blogUrl" value="/blog"/>
-<li><a href="${blogUrl}/2022/testing-book-source-on-windows-10">Testing book source on windows 10</a> - 2022.3.2</li>
+<li><a href="${blogUrl}/2022/testing-book-source-on-windows">Testing book source on Windows</a> - 2022.3.2</li>
 <li><a href="${blogUrl}/2020/java-modules-javabank">JavaBank Modulation</a> - 2020.3.14</li>
 <li><a href="${blogUrl}/2019/comment-with-restful-url">Comment with RESTful URL</a> - 2019.11.4</li>
 <li><a href="${blogUrl}/2019/restful-url">RESTful URL</a> - 2019.10.22</li>

@@ -6,9 +6,9 @@
 <html lang="<spring:message code="lang" />">
 <head>
 <meta charset="UTF-8" />
-<title><spring:message code="testing-book-source-on-windows-10.title" /></title>
-<meta name="Keywords" content="<spring:message code="testing-book-source-on-windows-10.keys" />" />
-<meta name="Description" content="<spring:message code="testing-book-source-on-windows-10.desc" />" />
+<title><spring:message code="testing-book-source-on-windows.title" /></title>
+<meta name="Keywords" content="<spring:message code="testing-book-source-on-windows.keys" />" />
+<meta name="Description" content="<spring:message code="testing-book-source-on-windows.desc" />" />
 <%@ include file="../../inc/common-meta-links-scripts.jsp" %>
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <!-- for pretty code begin -->
@@ -51,10 +51,10 @@ $(document).ready(function() {
 <spring:message code="lang" var="lang" />
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows-10.jsp" />
+		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows.jsp" />
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows-10_en.jsp" />
+		<jsp:include page="../../articles/blog/2022/testing-book-source-on-windows_en.jsp" />
 	</c:otherwise>
 </c:choose>
 <!-- content end -->
