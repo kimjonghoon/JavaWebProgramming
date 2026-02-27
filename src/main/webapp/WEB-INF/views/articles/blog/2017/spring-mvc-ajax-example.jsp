@@ -44,8 +44,8 @@ Define value for property 'package':  net.java_school: : net.java_school.simpleA
 
   &lt;properties&gt;
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
-    &lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
+    &lt;maven.compiler.source&gt;25&lt;/maven.compiler.source&lt;
+    &lt;maven.compiler.target&gt;25&lt;/maven.compiler.target&lt;
     &lt;spring.version&gt;${springVer }&lt;/spring.version&gt;
   &lt;/properties&gt;
 

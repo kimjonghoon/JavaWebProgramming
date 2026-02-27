@@ -5,8 +5,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 @ControllerAdvice
 public class GlobalControllerAdvice {
+	@ModelAttribute("javaVer")
+	public String getJavaVersion() {
+		return "25";
+	}
 	@ModelAttribute("springVer")
-	public String getStringVersion() {
+	public String getSpringVersion() {
 		return "7.0.5";
 	}
 	@ModelAttribute("securityVer")

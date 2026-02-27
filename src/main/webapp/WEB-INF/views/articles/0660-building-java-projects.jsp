@@ -73,8 +73,8 @@ HelloWorld (project root directory)
   
   &lt;properties&gt;
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
-    &lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.source&gt;25&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;25&lt;/maven.compiler.target&gt;
   &lt;/properties&gt;
   
 &lt;/project&gt;
@@ -330,8 +330,8 @@ pom.xml 의존성에 spring-context를 추가한다.<br />
 
   &lt;properties&gt;
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
-    &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.source&gt;<strong>25</strong>&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;<strong>25</strong>&lt;/maven.compiler.target&gt;
     <strong>&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;</strong>
   &lt;/properties&gt;
 
@@ -615,8 +615,8 @@ pom.xml 편집
 
   &lt;properties&gt;
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;maven.compiler.source&gt;<strong>21</strong>&lt;/maven.compiler.source&gt;
-    &lt;maven.compiler.target&gt;<strong>21</strong>&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.source&gt;<strong>25</strong>&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;<strong>25</strong>&lt;/maven.compiler.target&gt;
     <strong>&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;</strong>
   &lt;/properties&gt;
 

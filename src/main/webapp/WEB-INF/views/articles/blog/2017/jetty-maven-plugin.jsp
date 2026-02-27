@@ -66,8 +66,8 @@ pom.xml 파일 수정
 
 	&lt;properties&gt;
 		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;	
-		&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
-		&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
+		&lt;maven.compiler.source&gt;25&lt;/maven.compiler.source&gt;
+		&lt;maven.compiler.target&gt;25&lt;/maven.compiler.target&gt;
 	&lt;/properties&gt;
 
 	&lt;dependencies&gt;

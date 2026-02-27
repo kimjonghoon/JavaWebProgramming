@@ -13,8 +13,8 @@ Modify pom.xml as follows.
 <pre class="prettyprint">
 &lt;properties&gt;
 	&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;	
-	&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&lt;
-	&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&lt;
+	&lt;maven.compiler.source&gt;25&lt;/maven.compiler.source&lt;
+	&lt;maven.compiler.target&gt;25&lt;/maven.compiler.target&lt;
 	&lt;spring.version&gt;${springVer }&lt;/spring.version&gt;
 	&lt;spring.security.version&gt;<strong>${securityVer }</strong>&lt;/spring.security.version&gt;
 &lt;/properties&gt;
