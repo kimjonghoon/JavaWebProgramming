@@ -582,7 +582,7 @@ pom.xml 파일에서 톰캣 설정은 주석 처리하고 제티 설정은 주�
 </p>
 
 <p>
-<img src="<c:url value="/resources/images/tomcat-started.png"/>" alt="Apache Tomcat 9.0 Tomcat9 Properties" />
+<img src="<c:url value="/resources/images/tomcat-started.png"/>" alt="Apache Tomcat 10.1 Tomcat10 Properties" />
 </p>
 </div>
 

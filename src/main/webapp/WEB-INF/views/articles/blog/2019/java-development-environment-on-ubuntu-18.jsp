@@ -383,13 +383,13 @@ git config --global --list
 <h3>톰캣 설치</h3>
 
 <pre class="shell-prompt">
-sudo apt install tomcat9
+sudo apt install tomcat10
 </pre>
 
 <h4>톰캣 재가동</h4>
 
 <pre class="shell-prompt">
-sudo service tomcat9 restart
+sudo service tomcat10 restart
 </pre>
 
 <h4>톰캣 루트 애플리케이션 변경</h4>
@@ -399,7 +399,7 @@ root 계정에 로그인해서 다음을 실행한다.
 </p>
 
 <pre class="shell-prompt">
-sudo nano /etc/tomcat9/Catalina/localhost/ROOT.xml
+sudo nano /etc/tomcat10/Catalina/localhost/ROOT.xml
 </pre>
 
 <p>
@@ -438,11 +438,11 @@ su를 실행해 root 계정에 로그인한 후 다음 명령을 실행한다.
 </p>
 
 <pre class="shell-prompt">
-tail -f /var/lib/tomcat9/logs/localhost.<em>2019-10-05</em>.log
+tail -f /var/lib/tomcat10/logs/localhost.<em>2019-10-05</em>.log
 </pre>
 
 <pre class="shell-prompt">
-tail -f /var/lib/tomcat9/logs/catalina.<em>2019-10-05</em>.log
+tail -f /var/lib/tomcat10/logs/catalina.<em>2019-10-05</em>.log
 </pre>
 
 <h3>이클립스 설치</h3>

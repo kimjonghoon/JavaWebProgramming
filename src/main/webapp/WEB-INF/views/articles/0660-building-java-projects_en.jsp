@@ -28,7 +28,7 @@ Open a command prompt and check the installed maven version with the following c
 Apache Maven 3.9.9
 Maven home: C:\Program Files\apache-maven-3.9.9\bin\..
 Java version: 21.0.1, vendor: Oracle Corporation
-Java home: C:\Program Files\Java\jdk-21.0.1\jre
+Java home: C:\Program Files\Java\jdk-25.0.2\jre
 ..
 </pre>
 

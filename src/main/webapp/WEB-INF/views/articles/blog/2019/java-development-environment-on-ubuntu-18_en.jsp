@@ -363,12 +363,12 @@ git config --global user.email <b>johndoe@gmail.org</b>
 
 <h3>Tomcat Install</h3>
 
-<pre class="shell-prompt">sudo apt install tomcat9
+<pre class="shell-prompt">sudo apt install tomcat10
 </pre>
 
 <h4>Tomcat Restart</h4>
 
-<pre class="shell-prompt">sudo service tomcat9 restart
+<pre class="shell-prompt">sudo service tomcat10 restart
 </pre>
 
 <h4>Changing the Tomcat Root Application</h4>
@@ -377,7 +377,7 @@ git config --global user.email <b>johndoe@gmail.org</b>
 Log in to the root account and run the following.
 </p>
 
-<pre class="shell-prompt">sudo nano /etc/tomcat9/Catalina/localhost/ROOT.xml
+<pre class="shell-prompt">sudo nano /etc/tomcat10/Catalina/localhost/ROOT.xml
 </pre>
 
 <p>
@@ -413,10 +413,10 @@ Password:
 Log in to the root account and run the following command:
 </p>
 
-<pre class="shell-prompt">tail -f /var/lib/tomcat9/logs/localhost.<em>2019-10-05</em>.log
+<pre class="shell-prompt">tail -f /var/lib/tomcat10/logs/localhost.<em>2019-10-05</em>.log
 </pre>
 
-<pre class="shell-prompt">tail -f /var/lib/tomcat9/logs/catalina.<em>2019-10-05</em>.log
+<pre class="shell-prompt">tail -f /var/lib/tomcat10/logs/catalina.<em>2019-10-05</em>.log
 </pre>
 
 <h3>Eclipse Install</h3>

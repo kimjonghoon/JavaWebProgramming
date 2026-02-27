@@ -100,7 +100,7 @@ Access http://127.0.0.1 to confirm that the index.html is running.
 
 <p>
 Open the workers.properties file and modify the workers.tomcat_home and workers.java_home settings.
-tomcat_home is /etc/tomcat9 if you install tomcat9 using apt install command.
+tomcat_home is /etc/tomcat10 if you install tomcat10 using apt install command.
 java_home can be checked using mvn -v or sudo update-alternatives --config java commands.
 </p>
 
@@ -112,13 +112,13 @@ java_home can be checked using mvn -v or sudo update-alternatives --config java 
 # installed tomcat. This is where you have your conf, webapps and lib
 # directories.
 #
-workers.tomcat_home=<strong>/etc/tomcat9</strong>
+workers.tomcat_home=<strong>/etc/tomcat10</strong>
 
 #
 # workers.java_home should point to your Java installation. Normally
 # you should have a bin and lib directories beneath it.
 #
-workers.java_home=<strong>/usr/lib/jvm/java-11-openjdk-amd64</strong>
+workers.java_home=<strong>/usr/lib/jvm/java-25-openjdk-amd64</strong>
 </pre>
 
 <p>
@@ -144,7 +144,7 @@ Add the following to the virtual hosts.
 Open the server.xml file.
 </p>
 
-<pre class="shell-prompt">sudo nano /etc/tomcat9/server.xml 
+<pre class="shell-prompt">sudo nano /etc/tomcat10/server.xml 
 </pre>
 
 <p>
@@ -166,7 +166,7 @@ Restart Apache to implement your changes.
 Restart Tomcat to implement your changes.
 </p>
 
-<pre class="shell-prompt">sudo service tomcat9 restart
+<pre class="shell-prompt">sudo service tomcat10 restart
 </pre>
 
 <p>
@@ -182,10 +182,10 @@ git clone https://github.com/kimjonghoon/spring-thymeleaf
 <pre class="shell-prompt">mvn clean compile war:inplace
 </pre>
 
-<pre class="shell-prompt">sudo service tomcat9 stop
+<pre class="shell-prompt">sudo service tomcat10 stop
 </pre>
 
-<pre class="shell-prompt">sudo nano /etc/tomcat9/Catalina/localhost/ROOT.xml
+<pre class="shell-prompt">sudo nano /etc/tomcat10/Catalina/localhost/ROOT.xml
 </pre>
 
 <pre class="prettyprint">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -236,7 +236,7 @@ Restart Apache.
 Restart Tomcat.
 </p>
 
-<pre class="shell-prompt">sudo service tomcat9 restart
+<pre class="shell-prompt">sudo service tomcat10 restart
 </pre>
 
 <p>

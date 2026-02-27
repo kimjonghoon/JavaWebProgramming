@@ -112,7 +112,7 @@ sudo apt install libapache2-mod-jk
 
 <p>
 workers.properties 파일을 열고 workers.tomcat_home과 workers.java_home을 수정한다.
-tomcat_home은 tomcat9을 apt install로 설치하면 /etc/tomcat9다.
+tomcat_home은 tomcat10을 apt install로 설치하면 /etc/tomcat10 이다.
 java_home은 mvn -v 이나 sudo update-alternatives --config java 명령으로 확인할 수 있다.
 </p>
 
@@ -126,13 +126,13 @@ sudo nano /etc/libapache2-mod-jk/workers.properties
 # installed tomcat. This is where you have your conf, webapps and lib
 # directories.
 #
-workers.tomcat_home=<strong>/etc/tomcat9</strong>
+workers.tomcat_home=<strong>/etc/tomcat10</strong>
 
 #
 # workers.java_home should point to your Java installation. Normally
 # you should have a bin and lib directories beneath it.
 #
-workers.java_home=<strong>/usr/lib/jvm/java-11-openjdk-amd64</strong>
+workers.java_home=<strong>/usr/lib/jvm/java-25-openjdk-amd64</strong>
 </pre>
 
 <p>
@@ -160,7 +160,7 @@ sudo nano /etc/apache2/sites-available/java-school.net.conf
 </p>
 
 <pre class="shell-prompt">
-sudo nano /etc/tomcat9/server.xml 
+sudo nano /etc/tomcat10/server.xml 
 </pre>
 
 <pre class="prettyprint">
@@ -181,7 +181,7 @@ sudo service apache2 restart
 </p>
 
 <pre class="shell-prompt">
-sudo service tomcat9 restart
+sudo service tomcat10 restart
 </pre>
 
 <p>
@@ -199,11 +199,11 @@ mvn clean compile war:inplace
 </pre>
 
 <pre class="shell-prompt">
-sudo service tomcat9 stop
+sudo service tomcat10 stop
 </pre>
 
 <pre class="shell-prompt">
-sudo nano /etc/tomcat9/Catalina/localhost/ROOT.xml
+sudo nano /etc/tomcat10/Catalina/localhost/ROOT.xml
 </pre>
 
 <pre class="prettyprint">
@@ -265,7 +265,7 @@ sudo service apache2 restart
 </p>
 
 <pre class="shell-prompt">
-sudo service tomcat9 restart
+sudo service tomcat10 restart
 </pre>
 
 <p>

@@ -2275,7 +2275,6 @@ public class JavaController {
     public String basic() {
         return "java/jdk-install";
     }
-
 }
 </pre>
 
@@ -2298,7 +2297,6 @@ public class JavascriptController {
     public String index() {
         return "javascript/index";
     }
-    
 }
 </pre>
 
