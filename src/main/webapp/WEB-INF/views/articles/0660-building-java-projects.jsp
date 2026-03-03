@@ -14,9 +14,9 @@
 
 <ol>
   <li><a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>에서 최신 바이너리 파일을 다운로드한다.</li>
-  <li>압축을 풀고 생성된 디렉터리를 원하는 곳에 옮긴다.(예, C:\Program Files\apache-maven-3.8.7)</li>
+  <li>압축을 풀고 생성된 디렉터리를 원하는 곳에 옮긴다.(예, C:\Program Files\apache-maven-3.9.12)</li>
   <li>메이븐 bin 디렉터리를 Path에 추가한다.</li>
-  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a href="<c:url value="/"/>">JDK 설치</a> 문서 참조)</li>
+  <li>JAVA_HOME 환경 변수가 있는지 확인한다. 메이븐은 JAVA_HOME 환경 변수를 참조하기에 없다면 만들어야 한다. (<a href="<c:url value="/"/>">Java 설치</a> 문서 참조)</li>
 </ol>
 
 <p>
@@ -25,9 +25,9 @@
 
 <div class="cmd-header">&nbsp;</div>
 <pre class="cmd">C:\Users\kim&gt; mvn -v
-Apache Maven 3.9.9
-Maven home: C:\Program Files\apache-maven-3.9.9\bin\..
-Java version: 21.0.1, vendor: Oracle Corporation
+Apache Maven 3.9.12
+Maven home: C:\Program Files\apache-maven-3.9.12\bin\..
+Java version: 25.0.2, vendor: Oracle Corporation
 Java home: C:\Program Files\Java\jdk-25.0.2\jre
 ..
 </pre>

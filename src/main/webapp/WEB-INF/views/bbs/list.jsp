@@ -44,6 +44,10 @@ $(document).ready(function() {
         $('#searchForm input[name*=search]').val($search);
         $('#searchForm').submit();
     });
+	$("table tr td:nth-child(3), table tr td:nth-child(4)").css({
+		"font-family": 	"Roboto",
+		"font-size": "0.8em"
+	});
 });
 
 function createCookie(name, value, days) {

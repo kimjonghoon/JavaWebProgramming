@@ -109,7 +109,7 @@ C:\Program Files\dotnet\;
 C:\Users\kim00\AppData\Local\Microsoft\WindowsApps;
 C:\Program Files\Vim\vim91;
 C:\Program Files\Java\jdk-25.0.2\bin;
-C:\apache-maven-3.9.9\bin
+C:\apache-maven-3.9.12\bin
 </pre>
 <p>
 출력된 경로를 보면 세미콜론(;)으로 디렉터리를 구분하고 있음을 알 수 있다. 윈도 시스템에선 세미콜론을 환경 변수 구분자로 사용한다.

@@ -16,7 +16,7 @@ Original text: <a href="http://spring.io/guides/gs/maven/">http://spring.io/guid
   <li>Download the latest binary file from <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>.</li>
   <li>Unzip and move the generated directory to the desired location.</li>
   <li>Add the Maven bin directory to the Path.</li>
-  <li>Make sure you have the JAVA_HOME environment variable. Because Maven refers to the JAVA_HOME environment variable, you should create it if it does not exist. (See <a href="<c:url value="/"/>">JDK Install</a>)</li>
+  <li>Make sure you have the JAVA_HOME environment variable. Because Maven refers to the JAVA_HOME environment variable, you should create it if it does not exist. (See <a href="<c:url value="/"/>">Java Install</a>)</li>
 </ol>
 
 <p>
@@ -25,9 +25,9 @@ Open a command prompt and check the installed maven version with the following c
 
 <div class="cmd-header">&nbsp;</div>
 <pre class="cmd">C:\Users\kim&gt; mvn -v
-Apache Maven 3.9.9
-Maven home: C:\Program Files\apache-maven-3.9.9\bin\..
-Java version: 21.0.1, vendor: Oracle Corporation
+Apache Maven 3.9.12
+Maven home: C:\Program Files\apache-maven-3.9.12\bin\..
+Java version: 25.0.2, vendor: Oracle Corporation
 Java home: C:\Program Files\Java\jdk-25.0.2\jre
 ..
 </pre>
