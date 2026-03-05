@@ -44,10 +44,6 @@ $(document).ready(function() {
         $('#searchForm input[name*=search]').val($search);
         $('#searchForm').submit();
     });
-	$("table tr td:nth-child(3), table tr td:nth-child(4)").css({
-		"font-family": 	"Roboto",
-		"font-size": "0.8em"
-	});
 });
 
 function createCookie(name, value, days) {
@@ -114,8 +110,8 @@ java.text.DateFormat df =
 Object writeDate = pageContext.getAttribute("writeDate");
 pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 %>
-            <td style="text-align: center;">${writeDate }</td>
-            <td style="text-align: center;">${article.hit }</td>
+            <td style="text-align: center;" class="bbs-number">${writeDate }</td>
+            <td style="text-align: center;" class="bbs-number">${article.hit }</td>
         </tr>
     </c:forEach>
     <!--  bbs list end -->
