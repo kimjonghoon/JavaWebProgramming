@@ -110,8 +110,8 @@ java.text.DateFormat df =
 Object writeDate = pageContext.getAttribute("writeDate");
 pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 %>
-            <td style="text-align: center;" class="bbs-number">${writeDate }</td>
-            <td style="text-align: center;" class="bbs-number">${article.hit }</td>
+            <td style="text-align: center;font-size: 0.8em;font-family: Roboto;" class="bbs-date">${writeDate }</td>
+            <td style="text-align: center;font-size: 0.7em;font-family: Roboto;" class="bbs-read">${article.hit }</td>
         </tr>
     </c:forEach>
     <!--  bbs list end -->

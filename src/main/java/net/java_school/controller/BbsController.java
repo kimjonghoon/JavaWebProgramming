@@ -89,12 +89,13 @@ public class BbsController extends Paginator {
 
 		/*		
 		//MySQL and MariaDB start
-		Integer offset = (page - 1) * numPerPage;
-		Integer rowCount = numPerPage;
+		Integer offset = (page - 1) * recordsPerPage;
+		Integer rowCount = recordsPerPage;
 		map.put("offset", offset.toString());
 		map.put("rowCount", rowCount.toString());
 		//MySQL and MariaDB end
-		 */
+		*/
+		
 		List<Article> list = boardService.getArticleList(map);
 
 		model.addAttribute("list", list);
@@ -186,14 +187,16 @@ public class BbsController extends Paginator {
 		map.put("start", startRecord.toString());
 		map.put("end", endRecord.toString());
 		//Oracle end
+		
 		/*
 		//MySQL and MariaDB start
-		Integer offset = (page - 1) * numPerPage;
-		Integer rowCount = numPerPage;
+		Integer offset = (page - 1) * recordsPerPage;
+		Integer rowCount = recordsPerPage;
 		map.put("offset", offset.toString());
 		map.put("rowCount", rowCount.toString());
 		//MySQL and MariaDB end
-		 */
+		*/
+		
 		List<Article> list = boardService.getArticleList(map);
 
 		model.addAttribute("list", list);

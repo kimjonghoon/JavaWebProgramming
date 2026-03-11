@@ -616,8 +616,4 @@
 	.cmd > b {
 		color: red;
 	}
-	.bbs-number {
-		font-family: Roboto;
-		font-size: 0.8em;	
-	}
 }
