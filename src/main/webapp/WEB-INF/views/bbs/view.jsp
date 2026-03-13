@@ -103,15 +103,6 @@ $(document).ready(function () {
 	}
         $('#viewForm').submit();
     });
-    /* 2022.10.18 removed 
-    $('.next-prev a').click(function (e) {
-        e.preventDefault();
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-        $('#viewForm').submit();
-    }); */
     //Modify Button
     $('.goModify').click(function () {
         $('#modifyForm').submit();
@@ -447,13 +438,12 @@ $(document).on('click', '#all-comments', function (e) {
             <c:set var="writeDate" value="${article.regdate }"/>
 <%
 Object locale = pageContext.getAttribute("locale");
-java.text.DateFormat df = 
-	java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
+java.text.DateFormat df = java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
 Object writeDate = pageContext.getAttribute("writeDate");
 pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 %>           
-            <td style="text-align: center;font-size: 0.8em;font-family: Roboto;" class="bbs-date">${writeDate }</td>
-            <td style="text-align: center;font-size: 0.7em;font-family: Roboto;" class="bbs-read">${article.hit }</td>
+            <td style="text-align: center;font-size: 0.8em;">${writeDate }</td>
+            <td style="text-align: center;font-size: 0.8em;">${article.hit }</td>
         </tr>
     </c:forEach>
 </table>

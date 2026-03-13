@@ -105,13 +105,12 @@ function createCookie(name, value, days) {
             <c:set var="writeDate" value="${article.regdate }"/>
 <%
 Object locale = pageContext.getAttribute("locale");
-java.text.DateFormat df = 
-	java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
+java.text.DateFormat df = java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT, (java.util.Locale) locale);
 Object writeDate = pageContext.getAttribute("writeDate");
 pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 %>
-            <td style="text-align: center;font-size: 0.8em;font-family: Roboto;" class="bbs-date">${writeDate }</td>
-            <td style="text-align: center;font-size: 0.7em;font-family: Roboto;" class="bbs-read">${article.hit }</td>
+            <td style="text-align: center;font-size: 0.8em;">${writeDate }</td>
+            <td style="text-align: center;font-size: 0.8em;">${article.hit }</td>
         </tr>
     </c:forEach>
     <!--  bbs list end -->
