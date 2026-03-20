@@ -39,7 +39,7 @@ public class SecurityConfig {
 		manager.setAuthoritiesByUsernameQuery("SELECT email as username, authority FROM authorities WHERE email = ?");
 		return manager;
 	}
-
+/*
 	@Bean
 	public DaoAuthenticationProvider daoAuthenticationProvider() {
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService());
@@ -47,12 +47,11 @@ public class SecurityConfig {
 		return provider;
 	}
 
-	/*
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
 		builder.jdbcAuthentication().dataSource(dataSource).passwordEncoder(this.passwordEncoder());
 	}
-	*/
+*/
 
 	@Bean
 	public AccessDeniedHandler accessDeniedHandler() {
