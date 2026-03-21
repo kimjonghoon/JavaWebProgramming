@@ -21,290 +21,303 @@
 <c:url var="commentsUrl" value="/comments"/>
 <script>
 function displayComments() {
-    var url = '${commentsUrl}/' + ${articleNo};
-    $.getJSON(url, function (data) {
-        $('#all-comments').empty();
-        $.each(data, function (i, item) {
-	    var creation = new Intl.DateTimeFormat('<spring:message code="lang" />', {dateStyle: 'medium', timeStyle: 'medium'}).format(new Date(item.regdate));
-            var comments = '<div class="comments">'
-                    + '<span class="writer">' + item.name + '</span>'
-                    + '<span class="date">' + creation + '</span>';
-            if (item.editable === true) {
-                comments = comments
-                        + '<span class="modify-del">'
-                        + '<a href="#" class="comment-modify-link">' + '<spring:message code="modify" />' + '</a> | '
-                        + '<a href="#" class="comment-delete-link" title="' + item.commentNo + '">' + '<spring:message code="delete" />' + '</a>'
-                        + '</span>';
-            }
-            comments = comments
-                    + '<div class="comment-memo">' + item.memo + '</div>'
-                    + '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
-                    + '<div style="text-align: right;">'
-                    + '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
-                    + '</div>'
-                    + '<div>'
-                    + '<textarea class="comment-textarea" name="memo" rows="7" cols="50">' + item.memo + '</textarea>'
-                    + '</div>'
-                    + '</form>'
-                    + '</div>';
-            $('#all-comments').append(comments);
-            //console.log(item);
-        });
-    });
+	const url = '${commentsUrl}/' + ${articleNo};
+	$.getJSON(url, function (data) {
+		$('#all-comments').empty();
+		$.each(data, function (i, item) {
+			const creation = new Intl.DateTimeFormat('<spring:message code="lang" />', {dateStyle: 'medium', timeStyle: 'medium'}).format(new Date(item.regdate));
+			let comments = '<div class="comments">' 
+				+ '<span class="writer">' + item.name + '</span>'
+				+ '<span class="date">' + creation + '</span>';
+			if (item.editable === true) {
+				comments = comments
+					+ '<span class="modify-del">'
+					+ '<a href="#" class="comment-modify-link">' + '<spring:message code="modify" />' + '</a> | '
+					+ '<a href="#" class="comment-delete-link" title="' + item.commentNo + '">' + '<spring:message code="delete" />' + '</a>'
+					+ '</span>';
+			}
+			comments = comments
+				+ '<div class="comment-memo">' + item.memo + '</div>'
+				+ '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
+				+ '<div style="text-align: right;">'
+				+ '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
+				+ '</div>'
+				+ '<div>'
+				+ '<textarea class="comment-textarea" name="memo" rows="7" cols="50">' + item.memo + '</textarea>'
+				+ '</div>'
+				+ '</form>'
+				+ '</div>';
+			$('#all-comments').append(comments);
+			//console.log(item);
+		});
+	});
 }
-
 $(document).ready(function () {
-    displayComments();
-    $('title').empty();
-    var title = $('#bbs-title').html();
-    $('title').append(title);
-    
-    $('#file-list a.download').click(function (e) {
-        e.preventDefault();
-        var filename = this.title;
-	var fileno = $(this).attr('href');
-        $('#downForm input[name*=filename]').val(filename);
-        $('#downForm input[name*=fileno]').val(fileno);
-        $('#downForm').submit();
-    });
-    $('#file-list a:not(.download)').click(function (e) {
-        e.preventDefault();
-        var chk = confirm('<spring:message code="delete.confirm" />');
-        if (chk === true) {
-            var attachFileNo = this.title;
-            $('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
-            $('#deleteAttachFileForm').submit();
-        }
-    });
-    //2022.10.22 added
-    $('#next-article-link').click(function (e) {
-        e.preventDefault();
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
-        if (parseInt(articleNo) > parseInt(firstItemNo)) {
-        	$('#viewForm-page').val(${param.page - 1});
+	displayComments();
+	$('title').empty();
+	const title = $('#bbs-title').html();
+	$('title').append(title);
+	
+	$('#file-list a.download').click(function (e) {
+		e.preventDefault();
+		const filename = this.title;
+		const fileno = $(this).attr('href');
+		$('#downForm input[name*=filename]').val(filename);
+		$('#downForm input[name*=fileno]').val(fileno);
+		$('#downForm').submit();
+	});
+	
+	$('#file-list a:not(.download)').click(function (e) {
+		e.preventDefault();
+		const chk = confirm('<spring:message code="delete.confirm" />');
+		if (chk === true) {
+			const attachFileNo = this.title;
+			$('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
+			$('#deleteAttachFileForm').submit();
+		}
+	});
+	
+	$('#next-article-link').click(function (e) {
+		e.preventDefault();
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		const firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
+		if (parseInt(articleNo) > parseInt(firstItemNo)) {
+			$('#viewForm-page').val(${param.page - 1});
+		}
+		$('#viewForm').submit();
+	});
+	
+	$('#prev-article-link').click(function (e) {
+		e.preventDefault();
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		const lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
+		if (parseInt(articleNo) < parseInt(lastItemNo)) {
+			$('#viewForm-page').val(${param.page + 1});
+		}
+		$('#viewForm').submit();
+	});
+	
+	//Modify Button
+	$('.goModify').click(function () {
+		$('#modifyForm').submit();
+	});
+	
+	//Del Button
+	$('.goDelete').click(function () {
+		const chk = confirm('<spring:message code="delete.confirm" />');
+		if (chk === true) {
+			$('#delForm').submit();
+		}
+	});
+	
+	//Next Article Button
+	$('.next-article').click(function () {
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		const firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
+		if (parseInt(articleNo) > parseInt(firstItemNo)) {
+			$('#viewForm-page').val(${param.page - 1});
+		}
+		$('#viewForm').submit();
+	});
+	
+	//Prev Article Button
+	$('.prev-article').click(function () {
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		const lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
+		if (parseInt(articleNo) < parseInt(lastItemNo)) {
+			$('#viewForm-page').val(${param.page + 1});
+		}
+		$('#viewForm').submit();
+	});
+	
+	//List Button
+	$('.goList').click(function () {
+		$('#listForm').submit();
+	});
+	
+	//Write Button
+	$('.goWrite').click(function () {
+		$('#writeForm').submit();
+	});
+	
+	//Title Link in view.jsp
+	$('#list-table a').click(function (e) {
+		e.preventDefault();
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		$('#viewForm').submit();
+	});
+	
+	//Paging
+	$('#paging a').click(function (e) {
+		e.preventDefault();
+		const page = this.title;
+		$('#listForm input[name*=page]').val(page);
+		$('#listForm').submit();
+	});
+	
+	//Write Button on Search Button
+	$('#list-menu > input').click(function () {
+		$('#writeForm').submit();
+	});
+	
+	$('#searchForm').submit(function() {
+		let $search = $('#searchForm input[name*=search]').val();
+		$search = $.trim($search);
+		$('#searchForm input[name*=search]').val($search);
+		$('#searchForm').submit();
+	});
+	
+	$("#addCommentForm").submit(function (event) {
+		event.preventDefault();
+		const $form = $(this);
+		let memo = $('#addComment-ta').val();
+		memo = $.trim(memo);
+		if (memo.length === 0) {
+			$('#addComment-ta').val('');
+			return false;
+		}
+		const dataToBeSent = $form.serialize();
+		const url = $form.attr("action");
+		const posting = $.post(url, dataToBeSent);
+		posting.done(function () {
+			displayComments();
+			$('#addComment-ta').val('');
+		});
+	});
+	
+	if ($('#article-content iframe').length) {
+		const width = $('#article-content').width();
+		$('#article-content iframe').each(function(index,element) {
+			const originWidth = $(element).width();
+			const originHeight = $(element).height();
+			const height = originHeight * width / originWidth;
+			$(element).css({'width':width,'height':height,'allowFullScreen':''});
+		});
 	}
-        $('#viewForm').submit();
-    });
-    //2022.10.18 added
-    $('#prev-article-link').click(function (e) {
-        e.preventDefault();
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-	//2022.10.22 added
-        var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
-        if (parseInt(articleNo) < parseInt(lastItemNo)) {
-		$('#viewForm-page').val(${param.page + 1});
-	}
-        $('#viewForm').submit();
-    });
-    //Modify Button
-    $('.goModify').click(function () {
-        $('#modifyForm').submit();
-    });
-    //Del Button
-    $('.goDelete').click(function () {
-        var chk = confirm('<spring:message code="delete.confirm" />');
-        if (chk === true) {
-            $('#delForm').submit();
-        }
-    });
-    //Next Article Button
-    $('.next-article').click(function () {
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-	//2022.10.22 added
-	var firstItemNo = $('#list-table tr:nth-child(2) td:nth-child(2) a').attr('title');
-        if (parseInt(articleNo) > parseInt(firstItemNo)) {
-		$('#viewForm-page').val(${param.page - 1});
-	}
-        $('#viewForm').submit();
-    });
-    //Prev Article Button
-    $('.prev-article').click(function () {
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-	//2022.10.22 added
-        var lastItemNo = $('#list-table tr:last-child td:nth-child(2) a').attr('title');
-        if (parseInt(articleNo) < parseInt(lastItemNo)) {
-		$('#viewForm-page').val(${param.page + 1});
-	}
-        $('#viewForm').submit();
-    });
-    //List Button
-    $('.goList').click(function () {
-        $('#listForm').submit();
-    });
-    //Write Button
-    $('.goWrite').click(function () {
-        $('#writeForm').submit();
-    });
-    //Title Link in view.jsp
-    $('#list-table a').click(function (e) {
-        e.preventDefault();
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-        $('#viewForm').submit();
-    });
-    //Paging
-    $('#paging a').click(function (e) {
-        e.preventDefault();
-        var page = this.title;
-        $('#listForm input[name*=page]').val(page);
-        $('#listForm').submit();
-    });
-    //Write Button on Search Button
-    $('#list-menu > input').click(function () {
-        $('#writeForm').submit();
-    });
-    $('#searchForm').submit(function() {
-        var $search = $('#searchForm input[name*=search]').val();
-        $search = $.trim($search);
-        $('#searchForm input[name*=search]').val($search);
-        $('#searchForm').submit();
-    });
-    $("#addCommentForm").submit(function (event) {
-        event.preventDefault();
-        var $form = $(this);
-        var memo = $('#addComment-ta').val();
-        memo = $.trim(memo);
-        if (memo.length === 0) {
-            $('#addComment-ta').val('');
-            return false;
-        }
-        var dataToBeSent = $form.serialize();
-        var url = $form.attr("action");
-        var posting = $.post(url, dataToBeSent);
-        posting.done(function () {
-            displayComments();
-            $('#addComment-ta').val('');
-        });
-    });    
-    if ($('#article-content iframe').length) {
-      const width = $('#article-content').width();
-      $('#article-content iframe').each(function(index,element) {
-        let originWidth = $(element).width();
-        let originHeight = $(element).height();
-        let height = originHeight * width / originWidth;
-        $(element).css({'width':width,'height':height,'allowFullScreen':''});
-      });
-    }
-    $('#article-content img').click(function(event) {
+	
+	$('#article-content img').click(function(event) {
 		toggleFullScreen(event.target);
 	});
-    function toggleFullScreen(elem) {
-        elem = elem || document.documentElement;
-
-        // Check if already fullscreen
-        if (!document.fullscreenElement &&
-            !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement &&
-            !document.msFullscreenElement) {
-            
-            // Enter fullscreen
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { // Firefox
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { // IE/Edge
-                elem.msRequestFullscreen();
-            }
-        } else {
-            // Exit fullscreen
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        }
-    }
+	
+	function toggleFullScreen(elem) {
+		elem = elem || document.documentElement;
+		
+		// Check if already fullscreen
+		if (!document.fullscreenElement &&
+				!document.mozFullScreenElement &&
+				!document.webkitFullscreenElement &&
+				!document.msFullscreenElement) {
+			
+			// Enter fullscreen
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) { // Firefox
+				elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { // IE/Edge
+				elem.msRequestFullscreen();
+			}
+		} else {
+			// Exit fullscreen
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.mozCancelFullScreen) {
+				document.mozCancelFullScreen();
+			} else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+		}
+	}
 });
 
 $(document).on('click', '#all-comments', function (e) {
-    if ($(e.target).is('.comment-modify-link')) {
-        e.preventDefault();
-        var $form = $(e.target).parent().parent().find('.comment-form');
-        var $div = $(e.target).parent().parent().find('.comment-memo');
-
-        if ($form.is(':hidden') === true) {
-            $form.show();
-            $div.hide();
-        } else {
-            $form.hide();
-            $div.show();
-        }
-    } else if ($(e.target).is('.comment-modify-cancel-link')) {
-        e.preventDefault();
-        var $form = $(e.target).parent().parent().parent().find('.comment-form');
-        var $div = $(e.target).parent().parent().parent().find('.comment-memo');
-
-        if ($form.is(':hidden') === true) {
-            $form.show();
-            $div.hide();
-        } else {
-            $form.hide();
-            $div.show();
-        }
-    } else if ($(e.target).is('.comment-modify-submit-link')) {
-        e.preventDefault();
-        var $form = $(e.target).parent().parent().parent().find('.comment-form');
-        var $textarea = $(e.target).parent().parent().find('.comment-textarea');
-        var memo = $textarea.val();
-        $('#modifyCommentForm input[name*=memo]').val(memo);
-        var dataToBeSent = $('#modifyCommentForm').serialize();
-        var url = $form.attr("action");
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: dataToBeSent,
-            success: function () {
-                displayComments();
-            },
-            error: function () {
-                alert('error!');
-            }
-        });
-    } else if ($(e.target).is('.comment-delete-link')) {
-        e.preventDefault();
-        var chk = confirm('<spring:message code="delete.confirm" />');
-        if (chk === false) {
-            return;
-        }
-        var $commentNo = $(e.target).attr('title');
-        var url = $('#deleteCommentForm').attr('action');
-        url += $commentNo;
-        var dataToBeSent = $('#deleteCommentForm').serialize();
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: dataToBeSent,
-            success: function () {
-                displayComments();
-            },
-            error:function(request,status,error){
-                console.log("code:" + request.status 
-                		+ "\n" + "message:" + request.responseText 
-                		+ "\n" + "error:" + error);
-            }
-        });
-    }
+	if ($(e.target).is('.comment-modify-link')) {
+		e.preventDefault();
+		const $form = $(e.target).parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().find('.comment-memo');
+		
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-cancel-link')) {
+		e.preventDefault();
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().parent().find('.comment-memo');
+		
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-submit-link')) {
+		e.preventDefault();
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		const $textarea = $(e.target).parent().parent().find('.comment-textarea');
+		const memo = $textarea.val();
+		$('#modifyCommentForm input[name*=memo]').val(memo);
+		const dataToBeSent = $('#modifyCommentForm').serialize();
+		const url = $form.attr("action");
+		
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: dataToBeSent,
+			success: function () {
+				displayComments();
+			},
+			error: function () {
+				alert('error!');
+			}
+		});
+	} else if ($(e.target).is('.comment-delete-link')) {
+		e.preventDefault();
+		const chk = confirm('<spring:message code="delete.confirm" />');
+		if (chk === false) {
+			return;
+		}
+		const $commentNo = $(e.target).attr('title');
+		let url = $('#deleteCommentForm').attr('action');
+		url += $commentNo;
+		const dataToBeSent = $('#deleteCommentForm').serialize();
+		
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: dataToBeSent,
+			success: function () {
+				displayComments();
+			},
+			error:function(request,status,error){
+				console.log("code:" + request.status
+						+ "\n" + "message:" + request.responseText
+						+ "\n" + "error:" + error);
+			}
+		});
+	}
 });
 </script>
 </head>

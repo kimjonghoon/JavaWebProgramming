@@ -13,47 +13,46 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
-    $('#paging a').click(function(e) {
-        e.preventDefault();
-        var page = this.title;
-        $('#listForm input[name*=page]').val(page);
-        $('#listForm').submit();
-    });
-    $('.view-link').click(function(e){
-        e.preventDefault();
-        var articleNo = this.title;
-        var action = $('#viewForm').attr('action');
-        action += articleNo;
-        $('#viewForm').attr('action', action);
-        $('#viewForm').submit();
-    });
-    $('#write-btn').click(function() {
-        $('#writeForm').submit();
-    });
-    $('#numPerPage').change(function() {
-        var numPerPage = $('#numPerPage option:selected').val();
-        if (numPerPage) {
-            createCookie('numPerPage', numPerPage, '30');
-            $('#listForm input[name*=page]').val('1');
-            $('#listForm').submit();
-        }
-    });
-    $('#searchForm').submit(function() {
-        var $search = $('#searchForm input[name*=search]').val();
-        $search = $.trim($search);
-        $('#searchForm input[name*=search]').val($search);
-        $('#searchForm').submit();
-    });
+	$('#paging a').click(function(e) {
+		e.preventDefault();
+		const page = this.title;
+		$('#listForm input[name*=page]').val(page);
+		$('#listForm').submit();
+	});
+	$('.view-link').click(function(e){
+		e.preventDefault();
+		const articleNo = this.title;
+		let action = $('#viewForm').attr('action');
+		action += articleNo;
+		$('#viewForm').attr('action', action);
+		$('#viewForm').submit();
+	});
+	$('#write-btn').click(function() {
+		$('#writeForm').submit();
+	});
+	$('#numPerPage').change(function() {
+		const numPerPage = $('#numPerPage option:selected').val();
+		if (numPerPage) {
+			createCookie('numPerPage', numPerPage, '30');
+			$('#listForm input[name*=page]').val('1');
+			$('#listForm').submit();
+		}
+	});
+	$('#searchForm').submit(function() {
+		$search = $('#searchForm input[name*=search]').val();
+		$search = $.trim($search);
+		$('#searchForm input[name*=search]').val($search);
+		$('#searchForm').submit();
+	});
 });
-
 function createCookie(name, value, days) {
-    var newCookie = name + "=" + escape(value);
-    if (days) {
-        var expires = new Date();
-        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-        newCookie += "; expires=" + expires.toGMTString();
-    }
-    document.cookie = newCookie;
+	let newCookie = name + "=" + escape(value);
+	if (days) {
+		let expires = new Date();
+		expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+		newCookie += "; expires=" + expires.toGMTString();
+	}
+	document.cookie = newCookie;
 }
 </script>
 </head>

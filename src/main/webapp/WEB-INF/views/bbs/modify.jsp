@@ -14,31 +14,31 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
-   $('#modifyForm').submit(function() {
-      var title = $('#modifyForm input[name*=title]').val();
-      var content = $('#modifyForm-ta').val();
-      title = $.trim(title);
-      content = $.trim(content);
-
-      if (title.length === 0) {
-          alert('<spring:message code="title.empty" />');
-          $('#modifyForm input[name*=title]').val('');
-          return false;
-      }
-      
-      if (content.length === 0) {
-          alert('<spring:message code="content.empty" />');
-          $('#modifyForm-ta').val('');
-          return false;
-      }
-
-      $('#modifyForm input[name*=title]').val(title);
-      $('#modifyForm-ta').val(content);
-   });
-   
-   $('#goView').click(function(){
-      $('#viewForm').submit(); 
-   });
+	$('#modifyForm').submit(function() {
+		let title = $('#modifyForm input[name*=title]').val();
+		let content = $('#modifyForm-ta').val();
+		title = $.trim(title);
+		content = $.trim(content);
+		
+		if (title.length === 0) {
+			alert('<spring:message code="title.empty" />');
+			$('#modifyForm input[name*=title]').val('');
+			return false;
+		}
+		
+		if (content.length === 0) {
+			alert('<spring:message code="content.empty" />');
+			$('#modifyForm-ta').val('');
+			return false;
+		}
+		
+		$('#modifyForm input[name*=title]').val(title);
+		$('#modifyForm-ta').val(content);
+	});
+	
+	$('#goView').click(function(){
+		$('#viewForm').submit();
+	});
 });
 </script>
 
