@@ -13,15 +13,15 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function() {
-    $('.del-user-link').click(function(e) {
-        e.preventDefault();
-        var check = confirm('<spring:message code="delete.confirm" />')
-        if (check) {
-            var email = this.title;
-            $('#delUserForm input[name*=email]').val(email);
-            $('#delUserForm').submit();
-        }
-    });
+	$('.del-user-link').click(function(e) {
+		e.preventDefault();
+		const check = confirm('<spring:message code="delete.confirm" />');
+		if (check) {
+			const email = this.title;
+			$('#delUserForm input[name*=email]').val(email);
+			$('#delUserForm').submit();
+		}
+	});
 });
 </script>
 </head>

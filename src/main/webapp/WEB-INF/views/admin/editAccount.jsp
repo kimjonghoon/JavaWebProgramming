@@ -15,12 +15,12 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <script>
 $(document).ready(function () {
-  $('.del-auth-link').click(function (e) {
-    e.preventDefault();
-    var authority = this.title;
-    $('#deleteAuthorityForm input[name*=authority]').val(authority);
-    $('#deleteAuthorityForm').submit();
-  });
+	$('.del-auth-link').click(function (e) {
+		e.preventDefault();
+		const authority = this.title;
+		$('#deleteAuthorityForm input[name*=authority]').val(authority);
+		$('#deleteAuthorityForm').submit();
+	});
 });
 </script>
 </head>
