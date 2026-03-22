@@ -194,12 +194,12 @@ public List&lt;Comment&gt; getAllComments(@PathVariable Integer articleNo,
 
 <pre class="prettyprint">
 function displayComments() {
-  var url = '/comments/' + ${articleNo};
+  const url = '/comments/' + ${articleNo};
   $.getJSON(url, function (data) {
     $('#all-comments').empty();
     $.each(data, function (i, item) {
-      var creation = new Date(item.regdate);
-      var comments = '&lt;div class="comments"&gt;'
+      const creation = new Date(item.regdate);
+      let comments = '&lt;div class="comments"&gt;'
         + '&lt;span class="writer"&gt;' + item.name + '&lt;/span&gt;'
         + '&lt;span class="date"&gt;' + creation.toLocaleString() + '&lt;/span&gt;';
       if (item.editable === true) {
@@ -306,8 +306,8 @@ displayComments() 함수가 실행될 때마다, div id="all-comments" 콘텐츠
 $(document).on('click', '#all-comments', function (e) {
   if ($(e.target).is('.comment-modify-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().find('.comment-memo');
+    const $form = $(e.target).parent().parent().find('.comment-form');
+    const $div = $(e.target).parent().parent().find('.comment-memo');
 
     if ($form.is(':hidden') === true) {
       $form.show();
@@ -318,8 +318,8 @@ $(document).on('click', '#all-comments', function (e) {
     }
   } else if ($(e.target).is('.comment-modify-cancel-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().parent().find('.comment-memo');
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $div = $(e.target).parent().parent().parent().find('.comment-memo');
 
     if ($form.is(':hidden') === true) {
       $form.show();
@@ -330,12 +330,12 @@ $(document).on('click', '#all-comments', function (e) {
     }
   } else if ($(e.target).is('.comment-modify-submit-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $textarea = $(e.target).parent().parent().find('.comment-textarea');
-    var memo = $textarea.val();
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $textarea = $(e.target).parent().parent().find('.comment-textarea');
+    const memo = $textarea.val();
     $('#modifyCommentForm input[name*=memo]').val(memo);
-    var dataToBeSent = $('#modifyCommentForm').serialize();
-    var url = $form.attr("action");
+    const dataToBeSent = $('#modifyCommentForm').serialize();
+    const url = $form.attr("action");
     $.ajax({
       url: url,
       type: 'PUT',
@@ -349,14 +349,14 @@ $(document).on('click', '#all-comments', function (e) {
     });
   } else if ($(e.target).is('.comment-delete-link')) {
     e.preventDefault();
-    var chk = confirm('정말로 삭제하겠습니까?');
+    const chk = confirm('정말로 삭제하겠습니까?');
     if (chk === false) {
       return;
     }
-    var $commentNo = $(e.target).attr('title');
-    var url = $('#deleteCommentForm').attr('action');
+    const $commentNo = $(e.target).attr('title');
+    let url = $('#deleteCommentForm').attr('action');
     url += $commentNo;
-    var dataToBeSent = $('#deleteCommentForm').serialize();
+    const dataToBeSent = $('#deleteCommentForm').serialize();
     $.ajax({
       url: url,
       type: '<b>POST</b>',
@@ -496,12 +496,12 @@ web.xml에 다음 필터를 추가한다.
 <pre class="prettyprint">
   } else if ($(e.target).is('.comment-modify-submit-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $textarea = $(e.target).parent().parent().find('.comment-textarea');
-    var memo = $textarea.val();
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $textarea = $(e.target).parent().parent().find('.comment-textarea');
+    const memo = $textarea.val();
     $('#modifyCommentForm input[name*=memo]').val(memo);
-    var dataToBeSent = $('#modifyCommentForm').serialize();
-    var url = $form.attr("action");
+    const dataToBeSent = $('#modifyCommentForm').serialize();
+    const url = $form.attr("action");
     $.ajax({
       url: url,
       type: '<b>POST</b>',

@@ -857,7 +857,7 @@ function goModify(no,curPage,keyword) {
 }
 
 function goDelete(no,curPage,keyword) {
-	var check = confirm("정말로 삭제하겠습니까?");
+	const check = confirm("정말로 삭제하겠습니까?");
 	if (check) {
 		location.href="del.jsp?no=" + no + "&amp;curPage=" + curPage + "&amp;keyword=" + keyword;
 	}

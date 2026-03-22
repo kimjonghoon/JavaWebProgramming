@@ -1834,14 +1834,14 @@ view.html 문서를 열고 #content의 <strong>div id="content-categories"</stro
 <pre class="prettyprint">
 &lt;script type="text/javascript"&gt;
 function modifyCommentToggle(articleNo) {
-    var p_id = "comment" + articleNo;
-    var p = document.getElementById(p_id);
+    const p_id = "comment" + articleNo;
+    const p = document.getElementById(p_id);
     
-    var form_id = "modifyCommentForm" + articleNo;
-    var form = document.getElementById(form_id);
+    const form_id = "modifyCommentForm" + articleNo;
+    const form = document.getElementById(form_id);
     
-    var p_display;
-    var form_display;
+    let p_display;
+    let form_display;
     
     if (p.style.display) {
             p_display = '';
@@ -3228,19 +3228,19 @@ CSS 포지셔닝에서의 만든 list.html 파일을 연 상태에서 Save As...
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;<strong>
 &lt;script type="text/javascript"&gt;
 function goList(curPage) {
-    var form = document.getElementById("listForm");
+    const form = document.getElementById("listForm");
     form.curPage.value = curPage;
     form.submit();
 }
 
 function goView(articleNo) {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.articleNo.value = articleNo;
     form.submit();
 }
 
 function goWrite() {
-    var form = document.getElementById("writeForm");
+    const form = document.getElementById("writeForm");
     form.submit();
 }
 &lt;/script&gt;</strong>           
@@ -3376,11 +3376,11 @@ CSS 포지셔닝에서 만든 write.html 파일을 연 상태에서 Save As... �
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 <strong>&lt;script type="text/javascript"&gt;
 function goList() {
-    var form = document.getElementById("listForm");
+    const form = document.getElementById("listForm");
     form.submit();
 }
 function goView() {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.submit();
 }
 &lt;/script&gt;</strong>           
@@ -3512,12 +3512,12 @@ CSS 포지셔닝에서 만든 view.html 파일을 연 상태에서 Save As... �
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 &lt;script type="text/javascript"&gt;
 function modifyCommentToggle(articleNo) {
-    var p_id = "comment" + articleNo;
-    var form_id = "modifyCommentForm" + articleNo;
-    var p = document.getElementById(p_id);
-    var form = document.getElementById(form_id);
-    var p_display;
-    var form_display;
+    const p_id = "comment" + articleNo;
+    const form_id = "modifyCommentForm" + articleNo;
+    const p = document.getElementById(p_id);
+    const form = document.getElementById(form_id);
+    let p_display;
+    let form_display;
     
     if (p.style.display) {
         p_display = '';
@@ -3532,48 +3532,48 @@ function modifyCommentToggle(articleNo) {
 }
 <strong>
 function goList(curPage) {
-    var form = document.getElementById("listForm");
+    const form = document.getElementById("listForm");
     form.curPage.value = curPage;
     form.submit();
 }
 
 function goView(articleNo) {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.articleNo.value = articleNo;
     form.submit();
 }
 
 function goWrite() {
-    var form = document.getElementById("writeForm");
+    const form = document.getElementById("writeForm");
     form.submit();
 }
 
 function goModify() {
-    var form = document.getElementById("modifyForm");
+    const form = document.getElementById("modifyForm");
     form.submit();
 }
 
 function goDelete() {
-    var check = confirm("정말로 삭제하시겠습니까?");
+    const check = confirm("정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("delForm");
+        const form = document.getElementById("delForm");
         form.submit();
     }
 }
 
 function deleteAttachFile(attachFileNo) {
-    var check = confirm("첨부 파일을 정말로 삭제하시겠습니까?");
+    const check = confirm("첨부 파일을 정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("deleteAttachFileForm");
+        const form = document.getElementById("deleteAttachFileForm");
         form.attachFileNo.value = attachFileNo;
         form.submit();
     }
 }
 
 function deleteComment(commentNo) {
-    var check = confirm("댓글을 정말로 삭제하시겠습니까?");
+    const check = confirm("댓글을 정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("deleteCommentForm");
+        const form = document.getElementById("deleteCommentForm");
         form.commentNo.value = commentNo;
         form.submit();
     }
@@ -3955,7 +3955,7 @@ String searchWord = request.getParameter("searchWord");
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css"  /&gt;
 &lt;script type="text/javascript"&gt;
 function goView() {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.submit();
 }
 &lt;/script&gt;           
@@ -4089,7 +4089,7 @@ CSS 포지셔닝에서 만든 singUp.html 파일을 연 상태에서 Save As... 
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 <strong>&lt;script type="text/javascript"&gt;
 function check() {
-    //var form = document.getElementById("signUpForm");
+    //const form = document.getElementById("signUpForm");
     //TODO 유효성 검사
     return true;
 }
@@ -4272,7 +4272,7 @@ signUp.jsp 파일을 연 상태에서 Save As... 메뉴를 이용하여 editAcco
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css"  /&gt;
 &lt;script type="text/javascript"&gt;
 function check() {
-    //var form = document.getElementById("editAccountForm");
+    //const form = document.getElementById("editAccountForm");
     //TODO 유효성 검사
     return true;
 }
@@ -4384,7 +4384,7 @@ editAccount.jsp 파일을 연 상태에서 Save As... 메뉴를 이용하여 cha
 &lt;script type="text/javascript"&gt;
 <strong>           
 function check() {
-    var form = document.getElementById("changePasswordForm");
+    const form = document.getElementById("changePasswordForm");
     if (form.newPasswd.value == form.confirm.value) {
         return true;    
     } else {
@@ -4558,7 +4558,7 @@ editAccount.jsp 파일을 연 상태에서 Save As... 메뉴를 이용하여 bye
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css"  /&gt;
 &lt;script type="text/javascript"&gt;
 function check() {
-    //var form = document.getElementById("byeForm");
+    //const form = document.getElementById("byeForm");
     //유효성 검사
     return true;
 }

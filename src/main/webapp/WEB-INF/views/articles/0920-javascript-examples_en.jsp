@@ -48,8 +48,8 @@ The following is an example of dynamically creating submenus in the second selec
 &lt;title&gt;Handling select items&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function chooseLang() {
-  var form = document.getElementById("testForm");
-  var lang = form.programLanguage.value;
+  const form = document.getElementById("testForm");
+  const lang = form.programLanguage.value;
 
   switch (lang) {
   case "java":
@@ -100,7 +100,7 @@ The following is a way to reference a form object from &lt;form id="<strong>some
 </p>
 
 <pre class="prettyprint">
-var form = document.getElementById("<strong>someform</strong>");
+const form = document.getElementById("<strong>someform</strong>");
 </pre>
 
 <h3>Submit event handler</h3>
@@ -140,7 +140,7 @@ Disabled parameters don't go to the server.
 &lt;title&gt;JavaScript Test&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function check() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   <strong>form.condition[4].disabled = true;</strong>
   return true;
 }
@@ -175,8 +175,8 @@ function check() {
 &lt;title&gt;JavaScript Test&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function agree() {
-  var form = document.getElementById("testForm");
-  var submit = document.getElementById("submit");
+  const form = document.getElementById("testForm");
+  const submit = document.getElementById("submit");
   if (form.agree.checked == true) {
     submit.disabled = false;	
   } else {
@@ -184,9 +184,9 @@ function agree() {
   }
 }
 function check() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.condition[4].disabled = true;
-  var chk = form.confirm[0].value
+  const chk = form.confirm[0].value
   return true;
 }
 &lt;/script&gt;
@@ -252,12 +252,12 @@ You can loosen coupling by modifying send1.html as below.
 <strong>window.onload = initPage;
 
 function initPage() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.onsubmit = check;
 }
 
 function check() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.condition[4].disabled = true;
   return true;
 }</strong>
@@ -294,12 +294,12 @@ You can also make the JavaScript code into an external file to loosen coupling m
 window.onload = initPage;
 
 function initPage() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.onsubmit = check;
 }
 
 function check() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.condition[4].disabled = true;
   return true;
 }
@@ -343,16 +343,16 @@ function check() {
 window.onload = initPage;
 
 function initPage() {
-  var submit = document.getElementById("submit");
+  const submit = document.getElementById("submit");
   submit.disabled = true;
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.onsubmit = check;
   form.agree.onchange = agree;
 }
 
 function agree() {
-  var form = document.getElementById("testForm");
-  var submit = document.getElementById("submit");
+  const form = document.getElementById("testForm");
+  const submit = document.getElementById("submit");
   if (form.agree.checked == true) {
     submit.disabled = false;	
   } else {
@@ -360,7 +360,7 @@ function agree() {
   }
 }
 function check() {
-  var form = document.getElementById("testForm");
+  const form = document.getElementById("testForm");
   form.condition[4].disabled = true;
   return true;
 }
@@ -401,7 +401,7 @@ The code below gets all cookies that the current document object can access.
 </p>
 
 <pre class="prettyprint no-border">
-var allCookies = document.cookie
+const allCookies = document.cookie
 </pre>
 
 <p>
@@ -420,17 +420,17 @@ The createCookie(), readCookie(), and deleteCookie() functions below each add a 
 </p>
 
 <pre class="prettyprint">function createCookie(name, value, days) {
-  var newCookie = name + "=" + escape(value);
+  let newCookie = name + "=" + escape(value);
   if (days) {
-    var expires = new Date();
+    const expires = new Date();
     expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
     newCookie += "; expires=" + expires.toGMTString();
   }
   document.cookie = newCookie;
 }
 function readCookie(name) {
-  var allCookies = document.cookie;
-  var beginIndex = allCookies.indexOf(" " + name + "=");
+  const allCookies = document.cookie;
+  let beginIndex = allCookies.indexOf(" " + name + "=");
   if (beginIndex === -1) {
     beginIndex = allCookies.indexOf(name + "=");
   }
@@ -438,7 +438,7 @@ function readCookie(name) {
     return null;
   } else {
     beginIndex = allCookies.indexOf("=", beginIndex) + 1;
-    var endIndex = allCookies.indexOf(";", beginIndex);
+    const endIndex = allCookies.indexOf(";", beginIndex);
     if (endIndex === -1) {
       endIndex = allCookies.length;
     }
@@ -464,20 +464,20 @@ The following example allows the user to store the "number of records per page" 
 window.onload = initPage;
 
 function initPage() {
-  var selectBox = document.getElementById("numPerPage");
+  const selectBox = document.getElementById("numPerPage");
   selectBox.onchange = setNumPerPage;
-  var delNumPerPageBtn = document.getElementById("del-numPerPage-btn");
+  const delNumPerPageBtn = document.getElementById("del-numPerPage-btn");
   delNumPerPageBtn.onclick = delNumPerPageCookie;
 }
 function setNumPerPage() {
-  var selectBox = document.getElementById("numPerPage");
-  var numPerPage = selectBox.value;
+  const selectBox = document.getElementById("numPerPage");
+  const numPerPage = selectBox.value;
   createCookie('numPerPage', numPerPage, '100');
   showCookie();
 }
 function showCookie() {
-  var numPerPage = readCookie("numPerPage");
-  var div = document.getElementById('show-npp-div');
+  const numPerPage = readCookie("numPerPage");
+  const div = document.getElementById('show-npp-div');
   if(numPerPage) {
     div.innerHTML = numPerPage;
   } else {
@@ -489,20 +489,20 @@ function delNumPerPageCookie() {
   showCookie();
 }
 function createCookie(name, value, days) {
-  var newCookie = name + "=" + escape(value);
+  let newCookie = name + "=" + escape(value);
   if (days) {
-    var expires = new Date();
+    const expires = new Date();
     expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
     newCookie += "; expires=" + expires.toGMTString();
   }
   document.cookie = newCookie;
 }
 function readCookie(name) {
-  var allCookies = document.cookie;
+  const allCookies = document.cookie;
   if (!allCookies) {
     return null;
   }
-  var beginIndex = allCookies.indexOf(" " + name + "=");
+  let beginIndex = allCookies.indexOf(" " + name + "=");
   if (beginIndex === -1) {
     beginIndex = allCookies.indexOf(name + "=");
   }
@@ -510,7 +510,7 @@ function readCookie(name) {
     return null;
   } else {
     beginIndex = allCookies.indexOf("=", beginIndex) + 1;
-    var endIndex = allCookies.indexOf(";", beginIndex);
+    const endIndex = allCookies.indexOf(";", beginIndex);
     if (endIndex === -1) {
       endIndex = allCookies.length;
     }
@@ -573,7 +573,7 @@ Adding the id attribute to an element makes it easier to specify an event handle
 
 <pre class="prettyprint no-border">
 window.onload = function() {
-  var btn = document.getElementById("<strong>some-button</strong>");
+  const btn = document.getElementById("<strong>some-button</strong>");
   btn.onclick = function() {
     //TODO
   };
@@ -629,25 +629,25 @@ Add the following between &lt;script&gt; and &lt;/script&gt;.
 
 function initPage() {
   //Download link and the delete link
-  var file_list = document.getElementById("file-list");
-  var fileLinks = file_list.getElementsByTagName("a");
+  const file_list = document.getElementById("file-list");
+  const fileLinks = file_list.getElementsByTagName("a");
   
-  for (var i = 0; i &lt; fileLinks.length; i++) {
-    var fileLink = fileLinks[i];
+  for (let i = 0; i &lt; fileLinks.length; i++) {
+    let fileLink = fileLinks[i];
     if (fileLink.className == "download") {
       fileLink.onclick = function() {
-        var attachFileNo = this.title;
-        var form = document.getElementById("downForm");
+        let attachFileNo = this.title;
+        const form = document.getElementById("downForm");
         form.attachFileNo.value = attachFileNo;
         form.submit();
         return false;
       };
     } else {
       fileLink.onclick = function() {
-        var attachFileNo = this.title;
-        var chk = confirm("Are you sure you want to delete it?");
+        const attachFileNo = this.title;
+        const chk = confirm("Are you sure you want to delete it?");
         if (chk === true) {
-          var form = document.getElementById("deleteAttachFileForm");
+          const form = document.getElementById("deleteAttachFileForm");
           form.attachFileNo.value = attachFileNo;
           form.submit();
           return false;
@@ -705,8 +705,8 @@ Add the following outside the initPage() function:
 </p>
 
 <pre class="prettyprint">function commentUpdate(e) {
-  var me = getActivatedObject(e);
-  var form = me.parentNode;
+  const me = getActivatedObject(e);
+  let form = me.parentNode;
   while (form.className != "comment-form") {
     form = form.parentNode;
   }
@@ -714,13 +714,13 @@ Add the following outside the initPage() function:
   return false;
 }
 function modifyCommentToggle(e) {
-  var me = getActivatedObject(e);
-  var comments = me.parentNode;
+  const me = getActivatedObject(e);
+  let comments = me.parentNode;
   while (comments.className != "comments") {
     comments = comments.parentNode;
   }
-  var div = comments.getElementsByTagName("div")[0];//Comment p
-  var form = comments.getElementsByTagName("form")[0];//Comment form
+  const div = comments.getElementsByTagName("div")[0];//Comment p
+  const form = comments.getElementsByTagName("form")[0];//Comment form
   if (div.style.display) {
     div.style.display = '';
     form.style.display = 'none';
@@ -734,7 +734,7 @@ function modifyCommentToggle(e) {
  Head First Ajax 
 */
 function getActivatedObject(e) {
-  var obj;
+  let obj;
   if (!e) {
     //IE Old version
     obj = window.event.srcElement;
@@ -754,40 +754,41 @@ Add the following to initPage().
 </p>
 
 <pre class="prettyprint">
-var allComments = document.getElementById("all-comments");
-var divs = allComments.getElementsByTagName("div");
+const allComments = document.getElementById("all-comments");
+const divs = allComments.getElementsByTagName("div");
 
-for (i = 0; i &lt; divs.length; i++) {
-  if (divs[i].className == "comments") {
-    var comments = divs[i];
-    var spans = comments.getElementsByTagName("span");
-    for (var j = 0; j &lt; spans.length; j++) {
-      if (spans[j].className === "modify-del") {
-        var md = spans[j];
-        var commentModifyLink = md.getElementsByTagName("a")[0];//Modify link
-        commentModifyLink.onclick = modifyCommentToggle;
-        var commentDelLink = md.getElementsByTagName("a")[1];//Delete link
-        commentDelLink.onclick = function() {
-          var commentNo = this.title;
-          var chk = confirm("Are you sure you want to delete it?");
-          if (chk === true) {
-            var form = document.getElementById("deleteCommentForm");
-            form.commentNo.value = commentNo;
-            form.submit();
-            return false;
-           }
-         };
-      }
-      //Modify link in form
-      var form = comments.getElementsByTagName("form")[0];
-      var div = form.getElementsByTagName("div")[0];
-      commentModifyLink = div.getElementsByTagName("a")[0];
-      commentModifyLink.onclick = commentUpdate;
-      //Cancel link in form
-      var cancelLink = div.getElementsByTagName("a")[1];
-      cancelLink.onclick = modifyCommentToggle;
-    }
-  }  
+for (let i = 0; i &lt; divs.length; i++) {
+	if (divs[i].className == "comments") {
+		const comments = divs[i];
+		const spans = comments.getElementsByTagName("span");
+		
+		for (let j = 0; j &lt; spans.length; j++) {
+			if (spans[j].className === "modify-del") {
+				const md = spans[j];
+				const commentModifyLink = md.getElementsByTagName("a")[0];//Modify link
+				commentModifyLink.onclick = modifyCommentToggle;
+				const commentDelLink = md.getElementsByTagName("a")[1];//Delete link
+				commentDelLink.onclick = function() {
+					const commentNo = this.title;
+					const chk = confirm("Are you sure you want to delete it?");
+					if (chk === true) {
+						const form = document.getElementById("deleteCommentForm");
+					   form.commentNo.value = commentNo;
+					   form.submit();
+					   return false;
+					}
+				};
+			}
+			//Modify link in form
+			const form = comments.getElementsByTagName("form")[0];
+			const div = form.getElementsByTagName("div")[0];
+			commentModifyLink = div.getElementsByTagName("a")[0];
+			commentModifyLink.onclick = commentUpdate;
+			//Cancel link in form
+			const cancelLink = div.getElementsByTagName("a")[1];
+			cancelLink.onclick = modifyCommentToggle;
+		}
+	}  
 }
 </pre>
 
@@ -816,16 +817,17 @@ Modify as follows.
 Add the following to initPage().
 </p>
 
-<pre class="prettyprint">//Next Article link, Prev Article link
-var nextPrev = document.getElementById("next-prev");
-links = nextPrev.getElementsByTagName("a");
+<pre class="prettyprint">
+//Next Article link, Prev Article link
+const nextPrev = document.getElementById("next-prev");
+let links = nextPrev.getElementsByTagName("a");
 for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-    return false;  	
-  };
+	links[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 </pre>
 
@@ -864,64 +866,65 @@ There are two <strong>view-menu</strong> classes surrounding buttons, so we need
 Add the following to initPage().
 </p>
 
-<pre class="prettyprint">//Modify Button
-var modifyBtns = document.getElementsByClassName("goModify");
+<pre class="prettyprint">
+//Modify Button
+const modifyBtns = document.getElementsByClassName("goModify");
 i = modifyBtns.length;
 while (i--) {
-  modifyBtns[i].onclick = function() {
-    var form = document.getElementById("modifyForm");
-    form.submit();
-  };
+	modifyBtns[i].onclick = function() {
+		const form = document.getElementById("modifyForm");
+		form.submit();
+	};
 }
 //Del Button
-var deleteBtns = document.getElementsByClassName("goDelete");
+const deleteBtns = document.getElementsByClassName("goDelete");
 i = deleteBtns.length;
 while (i--) {
-  deleteBtns[i].onclick = function() {
-    var chk = confirm('Are you sure you want to delete it?');
-    if (chk === true) {
-      var form = document.getElementById("delForm");
-      form.submit();
-    }
-  };
+	deleteBtns[i].onclick = function() {
+		const chk = confirm('Are you sure you want to delete it?');
+		if (chk === true) {
+			const form = document.getElementById("delForm");
+			form.submit();
+		}
+	};
 }
 //Next Article Button
-var nextArticleBtns = document.getElementsByClassName("next-article");
+const nextArticleBtns = document.getElementsByClassName("next-article");
 i = nextArticleBtns.length;
 while (i--) {
-  nextArticleBtns[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-  };
+	nextArticleBtns[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+	};
 }
 //Prev Article Button
-var prevArticleBtns = document.getElementsByClassName("prev-article");
+const prevArticleBtns = document.getElementsByClassName("prev-article");
 i = prevArticleBtns.length;
 while (i--) {
-  prevArticleBtns[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-  };
+	prevArticleBtns[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+	};
 }
 //List Button
-var listBtns = document.getElementsByClassName("goList");
+const listBtns = document.getElementsByClassName("goList");
 i = listBtns.length
 while (i--) {
-  listBtns[i].onclick = function() {
-    var form = document.getElementById("listForm");
-    form.submit();
-  };
+	listBtns[i].onclick = function() {
+		const form = document.getElementById("listForm");
+		form.submit();
+	};
 }  
 //New Article Button
-var writeBtns = document.getElementById("goWrite");
+const writeBtns = document.getElementById("goWrite");
 i = writeBtns.length;
 while(i--) {
-  writeBtns[i].onclick = function() {
-    var form = document.getElementById("writeForm");
-    form.submit();
-  };
+	writeBtns[i].onclick = function() {
+		const form = document.getElementById("writeForm");
+		form.submit();
+	};
 }
 </pre>
 
@@ -1000,34 +1003,35 @@ Modify as follows.
 Add the following to initPage().
 </p>
 
-<pre class="prettyprint">//Title links in detail view
-var listTable = document.getElementById("list-table");
+<pre class="prettyprint">
+//Title links in detail view
+const listTable = document.getElementById("list-table");
 links = listTable.getElementsByTagName("a");
-for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-    return false;
-  };
+for (let i = 0; i &lt; links.length; i++) {
+	links[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 //Paging
-var paging = document.getElementById("paging");
+const paging = document.getElementById("paging");
 links = paging.getElementsByTagName("a");
-for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("listForm");
-    form.page.value = this.title;
-    form.submit();
-    return false;
-  };
+for (let i = 0; i &lt; links.length; i++) {
+	links[i].onclick = function() {
+		const form = document.getElementById("listForm");
+		form.page.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 //New Article button
-var listMenu = document.getElementById("list-menu");
-writeBtn = listMenu.getElementsByTagName("input")[0];
+const listMenu = document.getElementById("list-menu");
+const writeBtn = listMenu.getElementsByTagName("input")[0];
 writeBtn.onclick = function() {
-  var form = document.getElementById("writeForm");
-  form.submit();
+	const form = document.getElementById("writeForm");
+	form.submit();
 };
 </pre>
 
@@ -1073,22 +1077,23 @@ The HTML code has nothing to change.
 Comment out all the existing contents of the JavaScript, add the following code.
 </p>
 
-<pre class="prettyprint">$(document).ready(function() {
-  $('#file-list a.download').click(function(e) {
-    e.preventDefault();
-    var filename = this.title;
-    $('#downForm input[name*=filename]').val(filename);
-    $('#downForm').submit();
-  });
-  $('#file-list a:not(.download)').click(function(e) {
-    e.preventDefault();
-    var chk = confirm("Are you sure you want to delete it?");
-    if (chk === true) {
-      var attachFileNo = this.title;
-      $('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
-      $('#deleteAttachFileForm').submit();
-    }
-  });
+<pre class="prettyprint">
+$(document).ready(function() {
+	$('#file-list a.download').click(function(e) {
+		e.preventDefault();
+		const filename = this.title;
+		$('#downForm input[name*=filename]').val(filename);
+		$('#downForm').submit();
+	});
+	$('#file-list a:not(.download)').click(function(e) {
+		e.preventDefault();
+		const chk = confirm("Are you sure you want to delete it?");
+		if (chk === true) {
+			const attachFileNo = this.title;
+			$('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
+			$('#deleteAttachFileForm').submit();
+		}
+	});
 });
 </pre>
 
@@ -1138,39 +1143,39 @@ Add the following to $(document).ready(function() {} function.
 
 <pre class="prettyprint">//Comments
 $('.comments').click(function(e) {
-  e.preventDefault();
-  if ($(e.target).is('.comment-modify-link')) {
-    var $form = $(e.target).parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().find('.comment-memo');
-    if ($form.is(':hidden') === true) {
-      $form.show();
-      $div.hide();
-    } else {
-      $form.hide();
-      $div.show();
-    }
-  } else if ($(e.target).is('.comment-modify-cancel-link')) {
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().parent().find('.comment-memo');
-    if ($form.is(':hidden') === true) {
-      $form.show();
-      $div.hide();
-    } else {
-      $form.hide();
-      $div.show();
-    }
-  } else if ($(e.target).is('.comment-modify-submit-link')) {
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    $form.submit();
-  } else if ($(e.target).is('.comment-delete-link')) {
-    var chk = confirm('Are you sure you want to delete it?');
-    if (chk === false) {
-      return;
-    }
-    var $commentNo = $(e.target).attr('title');
-    $('#deleteCommentForm input[name*=commentNo]').val($commentNo);
-    $('#deleteCommentForm').submit();
-  }
+	e.preventDefault();
+	if ($(e.target).is('.comment-modify-link')) {
+		const $form = $(e.target).parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().find('.comment-memo');
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-cancel-link')) {
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().parent().find('.comment-memo');
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-submit-link')) {
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		$form.submit();
+	} else if ($(e.target).is('.comment-delete-link')) {
+		const chk = confirm('Are you sure you want to delete it?');
+		if (chk === false) {
+			return;
+		}
+		const $commentNo = $(e.target).attr('title');
+		$('#deleteCommentForm input[name*=commentNo]').val($commentNo);
+		$('#deleteCommentForm').submit();
+	}
 });  
 </pre>
 
@@ -1200,10 +1205,10 @@ Add the following to $(document).ready(function() {} function.
 </p>
 
 <pre class="prettyprint">$('#next-prev a').click(function(e) {
-  e.preventDefault();
-  var articleNo = this.title;
-  $('#viewForm input[name*=articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	e.preventDefault();
+	const articleNo = this.title;
+	$('#viewForm input[name*=articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 </pre>
 
@@ -1243,34 +1248,34 @@ Add the following to $(document).ready(function() {} function.
 
 <pre class="prettyprint">//Modify Button
 $('.goModify').click(function() {
-  $('#modifyForm').submit();
+	$('#modifyForm').submit();
 });
 //Del Button
 $('.goDelete').click(function() {
-  var chk = confirm('Are you sure you want to delete it?');
-  if (chk === true) {
-    $('#delForm').submit();
-  }
+	const chk = confirm('Are you sure you want to delete it?');
+	if (chk === true) {
+		$('#delForm').submit();
+	}
 });
 //Next Article Button
 $('.next-article').click(function() {
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //Prev Article Button
 $('.prev-article').click(function() {
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //List Button
 $('.goList').click(function() {
-  $('#listForm').submit();
+	$('#listForm').submit();
 });
 //New Article Button
 $('.goWrite').click(function() {
-  $('#writeForm').submit();
+	$('#writeForm').submit();
 });
 </pre>
 
@@ -1355,21 +1360,21 @@ Add the following to $(document).ready(function() {} function.
 
 <pre class="prettyprint">//Title links in Detailed view
 $('#list-table a').click(function(e) {
-  e.preventDefault();
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	e.preventDefault();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //Paging
 $('#paging a').click(function(e) {
-  e.preventDefault();
-  var page = this.title;
-  $('#listForm input[name*=page]').val(page);
-  $('#listForm').submit();
+	e.preventDefault();
+	const page = this.title;
+	$('#listForm input[name*=page]').val(page);
+	$('#listForm').submit();
 });
 //New Article Button
 $('#list-menu input').click(function() {
-  $('#writeForm').submit();
+	$('#writeForm').submit();
 });
 </pre>
 

@@ -1570,7 +1570,7 @@ File[] files = dir.listFiles();
 &lt;title&gt;List of saved files&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function goDownload(filename) {
-  var form = document.getElementById("downForm");
+  const form = document.getElementById("downForm");
   form.filename.value = filename;
   form.submit();
 }

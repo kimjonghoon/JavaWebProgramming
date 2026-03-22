@@ -13,11 +13,11 @@ If you work in Eclipse, you can get the code assist as shown below.
 </p>
 
 <p>
-<img src="<c:url value="/resources/imagesjavascript-plugin.png"/>" alt="eclipse code assist" />
+<img src="<c:url value="/resources/images/javascript-plugin.png"/>" alt="eclipse code assist" />
 </p>
 
 <pre class="prettyprint script-result-display">
-var num = new Number(2194.123456);
+const num = new Number(2194.123456);
 alert("A. "+num<strong>.toExponential(3)</strong>); //Exponential representation of the part beyond three decimal places
 alert("B. "+num<strong>.toPrecision(3)</strong>); //3 significant digits
 alert("C. "+num<strong>.toFixed(8)</strong>); //8 decimal places
@@ -38,8 +38,8 @@ if (<strong>isNaN</strong>("two thousand eighteen") == true) {
 <h2>String</h2>
 
 <pre class="prettyprint script-result-display">
-<strong>var name = new String("Jack Black");
-//or var name = "Jack Black";</strong>
+<strong>const name = new String("Jack Black");
+//or const name = "Jack Black";</strong>
 alert("A. Name: " + name);
 
 //Same as length() in Java
@@ -86,9 +86,9 @@ The literal for a regular expression object is / ~ /. (Not both "/ ~ /" and "/ ~
 </p>
 
 <pre class="prettyprint script-result-display">
-var regExp = /Java/;
-var testStr = "www.java-school.net is the best site to learn Java";
-var retArr = regExp.exec(testStr);
+const regExp = /Java/;
+const testStr = "www.java-school.net is the best site to learn Java";
+const retArr = regExp.exec(testStr);
 alert(retArr[0]);
 </pre>
 
@@ -105,9 +105,9 @@ Flag i means not case sensitive.
 </p>
 
 <pre class="prettyprint script-result-display">
-var regExp = /Java/i;
-var testStr = "www.java-school.net is the best site to learn Java";
-var retArr = regExp.exec(testStr);
+const regExp = /Java/i;
+const testStr = "www.java-school.net is the best site to learn Java";
+const retArr = regExp.exec(testStr);
 alert(retArr[0]);
 </pre>
 
@@ -118,9 +118,9 @@ Flag g remembers the last matching location to make the next exec() find the fol
 </p>
 
 <pre class="prettyprint script-result-display">
-var regExp = new RegExp('Java', 'gi'); // /Java/gi
-var testStr = "www.java-school.net is the best site to learn Java";
-var retArr = regExp.exec(testStr);
+const regExp = new RegExp('Java', 'gi'); // /Java/gi
+const testStr = "www.java-school.net is the best site to learn Java";
+let retArr = regExp.exec(testStr);
 retArr = regExp.exec(testStr);
 alert(retArr[0]);
 </pre>
@@ -155,9 +155,9 @@ Curly braces are used to specify the number of times a character is repeated.(s{
 </table>
 
 <pre class="prettyprint script-result-display">
-var regExp = /Java-*/gi;
-var testStr = "www.java-school.net is the best site to learn Java";
-var retArr = regExp.exec(testStr);
+const regExp = /Java-*/gi;
+const testStr = "www.java-school.net is the best site to learn Java";
+let retArr = regExp.exec(testStr);
 retArr = regExp.exec(testStr);
 alert(retArr[0]);
 </pre>
@@ -204,9 +204,9 @@ The combination of \ followed by a special character means a character itself.
 </table>
 
 <pre class="prettyprint script-result-display">
-var regExp = /\s\*/g;
-var testStr = "www.java-school.net *is *the *best *site *to *learn *JAVA";
-var retStr = testStr.replace(regExp,'-');
+const regExp = /\s\*/g;
+const testStr = "www.java-school.net *is *the *best *site *to *learn *JAVA";
+const retStr = testStr.replace(regExp,'-');
 alert(retStr);
 </pre>
 
@@ -229,9 +229,9 @@ Let's write JavaScript code to check that the name-value consists only of whites
 
 <pre class="prettyprint">
 function check() {
-  var regExp = /\s/g;
-  var form = document.getElementById("signUp");
-  var name = form.name.value;
+  const regExp = /\s/g;
+  const form = document.getElementById("signUp");
+  let name = form.name.value;
   name = name.replace(regExp,"");
   if (name.length == 0) {
     alert("Invalid Name");
@@ -312,23 +312,23 @@ Let's create a JavaScript function that checks if the email and date are valid.
 </p>
 
 <pre class="prettyprint script-result-display" style="white-space: pre-wrap">
-var emailRegExp = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/;
-var dateRegExp = /^\d{4}\/\d{2}\/\d{2}/;
+const emailRegExp = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/;
+const dateRegExp = /^\d{4}\/\d{2}\/\d{2}/;
 
-var email = "johndoe@gmail.org";
-var signUpDate = "2018/4/21";
+const email = "johndoe@gmail.org";
+const signUpDate = "2018/4/21";
 
-var check = emailRegExp.test(email);
+const emailCheck = emailRegExp.test(email);
 
-if (check) {
+if (emailCheck) {
   alert("Valid email");
 } else {
   alert("Invalid email");
 }
 
-check = dateRegExp.test(signUpDate);
+const dateCheck = dateRegExp.test(signUpDate);
 
-if (check) {
+if (dateCheck) {
   alert("Valid registration date");
 } else {
   alert("InValid registration date");
@@ -343,19 +343,19 @@ The Date object allows you to create dates and access values such as year, month
 </p>
 
 <pre class="prettyprint script-result-display">
-var now = new Date();
+const now = new Date();
 alert("Now: " + now.toUTCString());
 
-var milliSecs = new Date(7789110879);
+const milliSecs = new Date(7789110879);
 alert("MilliSecs: " + milliSecs.toUTCString());
 
-var soccerDay = new Date("June 14, 2018 16:00:00");
+const soccerDay = new Date("June 14, 2018 16:00:00");
 alert("Kick-Off: " + soccerDay.toUTCString());
 
-var birthday = new Date(1981,1,25);
+const birthday = new Date(1981,1,25);
 alert("Birthday: " + birthday.toLocaleString());
 
-var newYearsEve = new Date(2018,11,31,23,59,59,59);
+const newYearsEve = new Date(2018,11,31,23,59,59,59);
 alert("New Year's Eve: " + newYearsEve.toUTCString());
 </pre>
 
@@ -367,16 +367,16 @@ JavaScript arrays can grow or shrink in size after creation.
 </p>
 
 <pre class="prettyprint script-result-display">
-var cities = ["Sochi", "New York"];
+const cities = ["Sochi", "New York"];
 alert("cities.length=" + cities.length);
 
-var years = new Array(1969, 1970);
+const years = new Array(1969, 1970);
 years[46] = 2015; //You can add array elements in this way.
 alert("years.length=" + years.length);
 
 alert("years=" + years);
 
-for (var idx in years) {
+for (let idx in years) {
   alert(years[idx]);
 }
 </pre>
@@ -416,21 +416,21 @@ The JavaScript engine converts the array into a string separated by a comma (,).
 </p>
 
 <pre class="prettyprint script-result-display">
-var words = new Array('A','B','C','D','E');
-var s1 = words.splice(2,2,'c','d');//Remove two elements from index 2 and add 'c' and 'd' at that position 
+const words = new Array('A','B','C','D','E');
+const s1 = words.splice(2,2,'c','d');//Remove two elements from index 2 and add 'c' and 'd' at that position 
 
 alert(words);
 alert(s1);
 
-var s2 = words.slice(2,4);//Returns a new array from index 2 to index 3 (not including index 4).
+const s2 = words.slice(2,4);//Returns a new array from index 2 to index 3 (not including index 4).
 alert(s2);
 alert(words);
 </pre>
  
 <h4>for .. in</h4>
 <pre class="prettyprint script-result-display">
-var lang = ["C", "JAVA", "javascript"];
-for (var idx in lang) {
+const lang = ["C", "JAVA", "javascript"];
+for (let idx in lang) {
   alert(lang[idx]);
 }
 </pre>
@@ -442,7 +442,7 @@ Associative arrays can not access an element using an index. When you create an 
 </p>
 
 <pre class="prettyprint script-result-display">
-var account = new Object();
+const account = new Object();
 
 account["accountNo"] = "1111-2222-3333";
 account["name"] = "John Doe";
@@ -468,7 +468,7 @@ The following statement prints all elements of the document object.
 </p>
 
 <pre class="prettyprint script-result-display">
-for (var property in document) {
+for (let property in document) {
   alert(property + ":" + document[property]);
 }
 </pre>
@@ -482,17 +482,17 @@ All JavaScript objects are an associative array.
 <h2>Math</h2>
 
 <pre class="prettyprint script-result-display">
-var random = Math.random() * 10;
+let random = Math.random() * 10;
 random = random.toPrecision(3);
 alert("Random: " + random);
 
-var ceil = Math.ceil(random);
+const ceil = Math.ceil(random);
 alert("Ceil: " + ceil);
 
-var floor = Math.floor(random);
+const floor = Math.floor(random);
 alert("Floor: " + floor);
 
-var round = Math.round(random);
+const round = Math.round(random);
 alert("Round: " + round);
 </pre>
 
@@ -501,13 +501,13 @@ The following JavaScript code generates a lotto number.
 </p>
 
 <pre class="prettyprint script-result-display">
-var lotto = new Array();
-var index = 0;
+const lotto = new Array();
+let index = 0;
 while(true) {
-  var check = true;
-  var ball = Math.random() * 45;
+  let check = true;
+  let ball = Math.random() * 45;
   ball = Math.floor(ball) + 1;
-  for (var i = 0; i &lt; lotto.length;i++) {
+  for (let i = 0; i &lt; lotto.length;i++) {
     if (lotto[i] == ball) {
       check = false;
       break;
@@ -557,7 +557,7 @@ An anonymous function is a function that is created dynamically at runtime.
 </p>
 
 <pre class="prettyprint script-result-display">
-var multiply = function(a, b) {
+const multiply = function(a, b) {
   return a * b
 };
 alert(multiply(3,4));
@@ -568,7 +568,7 @@ You can create an anonymous function using the Function's constructor. But this 
 </p>
 
 <pre class="prettyprint script-result-display">
-var minus = new Function('a','b', 'return a - b');
+const minus = new Function('a','b', 'return a - b');
 alert(minus(3,4));
 </pre>
 

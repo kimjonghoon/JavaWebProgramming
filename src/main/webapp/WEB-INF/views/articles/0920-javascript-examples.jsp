@@ -46,8 +46,8 @@ opts.length = 0;
 &lt;title&gt;자바스크립트 select 엘리먼트 다루기&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function chooseLang() {
-	var form = document.getElementById("testForm");
-	var lang = form.programLanguage.value;
+	const form = document.getElementById("testForm");
+	const lang = form.programLanguage.value;
 
 	switch (lang) {
 	case "java":
@@ -63,7 +63,6 @@ function chooseLang() {
 	default:
 		form.step.options.length = 0;
 	}
-	
 }
 &lt;/script&gt;
 &lt;/head&gt;
@@ -93,8 +92,8 @@ function chooseLang() {
 </p>
 
 <pre class="prettyprint">
-var form = document.getElementsTagName("form")[0];
-var form = document.getElementById("someform");
+const form = document.getElementsTagName("form")[0];
+const form = document.getElementById("someform");
 </pre>
 
 <h3>폼에 이벤트를 추가하는 방법</h3>
@@ -136,7 +135,7 @@ document.someform.radiogroup[i].disabled = true;
 &lt;title&gt;자바스크립트 테스트&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	<strong>form.condition[4].disabled = true;</strong>
 	return true;
 }
@@ -173,20 +172,18 @@ W 외에 다른 값을 선택한 후 서밋 버튼을 클릭하여 전송되는 
 &lt;title&gt;자바스크립트 테스트&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function agree() {
-	var form = document.getElementById("testForm");
-	var submit = document.getElementById("submit");
+	const form = document.getElementById("testForm");
+	const submit = document.getElementById("submit");
 	if (form.agreement.checked == true) {
 		submit.disabled = false;	
 	} else {
 		submit.disabled = true;
 	}
-	
 }
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
-	var chk = form.confirm[0].value
-
+	const chk = form.confirm[0].value
 	return true;
 }
 &lt;/script&gt;
@@ -249,12 +246,12 @@ function check() {
 window.onload = initPage;
 
 function initPage() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.onsubmit = check;
 }
 
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
 	return true;
 }
@@ -312,12 +309,12 @@ function check() {
 window.onload = initPage;
 
 function initPage() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.onsubmit = check;
 }
 
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
 	return true;
 }
@@ -334,16 +331,16 @@ function check() {
 window.onload = initPage;
 
 function initPage() {
-	var submit = document.getElementById("submit");
+	const submit = document.getElementById("submit");
 	submit.disabled = true;
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.onsubmit = check;
 	form.agreement.onchange = agree;
 }
 
 function agree() {
-	var form = document.getElementById("testForm");
-	var submit = document.getElementById("submit");
+	const form = document.getElementById("testForm");
+	const submit = document.getElementById("submit");
 	if (form.agreement.checked == true) {
 		submit.disabled = false;	
 	} else {
@@ -351,7 +348,7 @@ function agree() {
 	}
 }
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
 	return true;
 }
@@ -384,7 +381,7 @@ function check() {
 <h2>3 쿠키 다루기</h2>
 
 <pre class="prettyprint no-border">
-var allCookies = document.cookie
+const allCookies = document.cookie
 </pre>
 
 <p>
@@ -409,33 +406,33 @@ document.cookie = newCookie;
 </p>
 
 <pre class="prettyprint">function createCookie(name, value, days) {
-    var newCookie = name + "=" + escape(value);
-    if (days) {
-        var expires = new Date();
-        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-        newCookie += "; expires=" + expires.toGMTString();
-    }
-    document.cookie = newCookie;
+	const newCookie = name + "=" + escape(value);
+	if (days) {
+		const expires = new Date();
+		expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+		newCookie += "; expires=" + expires.toGMTString();
+	}
+	document.cookie = newCookie;
 }
 function readCookie(name) {
-    var allCookies = document.cookie;
-    var beginIndex = allCookies.indexOf(" " + name + "=");
-    if (beginIndex === -1) {
-        beginIndex = allCookies.indexOf(name + "=");
-    }
-    if (beginIndex === -1) {
-        return null;
-    } else {
-        beginIndex = allCookies.indexOf("=", beginIndex) + 1;
-        var endIndex = allCookies.indexOf(";", beginIndex);
-        if (endIndex === -1) {
-            endIndex = allCookies.length;
-        }
-        return unescape(allCookies.substring(beginIndex, endIndex));
-    }
+	const allCookies = document.cookie;
+	let beginIndex = allCookies.indexOf(" " + name + "=");
+	if (beginIndex === -1) {
+		beginIndex = allCookies.indexOf(name + "=");
+	}
+	if (beginIndex === -1) {
+		return null;
+	} else {
+		beginIndex = allCookies.indexOf("=", beginIndex) + 1;
+		const endIndex = allCookies.indexOf(";", beginIndex);
+		if (endIndex === -1) {
+			endIndex = allCookies.length;
+	    }
+		return unescape(allCookies.substring(beginIndex, endIndex));
+	}
 }
 function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+	document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 </pre>
 
@@ -455,58 +452,58 @@ function deleteCookie(name) {
 window.onload = initPage;
 
 function initPage() {
-    var selectBox = document.getElementById("numPerPage");
-    selectBox.onchange = setNumPerPage;
-    var delNumPerPageBtn = document.getElementById("del-numPerPage-btn");
-    delNumPerPageBtn.onclick = delNumPerPageCookie;
+	const selectBox = document.getElementById("numPerPage");
+	selectBox.onchange = setNumPerPage;
+	const delNumPerPageBtn = document.getElementById("del-numPerPage-btn");
+	delNumPerPageBtn.onclick = delNumPerPageCookie;
 }
 function setNumPerPage() {
-    var selectBox = document.getElementById("numPerPage");
-    var numPerPage = selectBox.value;
-    createCookie('numPerPage', numPerPage, '100');
+	const selectBox = document.getElementById("numPerPage");
+	const numPerPage = selectBox.value;
+	createCookie('numPerPage', numPerPage, '100');
 	showCookie();
 }
 function showCookie() {
-    var numPerPage = readCookie("numPerPage");
-    var div = document.getElementById('show-npp-div');
-    if(numPerPage) {
-      div.innerHTML = numPerPage;
-    } else {
-      div.innerHTML = '쿠키가 없습니다!';
-    }
+	const numPerPage = readCookie("numPerPage");
+	const div = document.getElementById('show-npp-div');
+	if(numPerPage) {
+		div.innerHTML = numPerPage;
+	} else {
+		div.innerHTML = '쿠키가 없습니다!';
+	}
 }
 function delNumPerPageCookie() {
-    deleteCookie("numPerPage");
-    showCookie();
+	deleteCookie("numPerPage");
+	showCookie();
 }
 function createCookie(name, value, days) {
-    var newCookie = name + "=" + escape(value);
-    if (days) {
-        var expires = new Date();
-        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-        newCookie += "; expires=" + expires.toGMTString();
-    }
-    document.cookie = newCookie;
+	let newCookie = name + "=" + escape(value);
+	if (days) {
+		const expires = new Date();
+		expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+		newCookie += "; expires=" + expires.toGMTString();
+	}
+	document.cookie = newCookie;
 }
 function readCookie(name) {
-    var allCookies = document.cookie;
-    if (!allCookies) {
-      return null;
-    }
-    var beginIndex = allCookies.indexOf(" " + name + "=");
-    if (beginIndex === -1) {
-        beginIndex = allCookies.indexOf(name + "=");
-    }
-    if (beginIndex === -1) {
-        return null;
-    } else {
-        beginIndex = allCookies.indexOf("=", beginIndex) + 1;
-        var endIndex = allCookies.indexOf(";", beginIndex);
-        if (endIndex === -1) {
-            endIndex = allCookies.length;
-        }
-        return unescape(allCookies.substring(beginIndex, endIndex));
-    }
+	const allCookies = document.cookie;
+	if (!allCookies) {
+		return null;
+	}
+	let beginIndex = allCookies.indexOf(" " + name + "=");
+	if (beginIndex === -1) {
+		beginIndex = allCookies.indexOf(name + "=");
+	}
+	if (beginIndex === -1) {
+		return null;
+	} else {
+		beginIndex = allCookies.indexOf("=", beginIndex) + 1;
+		const endIndex = allCookies.indexOf(";", beginIndex);
+		if (endIndex === -1) {
+			endIndex = allCookies.length;
+		}
+		return unescape(allCookies.substring(beginIndex, endIndex));
+	}
 }
 function deleteCookie(name) {
     document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
@@ -533,9 +530,9 @@ setNumPerPage() 함수는 100일간 유지되는 numPerPage 쿠키를 굽는다.
 </p>
 
 <pre class="prettyprint">function setNumPerPage() {
-  var selectBox = document.getElementById("numPerPage");
-  var numPerPage = selectBox.value;
-  createCookie('numPerPage', numPerPage, '100');
+	const selectBox = document.getElementById("numPerPage");
+	const numPerPage = selectBox.value;
+	createCookie('numPerPage', numPerPage, '100');
 }
 </pre>
 
@@ -546,13 +543,13 @@ numPerPage 쿠키가 구워지면 서버 측 코드는 다음처럼 쿠키를 �
 <pre class="prettyprint">int numPerPage = 10;// 디폴트 레코드 수
 Cookie[] cookies = req.getCookies();
 if (cookies != null) {
-  for (int i = 0; i &lt; cookies.length; i++) {
-    String name = cookies[i].getName();
-    if (name.equals("numPerPage")) {
-      numPerPage = Integer.parseInt(cookies[i].getValue());
-      break;
-    }
-  }
+	for (int i = 0; i &lt; cookies.length; i++) {
+		String name = cookies[i].getName();
+		if (name.equals("numPerPage")) {
+			numPerPage = Integer.parseInt(cookies[i].getValue());
+			break;
+		}
+	}
 }
 </pre>
 
@@ -577,7 +574,7 @@ DOM 모델을 활용해서 이벤트 핸들러를 지정할 수 있는데, 이�
 <h4 class="filename">2. DOM 모델을 활용해 지정하는 방식</h4>
 
 <pre class="prettyprint no-border">window.onload = function() {
-	var btn = document.getElementById("<strong>some-button</strong>");
+	const btn = document.getElementById("<strong>some-button</strong>");
 	btn.onclick = function() {
 		//TODO
 	};
@@ -630,34 +627,34 @@ window의 onload 이벤트에 이벤트 핸들러가 지정하는 방식에도 �
 <pre class="prettyprint">window.onload = initPage;
 
 function initPage() {
-  //첨부 파일 다운로드, 첨부 파일 삭제
-  var file_list = document.getElementById("file-list");
-  var fileLinks = file_list.getElementsByTagName("a");
-  
-  for (var i = 0; i &lt; fileLinks.length; i++) {
-    var fileLink = fileLinks[i];
-    if (fileLink.className == "download") {
-      fileLink.onclick = function() {
-        var attachFileNo = this.title;
-        var form = document.getElementById("downForm");
-        form.attachFileNo.value = attachFileNo;
-        form.submit();
-        return false;
-      };
-    } else {
-      fileLink.onclick = function() {
-        var attachFileNo = this.title;
-        var chk = confirm("정말로 삭제하겠습니까?");
-        if (chk === true) {
-          var form = document.getElementById("deleteAttachFileForm");
-          form.attachFileNo.value = attachFileNo;
-          form.submit();
-          return false;
-        }
-      };
-    }
-  }
-  //TODO 진행하면서 이곳에 코드를 추가한다.
+	//첨부 파일 다운로드, 첨부 파일 삭제
+	const file_list = document.getElementById("file-list");
+	const fileLinks = file_list.getElementsByTagName("a");
+	
+	for (let i = 0; i &lt; fileLinks.length; i++) {
+		const fileLink = fileLinks[i];
+		if (fileLink.className == "download") {
+			fileLink.onclick = function() {
+				const attachFileNo = this.title;
+				const form = document.getElementById("downForm");
+				form.attachFileNo.value = attachFileNo;
+				form.submit();
+				return false;
+			};
+		} else {
+			fileLink.onclick = function() {
+				const attachFileNo = this.title;
+				const chk = confirm("정말로 삭제하겠습니까?");
+				if (chk === true) {
+					const form = document.getElementById("deleteAttachFileForm");
+					form.attachFileNo.value = attachFileNo;
+					form.submit();
+					return false;
+				}
+			};
+		}
+	}
+	//TODO 진행하면서 이곳에 코드를 추가한다.
   
 }//initPage 함수 끝
 </pre>
@@ -704,47 +701,47 @@ initPage() 함수 밖에 다음을 추가한다.
 </p>
 
 <pre class="prettyprint">function commentUpdate(e) {
-  var me = getActivatedObject(e);
-  var form = me.parentNode;
-  while (form.className != "comment-form") {
-    form = form.parentNode;
-  }
-  form.submit();
-  return false;
+	const me = getActivatedObject(e);
+	const form = me.parentNode;
+	while (form.className != "comment-form") {
+		form = form.parentNode;
+	}
+	form.submit();
+	return false;
 }
 function modifyCommentToggle(e) {
-  var me = getActivatedObject(e);
-  var comments = me.parentNode;
-  while (comments.className != "comments") {
-    comments = comments.parentNode;
-  }
-  var div = comments.getElementsByTagName("div")[0];//댓글 내용
-  var form = comments.getElementsByTagName("form")[0];//댓글 form
-  if (div.style.display) {
-    div.style.display = '';
-    form.style.display = 'none';
-  } else {
-    div.style.display = 'none';
-    form.style.display = '';
-  }
-  return false; 
+	const me = getActivatedObject(e);
+	let comments = me.parentNode;
+	while (comments.className != "comments") {
+		comments = comments.parentNode;
+	}
+	const div = comments.getElementsByTagName("div")[0];//댓글 내용
+	const form = comments.getElementsByTagName("form")[0];//댓글 form
+	if (div.style.display) {
+		div.style.display = '';
+		form.style.display = 'none';
+	} else {
+		div.style.display = 'none';
+		form.style.display = '';
+	}
+	return false; 
 }
 /*
  Head First Ajax 참조 
 */
 function getActivatedObject(e) {
-  var obj;
-  if (!e) {
-    //IE 옛 버전
-    obj = window.event.srcElement;
-  } else if (e.srcElement) {
-    //IE 7 이상
-    obj = e.srcElement;
-  } else {
-    //DOM 레벨 2 브라우저
-    obj = e.target;
-  }
-  return obj;
+	let obj;
+	if (!e) {
+		//IE 옛 버전
+		obj = window.event.srcElement;
+	} else if (e.srcElement) {
+		//IE 7 이상
+		obj = e.srcElement;
+	} else {
+		//DOM 레벨 2 브라우저
+		obj = e.target;
+	}
+	return obj;
 }
 </pre>
 
@@ -753,40 +750,40 @@ initPage() 함수에 다음 코드를 추가한다.
 </p>
 
 <pre class="prettyprint">//댓글
-var allComments = document.getElementById("all-comments");
-var divs = allComments.getElementsByTagName("div");
+const allComments = document.getElementById("all-comments");
+const divs = allComments.getElementsByTagName("div");
 
-for (i = 0; i &lt; divs.length; i++) {
-  if (divs[i].className == "comments") {
-    var comments = divs[i];
-    var spans = comments.getElementsByTagName("span");
-    for (var j = 0; j &lt; spans.length; j++) {
-      if (spans[j].className === "modify-del") {
-        var md = spans[j];
-        var commentModifyLink = md.getElementsByTagName("a")[0];//수정 링크
-        commentModifyLink.onclick = modifyCommentToggle;
-        var commentDelLink = md.getElementsByTagName("a")[1];//삭제 링크
-        commentDelLink.onclick = function() {
-          var commentNo = this.title;
-          var chk = confirm("정말로 삭제하겠습니까?");
-          if (chk === true) {
-            var form = document.getElementById("deleteCommentForm");
-            form.commentNo.value = commentNo;
-            form.submit();
-            return false;
-           }
-         };
-      }
-      //form 태그 안의 수정하기 링크
-      var form = comments.getElementsByTagName("form")[0];
-      var div = form.getElementsByTagName("div")[0];
-      commentModifyLink = div.getElementsByTagName("a")[0];
-      commentModifyLink.onclick = commentUpdate;
-      //form 태그 안의 취소링크
-      var cancelLink = div.getElementsByTagName("a")[1];
-      cancelLink.onclick = modifyCommentToggle;
-    }
-  }  
+for (let i = 0; i &lt; divs.length; i++) {
+	if (divs[i].className == "comments") {
+		const comments = divs[i];
+		const spans = comments.getElementsByTagName("span");
+		for (let j = 0; j &lt; spans.length; j++) {
+			if (spans[j].className === "modify-del") {
+				const md = spans[j];
+				let commentModifyLink = md.getElementsByTagName("a")[0];//수정 링크
+				commentModifyLink.onclick = modifyCommentToggle;
+				const commentDelLink = md.getElementsByTagName("a")[1];//삭제 링크
+				commentDelLink.onclick = function() {
+					const commentNo = this.title;
+					const chk = confirm("정말로 삭제하겠습니까?");
+					if (chk === true) {
+						const form = document.getElementById("deleteCommentForm");
+						form.commentNo.value = commentNo;
+						form.submit();
+						return false;
+					}
+				};
+			}
+			//form 태그 안의 수정하기 링크
+			const form = comments.getElementsByTagName("form")[0];
+			const div = form.getElementsByTagName("div")[0];
+			commentModifyLink = div.getElementsByTagName("a")[0];
+			commentModifyLink.onclick = commentUpdate;
+			//form 태그 안의 취소링크
+			const cancelLink = div.getElementsByTagName("a")[1];
+			cancelLink.onclick = modifyCommentToggle;
+		}
+	}  
 }
 </pre>
 
@@ -813,15 +810,15 @@ initPage() 함수에 다음 코드를 추가한다.
 </p>
 
 <pre class="prettyprint">//다음 글, 이전 글 링크
-var nextPrev = document.getElementById("next-prev");
+const nextPrev = document.getElementById("next-prev");
 links = nextPrev.getElementsByTagName("a");
-for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-    return false;  	
-  };
+for (let i = 0; i &lt; links.length; i++) {
+	links[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 </pre>
 
@@ -858,63 +855,63 @@ initPage() 함수에 다음 코드를 추가한다.<br />
 </p>
 
 <pre class="prettyprint">//수정버튼
-var modifyBtns = document.getElementsByClassName("goModify");
+const modifyBtns = document.getElementsByClassName("goModify");
 i = modifyBtns.length;
 while (i--) {
-  modifyBtns[i].onclick = function() {
-    var form = document.getElementById("modifyForm");
-    form.submit();
-  };
+	modifyBtns[i].onclick = function() {
+		const form = document.getElementById("modifyForm");
+		form.submit();
+	};
 }
 //삭제버튼
-var deleteBtns = document.getElementsByClassName("goDelete");
+const deleteBtns = document.getElementsByClassName("goDelete");
 i = deleteBtns.length;
 while (i--) {
-  deleteBtns[i].onclick = function() {
-    var chk = confirm('정말로 삭제하겠습니까?');
-    if (chk === true) {
-      var form = document.getElementById("delForm");
-      form.submit();
-    }
-  };
+	deleteBtns[i].onclick = function() {
+		const chk = confirm('정말로 삭제하겠습니까?');
+		if (chk === true) {
+			const form = document.getElementById("delForm");
+			form.submit();
+		}
+	};
 }
 //다음 글 버튼
-var nextArticleBtns = document.getElementsByClassName("next-article");
+const nextArticleBtns = document.getElementsByClassName("next-article");
 i = nextArticleBtns.length;
 while (i--) {
-  nextArticleBtns[i].onclick = function() {
-  	    var form = document.getElementById("viewForm");
-  	    form.articleNo.value = this.title;
-  	    form.submit();
-  };
+	nextArticleBtns[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+	};
 }
 //이전 글 버튼
-var prevArticleBtns = document.getElementsByClassName("prev-article");
+const prevArticleBtns = document.getElementsByClassName("prev-article");
 i = prevArticleBtns.length;
 while (i--) {
-  prevArticleBtns[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-  };
+	prevArticleBtns[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+	};
 }
 //목록버튼
-var listBtns = document.getElementsByClassName("goList");
+const listBtns = document.getElementsByClassName("goList");
 i = listBtns.length
 while (i--) {
-  listBtns[i].onclick = function() {
-    var form = document.getElementById("listForm");
-    form.submit();
-  };
+	listBtns[i].onclick = function() {
+		const form = document.getElementById("listForm");
+		form.submit();
+	};
 }  
 //새 글쓰기 버튼
-var writeBtns = document.getElementById("goWrite");
+const writeBtns = document.getElementById("goWrite");
 i = writeBtns.length;
 while(i--) {
-  writeBtns[i].onclick = function() {
-      var form = document.getElementById("writeForm");
-      form.submit();
-  };
+	writeBtns[i].onclick = function() {
+		const form = document.getElementById("writeForm");
+		form.submit();
+	};
 }
 </pre>
 
@@ -991,33 +988,33 @@ initPage() 함수에 다음 코드를 추가한다.<br />
 </p>
 
 <pre class="prettyprint">//상세보기에서 목록 제목 링크
-var listTable = document.getElementById("list-table");
+const listTable = document.getElementById("list-table");
 links = listTable.getElementsByTagName("a");
-for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("viewForm");
-    form.articleNo.value = this.title;
-    form.submit();
-    return false;
-  };
+for (let i = 0; i &lt; links.length; i++) {
+	links[i].onclick = function() {
+		const form = document.getElementById("viewForm");
+		form.articleNo.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 //페이징 처리
-var paging = document.getElementById("paging");
+const paging = document.getElementById("paging");
 links = paging.getElementsByTagName("a");
-for (i = 0; i &lt; links.length; i++) {
-  links[i].onclick = function() {
-    var form = document.getElementById("listForm");
-    form.page.value = this.title;
-    form.submit();
-    return false;
-  };
+for (let i = 0; i &lt; links.length; i++) {
+	links[i].onclick = function() {
+		const form = document.getElementById("listForm");
+		form.page.value = this.title;
+		form.submit();
+		return false;
+	};
 }
 //검색 버튼 위 새 글쓰기 버튼
-var listMenu = document.getElementById("list-menu");
+const listMenu = document.getElementById("list-menu");
 writeBtn = listMenu.getElementsByTagName("input")[0];
 writeBtn.onclick = function() {
-  var form = document.getElementById("writeForm");
-  form.submit();
+	const form = document.getElementById("writeForm");
+	form.submit();
 };
 </pre>
 
@@ -1062,21 +1059,21 @@ view.jsp의 &lt;head&gt;와 &lt;/head&gt; 사이에 다음 코드를 추가한�
 </p>
 
 <pre class="prettyprint">$(document).ready(function() {
-  $('#file-list a.download').click(function(e) {
-    e.preventDefault();
-    var filename = this.title;
-    $('#downForm input[name*=filename]').val(filename);
-    $('#downForm').submit();
-  });
-  $('#file-list a:not(.download)').click(function(e) {
-    e.preventDefault();
-    var chk = confirm("정말로 삭제하겠습니까?");
-    if (chk === true) {
-      var attachFileNo = this.title;
-      $('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
-      $('#deleteAttachFileForm').submit();
-    }
-  });
+	$('#file-list a.download').click(function(e) {
+		e.preventDefault();
+		const filename = this.title;
+		$('#downForm input[name*=filename]').val(filename);
+		$('#downForm').submit();
+	});
+	$('#file-list a:not(.download)').click(function(e) {
+		e.preventDefault();
+		const chk = confirm("정말로 삭제하겠습니까?");
+		if (chk === true) {
+			const attachFileNo = this.title;
+			$('#deleteAttachFileForm input[name*=attachFileNo]').val(attachFileNo);
+			$('#deleteAttachFileForm').submit();
+		}
+	});
 });
 </pre>
 
@@ -1123,39 +1120,39 @@ $(document).ready(function() {} 함수에 다음 코드를 추가한다.
 
 <pre class="prettyprint">//댓글반복
 $('.comments').click(function(e) {
-  e.preventDefault();
-  if ($(e.target).is('.comment-modify-link')) {
-    var $form = $(e.target).parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().find('.comment-memo');
-    if ($form.is(':hidden') === true) {
-      $form.show();
-      $div.hide();
-    } else {
-      $form.hide();
-      $div.show();
-    }
-  } else if ($(e.target).is('.comment-modify-cancel-link')) {
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().parent().find('.comment-memo');
-    if ($form.is(':hidden') === true) {
-      $form.show();
-      $div.hide();
-    } else {
-      $form.hide();
-      $div.show();
-    }
-  } else if ($(e.target).is('.comment-modify-submit-link')) {
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    $form.submit();
-  } else if ($(e.target).is('.comment-delete-link')) {
-    var chk = confirm('정말로 삭제하겠습니까?');
-    if (chk === false) {
-      return;
-    }
-    var $commentNo = $(e.target).attr('title');
-    $('#deleteCommentForm input[name*=commentNo]').val($commentNo);
-    $('#deleteCommentForm').submit();
-  }
+	e.preventDefault();
+	if ($(e.target).is('.comment-modify-link')) {
+		const $form = $(e.target).parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().find('.comment-memo');
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-cancel-link')) {
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		const $div = $(e.target).parent().parent().parent().find('.comment-memo');
+		if ($form.is(':hidden') === true) {
+			$form.show();
+			$div.hide();
+		} else {
+			$form.hide();
+			$div.show();
+		}
+	} else if ($(e.target).is('.comment-modify-submit-link')) {
+		const $form = $(e.target).parent().parent().parent().find('.comment-form');
+		$form.submit();
+	} else if ($(e.target).is('.comment-delete-link')) {
+		const chk = confirm('정말로 삭제하겠습니까?');
+		if (chk === false) {
+			return;
+		}
+		const $commentNo = $(e.target).attr('title');
+		$('#deleteCommentForm input[name*=commentNo]').val($commentNo);
+		$('#deleteCommentForm').submit();
+	}
 });  
 </pre>
 
@@ -1182,10 +1179,10 @@ $(document).ready(function() {} 함수에 다음 코드를 추가한다.
 </p>
 
 <pre class="prettyprint">$('#next-prev a').click(function(e) {
-  e.preventDefault();
-  var articleNo = this.title;
-  $('#viewForm input[name*=articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	e.preventDefault();
+	const articleNo = this.title;
+	$('#viewForm input[name*=articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 </pre>
 
@@ -1222,34 +1219,34 @@ $(document).ready(function() {} 함수에 다음 코드를 추가한다.
 
 <pre class="prettyprint">//수정 버튼
 $('.goModify').click(function() {
-  $('#modifyForm').submit();
+	$('#modifyForm').submit();
 });
 //삭제 버튼
 $('.goDelete').click(function() {
-  var chk = confirm('정말로 삭제하겠습니까?');
-  if (chk === true) {
-    $('#delForm').submit();
-  }
+	const chk = confirm('정말로 삭제하겠습니까?');
+	if (chk === true) {
+		$('#delForm').submit();
+	}
 });
 //다음 글 버튼
 $('.next-article').click(function() {
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //이전 글 버튼
 $('.prev-article').click(function() {
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //목록버튼
 $('.goList').click(function() {
-  $('#listForm').submit();
+	$('#listForm').submit();
 });
 //새 글쓰기 버튼
 $('.goWrite').click(function() {
-  $('#writeForm').submit();
+	$('#writeForm').submit();
 });
 </pre>
 
@@ -1331,21 +1328,21 @@ $(document).ready(function() {} 함수에 다음 코드를 추가한다.<br />
 
 <pre class="prettyprint">//상세보기에서 목록 제목 링크
 $('#list-table a').click(function(e) {
-  e.preventDefault();
-  var articleNo = this.title;
-  $('#viewForm input[name*articleNo]').val(articleNo);
-  $('#viewForm').submit();
+	e.preventDefault();
+	const articleNo = this.title;
+	$('#viewForm input[name*articleNo]').val(articleNo);
+	$('#viewForm').submit();
 });
 //페이징 처리
 $('#paging a').click(function(e) {
-  e.preventDefault();
-  var page = this.title;
-  $('#listForm input[name*=page]').val(page);
-  $('#listForm').submit();
+	e.preventDefault();
+	const page = this.title;
+	$('#listForm input[name*=page]').val(page);
+	$('#listForm').submit();
 });
 //검색 버튼 위 새 글쓰기 버튼
 $('#list-menu input').click(function() {
-  $('#writeForm').submit();
+	$('#writeForm').submit();
 });
 </pre>
 

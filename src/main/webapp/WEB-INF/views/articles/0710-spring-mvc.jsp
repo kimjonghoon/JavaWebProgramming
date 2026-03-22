@@ -4443,7 +4443,7 @@ view.jsp에 다음 자바스크립트 함수를 추가한다.<br />
 
 <pre class="prettyprint">
 function download(filename) {
-    var form = document.getElementById("downForm");
+    const form = document.getElementById("downForm");
     form.filename.value = filename;
     form.submit();
 }

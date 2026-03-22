@@ -3828,7 +3828,7 @@ Add the following javascript code to the view.jsp.
 
 <pre class="prettyprint">
 function download(filename) {
-  var form = document.getElementById("downForm");
+  const form = document.getElementById("downForm");
   form.filename.value = filename;
   form.submit();
 }

@@ -35,55 +35,59 @@ This page should check that values entered by the user are are valid before send
 &lt;title&gt;JavaScript Example&lt;/title&gt;
 &lt;script type="text/javascript"&gt;
 function check() {
-  var form = document.getElementById("signUpForm");
-  var id = form.id.value;
-  id = trim(id);
+  const form = document.getElementById("signUpForm");
+
+  let id = form.id.value;
+  id = removeSpace(id);
   if (id.length == 0) {
     alert("Invalid ID");
     return false;
   }
-  var pass = form.passwd.value;
-  pass = trim(pass);
+
+  let pass = form.passwd.value;
+  pass = removeSpace(pass);
   if (pass.length == 0) {
     alert("Invalid Password");
     return false;
   }
-  var name = form.name.value;
-  name = trim(name);
+  
+  let name = form.name.value;
+  name = removeSpace(name);
   if (name.length == 0) {
     alert("Invalid Name");
     return false;
   }
-  var email = form.email.value;
-  var chk = emailCheck(email);
-  if (chk == false) {
+  
+  const email = form.email.value;
+  const emailCheck = emailCheck(email);
+  if (emailCheck == false) {
     alert("Invalid Email");
     return false;
   }
-  var mobile = form.mobile.value;
-  mobile = trim(mobile);
+  
+  let mobile = form.mobile.value;
+  mobile = removeSpace(mobile);
   if (mobile.length == 0) {
     alert("Invalid Mobile");
     return false;
   }
-  chk = beAllowStr(mobile,"0123456789-");
-  if (chk == false) {
+  const mobileCheck = beAllowStr(mobile,"0123456789-");
+  if (mobileCheck == false) {
     alert("Invalid Mobile");
     return false;
   }
-	
   return true;
 }
 
-function <strong>trim(str)</strong> {
-  for (var i = str.length - 1; i &gt;= 0; i--) {
+function <strong>removeSpace(str)</strong> {
+  for (let i = str.length - 1; i &gt;= 0; i--) {
     if (str[i] == " ") {
       str = str.substring(0, i);
     } else {
       break;
     }
   }
-  for (var i = 0; i &lt; str.length; i++) {
+  for (let i = 0; i &lt; str.length; i++) {
     if (str[i] == " ") {
       str = str.substring(i+1, str.length);
     }	
@@ -92,8 +96,8 @@ function <strong>trim(str)</strong> {
 }
 
 function beAllowStr(str, allowStr) {
-  for (var i = 0;i &lt; str.length; i++) {
-    var ch = str.charAt(i);
+  for (let i = 0;i &lt; str.length; i++) {
+    let ch = str.charAt(i);
     if (allowStr.indexOf(ch) &lt; 0) {
       return false;
     }
@@ -102,12 +106,12 @@ function beAllowStr(str, allowStr) {
 }
 
 function <strong>emailCheck(email)</strong> {
-  var allowStr = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_";
+  const allowStr = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_";
   if (beAllowStr(email, allowStr) == false) {
     return false;
   }
-  var golbang = 0;
-  var dot = 0;
+  let golbang = 0;
+  let dot = 0;
   if (email.length &lt; 5) {
     return false;
   }
@@ -120,7 +124,7 @@ function <strong>emailCheck(email)</strong> {
   if (email.indexOf(" ") != -1) {
     return false;
   }
-  for (var i = 0;i &lt; email.length; i++) {
+  for (let i = 0;i &lt; email.length; i++) {
     if (email.charAt(i) == "@") {
       golbang++;
     }
@@ -168,7 +172,7 @@ Modify the emailCheck() and trim() functions to use regular expressions.
  
 <pre class="prettyprint" style="white-space: pre-wrap">
 function emailCheck(email) { 
-  var re = /^(([^&lt;&gt;()[\]\\.,;:\s@\"]+(\.[^&lt;&gt;()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^&lt;&gt;()[\]\\.,;:\s@\"]+(\.[^&lt;&gt;()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
 
@@ -183,7 +187,7 @@ Create a function to validate mobile numbers like below.
 
 <pre class="prettyprint">
 function mobileCheck(mobile) {
-  var re = /\d+-\d+-\d+/;
+  const re = /\d+-\d+-\d+/;
   return re.test(mobile);
 }
 </pre>
@@ -266,8 +270,8 @@ Add the following JavaScript function under &lt;script type="text/javascript"&gt
 
 <pre class="prettyprint">
 function testCss() {
-  var inputs = document.getElementsByTagName("input");
-  for (var i = 0; i &lt; inputs.length; i++) {
+  const inputs = document.getElementsByTagName("input");
+  for (let i = 0; i &lt; inputs.length; i++) {
     inputs[i].style.background="yellow";
   }
 }
@@ -318,9 +322,9 @@ Arrays created using [] provide indexes.
 </p>
 
 <pre class="prettyprint script-result-display">
-var arr = [1, 2, 3, 4, 5];
-var sum = 0;
-for (var i = 0; i &lt; arr.length; i++) {
+const arr = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let i = 0; i &lt; arr.length; i++) {
   sum = sum + arr[i];
 }
 alert('SUM:' + sum);
@@ -333,9 +337,9 @@ Arrays created using Array object provide indexes.
 </p>
 
 <pre class="prettyprint script-result-display">
-var arr = new Array(1, 2, 3, 4, 5);
-var sum = 0;
-for (var i = 0; i &lt; arr.length; i++) {
+const arr = new Array(1, 2, 3, 4, 5);
+let sum = 0;
+for (let i = 0; i &lt; arr.length; i++) {
   sum = sum + arr[i];
 }
 alert('SUM:' + sum);
@@ -348,7 +352,7 @@ Associative arrays have the form {key:value} and do not provide indexes. Java ha
 </p>
 
 <pre class="prettyprint script-result-display">
-var person = {"name":"El Draque", "job":"pirate"};
+const person = {"name":"El Draque", "job":"pirate"};
 alert(person.name);
 alert(person["name"]);
 alert(person.job);
@@ -362,9 +366,9 @@ You can access all elements of associative arrays with the for-in statement.
 </p>
 
 <pre class="prettyprint script-result-display">
-var person = {"name":"Barbadosed", "job":"pirate"};
-var result = "";
-for(var property in person) {
+const person = {"name":"Barbadosed", "job":"pirate"};
+let result = "";
+for(let property in person) {
   result += person[property];
 }
 alert(result);
@@ -374,7 +378,7 @@ alert(result);
 
 <pre class="prettyprint script-result-display">
 function x(a, y) {
-  var ret = y(a);
+  const ret = y(a);
   alert(ret);
 }
 function z(a) {

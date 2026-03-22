@@ -900,7 +900,7 @@ function goModify(no,curPage,keyword) {
 }
 
 function goDelete(no,curPage,keyword) {
-  var check = confirm("Are you sure you want to delete it?");
+  const check = confirm("Are you sure you want to delete it?");
   if (check) {
     location.href="del.jsp?no=" + no + "&amp;curPage=" + curPage + "&amp;keyword=" + keyword;
   }

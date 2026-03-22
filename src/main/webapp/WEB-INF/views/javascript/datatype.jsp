@@ -15,6 +15,19 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/windows.css"/>" type="text/css" />
 <script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
 <script src="<c:url value="/resources/js/article-commons.js"/>"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('pre.script-result-display').each(function () {
+		let $result = "";
+		function println(str) {
+			$result += str + "\n";
+		}
+		const $convert = $(this).text().replace(/alert/g, "println");
+		eval($convert);
+		$(this).after('<pre class="result">' + $result + '</pre>');
+	});
+});
+</script>
 </head>
 <body>
 <div id="wrap">

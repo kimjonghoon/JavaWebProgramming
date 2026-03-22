@@ -304,8 +304,8 @@ Each time the displayComments() function is executed, comment HTML code is dynam
 $(document).on('click', '#all-comments', function (e) {
   if ($(e.target).is('.comment-modify-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().find('.comment-memo');
+    const $form = $(e.target).parent().parent().find('.comment-form');
+    const $div = $(e.target).parent().parent().find('.comment-memo');
 
     if ($form.is(':hidden') === true) {
       $form.show();
@@ -316,8 +316,8 @@ $(document).on('click', '#all-comments', function (e) {
     }
   } else if ($(e.target).is('.comment-modify-cancel-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $div = $(e.target).parent().parent().parent().find('.comment-memo');
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $div = $(e.target).parent().parent().parent().find('.comment-memo');
 
     if ($form.is(':hidden') === true) {
       $form.show();
@@ -328,12 +328,12 @@ $(document).on('click', '#all-comments', function (e) {
     }
   } else if ($(e.target).is('.comment-modify-submit-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $textarea = $(e.target).parent().parent().find('.comment-textarea');
-    var memo = $textarea.val();
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $textarea = $(e.target).parent().parent().find('.comment-textarea');
+    const memo = $textarea.val();
     $('#modifyCommentForm input[name*=memo]').val(memo);
-    var dataToBeSent = $('#modifyCommentForm').serialize();
-    var url = $form.attr("action");
+    const dataToBeSent = $('#modifyCommentForm').serialize();
+    const url = $form.attr("action");
     $.ajax({
       url: url,
       type: 'PUT',
@@ -347,14 +347,14 @@ $(document).on('click', '#all-comments', function (e) {
     });
   } else if ($(e.target).is('.comment-delete-link')) {
     e.preventDefault();
-    var chk = confirm('Are you sure you want to delete this item?');
+    const chk = confirm('Are you sure you want to delete this item?');
     if (chk === false) {
       return;
     }
-    var $commentNo = $(e.target).attr('title');
-    var url = $('#deleteCommentForm').attr('action');
+    const $commentNo = $(e.target).attr('title');
+    let url = $('#deleteCommentForm').attr('action');
     url += $commentNo;
-    var dataToBeSent = $('#deleteCommentForm').serialize();
+    const dataToBeSent = $('#deleteCommentForm').serialize();
     $.ajax({
       url: url,
       type: '<b>POST</b>',
@@ -483,12 +483,12 @@ Change the type from PUT to POST in the ajax transmission code related to commen
 <pre class="prettyprint">
   } else if ($(e.target).is('.comment-modify-submit-link')) {
     e.preventDefault();
-    var $form = $(e.target).parent().parent().parent().find('.comment-form');
-    var $textarea = $(e.target).parent().parent().find('.comment-textarea');
-    var memo = $textarea.val();
+    const $form = $(e.target).parent().parent().parent().find('.comment-form');
+    const $textarea = $(e.target).parent().parent().find('.comment-textarea');
+    const memo = $textarea.val();
     $('#modifyCommentForm input[name*=memo]').val(memo);
-    var dataToBeSent = $('#modifyCommentForm').serialize();
-    var url = $form.attr("action");
+    const dataToBeSent = $('#modifyCommentForm').serialize();
+    const url = $form.attr("action");
     $.ajax({
       url: url,
       type: '<b>POST</b>',

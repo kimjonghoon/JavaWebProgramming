@@ -460,11 +460,11 @@ String boardName = service.getBoardName(boardCd);
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 &lt;script type="text/javascript"&gt;
 function goList() {
-    var form = document.getElementById("listForm");
+    const form = document.getElementById("listForm");
     form.submit();
 }
 function goView() {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.submit();
 }
 &lt;/script&gt;           
@@ -687,13 +687,13 @@ String articleOwnerName = detailedArticle.getName();//게시글 작성자 이름
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css" /&gt;
 &lt;script type="text/javascript"&gt;
 function modifyCommentToggle(articleNo) {
-    var p_id = "comment" + articleNo;
-    var form_id = "modifyCommentForm" + no;
-    var p = document.getElementById(p_id);
-    var form = document.getElementById(form_id);
+    const p_id = "comment" + articleNo;
+    const form_id = "modifyCommentForm" + no;
+    const p = document.getElementById(p_id);
+    const form = document.getElementById(form_id);
     
-    var p_display;
-    var form_display;
+    let p_display;
+    let form_display;
     
     if (p.style.display) {
             p_display = '';
@@ -707,42 +707,42 @@ function modifyCommentToggle(articleNo) {
     form.style.display = form_display;
 }
 function goList(curPage) {
-    var form = document.getElementById("listForm");
+    const form = document.getElementById("listForm");
     form.curPage.value = curPage;
     form.submit();
 }
 function goView(articleNo) {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.articleNo.value = articleNo;
     form.submit();
 }
 function goWrite() {
-    var form = document.getElementById("writeForm");
+    const form = document.getElementById("writeForm");
     form.submit();
 }
 function goModify() {
-    var form = document.getElementById("modifyForm");
+    const form = document.getElementById("modifyForm");
     form.submit();
 }
 function goDelete() {
-    var check = confirm("정말로 삭제하시겠습니까?");
+    const check = confirm("정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("delForm");
+        const form = document.getElementById("delForm");
         form.submit();
     }
 }
 function deleteAttachFile(attachFileNo) {
-    var check = confirm("첨부 파일을 정말로 삭제하시겠습니까?");
+    const check = confirm("첨부 파일을 정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("deleteAttachFileForm");
+        const form = document.getElementById("deleteAttachFileForm");
         form.attachFileNo.value = attachFileNo;
         form.submit();
     }
 }
 function deleteComment(commentNo) {
-    var check = confirm("댓글을 정말로 삭제하시겠습니까?");
+    const check = confirm("댓글을 정말로 삭제하시겠습니까?");
     if (check) {
-        var form = document.getElementById("deleteCommentForm");
+        const form = document.getElementById("deleteCommentForm");
         form.commentNo.value = commentNo;
         form.submit();
     }
@@ -1349,7 +1349,7 @@ String boardName = service.getBoardName(boardCd);</strong>
 &lt;link rel="stylesheet" href="/css/screen.css" type="text/css"  /&gt;
 &lt;script type="text/javascript"&gt;
 function goView() {
-    var form = document.getElementById("viewForm");
+    const form = document.getElementById("viewForm");
     form.submit();
 }
 &lt;/script&gt;           

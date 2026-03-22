@@ -88,7 +88,7 @@ function emailCheck(email) {
 	if (email.indexOf(" ") != -1) {
 		return false;
 	}
-	for (var i = 0;i < email.length; i++) {
+	for (let i = 0;i < email.length; i++) {
 		if (email.charAt(i) == "@") {
 			golbang++;
 		}

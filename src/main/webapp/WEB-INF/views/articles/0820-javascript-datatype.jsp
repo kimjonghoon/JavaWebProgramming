@@ -12,9 +12,9 @@
 </p>
 
 <pre class="prettyprint script-result-display">
-var city = "서울";//또는 '서울'
-var result = 1200 / 1000;
-var onGlass = true;
+const city = "서울";//또는 '서울'
+const result = 1200 / 1000;
+const onGlass = true;
 alert('city: ' + city);
 alert('result: ' + result);
 alert('onGlass: ' + onGlass);
@@ -65,7 +65,7 @@ undefined는 변수가 선언되고 초기화되지 않은 상태에서 값을 �
 </p>
 
 <pre class="prettyprint script-result-display">
-var i;
+let i;
 alert('i: ' + i);
 </pre>
 
@@ -74,7 +74,7 @@ if 문의 조건절에 0, "", NaN, undefined 가 오면 false이다.<br />
 </p>
 
 <pre class="prettyprint script-result-display">
-var i;
+let i;
 if (i) {
 	alert('i: ' + "true");
 } else {

@@ -11,9 +11,9 @@ The primary data types of JavaScript are letters, numbers, and boolean. When dec
 </p>
 
 <pre class="prettyprint script-result-display">
-var city = "New York";//or 'New York'
-var result = 1200 / 1000;
-var onGlass = true;
+const city = "New York";//or 'New York'
+const result = 1200 / 1000;
+const onGlass = true;
 alert('city: ' + city);
 alert('result: ' + result);
 alert('onGlass: ' + onGlass);
@@ -55,7 +55,7 @@ The undefined means 'no value assigned.' You get this when you refer to an unini
 </p>
 
 <pre class="prettyprint script-result-display">
-var i;
+let i;
 alert('i: ' + i);
 </pre>
 
@@ -64,11 +64,11 @@ Returns false if condition is 0, "", NaN, undefined.
 </p>
 
 <pre class="prettyprint script-result-display">
-var i;
+let i;
 if (i) {
-  alert('i: ' + "true");
+	alert('i: ' + "true");
 } else {
-  alert('i: ' + "false");
+	alert('i: ' + "false");
 }
 </pre>
 

@@ -451,7 +451,7 @@ function goModify(no) {
 }
 
 function goDelete(no) {
-	var check = confirm('정말로 삭제하시겠습니까?');
+	const check = confirm('정말로 삭제하시겠습니까?');
 	if (check) {
 		location.href="../servlet/BoardDeleter?no=" + no;
 	}
@@ -1880,7 +1880,7 @@ function goModify(no, <strong>curPage</strong>) {
 }
 
 function goDelete(no, <strong>curPage</strong>) {
-	var check = confirm('정말로 삭제하시겠습니까?');
+	const check = confirm('정말로 삭제하시겠습니까?');
 	if (check) {
 		location.href="../servlet/BoardDeleter?no=" + no + <strong>"&amp;curPage=" + curPage</strong>;
 	}
@@ -2171,7 +2171,7 @@ function goModify(no, curPage, <strong>keyword</strong>) {
 }
 
 function goDelete(no, curPage, <strong>keyword</strong>) {
-	var check = confirm('정말로 삭제하시겠습니까?');
+	const check = confirm('정말로 삭제하시겠습니까?');
 	if (check) {
 		location.href="../servlet/BoardDeleter?no=" + no + "&amp;curPage=" + curPage + <strong>"&amp;keyword=" + keyword</strong>;
 	}

@@ -431,7 +431,7 @@ function goModify(no) {
 }
 
 function goDelete(no) {
-  var check = confirm('Are you sure you want to delete it?');
+  const check = confirm('Are you sure you want to delete it?');
   if (check) {
     location.href="../servlet/BoardDeleter?no=" + no;
   }
@@ -1294,7 +1294,7 @@ function goModify(no,<strong>curPage</strong>) {
 }
 
 function goDelete(no,curPage) {
-  var check = confirm('Are you sure you want to delete it?');
+  const check = confirm('Are you sure you want to delete it?');
   if (check) {
     location.href="../servlet/BoardDeleter?no=" + no + <strong>"&amp;curPage=" + curPage</strong>;
   }
@@ -1575,7 +1575,7 @@ function goModify(no,curPage,keyword) {
 }
 
 function goDelete(no,curPage,keyword) {
-  var check = confirm('Are you sure you want to delete it?');
+  const check = confirm('Are you sure you want to delete it?');
   if (check) {
     location.href="../servlet/BoardDeleter?no=" + no + "&amp;curPage=" + curPage + <strong>"&amp;keyword=" + keyword</strong>;
   }
