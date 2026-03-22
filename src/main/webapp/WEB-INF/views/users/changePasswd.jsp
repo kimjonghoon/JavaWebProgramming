@@ -15,22 +15,19 @@
 <script>
 $(document).ready(function () {
     $('#changePasswordForm').submit(function() {
-        var currentPasswd = $('#changePasswordForm input[name*=currentPasswd]').val();
-        currentPasswd = $.trim(currentPasswd);
+        const currentPasswd = $('#changePasswordForm input[name*=currentPasswd]').val().trim();
         if (currentPasswd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#changePasswordForm input[name*=currentPasswd]').val('');
             return false;
         }
-        var newPasswd = $('#changePasswordForm input[name*=newPasswd]').val();
-        newPasswd = $.trim(newPasswd);
+        const newPasswd = $('#changePasswordForm input[name*=newPasswd]').val().trim();
         if (newPasswd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#changePasswordForm input[name*=newPasswd]').val('');
             return false;
         }
-        var confirmPasswd = $('#changePasswordForm input[name*=confirm]').val();
-        confirmPasswd = $.trim(confirmPasswd);
+        const confirmPasswd = $('#changePasswordForm input[name*=confirm]').val().trim();
         if (confirmPasswd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#changePasswordForm input[name*=confirm]').val('');

@@ -7,11 +7,11 @@
 window.onload = initPage;
 
 function initPage() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.onsubmit = check;
 }
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
 	return true;
 }

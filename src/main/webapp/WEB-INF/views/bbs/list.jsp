@@ -39,8 +39,7 @@ $(document).ready(function() {
 		}
 	});
 	$('#searchForm').submit(function() {
-		$search = $('#searchForm input[name*=search]').val();
-		$search = $.trim($search);
+		const $search = $('#searchForm input[name*=search]').val().trim();
 		$('#searchForm input[name*=search]').val($search);
 		$('#searchForm').submit();
 	});

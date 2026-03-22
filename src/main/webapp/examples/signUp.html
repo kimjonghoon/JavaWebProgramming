@@ -5,55 +5,54 @@
 <title>JavaScript Test</title>
 <script>
 function check() {
-	var form = document.getElementById("signUpForm");
-	var id = form.id.value;
-	id = trim(id);
+	const form = document.getElementById("signUpForm");
+	let id = form.id.value;
+	id = removeSpace(id);
 	if (id.length == 0) {
 		alert("Invalid ID.");
 		return false;
 	}
-	var pass = form.passwd.value;
-	pass = trim(pass);
+	let pass = form.passwd.value;
+	pass = removeSpace(pass);
 	if (pass.length == 0) {
 		alert("Invalid Password.");
 		return false;
 	}
-	var name = form.name.value;
-	name = trim(name);
+	let name = form.name.value;
+	name = removeSpace(name);
 	if (name.length == 0) {
 		alert("Invalid Name.");
 		return false;
 	}
-	var email = form.email.value;
-	var chk = emailCheck(email);
-	if (chk == false) {
+	const email = form.email.value;
+	const emailCheck = emailCheck(email);
+	if (emailCheck == false) {
 		alert("Invalid email.");
 		return false;
 	}
-	var mobile = form.mobile.value;
-	mobile = trim(mobile);
+	let mobile = form.mobile.value;
+	mobile = removeSpace(mobile);
 	if (mobile.length == 0) {
 		alert("Invalid mobile number.");
 		return false;
 	}
-	chk = beAllowStr(mobile,"0123456789-");
-	if (chk == false) {
+	const mobileCheck = beAllowStr(mobile,"0123456789-");
+	if (mobileCheck == false) {
 		alert("Invalid mobile number");
 		return false;
 	}
-	
 	return true;
 }
 
-function trim(str) {
-	for (var i = str.length - 1; i >= 0; i--) {
+function removeSpace(str) {
+	for (let i = str.length - 1; i >= 0; i--) {
 		if (str[i] == " ") {
 			str = str.substring(0, i);
 		} else {
 			break;
 		}
 	}
-	for (var i = 0; i < str.length; i++) {
+	for (let i = 0; i < str.length; i++) {
 		if (str[i] == " ") {
 			str = str.substring(i+1, str.length);
 		}	
@@ -62,8 +61,8 @@ function trim(str) {
 }
 
 function beAllowStr(str, allowStr) {
-	for (var i = 0;i < str.length; i++) {
-		var ch = str.charAt(i);
+	for (let i = 0;i < str.length; i++) {
+		let ch = str.charAt(i);
 		if (allowStr.indexOf(ch) < 0) {
 			return false;
 		}
@@ -75,8 +74,8 @@ function emailCheck(email) {
 	if (beAllowStr(email,"1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@.-_") == false) {
 		return false;
 	}
-	var golbang = 0;
-	var dot = 0;
+	let golbang = 0;
+	let dot = 0;
 	if (email.length < 5) {
 		return false;
 	}

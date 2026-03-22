@@ -176,8 +176,7 @@ $(document).ready(function () {
 	});
 	
 	$('#searchForm').submit(function() {
-		let $search = $('#searchForm input[name*=search]').val();
-		$search = $.trim($search);
+		const $search = $('#searchForm input[name*=search]').val().trim();
 		$('#searchForm input[name*=search]').val($search);
 		$('#searchForm').submit();
 	});
@@ -185,8 +184,7 @@ $(document).ready(function () {
 	$("#addCommentForm").submit(function (event) {
 		event.preventDefault();
 		const $form = $(this);
-		let memo = $('#addComment-ta').val();
-		memo = $.trim(memo);
+		const memo = $('#addComment-ta').val().trim();
 		if (memo.length === 0) {
 			$('#addComment-ta').val('');
 			return false;

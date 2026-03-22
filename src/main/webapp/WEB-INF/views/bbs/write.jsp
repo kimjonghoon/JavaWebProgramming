@@ -27,10 +27,8 @@ textarea {
 <script>
 $(document).ready(function() {
 	$('#writeForm').submit(function() {
-		let title = $('#writeForm input[name*=title]').val();
-		let content = $('#writeForm-ta').val();
-		title = $.trim(title);
-		content = $.trim(content);
+		const title = $('#writeForm input[name*=title]').val().trim();
+		const content = $('#writeForm-ta').val().trim();
 		
 		if (title.length === 0) {
 			alert('<spring:message code="title.empty" />');

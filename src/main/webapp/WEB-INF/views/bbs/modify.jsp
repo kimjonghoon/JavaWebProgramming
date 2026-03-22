@@ -15,10 +15,8 @@
 <script>
 $(document).ready(function() {
 	$('#modifyForm').submit(function() {
-		let title = $('#modifyForm input[name*=title]').val();
-		let content = $('#modifyForm-ta').val();
-		title = $.trim(title);
-		content = $.trim(content);
+		const title = $('#modifyForm input[name*=title]').val().trim();
+		const content = $('#modifyForm-ta').val().trim();
 		
 		if (title.length === 0) {
 			alert('<spring:message code="title.empty" />');

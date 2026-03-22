@@ -5,52 +5,51 @@
 <title>JavaScript Test</title>
 <script>
 function check() {
-	var form = document.getElementById("signUpForm");
-	var id = form.id.value;
-	id = trim(id);
+	const form = document.getElementById("signUpForm");
+	let id = form.id.value;
+	id = removeSpace(id);
 	if (id.length == 0) {
 		alert("Invalid ID.");
 		return false;
 	}
-	var pass = form.passwd.value;
-	pass = trim(pass);
+	let pass = form.passwd.value;
+	pass = removeSpace(pass);
 	if (pass.length == 0) {
 		alert("Invalid Password.");
 		return false;
 	}
-	var name = form.name.value;
-	name = trim(name);
+	let name = form.name.value;
+	name = removeSpace(name);
 	if (name.length == 0) {
 		alert("Invalid Name.");
 		return false;
 	}
-	var email = form.email.value;
-	var chk = emailCheck(email);
-	if (chk == false) {
+	const email = form.email.value;
+	const emailCheck = emailCheck(email);
+	if (emailCheck == false) {
 		alert("Invalid email.");
 		return false;
 	}
-	var mobile = form.mobile.value;
-	chk = mobileCheck(mobile);
-	if (chk == false) {
+	const mobile = form.mobile.value;
+	const mobileCheck = mobileCheck(mobile);
+	if (mobileCheck == false) {
 		alert("Invalid mobile number.");
 		return false;
 	}
-	
 	return true;
 }
 
 function emailCheck(email) { 
-	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 }
 
-function trim(str) {
+function removeSpace(str) {
 	return str.replace(/(^\s*)|(\s*$)/gi, "");
 }
 
 function mobileCheck(mobile) {
-	var re = /\d+-\d+-\d+/;
+	const re = /\d+-\d+-\d+/;
 	return re.test(mobile);
 }
 </script>

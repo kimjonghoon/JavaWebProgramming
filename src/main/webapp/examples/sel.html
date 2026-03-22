@@ -5,8 +5,8 @@
 <title>Handling select items</title>
 <script>
 function chooseLang() {
-	var form = document.getElementById("testForm");
-	var lang = form.programLanguage.value;
+	const form = document.getElementById("testForm");
+	const lang = form.programLanguage.value;
 
 	switch (lang) {
 	case "java":
@@ -15,12 +15,9 @@ function chooseLang() {
 		form.step.options[2] = new Option("Java DataType", "JavadataType");
 		break;
 	case "javascript":
-		form.step.options[0] = new Option("JavaScript Introduction",
-				"javascriptIntro");
-		form.step.options[1] = new Option("JavaScript DataType",
-				"JavascriptDataType");
-		form.step.options[2] = new Option("JavaScript Objects",
-				"JavascriptObjects");
+		form.step.options[0] = new Option("JavaScript Introduction", "javascriptIntro");
+		form.step.options[1] = new Option("JavaScript DataType", "JavascriptDataType");
+		form.step.options[2] = new Option("JavaScript Objects", "JavascriptObjects");
 		break;
 	default:
 		form.step.options.length = 0;

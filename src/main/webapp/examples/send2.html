@@ -5,19 +5,18 @@
 <title>JavaScript Test</title>
 <script>
 function agree() {
-	var form = document.getElementById("testForm");
-	var submit = document.getElementById("submit");
+	const form = document.getElementById("testForm");
+	const submit = document.getElementById("submit");
 	if (form.agreement.checked == true) {
 		submit.disabled = false;	
 	} else {
 		submit.disabled = true;
 	}
-	
 }
 function check() {
-	var form = document.getElementById("testForm");
+	const form = document.getElementById("testForm");
 	form.condition[4].disabled = true;
-	var chk = form.confirm[0].value
+	const chk = form.confirm[0].value
 
 	return true;
 }

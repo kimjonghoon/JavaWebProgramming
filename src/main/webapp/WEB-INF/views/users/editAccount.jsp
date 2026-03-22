@@ -15,22 +15,19 @@
 <script>
 $(document).ready(function() {
     $('#editAccountForm').submit(function(){
-        var name = $('#editAccountForm input[name*=name]').val();
-        name = $.trim(name);
+        const name = $('#editAccountForm input[name*=name]').val().trim();
         if (name.length === 0) {
             alert('<spring:message code="fullname.validation.error" />');
             $('#editAccountForm input[name*=name]').val('');
             return false;
         }
-        var mobile = $('#editAccountForm input[name*=mobile]').val();
-        mobile = $.trim(mobile);
+        const mobile = $('#editAccountForm input[name*=mobile]').val().trim();
         if (mobile.length === 0) {
             alert('<spring:message code="mobile.validation.error" />');
             $('#editAccountForm input[name*=mobile]').val('');
             return false;
         }
-        var passwd = $('#editAccountForm input[name*=passwd]').val();
-        passwd = $.trim(passwd);
+        const passwd = $('#editAccountForm input[name*=passwd]').val().trim();
         if (passwd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#editAccountForm input[name*=passwd]').val('');

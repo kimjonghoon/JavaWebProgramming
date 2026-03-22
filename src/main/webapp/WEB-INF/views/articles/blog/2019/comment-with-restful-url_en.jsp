@@ -188,12 +188,12 @@ Add the following JavaScript function to the detailed view page.
 
 <pre class="prettyprint">
 function displayComments() {
-  var url = '/comments/' + ${articleNo};
+  const url = '/comments/' + ${articleNo};
   $.getJSON(url, function (data) {
     $('#all-comments').empty();
     $.each(data, function (i, item) {
-      var creation = new Date(item.regdate);
-      var comments = '&lt;div class="comments"&gt;'
+      const creation = new Date(item.regdate);
+      let comments = '&lt;div class="comments"&gt;'
         + '&lt;span class="writer"&gt;' + item.name + '&lt;/span&gt;'
         + '&lt;span class="date"&gt;' + creation.toLocaleString() + '&lt;/span&gt;';
       if (item.editable === true) {
@@ -279,16 +279,15 @@ $(document).ready(function () {
   
   $("#addCommentForm").submit(function (event) {
     event.preventDefault();
-    var $form = $(this);
-    var memo = $('#addComment-ta').val();
-    memo = $.trim(memo);
+    const $form = $(this);
+    const memo = $('#addComment-ta').val().trim();
     if (memo.length === 0) {
       $('#addComment-ta').val('');
       return false;
     }
-    var dataToBeSent = $form.serialize();
-    var url = $form.attr("action");
-    var posting = $.post(url, dataToBeSent);
+    const dataToBeSent = $form.serialize();
+    const url = $form.attr("action");
+    const posting = $.post(url, dataToBeSent);
     posting.done(function () {
       <b>displayComments();</b>
       $('#addComment-ta').val('');

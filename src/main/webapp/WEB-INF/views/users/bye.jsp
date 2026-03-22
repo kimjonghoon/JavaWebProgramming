@@ -14,15 +14,13 @@
 <script>
 $(document).ready(function() {
     $('#byeForm').submit(function(){
-        var email = $('#byeForm input[name*=email]').val();
-        email = $.trim(email);
+        const email = $('#byeForm input[name*=email]').val().trim();
         if (email.length === 0) {
             alert('<spring:message code="email.validation.error" />');
             $('#byeForm input[name*=email]').val('');
             return false;
         }
-        var passwd = $('#byeForm input[name*=passwd]').val();
-        passwd = $.trim(passwd);
+        const passwd = $('#byeForm input[name*=passwd]').val().trim();
         if (passwd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#byeForm input[name*=passwd]').val('');

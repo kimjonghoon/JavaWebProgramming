@@ -279,16 +279,15 @@ $(document).ready(function () {
   
   $("#addCommentForm").submit(function (event) {
     event.preventDefault();
-    var $form = $(this);
-    var memo = $('#addComment-ta').val();
-    memo = $.trim(memo);
+    const $form = $(this);
+    const memo = $('#addComment-ta').val().trim();
     if (memo.length === 0) {
       $('#addComment-ta').val('');
       return false;
     }
-    var dataToBeSent = $form.serialize();
-    var url = $form.attr("action");
-    var posting = $.post(url, dataToBeSent);
+    const dataToBeSent = $form.serialize();
+    const url = $form.attr("action");
+    const posting = $.post(url, dataToBeSent);
     posting.done(function () {
       <b>displayComments();</b>
       $('#addComment-ta').val('');

@@ -40,17 +40,17 @@ $(document).ready(function() {
 		<div id="content">
 <!-- content begin -->
 <script>
-    $(document).ready(function () {
-        $('#board-list a').click(function (e) {
-            e.preventDefault();
-            var boardCd = this.text;
-            var boardNm = this.title;
-            var boardNm_ko = this.className;
-            $('#editBoard input[name*=boardCd]').val(boardCd);
-            $('#editBoard input[name*=boardNm]').val(boardNm);
-            $('#editBoard input[name*=boardNm_ko]').val(boardNm_ko);
-        });
-    });
+$(document).ready(function () {
+	$('#board-list a').click(function (e) {
+		e.preventDefault();
+		const boardCd = this.text;
+		const boardNm = this.title;
+		const boardNm_ko = this.className;
+		$('#editBoard input[name*=boardCd]').val(boardCd);
+		$('#editBoard input[name*=boardNm]').val(boardNm);
+		$('#editBoard input[name*=boardNm_ko]').val(boardNm_ko);
+	});
+});
 </script>
 
 <h2><spring:message code="board.list" /></h2>

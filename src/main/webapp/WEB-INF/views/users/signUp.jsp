@@ -15,22 +15,19 @@
 <script>
 $(document).ready(function() {
     $('#signUpForm').submit(function() {
-        var name = $('#signUpForm input[name*=name]').val();
-        name = $.trim(name);
+        const name = $('#signUpForm input[name*=name]').val().trim();
         if (name.length === 0) {
             alert('<spring:message code="fullname.validation.error" />');
             $('#signUpForm input[name*=name]').val('');
             return false;
         }
-        var passwd = $('#signUpForm input[name*=passwd]').val();
-        passwd = $.trim(passwd);
+        const passwd = $('#signUpForm input[name*=passwd]').val().trim();
         if (passwd.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#signUpForm input[name*=passwd]').val('');
             return false;
         }
-        var confirm = $('#signUpForm input[name*=confirm]').val();
-        confirm = $.trim(confirm);
+        const confirm = $('#signUpForm input[name*=confirm]').val().trim();
         if (confirm.length === 0) {
             alert('<spring:message code="passwd.validation.error" />');
             $('#signUpForm input[name*=confirm]').val('');
@@ -40,15 +37,13 @@ $(document).ready(function() {
             alert('<spring:message code="passwd.confirm.not.same" />');
             return false;
         }
-        var email = $('#signUpForm input[name*=email]').val();
-        email = $.trim(email);
+        const email = $('#signUpForm input[name*=email]').val().trim();
         if (email.length === 0) {
             alert('<spring:message code="email.validation.error" />');
             $('#signUpForm input[name*=email]').val('');
             return false;
         }
-        var mobile = $('#signUpForm input[name*=mobile]').val();
-        mobile = $.trim(mobile);
+        const mobile = $('#signUpForm input[name*=mobile]').val().trim();
         if (mobile.length === 0) {
             alert('<spring:message code="mobile.validation.error" />');
             $('#signUpForm input[name*=mobile]').val('');

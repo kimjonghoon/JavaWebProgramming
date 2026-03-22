@@ -250,7 +250,7 @@ public class BlogController {
 &lt;script type="text/javascript"&gt;
 $(document).ready(function() {
 	$('#jdk-install a').click(function() {
-		var url = '/java/jdk-install';
+		const url = '/java/jdk-install';
 		$.getJSON(url, function(data) {
 			$('title').empty();
 			$('title').append(data.title);
