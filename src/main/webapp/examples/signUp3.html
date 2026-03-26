@@ -2,41 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>JavaScript Test</title>
+<title>input values validation test 3</title>
 <script>
 function check() {
 	const form = document.getElementById("signUpForm");
 	let id = form.id.value;
-	id = removeSpace(id);
-	if (id.length == 0) {
+	id = removeBeginAndEndSpace(id);
+	if (id.length === 0) {
 		alert("Invalid ID.");
 		return false;
 	}
-	let pass = form.passwd.value;
-	pass = removeSpace(pass);
-	if (pass.length == 0) {
+	let passwd = form.passwd.value;
+	passwd = removeBeginAndEndSpace(passwd);
+	if (passwd.length === 0) {
 		alert("Invalid Password.");
 		return false;
 	}
 	let name = form.name.value;
-	name = removeSpace(name);
-	if (name.length == 0) {
+	name = removeBeginAndEndSpace(name);
+	if (name.length === 0) {
 		alert("Invalid Name.");
 		return false;
 	}
 	const email = form.email.value;
-	const emailCheck = emailCheck(email);
-	if (emailCheck == false) {
+	const isEmail = emailCheck(email);
+	if (isEmail === false) {
 		alert("Invalid email.");
 		return false;
 	}
 	const mobile = form.mobile.value;
-	const mobileCheck = mobileCheck(mobile);
-	if (mobileCheck == false) {
+	const isMobile = mobileCheck(mobile);
+	if (isMobile === false) {
 		alert("Invalid mobile number.");
 		return false;
 	}
-	return true;
+	
+	form.id.value = id;
+	form.passwd.value = passwd;
+	form.name.value = name;
+	form.email.value = email;
+	form.mobile.value = mobile;
+	
+	return false;//for test
 }
 
 function emailCheck(email) { 
@@ -44,7 +51,7 @@ function emailCheck(email) {
 	return re.test(email);
 }
 
-function removeSpace(str) {
+function removeBeginAndEndSpace(str) {
 	return str.replace(/(^\s*)|(\s*$)/gi, "");
 }
 
@@ -63,12 +70,12 @@ function testCss() {
 </head>
 <body onload="testCss()">
 <h1>Sign Up</h1>
-<form id="signUpForm" name="signUpForm" action="signUp.php" method="post" onsubmit="return check();">
-ID : <input type="text" name="id" value="heist" /><br />
-Password : <input type="password" name="passwd" value="1440" /><br />
-Name : <input type="text" name="name" value="John Doe" /><br />
-Email : <input type="text" name="email" /><br />
-Mobile : <input type="text" name="mobile" /><br />
+<form id="signUpForm" name="signUpForm" method="post" onsubmit="return check();">
+ID : <input type="text" name="id" value="   h  e i s  t   " /><br />
+Password : <input type="password" name="passwd" value="1111" /><br />
+Name : <input type="text" name="name" value="   J  o h n  D   o  e   " /><br />
+Email : <input type="text" name="email" value="alexa@earth.net" /><br />
+Mobile : <input type="text" name="mobile" value="000-1111-2222" /><br />
 <input type="submit" value="Submit" />
 <input type="reset" value="Reset" />
 </form>

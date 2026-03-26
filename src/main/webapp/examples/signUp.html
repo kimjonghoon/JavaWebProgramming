@@ -2,60 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>JavaScript Test</title>
+<title>input values validation test 1</title>
 <script>
 function check() {
 	const form = document.getElementById("signUpForm");
 	let id = form.id.value;
 	id = removeSpace(id);
-	if (id.length == 0) {
+	if (id.length === 0) {
 		alert("Invalid ID.");
 		return false;
 	}
-	let pass = form.passwd.value;
-	pass = removeSpace(pass);
-	if (pass.length == 0) {
+	let passwd = form.passwd.value;
+	passwd = removeSpace(passwd);
+	if (passwd.length === 0) {
 		alert("Invalid Password.");
 		return false;
 	}
 	let name = form.name.value;
 	name = removeSpace(name);
-	if (name.length == 0) {
+	if (name.length === 0) {
 		alert("Invalid Name.");
 		return false;
 	}
 	const email = form.email.value;
-	const emailCheck = emailCheck(email);
-	if (emailCheck == false) {
+	const isEmail = emailCheck(email);
+	if (isEmail === false) {
 		alert("Invalid email.");
 		return false;
 	}
 	let mobile = form.mobile.value;
 	mobile = removeSpace(mobile);
-	if (mobile.length == 0) {
+	if (mobile.length === 0) {
 		alert("Invalid mobile number.");
 		return false;
 	}
-	const mobileCheck = beAllowStr(mobile,"0123456789-");
-	if (mobileCheck == false) {
+	const isMobile = beAllowStr(mobile,"0123456789-");
+	if (isMobile === false) {
 		alert("Invalid mobile number");
 		return false;
 	}
-	return true;
+	
+	form.id.value = id;
+	form.passwd.value = passwd;
+	form.name.value = name;
+	form.email.value = email;
+	form.mobile.value = mobile;
+	
+	return false;//for test
 }
 
 function removeSpace(str) {
-	for (let i = str.length - 1; i >= 0; i--) {
-		if (str[i] == " ") {
-			str = str.substring(0, i);
-		} else {
-			break;
+	let i = 0;
+	while (i < str.length) {
+		if (str[i] === ' ') {
+			str = str.substring(0,i) + str.substring(i+1,str.length);
+			continue;
 		}
-	}
-	for (let i = 0; i < str.length; i++) {
-		if (str[i] == " ") {
-			str = str.substring(i+1, str.length);
-		}	
+		i++;
 	}
 	return str;
 }
@@ -111,12 +114,12 @@ function emailCheck(email) {
 </head>
 <body>
 <h1>Sign Up</h1>
-<form id="signUpForm" name="signUpForm" action="signUp.php" method="post" onsubmit="return check();">
-ID : <input type="text" name="id" value="heist" /><br />
-Password : <input type="password" name="passwd" value="1440" /><br />
-Name: <input type="text" name="name" value="John Doe"  /><br />
-Email : <input type="text" name="email" /><br />
-Mobile : <input type="text" name="mobile" /><br />
+<form id="signUpForm" name="signUpForm" method="post" onsubmit="return check();">
+ID : <input type="text" name="id" value="   h  e i s  t   " /><br />
+Password : <input type="password" name="passwd" value="1111" /><br />
+Name: <input type="text" name="name" value="   J  o h n  D   o  e   "  /><br />
+Email : <input type="text" name="email" value="alexa@earth.net" /><br />
+Mobile : <input type="text" name="mobile" value="12345678" /><br />
 <input type="submit" value="Submit" />
 <input type="reset" value="Reset" />
 </form>
