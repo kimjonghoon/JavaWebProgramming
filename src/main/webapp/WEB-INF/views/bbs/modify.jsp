@@ -39,7 +39,18 @@ $(document).ready(function() {
 	});
 });
 </script>
-
+<style>
+#extra  {
+    display: none;
+}
+#content  {
+    margin-right: 0;
+}
+textarea {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+</style>
 </head>
 <body>
 <div id="wrap">
