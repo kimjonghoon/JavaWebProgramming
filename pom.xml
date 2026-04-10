@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-framework-bom</artifactId>
-			<version>7.0.5</version>
+			<version>7.0.6</version>
 			<type>pom</type>
 			<scope>import</scope>
 		</dependency>
@@ -30,7 +30,7 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-bom</artifactId>
-			<version>7.0.3</version>
+			<version>7.0.4</version>
 			<type>pom</type>
 			<scope>import</scope>		    
 		</dependency>
