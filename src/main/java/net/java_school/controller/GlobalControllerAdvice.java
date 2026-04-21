@@ -11,15 +11,15 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("springVer")
 	public String getSpringVersion() {
-		return "7.0.5";
+		return "7.0.7";
 	}
 	@ModelAttribute("securityVer")
 	public String getSecurityVersion() {
-		return "7.0.3";
+		return "7.0.4";
 	}
 	@ModelAttribute("jodaTimeVer")
 	public String getJodaTimeVersion() {
-		return "2.14.0";
+		return "2.14.1";
 	}
 	@ModelAttribute("slf4jVer")
 	public String getSlf4jVersion() {
@@ -67,7 +67,7 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("log4jVer")
 	public String getLog4jVersion() {
-		return "2.35.3";
+		return "2.35.4";
 	}
 	@ModelAttribute("hibernateValidatorVer")
 	public String getHivernateValidatorVersion() {
@@ -87,6 +87,6 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
-		return "3.0.4";
+		return "3.1.2";
 	}
 }
