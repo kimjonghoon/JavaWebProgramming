@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
 <script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
 <!-- for pretty code end -->
-<link rel="stylesheet" href="<c:url value="/resources/css/bbs-view.css"/>" type="text/css" />
 <c:url var="commentsUrl" value="/comments"/>
 <script>
 function displayComments() {
@@ -205,6 +204,26 @@ $(document).ready(function () {
 			const originHeight = $(element).height();
 			const height = originHeight * width / originWidth;
 			$(element).css({'width':width,'height':height,'allowFullScreen':''});
+		});
+	}
+	
+	//이미지
+	if ($('#article-content .images').length) {
+		$('#article-content .images').each(function(idx,element) {
+			const str = $(element).html();
+			const lines = str.split(/\n\r?/);
+			$.each(lines, function(index, line) {
+				if ($.trim(line) === '') {
+					return true;
+				}
+				let imgTag = $('<img/>').attr('src',line).attr('alt','img ' + (idx+1) + '' + (index+1));
+				imgTag.css({'width':'105px','height': 'auto'});
+				$(element).append(imgTag);
+			});
+			$(element).contents().filter(function() {
+				return this.nodeType === 3;
+			}).remove();
+			$(element).css({'float': 'left'});
 		});
 	}
 	
