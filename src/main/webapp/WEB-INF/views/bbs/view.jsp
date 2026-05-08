@@ -101,12 +101,10 @@ $(document).ready(function () {
 		}
 		$('#viewForm').submit();
 	});
-	
 	//Modify Button
 	$('.goModify').click(function () {
 		$('#modifyForm').submit();
 	});
-	
 	//Del Button
 	$('.goDelete').click(function () {
 		const chk = confirm('<spring:message code="delete.confirm" />');
@@ -114,7 +112,6 @@ $(document).ready(function () {
 			$('#delForm').submit();
 		}
 	});
-	
 	//Next Article Button
 	$('.next-article').click(function () {
 		const articleNo = this.title;
@@ -127,7 +124,6 @@ $(document).ready(function () {
 		}
 		$('#viewForm').submit();
 	});
-	
 	//Prev Article Button
 	$('.prev-article').click(function () {
 		const articleNo = this.title;
@@ -140,17 +136,14 @@ $(document).ready(function () {
 		}
 		$('#viewForm').submit();
 	});
-	
 	//List Button
 	$('.goList').click(function () {
 		$('#listForm').submit();
 	});
-	
 	//Write Button
 	$('.goWrite').click(function () {
 		$('#writeForm').submit();
 	});
-	
 	//Title Link in view.jsp
 	$('#list-table a').click(function (e) {
 		e.preventDefault();
@@ -160,7 +153,6 @@ $(document).ready(function () {
 		$('#viewForm').attr('action', action);
 		$('#viewForm').submit();
 	});
-	
 	//Paging
 	$('#paging a').click(function (e) {
 		e.preventDefault();
@@ -168,18 +160,15 @@ $(document).ready(function () {
 		$('#listForm input[name*=page]').val(page);
 		$('#listForm').submit();
 	});
-	
 	//Write Button on Search Button
 	$('#list-menu > input').click(function () {
 		$('#writeForm').submit();
 	});
-	
 	$('#searchForm').submit(function() {
 		const $search = $('#searchForm input[name*=search]').val().trim();
 		$('#searchForm input[name*=search]').val($search);
 		$('#searchForm').submit();
 	});
-	
 	$("#addCommentForm").submit(function (event) {
 		event.preventDefault();
 		const $form = $(this);
@@ -196,7 +185,7 @@ $(document).ready(function () {
 			$('#addComment-ta').val('');
 		});
 	});
-	
+	//동영상
 	if ($('#article-content iframe').length) {
 		const width = $('#article-content').width();
 		$('#article-content iframe').each(function(index,element) {
@@ -206,7 +195,12 @@ $(document).ready(function () {
 			$(element).css({'width':width,'height':height,'allowFullScreen':''});
 		});
 	}
-	
+	//글
+	if ($('#article-content .text').length) {
+		$('#article-content .text').html(function() {
+			return $(this).html().trim().replace(/\n\r?/g, "<br />");
+		});
+	}
 	//이미지
 	if ($('#article-content .images').length) {
 		$('#article-content .images').each(function(idx,element) {
@@ -226,11 +220,9 @@ $(document).ready(function () {
 			$(element).css({'float': 'left'});
 		});
 	}
-	
 	$('#article-content img').click(function(event) {
 		toggleFullScreen(event.target);
 	});
-	
 	function toggleFullScreen(elem) {
 		elem = elem || document.documentElement;
 		
@@ -337,6 +329,11 @@ $(document).on('click', '#all-comments', function (e) {
 	}
 });
 </script>
+<style>
+div.text {
+	font-size: 1.2em;
+}
+</style>
 </head>
 <body>
 <div id="wrap">
