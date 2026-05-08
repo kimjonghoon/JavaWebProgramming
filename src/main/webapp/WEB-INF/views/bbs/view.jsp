@@ -256,7 +256,6 @@ $(document).ready(function () {
 		}
 	}
 });
-
 $(document).on('click', '#all-comments', function (e) {
 	if ($(e.target).is('.comment-modify-link')) {
 		e.preventDefault();
@@ -331,6 +330,9 @@ $(document).on('click', '#all-comments', function (e) {
 </script>
 <style>
 div.text {
+	font-size: 1.2em;
+}
+pre {
 	font-size: 1.2em;
 }
 pre.prettyprint {
