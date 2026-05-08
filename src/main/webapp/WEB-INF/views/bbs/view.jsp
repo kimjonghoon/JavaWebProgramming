@@ -333,6 +333,10 @@ $(document).on('click', '#all-comments', function (e) {
 div.text {
 	font-size: 1.2em;
 }
+pre.prettyprint {
+	margin: 0.4em 0;
+	font-size: 1.1em;
+}
 </style>
 </head>
 <body>
