@@ -336,6 +336,7 @@ div.text {
 pre.prettyprint {
 	margin: 0.4em 0;
 	font-size: 1.1em;
+	border: 0;
 }
 </style>
 </head>
