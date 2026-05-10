@@ -15,7 +15,7 @@
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <!-- for pretty code begin -->
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css" />
-<script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
+<script src="<c:url value="/resources/js/prettify.js"/>"></script>
 <!-- for pretty code end -->
 <c:url var="commentsUrl" value="/comments"/>
 <script>
@@ -185,20 +185,45 @@ $(document).ready(function () {
 			$('#addComment-ta').val('');
 		});
 	});
-	//동영상
+	//[img],[code],[vid],[txt]를 HTML 엘리먼트로 바꿈
+	$('#article-content').html(function() {
+				return $(this).html().replace(/\[img\]/g,'<p class="images">')
+							.replace(/\[:img\]/g,'</p>')
+							.replace(/\[code\]/g,'<pre class="prettyprint">')
+							.replace(/\[:code\]/g,'</pre>')
+							.replace(/\[vid\]/g,'<p class="videos">')
+							.replace(/\[:vid\]/g,'</p>')
+							.replace(/\[txt\]/g,'<p class="text">')
+							.replace(/\[:txt\]/g,'</p>')
+							.replace(/\[link\]/g,'<p class="links">')
+							.replace(/\[:link\]/g,'</p>');
+	});
+	//동영상 TODO
+	if ($('#article-content .videos').length) {
+		$('#article-content .videos').html(function() {
+			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
+		});
+	}
+	//동영상 너비와 속성 조정
 	if ($('#article-content iframe').length) {
 		const width = $('#article-content').width();
 		$('#article-content iframe').each(function(index,element) {
 			const originWidth = $(element).width();
 			const originHeight = $(element).height();
 			const height = originHeight * width / originWidth;
-			$(element).css({'width':width,'height':height,'allowFullScreen':''});
+			$(element).css({'width':width,'height':height,'allow':'fullscreen'})
 		});
 	}
 	//글
 	if ($('#article-content .text').length) {
 		$('#article-content .text').html(function() {
 			return $(this).html().trim().replace(/\n\r?/g, "<br />");
+		});
+	}
+	//링크 TODO
+	if ($('#article-content .links').length) {
+		$('#article-content .links').html(function() {
+			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
 	}
 	//이미지
@@ -255,6 +280,11 @@ $(document).ready(function () {
 			}
 		}
 	}
+	//코드
+	prettyPrint();
+	$('pre.prettyprint').html(function() {
+		return this.innerHTML.replace(/\t/g,'&nbsp;&nbsp;')
+	});	
 });
 $(document).on('click', '#all-comments', function (e) {
 	if ($(e.target).is('.comment-modify-link')) {
@@ -329,17 +359,20 @@ $(document).on('click', '#all-comments', function (e) {
 });
 </script>
 <style>
-div.text {
+#article-content > p {
 	font-size: 1.2em;
 }
-pre {
+#article-content > pre {
 	font-size: 1.2em;
 }
-pre.prettyprint {
+#article-content > pre.prettyprint {
 	margin: 0.4em 0;
 	font-size: 1.1em;
 	border: 0;
 }
+#article-content img {
+	max-width: 100%;
+}	
 </style>
 </head>
 <body>
@@ -384,7 +417,7 @@ pre.prettyprint {
 </table>
 <div id="detail">
     <div id="date-writer-hit">edited ${regdate } by ${name } hit ${hit }</div>
-    <div id="article-content">${content }</div>
+    <div id="article-content"><c:out value="${content}" /></div>
     <div id="file-list" style="text-align: right">
         <c:forEach var="file" items="${attachFileList }" varStatus="status">
             <div id="attachfile${file.attachFileNo }" class="attach-file">
