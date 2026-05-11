@@ -203,7 +203,9 @@ $(document).ready(function () {
 		$('#article-content .videos').html(function() {
 			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
+		$('#article-content .videos').contents().not('iframe').remove();
 	}
+	
 	//동영상 너비와 속성 조정
 	if ($('#article-content iframe').length) {
 		const width = $('#article-content').width();
@@ -225,6 +227,7 @@ $(document).ready(function () {
 		$('#article-content .links').html(function() {
 			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
+		$('#article-content .links').contents().not('a').remove();
 	}
 	//이미지
 	if ($('#article-content .images').length) {
