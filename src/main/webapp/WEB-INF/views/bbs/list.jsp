@@ -92,7 +92,7 @@ function createCookie(name, value, days) {
         <tr>
             <td style="text-align: center;">${pagingNumbers.listItemNo - status.index}</td>
             <td>
-                <a href="#" title="${article.articleNo }" class="view-link">${article.title }</a>
+                <a href="#" title="${article.articleNo }" class="view-link"><c:out value="${article.title }"/></a>
                 <c:if test="${article.attachFileNum > 0 }">
                     <img src="${staticUrl}/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>

@@ -36,7 +36,7 @@ function displayComments() {
 					+ '</span>';
 			}
 			comments = comments
-				+ '<div class="comment-memo">' + item.memo + '</div>'
+				+ '<div class="comment-memo">' + $(item.memo).text() + '</div>'
 				+ '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
 				+ '<div style="text-align: right;">'
 				+ '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
@@ -505,7 +505,7 @@ $(document).on('click', '#all-comments', function (e) {
                 </c:choose>	
             </td>
             <td>
-                <a href="#" title="${article.articleNo }">${article.title }</a>
+                <a href="#" title="${article.articleNo }"><c:out value="${article.title }"/></a>
                 <c:if test="${article.attachFileNum > 0 }">		
                     <img src="${staticUrl}/images/attach.png" alt="<spring:message code="attach.file" />" style="vertical-align: middle;" />
                 </c:if>
