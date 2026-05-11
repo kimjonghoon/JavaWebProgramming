@@ -189,6 +189,8 @@ $(document).ready(function () {
 	$('#article-content').html(function() {
 				return $(this).html().replace(/\[img\]/g,'<p class="images">')
 							.replace(/\[:img\]/g,'</p>')
+							.replace(/\[img100\]/g,'<p class="image">')
+							.replace(/\[:img100\]/g,'</p>')
 							.replace(/\[code\]/g,'<pre class="prettyprint">')
 							.replace(/\[:code\]/g,'</pre>')
 							.replace(/\[vid\]/g,'<p class="videos">')
@@ -198,14 +200,13 @@ $(document).ready(function () {
 							.replace(/\[link\]/g,'<p class="links">')
 							.replace(/\[:link\]/g,'</p>');
 	});
-	//동영상 TODO
+	//동영상 태그 활성
 	if ($('#article-content .videos').length) {
 		$('#article-content .videos').html(function() {
 			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
 		$('#article-content .videos').contents().not('iframe').remove();
 	}
-	
 	//동영상 너비와 속성 조정
 	if ($('#article-content iframe').length) {
 		const width = $('#article-content').width();
@@ -222,14 +223,21 @@ $(document).ready(function () {
 			return $(this).html().trim().replace(/\n\r?/g, "<br />");
 		});
 	}
-	//링크 TODO
+	//링크 태그 활성
 	if ($('#article-content .links').length) {
 		$('#article-content .links').html(function() {
 			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
 		$('#article-content .links').contents().not('a').remove();
 	}
-	//이미지
+	// 이미지 태그 활성
+	if ($('#article-content .image').length) {
+		$('#article-content .image').html(function() {
+			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
+		});
+		$('#article-content .image').contents().not('img').remove();
+	}
+	//이미지 태그 생성
 	if ($('#article-content .images').length) {
 		$('#article-content .images').each(function(idx,element) {
 			const str = $(element).html();
@@ -415,7 +423,7 @@ $(document).on('click', '#all-comments', function (e) {
 <table class="bbs-table">
     <tr>
         <th style="width: 47px;text-align: left;vertical-align: top;font-size: 1em;">TITLE</th>
-        <th style="text-align: left;color: #555;font-size: 1em;" id="bbs-title">${title }</th>
+	<th style="text-align: left;color: #555;font-size: 1em;" id="bbs-title"><c:out value="${title }"/></th>
     </tr>
 </table>
 <div id="detail">
