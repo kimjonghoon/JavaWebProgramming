@@ -36,7 +36,7 @@ function displayComments() {
 					+ '</span>';
 			}
 			comments = comments
-				+ '<div class="comment-memo">' + $(item.memo).text() + '</div>'
+																       + '<div class="comment-memo">' + $('<div/>').html(item.memo).text() + '</div>'
 				+ '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
 				+ '<div style="text-align: right;">'
 				+ '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
@@ -384,9 +384,9 @@ $(document).on('click', '#all-comments', function (e) {
 #article-content img {
 	max-width: 100%;
 }
-#article-content .image > img {
+p.image img {
 	width: 100%;
-}		
+}
 </style>
 </head>
 <body>
