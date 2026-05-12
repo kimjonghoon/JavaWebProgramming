@@ -188,17 +188,17 @@ $(document).ready(function () {
 	//[img],[code],[vid],[txt]를 HTML 엘리먼트로 바꿈
 	$('#article-content').html(function() {
 				return $(this).html().replace(/\[img\]/g,'<p class="images">')
-							.replace(/\[:img\]/g,'</p>')
+							.replace(/\[\/img\]/g,'</p>')
 							.replace(/\[img100\]/g,'<p class="image">')
-							.replace(/\[:img100\]/g,'</p>')
+							.replace(/\[\/img100\]/g,'</p>')
 							.replace(/\[code\]/g,'<pre class="prettyprint">')
-							.replace(/\[:code\]/g,'</pre>')
+							.replace(/\[\/code\]/g,'</pre>')
 							.replace(/\[vid\]/g,'<p class="videos">')
-							.replace(/\[:vid\]/g,'</p>')
+							.replace(/\[\/vid\]/g,'</p>')
 							.replace(/\[txt\]/g,'<p class="text">')
-							.replace(/\[:txt\]/g,'</p>')
+							.replace(/\[\/txt\]/g,'</p>')
 							.replace(/\[link\]/g,'<p class="links">')
-							.replace(/\[:link\]/g,'</p>');
+							.replace(/\[\/link\]/g,'</p>');
 	});
 	//동영상 태그 활성
 	if ($('#article-content .videos').length) {
@@ -383,7 +383,10 @@ $(document).on('click', '#all-comments', function (e) {
 }
 #article-content img {
 	max-width: 100%;
-}	
+}
+#article-content .image > img {
+	width: 100%;
+}		
 </style>
 </head>
 <body>
