@@ -236,6 +236,7 @@ $(document).ready(function () {
 			return $(this).html().replace(/\&lt;/g,"<").replace(/\&gt;/g,">");
 		});
 		$('#article-content .image').contents().not('img').remove();
+		$('#article-content .image').find('img').css('width','100%');
 	}
 	//이미지 태그 생성
 	if ($('#article-content .images').length) {
@@ -253,8 +254,9 @@ $(document).ready(function () {
 			$(element).contents().filter(function() {
 				return this.nodeType === 3;
 			}).remove();
-			$(element).css({'float': 'left'});
+			//$(element).css({'float': 'left'});
 		});
+		//$('#article-content .images').contents().not('img').remove();
 	}
 	$('#article-content img').click(function(event) {
 		toggleFullScreen(event.target);
@@ -383,9 +385,6 @@ $(document).on('click', '#all-comments', function (e) {
 }
 #article-content img {
 	max-width: 100%;
-}
-p.image img {
-	width: 100%;
 }
 </style>
 </head>
