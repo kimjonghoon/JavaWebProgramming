@@ -11,11 +11,11 @@ public enum WebContants {
     //Line Separator
     public final static String LINE_SEPARATOR = System.getProperty("line.separator");
     //Upload path
-    public final static String UPLOAD_PATH = "/var/lib/tomcat10/logs/upload/";
+    public final static String UPLOAD_PATH = "/opt/upload/";
     */
 
 	USER_KEY("user"),
-	UPLOAD_PATH("/var/lib/tomcat10/logs/upload/");
+	UPLOAD_PATH("/opt/upload/");
 	
 	private String value;
 	
