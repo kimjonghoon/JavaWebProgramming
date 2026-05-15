@@ -459,10 +459,10 @@ $(document).on('click', '#all-comments', function (e) {
 
 <div class="next-prev">
     <c:if test="${nextArticle != null }">
-        <p><spring:message code="next.article" /> : <a href="#" title="${nextArticle.articleNo }" id="next-article-link">${nextArticle.title }</a></p>
+        <p><spring:message code="next.article" /> : <a href="#" title="${nextArticle.articleNo }" id="next-article-link"><c:out value="${nextArticle.title }"/></a></p>
     </c:if>
     <c:if test="${prevArticle != null }">
-        <p><spring:message code="prev.article" /> : <a href="#" title="${prevArticle.articleNo }" id="prev-article-link">${prevArticle.title }</a></p>
+        <p><spring:message code="prev.article" /> : <a href="#" title="${prevArticle.articleNo }" id="prev-article-link"><c:out value="${prevArticle.title }"/></a></p>
     </c:if>
 </div>
 
