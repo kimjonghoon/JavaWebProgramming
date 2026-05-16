@@ -19,6 +19,15 @@
 <!-- for pretty code end -->
 <c:url var="commentsUrl" value="/comments"/>
 <script>
+function escapeHtml(str) {
+    if (typeof str !== "string") return "";
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
 function displayComments() {
 	const url = '${commentsUrl}/' + ${articleNo};
 	$.getJSON(url, function (data) {
@@ -36,7 +45,7 @@ function displayComments() {
 					+ '</span>';
 			}
 			comments = comments
-																       + '<div class="comment-memo">' + $('<div/>').html(item.memo).text() + '</div>'
+				+ '<div class="comment-memo">' + escapeHtml(item.memo) + '</div>'
 				+ '<form class="comment-form" action="${commentsUrl}/' + ${articleNo } + '/' + item.commentNo + '" method="put" style="display: none;">'
 				+ '<div style="text-align: right;">'
 				+ '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
