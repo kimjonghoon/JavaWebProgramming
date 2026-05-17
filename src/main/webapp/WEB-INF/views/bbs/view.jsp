@@ -25,8 +25,7 @@ function escapeHtml(str) {
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
+        .replace(/"/g, "&quot;");
 }
 function displayComments() {
 	const url = '${commentsUrl}/' + ${articleNo};
@@ -51,7 +50,7 @@ function displayComments() {
 				+ '<a href="#" class="comment-modify-submit-link">' + '<spring:message code="submit" />' + '</a> | <a href="#" class="comment-modify-cancel-link">' + '<spring:message code="cancel" />' + '</a>'
 				+ '</div>'
 				+ '<div>'
-				+ '<textarea class="comment-textarea" name="memo" rows="7" cols="50">' + item.memo + '</textarea>'
+				+ '<textarea class="comment-textarea" name="memo" rows="7" cols="50">' + escapeHtml(item.memo) + '</textarea>'
 				+ '</div>'
 				+ '</form>'
 				+ '</div>';
