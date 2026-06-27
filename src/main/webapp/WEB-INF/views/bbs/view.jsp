@@ -216,6 +216,7 @@ $(document).ready(function () {
 		$('#article-content .videos').contents().not('iframe').remove();
 	}
 	//동영상 너비와 속성 조정
+	/* CSS 패딩 기법(Padding Hack)으로 대체
 	if ($('#article-content iframe').length) {
 		const width = $('#article-content').width();
 		$('#article-content iframe').each(function(index,element) {
@@ -225,6 +226,7 @@ $(document).ready(function () {
 			$(element).css({'width':width,'height':height,'allow':'fullscreen'})
 		});
 	}
+	*/
 	//글
 	if ($('#article-content .text').length) {
 		$('#article-content .text').html(function() {
@@ -256,7 +258,7 @@ $(document).ready(function () {
 					return true;
 				}
 				let imgTag = $('<img/>').attr('src',line).attr('alt','img ' + (idx+1) + '' + (index+1));
-				imgTag.css({'width':'105px','height': 'auto'});
+				imgTag.css({'width':'105px','height': 'auto','cursor':'grab'});
 				$(element).append(imgTag);
 			});
 			$(element).contents().filter(function() {
@@ -266,6 +268,7 @@ $(document).ready(function () {
 		});
 		//$('#article-content .images').contents().not('img').remove();
 	}
+	/*
 	$('#article-content img').click(function(event) {
 		toggleFullScreen(event.target);
 	});
@@ -301,6 +304,45 @@ $(document).ready(function () {
 			}
 		}
 	}
+	*/
+    let currentIndex = 0;
+    let images = $("#article-content img").map(function(){ return $(this).attr("src"); }).get();
+
+    // 이미지 클릭 시 모달 열기
+    $("#article-content img").click(function(){
+        currentIndex = $("#article-content img").index(this);
+        showImage(currentIndex);
+        $(".modal").fadeIn();
+    });
+
+    // 닫기 버튼
+    $(".close").click(function(){
+        $(".modal").fadeOut();
+    });
+
+    // 왼쪽 화살표
+    $(".arrow.left").click(function(){
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    // 오른쪽 화살표
+    $(".arrow.right").click(function(){
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
+    // ESC 키로 닫기
+    $(document).keydown(function(e){
+        if(e.key === "Escape") $(".modal").fadeOut();
+        if(e.key === "ArrowLeft") $(".arrow.left").click();
+        if(e.key === "ArrowRight") $(".arrow.right").click();
+    });
+
+    // 이미지 표시 함수
+    function showImage(index){
+        $(".modal-content img").attr("src", images[index]);
+    }	
 	//코드
 	prettyPrint();
 	$('pre.prettyprint').html(function() {
@@ -393,6 +435,84 @@ $(document).on('click', '#all-comments', function (e) {
 }
 #article-content img {
 	max-width: 100%;
+}
+.videos {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%; /* 16:9 비율 (9 ÷ 16 × 100) */
+	overflow: hidden;
+}
+.videos iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,0.8);
+	justify-content: center;
+	align-items: center;
+}
+.modal-content {
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: auto;              /* 이미지가 크면 스크롤바 생성 */
+	overscroll-behavior: contain; /* 모달 안 스크롤이 끝났을 때 배경 스크롤 방지 */
+	cursor: grab;                /* 마우스 커서를 손바닥 모양으로 변경 */
+	/* 터치 및 마우스 드래그 스크롤 활성화 */
+	touch-action: pan-x pan-y;
+	-webkit-overflow-scrolling: touch;
+}
+.modal-content img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+/* (선택 사항) 스크롤바 스타일을 숨기고 싶을 때 */
+.modal-content::-webkit-scrollbar {
+	display: none;               /* 크롬, 사파리, 오페라에서 스크롤바 숨김 */
+}
+.modal-content {
+	-ms-overflow-style: none;    /* IE, 엣지에서 스크롤바 숨김 */
+	scrollbar-width: none;       /* 파이어폭스에서 스크롤바 숨김 */
+}
+.close {
+	position: absolute;
+	top: 5%; right: 10px;
+	transform: translateY(-50%);
+	font-size: 40px;
+	color: white;
+	cursor: grab;
+	padding: 10px;
+	background: rgba(0,0,0,0.3);
+	border-radius: 50%;
+}
+.arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 40px;
+	color: white;
+	cursor: grab;
+	padding: 10px;
+	background: rgba(0,0,0,0.3);
+	border-radius: 50%;
+	user-select: none;
+}
+.arrow.left {
+	left: 10px;
+}
+.arrow.right {
+	right: 10px;
 }
 </style>
 </head>
@@ -609,6 +729,14 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
     </form:form>
     <form:form id="deleteCommentForm" action="${commentsUrl}/${articleNo }/" method="delete">
     </form:form>
+</div>
+<div class="modal">
+	<div class="modal-content">
+		<img src="" alt="Big Picture">
+	</div>
+	<span class="close">&times;</span>
+	<span class="arrow left">&#10094;</span>
+	<span class="arrow right">&#10095;</span>
 </div>
 <!-- content end -->
 		</div>
