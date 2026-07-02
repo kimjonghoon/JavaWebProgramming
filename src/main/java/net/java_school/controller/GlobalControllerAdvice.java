@@ -11,11 +11,11 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("springVer")
 	public String getSpringVersion() {
-		return "7.0.7";
+		return "7.0.8";
 	}
 	@ModelAttribute("securityVer")
 	public String getSecurityVersion() {
-		return "7.0.4";
+		return "7.1.0";
 	}
 	@ModelAttribute("jodaTimeVer")
 	public String getJodaTimeVersion() {
@@ -31,7 +31,7 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("ojdbc11Ver")
 	public String getOjdbc11Version() {
-		return "24.26.1.0.0";
+		return "23.26.2.0.0";
 	}
 	@ModelAttribute("aspectjweaverVer")
 	public String getAspectjweaverVersion() {
@@ -59,23 +59,23 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("mybatisSpringVer")
 	public String getMybatisSpringVersion() {
-		return "4.0.0";
+		return "4.1.0";
 	}
 	@ModelAttribute("commonsLoggingVer")
 	public String getCommonsLoggingVersion() {
-		return "1.3.5";
+		return "1.4.0";
 	}
 	@ModelAttribute("log4jVer")
 	public String getLog4jVersion() {
-		return "2.35.4";
+		return "2.26.0";
 	}
 	@ModelAttribute("hibernateValidatorVer")
 	public String getHivernateValidatorVersion() {
-		return "9.1.0.Final";
+		return "9.1.1.Final";
 	}
 	@ModelAttribute("thymeleafSpring6Ver")
 	public String getThymeleafSpring6Version() {
-		return "3.1.3.RELEASE";
+		return "3.1.5.RELEASE";
 	}
 	@ModelAttribute("jettyMavenPluginVer")
 	public String getJettyMavenPluginVersion() {
@@ -83,10 +83,10 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("mysqlJdbcDriverVer")
 	public String getMysqlJdbcDriverVersion() {
-		return "9.6.0";
+		return "9.7.0";
 	}
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
-		return "3.1.2";
+		return "3.2.0";
 	}
 }

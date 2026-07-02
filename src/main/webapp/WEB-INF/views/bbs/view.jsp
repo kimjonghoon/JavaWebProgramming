@@ -460,6 +460,7 @@ $(document).on('click', '#all-comments', function (e) {
 	background: rgba(0,0,0,0.8);
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 .modal-content {
 	position: relative;
@@ -732,7 +733,7 @@ pageContext.setAttribute("writeDate", df.format((java.util.Date) writeDate));
 </div>
 <div class="modal">
 	<div class="modal-content">
-		<img src="" alt="Big Picture">
+		<img src="" alt="Big Picture"/>
 	</div>
 	<span class="close">&times;</span>
 	<span class="arrow left">&#10094;</span>
