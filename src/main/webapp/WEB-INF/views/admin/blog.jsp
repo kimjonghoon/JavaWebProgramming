@@ -30,10 +30,10 @@ textarea {
 	height: 300px;
 }
 input[type="button"] {
-  width: 150px;
+	width: 50px;
 }
 input[type="text"] {
-  width: 250px;
+	width: 250px;
 }
 </style>
 </head>
