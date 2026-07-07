@@ -4,6 +4,7 @@
 
 <h1><spring:message code="user.admin" /></h1>
 <ul>
-    <li><a href="${adminUrl}?page=1"><spring:message code="user.list" /></a></li>
-    <li><a href="${adminUrl}/board"><spring:message code="bbs" /></a></li>
+	<li><a href="${adminUrl}?page=1"><spring:message code="user.list" /></a></li>
+	<li><a href="${adminUrl}/board"><spring:message code="bbs" /></a></li>
+	<li><a href="${adminUrl}/blog"><spring:message code="blog" /></a></li>    
 </ul>

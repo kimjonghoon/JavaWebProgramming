@@ -170,4 +170,12 @@ public class AdminController extends Paginator {
 		}
 		return "redirect:/admin/editAccount?email=" + email + "&page=" + page + "&search=" + search;
 	}
+	
+	@GetMapping("blog")
+	public String blog(Model model) {
+		List<Board> boards = boardService.getBoards();
+		model.addAttribute("boards", boards);
+
+		return "admin/blog";
+	}
 }

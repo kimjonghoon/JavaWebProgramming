@@ -34,13 +34,13 @@
 	<div id="container">
 		<div id="content">
 <!-- content begin -->
-<spring:message code="lang" var="lang" />
+<spring:message code="lang" var="lang"/>
 <c:choose>
 	<c:when test="${lang == 'ko'}">
-		<jsp:include page="../articles/blog-index.jsp" />
+		<jsp:include page="../articles/blog-index.jsp"/>
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="../articles/blog-index_en.jsp" />
+		<jsp:include page="../articles/blog-index_en.jsp"/>
 	</c:otherwise>
 </c:choose>
 <!-- content end -->

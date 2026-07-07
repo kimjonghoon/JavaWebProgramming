@@ -1,0 +1,150 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!DOCTYPE html>
+<html lang="<spring:message code="lang" />">
+<head>
+<meta charset="UTF-8" />
+<title><spring:message code="admin.blog.title" /></title>
+<meta name="Keywords" content="<spring:message code="admin.blog.keys" />" />
+<meta name="Description" content="<spring:message code="admin.blog.desc" />" />
+<%@ include file="../inc/common-meta-links-scripts.jsp" %>
+<script src="<c:url value="/resources/js/commons.js"/>"></script>
+<script>
+$(document).ready(function() {
+	$('.del-user-link').click(function(e) {
+		e.preventDefault();
+		const check = confirm('<spring:message code="delete.confirm" />');
+		if (check) {
+			const email = this.title;
+			$('#delUserForm input[name*=email]').val(email);
+			$('#delUserForm').submit();
+		}
+	});
+});
+</script>
+<style>
+textarea {
+	width: 99%;
+	height: 300px;
+}
+input[type="button"] {
+  width: 150px;
+}
+input[type="text"] {
+  width: 250px;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	
+	<div id="header">
+		<%@ include file="../inc/header.jsp" %>
+	</div>
+	
+	<div id="main-menu" lang="en">
+		<%@ include file="../inc/main-menu.jsp" %>
+	</div>
+	
+	<div id="container">
+		<div id="content">
+<!-- content begin -->
+<script>
+$(document).ready(function () {
+	$('#blog-list a').click(function (e) {
+		e.preventDefault();
+		const boardCd = this.text;
+		const boardNm = this.title;
+		const boardNm_ko = this.className;
+		$('#editBoard input[name*=boardCd]').val(boardCd);
+		$('#editBoard input[name*=boardNm]').val(boardNm);
+		$('#editBoard input[name*=boardNm_ko]').val(boardNm_ko);
+	});
+});
+</script>
+
+<h2><spring:message code="blog.list" /></h2>
+
+<table class="bbs-table" id="blog-list">
+    <tr>
+        <th style="text-align: left;"><spring:message code="blog.title" /></th>
+        <th style="text-align: left;"><spring:message code="blog.slug" /></th>
+        <th style="text-align: left;"><spring:message code="publication.date" /></th>
+    </tr>
+    <c:forEach var="board" items="${boards }" varStatus="status">
+        <tr>
+            <td><a href="#" title="${board.boardNm }" class="${board.boardNm_ko }">${board.boardCd }</a></td>
+            <td>${board.boardNm }</td>
+            <td>${board.boardNm_ko }</td>
+        </tr>
+    </c:forEach>
+</table>
+
+<h2><spring:message code="blog.edit" /></h2>
+<form id="editBoard" action="${adminUrl}/editBoard" method="post">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    <table class="bbs-table">
+        <tr>
+            <td><spring:message code="blog.title"/></td>
+            <td><input type="text" name="title"/> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+        </tr>
+        <tr>
+            <td><spring:message code="blog.slug" /></td>
+            <td><input type="text" name="slug" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+        </tr>
+        <tr>
+            <td><spring:message code="blog.description" /></td>
+            <td><input type="text" name="description" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <textarea name="content"></textarea>
+            <input type="button" value="<spring:message code="blog.edit" />"/>
+            </td>
+        </tr>        
+    </table>
+</form>
+
+<h2><spring:message code="blog.new" /></h2>
+
+<form id="createBoard" action="${adminUrl}/createBoard" method="post">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    <table class="bbs-table">
+        <tr>
+            <td><spring:message code="board.code" /></td>
+            <td><input type="text" name="boardCd" />
+        </tr>
+        <tr>
+            <td><spring:message code="board.name" /></td>
+            <td><input type="text" name="boardNm" />
+        </tr>
+        <tr>
+            <td><spring:message code="board.korean.name" /></td>
+            <td><input type="text" name="boardNm_ko" />
+        </tr>
+    </table>
+    <div>
+        <input type="submit" value="<spring:message code="submit" />" />
+    </div>
+</form>
+<!-- content end -->
+		</div>
+	</div>
+
+	<div id="sidebar" lang="en">
+		<%@ include file="admin-sub.jsp" %>
+	</div>
+
+	<div id="extra">
+		<%@ include file="../inc/extra.jsp" %>
+	</div>
+	
+	<div id="footer">
+		<%@ include file="../inc/footer.jsp" %>
+	</div>
+	
+</div>
+</body>
+</html>
