@@ -33,7 +33,7 @@ input[type="button"] {
 	width: 50px;
 }
 input[type="text"] {
-	width: 250px;
+	width: 600px;
 }
 </style>
 </head>
@@ -68,66 +68,71 @@ $(document).ready(function () {
 <h2><spring:message code="blog.list" /></h2>
 
 <table class="bbs-table" id="blog-list">
-    <tr>
-        <th style="text-align: left;"><spring:message code="blog.title" /></th>
-        <th style="text-align: left;"><spring:message code="blog.slug" /></th>
-        <th style="text-align: left;"><spring:message code="publication.date" /></th>
-    </tr>
-    <c:forEach var="board" items="${boards }" varStatus="status">
-        <tr>
-            <td><a href="#" title="${board.boardNm }" class="${board.boardNm_ko }">${board.boardCd }</a></td>
-            <td>${board.boardNm }</td>
-            <td>${board.boardNm_ko }</td>
-        </tr>
-    </c:forEach>
+<tr>
+	<th style="text-align: left;"><spring:message code="blog.title" /></th>
+	<th style="text-align: left;"><spring:message code="blog.slug" /></th>
+	<th style="text-align: left;"><spring:message code="publication.date" /></th>
+</tr>
+<c:forEach var="board" items="${boards }" varStatus="status">
+<tr>
+	<td><a href="#" title="${board.boardNm }" class="${board.boardNm_ko }">${board.boardCd }</a></td>
+	<td>${board.boardNm }</td>
+	<td>${board.boardNm_ko }</td>
+</tr>
+</c:forEach>
 </table>
 
 <h2><spring:message code="blog.edit" /></h2>
 <form id="editBoard" action="${adminUrl}/editBoard" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    <table class="bbs-table">
-        <tr>
-            <td><spring:message code="blog.title"/></td>
-            <td><input type="text" name="title"/> <input type="button" value="<spring:message code="blog.edit" />"/></td>
-        </tr>
-        <tr>
-            <td><spring:message code="blog.slug" /></td>
-            <td><input type="text" name="slug" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
-        </tr>
-        <tr>
-            <td><spring:message code="blog.description" /></td>
-            <td><input type="text" name="description" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-            <textarea name="content"></textarea>
-            <input type="button" value="<spring:message code="blog.edit" />"/>
-            </td>
-        </tr>        
-    </table>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+<table class="bbs-table">
+<tr>
+	<td><spring:message code="blog.title"/></td>
+	<td><input type="text" name="title"/> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+</tr>
+<tr>
+	<td><spring:message code="blog.slug" /></td>
+	<td><input type="text" name="slug" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+</tr>
+<tr>
+	<td><spring:message code="blog.description" /></td>
+	<td><input type="text" name="description" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+</tr>
+<tr>
+	<td colspan="2">
+		<textarea name="content"></textarea>
+		<input type="button" value="<spring:message code="blog.edit" />"/>
+	</td>
+</tr>        
+</table>
 </form>
 
 <h2><spring:message code="blog.new" /></h2>
 
 <form id="createBoard" action="${adminUrl}/createBoard" method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-    <table class="bbs-table">
-        <tr>
-            <td><spring:message code="board.code" /></td>
-            <td><input type="text" name="boardCd" />
-        </tr>
-        <tr>
-            <td><spring:message code="board.name" /></td>
-            <td><input type="text" name="boardNm" />
-        </tr>
-        <tr>
-            <td><spring:message code="board.korean.name" /></td>
-            <td><input type="text" name="boardNm_ko" />
-        </tr>
-    </table>
-    <div>
-        <input type="submit" value="<spring:message code="submit" />" />
-    </div>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+<table class="bbs-table">
+<tr>
+	<td><spring:message code="blog.title"/></td>
+	<td><input type="text" name="title"/></td>
+</tr>
+<tr>
+	<td><spring:message code="blog.slug" /></td>
+	<td><input type="text" name="slug" /></td>
+</tr>
+<tr>
+	<td><spring:message code="blog.description" /></td>
+	<td><input type="text" name="description" /></td>
+</tr>
+<tr>
+	<td colspan="2">
+		<textarea name="content"></textarea>
+	</td>
+</tr>        
+</table>
+<div>
+	<input type="button" value="<spring:message code="submit"/>"/>
+</div>
 </form>
 <!-- content end -->
 		</div>
