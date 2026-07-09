@@ -81,6 +81,9 @@ $(document).ready(function () {
 </tr>
 </c:forEach>
 </table>
+<div style="text-align: center;">
+	<input type="text" name="list" style="width: 170px;"/> <input type="button" value="List"/>
+</div>
 
 <h2><spring:message code="blog.edit" /></h2>
 <form id="editBoard" action="${adminUrl}/editBoard" method="post">
@@ -91,15 +94,27 @@ $(document).ready(function () {
 	<td><input type="text" name="title"/> <input type="button" value="<spring:message code="blog.edit" />"/></td>
 </tr>
 <tr>
+	<td><spring:message code="blog.title"/></td>
+	<td><input type="text" name="title"/> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+</tr>
+<tr>
 	<td><spring:message code="blog.slug" /></td>
 	<td><input type="text" name="slug" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
 </tr>
 <tr>
-	<td><spring:message code="blog.description" /></td>
-	<td><input type="text" name="description" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
+	<td><spring:message code="blog.slug" /></td>
+	<td><input type="text" name="slug" /> <input type="button" value="<spring:message code="blog.edit" />"/></td>
 </tr>
 <tr>
 	<td colspan="2">
+		<spring:message code="blog.slug" />
+		<textarea name="content"></textarea>
+		<input type="button" value="<spring:message code="blog.edit" />"/>
+	</td>
+</tr>        
+<tr>
+	<td colspan="2">
+		<spring:message code="blog.slug" />
 		<textarea name="content"></textarea>
 		<input type="button" value="<spring:message code="blog.edit" />"/>
 	</td>
