@@ -26,7 +26,7 @@ $(document).ready(function() {
 </script>
 <style>
 textarea {
-	width: 99%;
+	width: 98%;
 	height: 300px;
 }
 input[type="button"] {
@@ -73,11 +73,11 @@ $(document).ready(function () {
 	<th style="text-align: left;"><spring:message code="blog.slug" /></th>
 	<th style="text-align: left;"><spring:message code="publication.date" /></th>
 </tr>
-<c:forEach var="board" items="${boards }" varStatus="status">
+<c:forEach var="post" items="${posts }" varStatus="status">
 <tr>
-	<td><a href="#" title="${board.boardNm }" class="${board.boardNm_ko }">${board.boardCd }</a></td>
-	<td>${board.boardNm }</td>
-	<td>${board.boardNm_ko }</td>
+	<td><a href="#" title="${post.postno }">${post.title }</a></td>
+	<td>${post.slug }</td>
+	<td>${post.regdate }</td>
 </tr>
 </c:forEach>
 </table>
