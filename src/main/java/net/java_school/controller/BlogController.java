@@ -12,9 +12,14 @@ public class BlogController {
 		return "blog/index";
 	}
 
-	@GetMapping("blog/{year}/{article}")
-	public String getBlog(@PathVariable(name="year") String year, @PathVariable(name="article") String article) {
-		return "blog/" + year + "/" + article;
+	@GetMapping("blog/{slug}")
+	public String getBlog(@PathVariable(name="slug") String slug) {
+		return "blog/view";
+	}
+
+	@GetMapping("blog/{year}/{slug}")
+	public String getBlog(@PathVariable(name="year") String year, @PathVariable(name="slug") String slug) {
+		return "blog/" + year + "/" + slug;
 	}
 
 }
