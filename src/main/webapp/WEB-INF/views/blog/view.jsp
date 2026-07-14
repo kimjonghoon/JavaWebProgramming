@@ -12,15 +12,38 @@
 <%@ include file="../inc/common-meta-links-scripts.jsp"%>
 <script src="<c:url value="/resources/js/commons.js"/>"></script>
 <link rel="stylesheet" href="<c:url value="/resources/css/prettify.css"/>" type="text/css"/>
-<script src="<c:url value="/resources/js/run_prettify.js"/>"></script>
+<script src="<c:url value="/resources/js/prettify.js"/>"></script>
 <script>
 $(document).ready(function() {
-	$('pre.prettyprint').html(function() {
-		return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
-	});
-	$('pre.prettyprint').dblclick(function() {
-		selectRange(this);
-	})
+	const slug = "${slug}";
+
+	if (slug) {
+		const filename = slug + ".html";
+    		// $.get() 메서드를 사용해 html 파일을 가져옵니다.
+		$.get('/docs/' + filename)
+			.done(function(htmlData) {
+			// 성공 시 #content-area에 HTML 삽입
+			$('#content-area').html(htmlData);
+			//구글 코드 프리티파이(prettyPrint) 함수 호출
+			if (typeof PR !== 'undefined' && PR.prettyPrint) {
+				PR.prettyPrint();
+			}
+			$('pre.prettyprint').html(function() {
+				return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
+			});
+			$('pre.prettyprint').dblclick(function() {
+				selectRange(this);
+			});
+		})
+		.fail(function() {
+			// 실패 시 에러 메시지 출력
+			$('#content-area').html('<p style="color:red;">글을 불러오는데 실패했습니다.</p>');
+		});
+	} else {
+		$('#content-area').html('<p>잘못된 접근입니다.</p>');
+	}
+
+
 })
 </script>
 <style>
@@ -51,11 +74,12 @@ $(document).ready(function() {
 <script>
 // 서블릿에서 request.setAttribute()로 보낸 값을 자바스크립트 변수에 주입
 // 예: const filename = "how-to-install-java.html";
-const filename = "${targetFile}";
+/*
+const slug = "${slug}";
 
-if (filename && filename !== ".html") {
-	// 외부 폴더에서 실제 HTML 본문 fetch
-	fetch(`/posts/\${filename}`)
+if (slug) {
+	const filename = slug + ".html";
+	fetch('/docs/' + filename)
 		.then(response => {
 			if (!response.ok) throw new Error('글을 불러오는데 실패했습니다.');
 			return response.text();
@@ -69,6 +93,7 @@ if (filename && filename !== ".html") {
 } else {
     document.getElementById('content-area').innerHTML = '<p>잘못된 접근입니다.</p>';
 }
+*/
 </script>
 		</div>
 	</div>
