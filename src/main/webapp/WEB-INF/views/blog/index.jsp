@@ -43,7 +43,7 @@
 <spring:message code="lang" var="lang"/>
 
 <article id="blog-posts-container">
-	<p>글 목록을 불러오는 중입니다...</p>
+	<p></p>
 </article>
 <script>
 // 1. 외부 매핑된 폴더 안의 posts.json 파일을 직접 요청
@@ -81,16 +81,10 @@ fetch('/docs/posts.json')
 			container.appendChild(card);
 		});
 		*/
-		let listItems;
-		if ("${lang}" === "en") {
-			listItems = posts.map(post => {
-				return `<li><a href="${blogUrl}/\${post.id}">\${post.title_en}</a> - \${post.date}</li>`;
-			}).join('');
-		} else {
-			listItems = posts.map(post => {
-				return `<li><a href="${blogUrl}/\${post.id}">\${post.title}</a> - \${post.date}</li>`;
-			}).join('');
-		}
+		const listItems = posts.map(post => {
+			const title = ("${lang}" === "ko") ? post.title : post.title_en;
+			return `<li><a href="${blogUrl}/\${post.id}">\${title}</a> - \${post.date}</li>`;
+		}).join('');
 		const ulHtml = `<ul>\${listItems}</ul>`;
 		container.innerHTML = ulHtml;
 	})
