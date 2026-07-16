@@ -81,9 +81,16 @@ fetch('/docs/posts.json')
 			container.appendChild(card);
 		});
 		*/
-		const listItems = posts.map(post => {
-			return `<li><a href="${blogUrl}/\${post.id}">\${post.title}</a> - \${post.date}</li>`;
-		}).join('');
+		let listItems;
+		if ("${lang}" === "en") {
+			listItems = posts.map(post => {
+				return `<li><a href="${blogUrl}/\${post.id}">\${post.title_en}</a> - \${post.date}</li>`;
+			}).join('');
+		} else {
+			listItems = posts.map(post => {
+				return `<li><a href="${blogUrl}/\${post.id}">\${post.title}</a> - \${post.date}</li>`;
+			}).join('');
+		}
 		const ulHtml = `<ul>\${listItems}</ul>`;
 		container.innerHTML = ulHtml;
 	})

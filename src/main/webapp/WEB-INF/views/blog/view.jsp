@@ -4,6 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang"/>">
+<spring:message code="lang" var="lang"/>
 <head>
 <meta charset="UTF-8" />
 <title>Title</title>
@@ -15,36 +16,48 @@
 <script src="<c:url value="/resources/js/prettify.js"/>"></script>
 <script>
 $(document).ready(function() {
-	const slug = "${slug}";
-
+	let slug = "${slug}";
 	if (slug) {
+		if ("${lang}" === "en") slug = slug + "_en";
 		const filename = slug + ".html";
     		// $.get() 메서드를 사용해 html 파일을 가져옵니다.
 		$.get('/docs/' + filename)
 			.done(function(htmlData) {
-			// 성공 시 #content-area에 HTML 삽입
-			$('#content-area').html(htmlData);
-			//구글 코드 프리티파이(prettyPrint) 함수 호출
-			if (typeof PR !== 'undefined' && PR.prettyPrint) {
-				PR.prettyPrint();
-			}
-			$('pre.prettyprint').html(function() {
-				return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
+				// 성공 시 #content-area에 HTML 삽입
+				$('#content-area').html(htmlData);
+				//구글 코드 프리티파이(prettyPrint) 함수 호출
+				if (typeof PR !== 'undefined' && PR.prettyPrint) {
+					PR.prettyPrint();
+				}
+				$('pre.prettyprint').html(function() {
+					return this.innerHTML.replace(/\t/g, '&nbsp;&nbsp;')
+				});
+				$('pre.prettyprint').dblclick(function() {
+					selectRange(this);
+				});
+				//title
+				const title = $(htmlData).find('h1').first().text();
+				$(document).attr('title', title);
+				//Keywords meta tag content value
+				const keywordsArr = $(htmlData).find('em').map(function() {
+					return $(this).text();
+				}).get();
+				if (keywordsArr) {
+					const keywords = keywordsArr.join(',');
+					$('meta[name="Keywords"]').attr('content',keywords);
+				}
+				const description = $(htmlData).find('#description').text();
+				$('meta[name="Description"]').attr('content',description);
+			})
+			.fail(function() {
+				// 실패 시 에러 메시지 출력
+				$('#content-area').html('<p style="color:red;">글을 불러오는데 실패했습니다.</p>');
 			});
-			$('pre.prettyprint').dblclick(function() {
-				selectRange(this);
-			});
-		})
-		.fail(function() {
-			// 실패 시 에러 메시지 출력
-			$('#content-area').html('<p style="color:red;">글을 불러오는데 실패했습니다.</p>');
-		});
 	} else {
 		$('#content-area').html('<p>잘못된 접근입니다.</p>');
 	}
 
-
-})
+});
 </script>
 <style>
 #sidebar  {
@@ -52,6 +65,9 @@ $(document).ready(function() {
 }
 #content  {
     margin-left: 0;
+}
+#content-area em {
+	font-style: normal;
 }
 </style>
 </head>
@@ -68,8 +84,8 @@ $(document).ready(function() {
 	
 	<div id="container">
 		<div id="content">
-<spring:message code="lang" var="lang"/>
-<div id="content-area">내용을 불러오는 중입니다...</div>
+
+<div id="content-area"></div>
 
 <script>
 // 서블릿에서 request.setAttribute()로 보낸 값을 자바스크립트 변수에 주입
