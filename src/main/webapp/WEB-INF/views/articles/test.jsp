@@ -74,6 +74,14 @@ pageContext.setAttribute("fruits", list);
 	${status.count} : ${fruit}
 </c:forEach>
 
+<hr />
+
+<c:forEach var="num" begin="3" end="1">
+	${num}
+</c:forEach>
+
+<hr />
+
 
 
 
