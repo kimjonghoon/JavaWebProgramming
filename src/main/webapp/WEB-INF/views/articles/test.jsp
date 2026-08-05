@@ -82,6 +82,9 @@ pageContext.setAttribute("fruits", list);
 
 <hr />
 
+<c:forEach var="fruit" items="${fruits}" varStatus="status">
+	${status.last}:${fruit}
+</c:forEach>
 
 
 
