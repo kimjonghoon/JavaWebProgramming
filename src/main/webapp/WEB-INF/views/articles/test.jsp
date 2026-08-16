@@ -86,7 +86,58 @@ pageContext.setAttribute("fruits", list);
 	${status.last}:${fruit}
 </c:forEach>
 
+<hr />
 
+<c:forEach items="${fruits}" varStatus="status">
+	<c:if test="${status.count % 2 == 0}">
+		${status.count}:${status.current}
+	</c:if>
+</c:forEach>
+<%
+/*
+BMI(체질량지수)
+체중(kg)을 키(m)의 제곱으로 나누어 계산
+공식 체중 / (키 × 키)
+대한비만학회 기준 한국인 비만도
+18.5 미만 저체중
+18.5~22.9 정상
+23~24.9 과체중
+25 이상 비만
+*/
+double height = 1.66;
+double weight = 72.6;
+double myBMI = weight / (height * height);
+pageContext.setAttribute("bmi", myBMI);
+%>
+<c:out value="${bmi}"/>
+<hr />
+<c:if test="${bmi gt 25}">비만</c:if>
+<c:if test="${bmi le 24.9}">비만 아님</c:if>
+
+<hr />
+
+<c:choose>
+	<c:when test="${bmi lt 18.5 }">
+		저체중
+	</c:when>
+	<c:when test="${bmi ge 18.5 and bmi le 22.9}">
+		정상
+	</c:when>
+	<c:when test="${bmi ge 23 and bmi le 24.9}">
+		과체중
+	</c:when>
+	<c:when test="${bmi ge 25 and bmi le 29.9}">
+		1단게 비만
+	</c:when>
+	<c:when test="${bmi ge 30 and bmi le 34.9}">
+		2단게 비만
+	</c:when>
+	<c:when test="${bmi ge 35}">
+		3단게 비만(고도 비만)
+	</c:when>
+</c:choose>
+<hr />
+<c:if test="${not empty user}">안녕하세요, ${user.name}님!</c:if>
 
 
 
