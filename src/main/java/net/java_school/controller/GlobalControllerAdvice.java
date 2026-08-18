@@ -17,22 +17,26 @@ public class GlobalControllerAdvice {
 	public String getSecurityVersion() {
 		return "7.1.0";
 	}
+	//https://mvnrepository.com/artifact/joda-time/joda-time
 	@ModelAttribute("jodaTimeVer")
 	public String getJodaTimeVersion() {
-		return "2.14.1";
+		return "2.14.3";
 	}
+	//https://mvnrepository.com/artifact/org.slf4j/slf4j-api
 	@ModelAttribute("slf4jVer")
 	public String getSlf4jVersion() {
 		return "2.0.17";
 	}
+	//https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
 	@ModelAttribute("logbackVer")
 	public String getLogbackVersion() {
-		return "1.5.32";
+		return "1.6.3";
 	}
 	@ModelAttribute("ojdbc11Ver")
 	public String getOjdbc11Version() {
-		return "23.26.2.0.0";
+		return "23.26.3.0.0";
 	}
+	//https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
 	@ModelAttribute("aspectjweaverVer")
 	public String getAspectjweaverVersion() {
 		return "1.9.25.1";
@@ -49,29 +53,33 @@ public class GlobalControllerAdvice {
 	public String getJstlVersion() {
 		return "3.0.1";
 	}	
+	//https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
 	@ModelAttribute("commonsDbcp2Ver")
 	public String getCommonsDbcp2Version() {
 		return "2.14.0";
 	}
+	//https://mvnrepository.com/artifact/org.mybatis/mybatis
 	@ModelAttribute("mybatisVer")
 	public String getMybatisVersion() {
 		return "3.5.19";
 	}
+	//https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
 	@ModelAttribute("mybatisSpringVer")
 	public String getMybatisSpringVersion() {
 		return "4.1.0";
 	}
+	//https://mvnrepository.com/artifact/commons-logging/commons-logging
 	@ModelAttribute("commonsLoggingVer")
 	public String getCommonsLoggingVersion() {
 		return "1.4.0";
 	}
 	@ModelAttribute("log4jVer")
 	public String getLog4jVersion() {
-		return "2.26.0";
+		return "2.26.1";
 	}
 	@ModelAttribute("hibernateValidatorVer")
 	public String getHivernateValidatorVersion() {
-		return "9.1.1.Final";
+		return "9.1.3.Final";
 	}
 	@ModelAttribute("thymeleafSpring6Ver")
 	public String getThymeleafSpring6Version() {
@@ -83,10 +91,10 @@ public class GlobalControllerAdvice {
 	}
 	@ModelAttribute("mysqlJdbcDriverVer")
 	public String getMysqlJdbcDriverVersion() {
-		return "9.7.0";
+		return "26.7.0";
 	}
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
-		return "3.2.0";
+		return "3.2.2";
 	}
 }
