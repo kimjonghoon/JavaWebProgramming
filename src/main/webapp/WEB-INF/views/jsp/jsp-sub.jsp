@@ -27,7 +27,9 @@
 		<li><a href="<c:url value="/jsp/database-design"/>">데이터베이스 설계</a></li>
 		<li><a href="<c:url value="/jsp/javabeans"/>">자바빈즈</a></li>
 		<li><a href="<c:url value="/jsp/implementation"/>">구현</a></li>
-		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">모델 2로 변경</a></li>			    	    
+		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">모델 2로 변경</a></li>
+		<li class="sub-heading">Code Along</li>
+		<li><a href="<c:url value="/jsp/code-along-jstl"/>">JSTL</a></li>
 	</ul>
 	</c:when>
 	<c:otherwise>
@@ -50,7 +52,9 @@
 		<li><a href="<c:url value="/jsp/database-design"/>">Database Design</a></li>
 		<li><a href="<c:url value="/jsp/javabeans"/>">Java Beans</a></li>
 		<li><a href="<c:url value="/jsp/implementation"/>">Implementation</a></li>
-		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">Migrate to Model 2</a></li>					    	    
+		<li><a href="<c:url value="/jsp/migrate-to-model-2"/>">Migrate to Model 2</a></li>
+		<li class="sub-heading">Code Along</li>
+		<li><a href="<c:url value="/jsp/code-along-jstl"/>">JSTL</a></li>		
 	</ul>
 	</c:otherwise>
 </c:choose>

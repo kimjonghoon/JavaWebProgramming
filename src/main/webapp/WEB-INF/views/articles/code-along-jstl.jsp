@@ -5,28 +5,37 @@
 
 <article>
 
-<h1>Code Along: JSP</h1>
+<h1>Code Along JSTL</h1>
 
-<h2>JSTL</h2>
+<h2>forEach</h2>
 
-<h3>forEach</h3>
+<pre class="prettyprint">List&lt;String&gt; fruits = List.of("Peach", "Melon", "Watermelon", "Strawberry", "Apple", "Banana", "Grape");
+pageContext.setAttribute("fruits", fruits);
+</pre>
 
-<% 
-List<String> list = List.of("복숭아", "멜론", "수박", "딸기", "사과", "바나나", "포도");
-// 2. EL식에서 사용할 수 있도록 pageContext 영역에 저장
-pageContext.setAttribute("fruits", list);
-%>        
+<%
+List<String> fruits = List.of("Peach", "Melon", "Watermelon", "Strawberry", "Apple", "Banana", "Grape");
+pageContext.setAttribute("fruits", fruits);
+%>
+
+<div class="result">
 <c:forEach var="fruit" items="${fruits}">
 	${fruit}
 </c:forEach>
+</div>
 
-<hr />
+<pre class="prettyprint">
+&lt;c:forEach items="\${fruits}" varStatus="status"&gt;
+	\${status.current}
+&lt;/c:forEach&gt;
+</pre>
 
+<div class="result">
 <c:forEach items="${fruits}" varStatus="status">
 	${status.current}
 </c:forEach>
+</div>
 
-<hr />
 
 <c:forEach var="num" begin="1" end="10">
 	${num}
@@ -93,6 +102,8 @@ pageContext.setAttribute("fruits", list);
 		${status.count}:${status.current}
 	</c:if>
 </c:forEach>
+
+<hr />
 <%
 /*
 BMI(체질량지수)
@@ -104,8 +115,8 @@ BMI(체질량지수)
 23~24.9 과체중
 25 이상 비만
 */
-double height = 1.66;
-double weight = 72.6;
+double height = 1.657;
+double weight = 71.8;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %>
@@ -136,7 +147,9 @@ pageContext.setAttribute("bmi", myBMI);
 		3단게 비만(고도 비만)
 	</c:when>
 </c:choose>
+
 <hr />
+
 <c:if test="${not empty user}">안녕하세요, ${user.name}님!</c:if>
 
 
