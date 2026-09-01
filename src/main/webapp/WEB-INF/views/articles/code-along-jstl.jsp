@@ -201,7 +201,7 @@ BMI(체질량지수)
 25 이상 비만
 */
 double height = 1.657;
-double weight = 71.8;
+double weight = 71.1;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %&gt;
@@ -209,6 +209,7 @@ pageContext.setAttribute("bmi", myBMI);
 &lt;c:if test="\${bmi gt 25}"&gt;비만&lt;/c:if&gt;
 &lt;c:if test="\${bmi le 24.9}"&gt;비만 아님&lt;/c:if&gt;
 </pre>
+
 
 <%
 /*
@@ -222,7 +223,7 @@ BMI(체질량지수)
 25 이상 비만
 */
 double height = 1.657;
-double weight = 71.8;
+double weight = 71.1;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %>
@@ -230,6 +231,36 @@ pageContext.setAttribute("bmi", myBMI);
 <c:out value="${bmi}"/><br />
 <c:if test="${bmi gt 25}">비만</c:if>
 <c:if test="${bmi le 24.9}">비만 아님</c:if>
+</div>
+
+<pre class="prettyprint">
+&lt;c:out value="\${bmi gt 25 ? '비만' : '비만 아님'}"/&gt;
+</pre>
+
+<div class="code-along-result">
+<c:out value="${bmi gt 25 ? '비만' : '비만 아님'}"/>
+</div>
+
+<pre class="prettyprint">
+&lt;c:choose&gt;
+	&lt;c:when test="\${bmi gt 25}"&gt;
+	비만
+	&lt;/c:when&gt;
+	&lt;c:otherwise&gt;
+	비만 아님
+	&lt;/c:otherwise&gt;
+&lt;/c:choose&gt;
+</pre>
+
+<div class="code-along-result">
+<c:choose>
+	<c:when test="${bmi gt 25}">
+	비만
+	</c:when>
+	<c:otherwise>
+	비만 아님
+	</c:otherwise>
+</c:choose> 
 </div>
 
 <pre class="prettyprint">
@@ -278,8 +309,81 @@ pageContext.setAttribute("bmi", myBMI);
 </c:choose>
 </div>
 
-<c:if test="${not empty user}">안녕하세요, ${user.name}님!</c:if>
+<pre class="prettyprint">
+&lt;%!
+/*
+내부 클래스 Person(필드 name,age)
+*/
+public class Person {
+	private String name;
+	private int age;
+	
+	public Person() {}
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+%&gt;
+&lt;%
+Person celeb = new Person("Dua Lipa",31);
+pageContext.setAttribute("celeb", celeb);
+%&gt;
+</pre>
 
+<pre class="prettyprint">
+&lt;c:if test="\${not empty celeb}"&gt;안녕하세요, \${celeb.name}님!&lt;/c:if&gt;
+</pre>
+
+<%!
+/*
+내부 클래스 Person(필드 name,age)
+*/
+public class Person {
+	private String name;
+	private int age;
+	
+	public Person() {}
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+}
+%>
+<%
+Person celeb = new Person("Dua Lipa",31);
+pageContext.setAttribute("celeb", celeb);
+%>
+
+<div class="code-along-result">
+<c:if test="${not empty celeb}">안녕하세요, ${celeb.name}님!</c:if>
+</div>
 
 
 
