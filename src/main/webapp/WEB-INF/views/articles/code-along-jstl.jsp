@@ -223,7 +223,7 @@ BMI(체질량지수)
 25 이상 비만
 */
 double height = 1.657;
-double weight = 71.1;
+double weight = 71.5;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %>
@@ -339,13 +339,13 @@ public class Person {
 }
 %&gt;
 &lt;%
-Person celeb = new Person("Dua Lipa",31);
-pageContext.setAttribute("celeb", celeb);
+Person dua = new Person("Dua Lipa",31);
+pageContext.setAttribute("dua", dua);
 %&gt;
 </pre>
 
 <pre class="prettyprint">
-&lt;c:if test="\${not empty celeb}"&gt;안녕하세요, \${celeb.name}님!&lt;/c:if&gt;
+&lt;c:if test="\${not empty dua}"&gt;안녕하세요, \${dua.name}님!&lt;/c:if&gt;
 </pre>
 
 <%!
@@ -376,20 +376,111 @@ public class Person {
 	}
 }
 %>
+
 <%
-Person celeb = new Person("Dua Lipa",31);
-pageContext.setAttribute("celeb", celeb);
+Person dua = new Person("Dua Lipa",31);
+pageContext.setAttribute("dua", dua);
 %>
 
 <div class="code-along-result">
-<c:if test="${not empty celeb}">안녕하세요, ${celeb.name}님!</c:if>
+<c:if test="${not empty dua}">안녕하세요, ${dua.name}님!</c:if>
 </div>
 
+<pre class="prettyprint">
+&lt;%
+java.util.Map&lt;String,Person&gt; celebList = new java.util.HashMap<>();
+pageContext.setAttribute("celebList",celebList);
+%&gt;
+&lt;c:if test="\${empty celebList}"&gt;셀럽리스트가 비었습니다.&lt;/c:if&gt;
+</pre>
 
+<%
+java.util.Map<String,Person> celebList = new java.util.HashMap<>();
+pageContext.setAttribute("celebList",celebList);
+%>
 
+<div class="code-along-result">
+<c:if test="${empty celebList}">셀럽리스트가 비었습니다.</c:if>
+</div>
 
+<pre class="prettyprint">
+&lt;%
+celebList.put("dua",dua);
+%&gt;
+&lt;c:if test="\${not empty celebList}"&gt;셀럽리스트에 셀럽이 있습니다.&lt;/c:if&gt;
+</pre>
 
+<%
+celebList.put("dua",dua);
+%>
+<div class="code-along-result">
+<c:if test="${not empty celebList}">셀럽리스트에 셀럽이 있습니다.</c:if>
+</div>
 
+<pre class="prettyprint">
+&lt;c:forEach var="entry" items="\${celebList}"&gt;
+	\${entry.key} : \${entry.value.name}
+&lt;/c:forEach&gt;
+</pre>
+
+<div class="code-along-result">
+<c:forEach var="entry" items="${celebList}">
+	${entry.key} : ${entry.value.name}
+</c:forEach>
+</div>
+
+<pre class="prettyprint">
+&lt;%
+Person rogerFederer = new Person("Roger Federer",45);
+celebList.put("roger-federer",rogerFederer);
+%&gt;
+&lt;c:forEach var="entry" items="\${celebList}"&gt;
+	\${entry.key} : \${entry.value.name}&lt;br /&gt;
+&lt;/c:forEach&gt;
+</pre>
+
+<%
+Person rogerFederer = new Person("Roger Federer",45);
+celebList.put("roger-federer",rogerFederer);
+%>
+
+<div class="code-along-result">
+<c:forEach var="entry" items="${celebList}">
+	${entry.key} : ${entry.value.name}<br />
+</c:forEach>
+</div>
+
+<pre class="prettyprint">
+\${celebList['dua'].name}
+</pre>
+
+<div class="code-along-result">
+${celebList['dua'].name}
+</div>
+
+<pre class="prettyprint">
+\${celebList.dua.name}
+</pre>
+
+<div class="code-along-result">
+${celebList.dua.name}
+</div>
+
+<pre class="prettyprint">
+\${celebList['roger-federer'].name}
+</pre>
+
+<div class="code-along-result">
+${celebList['roger-federer'].name}
+</div>
+
+<pre class="prettyprint">
+\${celebList.roger-federer.name}
+</pre>
+
+<div class="code-along-result">
+${celebList.roger-federer.name}
+</div>
 
 
 
