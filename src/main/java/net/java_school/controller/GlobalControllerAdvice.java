@@ -9,13 +9,15 @@ public class GlobalControllerAdvice {
 	public String getJavaVersion() {
 		return "25";
 	}
+	//https://mvnrepository.com/artifact/org.springframework/spring-framework-bom
 	@ModelAttribute("springVer")
 	public String getSpringVersion() {
-		return "7.0.8";
+		return "7.0.9";
 	}
+	//https://mvnrepository.com/artifact/org.springframework.security/spring-security-bom
 	@ModelAttribute("securityVer")
 	public String getSecurityVersion() {
-		return "7.1.0";
+		return "7.1.1";
 	}
 	//https://mvnrepository.com/artifact/joda-time/joda-time
 	@ModelAttribute("jodaTimeVer")
@@ -25,13 +27,14 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/org.slf4j/slf4j-api
 	@ModelAttribute("slf4jVer")
 	public String getSlf4jVersion() {
-		return "2.0.17";
+		return "2.0.19";
 	}
 	//https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
 	@ModelAttribute("logbackVer")
 	public String getLogbackVersion() {
 		return "1.6.3";
 	}
+	//https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11
 	@ModelAttribute("ojdbc11Ver")
 	public String getOjdbc11Version() {
 		return "23.26.3.0.0";
@@ -40,7 +43,7 @@ public class GlobalControllerAdvice {
 	@ModelAttribute("aspectjweaverVer")
 	public String getAspectjweaverVersion() {
 		return "1.9.25.1";
-	}	
+	}
 	@ModelAttribute("servletVer")
 	public String getServletVersion() {
 		return "6.1.0";
@@ -73,26 +76,32 @@ public class GlobalControllerAdvice {
 	public String getCommonsLoggingVersion() {
 		return "1.4.0";
 	}
+	//https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
 	@ModelAttribute("log4jVer")
 	public String getLog4jVersion() {
 		return "2.26.1";
 	}
+	//https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
 	@ModelAttribute("hibernateValidatorVer")
 	public String getHivernateValidatorVersion() {
 		return "9.1.3.Final";
 	}
+	//https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6
 	@ModelAttribute("thymeleafSpring6Ver")
 	public String getThymeleafSpring6Version() {
 		return "3.1.5.RELEASE";
 	}
+	//https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin
 	@ModelAttribute("jettyMavenPluginVer")
 	public String getJettyMavenPluginVersion() {
 		return "11.0.26";
 	}
+	//https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
 	@ModelAttribute("mysqlJdbcDriverVer")
 	public String getMysqlJdbcDriverVersion() {
 		return "26.7.0";
 	}
+	//https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
 		return "3.2.2";

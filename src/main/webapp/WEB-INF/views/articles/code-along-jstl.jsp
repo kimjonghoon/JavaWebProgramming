@@ -201,7 +201,7 @@ BMI(체질량지수)
 25 이상 비만
 */
 double height = 1.657;
-double weight = 71.1;
+double weight = 70.8;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %&gt;
@@ -223,7 +223,7 @@ BMI(체질량지수)
 25 이상 비만
 */
 double height = 1.657;
-double weight = 71.5;
+double weight = 70.8;
 double myBMI = weight / (height * height);
 pageContext.setAttribute("bmi", myBMI);
 %>
@@ -482,9 +482,37 @@ ${celebList['roger-federer'].name}
 ${celebList.roger-federer.name}
 </div>
 
+<c:catch var="error">
+<p>시작</p>
+<% 
+int result = 10 / 0;
+pageContext.setAttribute("result",result); 
+%>
+<c:out value="${result}"/> 
+<p>끝 (예외가 발생하면 보이지 않는다)</p>
+</c:catch>
 
+<c:if test="${not empty error}">
+<p>에러 메시지 - ${error}</p>
+</c:if>
 
+<p>에러 발생 여부와 상관없이 보인다.</p>
+    
+<c:catch var="errorMsg">
+<p>시작</p>
+<% 
+int result1 = 10 / 1; 
+pageContext.setAttribute("result1",result1); 
+%> 
+<c:out value="${result1}"/>
+<p>끝 (예외가 발생하면 보이지 않는다)</p>
+</c:catch>
 
+<c:if test="${not empty errorMsg}">
+<p>에러 메시지 - ${errorMsg}</p>
+</c:if>
+
+<p>에러 발생 여부와 상관없이 보인다.</p>
 
 
 
