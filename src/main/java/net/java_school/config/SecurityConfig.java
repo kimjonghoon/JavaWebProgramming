@@ -8,21 +8,21 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 import net.java_school.exception.MyAccessDeniedHandler;
 
-import static org.springframework.security.config.Customizer.withDefaults;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 public class SecurityConfig {
+	
 	@Autowired
 	private DataSource dataSource;
 	
@@ -33,24 +33,12 @@ public class SecurityConfig {
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-		JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
-		manager.setUsersByUsernameQuery("SELECT email as username, passwd as password, 1 as enabled FROM member WHERE email = ?");
-		manager.setAuthoritiesByUsernameQuery("SELECT email as username, authority FROM authorities WHERE email = ?");
-		return manager;
+		JdbcDaoImpl jdbcDao = new JdbcDaoImpl();
+		jdbcDao.setDataSource(dataSource);
+		jdbcDao.setUsersByUsernameQuery("SELECT email as username, passwd as password, 1 as enabled FROM member WHERE email = ?");
+		jdbcDao.setAuthoritiesByUsernameQuery("SELECT email as username, authority FROM authorities WHERE email = ?");
+		return jdbcDao;
 	}
-/*
-	@Bean
-	public DaoAuthenticationProvider daoAuthenticationProvider() {
-		DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService());
-		provider.setPasswordEncoder(passwordEncoder());
-		return provider;
-	}
-
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder builder) throws Exception {
-		builder.jdbcAuthentication().dataSource(dataSource).passwordEncoder(this.passwordEncoder());
-	}
-*/
 
 	@Bean
 	public AccessDeniedHandler accessDeniedHandler() {
@@ -60,13 +48,14 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-			.authorizeHttpRequests((authorize) -> authorize
+			.authorizeHttpRequests(authorize -> authorize
 				.requestMatchers(HttpMethod.DELETE, "/bbs/admin/**").hasRole("ADMIN")
 				.requestMatchers(HttpMethod.PATCH, "/bbs/admin/**").hasRole("ADMIN")
 				.requestMatchers(HttpMethod.PUT, "/bbs/admin/**").hasRole("ADMIN")
 				.requestMatchers(HttpMethod.POST, "/bbs/admin/**").hasRole("ADMIN")
 				.requestMatchers(HttpMethod.GET, "/bbs/admin/**").hasRole("ADMIN")					
 				.requestMatchers(HttpMethod.GET, "/users/bye_confirm").permitAll()
+				.requestMatchers(HttpMethod.GET, "/users/login").permitAll()
 				.requestMatchers(HttpMethod.GET, "/users/welcome").permitAll()
 				.requestMatchers(HttpMethod.POST, "/users/signUp").permitAll()
 				.requestMatchers(HttpMethod.GET, "/users/signUp").permitAll()
@@ -87,9 +76,21 @@ public class SecurityConfig {
 				.requestMatchers(HttpMethod.GET, "/bbs/**").authenticated()
 				.anyRequest().permitAll()
 			)
-			.formLogin(form -> form.loginPage("/users/login").permitAll().loginProcessingUrl("/login").defaultSuccessUrl("/bbs/chat?page=1").failureUrl("/users/login?error=1"))
-			.logout((logout) -> logout.logoutSuccessUrl("/"))
-			.httpBasic(withDefaults()).exceptionHandling(exceptionHandling -> exceptionHandling.accessDeniedHandler(accessDeniedHandler()));
+			
+			.formLogin(form -> form
+					.loginPage("/users/login")
+					.loginProcessingUrl("/login")
+					.defaultSuccessUrl("/bbs/chat?page=1")
+					.failureUrl("/users/login?error=1")
+			)
+			
+			.logout(logout -> logout
+					.logoutSuccessUrl("/")
+			)
+			
+			.exceptionHandling(exceptionHandling -> exceptionHandling
+					.accessDeniedHandler(accessDeniedHandler())
+			);
 			
 		return http.build();
 	}
