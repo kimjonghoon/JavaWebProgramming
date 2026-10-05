@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security.xsd">
+
+<!--
+  <http pattern="/resources/**" security="none"/>
+  <http pattern="/examples/**" security="none"/>
+  <http pattern="/favicon.ico" security="none"/>
+-->
+  <http>
+    <access-denied-handler error-page="/403" />
+    <intercept-url pattern="/users/bye_confirm" access="permitAll" />
+    <intercept-url pattern="/users/welcome" access="permitAll" />
+    <intercept-url pattern="/users/signUp" access="permitAll" />
+    <intercept-url pattern="/users/login" access="permitAll" />
+    <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+    <intercept-url pattern="/users/**" access="hasAnyRole('ADMIN','USER')"/>
+    <intercept-url pattern="/bbs/**" access="hasAnyRole('ADMIN','USER')" />
+    <intercept-url pattern="/**" access="permitAll" />
+    
+    <form-login login-page="/users/login" 
+      authentication-failure-url="/users/login?error=1" 
+      default-target-url="/bbs/chat?page=1" />
+    
+    <logout logout-success-url="/users/login" invalidate-session="true" />
+
+    <session-management>
+      <concurrency-control max-sessions="1"
+        error-if-maximum-exceeded="true" />
+    </session-management>
+  </http>
+
+  <method-security />
+  
+  <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+  <beans:bean id="webexpressionHandler" 
+    class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" /> 
+
+  <authentication-manager>
+    <authentication-provider>
+      <jdbc-user-service 
+        data-source-ref="dataSource"
+        users-by-username-query="SELECT email as username,passwd as password,1 as enabled 
+          FROM member WHERE email = ?"
+        authorities-by-username-query="SELECT email as username,authority 
+          FROM authorities WHERE email = ?" />
+    </authentication-provider>
+  </authentication-manager>
+
+</beans:beans>

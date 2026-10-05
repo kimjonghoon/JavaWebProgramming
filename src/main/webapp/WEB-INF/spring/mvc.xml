@@ -15,7 +15,7 @@
 		
 <mvc:resources mapping="/resources/**" location="/resources/" />
 <mvc:resources mapping="/examples/**" location="/examples/" />
-<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
+<mvc:resources mapping="/favicon.ico" location="/" />
 
 <mvc:annotation-driven validator="validator" />
 
@@ -27,13 +27,6 @@
 
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 	<property name="defaultErrorView" value="error" />
-<!-- 	<property name="exceptionMappings">
-		<props>
-			<prop key="org.springframework.security.access.AccessDeniedException">
-				error-403
-			</prop>
-		</props>
-	</property> -->
 </bean>
 
 <!-- Oracle datasource-->
@@ -75,7 +68,6 @@
 	</bean>
 </mvc:interceptors>
 
-<!-- ViewResolver -->
 <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	<property name="prefix" value="/WEB-INF/views/" />
