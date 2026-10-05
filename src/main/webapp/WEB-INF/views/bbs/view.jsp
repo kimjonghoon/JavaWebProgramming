@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="<spring:message code="lang" />">
 <head>
@@ -533,12 +533,12 @@ $(document).on('click', '#all-comments', function (e) {
 <div id="content-categories">${boardName }</div>
 
 <div class="view-menu" style="margin-top: 15px;margin-bottom: 5px;">
-    <security:authorize access="#email == principal.username or hasAuthority('ROLE_ADMIN')">
+    <sec:authorize access="#email == principal.username or hasAuthority('ROLE_ADMIN')">
         <div class="fl">
             <button type="button" class="goModify"><spring:message code="modify" /></button>
             <button type="button" class="goDelete"><spring:message code="delete" /></button>
         </div>
-    </security:authorize>        
+    </sec:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
             <button type="button" title="${nextArticle.articleNo }" class="next-article"><spring:message code="next.article" /></button>
@@ -564,9 +564,9 @@ $(document).on('click', '#all-comments', function (e) {
         <c:forEach var="file" items="${attachFileList }" varStatus="status">
             <div id="attachfile${file.attachFileNo }" class="attach-file">
 		<a href="${file.attachFileNo }" title="${file.filename }" class="download">${file.filename }</a>
-                <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
+                <sec:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
                 <a href="#" title="${file.attachFileNo }"><spring:message code="delete" /></a>
-                </security:authorize>
+                </sec:authorize>
             </div>
         </c:forEach>
     </div>
@@ -596,12 +596,12 @@ $(document).on('click', '#all-comments', function (e) {
 </div>
 
 <div class="view-menu" style="margin-bottom: 47px;">
-    <security:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
+    <sec:authorize access="#email == principal.username or hasRole('ROLE_ADMIN')">
         <div class="fl">
             <button type="button" class="goModify"><spring:message code="modify" /></button>
             <button type="button" class="goDelete"><spring:message code="delete" /></button>
         </div>
-    </security:authorize>        
+    </sec:authorize>        
     <div class="fr">
         <c:if test="${nextArticle != null }">    
             <button type="button" title="${nextArticle.articleNo }" class="next-article"><spring:message code="next.article" /></button>
