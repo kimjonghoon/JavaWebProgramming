@@ -1887,7 +1887,7 @@ public class UserServiceImpl implements UserService {
 In the project explorer view, create the net.java_school.mybatis package in src/main/resources, and make the MyBatis related configuration file Congifuration.xml in this package. This file sets the alias of the type and the location of the mapper files. You need to create configuration files in src/main/resources. When you make configuration files in this directory, Maven copies them to the classpath during the build process.
 </p>
 
-<h6 class="src">Configuration.xml</h6>
+<h6 class="src">mybatis-config.xml</h6>
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE configuration 
@@ -1917,7 +1917,8 @@ In the project explorer view, create the net.java_school.mybatis package in src/
 </pre>
 
 <p>
-Create a UserMapper.xml file in the exact location as Configuration.xml. In the mapper file, id values must match method names in UserMapper.java.
+Create a UserMapper.xml file in the src/main/resources/net/java_school/mapper. 
+In the mapper file, id values must match method names in UserMapper.java.
 </p>
 
 <h6 class="src">UserMapper.xml</h6>
@@ -2281,7 +2282,7 @@ public class JavascriptController {
     
   &lt;bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"&gt;
     &lt;property name="dataSource" ref="dataSource" /&gt;
-    &lt;property name="configLocation" value="classpath:net/java_school/mybatis/Configuration.xml" /&gt;
+    &lt;property name="configLocation" value="classpath:net/java_school/mybatis/mybatis-config.xml" /&gt;
   &lt;/bean&gt;
 
   &lt;bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;
@@ -2411,7 +2412,8 @@ According to the above, when an exception other than AuthenticationException occ
 <h3>Board</h3>
 
 <p>
-Create BoardMapper.xml in the exact location as the UserMapper.xml, as configured in Configuration.xml.
+Create BoardMapper.xml in the exact location as the UserMapper.xml, 
+as configured in mybatis-config.xml.
 </p>
 
 <h6 class="src">BoardMapper.xml</h6>
