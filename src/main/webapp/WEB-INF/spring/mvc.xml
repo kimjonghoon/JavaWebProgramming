@@ -13,33 +13,33 @@
 		http://mybatis.org/schema/mybatis-spring
 		http://mybatis.org/schema/mybatis-spring.xsd">
 		
-<mvc:resources mapping="/resources/**" location="/resources/" />
-<mvc:resources mapping="/examples/**" location="/examples/" />
-<mvc:resources mapping="/favicon.ico" location="/" />
+<mvc:resources mapping="/resources/**" location="/resources/"/>
+<mvc:resources mapping="/examples/**" location="/examples/"/>
+<mvc:resources mapping="/favicon.ico" location="/"/>
 
-<mvc:annotation-driven validator="validator" />
+<mvc:annotation-driven validator="validator"/>
 
 <context:component-scan base-package="net.java_school.controller,
 	net.java_school.board,
-	net.java_school.user" />
+	net.java_school.user"/>
 
-<mybatis:scan base-package="net.java_school.mapper" />
+<mybatis:scan base-package="net.java_school.mapper"/>
 
 <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-	<property name="defaultErrorView" value="error" />
+	<property name="defaultErrorView" value="error"/>
 </bean>
 
 <!-- Oracle datasource-->
 <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-	<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-	<property name="username" value="java" />
-	<property name="password" value="school" />
-	<property name="maxTotal" value="100" />
-	<property name="maxWaitMillis" value="1000" />
-	<property name="poolPreparedStatements" value="true" />
-	<property name="defaultAutoCommit" value="true" />
-	<property name="validationQuery" value=" SELECT 1 FROM DUAL" />
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+	<property name="username" value="java"/>
+	<property name="password" value="school"/>
+	<property name="maxTotal" value="100"/>
+	<property name="maxWaitMillis" value="1000"/>
+	<property name="poolPreparedStatements" value="true"/>
+	<property name="defaultAutoCommit" value="true"/>
+	<property name="validationQuery" value=" SELECT 1 FROM DUAL"/>
 </bean>
 
 <!-- MySQL datasource -->
@@ -58,37 +58,37 @@
 -->
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="dataSource" ref="dataSource" />
-	<property name="configLocation" value="classpath:net/java_school/mybatis/mybatis-config.xml" />
+	<property name="dataSource" ref="dataSource"/>
+	<property name="configLocation" value="classpath:mybatis-config.xml"/>
 </bean>
 
 <mvc:interceptors>
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-		<property name="paramName" value="lang" />
+		<property name="paramName" value="lang"/>
 	</bean>
 </mvc:interceptors>
 
 <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-	<property name="prefix" value="/WEB-INF/views/" />
-	<property name="suffix" value=".jsp" />
+	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	<property name="prefix" value="/WEB-INF/views/"/>
+	<property name="suffix" value=".jsp"/>
 </bean>
 
 <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-	<property name="basename" value="WEB-INF/messages" />
-	<property name="defaultEncoding" value="UTF-8" />
-	<property name="cacheSeconds" value="10" />
-	<property name="fallbackToSystemLocale" value="false" />
+	<property name="basename" value="WEB-INF/messages"/>
+	<property name="defaultEncoding" value="UTF-8"/>
+	<property name="cacheSeconds" value="10"/>
+	<property name="fallbackToSystemLocale" value="false"/>
 </bean>
 
 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-	<property name="defaultLocale" value="ko" />
+	<property name="defaultLocale" value="ko"/>
 </bean>
 
 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-	<property name="validationMessageSource" ref="messageSource" />
+	<property name="validationMessageSource" ref="messageSource"/>
 </bean>
 
-<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 
 </beans>
