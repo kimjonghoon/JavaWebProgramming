@@ -20,7 +20,7 @@
 	<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
 </listener>
 
-<!-- 톰캣에선 필요없다
+<!-- 톰캣11에선 필요없다
 <filter>
 	<filter-name>encodingFilter</filter-name>
 	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
