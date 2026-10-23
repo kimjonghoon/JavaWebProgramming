@@ -104,6 +104,6 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
-		return "3.2.2";
+		return "3.2.4";
 	}
 }
