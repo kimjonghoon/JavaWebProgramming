@@ -2,9 +2,12 @@ package net.java_school.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,12 +34,23 @@ public class DownloadController {
 	private BoardService boardService;
 
 	@GetMapping("data")
-	public ResponseEntity<InputStreamResource> download(@RequestParam(name="filename") String filename, @RequestParam(name="fileno") Integer fileno, HttpServletRequest req) throws IOException {
+	public ResponseEntity<InputStreamResource> download(@RequestParam(name="fileno") Integer fileno, HttpServletRequest req) throws IOException {
 		AttachFile attachFile = boardService.getAttachFile(fileno);
 		String owner = attachFile.getEmail();
+		String filename = attachFile.getFilename();
 
-		File file = new File(WebContants.UPLOAD_PATH.value() + owner + File.separator + filename);
-
+		//검증 코드 시작
+		Path ownerPath = Paths.get(WebContants.UPLOAD_PATH.value() + owner).toAbsolutePath().normalize();
+		Path filePath = ownerPath.resolve(filename);
+		Path normalizedFilePath = filePath.normalize();
+		if (!normalizedFilePath.startsWith(ownerPath)) {
+			throw new SecurityException("Path Traversal (" + filename + ")");
+		}
+		File file = normalizedFilePath.toFile();
+		if (!file.exists() || !file.isFile()) {
+			throw new FileNotFoundException("The file does not exist!");
+		}
+		//검증 코드 끝
 		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
 		boolean ie = req.getHeader("User-Agent").indexOf("MSIE") != -1;
@@ -53,15 +67,27 @@ public class DownloadController {
 	}
 
 	@PostMapping("data")
-	public void boardDataDownload(@RequestParam(name="filename") String filename, @RequestParam(name="fileno") Integer fileno, HttpServletRequest req, HttpServletResponse resp) {
+	public void boardDataDownload(@RequestParam(name="fileno") Integer fileno, HttpServletRequest req, HttpServletResponse resp) {
 		OutputStream outputStream = null;
 
 		AttachFile attachFile = boardService.getAttachFile(fileno);
 		String owner = attachFile.getEmail();
+		String filename = attachFile.getFilename();
 
 		try {
-			File file = new File(WebContants.UPLOAD_PATH.value() + owner + File.separator + filename);
-
+			//검증 코드 시작
+			Path ownerPath = Paths.get(WebContants.UPLOAD_PATH.value() + owner).toAbsolutePath().normalize();
+			Path filePath = ownerPath.resolve(filename);
+			Path normalizedFilePath = filePath.normalize();
+			if (!normalizedFilePath.startsWith(ownerPath)) {
+				throw new SecurityException("Path Traversal (" + filename + ")");
+			}
+			File file = normalizedFilePath.toFile();
+			if (!file.exists() || !file.isFile()) {
+				throw new FileNotFoundException("The file does not exist!");
+			}
+			//검증 코드 끝
+			
 			String filetype = filename.substring(filename.indexOf(".") + 1, filename.length());
 
 			if (filetype.trim().equalsIgnoreCase("txt")) {
