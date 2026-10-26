@@ -75,9 +75,9 @@ Define value for property 'package':  net.java_school: : net.java_school.simpleA
       &lt;artifactId&gt;jakarta.servlet.jsp.jstl&lt;/artifactId&gt;
       &lt;version&gt;${jstlVer }&lt;/version&gt;
     &lt;/dependency&gt;
-    &lt;!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;
     &lt;dependency&gt;
-      &lt;groupId&gt;tools.jackson.core&lt;/groupId&gt;
+      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
       &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
       &lt;version&gt;${jacksonDatabindVer }&lt;/version&gt;
     &lt;/dependency&gt;

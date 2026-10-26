@@ -1853,14 +1853,14 @@ public class Controller extends HttpServlet {
 <h6 class="src">WebContants.java</h6>
 <pre class="prettyprint">package net.java_school.commons;
 
-public class WebContants {
+public final class WebContants {
     //Session key
-    public final static String USER_KEY = "user";
+    public static final String USER_KEY = "user";
     //Error Message
-    public final static String NOT_LOGIN = "Not Login";
-    public final static String AUTHENTICATION_FAILED = "Authentication Failed";
+    public static final String NOT_LOGIN = "Not Login";
+    public static final String AUTHENTICATION_FAILED = "Authentication Failed";
     //Line Separator
-    <strong>public final static String LINE_SEPARATOR = System.getProperty("line.separator");</strong>
+    <strong>public static final String LINE_SEPARATOR = System.getProperty("line.separator");</strong>
     
 }
 </pre>

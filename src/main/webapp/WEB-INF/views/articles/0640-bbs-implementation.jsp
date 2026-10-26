@@ -112,9 +112,9 @@ if (msg != null) {
 <h6 class="src">WebContants.java</h6>
 <pre class="prettyprint">package net.java_school.commons;
 
-public class WebContants {
+public final class WebContants {
     //Session key
-    public final static String USER_KEY = "user";
+    public static final String USER_KEY = "user";
 }
 </pre>
 
@@ -129,7 +129,7 @@ login_proc.jsp를 열고 <strong>"user"</strong>를 <strong>WebContants.USER_KEY
 먼저 로그인하지 않음을 나타내는 다음 문자열을 WebContants.java에 추가한다.<br />
 </p>
 
-<pre>public final static String NOT_LOGIN = "Not Login";</pre>
+<pre>public static final String NOT_LOGIN = "Not Login";</pre>
 
 
 <h6 class="src">/users/editAccount_proc.jsp</h6>
@@ -226,7 +226,7 @@ response.sendRedirect("changePasswd_confirm.jsp");
 WebContants.java에 다음 문자열 클래스 상수를 추가한다.<br />
 </p>
 
-<pre>public final static String AUTHENTICATION_FAILED = "Authentication Failed";</pre>
+<pre>public static final String AUTHENTICATION_FAILED = "Authentication Failed";</pre>
 
 <h6 class="src">/users/bye_proc.jsp</h6>
 <pre class="prettyprint">&lt;%@ page language="java" contentType="text/html; charset=UTF-8"

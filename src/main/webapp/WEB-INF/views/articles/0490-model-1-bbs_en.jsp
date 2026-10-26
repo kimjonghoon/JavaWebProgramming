@@ -123,9 +123,9 @@ The LINE_SEPARATOR constant is used in the getHtmlContent() method. The followin
 <pre class="prettyprint">
 package net.java_school.commons;
 
-public class WebContants {
+public final class WebContants {
   //Line Separator
-  public final static String LINE_SEPARATOR = System.getProperty("line.separator");
+  public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 }
 </pre>
 

@@ -12,12 +12,12 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/org.springframework/spring-framework-bom
 	@ModelAttribute("springVer")
 	public String getSpringVersion() {
-		return "7.0.9";
+		return "6.2.19";
 	}
 	//https://mvnrepository.com/artifact/org.springframework.security/spring-security-bom
 	@ModelAttribute("securityVer")
 	public String getSecurityVersion() {
-		return "7.1.1";
+		return "6.5.11";
 	}
 	//https://mvnrepository.com/artifact/joda-time/joda-time
 	@ModelAttribute("jodaTimeVer")
@@ -64,7 +64,7 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/org.mybatis/mybatis
 	@ModelAttribute("mybatisVer")
 	public String getMybatisVersion() {
-		return "3.5.19";
+		return "3.6.0";
 	}
 	//https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
 	@ModelAttribute("mybatisSpringVer")
@@ -84,7 +84,7 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
 	@ModelAttribute("hibernateValidatorVer")
 	public String getHivernateValidatorVersion() {
-		return "9.1.3.Final";
+		return "9.1.5.Final";
 	}
 	//https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring6
 	@ModelAttribute("thymeleafSpring6Ver")
@@ -99,11 +99,11 @@ public class GlobalControllerAdvice {
 	//https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
 	@ModelAttribute("mysqlJdbcDriverVer")
 	public String getMysqlJdbcDriverVersion() {
-		return "26.7.0";
+		return "26.10.0";
 	}
-	//https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind
+	//https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
 	@ModelAttribute("jacksonDatabindVer")
 	public String getJacksonDatabindVersion() {
-		return "3.2.4";
+		return "2.22.4";
 	}
 }

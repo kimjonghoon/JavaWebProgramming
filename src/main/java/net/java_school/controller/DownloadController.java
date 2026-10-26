@@ -40,7 +40,7 @@ public class DownloadController {
 		String filename = attachFile.getFilename();
 
 		//검증 코드 시작
-		Path ownerPath = Paths.get(WebContants.UPLOAD_PATH.value() + owner).toAbsolutePath().normalize();
+		Path ownerPath = Paths.get(WebContants.UPLOAD_PATH + owner).toAbsolutePath().normalize();
 		Path filePath = ownerPath.resolve(filename);
 		Path normalizedFilePath = filePath.normalize();
 		if (!normalizedFilePath.startsWith(ownerPath)) {
@@ -76,7 +76,7 @@ public class DownloadController {
 
 		try {
 			//검증 코드 시작
-			Path ownerPath = Paths.get(WebContants.UPLOAD_PATH.value() + owner).toAbsolutePath().normalize();
+			Path ownerPath = Paths.get(WebContants.UPLOAD_PATH + owner).toAbsolutePath().normalize();
 			Path filePath = ownerPath.resolve(filename);
 			Path normalizedFilePath = filePath.normalize();
 			if (!normalizedFilePath.startsWith(ownerPath)) {

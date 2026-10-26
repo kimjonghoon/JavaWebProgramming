@@ -36,7 +36,7 @@ public class UsersController {
 
 	@GetMapping("signUp")
 	public String signUp(Model model) {
-		model.addAttribute(WebContants.USER_KEY.value(), new User());
+		model.addAttribute(WebContants.USER_KEY, new User());
 
 		return "users/signUp";
 	}
@@ -67,7 +67,7 @@ public class UsersController {
 	@GetMapping("editAccount")
 	public String editAccount(Principal principal, Model model) {
 		User user = userService.getUser(principal.getName());
-		model.addAttribute(WebContants.USER_KEY.value(), user);
+		model.addAttribute(WebContants.USER_KEY, user);
 
 		return "users/editAccount";
 	}
@@ -95,7 +95,7 @@ public class UsersController {
 
 		User user = userService.getUser(principal.getName());
 
-		model.addAttribute(WebContants.USER_KEY.value(), user);
+		model.addAttribute(WebContants.USER_KEY, user);
 		model.addAttribute("password", new Password());
 
 		return "users/changePasswd";
@@ -110,7 +110,7 @@ public class UsersController {
 
 		if (bindingResult.hasErrors()) {
 			User user = userService.getUser(principal.getName());
-			model.addAttribute(WebContants.USER_KEY.value(), user);
+			model.addAttribute(WebContants.USER_KEY, user);
 
 			return "users/changePasswd";
 		}

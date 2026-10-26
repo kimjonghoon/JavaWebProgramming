@@ -2,7 +2,6 @@ package net.java_school.controller;
 
 import java.io.File;
 import java.io.InputStream;
-import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -37,6 +36,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.validation.Valid;
 
@@ -66,8 +66,7 @@ public class BbsController extends Paginator {
 			@PathVariable(name="boardCd") String boardCd,
 			@RequestParam(name="page", defaultValue="1") Integer page,
 			@RequestParam(name="search", defaultValue="") String search,
-			Locale locale,
-			Model model) {
+			Locale locale, Model model) {
 
 		int pagesPerGroup = 10;
 
@@ -118,9 +117,7 @@ public class BbsController extends Paginator {
 			@PathVariable(name="articleNo")  Integer articleNo,
 			@RequestParam(name="page", defaultValue="1") Integer page,
 			@RequestParam(name="search", defaultValue="") String search,
-			Locale locale,
-			HttpServletRequest req,
-			Model model) {
+			Locale locale, HttpServletRequest req, Model model) {
 
 		String lang = locale.getLanguage();
 
@@ -211,10 +208,8 @@ public class BbsController extends Paginator {
 	}
 
 	@GetMapping("{boardCd}/new")
-	public String writeForm(
-			@PathVariable(name="boardCd") String boardCd,
-			Locale locale,
-			Model model) {
+	public String writeForm( @PathVariable(name="boardCd") String boardCd,
+			Locale locale, Model model) {
 
 		String lang = locale.getLanguage();
 		String boardName = this.getBoardName(boardCd, lang);
@@ -233,10 +228,8 @@ public class BbsController extends Paginator {
 			@Valid Article article,
 			BindingResult bindingResult,
 			@PathVariable(name="boardCd") String boardCd,
-			Locale locale,
-			Model model,
 			@RequestParam(name="attachFile") MultipartFile attachFile,
-			Principal principal) throws Exception {
+			Locale locale, Model model, Principal principal) throws Exception {
 
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(boardCd, locale.getLanguage());
@@ -262,10 +255,10 @@ public class BbsController extends Paginator {
 			file.setEmail(principal.getName());
 			boardService.addAttachFile(file);
 
-			File dir = new File(WebContants.UPLOAD_PATH.value() + principal.getName());
+			File dir = new File(WebContants.UPLOAD_PATH + principal.getName());
 			if (!dir.exists()) dir.mkdirs();
 
-			Path path = Paths.get(WebContants.UPLOAD_PATH.value() + principal.getName());
+			Path path = Paths.get(WebContants.UPLOAD_PATH + principal.getName());
 
 			try (InputStream inputStream = attachFile.getInputStream()) {
 				Files.copy(inputStream, path.resolve(attachFile.getOriginalFilename()),
@@ -280,8 +273,7 @@ public class BbsController extends Paginator {
 	public String modifyForm(
 			@PathVariable(name="boardCd") String boardCd,
 			@PathVariable(name="articleNo") Integer articleNo,
-			Locale locale,
-			Model model) {
+			Locale locale, Model model) {
 
 		String lang = locale.getLanguage();
 		Article article = boardService.getArticle(articleNo);
@@ -299,15 +291,16 @@ public class BbsController extends Paginator {
 	}
 
 	@PostMapping("{boardCd}/{articleNo}")
-	public String modify(@Valid Article article,
+	public String modify(
+			@Valid Article article,
 			BindingResult bindingResult,
 			@PathVariable(name="boardCd") String boardCd,
 			@PathVariable(name="articleNo") Integer articleNo,
 			@RequestParam(name="page") Integer page,
 			@RequestParam(name="search") String search,
 			@RequestParam(name="attachFile", defaultValue="") MultipartFile attachFile,
-			Locale locale,
-			Model model) throws Exception {
+			Locale locale, Model model,
+			RedirectAttributes redirectAttributes) throws Exception {
 
 		if (bindingResult.hasErrors()) {
 			String boardName = this.getBoardName(article.getBoardCd(), locale.getLanguage());
@@ -336,10 +329,10 @@ public class BbsController extends Paginator {
 			file.setEmail(article.getEmail());
 			boardService.addAttachFile(file);
 
-			File dir = new File(WebContants.UPLOAD_PATH.value() + email);
+			File dir = new File(WebContants.UPLOAD_PATH + email);
 			if (!dir.exists()) dir.mkdirs();
 
-			Path path = Paths.get(WebContants.UPLOAD_PATH.value() + email);
+			Path path = Paths.get(WebContants.UPLOAD_PATH + email);
 
 			try (InputStream inputStream = attachFile.getInputStream()) {
 				Files.copy(inputStream, path.resolve(attachFile.getOriginalFilename()),
@@ -347,16 +340,10 @@ public class BbsController extends Paginator {
 			}
 		}
 
-		search = URLEncoder.encode(search, "UTF-8");
-
-		return "redirect:/bbs/"
-		+ boardCd
-		+ "/"
-		+ articleNo
-		+ "?page="
-		+ page
-		+ "&search="
-		+ search;
+		redirectAttributes.addAttribute("page", page);
+		redirectAttributes.addAttribute("search", search);
+		
+		return "redirect:/bbs/" + boardCd	+ "/"	+ articleNo;
 	}
 
 	@DeleteMapping("/{boardCd}/{articleNo}")
@@ -364,19 +351,16 @@ public class BbsController extends Paginator {
 			@PathVariable(name="boardCd") String boardCd,
 			@PathVariable(name="articleNo") Integer articleNo,
 			@RequestParam(name="page") Integer page,
-			@RequestParam(name="search") String search) throws Exception {
+			@RequestParam(name="search") String search,
+			RedirectAttributes redirectAttributes) throws Exception {
 
 		Article article = boardService.getArticle(articleNo);
 		boardService.removeArticle(article);
 
-		search = URLEncoder.encode(search, "UTF-8");
+		redirectAttributes.addAttribute("page", page);
+		redirectAttributes.addAttribute("search", search);
 
-		return "redirect:/bbs/"
-		+ boardCd
-		+ "?page="
-		+ page
-		+ "&search="
-		+ search;
+		return "redirect:/bbs/" + boardCd;
 	}
 
 	@DeleteMapping("deleteAttachFile")
@@ -385,20 +369,15 @@ public class BbsController extends Paginator {
 			@RequestParam(name="articleNo") Integer articleNo,
 			@RequestParam(name="boardCd") String boardCd,
 			@RequestParam(name="page") Integer page,
-			@RequestParam(name="search") String search) throws Exception {
+			@RequestParam(name="search") String search,
+			RedirectAttributes redirectAttributes) throws Exception {
 
 		AttachFile attachFile = boardService.getAttachFile(attachFileNo);
 		boardService.removeAttachFile(attachFile);
 
-		search = URLEncoder.encode(search, "UTF-8");
+		redirectAttributes.addAttribute("page", page);
+		redirectAttributes.addAttribute("search", search);
 
-		return "redirect:/bbs/"
-		+ boardCd
-		+ "/"
-		+ articleNo
-		+ "?page="
-		+ page
-		+ "&search="
-		+ search;
+		return "redirect:/bbs/" + boardCd + "/" + articleNo;
 	}
 }

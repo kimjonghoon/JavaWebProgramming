@@ -109,9 +109,9 @@ LINE_SEPARATOR 상수는 getHtmlContent() 메소드에서 사용한다.
 <pre class="prettyprint">
 package net.java_school.commons;
 
-public class WebContants {
+public final class WebContants {
 	//Line Separator
-	public final static String LINE_SEPARATOR = System.getProperty("line.separator");
+	public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 }
 </pre>
 
