@@ -19,12 +19,12 @@ div.code-along-result {
 
 <h2>forEach</h2>
 
-<pre class="prettyprint">List&lt;String&gt; fruits = List.of("Peach", "Melon", "Watermelon", "Strawberry", "Apple", "Banana", "Grape");
+<pre class="prettyprint">List&lt;String&gt; fruits = List.of("Apple", "Banana", "Cherry", "Durian", "Elderberry", "Feijoa", "Grape");
 pageContext.setAttribute("fruits", fruits);
 </pre>
 
 <%
-List<String> fruits = List.of("Peach", "Melon", "Watermelon", "Strawberry", "Apple", "Banana", "Grape");
+List<String> fruits = List.of("Apple", "Banana", "Cherry", "Durian", "Elderberry", "Feijoa", "Grape");
 pageContext.setAttribute("fruits", fruits);
 %>
 
