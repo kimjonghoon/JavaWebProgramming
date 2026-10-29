@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class AdminController extends Paginator {
 
 	@Autowired
@@ -72,7 +72,7 @@ public class AdminController extends Paginator {
 		return "admin/index";
 	}
 
-	@GetMapping("editAccount")
+	@GetMapping("/editAccount")
 	public String editAccountForm(@RequestParam(name="email") String email, Model model) {
 		User user = userService.getUser(email);
 		//List<String> authorities = userService.getAuthoritiesOfUser(email);
@@ -82,7 +82,7 @@ public class AdminController extends Paginator {
 		return "admin/editAccount";
 	}
 
-	@PostMapping("editAccount")
+	@PostMapping("/editAccount")
 	public String editAccount(
 			@ModelAttribute(name="user") User user, 
 			@RequestParam(name="page") String page, 
@@ -95,7 +95,7 @@ public class AdminController extends Paginator {
 		return "redirect:/admin/editAccount?email=" + user.getEmail() + "&page=" + page + "&search=" + search;
 	}
 
-	@PostMapping("changePasswd")
+	@PostMapping("/changePasswd")
 	public String changePasswd(
 			@ModelAttribute(name="user") User user, 
 			@RequestParam(name="page") String page, 
@@ -108,7 +108,7 @@ public class AdminController extends Paginator {
 		return "redirect:/admin/editAccount?email=" + user.getEmail() + "&page=" + page + "&search=" + search;
 	}
 
-	@PostMapping("delUser")
+	@PostMapping("/delUser")
 	public String delUser(
 			@ModelAttribute(name="user") User user, 
 			@RequestParam(name="page") String page, 
@@ -121,7 +121,7 @@ public class AdminController extends Paginator {
 		return "redirect:/admin?email=" + user.getEmail() + "&page=" + page + "&search=" + search;
 	}
 
-	@GetMapping("board")
+	@GetMapping("/board")
 	public String boardList(Model model) {
 		List<Board> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);
@@ -129,21 +129,21 @@ public class AdminController extends Paginator {
 		return "admin/board";
 	}
 
-	@PostMapping("createBoard")
+	@PostMapping("/createBoard")
 	public String createBoard(@ModelAttribute(name="board") Board board) {
 		boardService.createBoard(board);
 
 		return "redirect:/admin/board";
 	}
 
-	@PostMapping("editBoard")
+	@PostMapping("/editBoard")
 	public String editBoard(@ModelAttribute(name="board") Board board) {
 		boardService.editBoard(board);
 
 		return "redirect:/admin/board";
 	}
 
-	@GetMapping("delAuthority")
+	@GetMapping("/delAuthority")
 	public String delAuthority(
 			@RequestParam(name="authority") String authority, 
 			@RequestParam(name="email") String email, 
@@ -157,7 +157,7 @@ public class AdminController extends Paginator {
 		return "redirect:/admin/editAccount?email=" + email + "&page=" + page + "&search=" + search;
 	}
 
-	@PostMapping("addAuthority")
+	@PostMapping("/addAuthority")
 	public String addAuthority(
 			@RequestParam(name="authority") String authority, 
 			@RequestParam(name="email") String email, 
@@ -171,7 +171,7 @@ public class AdminController extends Paginator {
 		return "redirect:/admin/editAccount?email=" + email + "&page=" + page + "&search=" + search;
 	}
 	
-	@GetMapping("blog")
+	@GetMapping("/blog")
 	public String blog(Model model) {
 		List<Board> boards = boardService.getBoards();
 		model.addAttribute("boards", boards);

@@ -33,7 +33,7 @@ public class DownloadController {
 	@Autowired
 	private BoardService boardService;
 
-	@GetMapping("data")
+	@GetMapping("/data")
 	public ResponseEntity<InputStreamResource> download(@RequestParam(name="fileno") Integer fileno, HttpServletRequest req) throws IOException {
 		AttachFile attachFile = boardService.getAttachFile(fileno);
 		String owner = attachFile.getEmail();
@@ -66,7 +66,7 @@ public class DownloadController {
 				.body(resource);
 	}
 
-	@PostMapping("data")
+	@PostMapping("/data")
 	public void boardDataDownload(@RequestParam(name="fileno") Integer fileno, HttpServletRequest req, HttpServletResponse resp) {
 		OutputStream outputStream = null;
 

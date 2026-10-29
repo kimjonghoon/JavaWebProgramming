@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("comments")
+@RequestMapping("/comments")
 public class CommentsController {
 
 	@Autowired
@@ -64,7 +64,7 @@ public class CommentsController {
 		return comments;
 	}
 
-	@PostMapping("{articleNo}")
+	@PostMapping("/{articleNo}")
 	public void addComment(@PathVariable(name="articleNo") Integer articleNo, 
 			@RequestParam(name="memo") String memo, Principal principal) {
 		Comment comment = new Comment();
@@ -75,7 +75,7 @@ public class CommentsController {
 		boardService.addComment(comment);
 	}
 
-	@PutMapping("{articleNo}/{commentNo}")
+	@PutMapping("/{articleNo}/{commentNo}")
 	public void updateComment(@PathVariable(name="articleNo") Integer articleNo, 
 			@PathVariable(name="commentNo") Integer commentNo, @RequestParam(name="memo") String memo, Principal principal) {
 		Comment comment = boardService.getComment(commentNo);
@@ -83,7 +83,7 @@ public class CommentsController {
 		boardService.modifyComment(comment);
 	}
 
-	@DeleteMapping("{articleNo}/{commentNo}")
+	@DeleteMapping("/{articleNo}/{commentNo}")
 	public void deleteComment(@PathVariable(name="articleNo") Integer articleNo, @PathVariable(name="commentNo") Integer commentNo) {
 		Comment comment = boardService.getComment(commentNo);
 		boardService.removeComment(comment);

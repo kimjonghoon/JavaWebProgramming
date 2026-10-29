@@ -25,7 +25,7 @@ import jakarta.validation.Valid;
 import org.springframework.context.MessageSource;
 
 @Controller
-@RequestMapping("users")
+@RequestMapping("/users")
 public class UsersController {
 
 	@Autowired
@@ -34,14 +34,14 @@ public class UsersController {
 	@Autowired
 	private MessageSource messageSource;
 
-	@GetMapping("signUp")
+	@GetMapping("/signUp")
 	public String signUp(Model model) {
 		model.addAttribute(WebContants.USER_KEY, new User());
 
 		return "users/signUp";
 	}
 
-	@PostMapping("signUp")
+	@PostMapping("/signUp")
 	public String signUp(@Valid User user, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return "users/signUp";
@@ -54,17 +54,17 @@ public class UsersController {
 		return "redirect:/users/welcome";
 	}
 
-	@GetMapping("welcome")
+	@GetMapping("/welcome")
 	public String welcome() {
 		return "users/welcome";
 	}
 
-	@GetMapping("login")
+	@GetMapping("/login")
 	public String login() {
 		return "users/login";
 	}
 
-	@GetMapping("editAccount")
+	@GetMapping("/editAccount")
 	public String editAccount(Principal principal, Model model) {
 		User user = userService.getUser(principal.getName());
 		model.addAttribute(WebContants.USER_KEY, user);
@@ -72,7 +72,7 @@ public class UsersController {
 		return "users/editAccount";
 	}
 
-	@PostMapping("editAccount")
+	@PostMapping("/editAccount")
 	public String editAccount(@Valid User user, BindingResult bindingResult, Principal principal, Locale locale) {
 
 		if (bindingResult.hasErrors()) {
@@ -90,7 +90,7 @@ public class UsersController {
 		return "redirect:/users/changePasswd";
 	}
 
-	@GetMapping("changePasswd")
+	@GetMapping("/changePasswd")
 	public String changePasswd(Principal principal, Model model) {
 
 		User user = userService.getUser(principal.getName());
@@ -101,7 +101,7 @@ public class UsersController {
 		return "users/changePasswd";
 	}
 
-	@PostMapping("changePasswd")
+	@PostMapping("/changePasswd")
 	public String changePasswd(@Valid Password password,
 			BindingResult bindingResult,
 			Model model,
@@ -126,17 +126,17 @@ public class UsersController {
 
 	}
 
-	@GetMapping("changePasswd_confirm")
+	@GetMapping("/changePasswd_confirm")
 	public String changePasswd_confirm() {
 		return "users/changePasswd_confirm";
 	}
 
-	@GetMapping("bye")
+	@GetMapping("/bye")
 	public String bye() {
 		return "users/bye";
 	}
 
-	@PostMapping("bye")
+	@PostMapping("/bye")
 	public String bye(String email, String passwd, HttpServletRequest req, Locale locale) throws ServletException {
 
 		User user = new User();
@@ -154,7 +154,7 @@ public class UsersController {
 		return "redirect:/users/bye_confirm";
 	}
 
-	@GetMapping("bye_confirm")
+	@GetMapping("/bye_confirm")
 	public String byeConfirm() {
 		return "users/bye_confirm";
 	}
